@@ -1,0 +1,143 @@
+schema_version: 1
+# Status describes the claim's provenance. project_audit separately records
+# our work; publication is not evidence of independent project verification.
+# null in audit fields means unknown/pending, never false or certified.
+# source_nodes are locators for pending dependency work, not proved claims.
+source_nodes:
+  - id: BGSTB-EF
+    bibliography_key: BGSTB2024
+    version: arXiv:2306.04799v1
+    locator: "Lemma 1; equations (2.2)-(2.3)"
+    audit_status: pending
+  - id: BGSTB-COUNT
+    bibliography_key: BGSTB2024
+    version: arXiv:2306.04799v1
+    locator: "Lemma 2; equations (2.4)-(2.5)"
+    audit_status: pending
+  - id: BGSTB-NORM
+    bibliography_key: BGSTB2024
+    version: arXiv:2306.04799v1
+    locator: "Lemma 3; equations (2.6)-(2.8)"
+    audit_status: pending
+  - id: BGSTB-TRUNC
+    bibliography_key: BGSTB2024
+    version: arXiv:2306.04799v1
+    locator: "Lemma 4; equations (2.13)-(2.16)"
+    audit_status: pending
+  - id: BGSTB-ZFR
+    bibliography_key: BGSTB2024
+    version: arXiv:2306.04799v1
+    locator: "Proof of Theorem 1, Korobov-Vinogradov bound before (2.18)"
+    audit_status: pending_primary_source
+  - id: BGSTB-MEAN
+    bibliography_key: BGSTB2024
+    version: arXiv:2306.04799v1
+    locator: "Equations (2.17)-(2.19) and following remark"
+    audit_status: pending_primary_source
+
+claims:
+  - id: PAIR-BGSTB-001
+    title: Unconditional Montgomery pair theorem with full complex zeros
+    kind: imported_theorem
+    statement: |
+      For T >= 3, let I_T index all occurrences of nontrivial zeta zeros
+      rho_j = beta_j + i gamma_j with 0 < gamma_j <= T, including multiplicity.
+      For X > 0 define w(z) = 4/(4-z^2),
+      Phi(X,T) = sum_{j,k in I_T} exp((rho_j-rho_k) log X) w(rho_j-rho_k),
+      C_T = T log(T)/(2 pi), and F_T(alpha) = Phi(T^alpha,T)/C_T.
+      All ordered pairs, including equal indices and equal complex zeros,
+      are included. For every real alpha, F_T(alpha) is real, even and
+      nonnegative. As T -> infinity, uniformly for 0 <= alpha <= 1,
+      F_T(alpha) = T^(-2 alpha)(log T + O(1))
+                   + alpha + O((log T)^(-1/2)).
+      Both endpoints are included; evenness extends this formula using
+      |alpha| to -1 <= alpha <= 1. No RH or simplicity assumption is used.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies:
+      - BGSTB-EF
+      - BGSTB-COUNT
+      - BGSTB-NORM
+      - BGSTB-TRUNC
+      - BGSTB-ZFR
+      - BGSTB-MEAN
+    dependency_graph_complete: false
+    source:
+      file: research/literature-notes/pair-baseline.md
+      label: "1. Imported theorem — PAIR-BGSTB-001"
+      bibliography_key: BGSTB2024
+      version_consulted: arXiv:2306.04799v1
+      url: https://arxiv.org/pdf/2306.04799v1
+      locator: "Theorem 1, (1.2)-(1.4), page 1"
+      publication_doi: 10.4064/aa230612-20-3
+    constants_effective: null
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "T -> infinity uniformly over alpha in [0,1]."
+    project_audit:
+      task_type: exposition_and_source_verification
+      statement_checked_against: arXiv_v1_pdf
+      publication_metadata_checked: "2026-09-25"
+      final_journal_text_comparison: pending
+      proof_reconstruction: pending
+      rh_contamination_audit: pending
+      effectivity_audit: pending
+      interchange_audit: pending
+      numerical_certification: not_applicable
+      notes: |
+        Published status records the external work, not a completed project
+        proof audit. Dependencies are section-2 source pointers; their
+        analytic statements and original references await reconstruction.
+        The source's conditional Theorems 2-3 are not imported.
+
+  - id: PAIR-TRANSLATION-001
+    title: Exact bookkeeping and scale translation for the pair observable
+    kind: algebraic_identity
+    statement: |
+      For T > 2 pi, let I_T, Phi and F_T have the definitions in
+      PAIR-BGSTB-001. Put b = beta_j-beta_k, d = gamma_j-gamma_k,
+      x_rho = (beta-1/2) log T, L_T = log(T/(2 pi))/(2 pi),
+      A_T = log T/(2 pi), q_T = A_T/L_T and u = L_T(gamma_k-gamma_j).
+      A summand of Phi(T^alpha,T) equals
+      4 exp(alpha(x_rho_j-x_rho_k) + i alpha d log T)
+      / (4-b^2+d^2-2 i b d).
+      Index-diagonal and equal-complex-zero contributions to Phi are
+      respectively N(T) and sum_{distinct z, 0<Im(z)<=T} m(z)^2.
+      Reflection rho_k -> 1-conjugate(rho_k) reindexes the full sum to
+      use rho_j+conjugate(rho_k)-1, without preserving diagonal subsets.
+      Under xi = q_T alpha, the vertical phase is exp(-2 pi i xi u),
+      C_T = q_T T L_T, and i A_T(rho_j-rho_k)
+      = q_T u + i(x_rho_j-x_rho_k)/(2 pi).
+      Defining G_T(xi) = Phi((T/(2 pi))^xi,T)/(T L_T) gives
+      G_T(xi) = q_T F_T(xi/q_T); |alpha|<=1 maps to |xi|<=q_T
+      and d alpha = d xi/q_T.
+      For g in C_c^infinity(R), with the negative-sign 2 pi Fourier
+      convention, hat(g)(i A_T(rho_j-rho_k))
+      = integral_R g(alpha) T^(alpha(rho_j-rho_k)) d alpha.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    definitions_from: [PAIR-BGSTB-001]
+    source:
+      file: research/literature-notes/pair-baseline.md
+      label: "2-3. PAIR-TRANSLATION-001"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Exact at fixed T; no asymptotic limit or interchange of limits."
+    project_audit:
+      task_type: exposition
+      proof_method: "Expansion, finite reindexing, change of variables."
+      interchange_justification: |
+        The zero sum is finite for fixed T. Compact support of g gives
+        absolute convergence and locally uniform domination for its
+        complex Fourier argument. No infinite zero-sum exchange is used.
+      independent_verification: pending
+      notes: |
+        Uses unconditional zero symmetry and finiteness, not the imported
+        asymptotic. The RH specialization in the note is a separate
+        algebra check under RH, not an unconditional replacement of zeros.
+        Computational sanity checks are not part of the written proof.
