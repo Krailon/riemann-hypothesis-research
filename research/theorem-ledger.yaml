@@ -2,13 +2,16 @@ schema_version: 1
 # Status describes the claim's provenance. project_audit separately records
 # our work; publication is not evidence of independent project verification.
 # null in audit fields means unknown/pending, never false or certified.
-# source_nodes are locators for pending dependency work, not proved claims.
+# source_nodes are provenance locators, not proved claims; local reconstructions
+# are linked explicitly and retain their own claim status.
 source_nodes:
   - id: BGSTB-EF
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Lemma 1; equations (2.2)-(2.3)"
-    audit_status: pending
+    audit_status: reconstructed_draft
+    local_claim: PAIR-EF-001
+    notes: "Combined identity reconstructed; final journal comparison and independent review pending."
   - id: BGSTB-COUNT
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
@@ -55,7 +58,7 @@ claims:
     status: published
     assumptions: [UNCONDITIONAL]
     dependencies:
-      - BGSTB-EF
+      - PAIR-EF-001
       - BGSTB-COUNT
       - BGSTB-NORM
       - BGSTB-TRUNC
@@ -87,8 +90,8 @@ claims:
       numerical_certification: not_applicable
       notes: |
         Published status records the external work, not a completed project
-        proof audit. Dependencies are section-2 source pointers; their
-        analytic statements and original references await reconstruction.
+        proof audit. Lemma 1 now depends on the local PAIR-EF-001 draft.
+        The other section-2 source pointers await reconstruction.
         The source's conditional Theorems 2-3 are not imported.
 
   - id: PAIR-TRANSLATION-001
@@ -141,3 +144,263 @@ claims:
         asymptotic. The RH specialization in the note is a separate
         algebra check under RH, not an unconditional replacement of zeros.
         Computational sanity checks are not part of the written proof.
+
+  - id: ZETA-ANALYTIC-001
+    title: Classical analytic structure and functional equation of zeta
+    kind: imported_theorem
+    statement: |
+      Zeta is meromorphic on C with only a simple pole at 1 of residue 1.
+      It has simple trivial zeros at -2m (m>=1), all other zeros satisfy
+      0<Re(rho)<1, and conjugation preserves zeros with multiplicity.
+      For Re(s)>1 its Euler product converges absolutely. Meromorphically,
+      zeta(s) = chi(s) zeta(1-s), where
+      chi(s) = 2^s pi^(s-1) sin(pi s/2) Gamma(1-s).
+      Termwise logarithmic differentiation in Re(s)>1 gives
+      -zeta'(s)/zeta(s) = sum_{n>=1} Lambda(n)n^(-s), absolutely and
+      locally uniformly there, with Lambda(1)=0.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: sec:analytic-inputs
+      bibliography_key: DLMF
+      locator: "Sections 25.2(i), 25.2(iv), 25.10(i); equation (25.4.2)"
+      url: https://dlmf.nist.gov/25.4#E2
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-25"
+      scope: "Standard analytic input; Euler-product differentiation justified in the draft."
+      foundational_reconstruction: not_attempted
+      independent_verification: pending
+
+  - id: ZETA-COUNT-001
+    title: Riemann-von Mangoldt count with midpoint endpoint convention
+    kind: imported_theorem
+    statement: |
+      Let N_*(v) count nontrivial zeta zeros with 0<Im(rho)<v,
+      with multiplicity and half the multiplicity at Im(rho)=v.
+      For v>=4, N_*(v) = (v/(2 pi)) log(v/(2 pi)) - v/(2 pi)
+                             + O(log v), with an absolute effective constant.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: sec:analytic-inputs
+      bibliography_key: MV2007
+      locator: "Chapter 14, definition p.452 and Corollary 14.3 p.454"
+      url: https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/18.0_pp_452_462_Zeros.pdf
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-25"
+      scope: "Published unconditional input; full upstream proof not reconstructed."
+      endpoint_translation: "Inclusive count and local count obtained by sandwiching in the draft."
+      rh_contamination_audit: "Corollary 14.4 (RH) is excluded."
+      independent_verification: pending
+
+  - id: ZETA-CONTOUR-001
+    title: Unconditional logarithmic-derivative estimates for contour shifts
+    kind: imported_theorem
+    statement: |
+      For every real H>=2 there is U in [H,H+1], avoiding zero ordinates,
+      with zeta'(sigma+iU)/zeta(sigma+iU) = O((log H)^2) uniformly
+      for -1<=sigma<=2. Conjugation gives the corresponding bound at -U.
+      Also zeta'(z)/zeta(z) = O(log(|z|+1)) uniformly for Re(z)<=-1
+      and |z+2m|>=1/4 for all positive integers m.
+      The implicit constants are absolute and effective.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: sec:analytic-inputs
+      bibliography_key: MV2007
+      locator: "Chapter 12, Lemma 12.2 p.398 and Lemma 12.4 pp.399-400"
+      url: https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/16.0_pp_397_418_Explicit_formulae.pdf
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-25"
+      scope: "Statements and displayed proofs read; foundational dependency reconstruction not claimed."
+      rh_contamination_audit: "Neither imported lemma assumes RH or simplicity."
+      independent_verification: pending
+
+  - id: GAMMA-DIGAMMA-001
+    title: Uniform digamma approximation in a fixed sector
+    kind: imported_theorem
+    statement: |
+      For every fixed epsilon>0, psi(z)=log z+O_epsilon(1/|z|)
+      uniformly where |z|>=epsilon and |arg(z)|<pi-epsilon,
+      using the principal logarithm. In particular an effective C_psi
+      exists such that |psi(z)-log z|<=C_psi/|z| for Re(z)>=3/2.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: sec:analytic-inputs
+      bibliography_key: MV2007
+      locator: "Appendix C, Theorem C.1, equation (C.17), p.523 and proof pp.523-524"
+      url: https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/20.3_pp_520_534_The_gamma_function.pdf
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-25"
+      scope: "Uses a fixed sector; numerical optimization of the effective constant is not attempted."
+      independent_verification: pending
+
+  - id: PAIR-EF-CONVERGENCE-001
+    title: Absolute and local uniform convergence of the paired zero and prime series
+    kind: lemma
+    statement: |
+      For X>=1 and real t, let S(X,t) be the sum over all nontrivial zero
+      occurrences rho=1/2+delta+i gamma of
+      2 X^(delta+i(gamma-t))/(1+((t-gamma)+i delta)^2).
+      Let P(X,t)=sum_{n>=1} Lambda(n)n^(-1/2-it) min(n/X,X/n), Lambda(1)=0.
+      Both series converge absolutely and locally uniformly on
+      [1,infinity) x R and define continuous functions there.
+      Uniformly for X>=1 and U>=2(|t|+2), the sum of absolute values
+      of zero terms with |gamma|>U is O(X^(1/2) log(U)/U), with an
+      absolute effective constant. All zeros are counted with multiplicity.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZETA-ANALYTIC-001, ZETA-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:ef-convergence
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Zero cutoff U -> infinity, locally uniformly in (X,t); absolute prime series."
+    project_audit:
+      task_type: proof
+      interchange_justification: "Explicit dyadic zero-tail bound and prime majorant B log(n)/n^(3/2) on 1<=X<=B."
+      independent_verification: pending
+
+  - id: PAIR-EF-MELLIN-001
+    title: Absolutely convergent paired Mellin kernel including its endpoint
+    kind: lemma
+    statement: |
+      For y>0, the upward-line integral
+      (1/(2 pi i)) integral_{Re(w)=2} 2 y^w/(w^2-1) dw
+      converges absolutely and equals y-y^(-1) for y>1 and zero
+      for 0<y<=1. In particular its value at y=1 is zero.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:ef-mellin
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Horizontal heights -> infinity at fixed shifted line; then real boundary -> infinity."
+    project_audit:
+      task_type: proof
+      interchange_justification: "Absolute vertical integrals and explicit vanishing horizontal/vertical bounds."
+      independent_verification: pending
+
+  - id: PAIR-EF-EXACT-001
+    title: Exact full-zero explicit formula with continuous endpoint conventions
+    kind: proposition
+    statement: |
+      With S and P as in PAIR-EF-CONVERGENCE-001 and s=1/2+it,
+      for all X>=1 and real t,
+      S(X,t) = -P(X,t) - X^(-1) zeta'(s-1)/zeta(s-1)
+               + 2 X^(1-s)/(s(2-s))
+               + 2 sum_{m>=1} X^(-2m-s)/((2m+s-1)(2m+s+1)).
+      The last series converges absolutely and locally uniformly on
+      [1,infinity) x R. At X=p^k the n=X term in P has weight one.
+      The identity is continuous through every prime power and at X=1
+      from the right. No value of real t is excluded.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZETA-ANALYTIC-001, ZETA-CONTOUR-001, PAIR-EF-CONVERGENCE-001, PAIR-EF-MELLIN-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: prop:ef-exact
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed X>1,t,M; U_j -> infinity; M -> infinity; finally X down to 1 by local domination."
+    project_audit:
+      task_type: proof
+      interchange_justification: |
+        Euler series integrated with an explicit integrable majorant;
+        horizontal contours O_{X,t,M}(log^2(U_j)/U_j^2);
+        left contour O(X^(-a-1/2) log(a+|t|+2)/a), a=2M+1;
+        absolute nontrivial-zero residue convergence and trivial majorant 2/m^2;
+        endpoint extension by dominated convergence.
+      independent_verification: pending
+
+  - id: PAIR-EF-001
+    title: Reconstructed unconditional BGSTB Lemma 1 with named uniform remainders
+    kind: lemma
+    statement: |
+      With S and P as in PAIR-EF-CONVERGENCE-001, for all X>=1 and t in R,
+      S(X,t) = -P(X,t) + X^(-1) log(|t|+2) + E_arch + E_DS + E_pole + E_trivial.
+      Put w=-1/2+it and chi(z)=2^z pi^(z-1) sin(pi z/2) Gamma(1-z).
+      E_arch=X^(-1)(-chi'(w)/chi(w)-log(|t|+2)),
+      E_DS=X^(-1) zeta'(3/2-it)/zeta(3/2-it),
+      E_pole=2 X^(1/2-it)/((1/2+it)(3/2-it)),
+      E_trivial=2 sum_{m>=1} X^(-2m-1/2-it)/((2m-1/2+it)(2m+3/2+it)).
+      Uniformly, |E_arch|<=C_arch/X, |E_DS|<=C_DS/X,
+      |E_pole|<=4 X^(1/2)/(1+t^2),
+      |E_trivial|<=12 X^(-5/2)/(|t|+2).
+      Effective constants independent of X,t may be chosen as
+      C_arch=log(2 pi)+pi+log(2)+2 C_psi/3, with C_psi from
+      GAMMA-DIGAMMA-001, and C_DS=sum_{n>=2} Lambda(n)n^(-3/2).
+      Thus S=-P+X^(-1)(log(|t|+2)+O(1))
+               +O(X^(1/2)/(1+t^2))+O(X^(-5/2)/(|t|+2)).
+      All nontrivial zero occurrences, at both signs of the ordinate,
+      are included with multiplicity. No RH or simplicity is assumed.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-EF-EXACT-001, ZETA-ANALYTIC-001, GAMMA-DIGAMMA-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-ef
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Lemma 1, (2.2)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Uses the exact identity after all contours are removed; estimates uniform for X>=1,t real."
+    project_audit:
+      task_type: proof
+      rh_contamination_audit: "Local argument and stated imported inputs are unconditional; RH appears only in a marked specialization check."
+      endpoint_audit: "X=1, X=p^k, t=0, negative t and t=gamma covered."
+      proof_reconstruction: completed_draft
+      regression_checks: "8 exact rational tests and 6 supplementary symbolic identities passed on 2026-09-25; neither is a proof certificate."
+      source_structure_checks: "Ledger dependencies, theorem labels, citations, local links and TeX delimiter/environment checks passed."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+      compilation: unavailable_no_tex_toolchain
+      notes: "All interchanges inside the reconstruction are justified. Upstream proofs of classical imported inputs are not fully reconstructed."

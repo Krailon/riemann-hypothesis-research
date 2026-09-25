@@ -1,0 +1,412 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\ZL}{\frac{\zeta'}{\zeta}}
+\newcommand{\ZS}{\mathcal S}
+\newcommand{\PS}{\mathcal P}
+\newcommand{\EP}{E_{\mathrm{pole}}}
+\newcommand{\ET}{E_{\mathrm{trivial}}}
+\newcommand{\EA}{E_{\mathrm{arch}}}
+\newcommand{\ED}{E_{\mathrm{DS}}}
+\title{Pair baseline: reconstruction of the unconditional explicit-formula lemma}
+\author{Research proof draft}
+\date{25 September 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Task: proof. Assumptions: \texttt{UNCONDITIONAL}.}
+This draft reconstructs \cite[Lemma 1, (2.2)]{BGSTB2024}, with locators
+referring to arXiv:2306.04799v1. It does not reconstruct the subsequent
+pair-correlation asymptotic. All nontrivial zeros
+\(\rho=\beta+\ii\gamma=1/2+\delta_\rho+\ii\gamma\) are counted with
+multiplicity, including both signs of \(\gamma\).
+We never set \(\delta_\rho=0\) in the proof.
+Powers of positive real numbers use their real logarithms.
+Write \(\Lambda(p^k)=\log p\) for a prime \(p\) and \(k\geq1\),
+and \(\Lambda(n)=0\) otherwise, including \(n=1\).
+For \(X\geq1\), \(t\in\mathbb R\), put
+\begin{align}
+ \ZS(X,t)&=\sum_\rho
+ \frac{2X^{\delta_\rho+\ii(\gamma-t)}}
+ {1+((t-\gamma)+\ii\delta_\rho)^2},\label{eq:zero-sum}\\
+ \PS(X,t)&=\sum_{n\geq1}\Lambda(n)n^{-1/2-\ii t}
+                  \min\{n/X,X/n\}.\label{eq:prime-sum}
+\end{align}
+The interpretation of these series is absolute convergence, proved below.
+
+\section{Analytic inputs and their provenance}\label{sec:analytic-inputs}
+
+The following published inputs are used in their unconditional forms.
+They are imported facts, not claims of new proofs in this document.
+The ledger records their precise statements and source locators.
+\begin{enumerate}
+\item \texttt{ZETA-ANALYTIC-001}: the meromorphic continuation of zeta,
+its simple pole at 1 with residue 1, its simple trivial zeros at
+\(-2,-4,\ldots\), the location \(0<\Re\rho<1\) of its other zeros,
+conjugation symmetry, and its absolutely convergent Euler product in
+\(\Re s>1\). We use
+\[
+ \zeta(s)=\chi(s)\zeta(1-s),\qquad
+ \chi(s)=2^s\pi^{s-1}\sin(\pi s/2)\Gamma(1-s).
+\]
+See \cite[\S\S25.2(i), 25.2(iv), 25.4, 25.10(i)]{DLMF};
+the displayed functional equation is (25.4.2), and the Euler product
+is (25.2.11). Differentiating the Euler product on compact subsets of
+\(\Re s>1\) gives
+\begin{equation}\label{eq:euler-derivative}
+ -\ZL(s)=\sum_{n\geq1}\Lambda(n)n^{-s}.
+\end{equation}
+The differentiation is justified by the majorant
+\(\sum_{n\geq2}(\log n)n^{-1-\varepsilon}<\infty\).
+\item \texttt{ZETA-COUNT-001}: \cite[Corollary 14.3, p.~454]{MV2007}
+gives
+\(N_*(v)=\frac{v}{2\pi}\log\frac{v}{2\pi}-\frac{v}{2\pi}
++O(\log v)\) for \(v\geq4\), with multiplicity and half-weight at
+\(\gamma=v\). This is the unconditional corollary; the following
+Corollary 14.4 assumes RH and is not used.
+For the project's inclusive count \(N(v)\), sandwich it between
+\(N_*(v-1)\) and \(N_*(v+1)\). The two main terms differ by
+\(O(\log v)\), so the same error estimate holds for \(N(v)\).
+Likewise the number of occurrences in any interval \([v,v+1]\) is at
+most \(N_*(v+2)-N_*(v-1)=O(\log(v+2))\) for large positive \(v\).
+Conjugation and finiteness on compact sets give the corresponding bound
+\(O(\log(|v|+2))\) on the whole real axis.
+\item \texttt{ZETA-CONTOUR-001}: \cite[Lemma 12.2, p.~398]{MV2007}
+supplies heights \(U_j\in[j,j+1]\), \(j\geq2\), avoiding zero
+ordinates, such that
+\(\ZL(\sigma+\ii U_j)=O(\log^2 U_j)\), uniformly for
+\(-1\leq\sigma\leq2\). Conjugation supplies the same bound at
+\(-U_j\). Lemma 12.4, pp.~399--400, gives
+\(\ZL(z)=O(\log(|z|+1))\) uniformly for \(\Re z\leq-1\) and
+\(\lvert z+2m\rvert\geq1/4\) for every positive integer \(m\).
+The cited proofs use no RH or simplicity hypothesis.
+\item \texttt{GAMMA-DIGAMMA-001}: \cite[Theorem C.1, (C.17), p.~523]{MV2007}
+gives \(\psi(z)=\log z+O(1/|z|)\), uniformly in any fixed closed
+sector bounded away from the negative real axis and from zero;
+\(\psi=\Gamma'/\Gamma\) and \(\log z\) is principal.
+In particular fix an effective constant \(C_\psi\) such that
+\begin{equation}\label{eq:psi-bound}
+ |\psi(z)-\log z|\leq C_\psi/|z|
+ \quad (\Re z\geq3/2).
+\end{equation}
+The Euler--Maclaurin proof of that theorem yields an effective constant;
+we do not optimize or numerically evaluate it here.
+\end{enumerate}
+
+\section{Convergence and a Mellin kernel}
+
+\begin{lemma}[\texttt{PAIR-EF-CONVERGENCE-001}]
+\label{lem:ef-convergence}
+The zero series \eqref{eq:zero-sum} and prime series
+\eqref{eq:prime-sum} converge absolutely and locally uniformly on
+\([1,\infty)\times\mathbb R\). Their sums are continuous there.
+For \(U\geq2(|t|+2)\),
+\begin{equation}\label{eq:zero-tail}
+ \sum_{|\gamma|>U}
+ \left|\frac{2X^{\delta_\rho+\ii(\gamma-t)}}
+ {1+((t-\gamma)+\ii\delta_\rho)^2}\right|
+ \ll X^{1/2}\frac{\log U}{U},
+\end{equation}
+with an absolute effective implicit constant.
+\end{lemma}
+\begin{proof}
+For real \(v\) and \(|\delta|<1/2\),
+\begin{equation}\label{eq:denominator}
+ |1+(v+\ii\delta)^2|
+ \geq\Re(1+(v+\ii\delta)^2)
+ =1+v^2-\delta^2\geq\tfrac34(1+v^2).
+\end{equation}
+Thus each zero term is at most \((8/3)X^{1/2}/(1+(t-\gamma)^2)\).
+The inclusive counting bound above gives
+\(\#\{\rho:|\gamma|\leq V\}\ll V\log(V+2)\) for \(V\geq2\).
+If \(|\gamma|>U\geq2(|t|+2)\), then
+\(|t-\gamma|\geq|\gamma|/2\). Summing over
+\(2^kU<|\gamma|\leq2^{k+1}U\), \(k\geq0\), bounds the tail by
+\[
+ C X^{1/2}\sum_{k\geq0}
+ \frac{\log(2^{k+1}U+2)}{2^kU}
+ \ll X^{1/2}\frac{\log U}{U}.
+\]
+For \(1\leq X\leq B\), \(|t|\leq H\), this tail majorant is
+uniform; the remaining zero terms are finite and continuous.
+For primes, \(\min\{n/X,X/n\}\leq B/n\) on the same compact set,
+so \(B(\log n)n^{-3/2}\) is a summable majorant, independent of \(t\).
+Every term is continuous even at \(X=n\). The Weierstrass criterion
+and dominated convergence prove the assertions. In particular no
+principal-value ordering of the final zero series is required.
+\end{proof}
+
+\begin{lemma}[\texttt{PAIR-EF-MELLIN-001}]\label{lem:ef-mellin}
+For \(y>0\),
+\begin{equation}\label{eq:mellin}
+ k(y):=\frac1{2\pi\ii}\int_{2-\ii\infty}^{2+\ii\infty}
+          \frac{2y^w}{w^2-1}\dd w
+ =\begin{cases}y-y^{-1},&y>1,\\0,&0<y\leq1.\end{cases}
+\end{equation}
+The integral converges absolutely, including at \(y=1\).
+\end{lemma}
+\begin{proof}
+On \(\Re w=2\) the integrand is \(O_y((1+|\Im w|^2)^{-1})\).
+For \(y>1\), move the line to \(\Re w=-R\), \(R\geq2\),
+crossing residues \(y\) and \(-y^{-1}\) at \(1\) and \(-1\).
+First send the horizontal heights to infinity with \(R\) fixed;
+each horizontal integral is \(O_{y,R}(V^{-2})\). The new vertical
+integral is \(O(y^{-R}/R)\), since
+\(\lvert w^2-1\rvert\geq(R-1)^2+(\Im w)^2\).
+Then send \(R\to\infty\). For \(0<y<1\), moving right crosses
+no pole and the vertical bound is \(O(y^R/R)\).
+At \(y=1\), moving right again gives \(O(1/R)\); thus the value
+is zero. Equivalently the two left residues would cancel exactly.
+These steps prove the formula without an endpoint half-weight.
+\end{proof}
+
+\section{The exact identity and its endpoints}
+
+\begin{proposition}[\texttt{PAIR-EF-EXACT-001}]\label{prop:ef-exact}
+Let \(s=1/2+\ii t\). For every \(X\geq1\), \(t\in\mathbb R\),
+\begin{equation}\label{eq:exact}
+ \ZS(X,t)=-\PS(X,t)-X^{-1}\ZL(s-1)+\EP(X,t)+\ET(X,t),
+\end{equation}
+where
+\begin{align}
+ \EP(X,t)&=\frac{2X^{1-s}}{s(2-s)}
+       =\frac{2X^{1/2-\ii t}}{(1/2+\ii t)(3/2-\ii t)},
+       \label{eq:pole}\\
+ \ET(X,t)&=2\sum_{m\geq1}
+ \frac{X^{-2m-s}}{(2m+s-1)(2m+s+1)}.\label{eq:trivial}
+\end{align}
+The trivial-zero series also converges absolutely and locally uniformly
+on \([1,\infty)\times\mathbb R\).
+\end{proposition}
+\begin{proof}
+\textit{Right-line integral.}
+Fix first \(X>1\), \(t\in\mathbb R\), and define
+\[
+ K(z)=\frac{2X^{z-s}}{(z-s)^2-1},\qquad
+ J=\frac1{2\pi\ii}\int_{5/2-\ii\infty}^{5/2+\ii\infty}
+                    -\ZL(z)K(z)\dd z.
+\]
+There are no poles on this line. The Euler series gives a product
+majorant \(2X^2\sum_n\Lambda(n)n^{-5/2}
+/\lvert(2+\ii(v-t))^2-1\rvert\), integrable in \(v\).
+Fubini therefore permits termwise integration. Set \(w=z-s\);
+this is a shift of the vertical parameter by \(t\), justified by
+absolute convergence. Lemma~\ref{lem:ef-mellin} yields
+\begin{equation}\label{eq:right-line}
+ J=\sum_{n\geq1}\Lambda(n)n^{-s}k(X/n)
+  =\sum_{n\leq X}\Lambda(n)n^{-s}(X/n-n/X).
+\end{equation}
+The last sum is finite, and its endpoint term is zero.
+
+\textit{Contours and bounds.}
+For an integer \(M\geq1\) take the left line \(\Re z=-a\),
+\(a=2M+1\), and horizontal sides at \(\pm U_j\) supplied by
+\texttt{ZETA-CONTOUR-001}. Choose \(j\) large enough that
+\(U_j>2(|t|+2)\). The rectangle is oriented with the right side
+upward. In \(-1\leq\Re z\leq2\) the logarithmic derivative is
+\(O(\log^2 U_j)\). On \(2\leq\Re z\leq5/2\) its Euler series
+is bounded absolutely. On \(-a\leq\Re z\leq-1\), Lemma 12.4
+applies on these horizontal sides and gives \(O_M(\log U_j)\).
+Since \(|X^{z-s}|\leq X^2\) and the kernel denominator has size
+\(\gg U_j^2\), both horizontal contributions satisfy
+\begin{equation}\label{eq:horizontal-error}
+ E_{\mathrm{height}}=O_{X,t,M}(\log^2 U_j/U_j^2)\longrightarrow0.
+\end{equation}
+This limit is taken with \(X,t,M\) fixed.
+
+On the left line every trivial zero is at distance at least one.
+Lemma 12.4 bounds its logarithmic derivative by
+\(C\log(a+|v|+2)\), with \(C\) independent of \(M,v\).
+Factoring the kernel denominator bounds it below by
+\((a-1/2)^2+(v-t)^2\). Hence the whole left-line integral is at most
+\begin{align}
+ |E_{\mathrm{left}}|
+ &\ll X^{-a-1/2}
+ \int_{\mathbb R}\frac{\log(a+|v|+2)}{(a-1/2)^2+(v-t)^2}\dd v
+ \notag\\
+ &\ll X^{-a-1/2}\frac{\log(a+|t|+2)}{a}.
+ \label{eq:left-error}
+\end{align}
+For the second inequality use \(v=t+(a-1/2)y\),
+\(a+|v|+2\leq(a+|t|+2)(1+|y|)\), and the finiteness of
+\(\int_{\mathbb R}\log(1+|y|)/(1+y^2)\dd y\).
+After \(j\to\infty\), send \(M\to\infty\), with \(X,t\) fixed.
+The bound \eqref{eq:left-error} tends to zero.
+
+\textit{Residues.}
+The residues of \(-\ZL(z)K(z)\) are as follows; at a nontrivial
+zero its multiplicity multiplies the listed value.
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Location & Residue \\
+\midrule
+\(z=\rho\) & \(2X^{\rho-s}/(1-(\rho-s)^2)\) \\
+\(z=1\) & \(-\EP(X,t)\) \\
+\(z=-2m\) & \(-2X^{-2m-s}/((2m+s)^2-1)\) \\
+\(z=s+1\) & \(-X\ZL(s+1)\) \\
+\(z=s-1\) & \(X^{-1}\ZL(s-1)\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+There are no coincidences: \(\Re(s+1)=3/2\) and
+\(\Re(s-1)=-1/2\) avoid all zeta zeros and its pole, for every
+real \(t\). Zeta is regular and nonzero at zero, so it supplies no
+additional residue. Also
+\(1-(\rho-s)^2=1+((t-\gamma)+\ii\delta_\rho)^2\).
+The nontrivial-zero residues converge absolutely by
+Lemma~\ref{lem:ef-convergence}. For the trivial residues,
+\begin{equation}\label{eq:trivial-majorant}
+ |(2m+s-1)(2m+s+1)|
+ =\sqrt{((2m-1/2)^2+t^2)((2m+3/2)^2+t^2)}
+ \geq m^2+t^2.
+\end{equation}
+Thus their absolute values are at most \(2/m^2\), uniformly for
+\(X\geq1\) and real \(t\). This proves the claimed local uniform
+convergence and justifies the residue limit as \(M\to\infty\).
+The residue theorem now gives
+\[
+ J=\ZS-\EP-\ET-X\ZL(s+1)+X^{-1}\ZL(s-1).
+\]
+By \eqref{eq:euler-derivative} and \eqref{eq:right-line},
+\[
+ J+X\ZL(s+1)
+ =-X^{-1}\sum_{n\leq X}\Lambda(n)n^{1-s}
+   -X\sum_{n>X}\Lambda(n)n^{-1-s}=-\PS(X,t).
+\]
+This proves \eqref{eq:exact} for every \(X>1\), including prime powers.
+
+\textit{Endpoint conventions and limit order.}
+If \(X=n=p^k\), the coefficient \(X/n-n/X\) in \(J\) is zero.
+Any common endpoint convention \(\theta\in[0,1]\), including
+the Perron convention \(\theta=1/2\), multiplies this zero by
+\(\theta\). After combining with the full Euler series, the coefficient
+in \(-\PS\) is \(-1\), so the prime-power term is counted once.
+The \(\min\) weight is continuous through every prime power, as are
+all terms of \eqref{eq:exact}; the local majorants above justify
+continuity of the sums.
+
+Finally let \(X\downarrow1\), with \(t\) fixed or in a fixed compact
+interval. The majorants of Lemma~\ref{lem:ef-convergence} and
+\eqref{eq:trivial-majorant} justify dominated convergence.
+The remaining terms are continuous, since \(s-1=-1/2+\ii t\) meets
+no zero or pole of zeta. This proves the identity at \(X=1\).
+The order used was: fixed \(X>1,t,M\); \(U_j\to\infty\);
+then \(M\to\infty\); then \(X\downarrow1\).
+No claim of uniformity of \eqref{eq:horizontal-error} in unbounded
+\(X,t\) is needed for this exact identity.
+\end{proof}
+
+\section{Uniform estimates: the reconstructed lemma}
+
+\begin{lemma}[\texttt{PAIR-EF-001}; BGSTB Lemma 1]\label{lem:pair-ef}
+Uniformly for \(X\geq1\), \(t\in\mathbb R\),
+\begin{align}
+ \ZS(X,t)={}&-\PS(X,t)+X^{-1}\log(|t|+2)
+       +\EA(X,t)+\ED(X,t)+\EP(X,t)+\ET(X,t),
+       \label{eq:budget}\\
+ |\EA(X,t)|&\leq C_{\rm arch}X^{-1},\qquad
+ |\ED(X,t)|\leq C_{\rm DS}X^{-1},\notag\\
+ |\EP(X,t)|&\leq\frac{4X^{1/2}}{1+t^2},\qquad
+ |\ET(X,t)|\leq\frac{12X^{-5/2}}{|t|+2},\label{eq:error-bounds}
+\end{align}
+where the constants are effective and independent of \(X,t\).
+Here \(\EP,\ET\) are the exact terms above and
+\begin{align}
+ \EA(X,t)&=X^{-1}\left(-\frac{\chi'}{\chi}(-1/2+\ii t)
+                               -\log(|t|+2)\right),\notag\\
+ \ED(X,t)&=X^{-1}\ZL(3/2-\ii t).\label{eq:arch-ds}
+\end{align}
+In particular this is precisely the error structure of
+\cite[Lemma 1, (2.2)]{BGSTB2024} after combining the first two remainders.
+\end{lemma}
+\begin{proof}
+Logarithmic differentiation of the functional equation on
+\(w=-1/2+\ii t\), where all factors are finite and nonzero, gives
+\[
+ -\ZL(w)=-\frac{\chi'}{\chi}(w)+\ZL(1-w),\qquad
+ -\frac{\chi'}{\chi}(w)
+ =-\log(2\pi)-\frac\pi2\cot(\pi w/2)+\psi(1-w).
+\]
+No branch of \(\log\zeta\) is needed for these logarithmic
+derivatives. On this line
+\(\lvert\cot(-\pi/4+\ii\pi t/2)\rvert=1\), as follows by taking
+the moduli of sine and cosine. Put \(z=3/2-\ii t\), \(r=|t|\).
+The principal argument has modulus at most \(\pi/2\), and
+\[
+ \tfrac12\leq\frac{\sqrt{r^2+9/4}}{r+2}\leq1.
+\]
+Consequently \(\lvert\log z-\log(r+2)\rvert\leq\log2+\pi/2\).
+Using \eqref{eq:psi-bound} proves the archimedean bound, for example with
+\(C_{\rm arch}=\log(2\pi)+\pi+\log2+2C_\psi/3\).
+This argument includes \(t=0\) and bounded \(t\), without an
+asymptotic substitution \(\log|t|\) at zero.
+
+Absolute convergence of the Euler series gives
+\(C_{\rm DS}=\sum_{n\geq2}\Lambda(n)n^{-3/2}\leq
+\sum_{n\geq2}(\log n)n^{-3/2}<\infty\).
+For example the latter can be bounded effectively by its first terms
+and an elementary integral; no prime number theorem is required.
+Since
+\(\sqrt{(t^2+1/4)(t^2+9/4)}\geq(1+t^2)/2\),
+\eqref{eq:pole} gives the stated pole bound.
+From \eqref{eq:trivial-majorant},
+\[
+ |\ET(X,t)|\leq2X^{-5/2}\sum_{m\geq1}\frac1{m^2+r^2}.
+\]
+If \(0\leq r\leq1\), the sum is at most
+\(1+\int_1^\infty v^{-2}\dd v=2\), so twice the sum is at most
+\(4\leq12/(r+2)\).
+If \(r\geq1\), monotonicity gives
+\(\sum_{m\geq1}(m^2+r^2)^{-1}\leq
+\int_0^\infty(v^2+r^2)^{-1}\dd v=\pi/(2r)\).
+Then \(\pi/r\leq3\pi/(r+2)\leq12/(r+2)\).
+These estimates prove \eqref{eq:error-bounds}; all constants are
+independent of the contour parameters, which have already been removed.
+Combining only now the two \(X^{-1}\) errors gives
+\[
+ \ZS=-\PS+X^{-1}\bigl(\log(|t|+2)+O(1)\bigr)
+ +O\!\left(\frac{X^{1/2}}{1+t^2}\right)
+ +O\!\left(\frac{X^{-5/2}}{|t|+2}\right).
+\]
+\end{proof}
+
+\section{Checks and scope of the audit}\label{sec:checks}
+
+The zero-side denominator is at least \(3/4\) in modulus when
+\(t=\gamma\); no exceptional real \(t\) is excluded.
+Conjugation of the full zero sum and reindexing \(\rho\mapsto\bar\rho\)
+give \(\ZS(X,-t)=\overline{\ZS(X,t)}\), and every exact term on the
+right has the same symmetry. The reflection \(\rho\mapsto1-\bar\rho\)
+preserves multiplicity and the strip bound used in all zero estimates;
+it reindexes the sum with \(\delta_\rho\mapsto-\delta_\rho\), and
+does not assert equality of individual summands. As a separate check
+under assumption \texttt{RH}, the zero side reduces to
+\(\sum_\gamma 2X^{\ii(\gamma-t)}/(1+(t-\gamma)^2)\), with
+multiplicity. RH is not used elsewhere.
+
+The rational kernel is exactly the subtraction in the source's argument:
+for \(r=\rho-s\),
+\[
+ \frac1{1-r}-\frac1{-1-r}=\frac2{1-r^2}.
+\]
+This proof therefore establishes the combined identity directly, without
+assigning absolute convergence to either separate Landau zero series.
+There is no Fourier transform or mean-spacing rescaling in this lemma.
+
+All local statements have status \texttt{proved-draft}. The imported
+analytic inputs are identified above, the sum/integral exchanges are
+justified within the proof, and no numerical result is used in it.
+Independent mathematical review, comparison with the final journal
+version, and reconstruction of the remaining pair-method lemmas remain
+pending. A finite arithmetic regression script checks the elementary
+kernel and endpoint algebra; it does not certify any analytic estimate.
+
+\bibliographystyle{plain}
+\bibliography{../research/literature}
+\end{document}
