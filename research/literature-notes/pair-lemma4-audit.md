@@ -166,7 +166,10 @@ pending. The [quantitative zero-free-region source](korobov-vinogradov-audit.md)
 has now been verified, and `PAIR-ENVELOPE-001` derives
 \(B(Z)<1/2-\nu_{\rm KV}(Z)\) for \(Z\geq3\), explicitly covering
 \(0<|\gamma|<3\) with a published low-height theorem.
-The next step is the uniform \(O(T)+O(X)\) comparison for
-\(1\leq X\leq T\), followed by the prime-side mean square and assembly
-of the full pair theorem. The additional computational dependencies belong
-to the envelope claim; the Lemmas 2/4 proof above is unchanged.
+`PAIR-COMPARE-001` now gives the uniform \(O(T)+O(X)\) comparison
+for \(T\geq3\), \(1\leq X\leq T\). Its analytic absorption bound is
+effective at every height in that range, and it retains the direct
+\(3\leq T<5\) argument. The prime-side mean square and assembly of the
+full pair theorem come next. The envelope and comparison claims retain
+their external computational dependencies; the Lemmas 2/4 proof above
+is unchanged.

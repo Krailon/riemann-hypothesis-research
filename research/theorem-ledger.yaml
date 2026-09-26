@@ -37,10 +37,11 @@ source_nodes:
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Proof of Theorem 1, Korobov-Vinogradov bound before (2.18)"
-    audit_status: finite_height_envelope_draft_application_pending
+    audit_status: reconstructed_draft
     verified_input_claim: ZETA-KV-001
     envelope_claim: PAIR-ENVELOPE-001
-    notes: "MTY2024 Theorem 1.1 and PT2021 supply the published inputs to the proved-draft finite-height envelope. The uniform O(T)+O(X) application before BGSTB (2.18) remains pending; this source node is not a completed local reconstruction."
+    local_claim: PAIR-COMPARE-001
+    notes: "The finite-height envelope and uniform O(T)+O(X) comparison are reconstructed as proved-draft claims using published MTY2024 and PT2021 inputs. Independent review and BGSTB journal comparison remain pending; the upstream computational proofs have not been replayed."
   - id: BGSTB-MEAN
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
@@ -84,7 +85,7 @@ claims:
       - PAIR-NORM-001
       - PAIR-POSITIVITY-001
       - PAIR-TRUNC-001
-      - BGSTB-ZFR
+      - PAIR-COMPARE-001
       - BGSTB-MEAN
     dependency_graph_complete: false
     source:
@@ -97,7 +98,7 @@ claims:
       publication_doi: 10.4064/aa230612-20-3
     constants_effective: null
     all_limit_interchanges_justified: null
-    computation_used_in_proof: false
+    computation_used_in_proof: true
     certificate_artifact_hash: null
     limit_order: "T -> infinity uniformly over alpha in [0,1]."
     project_audit:
@@ -109,14 +110,16 @@ claims:
       rh_contamination_audit: pending
       effectivity_audit: pending
       interchange_audit: pending
-      numerical_certification: not_applicable
+      numerical_certification: no_project_certificate
+      computational_provenance: "The reconstructed dependency PAIR-COMPARE-001 uses published computer-assisted zero-free-region and low-height inputs. This flag records that dependency; no local certificate or replay is claimed."
       notes: |
         Published status records the external work, not a completed project
         proof audit. Lemmas 1-4 now depend on local proved-draft claims;
         Lemma 2 retains Riemann-von Mangoldt as a stated imported input.
         The quantitative zero-free-region source is verified as ZETA-KV-001;
-        PAIR-ENVELOPE-001 derives its finite-height envelope. The uniform
-        O(T)+O(X) application and the prime mean square remain pending.
+        PAIR-ENVELOPE-001 derives its finite-height envelope, and
+        PAIR-COMPARE-001 proves the uniform O(T)+O(X) comparison in draft.
+        The prime mean square and full theorem assembly remain pending.
         The source's conditional Theorems 2-3 are not imported.
 
   - id: PAIR-TRANSLATION-001
@@ -479,7 +482,7 @@ claims:
       interchange_audit: pending_upstream_proof_review
       independent_verification: pending
       local_certificate_replay: not_performed
-      finite_height_application: "Envelope reconstructed as PAIR-ENVELOPE-001; uniform error comparison pending."
+      finite_height_application: "Envelope reconstructed as PAIR-ENVELOPE-001; uniform error comparison reconstructed as PAIR-COMPARE-001. Both are proved-draft."
       source_structure_checks: "Unique YAML keys/IDs, dependency resolution/acyclicity, exact rational constant, provenance flags, labels, citations, local links and whitespace checked on 2026-09-26."
       compilation: passed_pdflatex_bibtex
       compilation_notes: "Combined draft built on 2026-09-26: 14 pages, all citations/references resolved, no final-pass warnings or overfull/underfull boxes."
@@ -565,11 +568,58 @@ claims:
       local_certificate_replay: not_performed
       interchange_audit: "No local interchange is needed; upstream audits remain as recorded in the imported claims."
       independent_verification: pending
-      uniform_error_application: pending
+      uniform_error_application: "Reconstructed as PAIR-COMPARE-001; independent review pending."
       regression_checks: "All 28 existing exact checks passed on 2026-09-26; no new numerical algorithm or proof certificate."
       source_structure_checks: "Unique YAML keys and 19 claim IDs, dependency resolution/acyclicity including source links, labels, references, bibliography keys, local links, exact rational bound and provenance flags checked on 2026-09-26."
       compilation: passed_pdflatex_bibtex
       compilation_notes: "Combined draft built on 2026-09-26: 15 pages, all citations/references resolved, no final-pass warnings or overfull/underfull boxes."
+
+  - id: PAIR-COMPARE-001
+    title: Uniform comparison of the zero-side squared norm and pair sum
+    kind: lemma
+    statement: |
+      With L and Phi as in PAIR-TRUNC-001, uniformly for real T>=3
+      and 1<=X<=T,
+      L(X,T)=2 pi Phi(X,T)+O(T)+O(X),
+      with absolute effective implied constants. Both X endpoints are
+      included; zero occurrences retain full endpoint weight and multiplicity.
+      More explicitly, put Z_*=T log(T)^2 and nu=nu_KV(Z_*).
+      Then X^(1-2nu)log(T)^3 <= C_* T, where C_*=18!*84^18.
+      This is an auxiliary absorption constant, not the complete implied
+      constant of the comparison. For T>=5 the named Lemma 4 errors obey
+      E_trunc=O(X), E_height=O(T), E_extension=O(T), E_extension<=0.
+      For 3<=T<5 the existing direct comparison is O(X).
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-TRUNC-001, PAIR-ENVELOPE-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-compare
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Theorem 1 proof, equation (2.18)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Pointwise finite T and X throughout; estimates uniform on T>=3, 1<=X<=T. No new sum/integral/limit interchange."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Positive exponent gives monotonicity in X; elementary logarithm bounds and a finite Taylor lower bound absorb the logarithmic loss with an explicit constant."
+      endpoint_audit: "X=1 and X=T included; absorption valid at T=3; Lemma 4 named errors used only for T>=5 and its direct bounded-height argument for 3<=T<5."
+      error_audit: "Keep truncation O(X) separate from height and extension O(T); preserve the 2 pi normalization and extension sign."
+      rh_contamination_audit: "Uses only the unconditional truncation and established finite-height envelope; no new substitution for beta or assumption of simplicity."
+      computational_provenance: "True records inherited published computer-assisted inputs through PAIR-ENVELOPE-001. The local comparison is analytic; its auxiliary constant needs no numerical evaluation or certificate."
+      local_computation_used_in_proof: false
+      local_certificate_replay: not_performed
+      interchange_audit: "No new interchange; prior local justifications and upstream pending audits retain their recorded scope."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+      regression_checks: "All 28 existing exact regression checks passed on 2026-09-26; the auxiliary exponents and coarse constant were checked with exact rational arithmetic. These are algebra checks, not analytic proof certificates."
+      source_structure_checks: "Unique YAML keys and 20 claim IDs, dependency resolution/acyclicity including source links, labels, citations, references, local links and computational provenance checked on 2026-09-26."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built on 2026-09-26: 16 pages, resolved citations/references, no final-pass warnings or overfull/underfull boxes."
 
   - id: PAIR-NORM-INTEGRAL-001
     title: Complex rational integral including coincident poles

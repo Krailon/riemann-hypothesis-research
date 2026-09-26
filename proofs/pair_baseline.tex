@@ -993,6 +993,91 @@ this choice of \(\eta\) is admissible throughout the final range of
 Lemma~\ref{lem:pair-trunc}.
 \end{proof}
 
+\section{Uniform comparison on the pair-theorem range}
+
+\begin{lemma}[\texttt{PAIR-COMPARE-001}]\label{lem:pair-compare}
+Uniformly for \(T\geq3\) and \(1\leq X\leq T\),
+\begin{equation}\label{eq:pair-compare}
+ L(X,T)=2\pi\Phi(X,T)+O(T)+O(X),
+\end{equation}
+with absolute effective implied constants. Both endpoints in \(X\)
+are included, and the zero sums retain the endpoint and multiplicity
+conventions of Lemma~\ref{lem:pair-trunc}.
+More explicitly, for \(Z_*=T\log^2T\),
+\begin{equation}\label{eq:compare-absorption}
+ X^{1-2\nu_{\rm KV}(Z_*)}\log^3T
+ \leq C_*T,\qquad C_*=18!\,84^{18}.
+\end{equation}
+The constant \(C_*\) bounds this auxiliary expression; the constants in
+\eqref{eq:pair-compare} also include those of Lemma~\ref{lem:pair-trunc}.
+\end{lemma}
+\begin{proof}
+Put \(y=\log T>1\), \(z=\log Z_*=y+2\log y>1\), and
+\(\nu=\nu_{\rm KV}(Z_*)\). Lemma~\ref{lem:pair-envelope} gives
+\(0<\nu<1/2\). Thus \(X\mapsto X^{1-2\nu}\) is increasing and
+\begin{equation}\label{eq:compare-x-uniform}
+ X^{1-2\nu}\log^3T
+ \leq T^{1-2\nu}y^3=T y^3e^{-2\nu y}
+ \qquad(1\leq X\leq T).
+\end{equation}
+
+We bound the last factor for every \(T\geq3\).
+Since \(\log y\leq y\), one has \(z\leq3y\).
+For \(v\geq1\), the derivative of \(\sqrt v-\log v\) is
+\((\sqrt v-2)/(2v)\), so its minimum occurs at \(v=4\).
+That minimum is \(2-2\log2>0\), since
+\(\log2=\int_1^2t^{-1}\dd t<1\).
+In particular \(\log z\leq\sqrt z\).
+Using the exact coefficient \(c_{\rm KV}=55241/1000<56\) gives
+\begin{equation}\label{eq:compare-decay}
+ 2\nu y
+ =\frac{2y}{c_{\rm KV}z^{2/3}(\log z)^{1/3}}
+ \geq\frac{2y}{c_{\rm KV}z^{5/6}}
+ \geq\frac{2}{c_{\rm KV}3^{5/6}}y^{1/6}
+ \geq\frac{y^{1/6}}{84}.
+\end{equation}
+All quantities raised to fractional powers are positive.
+For \(r=y^{1/6}/84>0\), Taylor's theorem with nonnegative remainder
+gives \(e^r\geq r^{18}/18!\). Therefore
+\[
+ y^3e^{-2\nu y}\leq y^3e^{-r}
+ =84^{18}r^{18}e^{-r}\leq18!\,84^{18}=C_*.
+\]
+This proves \eqref{eq:compare-absorption} without a numerical evaluation
+or an unspecified sufficiently-large threshold.
+
+Lemma~\ref{lem:pair-trunc}, the envelope
+\(2B(Z_*)\leq1-2\nu\), and \(X\geq1\) yield
+\[
+ L(X,T)-2\pi\Phi(X,T)
+ =O\bigl(X^{1-2\nu}\log^3T\bigr)+O(X).
+\]
+Applying \eqref{eq:compare-absorption} proves
+\eqref{eq:pair-compare}. To retain the separate error accounting,
+when \(T\geq5\) the cutoff satisfies \(Z_*\geq2T\), and
+Lemma~\ref{lem:pair-trunc} gives
+\[
+ \ELtr=O(X),\qquad
+ \ELh=O(C_*T),\qquad
+ \ELext=O(C_*T),\qquad \ELext\leq0.
+\]
+Here \(\log^2T\leq\log^3T\) absorbs the extension error, and
+\(\log Z_*\leq3\log T\) controls the truncation error.
+For \(3\leq T<5\), use the direct
+\(L-2\pi\Phi=O(X)\) argument already proved in
+Lemma~\ref{lem:pair-trunc}; no assertion \(Z_*\geq2T\) is needed there.
+Thus \(T=3\), the transition at \(T=5\), and \(X=1,T\) are all covered.
+The constants are independent of \(X,T\), and all estimates are
+pointwise at finite parameters. No new sum/integral/limit interchange,
+RH assumption, simplicity assumption, or substitution for \(\beta\)
+enters this deduction.
+\end{proof}
+
+Equation~\eqref{eq:pair-compare} reconstructs
+\cite[(2.18)]{BGSTB2024}, with the locator referring to
+arXiv:2306.04799v1. The prime-side mean square needed to assemble
+the pair-correlation asymptotic remains to be reconstructed.
+
 \section{Checks and scope of the audit}\label{sec:checks}
 
 The zero-side denominator is at least \(3/4\) in modulus when
@@ -1040,13 +1125,14 @@ All local statements have status \texttt{proved-draft}. The imported
 analytic inputs are identified above and the local sum/integral exchanges
 are justified within the proof. The local Lemmas 1--4 reconstruction
 uses no numerical result. The finite-height envelope
-\texttt{PAIR-ENVELOPE-001} additionally uses the published inputs
+\texttt{PAIR-ENVELOPE-001} and the uniform comparison
+\texttt{PAIR-COMPARE-001} additionally use the published inputs
 \texttt{ZETA-KV-001} and \texttt{ZETA-LOW-001}, with their external
 computational dependencies. No local numerical certificate or
 independent replay is claimed for those inputs.
 Independent mathematical review, comparison with the final journal
-version of BGSTB, the uniform \(O(T)+O(X)\) comparison for \(1\leq X\leq T\),
-and the prime-side mean square remain pending. Finite arithmetic regression scripts check
+version of BGSTB, and the prime-side mean square remain pending.
+Finite arithmetic regression scripts check
 the elementary kernel, endpoint, residue, reindexing and truncation
 algebra; they do not certify any analytic estimate.
 

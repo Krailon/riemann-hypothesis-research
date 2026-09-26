@@ -131,7 +131,7 @@ remains pending. Source IDs and local claim IDs are linked in the ledger.
 | `BGSTB-COUNT` | Lemma 2, (2.4)–(2.5) | Inclusive and local counts reconstructed as `PAIR-COUNT-001`; kernel bounds in `PAIR-COUNT-KERNEL-001`. See the [counting and truncation audit](pair-lemma4-audit.md). |
 | `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Reconstructed as `PAIR-NORM-001`, with integral and positivity claims; see the [contour and multiplicity audit](pair-lemma3-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Reconstructed as `PAIR-TRUNC-001` with three named errors and a separate small-height argument; see the [audit](pair-lemma4-audit.md). Independent review and journal comparison pending. |
-| `BGSTB-ZFR` | Theorem 1 proof, before (2.18) | Published KV and low-height inputs give the finite-height envelope `PAIR-ENVELOPE-001`; see the [audit](korobov-vinogradov-audit.md). The uniform \(O(T)+O(X)\) application for \(1\leq X\leq T\) remains pending. |
+| `BGSTB-ZFR` | Theorem 1 proof, (2.18) | Reconstructed as `PAIR-COMPARE-001`, using the finite-height envelope `PAIR-ENVELOPE-001` and published KV/low-height inputs; see the [audit](korobov-vinogradov-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstruct the prime-side mean square, including prime powers and cross terms; verify the cited Goldston–Montgomery Lemma 6 refinement and endpoint \(X=T\). |
 
 The last row is an unresolved citation chain, not permission to use an
@@ -162,7 +162,12 @@ independently reconstructed or its computations replayed.
 low-ordinate range through the published input `ZETA-LOW-001`.
 It checks monotonicity, both signs, endpoints, multiplicity, and the empty
 zero set. External computational provenance is retained in the ledger.
-**Next bounded proof task:** derive the uniform \(O(T)+O(X)\)
-comparison of \(L(X,T)\) and \(2\pi\Phi(X,T)\)
-for \(1\leq X\leq T\). The prime-side mean square follows afterward.
+**Completed uniform comparison draft:** `PAIR-COMPARE-001` proves
+\(L(X,T)=2\pi\Phi(X,T)+O(T)+O(X)\), uniformly for \(T\geq3\) and
+\(1\leq X\leq T\), with effective constants and all endpoints covered.
+It keeps truncation separate from the height and extension errors and
+inherits the recorded external computational provenance.
+**Next task:** reconstruct the prime-side mean square, including the
+Goldston–Montgomery Lemma 6 input, prime powers, cross terms, and uniformity
+at \(X=T\). Full theorem assembly follows that calculation.
 The pair-correlation asymptotic itself remains an imported theorem.

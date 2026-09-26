@@ -2,7 +2,8 @@
 
 Task: proof, exposition and source verification. Assumptions: `UNCONDITIONAL`.
 Claims: `ZETA-KV-001` and `ZETA-LOW-001`, imported `published`
-theorems; `PAIR-ENVELOPE-001`, a local `proved-draft` lemma.
+theorems; `PAIR-ENVELOPE-001` and `PAIR-COMPARE-001`, local
+`proved-draft` lemmas.
 The project has checked the statement and inspected its proof structure;
 independent proof reconstruction and computational replay are pending.
 See the [ledger](../theorem-ledger.yaml) and
@@ -130,12 +131,54 @@ Its local proof is analytic; its ledger computational flag is true
 because it depends on published computer-assisted inputs. No local
 certificate, replay, or independent proof check is claimed.
 
-The `BGSTB-ZFR` source node has status
-`finite_height_envelope_draft_application_pending`, linked to both
-`ZETA-KV-001` and `PAIR-ENVELOPE-001`.
-The next step is the uniform \(O(T)+O(X)\) comparison of \(L(X,T)\)
-with \(2\pi\Phi(X,T)\) for \(1\leq X\leq T\). That application remains
-pending, so the full pair theorem retains its unfinished dependency.
+## Uniform comparison — PAIR-COMPARE-001
+
+The manuscript's `lem:pair-compare` derives, uniformly for
+\(T\geq3\) and \(1\leq X\leq T\),
+\[
+ L(X,T)=2\pi\Phi(X,T)+O(T)+O(X).
+\]
+This reconstructs [BGSTB, arXiv:2306.04799v1, (2.18)](https://arxiv.org/html/2306.04799v1#S2),
+the **PREPRINT version of the published work**. Final journal comparison
+and independent review remain pending.
+
+Put \(Z_*=T\log^2T\), \(\nu=\nu_{\rm KV}(Z_*)\), \(y=\log T>1\),
+and \(z=\log Z_*=y+2\log y>1\). Since \(0<1-2\nu<1\),
+\[
+ X^{1-2\nu}\log^3T\leq T y^3e^{-2\nu y}.
+\]
+The proof establishes \(z\leq3y\) and \(\log z\leq\sqrt z\).
+For the second inequality, the minimum of \(\sqrt v-\log v\) on
+\([1,\infty)\) occurs at \(v=4\) and equals \(2-2\log2>0\).
+With \(c_{\rm KV}=55241/1000<56\), this gives
+\[
+ 2\nu y\geq
+ \frac{2}{c_{\rm KV}3^{5/6}}y^{1/6}\geq y^{1/6}/84.
+\]
+Taking \(r=y^{1/6}/84\) and using Taylor's theorem
+\(e^r\geq r^{18}/18!\), one obtains the global bound
+\[
+ y^3e^{-2\nu y}\leq18!\,84^{18}.
+\]
+This large auxiliary constant establishes effectivity; the full comparison
+also contains the effective constants from Lemma 4. No numerical evaluation,
+asymptotic threshold, or optimization enters the local argument.
+
+For \(T\geq5\), the existing cutoff condition \(Z_*\geq2T\) holds.
+Truncation contributes \(O(X)\), while height removal and integral
+extension each contribute \(O(T)\); the extension retains its nonpositive
+sign. For \(3\leq T<5\), the existing direct \(O(X)\) comparison supplies
+the claim. The bound therefore covers \(X=1\), \(X=T\), \(T=3\), and
+the transition at \(T=5\), preserving all zero endpoint and multiplicity
+conventions. No new limit interchange is needed.
+
+The `BGSTB-ZFR` source node now has status `reconstructed_draft`,
+linked to `PAIR-COMPARE-001` as its local claim. The full pair theorem's
+dependency list uses that claim and retains `BGSTB-MEAN` as unresolved.
+The comparison and the full theorem's reconstructed dependency chain carry
+the imported computational provenance; no local certificate or replay is
+claimed. The next task is the prime-side mean square, followed by assembly
+of the full pair asymptotic.
 
 ## Validation
 
@@ -164,3 +207,15 @@ and references, no final-pass warnings, and no overfull/underfull boxes.
 The build used pdfLaTeX, BibTeX, and two resolving LaTeX passes in an
 isolated temporary directory. Independent mathematical review remains
 pending.
+
+After adding the uniform comparison on 2026-09-26, all 28 existing
+regression checks passed again. Exact rational checks confirmed the
+auxiliary exponent identities \(2/3+(1/3)(1/2)=5/6\),
+\(1-5/6=1/6\), \(18/6=3\), and the coarse constant
+\(2/(56\cdot3)=1/84\). These checks supplement the analytic proof;
+they are not numerical certificates.
+Structure and provenance checks passed for all 20 claims, including the
+new comparison dependency in the full pair theorem and the preserved
+unresolved prime-side input. The combined PDF compiled to 16 pages with
+pdfLaTeX, BibTeX, and two resolving LaTeX passes; the final log has no
+warnings, unresolved references/citations, or overfull/underfull boxes.
