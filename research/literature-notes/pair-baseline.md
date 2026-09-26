@@ -121,14 +121,14 @@ exact: although it tends to one, changing normalization at the height
 ## 4. Inputs to reconstruct next
 
 The following source map records the remaining reconstruction work.
-Lemma 1 now has a local `proved-draft` reconstruction; independent review
+Lemmas 1 and 3 now have local `proved-draft` reconstructions; independent review
 remains pending. Source IDs and local claim IDs are linked in the ledger.
 
 | ID | Source locator | Role and outstanding check |
 | --- | --- | --- |
 | `BGSTB-EF` | Lemma 1, (2.2)–(2.3) | Reconstructed as `PAIR-EF-001`; see the [proof and endpoint audit](pair-lemma1-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-COUNT` | Lemma 2, (2.4)–(2.5) | Verify multiplicity-aware zero counting and local bounds used for tails. |
-| `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Check the squared-norm identity, contour shift and rational integral for nonzero \(\delta,\delta'\). |
+| `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Reconstructed as `PAIR-NORM-001`, with integral and positivity claims; see the [contour and multiplicity audit](pair-lemma3-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Audit height removal and tails at \(Z=T\log^2T\); retain \(X^{1-2\eta(Z)}\log^3T\) and \(O(X)\) separately. |
 | `BGSTB-ZFR` | Theorem 1 proof, before (2.18) | Locate a primary Korobov–Vinogradov bound and verify its use uniformly for \(1\leq X\leq T\). |
 | `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstruct the prime-side mean square, including prime powers and cross terms; verify the cited Goldston–Montgomery Lemma 6 refinement and endpoint \(X=T\). |
@@ -139,9 +139,13 @@ RH-dependent pair theorem. Work only on \(1\leq X\leq T\); v1's printed
 is undefined. The full dependency graph, named error budget, and RH
 contamination audit remain Work Package A tasks.
 
-**Completed local proof task:** Lemma 1 now has an exact contour identity,
+**Completed local proof tasks:** Lemma 1 now has an exact contour identity,
 absolute/local uniform convergence, prime-power and \(X=1\) conventions,
 and separately bounded remainders; see [the reconstruction](../../proofs/pair_baseline.tex).
-**Next bounded proof task:** reconstruct Lemma 3's squared-norm identity,
-including its contour shift for nonzero horizontal displacements. The
-pair-correlation asymptotic itself remains an imported theorem.
+Lemma 3 now has a squared-norm proof, an explicit integral tail bound,
+the off-line contour shift including coincident poles, and a
+multiplicity-preserving reflection argument. Its corollary proves reality,
+nonnegativity and evenness without the asymptotic theorem.
+**Next bounded proof task:** reconstruct Lemma 4's height truncation,
+including the needed Lemma 2 counting bounds and separate uniform errors.
+The pair-correlation asymptotic itself remains an imported theorem.

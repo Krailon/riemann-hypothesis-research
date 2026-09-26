@@ -21,7 +21,9 @@ source_nodes:
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Lemma 3; equations (2.6)-(2.8)"
-    audit_status: pending
+    audit_status: reconstructed_draft
+    local_claim: PAIR-NORM-001
+    notes: "Integral, contour shift, multiplicity and positivity reconstructed; independent review and final journal comparison pending."
   - id: BGSTB-TRUNC
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
@@ -60,7 +62,8 @@ claims:
     dependencies:
       - PAIR-EF-001
       - BGSTB-COUNT
-      - BGSTB-NORM
+      - PAIR-NORM-001
+      - PAIR-POSITIVITY-001
       - BGSTB-TRUNC
       - BGSTB-ZFR
       - BGSTB-MEAN
@@ -90,7 +93,7 @@ claims:
       numerical_certification: not_applicable
       notes: |
         Published status records the external work, not a completed project
-        proof audit. Lemma 1 now depends on the local PAIR-EF-001 draft.
+        proof audit. Lemmas 1 and 3 now depend on local proved-draft claims.
         The other section-2 source pointers await reconstruction.
         The source's conditional Theorems 2-3 are not imported.
 
@@ -404,3 +407,103 @@ claims:
       final_journal_text_comparison: pending
       compilation: unavailable_no_tex_toolchain
       notes: "All interchanges inside the reconstruction are justified. Upstream proofs of classical imported inputs are not fully reconstructed."
+
+  - id: PAIR-NORM-INTEGRAL-001
+    title: Complex rational integral including coincident poles
+    kind: lemma
+    statement: |
+      For every complex a with |Im(a)|<1, the integral over real u of
+      1/((1+u^2)(1+(u+a)^2)) converges absolutely and equals 2 pi/(4+a^2).
+      At a=0 its value is pi/2. For the upper semicircle of radius
+      R>=4(|a|+1), the integral over the arc has modulus <=16 pi/R^3.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:norm-integral
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, equation (2.7)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed a, then semicircle radius R -> infinity; a=0 evaluated separately."
+    project_audit:
+      task_type: proof
+      interchange_justification: "No sum interchange; absolute real integral and explicit vanishing arc bound."
+      independent_verification: pending
+
+  - id: PAIR-NORM-001
+    title: Unconditional squared-norm identity retaining horizontal displacements
+    kind: lemma
+    statement: |
+      For X>0 and T>=3 let I_T index every nontrivial zeta zero occurrence
+      rho_j=1/2+delta_j+i gamma_j with 0<gamma_j<=T, counting multiplicity.
+      Put N(T)=|I_T|, M_X=max(X^(1/2),X^(-1/2)),
+      V_{X,T}(t)=sum_{j in I_T} X^(delta_j+i gamma_j)
+                            /(1+((t-gamma_j)+i delta_j)^2),
+      Phi(X,T)=sum_{j,k in I_T} X^(rho_j-rho_k) 4/(4-(rho_j-rho_k)^2).
+      Powers use the real logarithm of X. All ordered pairs are included.
+      V is in L^2(R) and Phi(X,T)=(2/pi) integral_R |V_{X,T}(t)|^2 dt.
+      For R>=2(T+1), integral_{|t|>R}|V_{X,T}(t)|^2 dt
+      <= (512/27) M_X^2 N(T)^2/R^3.
+      The identity includes X=1, 0<X<1, repeated zeros, same-ordinate
+      distinct complex zeros, and all zero occurrences at gamma=T.
+      No RH, simplicity, or quantitative zero-counting estimate is used.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-NORM-INTEGRAL-001, ZETA-ANALYTIC-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-norm
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Lemma 3, equations (2.6)-(2.8)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed X,T and ordered pair; contour radius -> infinity; only a finite pair sum follows."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      interchange_justification: |
+        Each summand is bounded by 4 M_X/(3(1+(t-gamma_j)^2));
+        pair products are L^1 by Cauchy-Schwarz and the sum is finite.
+        For a=(gamma_j-gamma_k)-i(delta_j+delta_k), the strip between
+        Im(u)=delta_j and Im(u)=0 has no poles; the joining sides contribute
+        at most 16/R^4 for R>=4(|a|+1). Coincident poles a=0 are covered.
+      rh_contamination_audit: "Only strip location, discreteness and multiplicity-preserving reflection of zeros are imported; RH appears solely in a marked specialization check."
+      diagonal_audit: "Reflection reindexes the full occurrence sum, not its index or equal-complex-zero diagonals."
+      regression_checks: "11 exact Lemma 3 tests and 8 existing Lemma 1 tests passed on 2026-09-25; these are not proof certificates."
+      source_structure_checks: "Ledger dependencies, theorem labels, references, citations, local links, TeX structure and Python syntax passed."
+      compilation: unavailable_no_tex_toolchain
+      independent_verification: pending
+      final_journal_text_comparison: pending
+
+  - id: PAIR-POSITIVITY-001
+    title: Reality, nonnegativity and inversion symmetry of the full pair sum
+    kind: corollary
+    statement: |
+      With Phi as in PAIR-NORM-001, for every X>0,T>=3, Phi(X,T) is real
+      and nonnegative, and Phi(X^(-1),T)=Phi(X,T).
+      Therefore F_T(alpha)=Phi(T^alpha,T)/(T log(T)/(2 pi)) is real,
+      nonnegative and even for all real alpha. No asymptotic is used.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-NORM-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: cor:pair-positivity
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Exact at fixed X,T; finite index exchange only."
+    project_audit:
+      task_type: proof
+      proof_method: "Squared norm and exchange of the two indices using the even rational weight."
+      independent_verification: pending

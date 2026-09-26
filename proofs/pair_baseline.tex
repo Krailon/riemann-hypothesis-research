@@ -4,6 +4,7 @@
 \usepackage[hidelinks]{hyperref}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
 \newcommand{\dd}{\,\mathrm d}
 \newcommand{\ii}{\mathrm i}
 \newcommand{\ZL}{\frac{\zeta'}{\zeta}}
@@ -13,18 +14,21 @@
 \newcommand{\ET}{E_{\mathrm{trivial}}}
 \newcommand{\EA}{E_{\mathrm{arch}}}
 \newcommand{\ED}{E_{\mathrm{DS}}}
-\title{Pair baseline: reconstruction of the unconditional explicit-formula lemma}
+\newcommand{\VS}{\mathcal V}
+\title{Pair baseline: the explicit formula and squared-norm identity}
 \author{Research proof draft}
 \date{25 September 2026}
 \begin{document}
 \maketitle
 
 \noindent\textbf{Task: proof. Assumptions: \texttt{UNCONDITIONAL}.}
-This draft reconstructs \cite[Lemma 1, (2.2)]{BGSTB2024}, with locators
+This draft reconstructs \cite[Lemmas 1 and 3, (2.2), (2.6)--(2.8)]{BGSTB2024}, with locators
 referring to arXiv:2306.04799v1. It does not reconstruct the subsequent
-pair-correlation asymptotic. All nontrivial zeros
+pair-correlation asymptotic. In the explicit-formula series, all nontrivial zeros
 \(\rho=\beta+\ii\gamma=1/2+\delta_\rho+\ii\gamma\) are counted with
 multiplicity, including both signs of \(\gamma\).
+The squared-norm identity instead uses the finite index set \(I_T\)
+of zero occurrences with \(0<\gamma\leq T\), again with multiplicity.
 We never set \(\delta_\rho=0\) in the proof.
 Powers of positive real numbers use their real logarithms.
 Write \(\Lambda(p^k)=\log p\) for a prime \(p\) and \(k\geq1\),
@@ -376,6 +380,191 @@ Combining only now the two \(X^{-1}\) errors gives
 \]
 \end{proof}
 
+\section{The elementary integral for the squared norm}
+
+\begin{lemma}[\texttt{PAIR-NORM-INTEGRAL-001}]\label{lem:norm-integral}
+For \(a\in\mathbb C\) with \(|\Im a|<1\), the following integral
+converges absolutely:
+\begin{equation}\label{eq:norm-integral}
+ J(a)=\int_{\mathbb R}\frac{du}{(1+u^2)(1+(u+a)^2)}
+      =\frac{2\pi}{4+a^2}.
+\end{equation}
+In particular \(J(0)=\pi/2\).
+\end{lemma}
+\begin{proof}
+Put \(f_a(u)=((1+u^2)(1+(u+a)^2))^{-1}\).
+Its poles are \(\ii,-\ii,-a+\ii,-a-\ii\), none on the real axis.
+For \(|u|=R\geq4(|a|+1)\),
+\[
+ |1+u^2|\geq R^2/2,\qquad
+ |1+(u+a)^2|\geq R^2/8,\qquad |f_a(u)|\leq16/R^4.
+\]
+On the real line these bounds give an integrable tail; on compact
+intervals the integrand is continuous. Close \([-R,R]\) by the upper
+semicircle. Its integral has modulus at most \(16\pi/R^3\), hence
+vanishes as \(R\to\infty\) for fixed \(a\).
+For \(a\ne0\), the two upper poles \(\ii\) and \(-a+\ii\)
+are distinct, with residues
+\[
+ \frac1{2\ii(1+(a+\ii)^2)},\qquad
+ \frac1{2\ii(1+(-a+\ii)^2)}.
+\]
+The other two poles are in the lower half-plane because \(|\Im a|<1\).
+Multiplying the residue sum by \(2\pi\ii\) and using
+\[
+ \frac1{a(a+2\ii)}+\frac1{a(a-2\ii)}=\frac2{a^2+4}
+\]
+proves \eqref{eq:norm-integral} for \(a\ne0\). The excluded
+values \(a=\pm2\ii\) in this algebra are outside the stated strip.
+For \(a=0\) the poles coalesce, so use instead the antiderivative
+\[
+ \int\frac{du}{(1+u^2)^2}
+ =\frac{u}{2(1+u^2)}+\frac12\arctan u.
+\]
+Its limits give \(J(0)=\pi/2\), the same value as the right side of
+\eqref{eq:norm-integral}. This handles the double poles directly.
+\end{proof}
+
+\section{The squared-norm identity with horizontal displacement}
+
+Define \(N(T)=|I_T|\),
+\(M_X=\max(X^{1/2},X^{-1/2})\), and, for \(X>0\),
+\begin{align}
+ v_j(t)&=\frac{X^{\delta_j+\ii\gamma_j}}
+                  {1+((t-\gamma_j)+\ii\delta_j)^2},\qquad
+ \VS_{X,T}(t)=\sum_{j\in I_T}v_j(t),\label{eq:norm-vector}\\
+ w(z)&=\frac4{4-z^2},\qquad
+ \Phi(X,T)=\sum_{j,k\in I_T}X^{\rho_j-\rho_k}w(\rho_j-\rho_k).
+ \label{eq:norm-pair-definition}
+\end{align}
+Both definitions use all zero occurrences, with no diagonal exclusion.
+The set \(I_T\) is finite by the analytic structure of zeta on a compact
+rectangle; no quantitative zero-counting estimate is needed here.
+
+\begin{lemma}[\texttt{PAIR-NORM-001}; BGSTB Lemma 3]\label{lem:pair-norm}
+For every \(X>0\) and \(T\geq3\),
+\begin{equation}\label{eq:pair-norm}
+ \Phi(X,T)=\frac2\pi\int_{\mathbb R}|\VS_{X,T}(t)|^2\dd t.
+\end{equation}
+The integral is finite. For \(R\geq2(T+1)\) it satisfies the explicit
+tail estimate
+\begin{equation}\label{eq:norm-tail}
+ \int_{|t|>R}|\VS_{X,T}(t)|^2\dd t
+ \leq\frac{512}{27}\frac{M_X^2N(T)^2}{R^3}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+\textit{Integrability and finite expansion.}
+The elementary inequality \eqref{eq:denominator} uses only
+\(|\delta_j|<1/2\) and therefore also applies for \(0<X<1\).
+Since \(|X^{\delta_j+\ii\gamma_j}|\leq M_X\),
+\[
+ |v_j(t)|\leq\frac{4M_X}{3(1+(t-\gamma_j)^2)}.
+\]
+Consequently each \(v_j\) lies in \(L^2(\mathbb R)\); indeed
+\(\int|v_j|^2\leq(16/9)M_X^2J(0)=8\pi M_X^2/9\).
+Each \(v_j\overline{v_k}\) is integrable by Cauchy--Schwarz.
+The sum has finitely many terms, so expanding its squared modulus and
+integrating term by term is valid by linearity for integrable functions.
+For \(|t|>R\geq2(T+1)\), \(|t-\gamma_j|\geq|t|/2\), whence
+\[
+ |\VS_{X,T}(t)|^2\leq\frac{256M_X^2N(T)^2}{9t^4}.
+\]
+Integrating over both tails gives \eqref{eq:norm-tail}.
+This bound displays the dependence on \(X,T,N(T)\); no bound uniform
+as \(X\to0\), \(X\to\infty\), or \(T\to\infty\) is claimed.
+
+\textit{The integral for one ordered pair.}
+For fixed \(j,k\), set
+\[
+ d=\gamma_j-\gamma_k,\qquad h=\delta_j+\delta_k,\qquad
+ a=d-\ii h=-\ii(\rho_j+\overline{\rho_k}-1).
+\]
+Then \(|\Im a|=|h|<1\). In the integral of
+\(v_j\overline{v_k}\), substitute \(u=t-\gamma_j+\ii\delta_j\).
+This takes the real line to the line \(\Im u=\delta_j\), and gives
+\begin{equation}\label{eq:norm-shifted-line}
+ \int_{\mathbb R}v_j(t)\overline{v_k(t)}\dd t
+ =X^{h+\ii d}\int_{\mathbb R+\ii\delta_j}f_a(u)\dd u.
+\end{equation}
+Both line integrals are oriented toward increasing real part.
+The absolute convergence already established justifies translating the
+real parameter and choosing symmetric real endpoints in \(u\).
+
+\textit{The contour shift.}
+The imaginary parts of the four poles of \(f_a\) are
+\(1,-1,h+1,h-1\). Let
+\(b_- =\min(0,\delta_j)\) and \(b_+=\max(0,\delta_j)\).
+The first two poles lie outside \([b_-,b_+]\) because
+\(|\delta_j|<1/2\). For the other two,
+\[
+ h+1=\delta_j+(\delta_k+1)>\delta_j+1/2>b_+,
+ \qquad
+ h-1=\delta_j+(\delta_k-1)<\delta_j-1/2<b_-.
+\]
+Thus no pole lies in the closed strip between the two lines, including
+when \(\delta_j\) is negative or when poles coincide.
+For \(u=\pm R+\ii y\), \(b_-\leq y\leq b_+\), and
+\(R\geq4(|a|+1)\), the modulus bounds used in
+Lemma~\ref{lem:norm-integral} again give \(|f_a(u)|\leq16/R^4\):
+use \(|u|\geq R\) and \(|u+a|\geq R-|a|\).
+The total length of the two joining segments is
+\(2|\delta_j|<1\), so their total contribution has modulus at most
+\(16/R^4\). Cauchy's theorem on this rectangle, followed by
+\(R\to\infty\) with the pair fixed, therefore gives
+\begin{equation}\label{eq:norm-shift}
+ \int_{\mathbb R+\ii\delta_j}f_a(u)\dd u
+ =\int_{\mathbb R}f_a(u)\dd u
+ =\frac{2\pi}{4-(\rho_j+\overline{\rho_k}-1)^2}.
+\end{equation}
+If \(\delta_j=0\) there is no shift. If \(a=0\) use the double-pole
+case of Lemma~\ref{lem:norm-integral}. This case includes distinct
+reflected off-line zeros with the same ordinate; it is not restricted
+to equality of complex zeros.
+
+\textit{Normalization and reflection.}
+Combining \eqref{eq:norm-shifted-line}--\eqref{eq:norm-shift} and
+the finite expansion yields
+\begin{equation}\label{eq:norm-reflected-sum}
+ \frac2\pi\int_{\mathbb R}|\VS_{X,T}(t)|^2\dd t
+ =\sum_{j,k\in I_T}
+ X^{\rho_j+\overline{\rho_k}-1}
+ \frac4{4-(\rho_j+\overline{\rho_k}-1)^2}.
+\end{equation}
+The functional equation and conjugation imply that
+\(\rho_k\mapsto1-\overline{\rho_k}\) preserves the positive ordinate
+and multiplicity: the factor \(\chi\) is holomorphic and nonzero in
+\(0<\Re s<1\). It therefore induces a permutation of the finite set
+of occurrences \(I_T\), including occurrences at \(\gamma=T\).
+Reindexing \(k\) in the entire sum turns
+\(\rho_j+\overline{\rho_k}-1\) into \(\rho_j-\rho_k\), proving
+\eqref{eq:pair-norm}.
+This proof holds with \(X,T\) fixed; its only limits are the elementary
+integration contours tending to infinity. There is no limit in zero
+height and no infinite zero-sum interchange.
+\end{proof}
+
+The reflected sum in \eqref{eq:norm-reflected-sum} and the original
+sum \eqref{eq:norm-pair-definition} generally have different index
+diagonal contributions. A reflected-sum term with \(j=k\) is
+\(X^{2\delta_j}/(1-\delta_j^2)\), whereas an original index-diagonal
+term is 1. The permutation equates the complete sums, not these
+subsets. Repeated occurrences remain separate indices throughout.
+
+\begin{corollary}[\texttt{PAIR-POSITIVITY-001}]\label{cor:pair-positivity}
+For \(X>0,T\geq3\), \(\Phi(X,T)\) is real and nonnegative, and
+\(\Phi(X^{-1},T)=\Phi(X,T)\). Consequently
+\(\mathcal F_T(\alpha)=\Phi(T^\alpha,T)/(T\log T/(2\pi))\)
+is real, nonnegative and even for every real \(\alpha\).
+\end{corollary}
+\begin{proof}
+Reality and nonnegativity follow from \eqref{eq:pair-norm}.
+For the inversion identity, exchange \(j,k\) in the finite sum
+\eqref{eq:norm-pair-definition} and use \(w(-z)=w(z)\).
+The normalization is positive for \(T\geq3\), and
+\(T^{-\alpha}=(T^\alpha)^{-1}\). No asymptotic formula is used.
+\end{proof}
+
 \section{Checks and scope of the audit}\label{sec:checks}
 
 The zero-side denominator is at least \(3/4\) in modulus when
@@ -399,13 +588,26 @@ This proof therefore establishes the combined identity directly, without
 assigning absolute convergence to either separate Landau zero series.
 There is no Fourier transform or mean-spacing rescaling in this lemma.
 
+For the squared norm, complex conjugation of the integrable pair product
+exchanges \(j,k\). Its explicit value in
+\eqref{eq:norm-shifted-line}--\eqref{eq:norm-shift} has the same property,
+since \(h\) is unchanged and \(d\mapsto-d\).
+Under the separate check assumption \texttt{RH}, all \(\delta_j=0\),
+so the line shift disappears and the pair integral becomes
+\(2\pi/(4+(\gamma_j-\gamma_k)^2)\) times
+\(X^{\ii(\gamma_j-\gamma_k)}\).
+The full identity then recovers the usual ordinate kernel with coefficient
+4. The formulas also apply directly at \(X=1\) and for \(0<X<1\),
+and when \(I_T\) is empty both sides vanish.
+
 All local statements have status \texttt{proved-draft}. The imported
 analytic inputs are identified above, the sum/integral exchanges are
 justified within the proof, and no numerical result is used in it.
 Independent mathematical review, comparison with the final journal
 version, and reconstruction of the remaining pair-method lemmas remain
-pending. A finite arithmetic regression script checks the elementary
-kernel and endpoint algebra; it does not certify any analytic estimate.
+pending. Finite arithmetic regression scripts check the elementary
+kernel, endpoint, residue and reindexing algebra; they do not certify
+any analytic estimate.
 
 \bibliographystyle{plain}
 \bibliography{../research/literature}
