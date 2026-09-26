@@ -169,7 +169,8 @@ has now been verified, and `PAIR-ENVELOPE-001` derives
 `PAIR-COMPARE-001` now gives the uniform \(O(T)+O(X)\) comparison
 for \(T\geq3\), \(1\leq X\leq T\). Its analytic absorption bound is
 effective at every height in that range, and it retains the direct
-\(3\leq T<5\) argument. The prime-side mean square and assembly of the
-full pair theorem come next. The envelope and comparison claims retain
+\(3\leq T<5\) argument. The [prime-side mean square](pair-prime-mean-audit.md)
+is now reconstructed as `PAIR-RHS-MEAN-001`; assembly of the
+full normalized pair theorem comes next. The envelope and comparison claims retain
 their external computational dependencies; the Lemmas 2/4 proof above
 is unchanged.

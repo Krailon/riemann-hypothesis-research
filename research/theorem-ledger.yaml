@@ -46,7 +46,21 @@ source_nodes:
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Equations (2.17)-(2.19) and following remark"
-    audit_status: pending_primary_source
+    audit_status: reconstructed_draft
+    local_claim: PAIR-RHS-MEAN-001
+    notes: "Prime-side mean square reconstructed using a local Fourier mean-value proof and published MV2007 PNT/sieve inputs. GM87 full text was inaccessible; its Lemma 6 is a comparison pointer, not an imported unchecked dependency. Independent review and BGSTB journal comparison pending."
+  - id: MV-PNT-PROOF
+    bibliography_key: MV2007
+    version: author_hosted_publisher_chapter
+    locator: "Chapter 6, Theorem 6.9, pp. 179-181; classical zero-free-region inputs in Section 6.1"
+    audit_status: statement_and_proof_structure_checked
+    notes: "Unconditional effective PNT; statement and proof structure checked, upstream proof not fully reconstructed. No numerical proof input or modern computational KV theorem is used."
+  - id: MV-SIEVE-PROOF
+    bibliography_key: MV2007
+    version: author_hosted_publisher_chapter
+    locator: "Chapter 3, Corollary 3.14, p. 97; Theorem 3.10, Lemma 3.12 and Theorem 3.13"
+    audit_status: statement_and_proof_structure_checked
+    notes: "Unconditional elementary upper-bound sieve, uniform in the even nonzero shift. Effectivity follows from the displayed sieve construction; upstream proof not fully reconstructed."
   - id: MTY-KV-PROOF
     bibliography_key: MTY2024
     version: published_version_of_record_2024-01-12
@@ -86,7 +100,7 @@ claims:
       - PAIR-POSITIVITY-001
       - PAIR-TRUNC-001
       - PAIR-COMPARE-001
-      - BGSTB-MEAN
+      - PAIR-RHS-MEAN-001
     dependency_graph_complete: false
     source:
       file: research/literature-notes/pair-baseline.md
@@ -119,7 +133,8 @@ claims:
         The quantitative zero-free-region source is verified as ZETA-KV-001;
         PAIR-ENVELOPE-001 derives its finite-height envelope, and
         PAIR-COMPARE-001 proves the uniform O(T)+O(X) comparison in draft.
-        The prime mean square and full theorem assembly remain pending.
+        PAIR-RHS-MEAN-001 reconstructs the prime-side mean square.
+        Full normalized theorem assembly and independent review remain pending.
         The source's conditional Theorems 2-3 are not imported.
 
   - id: PAIR-TRANSLATION-001
@@ -620,6 +635,237 @@ claims:
       source_structure_checks: "Unique YAML keys and 20 claim IDs, dependency resolution/acyclicity including source links, labels, citations, references, local links and computational provenance checked on 2026-09-26."
       compilation: passed_pdflatex_bibtex
       compilation_notes: "Combined draft built on 2026-09-26: 16 pages, resolved citations/references, no final-pass warnings or overfull/underfull boxes."
+
+  - id: PRIME-PNT-001
+    title: Effective classical prime number theorem
+    kind: imported_theorem
+    statement: |
+      There exist absolute effective constants c,C>0 such that for real u>=2,
+      |psi(u)-u|+|theta(u)-u| <= C u exp(-c sqrt(log u)),
+      where psi(u)=sum_{n<=u} Lambda(n), theta(u)=sum_{p<=u} log p.
+      All endpoints have full weight; logarithms are natural.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MV-PNT-PROOF]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: inp:prime-pnt
+      bibliography_key: MV2007
+      url: https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/10.0_pp_168_198_The_Prime_Number_Theorem.pdf
+      locator: "Theorem 6.9, equations (6.12)-(6.13), p. 179; proof pp. 180-181"
+      version_consulted: author_hosted_publisher_chapter
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Imported pointwise bounds for every u>=2; upstream interchange audit incomplete."
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-26"
+      proof_structure_audit: "Classical zero-free region, Perron truncation and contour shift; effective constants, no unproved RH or computational verification."
+      proof_reconstruction: not_attempted
+      independent_verification: pending
+
+  - id: PRIME-SIEVE-001
+    title: Uniform upper bound for prime pairs with even shift
+    kind: imported_theorem
+    statement: |
+      Uniformly for real U>=4 and positive even integer h,
+      #{p<=U: p and p+h prime} <= C g(h) U/(log U)^2,
+      where g(h)=product_{p|h,p>2} (p-1)/(p-2) and C is absolute
+      and effective, independent of U,h. No prime-pair asymptotic is assumed.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MV-SIEVE-PROOF]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: inp:prime-sieve
+      bibliography_key: MV2007
+      url: https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/07.0_pp_76_107_Principles_and_first_examples_of_sieve_methods.pdf
+      locator: "Corollary 3.14, p. 97, specialized to x=0,y=U; fixed product and bounded error factor absorbed"
+      version_consulted: author_hosted_publisher_chapter
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Uniform imported upper bound; no local limiting operation."
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-26"
+      uniformity_audit: "Source explicitly uniform in the nonzero even shift; elementary sieve constants effective."
+      proof_reconstruction: not_attempted
+      independent_verification: pending
+
+  - id: PAIR-MEANVALUE-001
+    title: Fourier mean-value bound with a strict nearby-frequency cutoff
+    kind: lemma
+    statement: |
+      Let M be a countable set of distinct real frequencies and c_mu complex
+      with sum_mu |c_mu| finite. Put F(t)=sum_mu c_mu exp(2 pi i mu t),
+      D=sum_mu |c_mu|^2. For T>=1 and 1/(2T)<=delta<=1/2,
+      integral_0^T |F(t)|^2 dt =
+      T D + O(delta^(-1) D
+        + T sum_{mu,lambda in M,0<|mu-lambda|<delta} |c_mu c_lambda|).
+      The pairs are ordered. Constants are absolute and effective.
+      Repeated frequencies must first be combined.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-meanvalue
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed T,delta; absolute coefficient summability permits Fubini and finite-sum approximation."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Explicit sinc-power convolution and endpoint majorants. Ordinary L1/L2 Fourier inversion; no imported Goldston-Montgomery lemma."
+      fourier_audit: "Negative-sign 2 pi transform; Khat=(3/2)(tau*tau)(2xi), B0hat=2(1+exp(-2 pi i xi))tau(2xi). Bandwidth delta in cycles."
+      boundary_audit: "Continuous L1 transforms vanish at +/-delta; time endpoints have measure zero."
+      interchange_audit: "Compact convolution integrals and ||M^pm||_1 (sum|c|)^2 majorant justify all exchanges."
+      independent_verification: pending
+
+  - id: PAIR-PRIME-COUNT-001
+    title: Averaged von Mangoldt pair counts and weighted nearby frequencies
+    kind: lemma
+    statement: |
+      For real U>=2,V>=1,
+      sum_{1<=m,n<=U,0<|m-n|<=V} Lambda(m)Lambda(n) << U V.
+      For 0<=V<1 the sum is empty. For X>=1,0<delta<=1/2 and
+      a_X(n)=Lambda(n)n^(-1/2)min(n/X,X/n),
+      Q(X,delta)=sum_{m,n>=1,0<|log(n/m)|<2 pi delta} a_X(n)a_X(m)
+      << delta X. All pairs are ordered; constants are absolute effective.
+      Odd prime shifts and all pairs involving proper prime powers are included.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PRIME-SIEVE-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:prime-count
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Finite U,V first; singular-factor expansion and dyadic tails use nonnegative convergent majorants."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      primepower_audit: "At most O(sqrt(U)log(2U)) proper powers; their ordered pairs contribute O(V sqrt(U)log^3(2U))=O(UV)."
+      uniformity_audit: "Sieve constant uniform in shift; average g(h) bounded by V exp(3/4). Cutoffs below 1 contribute no pairs."
+      independent_verification: pending
+
+  - id: PAIR-PRIME-DIAGONAL-001
+    title: Weighted diagonal with proper prime powers and inclusive cutoffs
+    kind: lemma
+    statement: |
+      For real X>=1, put ell_X=log(2X) and
+      D(X)=sum_n Lambda(n)^2 n^(-1) min(n/X,X/n)^2.
+      Then D(X)=log X+O(1) and D(X)<<ell_X.
+      The proper-prime-power contribution D_pp(X) is
+      O(X^(-1/2)ell_X^3)=O(1).
+      Exactly D(X)=X^(-2)sum_{n<=X}n Lambda(n)^2
+        +X^2 sum_{n>X}Lambda(n)^2/n^3.
+      Prime powers at n=X are counted once; constants are absolute effective.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PRIME-PNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:prime-diagonal
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Partial summation on finite intervals, then upper endpoint to infinity at fixed X; integrable derivative and dyadic tail bounds."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      endpoint_audit: "Weight continuous at real X, so no jump term even at a prime or proper prime power; X=1 included."
+      primepower_audit: "Elementary integer-power count, followed by a convergent nonnegative dyadic series."
+      independent_verification: pending
+
+  - id: PAIR-PRIME-MEAN-001
+    title: Weighted prime-series mean square through X=T
+    kind: lemma
+    statement: |
+      For T>=3,1<=X<=T, with P(X,t)=sum_n a_X(n)n^(-it) and
+      D,ell_X as in PAIR-PRIME-DIAGONAL-001,
+      integral_0^T |P(X,t)|^2 dt = T D(X)+E_offdiag,
+      |E_offdiag|<<sqrt(T X ell_X);
+      T D(X)=T log X+E_diagonal, |E_diagonal|<<T.
+      In particular ||P||_{L2(0,T)}<<sqrt(T ell_X).
+      Constants are absolute effective and both X endpoints are included.
+      E_offdiag is the entire error after subtracting T D, including the
+      diagonal cost of the auxiliary Fourier majorants.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-MEANVALUE-001, PAIR-PRIME-COUNT-001, PAIR-PRIME-DIAGONAL-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:prime-mean
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Prime-series tails vanish uniformly in t at fixed X,T; resulting estimates are uniform on 1<=X<=T."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      bandwidth_audit: "mu_n=-log(n)/(2 pi), delta=(1/2)sqrt(log(2X)/(TX)); 1/(2T)<=delta<=1/2 verified including X=1,T."
+      tail_audit: "For N>=max(2,X), sup_t |sum_{n>N} a_X(n)n^(-it)| << X(log N+1)/sqrt N."
+      independent_verification: pending
+
+  - id: PAIR-RHS-MEAN-001
+    title: Full unconditional prime-side mean square with separate error scales
+    kind: lemma
+    statement: |
+      Define A(X,t)=X^(-1)log(t+2) for t>=0,
+      H=E_arch+E_DS+E_pole+E_trivial using the exact PAIR-EF-001 remainders,
+      r(X,t)=-P(X,t)+A(X,t)+H(X,t), R(X,T)=integral_0^T |r(X,t)|^2 dt.
+      The explicit formula gives R=L with the existing normalization.
+      Uniformly for T>=3,1<=X<=T,
+      R(X,T)=T X^(-2)log(T)^2+T log X
+        +O(T log(T)/X^2)+O(T sqrt(log T)).
+      Constants are absolute effective; both X endpoints are included.
+      In particular the prime/archimedean cross term is
+      O(log(T+2)/sqrt X), proved by integration by parts.
+      Proper prime powers and all four named remainders are retained.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-EF-001, PAIR-PRIME-MEAN-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:rhs-mean
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, equations (2.17),(2.19) and remark"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed X,T for absolutely convergent series/integrals; all final estimates uniform for T>=3,1<=X<=T."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      error_audit: "Separate diagonal, off-diagonal, archimedean square, oscillatory prime/archimedean interaction, each original remainder's cross terms, and remainder square before combining."
+      rh_contamination_audit: "Uses unconditional PNT and upper-bound sieve, elementary Fourier analysis and PAIR-EF-001; no RH, simplicity, zero-density, prime-pair conjecture or computer-assisted KV input."
+      source_audit: "GM87 full text inaccessible; required mean-value bound proved locally, not imported from an unchecked citation. MV2007 PNT/sieve statements and proof structure checked."
+      endpoint_audit: "X=1,X=T,T=3 and n=X prime-power cutoffs included; n=1 has zero coefficient."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+      regression_checks: "38 exact tests passed on 2026-09-26: 28 existing and 10 new prime-side checks. New checks include independent kernel-convolution calculations, Fourier phase/support, finite diagonal and divisor identities, bandwidth algebra and cross-term signs; no numerical proof certificate."
+      source_structure_checks: "Unique YAML keys and 27 claim IDs, dependency resolution/acyclicity, theorem-label mapping, references, citations, local links and Python syntax passed. Prime-side dependency closure has only UNCONDITIONAL claims and no computational KV input."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined manuscript built on 2026-09-26: 22 pages, resolved references/citations, no final-pass warnings or overfull/underfull boxes."
 
   - id: PAIR-NORM-INTEGRAL-001
     title: Complex rational integral including coincident poles

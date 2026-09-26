@@ -132,10 +132,11 @@ remains pending. Source IDs and local claim IDs are linked in the ledger.
 | `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Reconstructed as `PAIR-NORM-001`, with integral and positivity claims; see the [contour and multiplicity audit](pair-lemma3-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Reconstructed as `PAIR-TRUNC-001` with three named errors and a separate small-height argument; see the [audit](pair-lemma4-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-ZFR` | Theorem 1 proof, (2.18) | Reconstructed as `PAIR-COMPARE-001`, using the finite-height envelope `PAIR-ENVELOPE-001` and published KV/low-height inputs; see the [audit](korobov-vinogradov-audit.md). Independent review and journal comparison pending. |
-| `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstruct the prime-side mean square, including prime powers and cross terms; verify the cited Goldston–Montgomery Lemma 6 refinement and endpoint \(X=T\). |
+| `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstructed as `PAIR-RHS-MEAN-001`, with a local Fourier mean-value proof, published PNT/sieve inputs, prime powers, cross terms and \(X=T\) covered; see the [audit](pair-prime-mean-audit.md). Independent review and journal comparison pending. |
 
-The last row is an unresolved citation chain, not permission to use an
-RH-dependent pair theorem. For the prime-side theorem assembly use
+The cited Goldston–Montgomery mean-value estimate is proved locally in
+`PAIR-MEANVALUE-001`; its original full text was inaccessible, and it
+is not imported as an unchecked dependency. For theorem assembly use
 \(1\leq X\leq T\); v1's printed
 \(0\leq X\leq T\) before (2.19) cannot include \(X=0\), where its formula
 is undefined. The full dependency graph, named error budget, and RH
@@ -167,7 +168,18 @@ zero set. External computational provenance is retained in the ledger.
 \(1\leq X\leq T\), with effective constants and all endpoints covered.
 It keeps truncation separate from the height and extension errors and
 inherits the recorded external computational provenance.
-**Next task:** reconstruct the prime-side mean square, including the
-Goldston–Montgomery Lemma 6 input, prime powers, cross terms, and uniformity
-at \(X=T\). Full theorem assembly follows that calculation.
+**Completed prime-side draft:** `PAIR-RHS-MEAN-001` proves
+\[
+ R(X,T)=TX^{-2}\log^2T+T\log X+
+ O(TX^{-2}\log T)+O(T\sqrt{\log T})
+\]
+uniformly for \(T\geq3,1\leq X\leq T\), with \(R=L\) by the
+existing explicit formula. Its local Fourier argument and published
+PNT/sieve inputs retain proper prime powers and named cross-term errors.
+This part uses no numerical proof input.
+**Next task:** assemble the normalized pair-correlation asymptotic from
+`PAIR-COMPARE-001` and `PAIR-RHS-MEAN-001`, preserving
+uniformity in \(0\leq\alpha\leq1\) and both endpoints. Complete the
+remaining Work Package A dependency, support, error-budget and
+RH-contamination audit deliverables, with independent review still pending.
 The pair-correlation asymptotic itself remains an imported theorem.

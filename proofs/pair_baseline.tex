@@ -19,7 +19,7 @@
 \newcommand{\ELtr}{E_{\mathrm{trunc}}}
 \newcommand{\ELh}{E_{\mathrm{height}}}
 \newcommand{\ELext}{E_{\mathrm{extension}}}
-\title{Pair baseline: explicit formula, counting, squared norm, truncation and horizontal envelope}
+\title{Pair baseline: explicit formula, zero-side comparison and prime-side mean square}
 \author{Research proof draft}
 \date{26 September 2026}
 \begin{document}
@@ -27,8 +27,10 @@
 
 \noindent\textbf{Task: proof. Assumptions: \texttt{UNCONDITIONAL}.}
 This draft reconstructs \cite[Lemmas 1--4, (2.2)--(2.16)]{BGSTB2024}, with locators
-referring to arXiv:2306.04799v1. It does not reconstruct the subsequent
-pair-correlation asymptotic. In the explicit-formula series, all nontrivial zeros
+referring to arXiv:2306.04799v1. It also reconstructs the zero-side
+comparison (2.18) and prime-side mean square (2.19); assembly of the
+normalized pair-correlation asymptotic remains pending.
+In the explicit-formula series, all nontrivial zeros
 \(\rho=\beta+\ii\gamma=1/2+\delta_\rho+\ii\gamma\) are counted with
 multiplicity, including both signs of \(\gamma\).
 The squared-norm identity instead uses the finite index set \(I_T\)
@@ -51,8 +53,9 @@ The interpretation of these series is absolute convergence, proved below.
 \section{Analytic inputs and their provenance}\label{sec:analytic-inputs}
 
 The following published inputs are unconditional. The first four support
-the local Lemmas 1--4 reconstruction; the last two additionally support
-the finite-height envelope.
+the local Lemmas 1--4 reconstruction; the next two additionally support
+the finite-height envelope. The last two supply prime-distribution inputs
+for the prime-side mean square.
 They are imported facts, not claims of new proofs in this document.
 The ledger records their precise statements and source locators.
 \begin{enumerate}
@@ -148,6 +151,33 @@ The proof uses rigorous Arb arithmetic and a variation of Turing's
 method to account for all zeros in the range. Full comparison with
 the final journal text and independent computational replay remain
 pending. This finite-range published theorem is an unconditional input.
+\item \texttt{PRIME-PNT-001}\label{inp:prime-pnt}:
+\cite[Theorem 6.9, (6.12)--(6.13), p.~179]{MV2007} supplies absolute
+effective constants \(c,C>0\) such that, for real \(u\geq2\),
+\begin{equation}\label{eq:prime-pnt-input}
+ |\psi(u)-u|+|\vartheta(u)-u|
+ \leq Cu\exp(-c\sqrt{\log u}),
+ \quad
+ \psi(u)=\sum_{n\leq u}\Lambda(n),\quad
+ \vartheta(u)=\sum_{p\leq u}\log p.
+\end{equation}
+Endpoints have full weight. The classical zero-free-region proof on
+pp.~180--181 is unconditional and effective; its upstream analytic
+inputs are not reconstructed here.
+\item \texttt{PRIME-SIEVE-001}\label{inp:prime-sieve}:
+\cite[Corollary 3.14, p.~97]{MV2007} implies that, for every \(U\geq4\)
+and positive even integer \(h\),
+\begin{equation}\label{eq:prime-sieve-input}
+ \#\{p\leq U:p,\ p+h\text{ prime}\}
+ \ll g(h)\frac{U}{\log^2U},
+ \qquad
+ g(h)=\prod_{\substack{p\mid h\\p>2}}\frac{p-1}{p-2}.
+\end{equation}
+The implied constant is absolute, effective, and independent of \(h\).
+This is the \(x=0,y=U\) specialization of the source, with its fixed
+twin-prime product and bounded \(1+O(\log\log U/\log U)\) factor
+absorbed. The preceding elementary sieve proof supplies effectivity.
+This upper bound assumes no prime-pair asymptotic.
 \end{enumerate}
 
 \section{Inclusive counting and rational-kernel bounds}
@@ -1075,8 +1105,463 @@ enters this deduction.
 
 Equation~\eqref{eq:pair-compare} reconstructs
 \cite[(2.18)]{BGSTB2024}, with the locator referring to
-arXiv:2306.04799v1. The prime-side mean square needed to assemble
-the pair-correlation asymptotic remains to be reconstructed.
+arXiv:2306.04799v1. The next sections reconstruct the prime-side
+mean square needed to assemble the pair-correlation asymptotic.
+
+\section{A local Fourier mean-value bound}
+
+We use \(\widehat f(\xi)=\int_{\mathbb R}f(t)e^{-2\pi\ii t\xi}\dd t\)
+and \(e(u)=e^{2\pi\ii u}\). The bandwidth below is an auxiliary
+frequency parameter, not a Fourier-support assertion about a zero
+correlation test function.
+
+\begin{lemma}[\texttt{PAIR-MEANVALUE-001}]\label{lem:pair-meanvalue}
+Let \(\mathcal M\subset\mathbb R\) be countable and
+\(c_\mu\in\mathbb C\) satisfy \(\sum_{\mu\in\mathcal M}|c_\mu|<\infty\).
+Set \(F(t)=\sum_\mu c_\mu e(\mu t)\) and \(D=\sum_\mu|c_\mu|^2\).
+Uniformly for \(T\geq1\), \(1/(2T)\leq\delta\leq1/2\),
+\begin{equation}\label{eq:local-meanvalue}
+ \int_0^T|F(t)|^2\dd t
+ =TD+O\left(\delta^{-1}D+
+ T\sum_{\substack{\mu,\lambda\in\mathcal M\\0<|\mu-\lambda|<\delta}}
+ |c_\mu c_\lambda|\right),
+\end{equation}
+with an absolute effective constant. The sum is over ordered pairs
+of different frequencies; repeated frequencies must first be combined.
+\end{lemma}
+\begin{proof}
+Write \(s(u)=\sin(\pi u)/(\pi u)\), with \(s(0)=1\), and define
+\[
+ K(u)=\tfrac34s(u/2)^4,\qquad
+ B_0(u)=s(u/2)^2+s((u-1)/2)^2,\qquad
+ \tau(\xi)=(1-|\xi|)_+.
+\]
+Here \(B_0\) is unrelated to the zero envelope \(B(Z)\).
+The identity \(s(u)=\int_{-1/2}^{1/2}e(u\xi)\dd\xi\), followed by
+convolution of the two interval indicators, gives
+\(\widehat{s^2}=\tau\). These identities can be obtained by
+\(L^2\) Fourier inversion: the interval indicator and \(s\) are in
+\(L^2\), and \(s^2\in L^1\). The subsequent compactly supported
+convolutions are absolutely integrable, so Fubini and Fourier inversion
+give
+\begin{equation}\label{eq:meanvalue-kernel-transforms}
+ \widehat K(\xi)=\tfrac32(\tau*\tau)(2\xi),\qquad
+ \widehat B_0(\xi)=2(1+e(-\xi))\tau(2\xi).
+\end{equation}
+For example multiplication of the inverse integral for \(\tau\)
+by itself is justified by its finite \(L^1\) norm; its convolution
+is the transform of the integrable function \(s^4\).
+Thus \(K,B_0\geq0\) are in \(L^1\),
+\[
+ \int K=\tfrac32\int_{-1}^1(1-|v|)^2\dd v=1,\qquad
+ \int B_0=4,
+\]
+and their Fourier supports are respectively \([-1,1]\) and
+\([-1/2,1/2]\).
+
+Put \(H(r)=\int_{|v|\geq r}K(v)\dd v\), \(r\geq0\).
+The elementary sinc bounds imply
+\[
+ H(r)\leq1,\qquad H(r)\leq\frac8{\pi^4r^3}\quad(r>0).
+\]
+Moreover, away from the removable points \(u=0,1\),
+\[
+ B_0(u)=\frac4{\pi^2}
+ \left(\frac{\sin^2(\pi u/2)}{u^2}
+       +\frac{\cos^2(\pi u/2)}{(u-1)^2}\right)
+ \geq\frac2{\pi^2(1+u^2)}.
+\]
+Continuity covers those two points. If \(|u|\leq1\), this lower bound
+is at least \(1/\pi^2\); if \(|u|\geq1\), it is at least
+\(1/(\pi^2u^2)\). The two bounds for \(H\) therefore show
+\begin{equation}\label{eq:meanvalue-tail-majorant}
+ H(|u|)\leq64B_0(u)\qquad(u\in\mathbb R).
+\end{equation}
+The constant 64 is a convenient unoptimized choice.
+
+Let \(\chi=1_{[0,T]}\), \(K_\delta(t)=\delta K(\delta t)\), and set
+\[
+ M^\pm(t)=(\chi*K_\delta)(t)
+ \ \pm64\{B_0(\delta t)+B_0(\delta(t-T))\}.
+\]
+A change of membership in \([0,T]\) under translation by \(v\)
+requires \(|v|\geq|t|\) or \(|v|\geq|t-T|\). Since \(K_\delta\geq0\)
+and \(\int K_\delta=1\), this gives, almost everywhere,
+\[
+ |\chi*K_\delta(t)-\chi(t)|
+ \leq H(\delta|t|)+H(\delta|t-T|).
+\]
+Hence \(M^-\leq\chi\leq M^+\). Endpoints of \(\chi\) do not affect
+any integral. Both functions are in \(L^1\), with
+\[
+ \widehat M^\pm(0)=T\pm512/\delta,\qquad
+ \|M^\pm\|_1\leq T+512/\delta\leq1025T.
+\]
+Their transforms vanish for \(|\xi|>\delta\), by
+\eqref{eq:meanvalue-kernel-transforms}, scaling and convolution.
+Continuity of an \(L^1\) Fourier transform also makes them vanish
+at \(|\xi|=\delta\).
+
+The series for \(F\) converges absolutely uniformly on \(\mathbb R\).
+In particular Fubini applies to its squared modulus against \(M^\pm\),
+with absolute integral majorant
+\(\|M^\pm\|_1(\sum|c_\mu|)^2\). Therefore
+\[
+ \int_{\mathbb R}M^\pm(t)|F(t)|^2\dd t
+ =\sum_{\mu,\lambda}c_\mu\overline{c_\lambda}
+       \widehat M^\pm(\lambda-\mu).
+\]
+The diagonal is \((T\pm512/\delta)D\); only
+\(0<|\mu-\lambda|<\delta\) can contribute off the diagonal, each
+with multiplier at most \(1025T\) in modulus. Sandwiching
+\(\int_0^T|F|^2\) between these two integrals proves the claim.
+The lower function need not be nonnegative: its pointwise lower
+bound is multiplied by the nonnegative function \(|F|^2\).
+\end{proof}
+
+\section{Prime-pair counts and the diagonal}
+
+For \(X\geq1\), put
+\begin{equation}\label{eq:prime-coefficients}
+ a_X(n)=\frac{\Lambda(n)}{\sqrt n}\min\{n/X,X/n\},\quad
+ D(X)=\sum_{n\geq1}a_X(n)^2,\quad \ell_X=\log(2X).
+\end{equation}
+All integer cutoffs below have full weight. A proper prime power means
+\(p^k\) with \(k\geq2\).
+
+\begin{lemma}[\texttt{PAIR-PRIME-COUNT-001}]\label{lem:prime-count}
+Uniformly for real \(U\geq2,V\geq1\),
+\begin{equation}\label{eq:prime-pair-average}
+ \sum_{\substack{1\leq m,n\leq U\\0<|m-n|\leq V}}\Lambda(m)\Lambda(n)
+ \ll UV.
+\end{equation}
+For \(0\leq V<1\) this sum is empty.
+Also, uniformly for \(X\geq1\), \(0<\delta\leq1/2\),
+\begin{equation}\label{eq:prime-close-pairs}
+ Q(X,\delta):=
+ \sum_{\substack{m,n\geq1\\0<|\log(n/m)|<2\pi\delta}}
+ a_X(n)a_X(m)\ll\delta X.
+\end{equation}
+All pairs are ordered and all constants are absolute and effective.
+\end{lemma}
+\begin{proof}
+First restrict \eqref{eq:prime-pair-average} to primes. For even
+\(h>0\), the sieve input bounds the weighted pairs with \(n-m=h\)
+by \(CUg(h)\) when \(U\geq4\), since both logarithmic weights are
+at most \(\log U\). For an odd shift one of the primes is 2, so
+these pairs contribute \(O(V\log^2U)\).
+To average \(g\), extend its product definition to all positive
+integers. Expanding that finite product and then using nonnegativity,
+\[
+ \sum_{1\leq h\leq V}g(h)
+ \leq V\sum_{\substack{d\geq1\\d\ {\rm odd,\ squarefree}}}
+       \frac1d\prod_{p\mid d}\frac1{p-2}
+ =V\prod_{p>2}\left(1+\frac1{p(p-2)}\right)\ll V.
+\]
+The product is bounded by
+\(\exp(\sum_{n\geq3}1/(n(n-2)))=\exp(3/4)\).
+Finite products increase to the displayed series by monotone
+convergence; the bound proves convergence. Reversing the ordered
+pairs supplies negative shifts.
+
+There are at most
+\(\sum_{2\leq k\leq\log_2U}U^{1/k}\ll\sqrt U\log(2U)\)
+proper prime powers up to \(U\). For each such occurrence at most
+\(2\lfloor V\rfloor\) other integers lie at positive distance at
+most \(V\). Bounding both weights by \(\log U\), and allowing
+double counting when both entries are proper powers, gives
+\[
+ O\bigl(V\sqrt U\log^3(2U)\bigr)=O(UV).
+\]
+The last inequality is effective because
+\(\log^3(2U)/\sqrt U\) is bounded on \(U\geq2\), as follows by
+putting \(w=\log(2U)\) and maximizing \(w^3e^{-w/2}\).
+Likewise \(V\log^2U=O(UV)\). The finitely many integers involved
+when \(2\leq U<4\) are covered directly. This proves
+\eqref{eq:prime-pair-average}, including all proper-power pairs.
+
+For the second claim, the close-frequency condition implies
+\[
+ e^{-\pi}n<m<e^\pi n,\qquad
+ |m-n|\leq C_0\delta n,\quad C_0=2\pi e^\pi,
+\]
+by the mean value theorem for the exponential. If \(n\leq X\),
+use the valid bounds
+\(a_X(n)\leq\Lambda(n)\sqrt n/X\) and
+\(a_X(m)\leq\Lambda(m)\sqrt m/X\).
+Their product is at most \(C\Lambda(n)\Lambda(m)/X\).
+Both indices are at most \(e^\pi X\) and the difference is at most
+\(C_0\delta X\). Equation~\eqref{eq:prime-pair-average} bounds
+this part by \(C\delta X\); if the difference cutoff is less than 1,
+there are no pairs.
+
+For \(n>X\), partition into \(N<n\leq2N\), \(N=2^jX\), \(j\geq0\).
+The bounds \(a_X(n)\leq X\Lambda(n)n^{-3/2}\), valid for all \(n\),
+give a product at most \(CX^2\Lambda(n)\Lambda(m)/N^3\).
+Both indices are at most \(2e^\pi N\) and their difference is at
+most \(2C_0\delta N\). Applying the same average, or the empty
+cutoff case, bounds this block by \(C\delta X^2/N\).
+The nonnegative dyadic sum is bounded by
+\(C\delta X\sum_{j\geq0}2^{-j}\), proving \eqref{eq:prime-close-pairs}.
+\end{proof}
+
+\begin{lemma}[\texttt{PAIR-PRIME-DIAGONAL-001}]\label{lem:prime-diagonal}
+Uniformly for real \(X\geq1\),
+\begin{equation}\label{eq:prime-diagonal}
+ D(X)=\log X+O(1),\qquad D(X)\ll\ell_X.
+\end{equation}
+The proper-prime-power part satisfies
+\begin{equation}\label{eq:primepowers-diagonal}
+ D_{\rm pp}(X):=\sum_{\substack{n=p^k\\k\geq2}}a_X(n)^2
+ \ll X^{-1/2}\ell_X^3\ll1.
+\end{equation}
+The two portions of the full diagonal are exactly
+\[
+ D(X)=X^{-2}\sum_{n\leq X}n\Lambda(n)^2
+       +X^2\sum_{n>X}\frac{\Lambda(n)^2}{n^3}.
+\]
+Thus an integer prime power at \(X\) is counted once.
+\end{lemma}
+\begin{proof}
+Let \(A_p(u)=\sum_{p\leq u}(\log p)^2\). Partial summation of
+\eqref{eq:prime-pnt-input} gives
+\[
+ A_p(u)=\vartheta(u)\log u-\int_2^u\frac{\vartheta(v)}v\dd v
+       =u\log u+O(u)\qquad(u\geq2).
+\]
+Indeed \((\log u)e^{-c\sqrt{\log u}}\) is bounded effectively,
+and the integral error is \(O(u)\). Enlarging the constant extends
+this statement to \(1\leq u<2\).
+Define the continuous weight
+\[
+ w_X(u)=
+ \begin{cases}u/X^2,&1\leq u\leq X,\\ X^2/u^3,&u>X.\end{cases}
+\]
+Writing \(A_p(u)=u\log u+E_p(u)\), \(|E_p(u)|\leq Cu\),
+Stieltjes integration by parts yields
+\[
+ \sum_p w_X(p)(\log p)^2
+ =\int_1^\infty w_X(u)(\log u+1)\dd u+O(1)
+ =\log X+1-\frac1{4X^2}+O(1).
+\]
+Here \(E_p(1)=0\), the boundary term at infinity vanishes, and
+\[
+ \int_1^\infty u|w_X'(u)|\dd u
+ =X^{-2}\int_1^X u\dd u+
+       3X^2\int_X^\infty u^{-3}\dd u\leq2.
+\]
+The weight agrees from both sides at \(X\), so there is no jump term,
+even when \(X\) is prime. All improper integrals converge absolutely;
+the argument is first on finite intervals, then takes the upper
+endpoint to infinity at fixed \(X\).
+
+Counting all integer \(k\)-th powers, as in the elementary estimate
+\(\sum_{2\leq k\leq\log_2u}u^{1/k}\ll\sqrt u\log(2u)\), gives
+\[
+ A_{\rm pp}(u):=\sum_{\substack{p^k\leq u\\k\geq2}}(\log p)^2
+ \ll\sqrt u\log^3(2u).
+\]
+For \(n\leq X\), use \(w_X(n)\leq X^{-1}\).
+For \(2^jX<n\leq2^{j+1}X\), use
+\(w_X(n)\leq2^{-3j}/X\). Consequently
+\[
+ D_{\rm pp}(X)\ll X^{-1/2}\ell_X^3+
+ X^{-1/2}\sum_{j\geq0}2^{-5j/2}
+             \bigl(\ell_X+(j+1)\log2\bigr)^3
+ \ll X^{-1/2}\ell_X^3.
+\]
+The series is a convergent nonnegative majorant with an absolute
+effective constant, since \(\ell_X\geq\log2\).
+Maximizing a polynomial times an exponential as above shows the
+last expression is bounded on \(X\geq1\).
+Adding primes and proper powers proves the assertions.
+\end{proof}
+
+\section{The weighted prime-series mean square}
+
+\begin{lemma}[\texttt{PAIR-PRIME-MEAN-001}]\label{lem:prime-mean}
+Uniformly for \(T\geq3\) and \(1\leq X\leq T\),
+\begin{align}
+ \int_0^T|\PS(X,t)|^2\dd t
+ &=TD(X)+E_{\rm offdiag}(X,T),&
+ |E_{\rm offdiag}|&\ll\sqrt{TX\ell_X},\label{eq:prime-mean}\\
+ TD(X)&=T\log X+E_{\rm diagonal}(X,T),&
+ |E_{\rm diagonal}|&\ll T.\label{eq:prime-diagonal-error}
+\end{align}
+In particular \(\|\PS(X,\cdot)\|_{L^2(0,T)}
+\ll\sqrt{T\ell_X}\). All constants are absolute and effective.
+\end{lemma}
+\begin{proof}
+Take frequencies \(\mu_n=-\log n/(2\pi)\), \(n\geq2\), and real
+coefficients \(a_X(n)\). For fixed \(X\), the coefficient sum is
+finite: the tail is bounded by \(X\sum_{n>X}(\log n)n^{-3/2}\).
+More explicitly, for \(N\geq\max\{2,X\}\),
+\[
+ \sup_{t\in\mathbb R}\left|
+       \sum_{n>N}a_X(n)n^{-\ii t}\right|
+ \ll X\frac{\log N+1}{\sqrt N}.
+\]
+This also justifies finite-sum approximation of the squared integral
+at fixed \(X,T\). No uniformity in unbounded \(X\) is required to
+take this limit.
+
+Choose
+\begin{equation}\label{eq:prime-bandwidth}
+ \delta=\tfrac12\sqrt{\frac{\ell_X}{TX}}.
+\end{equation}
+For \(X\geq1\), \(\ell_X\leq X\), since
+\(X-\log(2X)\) is increasing and positive there.
+Also \(\ell_X/X\) increases up to \(X=e/2\) and then decreases;
+its minimum on \([1,T]\) is at an endpoint. Thus
+\[
+ T\ell_X/X\geq\min\{T\log2,\log(2T)\}>1\qquad(T\geq3).
+\]
+For example \(\log2>1/2\) follows by integrating \(1/u\) on
+\([1,2]\), and \(\log(2T)>\log3>1\).
+It follows that \(1/(2T)\leq\delta\leq1/2\), including both
+endpoints \(X=1,T\).
+
+Apply Lemma~\ref{lem:pair-meanvalue}, translating
+\(|\mu_m-\mu_n|<\delta\) exactly into
+\(|\log(m/n)|<2\pi\delta\). Lemmas~\ref{lem:prime-count}
+and \ref{lem:prime-diagonal} give
+\[
+ |E_{\rm offdiag}|
+ \ll\delta^{-1}D(X)+TQ(X,\delta)
+ \ll\delta^{-1}\ell_X+T\delta X
+ \ll\sqrt{TX\ell_X}.
+\]
+This error includes the diagonal effect of the Fourier majorants;
+its name denotes the total error after subtracting \(TD(X)\).
+The diagonal lemma then gives \eqref{eq:prime-diagonal-error}.
+Finally \(X\leq T\) and \(\ell_X\geq\log2\) imply
+\(\sqrt{TX\ell_X}\ll T\ell_X\), proving the norm bound.
+\end{proof}
+
+\section{The full prime-side squared norm}
+
+For \(t\geq0\), define exact functions
+\begin{align*}
+ A(X,t)&=X^{-1}\log(t+2),&
+ H(X,t)&=\EA+\ED+\EP+\ET,\\
+ r(X,t)&=-\PS(X,t)+A(X,t)+H(X,t).
+\end{align*}
+where the four remainders are those in Lemma~\ref{lem:pair-ef}.
+Set \(R(X,T)=\int_0^T|r(X,t)|^2\dd t\).
+The exact explicit formula gives \(r=\ZS\), so \(R=L\) with
+the existing normalization. We evaluate \(R\) from its prime-side
+expression.
+
+\begin{lemma}[\texttt{PAIR-RHS-MEAN-001}]\label{lem:rhs-mean}
+Uniformly for \(T\geq3\) and \(1\leq X\leq T\),
+\begin{equation}\label{eq:rhs-mean}
+ R(X,T)=\frac{T}{X^2}\log^2T+T\log X
+       +O\left(\frac{T\log T}{X^2}\right)
+       +O(T\sqrt{\log T}),
+\end{equation}
+with absolute effective implied constants and both endpoints included.
+This is the prime-side form of \cite[(2.19)]{BGSTB2024}.
+\end{lemma}
+\begin{proof}
+Write \(q=\log T\), \(\ell=\ell_X\), and use \(L^2(0,T)\) norms.
+The archimedean square has the exact antiderivative
+\[
+ \int_0^T\log^2(t+2)\dd t
+ =\left[(t+2)\{\log^2(t+2)-2\log(t+2)+2\}\right]_0^T.
+\]
+Since \(\log(T+2)-\log T=O(1/T)\), it follows that
+\begin{equation}\label{eq:arch-square}
+ \|A\|_2^2=\frac{Tq^2}{X^2}+E_{\rm archsquare},\qquad
+ E_{\rm archsquare}=O(Tq/X^2),\quad
+ \|A\|_2\ll\sqrt Tq/X.
+\end{equation}
+The prime/archimedean interaction is treated by oscillation.
+Integration by parts, for \(n\geq2\), gives
+\[
+ \left|\int_0^T\log(t+2)n^{-\ii t}\dd t\right|
+ \leq\frac{2\log(T+2)}{\log n}.
+\]
+Also \(\Lambda(n)/\log n\leq1\) and hence
+\[
+ \sum_{n\geq2}\frac{a_X(n)}{\log n}
+ \leq X^{-1}\sum_{2\leq n\leq X}\sqrt n
+        +X\sum_{n>X,\ n\geq2}n^{-3/2}\ll\sqrt X.
+\]
+The coefficient series is absolutely summable, so its integral
+against the bounded function \(\log(t+2)\) can be interchanged.
+Thus
+\begin{equation}\label{eq:prime-arch-cross}
+ E_{\rm primearch}:=-2\Re\int_0^T\PS(X,t)\overline{A(X,t)}\dd t
+ \ll\frac{\log(T+2)}{\sqrt X}
+\end{equation}
+in absolute value.
+
+Keep the four original errors separate initially. Lemma~\ref{lem:pair-ef}
+gives
+\begin{align*}
+ b_{\rm arch}:=\|\EA\|_2&\ll\sqrt T/X,&
+ b_{\rm DS}:=\|\ED\|_2&\ll\sqrt T/X,\\
+ b_{\rm pole}:=\|\EP\|_2&\ll\sqrt X,&
+ b_{\rm trivial}:=\|\ET\|_2&\ll X^{-5/2}.
+\end{align*}
+For the last two bounds use respectively
+\(\int_0^\infty(1+t^2)^{-2}\dd t<\infty\) and
+\(\int_0^\infty(t+2)^{-2}\dd t=1/2\).
+If \(j\) runs over these four errors, their exact contributions
+to the square, beyond \(\|-\PS+A\|_2^2\), are
+\[
+ E_{P,j}=-2\Re\int_0^T\PS\,\overline{E_j}\dd t,\qquad
+ E_{A,j}=2\Re\int_0^T A\,\overline{E_j}\dd t,\qquad
+ E_{\rm remsquare}=\|H\|_2^2.
+\]
+Cauchy--Schwarz gives
+\(|E_{P,j}|\leq2\|\PS\|_2b_j\),
+\(|E_{A,j}|\leq2\|A\|_2b_j\), and
+\(E_{\rm remsquare}\leq(\sum_jb_j)^2\).
+Using Lemma~\ref{lem:prime-mean} and \eqref{eq:arch-square},
+the separate uniform bounds are as follows; entries bound absolute values.
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\(j\) & \(E_{P,j}\) & \(E_{A,j}\)\\
+\midrule
+arch, DS & \(O(T\sqrt\ell/X)\) & \(O(Tq/X^2)\)\\
+pole & \(O(\sqrt{TX\ell})\) & \(O(\sqrt{T/X}\,q)\)\\
+trivial & \(O(\sqrt{T\ell}\,X^{-5/2})\)
+        & \(O(\sqrt Tq\,X^{-7/2})\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The sum of the four \(b_j\) is \(O(\sqrt T/X+\sqrt X)\), since
+\(T\geq3,X\geq1\); therefore
+\[
+ 0\leq E_{\rm remsquare}\ll T/X^2+X.
+\]
+
+Expanding the finite sum of five exact functions now gives
+\[
+ R=\frac{Tq^2}{X^2}+T\log X+
+ E_{\rm diagonal}+E_{\rm offdiag}+E_{\rm archsquare}
+ +E_{\rm primearch}
+ +\sum_j(E_{P,j}+E_{A,j})+E_{\rm remsquare}.
+\]
+Every term is integrable, by the preceding bounds. To combine errors,
+use \(q>1\), \(X\leq T\), \(\ell\leq\log(2T)\ll q\),
+\(\sqrt\ell/X\leq1\), and \(q\leq T\).
+The diagonal is \(O(T)\); the off-diagonal and pole/prime
+interaction are \(O(T\sqrt q)\).
+The archimedean square and its interactions with arch and DS errors
+are \(O(Tq/X^2)\). The remaining table entries and
+\(E_{\rm primearch},E_{\rm remsquare}\) are \(O(T\sqrt q)\).
+This proves \eqref{eq:rhs-mean} with the two displayed error scales.
+
+All arguments hold on the closed range \(T\geq3,1\leq X\leq T\).
+Prime powers at \(X\) are retained once, and \(n=1\) has zero
+coefficient. The prime-series limits are taken at fixed \(X,T\)
+under absolute majorants; the resulting estimates are uniform in
+the stated range. No RH, simplicity, zero-density estimate, or
+prime-pair asymptotic is used.
+\end{proof}
 
 \section{Checks and scope of the audit}\label{sec:checks}
 
@@ -1131,7 +1616,10 @@ uses no numerical result. The finite-height envelope
 computational dependencies. No local numerical certificate or
 independent replay is claimed for those inputs.
 Independent mathematical review, comparison with the final journal
-version of BGSTB, and the prime-side mean square remain pending.
+version of BGSTB, and assembly of the normalized pair theorem remain pending.
+The prime-side mean square is reconstructed as \texttt{PAIR-RHS-MEAN-001}
+from the explicit formula, a local Fourier argument, and the imported
+unconditional PNT and sieve bounds; this part uses no numerical input.
 Finite arithmetic regression scripts check
 the elementary kernel, endpoint, residue, reindexing and truncation
 algebra; they do not certify any analytic estimate.

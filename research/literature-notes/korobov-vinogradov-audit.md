@@ -174,11 +174,11 @@ conventions. No new limit interchange is needed.
 
 The `BGSTB-ZFR` source node now has status `reconstructed_draft`,
 linked to `PAIR-COMPARE-001` as its local claim. The full pair theorem's
-dependency list uses that claim and retains `BGSTB-MEAN` as unresolved.
+dependency list uses that claim and the subsequently reconstructed
+`PAIR-RHS-MEAN-001`; see the [prime-side audit](pair-prime-mean-audit.md).
 The comparison and the full theorem's reconstructed dependency chain carry
 the imported computational provenance; no local certificate or replay is
-claimed. The next task is the prime-side mean square, followed by assembly
-of the full pair asymptotic.
+claimed. Assembly of the full normalized pair asymptotic remains pending.
 
 ## Validation
 
