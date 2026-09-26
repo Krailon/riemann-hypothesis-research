@@ -410,8 +410,8 @@ claims:
       source_structure_checks: "Ledger dependencies, theorem labels, citations, local links and TeX delimiter/environment checks passed."
       independent_verification: pending
       final_journal_text_comparison: pending
-      compilation: blocked_missing_tex_packages
-      compilation_notes: "Latest combined-draft build attempt on 2026-09-25 found pdflatex/bibtex but lacked booktabs.sty and etoolbox.sty."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
       notes: "All interchanges inside the reconstruction are justified. Upstream proofs of classical imported inputs are not fully reconstructed."
 
   - id: PAIR-NORM-INTEGRAL-001
@@ -485,8 +485,8 @@ claims:
       diagonal_audit: "Reflection reindexes the full occurrence sum, not its index or equal-complex-zero diagonals."
       regression_checks: "11 exact Lemma 3 tests and 8 existing Lemma 1 tests passed on 2026-09-25; these are not proof certificates."
       source_structure_checks: "Ledger dependencies, theorem labels, references, citations, local links, TeX structure and Python syntax passed."
-      compilation: blocked_missing_tex_packages
-      compilation_notes: "Latest combined-draft build attempt on 2026-09-25 found pdflatex/bibtex but lacked booktabs.sty and etoolbox.sty."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
       independent_verification: pending
       final_journal_text_comparison: pending
 
@@ -640,7 +640,7 @@ claims:
       horizontal_audit: "Apply X^B(Z) only to retained zeros before extending nonnegative unweighted kernel bounds; no unproved eta bound is imported."
       regression_checks: "9 exact Lemmas 2/4 checks, 8 Lemma 1 checks and 11 Lemma 3 checks passed on 2026-09-25; none is a proof certificate."
       source_structure_checks: "Ledger dependency resolution/acyclicity, theorem labels, references, citations, local links, TeX structure, Python syntax and whitespace checks passed."
-      compilation: blocked_missing_tex_packages
-      compilation_notes: "Isolated build attempted with pdfTeX 1.40.25 (TeX Live 2023/Debian); booktabs.sty and etoolbox.sty are missing. No PDF compilation success is claimed."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
       independent_verification: pending
       final_journal_text_comparison: pending

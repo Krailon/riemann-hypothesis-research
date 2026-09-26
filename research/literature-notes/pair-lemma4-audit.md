@@ -147,11 +147,12 @@ Ledger dependency resolution and acyclicity, theorem-label mapping,
 references, citations, local links, TeX delimiter/environment structure,
 Python syntax and whitespace checks also passed.
 
-An isolated build was attempted with pdfTeX 1.40.25 (TeX Live 2023/Debian).
-The environment has `pdflatex` and `bibtex`, but lacks
-`booktabs.sty` and `etoolbox.sty`; PDF compilation is blocked.
-The manuscript's package declarations are retained. With those dependencies
-installed, run from `proofs/`:
+After installation of `booktabs` and `etoolbox`, an isolated build
+succeeded on 2026-09-25 using pdfTeX 1.40.25 and BibTeX 0.99d
+(TeX Live 2023/Debian). The resulting PDF has 13 pages. All four passes
+completed successfully; the final LaTeX pass and BibTeX reported no warnings,
+and bibliography entries and cross-references resolved. No mathematical
+source changes were needed. Reproduce from `proofs/`:
 
 ```sh
 pdflatex -interaction=nonstopmode -halt-on-error pair_baseline.tex

@@ -110,11 +110,9 @@ Ledger dependency resolution and acyclicity, theorem labels, references,
 citations, local links, TeX delimiter/environment structure, Python syntax
 and whitespace checks also passed. These static checks do not compile TeX.
 
-The initial reconstruction had no TeX toolchain. A later combined-draft
-build attempt during the [Lemmas 2/4 work](pair-lemma4-audit.md) found
-`pdflatex` and `bibtex`, but was blocked by missing TeX packages.
-When a complete toolchain is available, run
-`latexmk -pdf pair_baseline.tex` from `proofs/`.
+After installation of the missing TeX packages, the combined draft compiled
+successfully on 2026-09-25: 13 pages, with bibliography and references resolved
+and no final-pass warnings. See the [build record and commands](pair-lemma4-audit.md).
 Independent mathematical review and final journal comparison remain pending.
 Lemmas 2 and 4 now have local drafts; see the [baseline note](pair-baseline.md)
 for remaining reconstruction work.

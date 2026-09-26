@@ -78,9 +78,8 @@ For a TeX-equipped checkout, compile from `proofs/`:
 latexmk -pdf -interaction=nonstopmode -halt-on-error pair_baseline.tex
 ```
 
-The initial reconstruction had no TeX toolchain. A later combined-draft
-build attempt during the [Lemmas 2/4 work](pair-lemma4-audit.md) found
-`pdflatex` and `bibtex`, but was blocked by missing TeX packages.
-Source-level label/citation and ledger checks pass; successful PDF
-compilation, independent mathematical review and journal-version comparison
-remain pending. Current reconstruction status is in the [baseline note](pair-baseline.md).
+After installation of the missing TeX packages, the combined draft compiled
+successfully on 2026-09-25: 13 pages, with bibliography and references resolved
+and no final-pass warnings. See the [build record](pair-lemma4-audit.md).
+Independent mathematical review and journal-version comparison remain pending.
+Current reconstruction status is in the [baseline note](pair-baseline.md).
