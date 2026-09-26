@@ -15,14 +15,18 @@
 \newcommand{\EA}{E_{\mathrm{arch}}}
 \newcommand{\ED}{E_{\mathrm{DS}}}
 \newcommand{\VS}{\mathcal V}
-\title{Pair baseline: the explicit formula and squared-norm identity}
+\newcommand{\US}{\mathcal U}
+\newcommand{\ELtr}{E_{\mathrm{trunc}}}
+\newcommand{\ELh}{E_{\mathrm{height}}}
+\newcommand{\ELext}{E_{\mathrm{extension}}}
+\title{Pair baseline: explicit formula, counting, squared norm and truncation}
 \author{Research proof draft}
 \date{25 September 2026}
 \begin{document}
 \maketitle
 
 \noindent\textbf{Task: proof. Assumptions: \texttt{UNCONDITIONAL}.}
-This draft reconstructs \cite[Lemmas 1 and 3, (2.2), (2.6)--(2.8)]{BGSTB2024}, with locators
+This draft reconstructs \cite[Lemmas 1--4, (2.2)--(2.16)]{BGSTB2024}, with locators
 referring to arXiv:2306.04799v1. It does not reconstruct the subsequent
 pair-correlation asymptotic. In the explicit-formula series, all nontrivial zeros
 \(\rho=\beta+\ii\gamma=1/2+\delta_\rho+\ii\gamma\) are counted with
@@ -73,13 +77,9 @@ gives
 +O(\log v)\) for \(v\geq4\), with multiplicity and half-weight at
 \(\gamma=v\). This is the unconditional corollary; the following
 Corollary 14.4 assumes RH and is not used.
-For the project's inclusive count \(N(v)\), sandwich it between
-\(N_*(v-1)\) and \(N_*(v+1)\). The two main terms differ by
-\(O(\log v)\), so the same error estimate holds for \(N(v)\).
-Likewise the number of occurrences in any interval \([v,v+1]\) is at
-most \(N_*(v+2)-N_*(v-1)=O(\log(v+2))\) for large positive \(v\).
-Conjugation and finiteness on compact sets give the corresponding bound
-\(O(\log(|v|+2))\) on the whole real axis.
+Lemma~\ref{lem:pair-count} below derives the inclusive endpoint and
+local counting versions needed here from this imported statement.
+The upstream proof of Riemann--von Mangoldt is not reconstructed.
 \item \texttt{ZETA-CONTOUR-001}: \cite[Lemma 12.2, p.~398]{MV2007}
 supplies heights \(U_j\in[j,j+1]\), \(j\geq2\), avoiding zero
 ordinates, such that
@@ -101,6 +101,146 @@ In particular fix an effective constant \(C_\psi\) such that
 The Euler--Maclaurin proof of that theorem yields an effective constant;
 we do not optimize or numerically evaluate it here.
 \end{enumerate}
+
+\section{Inclusive counting and rational-kernel bounds}
+
+\begin{lemma}[\texttt{PAIR-COUNT-001}; BGSTB Lemma 2]\label{lem:pair-count}
+Let \(N(v)\) count all occurrences with \(0<\gamma\leq v\).
+Uniformly for \(v\geq3\),
+\begin{equation}\label{eq:inclusive-count}
+ N(v)=\frac{v}{2\pi}\log\frac{v}{2\pi}-\frac{v}{2\pi}+O(\log v).
+\end{equation}
+In particular \(N(v)\sim v\log v/(2\pi)\) as \(v\to\infty\).
+There is an absolute effective constant \(C_{\rm count}\) such that
+\begin{equation}\label{eq:local-count}
+ \#\{\rho:v\leq\gamma\leq v+1\}
+ \leq C_{\rm count}\log(|v|+2)\qquad(v\in\mathbb R).
+\end{equation}
+Endpoints and repeated occurrences have full weight in this inequality.
+Also \(\#\{\rho:|\gamma|\leq V\}\ll V\log(V+2)\) for \(V\geq2\).
+\end{lemma}
+\begin{proof}
+Write \(f(v)=v\log(v/(2\pi))/(2\pi)-v/(2\pi)\).
+For \(v\geq5\), monotonicity of the midpoint count gives
+\[
+ N_*(v-1)\leq N(v)\leq N_*(v+1).
+\]
+Since \(f'(v)=\log(v/(2\pi))/(2\pi)\), both outer expressions
+are \(f(v)+O(\log v)\) by the imported count. For \(3\leq v<5\),
+use \(N(v)\leq N_*(6)\) and boundedness of \(f\) on this interval.
+This proves \eqref{eq:inclusive-count} with an effective constant.
+For \(v\geq5\), the padded interval similarly gives
+\[
+ \#\{\rho:v\leq\gamma\leq v+1\}
+ \leq N_*(v+2)-N_*(v-1)\ll\log(v+2).
+\]
+The padding includes full multiplicities even at either endpoint.
+
+For completeness, there are no nontrivial zeros with \(\gamma=0\).
+Indeed the paired series
+\[
+ H(s)=\sum_{n\geq1}\big((2n-1)^{-s}-(2n)^{-s}\big)
+\]
+converges locally uniformly for \(\Re s>0\): each difference equals
+\(s\int_{2n-1}^{2n}u^{-s-1}\dd u\), with a summable majorant on
+every compact subset. For \(\Re s>1\), absolute convergence gives
+\(H(s)=(1-2^{1-s})\zeta(s)\); analytic continuation extends the identity
+to \(\Re s>0\), with the pole at 1 removed by the prefactor.
+For real \(0<s<1\), every paired term is positive and
+\(1-2^{1-s}<0\), so \(\zeta(s)<0\).
+Conjugation now gives \(\#\{|\gamma|\leq V\}=2N(V)\).
+For \(v\leq-6\), conjugate the interval to \([-v-1,-v]\) and apply
+the positive-height bound. For \(-6<v<5\), all its zeros are counted
+by \(2N(8)\leq2N_*(9)\), which has an effective bound.
+This proves \eqref{eq:local-count} on the whole real axis.
+The total-count estimate follows from \eqref{eq:inclusive-count}
+for \(V\geq3\), and from \(N(V)\leq N_*(4)\) for \(2\leq V<3\).
+Dividing \eqref{eq:inclusive-count} by \(v\log v/(2\pi)\)
+proves the asymptotic.
+\end{proof}
+
+\begin{lemma}[\texttt{PAIR-COUNT-KERNEL-001}]\label{lem:count-kernel}
+Put \(\kappa(y)=(1+y^2)^{-1}\), and sum over all nontrivial zero occurrences.
+The following bounds have absolute effective constants:
+\begin{align}
+ K(t):=\sum_\rho\kappa(t-\gamma)&\ll\log(|t|+2)
+                  &&(t\in\mathbb R),\label{eq:kernel-global}\\
+ \sum_{|\gamma|>Z}\kappa(t-\gamma)&\ll\frac{\log Z}{Z}
+                  &&(T\geq3,\ Z\geq2T,\ 0\leq t\leq T).
+                  \label{eq:kernel-far}
+\end{align}
+For \(T\geq3\), define the exterior and interior sums
+\[
+ B_T(t)=\sum_{\gamma\leq0\ {\rm or}\ \gamma>T}\kappa(t-\gamma),
+ \qquad A_T^{\rm ker}(t)=\sum_{0<\gamma\leq T}\kappa(t-\gamma).
+\]
+Then
+\begin{align}
+ B_T(t)&\ll\log(T+2)
+     \left(\frac1{1+t}+\frac1{1+T-t}\right)
+                         &&(0\leq t\leq T),\label{eq:kernel-boundary}\\
+ A_T^{\rm ker}(t)&\ll
+ \frac{\log(T+2)}{1+\operatorname{dist}(t,[0,T])}
+                         &&(t\notin[0,T]).\label{eq:kernel-extension}
+\end{align}
+In particular all the infinite sums displayed above converge absolutely.
+\end{lemma}
+\begin{proof}
+We first record, uniformly for real \(a\geq0\), the elementary bounds
+\begin{equation}\label{eq:kernel-series}
+ \sum_{n\geq0}\frac1{1+(a+n)^2}\ll\frac1{1+a},\qquad
+ \sum_{n\geq0}\frac{\log(n+2)}{1+(a+n)^2}
+       \ll\frac{\log(a+2)}{1+a}.
+\end{equation}
+To prove these, set \(D=1+a\). The \(n\leq D\) terms have
+denominator at least \(D^2/2\) and there are at most \(2D\) of them.
+For \(2^jD<n\leq2^{j+1}D\), \(j\geq0\), there are at most
+\(3\cdot2^jD\) terms, each with denominator at least \(2^{2j}D^2\)
+and logarithmic numerator at most \(\log D+(j+2)\log2\).
+The convergent series \(\sum2^{-j}\) and \(\sum(j+2)2^{-j}\)
+give \eqref{eq:kernel-series}, with explicit effective constants
+if desired. All terms are nonnegative, so grouping needs only
+monotone convergence.
+
+The distance shell \(n\leq|t-\gamma|<n+1\) is covered by two closed
+unit intervals. By \eqref{eq:local-count} its count is at most
+\(C\log(|t|+n+3)\), even when shell endpoints are zero ordinates.
+Using
+\(\log(|t|+n+3)\leq\log(|t|+2)+\log(n+2)\) and
+\eqref{eq:kernel-series} with \(a=0\) proves
+\eqref{eq:kernel-global}. For \(|\gamma|>Z\geq2T\),
+\(|t-\gamma|\geq|\gamma|/2\). The total-count bound on the
+disjoint dyadic shells \(2^jZ<|\gamma|\leq2^{j+1}Z\) gives
+\[
+ \sum_{|\gamma|>Z}\kappa(t-\gamma)
+ \ll\sum_{j\geq0}\frac{\log(2^{j+1}Z+2)}{2^jZ}
+ \ll\frac{\log Z}{Z},
+\]
+uniformly in the stated range, proving \eqref{eq:kernel-far}.
+
+For \(0\leq t\leq T\), cover the lower exterior by
+\([-n-1,-n]\), \(n\geq0\). Its kernel sum is at most
+\[
+ C\sum_{n\geq0}\frac{\log(n+3)}{1+(t+n)^2}
+ \ll\frac{\log(t+2)}{1+t}.
+\]
+Cover the upper exterior by \((T+n,T+n+1]\); its sum is at most
+\[
+ C\sum_{n\geq0}\frac{\log(T+n+2)}{1+(T-t+n)^2}
+ \ll\frac{\log(T+2)+\log(T-t+2)}{1+T-t}.
+\]
+Here \(\log(T+n+2)\leq\log(T+2)+\log(n+2)\) and
+\eqref{eq:kernel-series} justify the last inequality.
+These two estimates prove \eqref{eq:kernel-boundary}.
+For \(t=-a<0\), cover the interior zeros by
+\([n,n+1)\cap(0,T]\); for \(t=T+a>T\), use
+\((T-n-1,T-n]\cap(0,T]\), in each case with \(n\geq0\).
+Every nonempty interval has at most \(C\log(T+2)\) occurrences
+and distance at least \(a+n\) from \(t\).
+The unweighted bound in \eqref{eq:kernel-series} proves
+\eqref{eq:kernel-extension}. Overlaps in closed covers only enlarge
+these nonnegative majorants; they do not alter any zero-sum convention.
+\end{proof}
 
 \section{Convergence and a Mellin kernel}
 
@@ -126,7 +266,7 @@ For real \(v\) and \(|\delta|<1/2\),
  =1+v^2-\delta^2\geq\tfrac34(1+v^2).
 \end{equation}
 Thus each zero term is at most \((8/3)X^{1/2}/(1+(t-\gamma)^2)\).
-The inclusive counting bound above gives
+Lemma~\ref{lem:pair-count} gives
 \(\#\{\rho:|\gamma|\leq V\}\ll V\log(V+2)\) for \(V\geq2\).
 If \(|\gamma|>U\geq2(|t|+2)\), then
 \(|t-\gamma|\geq|\gamma|/2\). Summing over
@@ -565,6 +705,165 @@ The normalization is positive for \(T\geq3\), and
 \(T^{-\alpha}=(T^\alpha)^{-1}\). No asymptotic formula is used.
 \end{proof}
 
+\section{Height truncation with separate errors}
+
+For \(X\geq1\), define
+\begin{equation}\label{eq:trunc-definitions}
+ \US_X(t)=\sum_\rho v_\rho(t),\qquad
+ \US_{X,Z}(t)=\sum_{|\gamma|\leq Z}v_\rho(t),\qquad
+ L(X,T)=4\int_0^T|\US_X(t)|^2\dd t,
+\end{equation}
+where \(v_\rho(t)\) has the definition \eqref{eq:norm-vector}.
+The full sum includes all nontrivial zero occurrences, and the truncated
+sum retains full multiplicity at both \(\gamma=Z\) and \(\gamma=-Z\).
+Lemma~\ref{lem:ef-convergence} gives absolute and local uniform
+convergence. More precisely
+\(\ZS(X,t)=2X^{-\ii t}\US_X(t)\), so
+\begin{equation}\label{eq:trunc-phase}
+ L(X,T)=\int_0^T|\ZS(X,t)|^2\dd t.
+\end{equation}
+This identifies the integral with Lemma 1 without changing a normalization.
+Define the finite-height horizontal bound
+\begin{equation}\label{eq:horizontal-envelope}
+ B(Z)=\max\bigl(\{0\}\cup\{\delta_\rho:|\gamma|\leq Z\}\bigr),
+ \qquad \eta_*(Z)=\tfrac12-B(Z).
+\end{equation}
+The zero set in this maximum is finite, so
+\(0\leq B(Z)<1/2\) and \(0<\eta_*(Z)\leq1/2\), including an empty
+zero set. The definition uses actual zeros, not a zero-density or
+zero-free-region hypothesis. It supplies no quantitative lower bound
+for \(\eta_*(Z)\) as \(Z\to\infty\).
+For every retained occurrence and \(X\geq1\),
+\begin{equation}\label{eq:horizontal-majorant}
+ |v_\rho(t)|\leq\tfrac43X^{B(Z)}\kappa(t-\gamma).
+\end{equation}
+
+\begin{lemma}[\texttt{PAIR-TRUNC-001}; BGSTB Lemma 4]\label{lem:pair-trunc}
+For \(X\geq1,T\geq3,Z\geq2T\), one has the exact decomposition
+\begin{equation}\label{eq:trunc-decomposition}
+ L(X,T)=2\pi\Phi(X,T)+\ELtr+\ELh+\ELext,
+\end{equation}
+where
+\begin{align}
+ \ELtr&=4\int_0^T
+       \bigl(|\US_X(t)|^2-|\US_{X,Z}(t)|^2\bigr)\dd t,
+       \label{eq:error-trunc-definition}\\
+ \ELh&=4\int_0^T
+       \bigl(|\US_{X,Z}(t)|^2-|\VS_{X,T}(t)|^2\bigr)\dd t,
+       \label{eq:error-height-definition}\\
+ \ELext&=-4\int_{\mathbb R\setminus[0,T]}|\VS_{X,T}(t)|^2\dd t.
+       \label{eq:error-extension-definition}
+\end{align}
+Uniformly throughout this range, with absolute effective constants,
+\begin{align}
+ |\ELtr|&\ll XT\left(
+       \frac{\log(T+2)\log Z}{Z}+\frac{\log^2Z}{Z^2}\right)
+       \ll\frac{XT\log^2Z}{Z},\label{eq:error-trunc-bound}\\
+ |\ELh|&\ll X^{2B(Z)}\log^3T,\label{eq:error-height-bound}\\
+ |\ELext|&\ll X^{2B(Z)}\log^2T,\qquad \ELext\leq0.
+       \label{eq:error-extension-bound}
+\end{align}
+Consequently, for all \(X\geq1,T\geq3\), with \(Z_*=T\log^2T\),
+\begin{equation}\label{eq:pair-trunc-final}
+ \Phi(X,T)=\frac{L(X,T)}{2\pi}
+       +O\bigl(X^{2B(Z_*)}\log^3T\bigr)+O(X).
+\end{equation}
+The first error can equivalently be written using \(\eta_*(Z_*)\) as
+\(O(X^{1-2\eta_*(Z_*)}\log^3T)\). More generally, it has that bound
+with any \(0\leq\eta(Z_*)\leq1/2\) for which the established envelope
+\(B(Z_*)\leq1/2-\eta(Z_*)\) holds. The implicit constants do not
+depend on the choice of this envelope.
+\end{lemma}
+\begin{proof}
+\textit{Removing the distant zeros.}
+By \eqref{eq:denominator}, \eqref{eq:kernel-global} and
+\eqref{eq:kernel-far}, for \(0\leq t\leq T\),
+\[
+ |\US_X(t)|\ll X^{1/2}\log(T+2),\qquad
+ |R_{X,Z}(t)|\ll X^{1/2}\frac{\log Z}{Z},
+ \qquad R_{X,Z}=\US_X-\US_{X,Z}.
+\]
+These are bounds for the absolutely convergent sums, including their
+absolute-value majorants. In particular \(L\) is finite.
+Using the identity
+\[
+ |A|^2-|A-R|^2=2\Re(A\overline R)-|R|^2
+\]
+with \(A=\US_X(t)\), integration yields the first bound in
+\eqref{eq:error-trunc-bound}. Its quadratic term is retained.
+Since \(T+2\leq Z\) for \(T\geq3,Z\geq2T\) and \(Z\geq6\),
+the simpler second bound follows. No infinite double sum is expanded.
+
+\textit{Removing the lower and upper exterior occurrences.}
+Every occurrence of \(I_T\) is included in \(|\gamma|\leq Z\).
+By \eqref{eq:horizontal-majorant}, both
+\(|\US_{X,Z}(t)|\) and \(|\VS_{X,T}(t)|\) are at most
+\((4/3)X^{B(Z)}K(t)\), and
+\[
+ |\US_{X,Z}(t)-\VS_{X,T}(t)|
+ \leq\tfrac43X^{B(Z)}B_T(t).
+\]
+Dropping the cutoff \(Z\) enlarges only these nonnegative kernel
+majorants; we do not apply \(X^{B(Z)}\) to unretained zero weights.
+For complex \(A,C\),
+\(\bigl||A|^2-|C|^2\bigr|\leq|A-C|(|A|+|C|)\).
+Thus \eqref{eq:kernel-global} and \eqref{eq:kernel-boundary} give
+\begin{align*}
+ |\ELh|
+ &\ll X^{2B(Z)}\int_0^T K(t)B_T(t)\dd t\\
+ &\ll X^{2B(Z)}\log^2(T+2)
+       \int_0^T\left(\frac1{1+t}+\frac1{1+T-t}\right)\dd t\\
+ &\ll X^{2B(Z)}\log^2(T+2)\log(1+T).
+\end{align*}
+This proves \eqref{eq:error-height-bound}, because \(T\geq3\).
+In particular no lower bound on the distance from \(T\) to a zero
+ordinate is needed. All occurrences at \(\gamma=T\) remain inside.
+
+\textit{Extending the integral.}
+The same horizontal bound, now applied only to \(I_T\), and
+\eqref{eq:kernel-extension} give
+\[
+ |\ELext|
+ \ll X^{2B(Z)}\log^2(T+2)\,
+        2\int_0^\infty\frac{\dd a}{(1+a)^2}
+ \ll X^{2B(Z)}\log^2T.
+\]
+The sign follows from its definition. Telescoping the three error
+definitions, and then using \eqref{eq:pair-norm}, gives
+\[
+ L=4\int_{\mathbb R}|\VS_{X,T}(t)|^2\dd t
+       +\ELtr+\ELh+\ELext
+   =2\pi\Phi+\ELtr+\ELh+\ELext.
+\]
+This establishes \eqref{eq:trunc-decomposition}. All integrals are
+absolutely convergent by the displayed majorants. The sole infinite
+zero sum has the locally uniform interpretation already proved in
+Lemma~\ref{lem:ef-convergence}; every subsequent difference and finite
+sum is at fixed \(X,T,Z\).
+
+\textit{Choosing the auxiliary height and treating small \(T\).}
+For \(T\geq5\), \(Z_*=T\log^2T\geq2T\), and
+\(\log Z_*=\log T+2\log\log T\ll\log T\).
+Hence \(\ELtr=O(X)\); the other two errors give
+\eqref{eq:pair-trunc-final}. The choice \(Z_*\geq2T\) is not
+valid for every \(T\geq3\), so we treat \(3\leq T<5\) separately.
+The global kernel bound gives
+\(L(X,T)\ll XT\log^2(T+2)\ll X\) on that bounded range.
+For \(z=\rho_j-\rho_k=b+\ii d\), \(|b|<1\) gives
+\[
+ |4-z^2|\geq4-b^2+d^2\geq3+d^2,\qquad
+ |X^z|\leq X.
+\]
+Consequently \(|\Phi(X,T)|\leq(4/3)XN(5)^2\ll X\), with an
+effective constant from Lemma~\ref{lem:pair-count}.
+Thus \(\Phi-L/(2\pi)=O(X)\) uniformly for \(3\leq T<5\);
+the first error in \eqref{eq:pair-trunc-final} can be taken as zero
+there. This uses no numerical knowledge of the first zeta zero.
+Finally \(2B(Z_*)=1-2\eta_*(Z_*)\), and any other established
+envelope gives the claimed weaker error since \(X\geq1\).
+No quantitative zero-free region, RH, or simplicity enters the proof.
+\end{proof}
+
 \section{Checks and scope of the audit}\label{sec:checks}
 
 The zero-side denominator is at least \(3/4\) in modulus when
@@ -600,14 +899,22 @@ The full identity then recovers the usual ordinate kernel with coefficient
 4. The formulas also apply directly at \(X=1\) and for \(0<X<1\),
 and when \(I_T\) is empty both sides vanish.
 
+For height truncation, the bounds hold at \(X=1\), even when the
+finite zero set is empty or zeros lie exactly on either cutoff.
+Under the separate check assumption \texttt{RH}, \(B(Z)=0\), so
+the height and extension bounds reduce to \(O(\log^3T)\) and
+\(O(\log^2T)\); the distant-zero estimate remains \(O(X)\) after
+the stated choice of \(Z\). This check does not assert a sharp
+RH-dependent refinement of that last error.
+
 All local statements have status \texttt{proved-draft}. The imported
 analytic inputs are identified above, the sum/integral exchanges are
 justified within the proof, and no numerical result is used in it.
 Independent mathematical review, comparison with the final journal
-version, and reconstruction of the remaining pair-method lemmas remain
-pending. Finite arithmetic regression scripts check the elementary
-kernel, endpoint, residue and reindexing algebra; they do not certify
-any analytic estimate.
+version, the quantitative zero-free-region input, and the prime-side
+mean square remain pending. Finite arithmetic regression scripts check
+the elementary kernel, endpoint, residue, reindexing and truncation
+algebra; they do not certify any analytic estimate.
 
 \bibliographystyle{plain}
 \bibliography{../research/literature}

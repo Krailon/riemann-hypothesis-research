@@ -78,7 +78,9 @@ For a TeX-equipped checkout, compile from `proofs/`:
 latexmk -pdf -interaction=nonstopmode -halt-on-error pair_baseline.tex
 ```
 
-The current environment has no `latexmk`, `pdflatex`, `tectonic`, or `bibtex`.
-Source-level label/citation and ledger checks are performed; PDF compilation
-is unavailable. Independent mathematical review, journal-version comparison,
-and the other pair-baseline lemmas remain pending.
+The initial reconstruction had no TeX toolchain. A later combined-draft
+build attempt during the [Lemmas 2/4 work](pair-lemma4-audit.md) found
+`pdflatex` and `bibtex`, but was blocked by missing TeX packages.
+Source-level label/citation and ledger checks pass; successful PDF
+compilation, independent mathematical review and journal-version comparison
+remain pending. Current reconstruction status is in the [baseline note](pair-baseline.md).

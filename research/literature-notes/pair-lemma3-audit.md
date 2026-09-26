@@ -110,9 +110,11 @@ Ledger dependency resolution and acyclicity, theorem labels, references,
 citations, local links, TeX delimiter/environment structure, Python syntax
 and whitespace checks also passed. These static checks do not compile TeX.
 
-The environment has no `latexmk`, `pdflatex` or `tectonic`; PDF compilation
-has not been performed. When a TeX toolchain is available, run
+The initial reconstruction had no TeX toolchain. A later combined-draft
+build attempt during the [Lemmas 2/4 work](pair-lemma4-audit.md) found
+`pdflatex` and `bibtex`, but was blocked by missing TeX packages.
+When a complete toolchain is available, run
 `latexmk -pdf pair_baseline.tex` from `proofs/`.
 Independent mathematical review and final journal comparison remain pending.
-The next bounded reconstruction is Lemma 4, with the needed Lemma 2
-counting bounds and its separate uniform truncation errors.
+Lemmas 2 and 4 now have local drafts; see the [baseline note](pair-baseline.md)
+for remaining reconstruction work.

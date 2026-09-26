@@ -121,20 +121,22 @@ exact: although it tends to one, changing normalization at the height
 ## 4. Inputs to reconstruct next
 
 The following source map records the remaining reconstruction work.
-Lemmas 1 and 3 now have local `proved-draft` reconstructions; independent review
+Lemmas 1–4 now have local `proved-draft` reconstructions; Lemma 2 retains
+Riemann–von Mangoldt as an explicitly imported input. Independent review
 remains pending. Source IDs and local claim IDs are linked in the ledger.
 
 | ID | Source locator | Role and outstanding check |
 | --- | --- | --- |
 | `BGSTB-EF` | Lemma 1, (2.2)–(2.3) | Reconstructed as `PAIR-EF-001`; see the [proof and endpoint audit](pair-lemma1-audit.md). Independent review and journal comparison pending. |
-| `BGSTB-COUNT` | Lemma 2, (2.4)–(2.5) | Verify multiplicity-aware zero counting and local bounds used for tails. |
+| `BGSTB-COUNT` | Lemma 2, (2.4)–(2.5) | Inclusive and local counts reconstructed as `PAIR-COUNT-001`; kernel bounds in `PAIR-COUNT-KERNEL-001`. See the [counting and truncation audit](pair-lemma4-audit.md). |
 | `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Reconstructed as `PAIR-NORM-001`, with integral and positivity claims; see the [contour and multiplicity audit](pair-lemma3-audit.md). Independent review and journal comparison pending. |
-| `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Audit height removal and tails at \(Z=T\log^2T\); retain \(X^{1-2\eta(Z)}\log^3T\) and \(O(X)\) separately. |
+| `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Reconstructed as `PAIR-TRUNC-001` with three named errors and a separate small-height argument; see the [audit](pair-lemma4-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-ZFR` | Theorem 1 proof, before (2.18) | Locate a primary Korobov–Vinogradov bound and verify its use uniformly for \(1\leq X\leq T\). |
 | `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstruct the prime-side mean square, including prime powers and cross terms; verify the cited Goldston–Montgomery Lemma 6 refinement and endpoint \(X=T\). |
 
 The last row is an unresolved citation chain, not permission to use an
-RH-dependent pair theorem. Work only on \(1\leq X\leq T\); v1's printed
+RH-dependent pair theorem. For the prime-side theorem assembly use
+\(1\leq X\leq T\); v1's printed
 \(0\leq X\leq T\) before (2.19) cannot include \(X=0\), where its formula
 is undefined. The full dependency graph, named error budget, and RH
 contamination audit remain Work Package A tasks.
@@ -146,6 +148,13 @@ Lemma 3 now has a squared-norm proof, an explicit integral tail bound,
 the off-line contour shift including coincident poles, and a
 multiplicity-preserving reflection argument. Its corollary proves reality,
 nonnegativity and evenness without the asymptotic theorem.
-**Next bounded proof task:** reconstruct Lemma 4's height truncation,
-including the needed Lemma 2 counting bounds and separate uniform errors.
+Lemma 2's inclusive/local counting consequences and Lemma 4's height
+truncation are now reconstructed. The latter applies for all \(X\geq1,T\geq3\),
+with `E_trunc`, `E_height` and `E_extension` bounded separately. Its
+horizontal envelope is defined from the finite zero set and carries no
+unproved quantitative zero-free-region assumption.
+**Next bounded proof task:** verify a primary-source Korobov–Vinogradov
+zero-free region, translate it to the required finite-height envelope,
+and derive the uniform comparison of \(L(X,T)\) and \(2\pi\Phi(X,T)\)
+for \(1\leq X\leq T\). The prime-side mean square follows afterward.
 The pair-correlation asymptotic itself remains an imported theorem.

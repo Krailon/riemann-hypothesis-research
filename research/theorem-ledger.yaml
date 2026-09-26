@@ -16,7 +16,9 @@ source_nodes:
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Lemma 2; equations (2.4)-(2.5)"
-    audit_status: pending
+    audit_status: reconstructed_draft
+    local_claim: PAIR-COUNT-001
+    notes: "Inclusive and local counts derived from imported unconditional Riemann-von Mangoldt; kernel consequences in PAIR-COUNT-KERNEL-001. Independent review and journal comparison pending."
   - id: BGSTB-NORM
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
@@ -28,7 +30,9 @@ source_nodes:
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Lemma 4; equations (2.13)-(2.16)"
-    audit_status: pending
+    audit_status: reconstructed_draft
+    local_claim: PAIR-TRUNC-001
+    notes: "Three separate errors, finite-height horizontal envelope and bounded-height treatment reconstructed; no quantitative zero-free region used. Independent review and journal comparison pending."
   - id: BGSTB-ZFR
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
@@ -61,10 +65,10 @@ claims:
     assumptions: [UNCONDITIONAL]
     dependencies:
       - PAIR-EF-001
-      - BGSTB-COUNT
+      - PAIR-COUNT-001
       - PAIR-NORM-001
       - PAIR-POSITIVITY-001
-      - BGSTB-TRUNC
+      - PAIR-TRUNC-001
       - BGSTB-ZFR
       - BGSTB-MEAN
     dependency_graph_complete: false
@@ -93,8 +97,9 @@ claims:
       numerical_certification: not_applicable
       notes: |
         Published status records the external work, not a completed project
-        proof audit. Lemmas 1 and 3 now depend on local proved-draft claims.
-        The other section-2 source pointers await reconstruction.
+        proof audit. Lemmas 1-4 now depend on local proved-draft claims;
+        Lemma 2 retains Riemann-von Mangoldt as a stated imported input.
+        Quantitative zero-free-region and prime mean-square inputs await reconstruction.
         The source's conditional Theorems 2-3 are not imported.
 
   - id: PAIR-TRANSLATION-001
@@ -286,7 +291,7 @@ claims:
       absolute effective constant. All zeros are counted with multiplicity.
     status: proved-draft
     assumptions: [UNCONDITIONAL]
-    dependencies: [ZETA-ANALYTIC-001, ZETA-COUNT-001]
+    dependencies: [ZETA-ANALYTIC-001, PAIR-COUNT-001]
     dependency_graph_complete: false
     source:
       file: proofs/pair_baseline.tex
@@ -405,7 +410,8 @@ claims:
       source_structure_checks: "Ledger dependencies, theorem labels, citations, local links and TeX delimiter/environment checks passed."
       independent_verification: pending
       final_journal_text_comparison: pending
-      compilation: unavailable_no_tex_toolchain
+      compilation: blocked_missing_tex_packages
+      compilation_notes: "Latest combined-draft build attempt on 2026-09-25 found pdflatex/bibtex but lacked booktabs.sty and etoolbox.sty."
       notes: "All interchanges inside the reconstruction are justified. Upstream proofs of classical imported inputs are not fully reconstructed."
 
   - id: PAIR-NORM-INTEGRAL-001
@@ -479,7 +485,8 @@ claims:
       diagonal_audit: "Reflection reindexes the full occurrence sum, not its index or equal-complex-zero diagonals."
       regression_checks: "11 exact Lemma 3 tests and 8 existing Lemma 1 tests passed on 2026-09-25; these are not proof certificates."
       source_structure_checks: "Ledger dependencies, theorem labels, references, citations, local links, TeX structure and Python syntax passed."
-      compilation: unavailable_no_tex_toolchain
+      compilation: blocked_missing_tex_packages
+      compilation_notes: "Latest combined-draft build attempt on 2026-09-25 found pdflatex/bibtex but lacked booktabs.sty and etoolbox.sty."
       independent_verification: pending
       final_journal_text_comparison: pending
 
@@ -507,3 +514,133 @@ claims:
       task_type: proof
       proof_method: "Squared norm and exchange of the two indices using the even rational weight."
       independent_verification: pending
+
+  - id: PAIR-COUNT-001
+    title: Inclusive and local zero counts with full endpoint multiplicities
+    kind: lemma
+    statement: |
+      Let N(v) count every nontrivial zeta zero occurrence with 0<gamma<=v.
+      Uniformly for v>=3,
+      N(v)=v log(v/(2 pi))/(2 pi)-v/(2 pi)+O(log v),
+      and N(v)~v log(v)/(2 pi) as v->infinity.
+      An absolute effective C_count exists such that, for every real v,
+      #{rho:v<=gamma<=v+1}<=C_count log(|v|+2), with full endpoint
+      multiplicities. For V>=2, #{rho:|gamma|<=V}<<V log(V+2).
+      There are no nontrivial zeros with gamma=0, as established by
+      the locally uniformly convergent paired alternating series.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZETA-COUNT-001, ZETA-ANALYTIC-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-count
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Lemma 2, equations (2.4)-(2.5)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Endpoint translations are finite sandwiches; v->infinity only for the stated count asymptotic."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      imported_scope: "Riemann-von Mangoldt remains ZETA-COUNT-001; its upstream proof is not reconstructed."
+      endpoint_audit: "Padded midpoint counts bound full-weight endpoints; conjugation and an effective bounded-height count cover all real intervals."
+      interchange_justification: "Paired alternating-series terms have locally summable O_K(n^(-1-epsilon)) majorants for Re(s)>0."
+      rh_contamination_audit: "Uses MV2007 Corollary 14.3; the RH-dependent Corollary 14.4 is excluded."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+
+  - id: PAIR-COUNT-KERNEL-001
+    title: Global, distant and boundary rational-kernel estimates from local counts
+    kind: lemma
+    statement: |
+      Write kappa(y)=1/(1+y^2) and sum over all nontrivial zero occurrences.
+      K(t)=sum_rho kappa(t-gamma)<<log(|t|+2) for all real t.
+      For T>=3,Z>=2T,0<=t<=T,
+      sum_{|gamma|>Z} kappa(t-gamma)<<log(Z)/Z.
+      For T>=3, put B_T(t)=sum_{gamma<=0 or gamma>T} kappa(t-gamma)
+      and A_T^ker(t)=sum_{0<gamma<=T} kappa(t-gamma).
+      For 0<=t<=T,
+      B_T(t)<<log(T+2)(1/(1+t)+1/(1+T-t)).
+      For t outside [0,T],
+      A_T^ker(t)<<log(T+2)/(1+dist(t,[0,T])).
+      The infinite sums converge absolutely; all constants are absolute
+      and effective, uniformly in the displayed parameter ranges.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:count-kernel
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, equations (2.14)-(2.15) and boundary estimates after (2.15)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed parameters; nonnegative shell sums are justified by monotone convergence and summable majorants."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Unit-interval counts, elementary shifted series and dyadic shells; no imported pair-correlation theorem."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+
+  - id: PAIR-TRUNC-001
+    title: Unconditional height truncation with separate uniform errors
+    kind: lemma
+    statement: |
+      For X>=1 let v_rho(t)=X^(delta_rho+i gamma)
+      /(1+((t-gamma)+i delta_rho)^2), U_X=sum_rho v_rho,
+      U_{X,Z}=sum_{|gamma|<=Z} v_rho, and V_{X,T}=sum_{0<gamma<=T} v_rho.
+      Powers use the real logarithm. All sums count occurrences with
+      multiplicity and full weight at their included endpoints.
+      Define L(X,T)=4 integral_0^T |U_X(t)|^2 dt
+      =integral_0^T |S(X,t)|^2 dt, where S is PAIR-EF-CONVERGENCE-001.
+      Set B(Z)=max({0} union {delta_rho:|gamma|<=Z}), so 0<=B(Z)<1/2.
+      For X>=1,T>=3,Z>=2T, with Phi as in PAIR-NORM-001,
+      L(X,T)=2 pi Phi(X,T)+E_trunc+E_height+E_extension, exactly, where
+      E_trunc=4 integral_0^T (|U_X|^2-|U_{X,Z}|^2) dt,
+      E_height=4 integral_0^T (|U_{X,Z}|^2-|V_{X,T}|^2) dt,
+      E_extension=-4 integral_{R outside [0,T]} |V_{X,T}|^2 dt.
+      Uniformly,
+      |E_trunc|<<XT(log(T+2)log(Z)/Z+log(Z)^2/Z^2)<<XT log(Z)^2/Z,
+      |E_height|<<X^(2B(Z))log(T)^3,
+      |E_extension|<<X^(2B(Z))log(T)^2, and E_extension<=0.
+      Consequently for all X>=1,T>=3 and Z_*=T log(T)^2,
+      Phi(X,T)=L(X,T)/(2 pi)+O(X^(2B(Z_*))log(T)^3)+O(X).
+      With eta_*(Z)=1/2-B(Z), the first error is
+      O(X^(1-2eta_*(Z_*))log(T)^3). It has the same bound with any
+      established envelope 0<=eta(Z_*)<=1/2 satisfying B(Z_*)<=1/2-eta(Z_*).
+      Constants are absolute and effective, independent of that envelope.
+      No quantitative zero-free region, RH or simplicity is assumed.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-COUNT-KERNEL-001, PAIR-EF-CONVERGENCE-001, PAIR-NORM-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-trunc
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Lemma 4, equations (2.12)-(2.16)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Full zero sum first defined by local uniform convergence at fixed X,T; finite Z estimates are uniform; choose Z=T log(T)^2 only for T>=5."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      interchange_justification: "Absolutely convergent kernel majorants control the full sum; use squared-modulus differences, not an infinite double-sum expansion. All integrals are absolutely convergent."
+      small_height_audit: "For 3<=T<5, Z_*=T log(T)^2 need not be >=2T; bound L and Phi directly by O(X) instead."
+      endpoint_audit: "gamma=T and gamma=+/-Z included with full multiplicity; X=1, bounded heights and empty finite sets covered."
+      horizontal_audit: "Apply X^B(Z) only to retained zeros before extending nonnegative unweighted kernel bounds; no unproved eta bound is imported."
+      regression_checks: "9 exact Lemmas 2/4 checks, 8 Lemma 1 checks and 11 Lemma 3 checks passed on 2026-09-25; none is a proof certificate."
+      source_structure_checks: "Ledger dependency resolution/acyclicity, theorem labels, references, citations, local links, TeX structure, Python syntax and whitespace checks passed."
+      compilation: blocked_missing_tex_packages
+      compilation_notes: "Isolated build attempted with pdfTeX 1.40.25 (TeX Live 2023/Debian); booktabs.sty and etoolbox.sty are missing. No PDF compilation success is claimed."
+      independent_verification: pending
+      final_journal_text_comparison: pending
