@@ -37,9 +37,10 @@ source_nodes:
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Proof of Theorem 1, Korobov-Vinogradov bound before (2.18)"
-    audit_status: primary_source_verified_application_pending
+    audit_status: finite_height_envelope_draft_application_pending
     verified_input_claim: ZETA-KV-001
-    notes: "MTY2024 Theorem 1.1 supplies a verified published Korobov-Vinogradov input. The finite-height envelope and its application before BGSTB (2.18) remain pending; this is not a completed local reconstruction."
+    envelope_claim: PAIR-ENVELOPE-001
+    notes: "MTY2024 Theorem 1.1 and PT2021 supply the published inputs to the proved-draft finite-height envelope. The uniform O(T)+O(X) application before BGSTB (2.18) remains pending; this source node is not a completed local reconstruction."
   - id: BGSTB-MEAN
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
@@ -114,7 +115,8 @@ claims:
         proof audit. Lemmas 1-4 now depend on local proved-draft claims;
         Lemma 2 retains Riemann-von Mangoldt as a stated imported input.
         The quantitative zero-free-region source is verified as ZETA-KV-001;
-        its finite-height application and the prime mean square remain pending.
+        PAIR-ENVELOPE-001 derives its finite-height envelope. The uniform
+        O(T)+O(X) application and the prime mean square remain pending.
         The source's conditional Theorems 2-3 are not imported.
 
   - id: PAIR-TRANSLATION-001
@@ -477,11 +479,97 @@ claims:
       interchange_audit: pending_upstream_proof_review
       independent_verification: pending
       local_certificate_replay: not_performed
-      finite_height_application: pending
+      finite_height_application: "Envelope reconstructed as PAIR-ENVELOPE-001; uniform error comparison pending."
       source_structure_checks: "Unique YAML keys/IDs, dependency resolution/acyclicity, exact rational constant, provenance flags, labels, citations, local links and whitespace checked on 2026-09-26."
       compilation: passed_pdflatex_bibtex
       compilation_notes: "Combined draft built on 2026-09-26: 14 pages, all citations/references resolved, no final-pass warnings or overfull/underfull boxes."
       notes: "No claim of the best currently known constant is made. This input is not a dependency of the local Lemmas 1-4."
+
+  - id: ZETA-LOW-001
+    title: Published critical-line verification in a finite height range
+    kind: imported_theorem
+    statement: |
+      Every nontrivial zero rho=beta+i gamma with 0<gamma<=H,
+      where H=3*10^12 exactly, satisfies beta=1/2.
+      The assertion applies to every occurrence, with the upper endpoint
+      included. No simplicity assertion is imported.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PT-LOW-ZEROS]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: inp:low
+      bibliography_key: PT2021
+      version_consulted: published_abstract_and_arXiv_2004.09765v1
+      url: https://doi.org/10.1112/blms.12460
+      locator: "Published abstract; arXiv:2004.09765v1 Theorem 1 and Section 2, pp. 2-3"
+      publication_doi: 10.1112/blms.12460
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fixed finite interval; importing the statement uses no local limit interchange."
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-26"
+      statement_checked_against: publisher_abstract_and_arXiv_v1_theorem
+      final_journal_text_comparison: pending_beyond_abstract
+      endpoint_audit: "Published range 0<gamma<=3*10^12; no reliance on the larger v1 height 3000175332800."
+      rh_contamination_audit: "Published unconditional finite-range verification; no unproved RH or simplicity assumption."
+      computational_provenance: "External rigorous Arb computation and Turing-method zero accounting; computation and upstream analytic inputs not independently replayed or reconstructed."
+      proof_reconstruction: not_attempted
+      independent_verification: pending
+      local_certificate_replay: not_performed
+      numerical_certification: no_project_level_assigned
+
+  - id: PAIR-ENVELOPE-001
+    title: Explicit finite-height horizontal envelope including low ordinates
+    kind: lemma
+    statement: |
+      For every real Z>=3 define
+      nu_KV(Z)=1/((55241/1000)(log Z)^(2/3)(log log Z)^(1/3)),
+      with natural logarithms and positive real powers, and
+      B(Z)=max({0} union {delta_rho:|gamma|<=Z}), eta_*(Z)=1/2-B(Z),
+      where rho=1/2+delta_rho+i gamma runs over all nontrivial zero
+      occurrences with multiplicity and full weight at both endpoints.
+      Then 0<nu_KV(Z)<1/2, B(Z)<1/2-nu_KV(Z), and eta_*(Z)>nu_KV(Z).
+      Every retained occurrence satisfies
+      |delta_rho|<=B(Z)<1/2-nu_KV(Z).
+      The bounds for B and eta_* include an empty zero set, where B(Z)=0.
+      There are no nontrivial real zeros; occurrences with 0<|gamma|<3
+      have delta_rho=0 by ZETA-LOW-001 and conjugation.
+      The function nu_KV is strictly decreasing on [3,infinity).
+      Thus eta(Z)=nu_KV(Z) is an admissible envelope in PAIR-TRUNC-001,
+      including at Z_*=T log(T)^2 for every T>=3.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZETA-KV-001, ZETA-LOW-001, PAIR-COUNT-001, ZETA-ANALYTIC-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-envelope
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fixed finite Z throughout; bounds hold for every Z>=3. No local sum/integral/limit interchange."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Analytic logarithm bounds and differentiation, low-height verification, monotonicity, finite maximum and reflection."
+      endpoint_audit: "gamma=0 excluded by PAIR-COUNT-001; 0<|gamma|<3 covered by PT; |gamma|=3 and Z covered by the inclusive KV input; empty set and repeated occurrences included."
+      rh_contamination_audit: "Low-range delta=0 follows only from a published finite-range theorem; no assumption about arbitrary heights or simplicity."
+      computational_provenance: "True records the imported computer-assisted dependencies. The local deduction is analytic and uses no numerical approximation; no local certificate or replay is claimed."
+      local_computation_used_in_proof: false
+      local_certificate_replay: not_performed
+      interchange_audit: "No local interchange is needed; upstream audits remain as recorded in the imported claims."
+      independent_verification: pending
+      uniform_error_application: pending
+      regression_checks: "All 28 existing exact checks passed on 2026-09-26; no new numerical algorithm or proof certificate."
+      source_structure_checks: "Unique YAML keys and 19 claim IDs, dependency resolution/acyclicity including source links, labels, references, bibliography keys, local links, exact rational bound and provenance flags checked on 2026-09-26."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built on 2026-09-26: 15 pages, all citations/references resolved, no final-pass warnings or overfull/underfull boxes."
 
   - id: PAIR-NORM-INTEGRAL-001
     title: Complex rational integral including coincident poles

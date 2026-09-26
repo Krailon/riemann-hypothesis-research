@@ -1,7 +1,8 @@
 # Published Korobov–Vinogradov input: source audit
 
-Task: exposition and source verification. Assumptions: `UNCONDITIONAL`.
-Claim: `ZETA-KV-001`, an imported `published` theorem.
+Task: proof, exposition and source verification. Assumptions: `UNCONDITIONAL`.
+Claims: `ZETA-KV-001` and `ZETA-LOW-001`, imported `published`
+theorems; `PAIR-ENVELOPE-001`, a local `proved-draft` lemma.
 The project has checked the statement and inspected its proof structure;
 independent proof reconstruction and computational replay are pending.
 See the [ledger](../theorem-ledger.yaml) and
@@ -81,23 +82,60 @@ source-level dependencies; they are not additional locally proved claims.
 Importing this theorem does not change the assumptions or dependencies
 of the existing local Lemmas 1–4.
 
-## Handoff to the finite-height argument
+## Finite-height envelope — PAIR-ENVELOPE-001
 
-The source threshold does not cover \(0<|\gamma|<3\).
-The next proof must address that range explicitly before using a bound on
-every occurrence with \(|\gamma|\leq Z\). The PT result provides a
-potential published low-height input, but its integration is not asserted
-here. The existing exclusion of real zeros only covers \(\gamma=0\).
+The low-height input is now recorded separately as `ZETA-LOW-001`:
+every zero occurrence with \(0<\gamma\leq H=3\cdot10^{12}\) has
+\(\beta=1/2\). This inclusive statement was checked again against the
+published abstract on 2026-09-26. Only \(0<|\gamma|<3\) is needed here;
+conjugation supplies negative ordinates. No simplicity assertion is used.
 
-The eventual passage from a bound at each \(|\gamma|\) to one at \(Z\)
-also requires the direction of monotonicity to be established. Neither
-the envelope for \(B(Z)\) nor the uniform comparison of \(L(X,T)\) with
-\(2\pi\Phi(X,T)\) is claimed by this source audit.
+For \(u\geq3\), logarithmic differentiation gives
+\[
+ \frac{\nu_{\rm KV}'(u)}{\nu_{\rm KV}(u)}
+ =-\frac{2}{3u\log u}
+  -\frac{1}{3u\log u\log\log u}<0.
+\]
+The proof bounds \(\log3>13/12\) and \(\log\log3>1/13\) by elementary
+integrals. Together with \(55241/1000>5\), these show
+\(\nu_{\rm KV}(3)^{-3}>125/13>8\), hence
+\(0<\nu_{\rm KV}(Z)<1/2\) for every \(Z\geq3\).
+All constants are exact; no numerical approximation is needed.
 
-Accordingly, `BGSTB-ZFR` now has status
-`primary_source_verified_application_pending`, linked through
-`verified_input_claim: ZETA-KV-001`. It is not marked as a reconstructed
-local proof, and the full pair theorem retains that unfinished dependency.
+Fix \(Z\geq3\). The height cases in the proof are:
+
+| Height | Input and conclusion |
+| --- | --- |
+| \(\gamma=0\) | The existing `PAIR-COUNT-001` proof excludes nontrivial real zeros. |
+| \(0<\lvert\gamma\rvert<3\) | `ZETA-LOW-001` and conjugation give \(\delta_\rho=0<1/2-\nu_{\rm KV}(Z)\). |
+| \(3\leq\lvert\gamma\rvert\leq Z\) | KV and decreasing \(\nu_{\rm KV}\) give \(\delta_\rho<1/2-\nu_{\rm KV}(\lvert\gamma\rvert)\leq1/2-\nu_{\rm KV}(Z)\). |
+
+Every entry of the finite maximum defining \(B(Z)\), including its
+auxiliary \(0\), is strictly below the same positive bound. Therefore
+\[
+ B(Z)<\tfrac12-\nu_{\rm KV}(Z),\qquad
+ \eta_*(Z)>\nu_{\rm KV}(Z).
+\]
+Strictness uses finiteness, not an assertion about an infinite supremum.
+The empty-set case gives \(B(Z)=0\); multiplicities do not affect the
+maximum. Both cutoff endpoints retain full weight. Reflection
+\(\rho\mapsto1-\bar\rho\) gives
+\(|\delta_\rho|\leq B(Z)<1/2-\nu_{\rm KV}(Z)\).
+There is no local limit interchange or Fourier/mean-spacing conversion.
+
+Thus \(\eta(Z)=\nu_{\rm KV}(Z)\) is an explicit admissible envelope for
+Lemma 4, including at \(Z_*=T\log^2T\geq3\) for \(T\geq3\).
+The manuscript label is `lem:pair-envelope`.
+Its local proof is analytic; its ledger computational flag is true
+because it depends on published computer-assisted inputs. No local
+certificate, replay, or independent proof check is claimed.
+
+The `BGSTB-ZFR` source node has status
+`finite_height_envelope_draft_application_pending`, linked to both
+`ZETA-KV-001` and `PAIR-ENVELOPE-001`.
+The next step is the uniform \(O(T)+O(X)\) comparison of \(L(X,T)\)
+with \(2\pi\Phi(X,T)\) for \(1\leq X\leq T\). That application remains
+pending, so the full pair theorem retains its unfinished dependency.
 
 ## Validation
 
@@ -113,3 +151,16 @@ flags. The combined manuscript compiled to 14 pages with `pdflatex`,
 unresolved citations/references, or overfull/underfull boxes. Existing
 mathematical regression scripts were unchanged; this task introduced no
 new numerical algorithm or proof certificate.
+
+After adding the finite-height proof on 2026-09-26, the structure checks
+passed again for all 19 claims, including dependency edges through the
+source-node links and the two new claims' computational-provenance flags.
+The 28 existing exact regression checks passed (8 for Lemma 1, 11 for
+Lemma 3, and 9 for Lemmas 2/4). They remain algebra checks.
+The rational comparisons in the analytic logarithm bound were also
+checked exactly; no numerical evaluation of a logarithm was used.
+The updated manuscript compiled to 15 pages with resolved bibliography
+and references, no final-pass warnings, and no overfull/underfull boxes.
+The build used pdfLaTeX, BibTeX, and two resolving LaTeX passes in an
+isolated temporary directory. Independent mathematical review remains
+pending.

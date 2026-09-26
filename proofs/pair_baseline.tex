@@ -19,7 +19,7 @@
 \newcommand{\ELtr}{E_{\mathrm{trunc}}}
 \newcommand{\ELh}{E_{\mathrm{height}}}
 \newcommand{\ELext}{E_{\mathrm{extension}}}
-\title{Pair baseline: explicit formula, counting, squared norm and truncation}
+\title{Pair baseline: explicit formula, counting, squared norm, truncation and horizontal envelope}
 \author{Research proof draft}
 \date{26 September 2026}
 \begin{document}
@@ -33,7 +33,8 @@ pair-correlation asymptotic. In the explicit-formula series, all nontrivial zero
 multiplicity, including both signs of \(\gamma\).
 The squared-norm identity instead uses the finite index set \(I_T\)
 of zero occurrences with \(0<\gamma\leq T\), again with multiplicity.
-We never set \(\delta_\rho=0\) in the proof.
+Horizontal displacements remain explicit; the finite-height envelope uses
+a published theorem to set \(\delta_\rho=0\) only in its verified low range.
 Powers of positive real numbers use their real logarithms.
 Write \(\Lambda(p^k)=\log p\) for a prime \(p\) and \(k\geq1\),
 and \(\Lambda(n)=0\) otherwise, including \(n=1\).
@@ -50,7 +51,8 @@ The interpretation of these series is absolute convergence, proved below.
 \section{Analytic inputs and their provenance}\label{sec:analytic-inputs}
 
 The following published inputs are unconditional. The first four support
-the local Lemmas 1--4 reconstruction; the last is recorded for the next step.
+the local Lemmas 1--4 reconstruction; the last two additionally support
+the finite-height envelope.
 They are imported facts, not claims of new proofs in this document.
 The ledger records their precise statements and source locators.
 \begin{enumerate}
@@ -128,10 +130,24 @@ verification of Platt--Trudgian \cite{PT2021} up to \(3\cdot10^{12}\);
 Sections~8--9 describe additional computational ingredients.
 The ledger records this external computational dependence with no
 locally replayed certificate. No unproved RH or simplicity assumption
-is imposed. This imported theorem is not used in the local lemmas below.
-It says nothing here about \(0<|\gamma|<3\); treating that range and
-converting \eqref{eq:kv-zero-bound} to the finite-height envelope
-\eqref{eq:horizontal-envelope} remain separate tasks.
+is imposed. Lemma~\ref{lem:pair-envelope} uses this input together with
+the following low-height theorem.
+\item \texttt{ZETA-LOW-001}\label{inp:low}:
+Platt--Trudgian \cite{PT2021} prove that every nontrivial zero
+\(\rho=\beta+\ii\gamma\) with
+\begin{equation}\label{eq:low-input}
+ 0<\gamma\leq H,\qquad H=3\cdot10^{12},
+\end{equation}
+has \(\beta=1/2\). We import this assertion for every occurrence,
+without a simplicity assertion. The inclusive range is stated in the
+published abstract. We also consulted Theorem~1 and Section~2 of
+arXiv:2004.09765v1, a preprint version of the published work; that
+theorem gives the larger height \(3{,}000{,}175{,}332{,}800\).
+We use only the smaller published range \eqref{eq:low-input}.
+The proof uses rigorous Arb arithmetic and a variation of Turing's
+method to account for all zeros in the range. Full comparison with
+the final journal text and independent computational replay remain
+pending. This finite-range published theorem is an unconditional input.
 \end{enumerate}
 
 \section{Inclusive counting and rational-kernel bounds}
@@ -763,7 +779,7 @@ Define the finite-height horizontal bound
 The zero set in this maximum is finite, so
 \(0\leq B(Z)<1/2\) and \(0<\eta_*(Z)\leq1/2\), including an empty
 zero set. The definition uses actual zeros, not a zero-density or
-zero-free-region hypothesis. It supplies no quantitative lower bound
+zero-free-region hypothesis. The definition alone supplies no quantitative lower bound
 for \(\eta_*(Z)\) as \(Z\to\infty\).
 For every retained occurrence and \(X\geq1\),
 \begin{equation}\label{eq:horizontal-majorant}
@@ -896,6 +912,87 @@ envelope gives the claimed weaker error since \(X\geq1\).
 No quantitative zero-free region, RH, or simplicity enters the proof.
 \end{proof}
 
+\section{An explicit finite-height horizontal envelope}
+
+\begin{lemma}[\texttt{PAIR-ENVELOPE-001}]\label{lem:pair-envelope}
+For every real \(Z\geq3\), the definitions
+\eqref{eq:kv-input} and \eqref{eq:horizontal-envelope} satisfy
+\begin{equation}\label{eq:finite-height-envelope}
+ 0<\nu_{\rm KV}(Z)<\tfrac12,\qquad
+ B(Z)<\tfrac12-\nu_{\rm KV}(Z),\qquad
+ \eta_*(Z)>\nu_{\rm KV}(Z).
+\end{equation}
+Every nontrivial zero occurrence with \(|\gamma|\leq Z\) satisfies
+\begin{equation}\label{eq:two-sided-envelope}
+ |\delta_\rho|\leq B(Z)<\tfrac12-\nu_{\rm KV}(Z).
+\end{equation}
+Both height endpoints are included with full multiplicity. The claims
+about \(B\) and \(\eta_*\) also hold when the finite zero set is empty.
+Thus \(\eta(Z)=\nu_{\rm KV}(Z)\), for \(Z\geq3\), is an explicit
+admissible envelope in Lemma~\ref{lem:pair-trunc}.
+\end{lemma}
+\begin{proof}
+\textit{Size and monotonicity.}
+First, elementary integrals give
+\[
+ \log3=2\int_0^{1/2}\frac{\dd t}{1-t^2}
+ >2\int_0^{1/2}(1+t^2)\dd t=\frac{13}{12},
+ \qquad
+ \log\log3>\log(13/12)
+ =\int_1^{13/12}\frac{\dd t}{t}>\frac1{13}.
+\]
+The first strict inequality follows from
+\((1-t^2)^{-1}-(1+t^2)=t^4/(1-t^2)>0\) for \(0<t\leq1/2\).
+Since \(55241/1000>5\), these inequalities imply
+\[
+ \nu_{\rm KV}(3)^{-3}
+ =(55241/1000)^3(\log3)^2\log\log3
+ >\frac{125}{13}>8.
+\]
+Consequently \(0<\nu_{\rm KV}(3)<1/2\).
+For \(u\geq3\) all logarithms occurring in the definition are positive,
+and logarithmic differentiation gives
+\begin{equation}\label{eq:kv-monotonicity}
+ \frac{\nu_{\rm KV}'(u)}{\nu_{\rm KV}(u)}
+ =-\frac{2}{3u\log u}
+  -\frac{1}{3u\log u\log\log u}<0.
+\end{equation}
+Thus \(\nu_{\rm KV}\) is positive and decreasing on \([3,\infty)\);
+in particular \(q_Z:=1/2-\nu_{\rm KV}(Z)>0\).
+
+\textit{All retained heights.}
+Fix \(Z\geq3\). Lemma~\ref{lem:pair-count} excludes nontrivial real
+zeros, so \(\gamma=0\) contributes no occurrence.
+For \(0<|\gamma|<3\), conjugation reduces the assertion to the positive
+range in \eqref{eq:low-input}, and hence
+\(\delta_\rho=0<q_Z\).
+For \(3\leq|\gamma|\leq Z\), \eqref{eq:kv-zero-bound} and
+\eqref{eq:kv-monotonicity} give
+\[
+ \delta_\rho<\tfrac12-\nu_{\rm KV}(|\gamma|)
+ \leq\tfrac12-\nu_{\rm KV}(Z)=q_Z.
+\]
+In particular \(|\gamma|=3\) uses the inclusive KV threshold, and
+\(|\gamma|=Z\) is allowed even when the second inequality is equality.
+
+The maximum defining \(B(Z)\) is over a finite collection by
+Lemma~\ref{lem:pair-count}. Every entry, including the auxiliary \(0\),
+is strictly below \(q_Z\); hence \(B(Z)<q_Z\). If there are no
+retained zeros, this says \(B(Z)=0<q_Z\).
+Subtracting from \(1/2\) gives the asserted bound for \(\eta_*\).
+Reflection \(\rho\mapsto1-\bar\rho\) preserves the ordinate and
+multiplicity and changes \(\delta_\rho\) to \(-\delta_\rho\).
+Both displacements occur in the maximum, so
+\(|\delta_\rho|\leq B(Z)\), proving \eqref{eq:two-sided-envelope}.
+Repeated occurrences do not change a maximum.
+
+Everything is at fixed finite \(Z\); no sum, integral or limit is
+interchanged. The bounds hold for every \(Z\geq3\), with the displayed
+effective constant. Since \(Z_*=T\log^2T\geq3\) for \(T\geq3\),
+this choice of \(\eta\) is admissible throughout the final range of
+Lemma~\ref{lem:pair-trunc}.
+\end{proof}
+
 \section{Checks and scope of the audit}\label{sec:checks}
 
 The zero-side denominator is at least \(3/4\) in modulus when
@@ -942,10 +1039,13 @@ RH-dependent refinement of that last error.
 All local statements have status \texttt{proved-draft}. The imported
 analytic inputs are identified above and the local sum/integral exchanges
 are justified within the proof. The local Lemmas 1--4 reconstruction
-uses no numerical result. The separately recorded \texttt{ZETA-KV-001}
-is a published theorem with external computational dependencies.
+uses no numerical result. The finite-height envelope
+\texttt{PAIR-ENVELOPE-001} additionally uses the published inputs
+\texttt{ZETA-KV-001} and \texttt{ZETA-LOW-001}, with their external
+computational dependencies. No local numerical certificate or
+independent replay is claimed for those inputs.
 Independent mathematical review, comparison with the final journal
-version of BGSTB, application of the quantitative zero-free-region input,
+version of BGSTB, the uniform \(O(T)+O(X)\) comparison for \(1\leq X\leq T\),
 and the prime-side mean square remain pending. Finite arithmetic regression scripts check
 the elementary kernel, endpoint, residue, reindexing and truncation
 algebra; they do not certify any analytic estimate.

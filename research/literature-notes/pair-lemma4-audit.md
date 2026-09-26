@@ -163,5 +163,10 @@ pdflatex -interaction=nonstopmode -halt-on-error pair_baseline.tex
 
 Independent review and comparison with the final journal text remain
 pending. The [quantitative zero-free-region source](korobov-vinogradov-audit.md)
-has now been verified. Its conversion to the finite-height envelope comes
-next, followed by the prime-side mean square and assembly of the full pair theorem.
+has now been verified, and `PAIR-ENVELOPE-001` derives
+\(B(Z)<1/2-\nu_{\rm KV}(Z)\) for \(Z\geq3\), explicitly covering
+\(0<|\gamma|<3\) with a published low-height theorem.
+The next step is the uniform \(O(T)+O(X)\) comparison for
+\(1\leq X\leq T\), followed by the prime-side mean square and assembly
+of the full pair theorem. The additional computational dependencies belong
+to the envelope claim; the Lemmas 2/4 proof above is unchanged.

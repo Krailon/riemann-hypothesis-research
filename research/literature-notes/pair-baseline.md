@@ -131,7 +131,7 @@ remains pending. Source IDs and local claim IDs are linked in the ledger.
 | `BGSTB-COUNT` | Lemma 2, (2.4)–(2.5) | Inclusive and local counts reconstructed as `PAIR-COUNT-001`; kernel bounds in `PAIR-COUNT-KERNEL-001`. See the [counting and truncation audit](pair-lemma4-audit.md). |
 | `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Reconstructed as `PAIR-NORM-001`, with integral and positivity claims; see the [contour and multiplicity audit](pair-lemma3-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Reconstructed as `PAIR-TRUNC-001` with three named errors and a separate small-height argument; see the [audit](pair-lemma4-audit.md). Independent review and journal comparison pending. |
-| `BGSTB-ZFR` | Theorem 1 proof, before (2.18) | Published MTY2024 Theorem 1.1 verified as `ZETA-KV-001`; see the [source audit](korobov-vinogradov-audit.md). Its finite-height envelope and uniform application for \(1\leq X\leq T\) remain pending. |
+| `BGSTB-ZFR` | Theorem 1 proof, before (2.18) | Published KV and low-height inputs give the finite-height envelope `PAIR-ENVELOPE-001`; see the [audit](korobov-vinogradov-audit.md). The uniform \(O(T)+O(X)\) application for \(1\leq X\leq T\) remains pending. |
 | `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstruct the prime-side mean square, including prime powers and cross terms; verify the cited Goldston–Montgomery Lemma 6 refinement and endpoint \(X=T\). |
 
 The last row is an unresolved citation chain, not permission to use an
@@ -157,8 +157,12 @@ unproved quantitative zero-free-region assumption.
 theorem is recorded as `ZETA-KV-001`, with explicit threshold, closed
 boundary and external computational provenance. Its proof has not been
 independently reconstructed or its computations replayed.
-**Next bounded proof task:** translate that theorem to the required
-finite-height envelope, including \(0<|\gamma|<3\), and derive the
-uniform comparison of \(L(X,T)\) and \(2\pi\Phi(X,T)\)
+**Completed envelope proof draft:** `PAIR-ENVELOPE-001` derives
+\(B(Z)<1/2-\nu_{\rm KV}(Z)\) for every \(Z\geq3\), including the
+low-ordinate range through the published input `ZETA-LOW-001`.
+It checks monotonicity, both signs, endpoints, multiplicity, and the empty
+zero set. External computational provenance is retained in the ledger.
+**Next bounded proof task:** derive the uniform \(O(T)+O(X)\)
+comparison of \(L(X,T)\) and \(2\pi\Phi(X,T)\)
 for \(1\leq X\leq T\). The prime-side mean square follows afterward.
 The pair-correlation asymptotic itself remains an imported theorem.
