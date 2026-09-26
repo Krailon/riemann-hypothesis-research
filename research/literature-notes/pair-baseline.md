@@ -131,7 +131,7 @@ remains pending. Source IDs and local claim IDs are linked in the ledger.
 | `BGSTB-COUNT` | Lemma 2, (2.4)–(2.5) | Inclusive and local counts reconstructed as `PAIR-COUNT-001`; kernel bounds in `PAIR-COUNT-KERNEL-001`. See the [counting and truncation audit](pair-lemma4-audit.md). |
 | `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Reconstructed as `PAIR-NORM-001`, with integral and positivity claims; see the [contour and multiplicity audit](pair-lemma3-audit.md). Independent review and journal comparison pending. |
 | `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Reconstructed as `PAIR-TRUNC-001` with three named errors and a separate small-height argument; see the [audit](pair-lemma4-audit.md). Independent review and journal comparison pending. |
-| `BGSTB-ZFR` | Theorem 1 proof, before (2.18) | Locate a primary Korobov–Vinogradov bound and verify its use uniformly for \(1\leq X\leq T\). |
+| `BGSTB-ZFR` | Theorem 1 proof, before (2.18) | Published MTY2024 Theorem 1.1 verified as `ZETA-KV-001`; see the [source audit](korobov-vinogradov-audit.md). Its finite-height envelope and uniform application for \(1\leq X\leq T\) remain pending. |
 | `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstruct the prime-side mean square, including prime powers and cross terms; verify the cited Goldston–Montgomery Lemma 6 refinement and endpoint \(X=T\). |
 
 The last row is an unresolved citation chain, not permission to use an
@@ -153,8 +153,12 @@ truncation are now reconstructed. The latter applies for all \(X\geq1,T\geq3\),
 with `E_trunc`, `E_height` and `E_extension` bounded separately. Its
 horizontal envelope is defined from the finite zero set and carries no
 unproved quantitative zero-free-region assumption.
-**Next bounded proof task:** verify a primary-source Korobov–Vinogradov
-zero-free region, translate it to the required finite-height envelope,
-and derive the uniform comparison of \(L(X,T)\) and \(2\pi\Phi(X,T)\)
+**Completed source task:** a published quantitative Korobov–Vinogradov
+theorem is recorded as `ZETA-KV-001`, with explicit threshold, closed
+boundary and external computational provenance. Its proof has not been
+independently reconstructed or its computations replayed.
+**Next bounded proof task:** translate that theorem to the required
+finite-height envelope, including \(0<|\gamma|<3\), and derive the
+uniform comparison of \(L(X,T)\) and \(2\pi\Phi(X,T)\)
 for \(1\leq X\leq T\). The prime-side mean square follows afterward.
 The pair-correlation asymptotic itself remains an imported theorem.

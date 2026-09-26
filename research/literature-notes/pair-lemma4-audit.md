@@ -162,6 +162,6 @@ pdflatex -interaction=nonstopmode -halt-on-error pair_baseline.tex
 ```
 
 Independent review and comparison with the final journal text remain
-pending. Next comes a primary-source quantitative zero-free-region input
-and its conversion to the finite-height envelope; then the prime-side
-mean square and assembly of the full pair theorem.
+pending. The [quantitative zero-free-region source](korobov-vinogradov-audit.md)
+has now been verified. Its conversion to the finite-height envelope comes
+next, followed by the prime-side mean square and assembly of the full pair theorem.

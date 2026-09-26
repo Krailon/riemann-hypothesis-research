@@ -21,7 +21,7 @@
 \newcommand{\ELext}{E_{\mathrm{extension}}}
 \title{Pair baseline: explicit formula, counting, squared norm and truncation}
 \author{Research proof draft}
-\date{25 September 2026}
+\date{26 September 2026}
 \begin{document}
 \maketitle
 
@@ -49,7 +49,8 @@ The interpretation of these series is absolute convergence, proved below.
 
 \section{Analytic inputs and their provenance}\label{sec:analytic-inputs}
 
-The following published inputs are used in their unconditional forms.
+The following published inputs are unconditional. The first four support
+the local Lemmas 1--4 reconstruction; the last is recorded for the next step.
 They are imported facts, not claims of new proofs in this document.
 The ledger records their precise statements and source locators.
 \begin{enumerate}
@@ -100,6 +101,37 @@ In particular fix an effective constant \(C_\psi\) such that
 \end{equation}
 The Euler--Maclaurin proof of that theorem yields an effective constant;
 we do not optimize or numerically evaluate it here.
+\item \texttt{ZETA-KV-001}\label{inp:kv}:
+Mossinghoff--Trudgian--Yang \cite[Theorem 1.1, (1.5), p.~2]{MTY2024}
+prove the following explicit Korobov--Vinogradov zero-free region:
+\begin{equation}\label{eq:kv-input}
+ \begin{gathered}
+ \nu_{\rm KV}(u)=
+ \frac{1}{(55241/1000)(\log u)^{2/3}(\log\log u)^{1/3}},\\
+ \zeta(\sigma+\ii t)\ne0\qquad\text{if}\qquad
+ |t|\geq3,\quad \sigma\geq1-\nu_{\rm KV}(|t|).
+ \end{gathered}
+\end{equation}
+Here \(u\geq3\), all logarithms are natural, the fractional powers
+are positive real powers, and \(55241/1000=55.241\) exactly.
+Both boundary inequalities are inclusive. Therefore every nontrivial
+zero with \(|\gamma|\geq3\) satisfies the strict bound
+\begin{equation}\label{eq:kv-zero-bound}
+ \beta<1-\nu_{\rm KV}(|\gamma|).
+\end{equation}
+This applies to every occurrence, irrespective of multiplicity.
+
+We checked the published version of record, including its stated domain
+and constants; we have not independently reconstructed its proof.
+Its Section~5 uses, among other inputs, the rigorous finite-height
+verification of Platt--Trudgian \cite{PT2021} up to \(3\cdot10^{12}\);
+Sections~8--9 describe additional computational ingredients.
+The ledger records this external computational dependence with no
+locally replayed certificate. No unproved RH or simplicity assumption
+is imposed. This imported theorem is not used in the local lemmas below.
+It says nothing here about \(0<|\gamma|<3\); treating that range and
+converting \eqref{eq:kv-zero-bound} to the finite-height envelope
+\eqref{eq:horizontal-envelope} remain separate tasks.
 \end{enumerate}
 
 \section{Inclusive counting and rational-kernel bounds}
@@ -908,11 +940,13 @@ the stated choice of \(Z\). This check does not assert a sharp
 RH-dependent refinement of that last error.
 
 All local statements have status \texttt{proved-draft}. The imported
-analytic inputs are identified above, the sum/integral exchanges are
-justified within the proof, and no numerical result is used in it.
+analytic inputs are identified above and the local sum/integral exchanges
+are justified within the proof. The local Lemmas 1--4 reconstruction
+uses no numerical result. The separately recorded \texttt{ZETA-KV-001}
+is a published theorem with external computational dependencies.
 Independent mathematical review, comparison with the final journal
-version, the quantitative zero-free-region input, and the prime-side
-mean square remain pending. Finite arithmetic regression scripts check
+version of BGSTB, application of the quantitative zero-free-region input,
+and the prime-side mean square remain pending. Finite arithmetic regression scripts check
 the elementary kernel, endpoint, residue, reindexing and truncation
 algebra; they do not certify any analytic estimate.
 

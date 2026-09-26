@@ -37,12 +37,26 @@ source_nodes:
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Proof of Theorem 1, Korobov-Vinogradov bound before (2.18)"
-    audit_status: pending_primary_source
+    audit_status: primary_source_verified_application_pending
+    verified_input_claim: ZETA-KV-001
+    notes: "MTY2024 Theorem 1.1 supplies a verified published Korobov-Vinogradov input. The finite-height envelope and its application before BGSTB (2.18) remain pending; this is not a completed local reconstruction."
   - id: BGSTB-MEAN
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Equations (2.17)-(2.19) and following remark"
     audit_status: pending_primary_source
+  - id: MTY-KV-PROOF
+    bibliography_key: MTY2024
+    version: published_version_of_record_2024-01-12
+    locator: "Sections 3-5 and 8-9; Theorems 1.3-1.4 used within the proof of Theorem 1.1"
+    audit_status: proof_structure_inspected
+    notes: "Provenance pointer for the analytic inputs, intermediate regions, polynomial construction and numerical inequalities. Upstream proofs and computations have not been independently reconstructed or replayed."
+  - id: PT-LOW-ZEROS
+    bibliography_key: PT2021
+    version: arXiv:2004.09765v1
+    locator: "Theorem 1 and Section 2, pp. 2-3; publisher abstract also checked"
+    audit_status: source_statement_verified_computation_not_replayed
+    notes: "Primary source for the rigorous verification used by MTY up to height 3*10^12; uses Arb and a variation of Turing's method. The v1 theorem gives the stronger height 3000175332800. Only the published 3*10^12 range is recorded for this dependency; full journal-text comparison is pending."
 
 claims:
   - id: PAIR-BGSTB-001
@@ -99,7 +113,8 @@ claims:
         Published status records the external work, not a completed project
         proof audit. Lemmas 1-4 now depend on local proved-draft claims;
         Lemma 2 retains Riemann-von Mangoldt as a stated imported input.
-        Quantitative zero-free-region and prime mean-square inputs await reconstruction.
+        The quantitative zero-free-region source is verified as ZETA-KV-001;
+        its finite-height application and the prime mean square remain pending.
         The source's conditional Theorems 2-3 are not imported.
 
   - id: PAIR-TRANSLATION-001
@@ -413,6 +428,60 @@ claims:
       compilation: passed_pdflatex_bibtex
       compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
       notes: "All interchanges inside the reconstruction are justified. Upstream proofs of classical imported inputs are not fully reconstructed."
+
+  - id: ZETA-KV-001
+    title: Published explicit Korobov-Vinogradov zero-free region
+    kind: imported_theorem
+    statement: |
+      Let nu_KV(u)=1/((55241/1000)(log u)^(2/3)(log log u)^(1/3))
+      for real u>=3, with natural logarithms and positive real powers.
+      For real sigma,t with |t|>=3 and sigma>=1-nu_KV(|t|),
+      zeta(sigma+i t) is nonzero. Both boundary inequalities are inclusive.
+      Equivalently every nontrivial zero rho=beta+i gamma with |gamma|>=3
+      satisfies beta<1-nu_KV(|gamma|), regardless of multiplicity.
+      The coefficient 55241/1000=55.241 and threshold 3 are exact.
+      No assertion for 0<|gamma|<3 or for the full finite-height envelope
+      B(Z) is included in this imported claim.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MTY-KV-PROOF, PT-LOW-ZEROS]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: inp:kv
+      bibliography_key: MTY2024
+      version_consulted: published_version_of_record_2024-01-12
+      url: https://link.springer.com/content/pdf/10.1007/s40993-023-00498-y.pdf
+      locator: "Theorem 1.1, equation (1.5), p. 2 of 27; proof in Section 5"
+      publication_doi: 10.1007/s40993-023-00498-y
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Pointwise theorem for every |t|>=3; no project limit interchange is used in importing its statement."
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-26"
+      statement_checked_against: publisher_html_and_version_of_record_pdf
+      publication_metadata_checked: "2026-09-26"
+      final_journal_text_comparison: completed_for_statement
+      endpoint_audit: "Closed zero-free boundary implies strict beta inequality; |t|=3 included; smaller heights not covered."
+      rh_contamination_audit: "Theorem 1.1 is unconditional. Its finite-height RH verification is a published computational theorem, not an unproved RH assumption."
+      proof_structure_audit: "Section 5 separates low, intermediate and large heights; Sections 8-9 describe polynomial discovery and numerical ingredients. This is a source map, not a complete proof audit."
+      computational_provenance: |
+        Published proof uses PT2021 finite-height verification and external
+        numerical ingredients. No certificate has been generated, retrieved
+        or replayed by this project. A null artifact hash records that gap;
+        it is not a claim of no computation or local certification.
+      proof_reconstruction: not_attempted
+      interchange_audit: pending_upstream_proof_review
+      independent_verification: pending
+      local_certificate_replay: not_performed
+      finite_height_application: pending
+      source_structure_checks: "Unique YAML keys/IDs, dependency resolution/acyclicity, exact rational constant, provenance flags, labels, citations, local links and whitespace checked on 2026-09-26."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built on 2026-09-26: 14 pages, all citations/references resolved, no final-pass warnings or overfull/underfull boxes."
+      notes: "No claim of the best currently known constant is made. This input is not a dependency of the local Lemmas 1-4."
 
   - id: PAIR-NORM-INTEGRAL-001
     title: Complex rational integral including coincident poles
