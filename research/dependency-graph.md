@@ -190,8 +190,11 @@ This map makes the recorded proof chain reviewable. Upstream foundational
 reconstruction, independent mathematical review, and the outstanding journal
 comparisons remain open. The [consolidated error budget](pair-error-budget.md)
 now traces the named contributions, uniform ranges, signs and normalization.
-A line-by-line RH-contamination audit, a machine-checkable convention/support
-table, and a clean-checkout reproduction harness remain Work Package A tasks.
+The [machine-checkable convention/support table](pair-conventions.json)
+and its [exact checker](../scripts/check_pair_conventions.py) now record
+the Fourier and scale translations, domains, and boundary conventions.
+A line-by-line RH-contamination audit and a clean-checkout reproduction
+harness remain Work Package A tasks.
 No theorem status, assumption, computational flag, or completeness flag
 is changed by creating this document.
 

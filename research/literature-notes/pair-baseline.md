@@ -120,6 +120,13 @@ asserts no boundary extension for a later correlation theorem. Keep \(q_T\)
 exact: although it tends to one, changing normalization at the height
 \(\log T\) peak can produce an \(O(1)\) difference.
 
+These definitions, identities and boundary conventions are now recorded
+in the [machine-checkable table](../pair-conventions.json).
+The [exact checker](../../scripts/check_pair_conventions.py) consumes
+its formulas and interval metadata, including the separate mean-value
+bandwidth and kernel support conventions; see
+[the format and commands](../notation.md#machine-checkable-pair-conventions).
+
 ## 4. Reconstructed inputs and remaining audits
 
 The following source map records the reconstructed inputs and outstanding audits.
@@ -194,8 +201,11 @@ upstream foundational completeness is not claimed.
 connects the explicit-formula remainders, thirteen prime-side square
 components, zero-side comparison, and final two error scales. It separates
 included prime-power contributions and vanishing auxiliary tails.
+**Completed convention table:** the [JSON records](../pair-conventions.json)
+and [checker](../../scripts/check_pair_conventions.py) cover Fourier signs,
+exact scales and phases, normalizations, domains, kernel supports and
+endpoint conventions. These are regression checks of existing mathematics.
 **Remaining Work Package A work:** complete the
-machine-checkable convention/support table,
 RH-contamination audit, and clean-checkout reproduction harness.
 Independent review and final journal-text comparison remain pending.
 
@@ -265,3 +275,14 @@ local file links and Python syntax passed.
 The manuscript compiled in an isolated temporary directory with pdfLaTeX,
 BibTeX and two resolving LaTeX passes to a 23-page PDF, with no final-pass
 warnings, unresolved references/citations, or overfull/underfull boxes.
+
+Convention-table validation on 2026-09-28: all 52 regression tests passed
+(43 existing tests and nine new convention checks). The JSON table contains
+43 records: seven domains, one Fourier convention, ten definitions,
+thirteen identities, ten intervals, one zero-count convention and one
+test-function requirement. The new checker passed both directly and under
+unittest discovery, including deliberate mutations of signs, scales,
+normalizations, domains and endpoint flags. Source claim IDs, local source
+labels, documentation links and Python syntax were checked. No new
+dependency, analytic claim, numerical certificate or PDF rebuild was needed;
+the manuscript and theorem ledger are unchanged.

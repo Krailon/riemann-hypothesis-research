@@ -366,10 +366,13 @@ absorption inequalities and limit orders were checked against the
 existing proofs. These are exposition and algebra checks, not an
 independent mathematical review or a numerical certificate.
 The named residuals are distinguished from internal upper bounds and
-vanishing tails. The remaining Work Package A tasks include the
-machine-checkable convention/support table, line-by-line RH-contamination
-audit, clean-checkout reproduction harness, and outstanding source and
-independent reviews.
+vanishing tails. The [machine-checkable convention/support table](pair-conventions.json)
+and [exact checker](../scripts/check_pair_conventions.py) now cover the
+scale translations, frequency ranges and auxiliary bandwidth conventions.
+The remaining Work Package A tasks include the line-by-line
+RH-contamination audit, clean-checkout reproduction harness, and
+outstanding source and independent reviews.
 
-Only documentation changed; no new numerical tests or PDF rebuild were
-needed. The theorem ledger and manuscript remain unchanged.
+The budget consolidation itself changed only documentation; no new
+numerical tests or PDF rebuild were needed for that step. The theorem
+ledger and manuscript remain unchanged.
