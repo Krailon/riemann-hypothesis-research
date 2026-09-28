@@ -188,9 +188,10 @@ are documented as context rather than traversed as proof premises.
 
 This map makes the recorded proof chain reviewable. Upstream foundational
 reconstruction, independent mathematical review, and the outstanding journal
-comparisons remain open. A line-by-line RH-contamination audit, a
-machine-checkable convention/support table, a consolidated error budget,
-and a clean-checkout reproduction harness remain Work Package A tasks.
+comparisons remain open. The [consolidated error budget](pair-error-budget.md)
+now traces the named contributions, uniform ranges, signs and normalization.
+A line-by-line RH-contamination audit, a machine-checkable convention/support
+table, and a clean-checkout reproduction harness remain Work Package A tasks.
 No theorem status, assumption, computational flag, or completeness flag
 is changed by creating this document.
 

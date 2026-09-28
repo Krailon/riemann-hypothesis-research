@@ -143,9 +143,11 @@ is not imported as an unchecked dependency. The theorem assembly uses
 \(0\leq X\leq T\) before (2.19) cannot include \(X=0\), where its formula
 is undefined. The [dependency graph](../dependency-graph.md) now maps
 every currently recorded dependency of the local normalized theorem,
-including imported sources and computational provenance. Upstream
-foundational reconstruction, the consolidated error budget, and the
-RH-contamination audit remain Work Package A tasks.
+including imported sources and computational provenance. The
+[consolidated error budget](../pair-error-budget.md) traces each component
+through normalization, with signs, parameter ranges, and limit conventions.
+Upstream foundational reconstruction and the RH-contamination audit
+remain Work Package A tasks.
 
 **Completed local proof tasks:** Lemma 1 now has an exact contour identity,
 absolute/local uniform convergence, prime-power and \(X=1\) conventions,
@@ -188,8 +190,12 @@ assembles these estimates, as detailed below.
 26 claims, four source pointers, and all 39 recorded dependency edges.
 It distinguishes proof inputs from provenance and comparison links;
 upstream foundational completeness is not claimed.
+**Completed error budget:** the [named budget](../pair-error-budget.md)
+connects the explicit-formula remainders, thirteen prime-side square
+components, zero-side comparison, and final two error scales. It separates
+included prime-power contributions and vanishing auxiliary tails.
 **Remaining Work Package A work:** complete the
-machine-checkable convention/support table, consolidated error budget,
+machine-checkable convention/support table,
 RH-contamination audit, and clean-checkout reproduction harness.
 Independent review and final journal-text comparison remain pending.
 
