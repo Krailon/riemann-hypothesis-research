@@ -16,7 +16,7 @@ confirms publication. The mathematical text consulted is the
 [arXiv v1 PDF](https://arxiv.org/pdf/2306.04799v1), a **PREPRINT version of
 the published work**; all source labels below refer to that version.
 Access checked 2026-09-25. Comparison with the final journal text and the
-project's proof audit are pending.
+imported proof's full audit are pending; the local audit is recorded below.
 
 ## 1. Imported theorem — PAIR-BGSTB-001
 
@@ -153,8 +153,8 @@ every currently recorded dependency of the local normalized theorem,
 including imported sources and computational provenance. The
 [consolidated error budget](../pair-error-budget.md) traces each component
 through normalization, with signs, parameter ranges, and limit conventions.
-Upstream foundational reconstruction and the RH-contamination audit
-remain Work Package A tasks.
+The [RH-contamination audit](../pair-rh-audit.md) covers the local proof
+and imported-statement hypotheses; upstream reconstruction remains pending.
 
 **Completed local proof tasks:** Lemma 1 now has an exact contour identity,
 absolute/local uniform convergence, prime-power and \(X=1\) conventions,
@@ -205,8 +205,8 @@ included prime-power contributions and vanishing auxiliary tails.
 and [checker](../../scripts/check_pair_conventions.py) cover Fourier signs,
 exact scales and phases, normalizations, domains, kernel supports and
 endpoint conventions. These are regression checks of existing mathematics.
-**Remaining Work Package A work:** complete the
-RH-contamination audit, and clean-checkout reproduction harness.
+**Completed local RH-contamination review:** see the [audit](../pair-rh-audit.md).
+**Remaining Work Package A work:** the clean-checkout reproduction harness.
 Independent review and final journal-text comparison remain pending.
 
 ## 5. Local normalized theorem — PAIR-ASYMPTOTIC-001

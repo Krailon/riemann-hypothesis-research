@@ -4,6 +4,13 @@ schema_version: 1
 # null in audit fields means unknown/pending, never false or certified.
 # source_nodes are provenance locators, not proved claims; local reconstructions
 # are linked explicitly and retain their own claim status.
+rh_audit:
+  record: research/pair-rh-audit.json
+  report: research/pair-rh-audit.md
+  reviewed_on: 2026-09-28
+  scope: local_pair_proof_and_imported_statement_hypotheses
+  outcome: no_contamination_found_in_reviewed_scope
+  independent_review: pending
 source_nodes:
   - id: BGSTB-EF
     bibliography_key: BGSTB2024
@@ -179,7 +186,7 @@ claims:
       proof_method: "Use R=L, the zero-side comparison and prime-side mean square; divide 2 pi Phi by T log T and absorb only the two comparison errors."
       endpoint_audit: "T=3 and alpha=0,+1,-1 included. Negative alpha uses evenness, not a prime-side estimate at X<1. Multiplicity and full height-endpoint weights retained."
       error_audit: "Keep O(X^(-2)), O((log T)^(-1/2)), O((log T)^(-1)) and O(X/(T log T)) separate until uniform absorption. Preserve O(T^(-2|alpha|)) at alpha=0."
-      rh_contamination_audit: "Local assembly uses only the three unconditional dependencies; beta stays symbolic. The published headline theorem is a comparison reference, not a proof dependency. Broader upstream audits remain outstanding."
+      rh_contamination_audit: "Completed local line-by-line review and imported-statement hypothesis check; see research/pair-rh-audit.json and .md. No contamination found in the reviewed scope. Full upstream reconstruction and independent review remain pending."
       interchange_audit: "No new interchange; local justifications and outstanding upstream proof-review scope are inherited unchanged."
       computational_provenance: "True records published computer-assisted inputs through PAIR-COMPARE-001 and PAIR-ENVELOPE-001. The local assembly is analytic; exact regression checks are not proof certificates."
       local_computation_used_in_proof: false

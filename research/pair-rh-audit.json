@@ -1,0 +1,2322 @@
+{
+  "schema_version": 1,
+  "task": "exposition_and_proof_review",
+  "assumptions": [
+    "UNCONDITIONAL"
+  ],
+  "reviewed_on": "2026-09-28",
+  "outcome": "no_contamination_found_in_reviewed_scope",
+  "independent_review": false,
+  "analytic_proof_certificate": false,
+  "root_claim": "PAIR-ASYMPTOTIC-001",
+  "claim_snapshot": {
+    "GAMMA-DIGAMMA-001": {
+      "status": "published",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [],
+      "computation_used_in_proof": false
+    },
+    "PAIR-ASYMPTOTIC-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-COMPARE-001",
+        "PAIR-RHS-MEAN-001",
+        "PAIR-POSITIVITY-001"
+      ],
+      "computation_used_in_proof": true
+    },
+    "PAIR-COMPARE-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-TRUNC-001",
+        "PAIR-ENVELOPE-001"
+      ],
+      "computation_used_in_proof": true
+    },
+    "PAIR-COUNT-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "ZETA-COUNT-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-COUNT-KERNEL-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-COUNT-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-EF-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-EF-EXACT-001",
+        "ZETA-ANALYTIC-001",
+        "GAMMA-DIGAMMA-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-EF-CONVERGENCE-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "ZETA-ANALYTIC-001",
+        "PAIR-COUNT-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-EF-EXACT-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "ZETA-ANALYTIC-001",
+        "ZETA-CONTOUR-001",
+        "PAIR-EF-CONVERGENCE-001",
+        "PAIR-EF-MELLIN-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-EF-MELLIN-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [],
+      "computation_used_in_proof": false
+    },
+    "PAIR-ENVELOPE-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "ZETA-KV-001",
+        "ZETA-LOW-001",
+        "PAIR-COUNT-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      "computation_used_in_proof": true
+    },
+    "PAIR-MEANVALUE-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [],
+      "computation_used_in_proof": false
+    },
+    "PAIR-NORM-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-NORM-INTEGRAL-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-NORM-INTEGRAL-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [],
+      "computation_used_in_proof": false
+    },
+    "PAIR-POSITIVITY-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-NORM-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-PRIME-COUNT-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PRIME-SIEVE-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-PRIME-DIAGONAL-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PRIME-PNT-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-PRIME-MEAN-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-MEANVALUE-001",
+        "PAIR-PRIME-COUNT-001",
+        "PAIR-PRIME-DIAGONAL-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-RHS-MEAN-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-EF-001",
+        "PAIR-PRIME-MEAN-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PAIR-TRANSLATION-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [],
+      "computation_used_in_proof": false
+    },
+    "PAIR-TRUNC-001": {
+      "status": "proved-draft",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PAIR-COUNT-KERNEL-001",
+        "PAIR-EF-CONVERGENCE-001",
+        "PAIR-NORM-001"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PRIME-PNT-001": {
+      "status": "published",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "MV-PNT-PROOF"
+      ],
+      "computation_used_in_proof": false
+    },
+    "PRIME-SIEVE-001": {
+      "status": "published",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "MV-SIEVE-PROOF"
+      ],
+      "computation_used_in_proof": false
+    },
+    "ZETA-ANALYTIC-001": {
+      "status": "published",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [],
+      "computation_used_in_proof": false
+    },
+    "ZETA-CONTOUR-001": {
+      "status": "published",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [],
+      "computation_used_in_proof": false
+    },
+    "ZETA-COUNT-001": {
+      "status": "published",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [],
+      "computation_used_in_proof": false
+    },
+    "ZETA-KV-001": {
+      "status": "published",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "MTY-KV-PROOF",
+        "PT-LOW-ZEROS"
+      ],
+      "computation_used_in_proof": true
+    },
+    "ZETA-LOW-001": {
+      "status": "published",
+      "assumptions": [
+        "UNCONDITIONAL"
+      ],
+      "dependencies": [
+        "PT-LOW-ZEROS"
+      ],
+      "computation_used_in_proof": true
+    }
+  },
+  "source_node_ids": [
+    "MTY-KV-PROOF",
+    "MV-PNT-PROOF",
+    "MV-SIEVE-PROOF",
+    "PT-LOW-ZEROS"
+  ],
+  "ledger_sha256": "9c293b7fb7d2345ce6ee3ebaad39c7c228f5fb3e220777707d9f535150001091",
+  "evidence": [
+    {
+      "id": "analytic",
+      "claim_id": "ZETA-ANALYTIC-001",
+      "urls": [
+        "https://dlmf.nist.gov/25.2",
+        "https://dlmf.nist.gov/25.4",
+        "https://dlmf.nist.gov/25.10"
+      ],
+      "locator": "DLMF 25.2(i),(iv), 25.4.2, 25.10(i); authoritative reference, not an original proof reconstruction.",
+      "reviewed_on": "2026-09-28",
+      "scope": "stated_hypotheses_and_local_application",
+      "outcome": "no_unproved_RH_assumption_found"
+    },
+    {
+      "id": "countinput",
+      "claim_id": "ZETA-COUNT-001",
+      "urls": [
+        "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/18.0_pp_452_462_Zeros.pdf"
+      ],
+      "locator": "MV Chapter 14 pp. 452,454: midpoint definition and Corollary 14.3; neighboring Corollary 14.4 excluded.",
+      "reviewed_on": "2026-09-28",
+      "scope": "stated_hypotheses_and_local_application",
+      "outcome": "no_unproved_RH_assumption_found"
+    },
+    {
+      "id": "contour",
+      "claim_id": "ZETA-CONTOUR-001",
+      "urls": [
+        "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/16.0_pp_397_418_Explicit_formulae.pdf"
+      ],
+      "locator": "MV Chapter 12 pp. 398-400: Lemmas 12.2,12.4 and surrounding proof hypotheses.",
+      "reviewed_on": "2026-09-28",
+      "scope": "stated_hypotheses_and_local_application",
+      "outcome": "no_unproved_RH_assumption_found"
+    },
+    {
+      "id": "gamma",
+      "claim_id": "GAMMA-DIGAMMA-001",
+      "urls": [
+        "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/20.3_pp_520_534_The_gamma_function.pdf"
+      ],
+      "locator": "MV Appendix C pp. 523-524: Theorem C.1, (C.17), fixed-sector hypotheses and Euler-Maclaurin proof.",
+      "reviewed_on": "2026-09-28",
+      "scope": "stated_hypotheses_and_local_application",
+      "outcome": "no_unproved_RH_assumption_found"
+    },
+    {
+      "id": "kv",
+      "claim_id": "ZETA-KV-001",
+      "urls": [
+        "https://link.springer.com/article/10.1007/s40993-023-00498-y"
+      ],
+      "locator": "MTY published 2024 version, Theorem 1.1 (1.5), Section 5; numerical provenance in Sections 8-9.",
+      "reviewed_on": "2026-09-28",
+      "scope": "stated_hypotheses_and_local_application",
+      "outcome": "no_unproved_RH_assumption_found"
+    },
+    {
+      "id": "low",
+      "claim_id": "ZETA-LOW-001",
+      "urls": [
+        "https://doi.org/10.1112/blms.12460",
+        "https://arxiv.org/html/2004.09765v1"
+      ],
+      "locator": "PT published abstract plus arXiv v1 Theorem 1 and Section 2; only published 3*10^12 range imported.",
+      "reviewed_on": "2026-09-28",
+      "scope": "stated_hypotheses_and_local_application",
+      "outcome": "no_unproved_RH_assumption_found"
+    },
+    {
+      "id": "pnt",
+      "claim_id": "PRIME-PNT-001",
+      "urls": [
+        "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/10.0_pp_168_198_The_Prime_Number_Theorem.pdf"
+      ],
+      "locator": "MV Chapter 6 pp. 179-181: Theorem 6.9 and classical zero-free-region/Perron proof structure.",
+      "reviewed_on": "2026-09-28",
+      "scope": "stated_hypotheses_and_local_application",
+      "outcome": "no_unproved_RH_assumption_found"
+    },
+    {
+      "id": "sieve",
+      "claim_id": "PRIME-SIEVE-001",
+      "urls": [
+        "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/07.0_pp_76_107_Principles_and_first_examples_of_sieve_methods.pdf"
+      ],
+      "locator": "MV Chapter 3 p.97: Corollary 3.14, Theorem 3.13; adjacent asymptotic conjecture excluded.",
+      "reviewed_on": "2026-09-28",
+      "scope": "stated_hypotheses_and_local_application",
+      "outcome": "no_unproved_RH_assumption_found"
+    }
+  ],
+  "files": [
+    {
+      "path": "proofs/pair_baseline.tex",
+      "sha256": "9c9babe07d775a03cdc70f1fd00ada87ab0d34a7d7812ff47161b0eaefc15ba2",
+      "line_count": 1737,
+      "coverage": "complete",
+      "passages": [
+        {
+          "id": "P001",
+          "start_line": 1,
+          "end_line": 27,
+          "kind": "nonmathematical",
+          "claim_ids": [],
+          "assumptions": [],
+          "verdict": "justified",
+          "reason": "Preamble, macros and title; no mathematical inference.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P002",
+          "start_line": 28,
+          "end_line": 44,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-EF-001",
+            "PAIR-NORM-001",
+            "PAIR-ASYMPTOTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "All zero occurrences retained. Positive heights only in the finite pair sum; real logarithms define powers.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P003",
+          "start_line": 45,
+          "end_line": 54,
+          "kind": "definition",
+          "claim_ids": [
+            "PAIR-EF-001",
+            "PAIR-EF-CONVERGENCE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Both series retain delta and the full complex zero; absolute convergence is proved below.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P004",
+          "start_line": 55,
+          "end_line": 63,
+          "kind": "exposition",
+          "claim_ids": [
+            "ZETA-ANALYTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Eight imported inputs are declared separately from local proofs.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P005",
+          "start_line": 64,
+          "end_line": 81,
+          "kind": "imported_input",
+          "claim_ids": [
+            "ZETA-ANALYTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Continuation, Euler product, functional equation, strip location and multiplicity-preserving symmetries; differentiated Euler series converges on Re s>1.",
+          "evidence_ids": [
+            "analytic"
+          ]
+        },
+        {
+          "id": "P006",
+          "start_line": 82,
+          "end_line": 90,
+          "kind": "imported_input",
+          "claim_ids": [
+            "ZETA-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Use midpoint Corollary 14.3 with O(log v), not RH-dependent Corollary 14.4.",
+          "evidence_ids": [
+            "countinput"
+          ]
+        },
+        {
+          "id": "P007",
+          "start_line": 91,
+          "end_line": 99,
+          "kind": "imported_input",
+          "claim_ids": [
+            "ZETA-CONTOUR-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Lemmas 12.2 and 12.4 supply selected heights and the left-half-plane bound without RH.",
+          "evidence_ids": [
+            "contour"
+          ]
+        },
+        {
+          "id": "P008",
+          "start_line": 100,
+          "end_line": 110,
+          "kind": "imported_input",
+          "claim_ids": [
+            "GAMMA-DIGAMMA-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Theorem C.1 applies in a fixed sector to Re z>=3/2; effective digamma remainder.",
+          "evidence_ids": [
+            "gamma"
+          ]
+        },
+        {
+          "id": "P009",
+          "start_line": 111,
+          "end_line": 139,
+          "kind": "imported_input",
+          "claim_ids": [
+            "ZETA-KV-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Published Theorem 1.1 has inclusive boundaries |t|>=3 and sigma>=1-nu; zeros obey a strict complementary inequality. External computation is disclosed.",
+          "evidence_ids": [
+            "kv"
+          ]
+        },
+        {
+          "id": "P010",
+          "start_line": 140,
+          "end_line": 155,
+          "kind": "imported_input",
+          "claim_ids": [
+            "ZETA-LOW-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Only the published finite range 0<gamma<=3*10^12 is used. This is a proved computational input, not an assumption of RH at arbitrary height or of simplicity.",
+          "evidence_ids": [
+            "low"
+          ]
+        },
+        {
+          "id": "P011",
+          "start_line": 156,
+          "end_line": 168,
+          "kind": "imported_input",
+          "claim_ids": [
+            "PRIME-PNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Theorem 6.9 supplies effective classical PNT, full integer endpoints, u>=2; no RH error estimate.",
+          "evidence_ids": [
+            "pnt"
+          ]
+        },
+        {
+          "id": "P012",
+          "start_line": 169,
+          "end_line": 186,
+          "kind": "imported_input",
+          "claim_ids": [
+            "PRIME-SIEVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Corollary 3.14 is uniform in nonzero even shifts. Specialize x=0,y=U; retain an upper bound, not the neighboring prime-pair conjecture.",
+          "evidence_ids": [
+            "sieve"
+          ]
+        },
+        {
+          "id": "P013",
+          "start_line": 187,
+          "end_line": 201,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Inclusive/local counts concern all zero occurrences and exclude gamma=0; no line count is substituted.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P014",
+          "start_line": 202,
+          "end_line": 218,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Midpoint counts padded by one or two units include endpoint multiplicities; derivative of the main term and bounded-height counts give effective errors.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P015",
+          "start_line": 219,
+          "end_line": 230,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Paired eta series converges locally for Re s>0 by n^(-sigma-1); continuation and positivity for real 0<s<1 exclude real nontrivial zeros.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P016",
+          "start_line": 231,
+          "end_line": 241,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Conjugation handles negative heights; bounded intervals are controlled by midpoint counts at 9. Division yields the asymptotic without line or simplicity assumptions.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P017",
+          "start_line": 242,
+          "end_line": 267,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-COUNT-KERNEL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Ordinate-only kernels are nonnegative majorants counting occurrences, not an identity replacing complex zero weights.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P018",
+          "start_line": 268,
+          "end_line": 284,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COUNT-KERNEL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Elementary series split into initial and dyadic ranges; summable geometric/logarithmic majorants are uniform in distance.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P019",
+          "start_line": 285,
+          "end_line": 300,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COUNT-KERNEL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Unit-shell counts give global and distant-tail bounds; discarded restrictions enlarge positive sums only.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P020",
+          "start_line": 301,
+          "end_line": 314,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COUNT-KERNEL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Lower/upper exterior intervals retain endpoints consistently; logarithmic factors and summable kernels control distance to 0,T without zero separation.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P021",
+          "start_line": 315,
+          "end_line": 326,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COUNT-KERNEL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Interior counts on exterior integration tails use full multiplicity and give integrable (1+a)^(-1) bounds.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P022",
+          "start_line": 327,
+          "end_line": 340,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-EF-CONVERGENCE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Absolute and compact-uniform convergence stated for X>=1 and real t, with a quantified zero tail.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P023",
+          "start_line": 341,
+          "end_line": 358,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-CONVERGENCE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Strip bound |delta|<1/2 gives denominator >=(3/4)(1+v^2); dyadic zero counts bound the tail without delta=0.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P024",
+          "start_line": 359,
+          "end_line": 367,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-CONVERGENCE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Compact X,t majorants and the convergent prime tail justify continuity and the X=1 limit.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P025",
+          "start_line": 368,
+          "end_line": 376,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-EF-MELLIN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Elementary Mellin integral includes y=1 with value zero, not a half-weight convention.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P026",
+          "start_line": 377,
+          "end_line": 391,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-MELLIN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Residues at +/-1, horizontal heights first at fixed R, then R to infinity; absolute boundary integrals also cover y=1.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P027",
+          "start_line": 392,
+          "end_line": 409,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "s=1/2+it is the evaluation variable; rho remains unrestricted in the strip. Exact pole and trivial-zero terms retained.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P028",
+          "start_line": 410,
+          "end_line": 429,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Right line Re z=5/2 is in the absolutely convergent Euler region. Product majorant permits Fubini and the finite Mellin sum.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P029",
+          "start_line": 430,
+          "end_line": 445,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Selected horizontal heights use unconditional contour bounds at fixed X,t,M; kernel decay makes their integrals vanish.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P030",
+          "start_line": 446,
+          "end_line": 464,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Left line avoids all trivial zeros; integrable logarithmic majorant tends to zero as M grows after height tends to infinity.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P031",
+          "start_line": 465,
+          "end_line": 485,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Residues carry multiplicity; kernel poles at s+/-1 meet neither nontrivial nor trivial zeros. Pole signs follow the logarithmic derivative.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P032",
+          "start_line": 486,
+          "end_line": 495,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Nontrivial residues use absolute convergence, trivial residues a summable m^(-2) majorant.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P033",
+          "start_line": 496,
+          "end_line": 507,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Residue identity and Euler series recombine into the min-weight series; no separately divergent Landau series is summed.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P034",
+          "start_line": 508,
+          "end_line": 517,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Endpoint coefficients in the two pieces cancel for any common convention; prime powers have one full min-weight.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P035",
+          "start_line": 518,
+          "end_line": 528,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Take X down to 1 only after the two contour limits, under compact-uniform majorants; s-1 remains away from zeros and poles.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P036",
+          "start_line": 529,
+          "end_line": 551,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Uniform expansion has four named exact errors and keeps delta in the zero-side kernel.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P037",
+          "start_line": 552,
+          "end_line": 563,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Differentiate the functional equation at w=-1/2+it where all relevant factors are nonzero; no log-zeta branch or RH substitution.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P038",
+          "start_line": 564,
+          "end_line": 573,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Digamma evaluated at 3/2-it in an allowed sector; elementary log and cotangent bounds include t=0.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P039",
+          "start_line": 574,
+          "end_line": 578,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Euler-series error is absolutely convergent on Re s=3/2, with an effective integral-test bound.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P040",
+          "start_line": 579,
+          "end_line": 594,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Pole denominator and trivial-zero series bounds hold uniformly in real t and X>=1.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P041",
+          "start_line": 595,
+          "end_line": 604,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Only now combine the two X^(-1) errors; constants are uniform and inherited assumptions unconditional.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P042",
+          "start_line": 605,
+          "end_line": 613,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-NORM-INTEGRAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Complex a satisfies |Im a|<1; coincident case a=0 explicitly included.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P043",
+          "start_line": 614,
+          "end_line": 625,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-NORM-INTEGRAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Pole locations avoid the real axis; rational decay gives integrable tails and vanishing large semicircles at fixed a.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P044",
+          "start_line": 626,
+          "end_line": 638,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-NORM-INTEGRAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Two upper simple-pole residues apply when a!=0; strip condition rules out other coincidences.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P045",
+          "start_line": 639,
+          "end_line": 649,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-NORM-INTEGRAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "At a=0 use the displayed antiderivative for the double-pole case; no zero simplicity assumed.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P046",
+          "start_line": 650,
+          "end_line": 663,
+          "kind": "definition",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "I_T is finite and includes occurrences at T. Both beta-dependent vector and full complex difference weight are retained.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P047",
+          "start_line": 664,
+          "end_line": 676,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Squared norm is asserted for X>0 and an explicit tail depending on N(T),X,T; no uniformity in growing zero height is presumed.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P048",
+          "start_line": 677,
+          "end_line": 696,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Strip-only L2 majorants justify the finite squared expansion and termwise integration; explicit integrable tails.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P049",
+          "start_line": 697,
+          "end_line": 713,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Pair parameters d,h,a retain both horizontal displacements. Complex substitution gives a shifted line with its orientation unchanged.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P050",
+          "start_line": 714,
+          "end_line": 726,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "All four poles lie outside the closed intervening strip by |delta_j|,|delta_k|<1/2; no RH needed for the contour shift.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P051",
+          "start_line": 727,
+          "end_line": 744,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Joining segments vanish as R grows for the fixed pair. a=0 includes distinct reflected off-line zeros, not just an index diagonal.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P052",
+          "start_line": 745,
+          "end_line": 765,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Functional equation factor is nonzero in the strip, so reflection permutes occurrences with multiplicity at fixed T; the norm normalization is 2/pi.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P053",
+          "start_line": 766,
+          "end_line": 773,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Reflection preserves the full sum, not the original index diagonal. Its diagonal term is X^(2delta)/(1-delta^2), rather than 1.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P054",
+          "start_line": 774,
+          "end_line": 789,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-POSITIVITY-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Reality/positivity follows from an ordinary L2 norm. Index swap and even rational weight give inversion; no general Weil positivity or asymptotic premise.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P055",
+          "start_line": 790,
+          "end_line": 805,
+          "kind": "definition",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Full and truncated zero sums use established absolute convergence; unimodular phase gives L=int|S|^2 exactly.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P056",
+          "start_line": 806,
+          "end_line": 820,
+          "kind": "definition",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "B(Z) is a finite maximum of actual displacements with auxiliary zero; it gives only retained-zero bounds and no quantitative asymptotic gap by itself.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P057",
+          "start_line": 821,
+          "end_line": 857,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Three errors have exact signed definitions, full endpoints and explicit X,T,Z ranges; later envelope substitution requires an established bound.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P058",
+          "start_line": 858,
+          "end_line": 877,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Distant zero majorants retain X^(1/2). Difference of squares includes the quadratic remainder; no infinite double expansion.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P059",
+          "start_line": 878,
+          "end_line": 903,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Apply X^B(Z) before extending unweighted positive kernel bounds. Endpoint occurrence at T stays inside; no spacing or simplicity hypothesis.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P060",
+          "start_line": 904,
+          "end_line": 925,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Exterior integral is absolutely convergent and has a negative sign; telescoping with the finite norm gives the exact 2*pi normalization.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P061",
+          "start_line": 926,
+          "end_line": 948,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Use Z*=T log^2 T for T>=5; bound L and Phi directly by O(X) for 3<=T<5 using counts, not a first-zero dataset.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P062",
+          "start_line": 949,
+          "end_line": 966,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-ENVELOPE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Envelope invokes the separately declared KV and finite-height inputs for every Z>=3, including empty zero sets.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P063",
+          "start_line": 967,
+          "end_line": 984,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-ENVELOPE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Elementary strict logarithm inequalities show 0<nu(3)<1/2 using the exact rational coefficient; no numerical estimate.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P064",
+          "start_line": 985,
+          "end_line": 994,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-ENVELOPE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Logarithmic differentiation proves positivity and monotone decrease on the complete interval u>=3.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P065",
+          "start_line": 995,
+          "end_line": 1009,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-ENVELOPE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Gamma=0 is excluded analytically; 0<|gamma|<3 uses the published finite verification only. Heights 3 and Z use the inclusive KV threshold.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P066",
+          "start_line": 1010,
+          "end_line": 1027,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-ENVELOPE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Finite maximum yields strict gap; multiplicity-preserving reflection supplies both signs of delta. No limit is interchanged.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P067",
+          "start_line": 1028,
+          "end_line": 1045,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-COMPARE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Comparison is uniform on closed 1<=X<=T, T>=3; C* bounds only the auxiliary absorption, not all theorem constants.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P068",
+          "start_line": 1046,
+          "end_line": 1055,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COMPARE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Positive exponent 1-2nu allows maximization at X=T; retains the established finite-height gap.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P069",
+          "start_line": 1056,
+          "end_line": 1080,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COMPARE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Elementary logarithmic bounds and Taylor lower bound for exp give a finite effective absorption constant at every T>=3.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P070",
+          "start_line": 1081,
+          "end_line": 1097,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COMPARE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Insert the proved envelope into truncation, keeping separate truncation, height and extension errors and the extension sign.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P071",
+          "start_line": 1098,
+          "end_line": 1112,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-COMPARE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Bounded T handled separately; no misuse of Z*>=2T below T=5. BGSTB is a comparison citation, not a proof premise.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P072",
+          "start_line": 1113,
+          "end_line": 1133,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-MEANVALUE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Auxiliary Fourier bandwidth in negative-sign 2*pi units; repeated frequencies combined before the ordered off-diagonal sum.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P073",
+          "start_line": 1134,
+          "end_line": 1163,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-MEANVALUE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "L2 inversion followed by L1 convolution gives exact sinc transforms, masses and supports. These are real-variable Fourier facts with no zero hypothesis.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P074",
+          "start_line": 1164,
+          "end_line": 1183,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-MEANVALUE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Sinc tail and positive shifted-square lower bound provide a global effective boundary majorant including removable points.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P075",
+          "start_line": 1184,
+          "end_line": 1197,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-MEANVALUE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Convolution and boundary correction sandwich the time indicator almost everywhere; time endpoints have measure zero.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P076",
+          "start_line": 1198,
+          "end_line": 1206,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-MEANVALUE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Mass and L1 norms are controlled using delta>=1/(2T). Continuous transforms vanish also at the closed support endpoints.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P077",
+          "start_line": 1207,
+          "end_line": 1223,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-MEANVALUE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Absolute coefficient sum supplies explicit Fubini majorant. Ordered nearby frequencies and a nonnegative |F|^2 yield the sandwich even if M-minus is signed.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P078",
+          "start_line": 1224,
+          "end_line": 1233,
+          "kind": "definition",
+          "claim_ids": [
+            "PAIR-PRIME-COUNT-001",
+            "PAIR-PRIME-DIAGONAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Prime coefficients include all powers and full integer cutoffs; proper powers are distinguished from primes.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P079",
+          "start_line": 1234,
+          "end_line": 1248,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-PRIME-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Ordered weighted pair upper bounds are uniform, with empty integer gap for V<1; no prime-pair asymptotic.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P080",
+          "start_line": 1249,
+          "end_line": 1268,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Uniform even-shift sieve and exceptional prime 2 for odd shifts; nonnegative divisor expansion of g(h) has convergent Euler product bounded by exp(3/4).",
+          "evidence_ids": []
+        },
+        {
+          "id": "P081",
+          "start_line": 1269,
+          "end_line": 1284,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Elementary count of proper powers gives O(V sqrt(U) log^3(2U))=O(UV); all bounded U and repeated power cases are covered by upper bounds.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P082",
+          "start_line": 1285,
+          "end_line": 1299,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Close logarithmic frequencies imply comparable indices and a short integer gap. Low-index weights and the sieve average give O(delta X), or an empty sum.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P083",
+          "start_line": 1300,
+          "end_line": 1309,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-COUNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "High-index weights and nonnegative dyadic summation give a convergent O(delta X) tail; no cancellation or RH used.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P084",
+          "start_line": 1310,
+          "end_line": 1326,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-PRIME-DIAGONAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Exact diagonal split includes a prime power at X once. Proper-power contribution is separately bounded uniformly in X>=1.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P085",
+          "start_line": 1327,
+          "end_line": 1336,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-DIAGONAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Partial summation uses the classical PNT remainder only; its logarithmic loss is effectively bounded and small u is covered directly.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P086",
+          "start_line": 1337,
+          "end_line": 1359,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-DIAGONAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Continuous weight has no jump at X. Integrable derivative and vanishing boundary justify Stieltjes integration and the exact main integral at fixed X.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P087",
+          "start_line": 1360,
+          "end_line": 1381,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-DIAGONAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Elementary power counts and a summable positive dyadic majorant bound D_pp; maximizing a polynomial times an exponential gives uniform boundedness.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P088",
+          "start_line": 1382,
+          "end_line": 1395,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-PRIME-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "The weighted prime mean has separate diagonal and total residual bounds on 1<=X<=T, including endpoints.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P089",
+          "start_line": 1396,
+          "end_line": 1409,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Frequencies are distinct -log(n)/(2*pi); absolute coefficient tail is uniform in t at fixed X and justifies the integral limit.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P090",
+          "start_line": 1410,
+          "end_line": 1425,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Chosen delta is within the Fourier lemma domain, including X=1,T; monotonicity of log(2X)/X proves the lower bound.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P091",
+          "start_line": 1426,
+          "end_line": 1442,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-PRIME-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Translate frequency gaps with the exact 2*pi factor; balance D/delta and TQ, then deduce the L2 bound using X<=T.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P092",
+          "start_line": 1443,
+          "end_line": 1456,
+          "kind": "definition",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Exact r=-P+A+H equals the original full-zero series S; R=L with no beta substitution or changed normalization.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P093",
+          "start_line": 1457,
+          "end_line": 1467,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Prime-side asymptotic retains its two uniform error scales; BGSTB locator is for comparison.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P094",
+          "start_line": 1468,
+          "end_line": 1479,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Exact archimedean antiderivative and bounded log shift give peak main term and O(T log(T)/X^2) error.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P095",
+          "start_line": 1480,
+          "end_line": 1500,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Integration by parts uses n>=2 and Lambda(n)/log(n)<=1; absolute coefficient sum justifies the prime/archimedean integral and its oscillatory bound.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P096",
+          "start_line": 1501,
+          "end_line": 1511,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Each of four exact errors has an L2 norm from the uniform explicit formula; pole/trivial tails have convergent integrals.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P097",
+          "start_line": 1512,
+          "end_line": 1523,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Cauchy-Schwarz bounds each signed cross term; the remainder square is nonnegative, without assuming any sign for the individual complex errors.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P098",
+          "start_line": 1524,
+          "end_line": 1542,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Table preserves each prime/remainder and archimedean/remainder contribution; total remainder square bounded by (sum b_j)^2.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P099",
+          "start_line": 1543,
+          "end_line": 1559,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Finite exact expansion has 13 residuals. Only after their uniform estimates combine three peak errors and ten mean errors on the closed range.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P100",
+          "start_line": 1560,
+          "end_line": 1567,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-RHS-MEAN-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Fixed-X,T limits precede uniform estimates; prime powers retained, n=1 vanishes. No zero-density or prime-pair conjecture is used.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P101",
+          "start_line": 1568,
+          "end_line": 1597,
+          "kind": "statement",
+          "claim_ids": [
+            "PAIR-ASYMPTOTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Full complex-zero all-occurrence observable, fixed C_T, closed alpha range and two errors; imported headline theorem is a comparison only.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P102",
+          "start_line": 1598,
+          "end_line": 1614,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-ASYMPTOTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Use R=L, comparison and prime-side mean. Comparison errors change sign when solving for 2*pi*Phi; absolute bounds are unaffected.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P103",
+          "start_line": 1615,
+          "end_line": 1626,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-ASYMPTOTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Each error is divided by T log T; comparison scales remain separate until uniform absorption.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P104",
+          "start_line": 1627,
+          "end_line": 1644,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-ASYMPTOTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Normalize and substitute X=T^alpha on [0,1]; negative alpha uses exact evenness rather than an estimate outside X>=1.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P105",
+          "start_line": 1645,
+          "end_line": 1652,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-ASYMPTOTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "All substitutions are at finite parameters in uniform bounds, allowing alpha(T); no new limit exchange or unproved source is introduced.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P106",
+          "start_line": 1653,
+          "end_line": 1668,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-ASYMPTOTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Endpoints follow with the O(1) peak error retained at alpha=0; no replacement of C_T by N(T) or unsupported frequency extension.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P107",
+          "start_line": 1669,
+          "end_line": 1677,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Conjugation/reindexing retains multiplicity and displacements; reflection does not equate individual terms.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P108",
+          "start_line": 1678,
+          "end_line": 1682,
+          "kind": "conditional_check",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "verdict": "isolated_conditional_check",
+          "reason": "Explicit RH specialization sets delta=0 only as a separate check; it is not a premise of the unconditional proof.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P109",
+          "start_line": 1683,
+          "end_line": 1691,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-EF-EXACT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Combined resolvent is elementary; neither separate Landau zero series is assigned absolute convergence.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P110",
+          "start_line": 1692,
+          "end_line": 1695,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Pair conjugation swaps j,k with h fixed and d negated; complex horizontal terms remain.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P111",
+          "start_line": 1696,
+          "end_line": 1703,
+          "kind": "conditional_check",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "verdict": "isolated_conditional_check",
+          "reason": "Separate RH specialization recovers the ordinate kernel; unconditional norm already covers X>0 and an empty finite set.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P112",
+          "start_line": 1704,
+          "end_line": 1705,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Unconditional truncation endpoints include X=1, empty sets and zeros at cutoffs.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P113",
+          "start_line": 1706,
+          "end_line": 1711,
+          "kind": "conditional_check",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "verdict": "isolated_conditional_check",
+          "reason": "RH implies B=0 only within this check; no stronger distant-tail estimate is inferred or fed back into the proof.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P114",
+          "start_line": 1712,
+          "end_line": 1734,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-ASYMPTOTIC-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Status remains proved-draft, with imported computational dependencies and no local replay; regression tests do not certify analytic estimates.",
+          "evidence_ids": []
+        },
+        {
+          "id": "P115",
+          "start_line": 1735,
+          "end_line": 1737,
+          "kind": "nonmathematical",
+          "claim_ids": [],
+          "assumptions": [],
+          "verdict": "justified",
+          "reason": "Bibliography and document terminator.",
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "path": "research/literature-notes/pair-baseline.md",
+      "sha256": "264e2c7ad2942c39d40ce0639214f766642fa402416687dd0544cbeca1776106",
+      "line_count": 288,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "T001",
+          "start_line": 53,
+          "end_line": 79,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-TRANSLATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Expand complex differences, distinguish index/zero/ordinate diagonals and reindex only the full finite sum.",
+          "evidence_ids": []
+        },
+        {
+          "id": "T002",
+          "start_line": 80,
+          "end_line": 87,
+          "kind": "conditional_check",
+          "claim_ids": [
+            "PAIR-TRANSLATION-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "verdict": "isolated_conditional_check",
+          "reason": "Explicit RH specialization is isolated from the exact translations.",
+          "evidence_ids": []
+        },
+        {
+          "id": "T003",
+          "start_line": 89,
+          "end_line": 123,
+          "kind": "proof",
+          "claim_ids": [
+            "PAIR-TRANSLATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Exact negative-sign Fourier and q_T scale changes retain horizontal amplitude. C_c^infinity ensures entire evaluation; finite sum permits exchange. Closed frequency range does not extend a later support theorem.",
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "path": "research/notation.md",
+      "sha256": "fe07556f4b6c3c257f1bb11971bd196723b48106645cb954ebc562039cf59239",
+      "line_count": 85,
+      "coverage": "complete",
+      "passages": [
+        {
+          "id": "N001",
+          "start_line": 1,
+          "end_line": 35,
+          "kind": "definition",
+          "claim_ids": [
+            "PAIR-TRANSLATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Frozen full-zero, multiplicity, Fourier, T>2*pi and normalization conventions; no theorem is asserted.",
+          "evidence_ids": []
+        },
+        {
+          "id": "N002",
+          "start_line": 36,
+          "end_line": 85,
+          "kind": "exposition",
+          "claim_ids": [
+            "PAIR-TRANSLATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "verdict": "justified",
+          "reason": "Machine table and rational fixtures check existing algebra and domains only; no analytic estimate or independent verification is certified.",
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_pair_lemma1.py",
+      "sha256": "b5f93694f7d8e00e6d6ddd5cfefe2ab8dc5936bf1aec5cb4323d4029cbcc36cd",
+      "line_count": 88,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "C001",
+          "start_line": 66,
+          "end_line": 77,
+          "kind": "conditional_check",
+          "claim_ids": [
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "verdict": "isolated_conditional_check",
+          "reason": "Finite rational strip fixtures include delta=0 as an algebra specialization; no actual zero is replaced or theorem certified.",
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_pair_lemma3.py",
+      "sha256": "09e0b6104d7da983a821caa0110d5b03855f67335803de62d3a74a2186d7b67e",
+      "line_count": 188,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "C002",
+          "start_line": 181,
+          "end_line": 185,
+          "kind": "conditional_check",
+          "claim_ids": [
+            "PAIR-NORM-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "verdict": "isolated_conditional_check",
+          "reason": "On-line rational weight identity and empty sum are regression checks, not premises of the norm proof.",
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_pair_lemma4.py",
+      "sha256": "069244f2e339ff663895ab8d23a1861178442b23d35a0f66053b07b299a2551e",
+      "line_count": 158,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "C003",
+          "start_line": 132,
+          "end_line": 136,
+          "kind": "conditional_check",
+          "claim_ids": [
+            "PAIR-TRUNC-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "verdict": "isolated_conditional_check",
+          "reason": "Projected synthetic list has B=0 by construction; no claim about actual unrestricted zeta zeros follows.",
+          "evidence_ids": []
+        }
+      ]
+    }
+  ],
+  "obligations": [
+    {
+      "id": "O1",
+      "scope": "outside_current_review",
+      "description": "Independent mathematical review of the local proved-draft reconstruction."
+    },
+    {
+      "id": "O2",
+      "scope": "outside_current_review",
+      "description": "Full upstream foundational proof reconstruction, including unexpanded inputs; dependency_graph_complete flags remain unchanged."
+    },
+    {
+      "id": "O3",
+      "scope": "outside_current_review",
+      "description": "Independent reconstruction/replay of published computer-assisted KV and finite-height verification inputs."
+    },
+    {
+      "id": "O4",
+      "scope": "outside_current_review",
+      "description": "Final journal-text comparisons for BGSTB and PT beyond the published PT abstract already checked."
+    },
+    {
+      "id": "O5",
+      "scope": "outside_current_review",
+      "description": "Clean-checkout reproduction entry point and environment; structural audit checks do not prove the asymptotic."
+    }
+  ]
+}
