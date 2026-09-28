@@ -141,8 +141,11 @@ The cited Goldston–Montgomery mean-value estimate is proved locally in
 is not imported as an unchecked dependency. The theorem assembly uses
 \(1\leq X\leq T\); v1's printed
 \(0\leq X\leq T\) before (2.19) cannot include \(X=0\), where its formula
-is undefined. The full dependency graph, named error budget, and RH
-contamination audit remain Work Package A tasks.
+is undefined. The [dependency graph](../dependency-graph.md) now maps
+every currently recorded dependency of the local normalized theorem,
+including imported sources and computational provenance. Upstream
+foundational reconstruction, the consolidated error budget, and the
+RH-contamination audit remain Work Package A tasks.
 
 **Completed local proof tasks:** Lemma 1 now has an exact contour identity,
 absolute/local uniform convergence, prime-power and \(X=1\) conventions,
@@ -181,7 +184,11 @@ PNT/sieve inputs retain proper prime powers and named cross-term errors.
 This part uses no numerical proof input.
 **Completed normalized theorem draft:** `PAIR-ASYMPTOTIC-001`
 assembles these estimates, as detailed below.
-**Remaining Work Package A work:** complete the dependency graph,
+**Completed dependency map:** the [graph](../dependency-graph.md) covers
+26 claims, four source pointers, and all 39 recorded dependency edges.
+It distinguishes proof inputs from provenance and comparison links;
+upstream foundational completeness is not claimed.
+**Remaining Work Package A work:** complete the
 machine-checkable convention/support table, consolidated error budget,
 RH-contamination audit, and clean-checkout reproduction harness.
 Independent review and final journal-text comparison remain pending.
