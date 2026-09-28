@@ -194,8 +194,10 @@ The [machine-checkable convention/support table](pair-conventions.json)
 and its [exact checker](../scripts/check_pair_conventions.py) now record
 the Fourier and scale translations, domains, and boundary conventions.
 The [RH-contamination audit](pair-rh-audit.md) now records the local
-line-by-line review and imported-statement hypothesis checks. A clean-checkout
-reproduction harness remains a Work Package A task.
+line-by-line review and imported-statement hypothesis checks. The
+[reproduction harness](../README.md#reproduce-the-pair-baseline) regenerates
+the normalization/error records, runs the checks and builds the manuscript.
+Independent review and the upstream obligations above remain outstanding.
 No theorem status, assumption, computational flag, or completeness flag
 is changed by creating this document.
 
