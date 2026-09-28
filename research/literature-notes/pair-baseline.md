@@ -3,7 +3,9 @@
 Task: exposition and source verification. Assumptions: `UNCONDITIONAL`;
 the explicitly marked RH specialization is a check under `RH`.
 Ledger: `PAIR-BGSTB-001` (imported result), `PAIR-TRANSLATION-001`
-(local algebra, `proved-draft`). Conventions: [notation](../notation.md).
+(local algebra), and `PAIR-ASYMPTOTIC-001` (local theorem);
+both local claims have status `proved-draft`.
+Conventions: [notation](../notation.md).
 
 Source: Baluyot–Goldston–Suriajaya–Turnage-Butterbaugh,
 *An unconditional Montgomery theorem for pair correlation of zeros of the
@@ -118,9 +120,9 @@ asserts no boundary extension for a later correlation theorem. Keep \(q_T\)
 exact: although it tends to one, changing normalization at the height
 \(\log T\) peak can produce an \(O(1)\) difference.
 
-## 4. Inputs to reconstruct next
+## 4. Reconstructed inputs and remaining audits
 
-The following source map records the remaining reconstruction work.
+The following source map records the reconstructed inputs and outstanding audits.
 Lemmas 1–4 now have local `proved-draft` reconstructions; Lemma 2 retains
 Riemann–von Mangoldt as an explicitly imported input. Independent review
 remains pending. Source IDs and local claim IDs are linked in the ledger.
@@ -136,7 +138,7 @@ remains pending. Source IDs and local claim IDs are linked in the ledger.
 
 The cited Goldston–Montgomery mean-value estimate is proved locally in
 `PAIR-MEANVALUE-001`; its original full text was inaccessible, and it
-is not imported as an unchecked dependency. For theorem assembly use
+is not imported as an unchecked dependency. The theorem assembly uses
 \(1\leq X\leq T\); v1's printed
 \(0\leq X\leq T\) before (2.19) cannot include \(X=0\), where its formula
 is undefined. The full dependency graph, named error budget, and RH
@@ -177,9 +179,76 @@ uniformly for \(T\geq3,1\leq X\leq T\), with \(R=L\) by the
 existing explicit formula. Its local Fourier argument and published
 PNT/sieve inputs retain proper prime powers and named cross-term errors.
 This part uses no numerical proof input.
-**Next task:** assemble the normalized pair-correlation asymptotic from
-`PAIR-COMPARE-001` and `PAIR-RHS-MEAN-001`, preserving
-uniformity in \(0\leq\alpha\leq1\) and both endpoints. Complete the
-remaining Work Package A dependency, support, error-budget and
-RH-contamination audit deliverables, with independent review still pending.
-The pair-correlation asymptotic itself remains an imported theorem.
+**Completed normalized theorem draft:** `PAIR-ASYMPTOTIC-001`
+assembles these estimates, as detailed below.
+**Remaining Work Package A work:** complete the dependency graph,
+machine-checkable convention/support table, consolidated error budget,
+RH-contamination audit, and clean-checkout reproduction harness.
+Independent review and final journal-text comparison remain pending.
+
+## 5. Local normalized theorem — PAIR-ASYMPTOTIC-001
+
+Task: proof. Assumptions: `UNCONDITIONAL`. Status: `proved-draft`.
+The [manuscript](../../proofs/pair_baseline.tex), label
+`thm:pair-asymptotic`, proves that there are absolute effective
+\(C_1,C_2>0\) such that, for every \(T\geq3\) and \(|\alpha|\leq1\),
+\[
+ \left|\mathcal F_T(\alpha)-T^{-2|\alpha|}\log T-|\alpha|\right|
+ \leq C_1T^{-2|\alpha|}+C_2(\log T)^{-1/2}.
+\]
+The observable and all diagonal/multiplicity conventions are those in §1.
+The normalization remains \(C_T=T\log T/(2\pi)\).
+This is a local reconstruction of the imported theorem; its proof depends
+on `PAIR-COMPARE-001`, `PAIR-RHS-MEAN-001`, and
+`PAIR-POSITIVITY-001`, without using `PAIR-BGSTB-001` as a premise.
+
+At fixed \(T\geq3,1\leq X\leq T\), use \(R=L\), then divide the
+resulting expression for \(2\pi\Phi\) by \(Tq\), where \(q=\log T>1\).
+The four errors normalize as follows:
+
+| Source error | Normalized bound |
+| --- | --- |
+| Prime-side peak error \(O(Tq/X^2)\) | \(O(X^{-2})\) |
+| Remaining prime-side error \(O(T\sqrt q)\) | \(O(q^{-1/2})\) |
+| Comparison \(O(T)\) | \(O(q^{-1})\) |
+| Comparison \(O(X)\) | \(O(X/(Tq))\) |
+
+Since \(X/(Tq)\leq q^{-1}\leq q^{-1/2}\), absorb the comparison
+errors and substitute \(X=T^\alpha\) for \(0\leq\alpha\leq1\).
+Negative \(\alpha\) uses exact evenness, not the prime-side estimate at
+\(X<1\). Reality and nonnegativity on all of \(\mathbb R\) are already
+proved by `PAIR-POSITIVITY-001`.
+
+Both endpoints are included:
+\(\mathcal F_T(0)=\log T+O(1)\) and
+\(\mathcal F_T(\pm1)=1+O((\log T)^{-1/2})\).
+The peak error cannot be discarded at zero. There is no new interchange:
+the estimates hold uniformly even for \(\alpha=\alpha(T)\in[-1,1]\).
+No extension beyond this closed interval is claimed.
+The exact scale translation in §3 remains applicable.
+
+Effectivity is inherited from the local input estimates; complete numerical
+values of \(C_1,C_2\) are not supplied. The comparison retains published
+computer-assisted zero-free-region and low-height inputs. No local
+certificate or independent replay is claimed, and the remaining upstream
+audit obligations are unchanged.
+
+The standard-library script
+`python3 -B scripts/check_pair_asymptotic.py`
+checks both main-term coefficients, all four error scales, signed comparison
+errors, rational-power substitutions including endpoints, and the elementary
+absorption algebra. These are exact regression checks, not certificates
+of the asymptotic or numerical evidence about zeta zeros.
+
+Validation on 2026-09-28: all 43 exact regression tests passed (38 existing
+and 5 normalization tests), using
+`python3 -B -m unittest discover -s scripts -p 'check_pair_*.py' -v`.
+The 28-claim ledger passed unique-key/ID, dependency-resolution and
+acyclicity checks, including source-node and reconstruction links.
+The local theorem's dependency closure contains only `UNCONDITIONAL`
+claims, retains the published computational inputs, and excludes the
+imported headline theorem. Theorem-label mappings, references, citations,
+local file links and Python syntax passed.
+The manuscript compiled in an isolated temporary directory with pdfLaTeX,
+BibTeX and two resolving LaTeX passes to a 23-page PDF, with no final-pass
+warnings, unresolved references/citations, or overfull/underfull boxes.

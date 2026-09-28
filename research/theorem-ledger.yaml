@@ -120,7 +120,8 @@ claims:
       statement_checked_against: arXiv_v1_pdf
       publication_metadata_checked: "2026-09-25"
       final_journal_text_comparison: pending
-      proof_reconstruction: pending
+      proof_reconstruction: completed_draft
+      local_reconstruction: PAIR-ASYMPTOTIC-001
       rh_contamination_audit: pending
       effectivity_audit: pending
       interchange_audit: pending
@@ -134,8 +135,61 @@ claims:
         PAIR-ENVELOPE-001 derives its finite-height envelope, and
         PAIR-COMPARE-001 proves the uniform O(T)+O(X) comparison in draft.
         PAIR-RHS-MEAN-001 reconstructs the prime-side mean square.
-        Full normalized theorem assembly and independent review remain pending.
+        PAIR-ASYMPTOTIC-001 assembles the normalized theorem in draft.
+        Independent review and the broader project audit remain pending.
         The source's conditional Theorems 2-3 are not imported.
+
+  - id: PAIR-ASYMPTOTIC-001
+    title: Uniform unconditional normalized pair-correlation asymptotic
+    kind: theorem
+    statement: |
+      For T>=3 let I_T index every nontrivial zero occurrence
+      rho_j=beta_j+i gamma_j with 0<gamma_j<=T, counted with multiplicity
+      and full endpoint weight. Define C_T=T log(T)/(2 pi) and
+      F_T(alpha)=C_T^(-1) sum_{j,k in I_T}
+        4 T^(alpha(rho_j-rho_k))/(4-(rho_j-rho_k)^2).
+      All ordered pairs are included, including equal indices and equal
+      complex zeros. F_T is real, nonnegative and even for every real alpha.
+      There exist absolute effective C_1,C_2>0 such that for every T>=3
+      and |alpha|<=1,
+      |F_T(alpha)-T^(-2|alpha|)log T-|alpha||
+        <= C_1 T^(-2|alpha|)+C_2(log T)^(-1/2).
+      Equivalently F_T(alpha)=T^(-2|alpha|)(log T+O(1))
+        +|alpha|+O((log T)^(-1/2)), uniformly on this closed range.
+      In particular F_T(0)=log T+O(1) and
+      F_T(1)=F_T(-1)=1+O((log T)^(-1/2)).
+      No RH or simplicity assumption is used.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-COMPARE-001, PAIR-RHS-MEAN-001, PAIR-POSITIVITY-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: thm:pair-asymptotic
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Theorem 1, equation (1.4)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Algebra at fixed T,X; substitute X=T^alpha for 0<=alpha<=1, then use exact evenness. Bounds uniform for T>=3, |alpha|<=1, including alpha depending on T. No new interchange."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Use R=L, the zero-side comparison and prime-side mean square; divide 2 pi Phi by T log T and absorb only the two comparison errors."
+      endpoint_audit: "T=3 and alpha=0,+1,-1 included. Negative alpha uses evenness, not a prime-side estimate at X<1. Multiplicity and full height-endpoint weights retained."
+      error_audit: "Keep O(X^(-2)), O((log T)^(-1/2)), O((log T)^(-1)) and O(X/(T log T)) separate until uniform absorption. Preserve O(T^(-2|alpha|)) at alpha=0."
+      rh_contamination_audit: "Local assembly uses only the three unconditional dependencies; beta stays symbolic. The published headline theorem is a comparison reference, not a proof dependency. Broader upstream audits remain outstanding."
+      interchange_audit: "No new interchange; local justifications and outstanding upstream proof-review scope are inherited unchanged."
+      computational_provenance: "True records published computer-assisted inputs through PAIR-COMPARE-001 and PAIR-ENVELOPE-001. The local assembly is analytic; exact regression checks are not proof certificates."
+      local_computation_used_in_proof: false
+      local_certificate_replay: not_performed
+      independent_verification: pending
+      final_journal_text_comparison: pending
+      regression_checks: "43 exact tests passed on 2026-09-28: 38 existing and 5 normalization checks. Main-term coefficients, separate error scales, signed comparison, endpoint substitutions and absorption algebra checked; no analytic proof certificate."
+      source_structure_checks: "28 unique claim IDs and 10 source nodes; dependency resolution/acyclicity including reconstruction links, theorem-label mapping, references, citations, local file links and Python syntax passed. The local theorem closure is unconditional, retains computational provenance, and excludes PAIR-BGSTB-001."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined manuscript built on 2026-09-28: 23 pages, resolved references/citations, no final-pass warnings or overfull/underfull boxes."
 
   - id: PAIR-TRANSLATION-001
     title: Exact bookkeeping and scale translation for the pair observable

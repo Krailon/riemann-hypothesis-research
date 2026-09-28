@@ -178,7 +178,10 @@ dependency list uses that claim and the subsequently reconstructed
 `PAIR-RHS-MEAN-001`; see the [prime-side audit](pair-prime-mean-audit.md).
 The comparison and the full theorem's reconstructed dependency chain carry
 the imported computational provenance; no local certificate or replay is
-claimed. Assembly of the full normalized pair asymptotic remains pending.
+claimed. The normalized pair asymptotic is now assembled as
+`PAIR-ASYMPTOTIC-001`; see the
+[local theorem and normalization audit](pair-baseline.md#5-local-normalized-theorem--pair-asymptotic-001).
+Independent review and the broader Work Package A audits remain pending.
 
 ## Validation
 

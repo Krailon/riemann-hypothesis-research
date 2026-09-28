@@ -155,6 +155,8 @@ final-pass warnings, unresolved citations/references, or overfull/underfull
 boxes. Two overflowing displays found in the first build were reformatted.
 
 The ledger connects `BGSTB-MEAN` to `PAIR-RHS-MEAN-001` and uses
-the latter in the full theorem's dependency list. Assembly of the
-normalized asymptotic, the remaining Work Package A audit deliverables,
-and independent review remain pending.
+the latter in the full theorem's dependency list. The normalized
+asymptotic is now assembled as `PAIR-ASYMPTOTIC-001`; see the
+[local theorem and normalization audit](pair-baseline.md#5-local-normalized-theorem--pair-asymptotic-001).
+The remaining Work Package A audit and clean-checkout reproducibility
+deliverables, journal comparison, and independent review remain pending.

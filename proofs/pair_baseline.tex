@@ -5,6 +5,7 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}[lemma]{Proposition}
 \newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{theorem}[lemma]{Theorem}
 \newcommand{\dd}{\,\mathrm d}
 \newcommand{\ii}{\mathrm i}
 \newcommand{\ZL}{\frac{\zeta'}{\zeta}}
@@ -19,17 +20,18 @@
 \newcommand{\ELtr}{E_{\mathrm{trunc}}}
 \newcommand{\ELh}{E_{\mathrm{height}}}
 \newcommand{\ELext}{E_{\mathrm{extension}}}
-\title{Pair baseline: explicit formula, zero-side comparison and prime-side mean square}
+\title{Pair baseline: an unconditional normalized pair-correlation asymptotic}
 \author{Research proof draft}
-\date{26 September 2026}
+\date{28 September 2026}
 \begin{document}
 \maketitle
 
 \noindent\textbf{Task: proof. Assumptions: \texttt{UNCONDITIONAL}.}
 This draft reconstructs \cite[Lemmas 1--4, (2.2)--(2.16)]{BGSTB2024}, with locators
 referring to arXiv:2306.04799v1. It also reconstructs the zero-side
-comparison (2.18) and prime-side mean square (2.19); assembly of the
-normalized pair-correlation asymptotic remains pending.
+comparison (2.18) and prime-side mean square (2.19), and assembles the
+normalized pair-correlation asymptotic (1.4) as
+Theorem~\ref{thm:pair-asymptotic}, with status \texttt{proved-draft}.
 In the explicit-formula series, all nontrivial zeros
 \(\rho=\beta+\ii\gamma=1/2+\delta_\rho+\ii\gamma\) are counted with
 multiplicity, including both signs of \(\gamma\).
@@ -1563,6 +1565,107 @@ the stated range. No RH, simplicity, zero-density estimate, or
 prime-pair asymptotic is used.
 \end{proof}
 
+\section{The normalized pair-correlation asymptotic}
+
+\begin{theorem}[\texttt{PAIR-ASYMPTOTIC-001}]\label{thm:pair-asymptotic}
+Assumptions: \texttt{UNCONDITIONAL}.
+Let \(I_T\) index all nontrivial zero occurrences
+\(\rho_j=\beta_j+\ii\gamma_j\) with \(0<\gamma_j\leq T\), counted with
+multiplicity and full weight at \(T\). Set
+\[
+ C_T=\frac{T\log T}{2\pi},\qquad
+ \mathcal F_T(\alpha)=\frac1{C_T}
+ \sum_{j,k\in I_T}
+ \frac{4T^{\alpha(\rho_j-\rho_k)}}{4-(\rho_j-\rho_k)^2}.
+\]
+The sum includes all ordered pairs, including equal indices and equal
+complex zeros. For every \(T\geq3\), this function is real, nonnegative
+and even on \(\mathbb R\). There are absolute effective constants
+\(C_1,C_2>0\) such that, for every \(T\geq3\) and \(|\alpha|\leq1\),
+\begin{equation}\label{eq:pair-asymptotic-bound}
+ \left|\mathcal F_T(\alpha)-T^{-2|\alpha|}\log T-|\alpha|\right|
+ \leq C_1T^{-2|\alpha|}+C_2(\log T)^{-1/2}.
+\end{equation}
+Equivalently, uniformly on this closed range,
+\begin{equation}\label{eq:pair-asymptotic}
+ \mathcal F_T(\alpha)
+ =T^{-2|\alpha|}\bigl(\log T+O(1)\bigr)
+    +|\alpha|+O\bigl((\log T)^{-1/2}\bigr).
+\end{equation}
+This reconstructs \cite[Theorem 1, (1.4)]{BGSTB2024} in the project
+normalization.
+\end{theorem}
+\begin{proof}
+Reality, nonnegativity and evenness for every real \(\alpha\) are
+Corollary~\ref{cor:pair-positivity}. To prove the estimate, first fix
+\(T\geq3\) and \(1\leq X\leq T\), and put \(q=\log T>1\).
+The exact explicit formula gives \(R=L\).
+Lemmas~\ref{lem:rhs-mean} and~\ref{lem:pair-compare} therefore give
+\begin{equation}\label{eq:pair-assembly}
+ 2\pi\Phi(X,T)
+ =TX^{-2}q^2+T\log X
+   +E_{\mathrm{peak}}+E_{\mathrm{mean}}
+   +E_{\mathrm{compare},T}+E_{\mathrm{compare},X}.
+\end{equation}
+Here the first two errors collect the two already justified
+prime-side error scales; the last two are the errors in \(2\pi\Phi-L\).
+Their signs are immaterial for the following absolute bounds.
+All implied constants are absolute and effective, uniformly on the
+closed range just stated:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Error & Before normalization & After division by \(Tq\)\\
+\midrule
+\(E_{\mathrm{peak}}\) & \(O(Tq/X^2)\) & \(O(X^{-2})\)\\
+\(E_{\mathrm{mean}}\) & \(O(T\sqrt q)\) & \(O(q^{-1/2})\)\\
+\(E_{\mathrm{compare},T}\) & \(O(T)\) & \(O(q^{-1})\)\\
+\(E_{\mathrm{compare},X}\) & \(O(X)\) & \(O(X/(Tq))\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+In particular, division of \eqref{eq:pair-assembly} gives
+\begin{align}\label{eq:pair-normalization}
+ \frac{2\pi\Phi(X,T)}{Tq}
+ &=X^{-2}q+\frac{\log X}{q}
+   +O(X^{-2})+O(q^{-1/2})\notag\\
+ &\hspace{12mm}+O(q^{-1})+O(X/(Tq)).
+\end{align}
+Since \(X/(Tq)\leq q^{-1}\leq q^{-1/2}\), the last two errors
+can now be absorbed into \(O(q^{-1/2})\).
+For \(0\leq\alpha\leq1\), set \(X=T^\alpha\).
+Then \(1\leq X\leq T\), \(\log X/q=\alpha\), \(X^{-2}=T^{-2\alpha}\),
+and the left side of \eqref{eq:pair-normalization} is exactly
+\(\mathcal F_T(\alpha)\). The uniform absolute error bounds give
+\eqref{eq:pair-asymptotic-bound} on this half interval. For
+\(-1\leq\alpha<0\), use
+\(\mathcal F_T(\alpha)=\mathcal F_T(|\alpha|)\).
+Thus no prime-side estimate is applied with \(X<1\).
+
+This proof introduces no sum, integral, or limit interchange.
+The identities are used at fixed \(T,X\), followed by a substitution
+into bounds uniform on the whole closed range. In particular, the
+asymptotic holds for every choice \(\alpha=\alpha(T)\in[-1,1]\)
+as \(T\to\infty\). Effectivity follows from the two input estimates;
+no numerical values for the complete constants \(C_1,C_2\) are claimed.
+\end{proof}
+
+At the endpoints the same theorem gives
+\[
+ \mathcal F_T(0)=\log T+O(1),\qquad
+ \mathcal F_T(\pm1)=1+T^{-2}\log T
+      +O(T^{-2})+O((\log T)^{-1/2})
+      =1+O((\log T)^{-1/2}).
+\]
+For the last absorption, writing \(q=\log T\geq1\), the elementary
+bound \(e^{2q}\geq(2q)^2/2\geq q^{3/2}\) gives
+\(T^{-2}q\leq q^{-1/2}\).
+At \(\alpha=0\), the separate \(O(T^{-2|\alpha|})\) term must be
+retained; the proof does not yield an \(O((\log T)^{-1/2})\) total error
+there. The normalization remains \(C_T\), not \(TL_T\) or \(N(T)\).
+No frequency range beyond \([-1,1]\), purely vertical unweighted
+correlation theorem, or horizontal proportion is asserted here.
+
 \section{Checks and scope of the audit}\label{sec:checks}
 
 The zero-side denominator is at least \(3/4\) in modulus when
@@ -1616,13 +1719,18 @@ uses no numerical result. The finite-height envelope
 computational dependencies. No local numerical certificate or
 independent replay is claimed for those inputs.
 Independent mathematical review, comparison with the final journal
-version of BGSTB, and assembly of the normalized pair theorem remain pending.
+version of BGSTB, and the remaining Work Package A audit and
+clean-checkout reproducibility deliverables remain pending.
+The normalized theorem is reconstructed as
+\texttt{PAIR-ASYMPTOTIC-001}; it inherits the external computational
+dependencies of \texttt{PAIR-COMPARE-001}.
 The prime-side mean square is reconstructed as \texttt{PAIR-RHS-MEAN-001}
 from the explicit formula, a local Fourier argument, and the imported
 unconditional PNT and sieve bounds; this part uses no numerical input.
 Finite arithmetic regression scripts check
 the elementary kernel, endpoint, residue, reindexing and truncation
-algebra; they do not certify any analytic estimate.
+algebra, as well as the final main-term and error normalization;
+they do not certify any analytic estimate.
 
 \bibliographystyle{plain}
 \bibliography{../research/literature}

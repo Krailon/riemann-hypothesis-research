@@ -170,7 +170,8 @@ has now been verified, and `PAIR-ENVELOPE-001` derives
 for \(T\geq3\), \(1\leq X\leq T\). Its analytic absorption bound is
 effective at every height in that range, and it retains the direct
 \(3\leq T<5\) argument. The [prime-side mean square](pair-prime-mean-audit.md)
-is now reconstructed as `PAIR-RHS-MEAN-001`; assembly of the
-full normalized pair theorem comes next. The envelope and comparison claims retain
+is now reconstructed as `PAIR-RHS-MEAN-001`, and
+`PAIR-ASYMPTOTIC-001` assembles the normalized theorem with all
+frequency endpoints included. The envelope and comparison claims retain
 their external computational dependencies; the Lemmas 2/4 proof above
 is unchanged.
