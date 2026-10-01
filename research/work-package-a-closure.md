@@ -4,11 +4,15 @@ Task: exposition and project-status bookkeeping. Assumptions: `UNCONDITIONAL`.
 Status reviewed **2026-10-01** against [AGENTS.md §3](../AGENTS.md), the
 [theorem ledger](theorem-ledger.yaml), and the artifacts below.
 
-**Baseline reconstructed; final closure pending.** The root claim is
+**Work Package A complete within its documented reproduction scope.**
+Closed on **2026-10-01** for baseline revision
+`62a21146b1a4ea0d0d46534768ecaed7233bbe42`. The root claim is
 `PAIR-ASYMPTOTIC-001`, status `proved-draft`, with `PAIR-TRANSLATION-001`
-providing the separate convention translation. Independent mathematical
-review and a preserved reproduction record for the designated baseline
-revision remain open. This checklist introduces no theorem or status upgrade.
+providing the separate convention translation. All six required artifacts
+and a full clean-checkout reproduction are recorded below. Independent
+mathematical review is a nonblocking follow-up. Completion of A introduces
+no theorem or verification-status upgrade; the baseline is ready to support
+Work Package B.
 
 ## Required outputs
 
@@ -35,8 +39,38 @@ Proof labels refer to [pair_baseline.tex](../proofs/pair_baseline.tex).
   [entry point](../scripts/reproduce.sh), [instructions](../README.md#reproduce-the-pair-baseline).
   It regenerates main-term/error normalization records, runs the exact checks
   and builds the manuscript. It does not prove the imported analytic bounds.
-- [ ] **Final revision sign-off:** preserve a full clean-checkout run for the
-  designated baseline revision under the criteria below.
+- [x] **Final revision sign-off:** the full clean-checkout run for the
+  designated baseline revision passed, and the complete output bundle is
+  preserved below.
+
+### Preserved baseline reproduction
+
+Run on 2026-10-01 from a fresh temporary clone checked out at
+`62a21146b1a4ea0d0d46534768ecaed7233bbe42`, using
+`./scripts/reproduce.sh --output-dir /tmp/work-package-a-closeout-p9qe59vd/bundle`.
+
+| Evidence | Recorded result |
+| --- | --- |
+| [Manifest](../artifacts/work-package-a/62a21146b1a4ea0d0d46534768ecaed7233bbe42/manifest.json) | `mode: full`, `status: pass`; all stages passed |
+| Source tree | Designated commit above; `dirty: false`, empty Git status |
+| [Test log](../artifacts/work-package-a/62a21146b1a4ea0d0d46534768ecaed7233bbe42/logs/checks.log) | 70 passed; no failures, errors or skips |
+| [Manuscript PDF](../artifacts/work-package-a/62a21146b1a4ea0d0d46534768ecaed7233bbe42/pair_baseline.pdf) | 23 pages; no recorded warnings, unresolved references or citations |
+| [Normalization JSON](../artifacts/work-package-a/62a21146b1a4ea0d0d46534768ecaed7233bbe42/pair-normalization.json) / [readable formulas](../artifacts/work-package-a/62a21146b1a4ea0d0d46534768ecaed7233bbe42/pair-normalization.md) | Regenerated main-term and named-error accounting |
+| Manifest SHA256 | `e5329e812080ba0c8d5d59d67ff689c9db7ec92e8aff62dcd5a7b799e90d2ba6` |
+
+The complete bundle, including all logs and build intermediates, is preserved
+under `artifacts/work-package-a/62a21146b1a4ea0d0d46534768ecaed7233bbe42/`,
+outside the ignored development-output directory. All 21 manifest-listed
+output hashes were verified, and the copied files, including the manifest,
+were checked byte for byte against the run output. The manifest retains its
+original execution paths; relative output paths resolve within this bundle.
+
+The tested revision predates these closure-status edits to this checklist and
+the README. All other manifest-listed inputs, including the proof, scripts,
+ledger and RH-audit record, are unchanged. This distinction avoids claiming
+that the later documentation was part of the clean run. A future change to
+the baseline proof or audited inputs requires appropriate review and a new
+reproduction record; this bundle remains evidence for the designated revision.
 
 ### Historical clean-checkout evidence
 
@@ -56,30 +90,14 @@ Its temporary location is
 This is historical harness evidence, not a durable release record or a run
 of the later accepted-text-comparison revision. Temporary files may disappear.
 
-## Two open closeout items
+## Closure decision
 
-- [ ] **Independent mathematical review.** Record the reviewer, reviewed
-  revision, claim coverage, findings and their resolutions in a durable report.
-  Start with `PAIR-MEANVALUE-001` through `PAIR-RHS-MEAN-001` using the
-  [prime-side audit](literature-notes/pair-prime-mean-audit.md), then cover the
-  remaining root dependency closure and `PAIR-TRANSLATION-001`. Check uniform
-  bounds, convergence, endpoint conventions and applicability of imported
-  statements. Close this item only when no unresolved proof issue remains
-  in that scope. Another pass by the original author and passing tests alone
-  do not establish independence; any ledger promotion requires its own evidence.
-- [ ] **Preserved full reproduction for the designated revision.** From a
-  fresh checkout of that revision, run `./scripts/reproduce.sh` in full mode.
-  Require `status: pass`, `source.dirty: false`, all expected tests passing
-  (currently 70), generated normalization records and a successful PDF build
-  with resolved references/citations. Review any recorded warnings. Preserve
-  the manifest, logs, generated formulas and PDF at a durable location; record
-  the source commit, location and manifest SHA256 here. A checks-only or dirty
-  run does not satisfy this item. Changes affecting the proof or audited inputs
-  after review must be reconciled before sign-off.
-
-Writing this checklist closes neither item. They concern review and release
-evidence; no additional baseline lemma was identified as missing by the
-accepted-text comparison.
+There are no remaining Work Package A closeout items within the scope above.
+The accepted-text comparison identified no missing baseline lemma, and the
+preserved full run satisfies the clean-checkout regeneration requirement.
+Independent review is a separate verification milestone, not an A completion
+gate. Passing regression checks and matching a published result do not by
+themselves independently verify the expanded analytic proof.
 
 ## Trusted inputs and deferred follow-ups
 
@@ -98,10 +116,19 @@ The imported BGSTB headline theorem is a comparison target, not a premise
 of the local asymptotic proof. The needed Fourier mean-value bound is proved
 locally rather than imported from the inaccessible GM87 text.
 
-Deferred follow-ups are complete upstream re-proofs, replay of external
-computer-assisted inputs, publisher-version checks, and broader uv/Nix/container
-pinning and CI. They are not prerequisites for using these identified published
-inputs in the present baseline. No local computational certificate is claimed.
+Nonblocking follow-ups:
+
+- **Independent mathematical review:** begin with `PAIR-MEANVALUE-001`
+  through `PAIR-RHS-MEAN-001` using the
+  [prime-side audit](literature-notes/pair-prime-mean-audit.md), then review
+  the remaining root dependency closure and `PAIR-TRANSLATION-001`. Record
+  reviewer, revision, coverage, findings and resolutions before claiming
+  independent verification. Any ledger promotion requires its own evidence.
+- Complete upstream re-proofs and replay of external computer-assisted inputs.
+- Publisher-version checks and broader uv/Nix/container pinning and CI.
+
+These follow-ups do not block completion of A or use of the identified
+published inputs in the baseline. No local computational certificate is claimed.
 
 Historical audit lists describe their own review dates. This checklist supplies
 the current closure status without rewriting those records or changing proof

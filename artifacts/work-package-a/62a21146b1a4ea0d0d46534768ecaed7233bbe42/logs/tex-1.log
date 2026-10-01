@@ -1,0 +1,574 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+entering extended mode
+(./pair_baseline.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+No file pair_baseline.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+LaTeX Warning: Citation `BGSTB2024' on page 1 undefined on input line 30.
+
+
+LaTeX Warning: Reference `thm:pair-asymptotic' on page 1 undefined on input lin
+e 34.
+
+
+LaTeX Warning: Citation `DLMF' on page 1 undefined on input line 73.
+
+
+LaTeX Warning: Citation `MV2007' on page 1 undefined on input line 82.
+
+
+LaTeX Warning: Reference `lem:pair-count' on page 1 undefined on input line 88.
+
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `MV2007' on page 2 undefined on input line 91.
+
+
+LaTeX Warning: Citation `MV2007' on page 2 undefined on input line 100.
+
+
+LaTeX Warning: Citation `MTY2024' on page 2 undefined on input line 112.
+
+
+LaTeX Warning: Citation `PT2021' on page 2 undefined on input line 134.
+
+
+LaTeX Warning: Reference `lem:pair-envelope' on page 2 undefined on input line 
+138.
+
+
+LaTeX Warning: Citation `PT2021' on page 2 undefined on input line 141.
+
+
+LaTeX Warning: Reference `eq:low-input' on page 2 undefined on input line 151.
+
+
+LaTeX Warning: Citation `MV2007' on page 2 undefined on input line 157.
+
+[2]
+
+LaTeX Warning: Citation `MV2007' on page 3 undefined on input line 170.
+
+
+LaTeX Warning: Reference `eq:inclusive-count' on page 3 undefined on input line
+ 211.
+
+
+LaTeX Warning: Reference `eq:local-count' on page 3 undefined on input line 235
+.
+
+
+LaTeX Warning: Reference `eq:inclusive-count' on page 3 undefined on input line
+ 236.
+
+
+LaTeX Warning: Reference `eq:inclusive-count' on page 3 undefined on input line
+ 238.
+
+[3]
+
+LaTeX Warning: Reference `eq:kernel-series' on page 4 undefined on input line 2
+81.
+
+
+LaTeX Warning: Reference `eq:local-count' on page 4 undefined on input line 286
+.
+
+
+LaTeX Warning: Reference `eq:kernel-series' on page 4 undefined on input line 2
+90.
+
+
+LaTeX Warning: Reference `eq:kernel-global' on page 4 undefined on input line 2
+91.
+
+
+LaTeX Warning: Reference `eq:kernel-far' on page 4 undefined on input line 299.
+
+
+[4]
+
+LaTeX Warning: Reference `eq:kernel-series' on page 5 undefined on input line 3
+13.
+
+
+LaTeX Warning: Reference `eq:kernel-boundary' on page 5 undefined on input line
+ 314.
+
+
+LaTeX Warning: Reference `eq:kernel-series' on page 5 undefined on input line 3
+20.
+
+
+LaTeX Warning: Reference `eq:kernel-extension' on page 5 undefined on input lin
+e 321.
+
+
+LaTeX Warning: Reference `eq:zero-sum' on page 5 undefined on input line 329.
+
+
+LaTeX Warning: Reference `eq:prime-sum' on page 5 undefined on input line 330.
+
+
+LaTeX Warning: Reference `lem:pair-count' on page 5 undefined on input line 349
+.
+
+[5]
+
+LaTeX Warning: Reference `lem:ef-mellin' on page 6 undefined on input line 423.
+
+
+
+LaTeX Warning: Reference `eq:left-error' on page 6 undefined on input line 463.
+
+
+[6]
+
+LaTeX Warning: Reference `lem:ef-convergence' on page 7 undefined on input line
+ 487.
+
+
+LaTeX Warning: Reference `eq:euler-derivative' on page 7 undefined on input lin
+e 500.
+
+
+LaTeX Warning: Reference `eq:right-line' on page 7 undefined on input line 500.
+
+
+
+LaTeX Warning: Reference `eq:exact' on page 7 undefined on input line 506.
+
+
+LaTeX Warning: Reference `eq:exact' on page 7 undefined on input line 515.
+
+
+LaTeX Warning: Reference `lem:ef-convergence' on page 7 undefined on input line
+ 519.
+
+
+LaTeX Warning: Reference `eq:trivial-majorant' on page 7 undefined on input lin
+e 520.
+
+
+LaTeX Warning: Reference `eq:horizontal-error' on page 7 undefined on input lin
+e 525.
+
+[7]
+
+LaTeX Warning: Citation `BGSTB2024' on page 8 undefined on input line 550.
+
+
+LaTeX Warning: Reference `eq:psi-bound' on page 8 undefined on input line 569.
+
+
+LaTeX Warning: Reference `eq:pole' on page 8 undefined on input line 581.
+
+
+LaTeX Warning: Reference `eq:trivial-majorant' on page 8 undefined on input lin
+e 582.
+
+
+LaTeX Warning: Reference `eq:error-bounds' on page 8 undefined on input line 59
+3.
+
+[8]
+
+LaTeX Warning: Reference `eq:norm-integral' on page 9 undefined on input line 6
+37.
+
+
+LaTeX Warning: Reference `eq:norm-integral' on page 9 undefined on input line 6
+45.
+
+
+LaTeX Warning: Reference `eq:denominator' on page 9 undefined on input line 678
+.
+
+[9]
+
+LaTeX Warning: Reference `eq:norm-tail' on page 10 undefined on input line 693.
+
+
+
+LaTeX Warning: Reference `lem:norm-integral' on page 10 undefined on input line
+ 729.
+
+
+LaTeX Warning: Reference `lem:norm-integral' on page 10 undefined on input line
+ 741.
+
+
+LaTeX Warning: Reference `eq:norm-shifted-line' on page 10 undefined on input l
+ine 746.
+
+
+LaTeX Warning: Reference `eq:norm-shift' on page 10 undefined on input line 746
+.
+
+
+LaTeX Warning: Reference `eq:pair-norm' on page 10 undefined on input line 761.
+
+
+
+LaTeX Warning: Reference `eq:norm-reflected-sum' on page 10 undefined on input 
+line 767.
+
+
+LaTeX Warning: Reference `eq:norm-pair-definition' on page 10 undefined on inpu
+t line 768.
+
+[10]
+
+LaTeX Warning: Reference `eq:pair-norm' on page 11 undefined on input line 781.
+
+
+
+LaTeX Warning: Reference `eq:norm-pair-definition' on page 11 undefined on inpu
+t line 783.
+
+
+LaTeX Warning: Reference `eq:norm-vector' on page 11 undefined on input line 79
+6.
+
+
+LaTeX Warning: Reference `lem:ef-convergence' on page 11 undefined on input lin
+e 799.
+
+[11]
+
+LaTeX Warning: Reference `eq:denominator' on page 12 undefined on input line 85
+9.
+
+
+LaTeX Warning: Reference `eq:kernel-global' on page 12 undefined on input line 
+859.
+
+
+LaTeX Warning: Reference `eq:kernel-far' on page 12 undefined on input line 860
+.
+
+
+LaTeX Warning: Reference `eq:error-trunc-bound' on page 12 undefined on input l
+ine 873.
+
+
+LaTeX Warning: Reference `eq:horizontal-majorant' on page 12 undefined on input
+ line 879.
+
+
+LaTeX Warning: Reference `eq:kernel-global' on page 12 undefined on input line 
+890.
+
+
+LaTeX Warning: Reference `eq:kernel-boundary' on page 12 undefined on input lin
+e 890.
+
+
+LaTeX Warning: Reference `eq:error-height-bound' on page 12 undefined on input 
+line 898.
+
+
+LaTeX Warning: Reference `eq:kernel-extension' on page 12 undefined on input li
+ne 904.
+
+[12]
+
+LaTeX Warning: Reference `eq:pair-norm' on page 13 undefined on input line 912.
+
+
+
+LaTeX Warning: Reference `eq:trunc-decomposition' on page 13 undefined on input
+ line 918.
+
+
+LaTeX Warning: Reference `lem:ef-convergence' on page 13 undefined on input lin
+e 921.
+
+
+LaTeX Warning: Reference `eq:pair-trunc-final' on page 13 undefined on input li
+ne 928.
+
+
+LaTeX Warning: Reference `lem:pair-count' on page 13 undefined on input line 93
+8.
+
+
+LaTeX Warning: Reference `eq:pair-trunc-final' on page 13 undefined on input li
+ne 940.
+
+
+LaTeX Warning: Reference `eq:kv-input' on page 13 undefined on input line 951.
+
+
+LaTeX Warning: Reference `eq:horizontal-envelope' on page 13 undefined on input
+ line 951.
+
+
+LaTeX Warning: Reference `lem:pair-trunc' on page 13 undefined on input line 96
+4.
+
+[13]
+
+LaTeX Warning: Reference `lem:pair-count' on page 14 undefined on input line 99
+6.
+
+
+LaTeX Warning: Reference `eq:low-input' on page 14 undefined on input line 999.
+
+
+
+LaTeX Warning: Reference `eq:kv-zero-bound' on page 14 undefined on input line 
+1001.
+
+
+LaTeX Warning: Reference `eq:kv-monotonicity' on page 14 undefined on input lin
+e 1002.
+
+
+LaTeX Warning: Reference `lem:pair-count' on page 14 undefined on input line 10
+11.
+
+
+LaTeX Warning: Reference `eq:two-sided-envelope' on page 14 undefined on input 
+line 1018.
+
+
+LaTeX Warning: Reference `lem:pair-trunc' on page 14 undefined on input line 10
+25.
+
+
+LaTeX Warning: Reference `lem:pair-trunc' on page 14 undefined on input line 10
+37.
+
+
+LaTeX Warning: Reference `eq:pair-compare' on page 14 undefined on input line 1
+044.
+
+
+LaTeX Warning: Reference `lem:pair-trunc' on page 14 undefined on input line 10
+44.
+
+
+LaTeX Warning: Reference `lem:pair-envelope' on page 14 undefined on input line
+ 1048.
+
+
+LaTeX Warning: Reference `eq:compare-absorption' on page 14 undefined on input 
+line 1078.
+
+
+LaTeX Warning: Reference `lem:pair-trunc' on page 14 undefined on input line 10
+81.
+
+[14]
+
+LaTeX Warning: Reference `eq:compare-absorption' on page 15 undefined on input 
+line 1087.
+
+
+LaTeX Warning: Reference `eq:pair-compare' on page 15 undefined on input line 1
+088.
+
+
+LaTeX Warning: Reference `lem:pair-trunc' on page 15 undefined on input line 10
+90.
+
+
+LaTeX Warning: Reference `lem:pair-trunc' on page 15 undefined on input line 11
+00.
+
+
+LaTeX Warning: Reference `eq:pair-compare' on page 15 undefined on input line 1
+108.
+
+
+LaTeX Warning: Citation `BGSTB2024' on page 15 undefined on input line 1109.
+
+[15]
+
+LaTeX Warning: Reference `eq:meanvalue-kernel-transforms' on page 16 undefined 
+on input line 1203.
+
+[16]
+
+LaTeX Warning: Reference `eq:prime-pair-average' on page 17 undefined on input 
+line 1250.
+
+
+LaTeX Warning: Reference `eq:prime-pair-average' on page 17 undefined on input 
+line 1283.
+
+
+LaTeX Warning: Reference `eq:prime-pair-average' on page 17 undefined on input 
+line 1296.
+
+
+LaTeX Warning: Reference `eq:prime-close-pairs' on page 17 undefined on input l
+ine 1307.
+
+[17]
+
+LaTeX Warning: Reference `eq:prime-pnt-input' on page 18 undefined on input lin
+e 1329.
+
+[18]
+
+LaTeX Warning: Reference `lem:pair-meanvalue' on page 19 undefined on input lin
+e 1426.
+
+
+LaTeX Warning: Reference `lem:prime-count' on page 19 undefined on input line 1
+428.
+
+
+LaTeX Warning: Reference `lem:prime-diagonal' on page 19 undefined on input lin
+e 1429.
+
+
+LaTeX Warning: Reference `eq:prime-diagonal-error' on page 19 undefined on inpu
+t line 1438.
+
+
+LaTeX Warning: Reference `lem:pair-ef' on page 19 undefined on input line 1451.
+
+
+
+LaTeX Warning: Citation `BGSTB2024' on page 19 undefined on input line 1465.
+
+[19]
+
+LaTeX Warning: Reference `lem:pair-ef' on page 20 undefined on input line 1501.
+
+
+
+LaTeX Warning: Reference `lem:prime-mean' on page 20 undefined on input line 15
+23.
+
+
+LaTeX Warning: Reference `eq:arch-square' on page 20 undefined on input line 15
+23.
+
+
+LaTeX Warning: Reference `eq:rhs-mean' on page 20 undefined on input line 1558.
+
+
+[20]
+
+LaTeX Warning: Citation `BGSTB2024' on page 21 undefined on input line 1595.
+
+
+LaTeX Warning: Reference `cor:pair-positivity' on page 21 undefined on input li
+ne 1600.
+
+
+LaTeX Warning: Reference `lem:rhs-mean' on page 21 undefined on input line 1603
+.
+
+
+LaTeX Warning: Reference `lem:pair-compare' on page 21 undefined on input line 
+1603.
+
+
+LaTeX Warning: Reference `eq:pair-assembly' on page 21 undefined on input line 
+1627.
+
+
+LaTeX Warning: Reference `eq:pair-normalization' on page 21 undefined on input 
+line 1638.
+
+
+LaTeX Warning: Reference `eq:pair-asymptotic-bound' on page 21 undefined on inp
+ut line 1640.
+
+[21]
+
+LaTeX Warning: Reference `eq:norm-shifted-line' on page 22 undefined on input l
+ine 1694.
+
+
+LaTeX Warning: Reference `eq:norm-shift' on page 22 undefined on input line 169
+4.
+
+[22]
+No file pair_baseline.bbl.
+[23] (./pair_baseline.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `pair_baseline.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ ) </tmp/texfonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb>
+Output written on pair_baseline.pdf (23 pages, 350978 bytes).
+Transcript written on pair_baseline.log.

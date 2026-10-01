@@ -1,0 +1,1737 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{theorem}[lemma]{Theorem}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\ZL}{\frac{\zeta'}{\zeta}}
+\newcommand{\ZS}{\mathcal S}
+\newcommand{\PS}{\mathcal P}
+\newcommand{\EP}{E_{\mathrm{pole}}}
+\newcommand{\ET}{E_{\mathrm{trivial}}}
+\newcommand{\EA}{E_{\mathrm{arch}}}
+\newcommand{\ED}{E_{\mathrm{DS}}}
+\newcommand{\VS}{\mathcal V}
+\newcommand{\US}{\mathcal U}
+\newcommand{\ELtr}{E_{\mathrm{trunc}}}
+\newcommand{\ELh}{E_{\mathrm{height}}}
+\newcommand{\ELext}{E_{\mathrm{extension}}}
+\title{Pair baseline: an unconditional normalized pair-correlation asymptotic}
+\author{Research proof draft}
+\date{28 September 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Task: proof. Assumptions: \texttt{UNCONDITIONAL}.}
+This draft reconstructs \cite[Lemmas 1--4, (2.2)--(2.16)]{BGSTB2024}, with locators
+referring to arXiv:2306.04799v1. It also reconstructs the zero-side
+comparison (2.18) and prime-side mean square (2.19), and assembles the
+normalized pair-correlation asymptotic (1.4) as
+Theorem~\ref{thm:pair-asymptotic}, with status \texttt{proved-draft}.
+In the explicit-formula series, all nontrivial zeros
+\(\rho=\beta+\ii\gamma=1/2+\delta_\rho+\ii\gamma\) are counted with
+multiplicity, including both signs of \(\gamma\).
+The squared-norm identity instead uses the finite index set \(I_T\)
+of zero occurrences with \(0<\gamma\leq T\), again with multiplicity.
+Horizontal displacements remain explicit; the finite-height envelope uses
+a published theorem to set \(\delta_\rho=0\) only in its verified low range.
+Powers of positive real numbers use their real logarithms.
+Write \(\Lambda(p^k)=\log p\) for a prime \(p\) and \(k\geq1\),
+and \(\Lambda(n)=0\) otherwise, including \(n=1\).
+For \(X\geq1\), \(t\in\mathbb R\), put
+\begin{align}
+ \ZS(X,t)&=\sum_\rho
+ \frac{2X^{\delta_\rho+\ii(\gamma-t)}}
+ {1+((t-\gamma)+\ii\delta_\rho)^2},\label{eq:zero-sum}\\
+ \PS(X,t)&=\sum_{n\geq1}\Lambda(n)n^{-1/2-\ii t}
+                  \min\{n/X,X/n\}.\label{eq:prime-sum}
+\end{align}
+The interpretation of these series is absolute convergence, proved below.
+
+\section{Analytic inputs and their provenance}\label{sec:analytic-inputs}
+
+The following published inputs are unconditional. The first four support
+the local Lemmas 1--4 reconstruction; the next two additionally support
+the finite-height envelope. The last two supply prime-distribution inputs
+for the prime-side mean square.
+They are imported facts, not claims of new proofs in this document.
+The ledger records their precise statements and source locators.
+\begin{enumerate}
+\item \texttt{ZETA-ANALYTIC-001}: the meromorphic continuation of zeta,
+its simple pole at 1 with residue 1, its simple trivial zeros at
+\(-2,-4,\ldots\), the location \(0<\Re\rho<1\) of its other zeros,
+conjugation symmetry, and its absolutely convergent Euler product in
+\(\Re s>1\). We use
+\[
+ \zeta(s)=\chi(s)\zeta(1-s),\qquad
+ \chi(s)=2^s\pi^{s-1}\sin(\pi s/2)\Gamma(1-s).
+\]
+See \cite[\S\S25.2(i), 25.2(iv), 25.4, 25.10(i)]{DLMF};
+the displayed functional equation is (25.4.2), and the Euler product
+is (25.2.11). Differentiating the Euler product on compact subsets of
+\(\Re s>1\) gives
+\begin{equation}\label{eq:euler-derivative}
+ -\ZL(s)=\sum_{n\geq1}\Lambda(n)n^{-s}.
+\end{equation}
+The differentiation is justified by the majorant
+\(\sum_{n\geq2}(\log n)n^{-1-\varepsilon}<\infty\).
+\item \texttt{ZETA-COUNT-001}: \cite[Corollary 14.3, p.~454]{MV2007}
+gives
+\(N_*(v)=\frac{v}{2\pi}\log\frac{v}{2\pi}-\frac{v}{2\pi}
++O(\log v)\) for \(v\geq4\), with multiplicity and half-weight at
+\(\gamma=v\). This is the unconditional corollary; the following
+Corollary 14.4 assumes RH and is not used.
+Lemma~\ref{lem:pair-count} below derives the inclusive endpoint and
+local counting versions needed here from this imported statement.
+The upstream proof of Riemann--von Mangoldt is not reconstructed.
+\item \texttt{ZETA-CONTOUR-001}: \cite[Lemma 12.2, p.~398]{MV2007}
+supplies heights \(U_j\in[j,j+1]\), \(j\geq2\), avoiding zero
+ordinates, such that
+\(\ZL(\sigma+\ii U_j)=O(\log^2 U_j)\), uniformly for
+\(-1\leq\sigma\leq2\). Conjugation supplies the same bound at
+\(-U_j\). Lemma 12.4, pp.~399--400, gives
+\(\ZL(z)=O(\log(|z|+1))\) uniformly for \(\Re z\leq-1\) and
+\(\lvert z+2m\rvert\geq1/4\) for every positive integer \(m\).
+The cited proofs use no RH or simplicity hypothesis.
+\item \texttt{GAMMA-DIGAMMA-001}: \cite[Theorem C.1, (C.17), p.~523]{MV2007}
+gives \(\psi(z)=\log z+O(1/|z|)\), uniformly in any fixed closed
+sector bounded away from the negative real axis and from zero;
+\(\psi=\Gamma'/\Gamma\) and \(\log z\) is principal.
+In particular fix an effective constant \(C_\psi\) such that
+\begin{equation}\label{eq:psi-bound}
+ |\psi(z)-\log z|\leq C_\psi/|z|
+ \quad (\Re z\geq3/2).
+\end{equation}
+The Euler--Maclaurin proof of that theorem yields an effective constant;
+we do not optimize or numerically evaluate it here.
+\item \texttt{ZETA-KV-001}\label{inp:kv}:
+Mossinghoff--Trudgian--Yang \cite[Theorem 1.1, (1.5), p.~2]{MTY2024}
+prove the following explicit Korobov--Vinogradov zero-free region:
+\begin{equation}\label{eq:kv-input}
+ \begin{gathered}
+ \nu_{\rm KV}(u)=
+ \frac{1}{(55241/1000)(\log u)^{2/3}(\log\log u)^{1/3}},\\
+ \zeta(\sigma+\ii t)\ne0\qquad\text{if}\qquad
+ |t|\geq3,\quad \sigma\geq1-\nu_{\rm KV}(|t|).
+ \end{gathered}
+\end{equation}
+Here \(u\geq3\), all logarithms are natural, the fractional powers
+are positive real powers, and \(55241/1000=55.241\) exactly.
+Both boundary inequalities are inclusive. Therefore every nontrivial
+zero with \(|\gamma|\geq3\) satisfies the strict bound
+\begin{equation}\label{eq:kv-zero-bound}
+ \beta<1-\nu_{\rm KV}(|\gamma|).
+\end{equation}
+This applies to every occurrence, irrespective of multiplicity.
+
+We checked the published version of record, including its stated domain
+and constants; we have not independently reconstructed its proof.
+Its Section~5 uses, among other inputs, the rigorous finite-height
+verification of Platt--Trudgian \cite{PT2021} up to \(3\cdot10^{12}\);
+Sections~8--9 describe additional computational ingredients.
+The ledger records this external computational dependence with no
+locally replayed certificate. No unproved RH or simplicity assumption
+is imposed. Lemma~\ref{lem:pair-envelope} uses this input together with
+the following low-height theorem.
+\item \texttt{ZETA-LOW-001}\label{inp:low}:
+Platt--Trudgian \cite{PT2021} prove that every nontrivial zero
+\(\rho=\beta+\ii\gamma\) with
+\begin{equation}\label{eq:low-input}
+ 0<\gamma\leq H,\qquad H=3\cdot10^{12},
+\end{equation}
+has \(\beta=1/2\). We import this assertion for every occurrence,
+without a simplicity assertion. The inclusive range is stated in the
+published abstract. We also consulted Theorem~1 and Section~2 of
+arXiv:2004.09765v1, a preprint version of the published work; that
+theorem gives the larger height \(3{,}000{,}175{,}332{,}800\).
+We use only the smaller published range \eqref{eq:low-input}.
+The proof uses rigorous Arb arithmetic and a variation of Turing's
+method to account for all zeros in the range. Full comparison with
+the final journal text and independent computational replay remain
+pending. This finite-range published theorem is an unconditional input.
+\item \texttt{PRIME-PNT-001}\label{inp:prime-pnt}:
+\cite[Theorem 6.9, (6.12)--(6.13), p.~179]{MV2007} supplies absolute
+effective constants \(c,C>0\) such that, for real \(u\geq2\),
+\begin{equation}\label{eq:prime-pnt-input}
+ |\psi(u)-u|+|\vartheta(u)-u|
+ \leq Cu\exp(-c\sqrt{\log u}),
+ \quad
+ \psi(u)=\sum_{n\leq u}\Lambda(n),\quad
+ \vartheta(u)=\sum_{p\leq u}\log p.
+\end{equation}
+Endpoints have full weight. The classical zero-free-region proof on
+pp.~180--181 is unconditional and effective; its upstream analytic
+inputs are not reconstructed here.
+\item \texttt{PRIME-SIEVE-001}\label{inp:prime-sieve}:
+\cite[Corollary 3.14, p.~97]{MV2007} implies that, for every \(U\geq4\)
+and positive even integer \(h\),
+\begin{equation}\label{eq:prime-sieve-input}
+ \#\{p\leq U:p,\ p+h\text{ prime}\}
+ \ll g(h)\frac{U}{\log^2U},
+ \qquad
+ g(h)=\prod_{\substack{p\mid h\\p>2}}\frac{p-1}{p-2}.
+\end{equation}
+The implied constant is absolute, effective, and independent of \(h\).
+This is the \(x=0,y=U\) specialization of the source, with its fixed
+twin-prime product and bounded \(1+O(\log\log U/\log U)\) factor
+absorbed. The preceding elementary sieve proof supplies effectivity.
+This upper bound assumes no prime-pair asymptotic.
+\end{enumerate}
+
+\section{Inclusive counting and rational-kernel bounds}
+
+\begin{lemma}[\texttt{PAIR-COUNT-001}; BGSTB Lemma 2]\label{lem:pair-count}
+Let \(N(v)\) count all occurrences with \(0<\gamma\leq v\).
+Uniformly for \(v\geq3\),
+\begin{equation}\label{eq:inclusive-count}
+ N(v)=\frac{v}{2\pi}\log\frac{v}{2\pi}-\frac{v}{2\pi}+O(\log v).
+\end{equation}
+In particular \(N(v)\sim v\log v/(2\pi)\) as \(v\to\infty\).
+There is an absolute effective constant \(C_{\rm count}\) such that
+\begin{equation}\label{eq:local-count}
+ \#\{\rho:v\leq\gamma\leq v+1\}
+ \leq C_{\rm count}\log(|v|+2)\qquad(v\in\mathbb R).
+\end{equation}
+Endpoints and repeated occurrences have full weight in this inequality.
+Also \(\#\{\rho:|\gamma|\leq V\}\ll V\log(V+2)\) for \(V\geq2\).
+\end{lemma}
+\begin{proof}
+Write \(f(v)=v\log(v/(2\pi))/(2\pi)-v/(2\pi)\).
+For \(v\geq5\), monotonicity of the midpoint count gives
+\[
+ N_*(v-1)\leq N(v)\leq N_*(v+1).
+\]
+Since \(f'(v)=\log(v/(2\pi))/(2\pi)\), both outer expressions
+are \(f(v)+O(\log v)\) by the imported count. For \(3\leq v<5\),
+use \(N(v)\leq N_*(6)\) and boundedness of \(f\) on this interval.
+This proves \eqref{eq:inclusive-count} with an effective constant.
+For \(v\geq5\), the padded interval similarly gives
+\[
+ \#\{\rho:v\leq\gamma\leq v+1\}
+ \leq N_*(v+2)-N_*(v-1)\ll\log(v+2).
+\]
+The padding includes full multiplicities even at either endpoint.
+
+For completeness, there are no nontrivial zeros with \(\gamma=0\).
+Indeed the paired series
+\[
+ H(s)=\sum_{n\geq1}\big((2n-1)^{-s}-(2n)^{-s}\big)
+\]
+converges locally uniformly for \(\Re s>0\): each difference equals
+\(s\int_{2n-1}^{2n}u^{-s-1}\dd u\), with a summable majorant on
+every compact subset. For \(\Re s>1\), absolute convergence gives
+\(H(s)=(1-2^{1-s})\zeta(s)\); analytic continuation extends the identity
+to \(\Re s>0\), with the pole at 1 removed by the prefactor.
+For real \(0<s<1\), every paired term is positive and
+\(1-2^{1-s}<0\), so \(\zeta(s)<0\).
+Conjugation now gives \(\#\{|\gamma|\leq V\}=2N(V)\).
+For \(v\leq-6\), conjugate the interval to \([-v-1,-v]\) and apply
+the positive-height bound. For \(-6<v<5\), all its zeros are counted
+by \(2N(8)\leq2N_*(9)\), which has an effective bound.
+This proves \eqref{eq:local-count} on the whole real axis.
+The total-count estimate follows from \eqref{eq:inclusive-count}
+for \(V\geq3\), and from \(N(V)\leq N_*(4)\) for \(2\leq V<3\).
+Dividing \eqref{eq:inclusive-count} by \(v\log v/(2\pi)\)
+proves the asymptotic.
+\end{proof}
+
+\begin{lemma}[\texttt{PAIR-COUNT-KERNEL-001}]\label{lem:count-kernel}
+Put \(\kappa(y)=(1+y^2)^{-1}\), and sum over all nontrivial zero occurrences.
+The following bounds have absolute effective constants:
+\begin{align}
+ K(t):=\sum_\rho\kappa(t-\gamma)&\ll\log(|t|+2)
+                  &&(t\in\mathbb R),\label{eq:kernel-global}\\
+ \sum_{|\gamma|>Z}\kappa(t-\gamma)&\ll\frac{\log Z}{Z}
+                  &&(T\geq3,\ Z\geq2T,\ 0\leq t\leq T).
+                  \label{eq:kernel-far}
+\end{align}
+For \(T\geq3\), define the exterior and interior sums
+\[
+ B_T(t)=\sum_{\gamma\leq0\ {\rm or}\ \gamma>T}\kappa(t-\gamma),
+ \qquad A_T^{\rm ker}(t)=\sum_{0<\gamma\leq T}\kappa(t-\gamma).
+\]
+Then
+\begin{align}
+ B_T(t)&\ll\log(T+2)
+     \left(\frac1{1+t}+\frac1{1+T-t}\right)
+                         &&(0\leq t\leq T),\label{eq:kernel-boundary}\\
+ A_T^{\rm ker}(t)&\ll
+ \frac{\log(T+2)}{1+\operatorname{dist}(t,[0,T])}
+                         &&(t\notin[0,T]).\label{eq:kernel-extension}
+\end{align}
+In particular all the infinite sums displayed above converge absolutely.
+\end{lemma}
+\begin{proof}
+We first record, uniformly for real \(a\geq0\), the elementary bounds
+\begin{equation}\label{eq:kernel-series}
+ \sum_{n\geq0}\frac1{1+(a+n)^2}\ll\frac1{1+a},\qquad
+ \sum_{n\geq0}\frac{\log(n+2)}{1+(a+n)^2}
+       \ll\frac{\log(a+2)}{1+a}.
+\end{equation}
+To prove these, set \(D=1+a\). The \(n\leq D\) terms have
+denominator at least \(D^2/2\) and there are at most \(2D\) of them.
+For \(2^jD<n\leq2^{j+1}D\), \(j\geq0\), there are at most
+\(3\cdot2^jD\) terms, each with denominator at least \(2^{2j}D^2\)
+and logarithmic numerator at most \(\log D+(j+2)\log2\).
+The convergent series \(\sum2^{-j}\) and \(\sum(j+2)2^{-j}\)
+give \eqref{eq:kernel-series}, with explicit effective constants
+if desired. All terms are nonnegative, so grouping needs only
+monotone convergence.
+
+The distance shell \(n\leq|t-\gamma|<n+1\) is covered by two closed
+unit intervals. By \eqref{eq:local-count} its count is at most
+\(C\log(|t|+n+3)\), even when shell endpoints are zero ordinates.
+Using
+\(\log(|t|+n+3)\leq\log(|t|+2)+\log(n+2)\) and
+\eqref{eq:kernel-series} with \(a=0\) proves
+\eqref{eq:kernel-global}. For \(|\gamma|>Z\geq2T\),
+\(|t-\gamma|\geq|\gamma|/2\). The total-count bound on the
+disjoint dyadic shells \(2^jZ<|\gamma|\leq2^{j+1}Z\) gives
+\[
+ \sum_{|\gamma|>Z}\kappa(t-\gamma)
+ \ll\sum_{j\geq0}\frac{\log(2^{j+1}Z+2)}{2^jZ}
+ \ll\frac{\log Z}{Z},
+\]
+uniformly in the stated range, proving \eqref{eq:kernel-far}.
+
+For \(0\leq t\leq T\), cover the lower exterior by
+\([-n-1,-n]\), \(n\geq0\). Its kernel sum is at most
+\[
+ C\sum_{n\geq0}\frac{\log(n+3)}{1+(t+n)^2}
+ \ll\frac{\log(t+2)}{1+t}.
+\]
+Cover the upper exterior by \((T+n,T+n+1]\); its sum is at most
+\[
+ C\sum_{n\geq0}\frac{\log(T+n+2)}{1+(T-t+n)^2}
+ \ll\frac{\log(T+2)+\log(T-t+2)}{1+T-t}.
+\]
+Here \(\log(T+n+2)\leq\log(T+2)+\log(n+2)\) and
+\eqref{eq:kernel-series} justify the last inequality.
+These two estimates prove \eqref{eq:kernel-boundary}.
+For \(t=-a<0\), cover the interior zeros by
+\([n,n+1)\cap(0,T]\); for \(t=T+a>T\), use
+\((T-n-1,T-n]\cap(0,T]\), in each case with \(n\geq0\).
+Every nonempty interval has at most \(C\log(T+2)\) occurrences
+and distance at least \(a+n\) from \(t\).
+The unweighted bound in \eqref{eq:kernel-series} proves
+\eqref{eq:kernel-extension}. Overlaps in closed covers only enlarge
+these nonnegative majorants; they do not alter any zero-sum convention.
+\end{proof}
+
+\section{Convergence and a Mellin kernel}
+
+\begin{lemma}[\texttt{PAIR-EF-CONVERGENCE-001}]
+\label{lem:ef-convergence}
+The zero series \eqref{eq:zero-sum} and prime series
+\eqref{eq:prime-sum} converge absolutely and locally uniformly on
+\([1,\infty)\times\mathbb R\). Their sums are continuous there.
+For \(U\geq2(|t|+2)\),
+\begin{equation}\label{eq:zero-tail}
+ \sum_{|\gamma|>U}
+ \left|\frac{2X^{\delta_\rho+\ii(\gamma-t)}}
+ {1+((t-\gamma)+\ii\delta_\rho)^2}\right|
+ \ll X^{1/2}\frac{\log U}{U},
+\end{equation}
+with an absolute effective implicit constant.
+\end{lemma}
+\begin{proof}
+For real \(v\) and \(|\delta|<1/2\),
+\begin{equation}\label{eq:denominator}
+ |1+(v+\ii\delta)^2|
+ \geq\Re(1+(v+\ii\delta)^2)
+ =1+v^2-\delta^2\geq\tfrac34(1+v^2).
+\end{equation}
+Thus each zero term is at most \((8/3)X^{1/2}/(1+(t-\gamma)^2)\).
+Lemma~\ref{lem:pair-count} gives
+\(\#\{\rho:|\gamma|\leq V\}\ll V\log(V+2)\) for \(V\geq2\).
+If \(|\gamma|>U\geq2(|t|+2)\), then
+\(|t-\gamma|\geq|\gamma|/2\). Summing over
+\(2^kU<|\gamma|\leq2^{k+1}U\), \(k\geq0\), bounds the tail by
+\[
+ C X^{1/2}\sum_{k\geq0}
+ \frac{\log(2^{k+1}U+2)}{2^kU}
+ \ll X^{1/2}\frac{\log U}{U}.
+\]
+For \(1\leq X\leq B\), \(|t|\leq H\), this tail majorant is
+uniform; the remaining zero terms are finite and continuous.
+For primes, \(\min\{n/X,X/n\}\leq B/n\) on the same compact set,
+so \(B(\log n)n^{-3/2}\) is a summable majorant, independent of \(t\).
+Every term is continuous even at \(X=n\). The Weierstrass criterion
+and dominated convergence prove the assertions. In particular no
+principal-value ordering of the final zero series is required.
+\end{proof}
+
+\begin{lemma}[\texttt{PAIR-EF-MELLIN-001}]\label{lem:ef-mellin}
+For \(y>0\),
+\begin{equation}\label{eq:mellin}
+ k(y):=\frac1{2\pi\ii}\int_{2-\ii\infty}^{2+\ii\infty}
+          \frac{2y^w}{w^2-1}\dd w
+ =\begin{cases}y-y^{-1},&y>1,\\0,&0<y\leq1.\end{cases}
+\end{equation}
+The integral converges absolutely, including at \(y=1\).
+\end{lemma}
+\begin{proof}
+On \(\Re w=2\) the integrand is \(O_y((1+|\Im w|^2)^{-1})\).
+For \(y>1\), move the line to \(\Re w=-R\), \(R\geq2\),
+crossing residues \(y\) and \(-y^{-1}\) at \(1\) and \(-1\).
+First send the horizontal heights to infinity with \(R\) fixed;
+each horizontal integral is \(O_{y,R}(V^{-2})\). The new vertical
+integral is \(O(y^{-R}/R)\), since
+\(\lvert w^2-1\rvert\geq(R-1)^2+(\Im w)^2\).
+Then send \(R\to\infty\). For \(0<y<1\), moving right crosses
+no pole and the vertical bound is \(O(y^R/R)\).
+At \(y=1\), moving right again gives \(O(1/R)\); thus the value
+is zero. Equivalently the two left residues would cancel exactly.
+These steps prove the formula without an endpoint half-weight.
+\end{proof}
+
+\section{The exact identity and its endpoints}
+
+\begin{proposition}[\texttt{PAIR-EF-EXACT-001}]\label{prop:ef-exact}
+Let \(s=1/2+\ii t\). For every \(X\geq1\), \(t\in\mathbb R\),
+\begin{equation}\label{eq:exact}
+ \ZS(X,t)=-\PS(X,t)-X^{-1}\ZL(s-1)+\EP(X,t)+\ET(X,t),
+\end{equation}
+where
+\begin{align}
+ \EP(X,t)&=\frac{2X^{1-s}}{s(2-s)}
+       =\frac{2X^{1/2-\ii t}}{(1/2+\ii t)(3/2-\ii t)},
+       \label{eq:pole}\\
+ \ET(X,t)&=2\sum_{m\geq1}
+ \frac{X^{-2m-s}}{(2m+s-1)(2m+s+1)}.\label{eq:trivial}
+\end{align}
+The trivial-zero series also converges absolutely and locally uniformly
+on \([1,\infty)\times\mathbb R\).
+\end{proposition}
+\begin{proof}
+\textit{Right-line integral.}
+Fix first \(X>1\), \(t\in\mathbb R\), and define
+\[
+ K(z)=\frac{2X^{z-s}}{(z-s)^2-1},\qquad
+ J=\frac1{2\pi\ii}\int_{5/2-\ii\infty}^{5/2+\ii\infty}
+                    -\ZL(z)K(z)\dd z.
+\]
+There are no poles on this line. The Euler series gives a product
+majorant \(2X^2\sum_n\Lambda(n)n^{-5/2}
+/\lvert(2+\ii(v-t))^2-1\rvert\), integrable in \(v\).
+Fubini therefore permits termwise integration. Set \(w=z-s\);
+this is a shift of the vertical parameter by \(t\), justified by
+absolute convergence. Lemma~\ref{lem:ef-mellin} yields
+\begin{equation}\label{eq:right-line}
+ J=\sum_{n\geq1}\Lambda(n)n^{-s}k(X/n)
+  =\sum_{n\leq X}\Lambda(n)n^{-s}(X/n-n/X).
+\end{equation}
+The last sum is finite, and its endpoint term is zero.
+
+\textit{Contours and bounds.}
+For an integer \(M\geq1\) take the left line \(\Re z=-a\),
+\(a=2M+1\), and horizontal sides at \(\pm U_j\) supplied by
+\texttt{ZETA-CONTOUR-001}. Choose \(j\) large enough that
+\(U_j>2(|t|+2)\). The rectangle is oriented with the right side
+upward. In \(-1\leq\Re z\leq2\) the logarithmic derivative is
+\(O(\log^2 U_j)\). On \(2\leq\Re z\leq5/2\) its Euler series
+is bounded absolutely. On \(-a\leq\Re z\leq-1\), Lemma 12.4
+applies on these horizontal sides and gives \(O_M(\log U_j)\).
+Since \(|X^{z-s}|\leq X^2\) and the kernel denominator has size
+\(\gg U_j^2\), both horizontal contributions satisfy
+\begin{equation}\label{eq:horizontal-error}
+ E_{\mathrm{height}}=O_{X,t,M}(\log^2 U_j/U_j^2)\longrightarrow0.
+\end{equation}
+This limit is taken with \(X,t,M\) fixed.
+
+On the left line every trivial zero is at distance at least one.
+Lemma 12.4 bounds its logarithmic derivative by
+\(C\log(a+|v|+2)\), with \(C\) independent of \(M,v\).
+Factoring the kernel denominator bounds it below by
+\((a-1/2)^2+(v-t)^2\). Hence the whole left-line integral is at most
+\begin{align}
+ |E_{\mathrm{left}}|
+ &\ll X^{-a-1/2}
+ \int_{\mathbb R}\frac{\log(a+|v|+2)}{(a-1/2)^2+(v-t)^2}\dd v
+ \notag\\
+ &\ll X^{-a-1/2}\frac{\log(a+|t|+2)}{a}.
+ \label{eq:left-error}
+\end{align}
+For the second inequality use \(v=t+(a-1/2)y\),
+\(a+|v|+2\leq(a+|t|+2)(1+|y|)\), and the finiteness of
+\(\int_{\mathbb R}\log(1+|y|)/(1+y^2)\dd y\).
+After \(j\to\infty\), send \(M\to\infty\), with \(X,t\) fixed.
+The bound \eqref{eq:left-error} tends to zero.
+
+\textit{Residues.}
+The residues of \(-\ZL(z)K(z)\) are as follows; at a nontrivial
+zero its multiplicity multiplies the listed value.
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Location & Residue \\
+\midrule
+\(z=\rho\) & \(2X^{\rho-s}/(1-(\rho-s)^2)\) \\
+\(z=1\) & \(-\EP(X,t)\) \\
+\(z=-2m\) & \(-2X^{-2m-s}/((2m+s)^2-1)\) \\
+\(z=s+1\) & \(-X\ZL(s+1)\) \\
+\(z=s-1\) & \(X^{-1}\ZL(s-1)\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+There are no coincidences: \(\Re(s+1)=3/2\) and
+\(\Re(s-1)=-1/2\) avoid all zeta zeros and its pole, for every
+real \(t\). Zeta is regular and nonzero at zero, so it supplies no
+additional residue. Also
+\(1-(\rho-s)^2=1+((t-\gamma)+\ii\delta_\rho)^2\).
+The nontrivial-zero residues converge absolutely by
+Lemma~\ref{lem:ef-convergence}. For the trivial residues,
+\begin{equation}\label{eq:trivial-majorant}
+ |(2m+s-1)(2m+s+1)|
+ =\sqrt{((2m-1/2)^2+t^2)((2m+3/2)^2+t^2)}
+ \geq m^2+t^2.
+\end{equation}
+Thus their absolute values are at most \(2/m^2\), uniformly for
+\(X\geq1\) and real \(t\). This proves the claimed local uniform
+convergence and justifies the residue limit as \(M\to\infty\).
+The residue theorem now gives
+\[
+ J=\ZS-\EP-\ET-X\ZL(s+1)+X^{-1}\ZL(s-1).
+\]
+By \eqref{eq:euler-derivative} and \eqref{eq:right-line},
+\[
+ J+X\ZL(s+1)
+ =-X^{-1}\sum_{n\leq X}\Lambda(n)n^{1-s}
+   -X\sum_{n>X}\Lambda(n)n^{-1-s}=-\PS(X,t).
+\]
+This proves \eqref{eq:exact} for every \(X>1\), including prime powers.
+
+\textit{Endpoint conventions and limit order.}
+If \(X=n=p^k\), the coefficient \(X/n-n/X\) in \(J\) is zero.
+Any common endpoint convention \(\theta\in[0,1]\), including
+the Perron convention \(\theta=1/2\), multiplies this zero by
+\(\theta\). After combining with the full Euler series, the coefficient
+in \(-\PS\) is \(-1\), so the prime-power term is counted once.
+The \(\min\) weight is continuous through every prime power, as are
+all terms of \eqref{eq:exact}; the local majorants above justify
+continuity of the sums.
+
+Finally let \(X\downarrow1\), with \(t\) fixed or in a fixed compact
+interval. The majorants of Lemma~\ref{lem:ef-convergence} and
+\eqref{eq:trivial-majorant} justify dominated convergence.
+The remaining terms are continuous, since \(s-1=-1/2+\ii t\) meets
+no zero or pole of zeta. This proves the identity at \(X=1\).
+The order used was: fixed \(X>1,t,M\); \(U_j\to\infty\);
+then \(M\to\infty\); then \(X\downarrow1\).
+No claim of uniformity of \eqref{eq:horizontal-error} in unbounded
+\(X,t\) is needed for this exact identity.
+\end{proof}
+
+\section{Uniform estimates: the reconstructed lemma}
+
+\begin{lemma}[\texttt{PAIR-EF-001}; BGSTB Lemma 1]\label{lem:pair-ef}
+Uniformly for \(X\geq1\), \(t\in\mathbb R\),
+\begin{align}
+ \ZS(X,t)={}&-\PS(X,t)+X^{-1}\log(|t|+2)
+       +\EA(X,t)+\ED(X,t)+\EP(X,t)+\ET(X,t),
+       \label{eq:budget}\\
+ |\EA(X,t)|&\leq C_{\rm arch}X^{-1},\qquad
+ |\ED(X,t)|\leq C_{\rm DS}X^{-1},\notag\\
+ |\EP(X,t)|&\leq\frac{4X^{1/2}}{1+t^2},\qquad
+ |\ET(X,t)|\leq\frac{12X^{-5/2}}{|t|+2},\label{eq:error-bounds}
+\end{align}
+where the constants are effective and independent of \(X,t\).
+Here \(\EP,\ET\) are the exact terms above and
+\begin{align}
+ \EA(X,t)&=X^{-1}\left(-\frac{\chi'}{\chi}(-1/2+\ii t)
+                               -\log(|t|+2)\right),\notag\\
+ \ED(X,t)&=X^{-1}\ZL(3/2-\ii t).\label{eq:arch-ds}
+\end{align}
+In particular this is precisely the error structure of
+\cite[Lemma 1, (2.2)]{BGSTB2024} after combining the first two remainders.
+\end{lemma}
+\begin{proof}
+Logarithmic differentiation of the functional equation on
+\(w=-1/2+\ii t\), where all factors are finite and nonzero, gives
+\[
+ -\ZL(w)=-\frac{\chi'}{\chi}(w)+\ZL(1-w),\qquad
+ -\frac{\chi'}{\chi}(w)
+ =-\log(2\pi)-\frac\pi2\cot(\pi w/2)+\psi(1-w).
+\]
+No branch of \(\log\zeta\) is needed for these logarithmic
+derivatives. On this line
+\(\lvert\cot(-\pi/4+\ii\pi t/2)\rvert=1\), as follows by taking
+the moduli of sine and cosine. Put \(z=3/2-\ii t\), \(r=|t|\).
+The principal argument has modulus at most \(\pi/2\), and
+\[
+ \tfrac12\leq\frac{\sqrt{r^2+9/4}}{r+2}\leq1.
+\]
+Consequently \(\lvert\log z-\log(r+2)\rvert\leq\log2+\pi/2\).
+Using \eqref{eq:psi-bound} proves the archimedean bound, for example with
+\(C_{\rm arch}=\log(2\pi)+\pi+\log2+2C_\psi/3\).
+This argument includes \(t=0\) and bounded \(t\), without an
+asymptotic substitution \(\log|t|\) at zero.
+
+Absolute convergence of the Euler series gives
+\(C_{\rm DS}=\sum_{n\geq2}\Lambda(n)n^{-3/2}\leq
+\sum_{n\geq2}(\log n)n^{-3/2}<\infty\).
+For example the latter can be bounded effectively by its first terms
+and an elementary integral; no prime number theorem is required.
+Since
+\(\sqrt{(t^2+1/4)(t^2+9/4)}\geq(1+t^2)/2\),
+\eqref{eq:pole} gives the stated pole bound.
+From \eqref{eq:trivial-majorant},
+\[
+ |\ET(X,t)|\leq2X^{-5/2}\sum_{m\geq1}\frac1{m^2+r^2}.
+\]
+If \(0\leq r\leq1\), the sum is at most
+\(1+\int_1^\infty v^{-2}\dd v=2\), so twice the sum is at most
+\(4\leq12/(r+2)\).
+If \(r\geq1\), monotonicity gives
+\(\sum_{m\geq1}(m^2+r^2)^{-1}\leq
+\int_0^\infty(v^2+r^2)^{-1}\dd v=\pi/(2r)\).
+Then \(\pi/r\leq3\pi/(r+2)\leq12/(r+2)\).
+These estimates prove \eqref{eq:error-bounds}; all constants are
+independent of the contour parameters, which have already been removed.
+Combining only now the two \(X^{-1}\) errors gives
+\[
+ \ZS=-\PS+X^{-1}\bigl(\log(|t|+2)+O(1)\bigr)
+ +O\!\left(\frac{X^{1/2}}{1+t^2}\right)
+ +O\!\left(\frac{X^{-5/2}}{|t|+2}\right).
+\]
+\end{proof}
+
+\section{The elementary integral for the squared norm}
+
+\begin{lemma}[\texttt{PAIR-NORM-INTEGRAL-001}]\label{lem:norm-integral}
+For \(a\in\mathbb C\) with \(|\Im a|<1\), the following integral
+converges absolutely:
+\begin{equation}\label{eq:norm-integral}
+ J(a)=\int_{\mathbb R}\frac{du}{(1+u^2)(1+(u+a)^2)}
+      =\frac{2\pi}{4+a^2}.
+\end{equation}
+In particular \(J(0)=\pi/2\).
+\end{lemma}
+\begin{proof}
+Put \(f_a(u)=((1+u^2)(1+(u+a)^2))^{-1}\).
+Its poles are \(\ii,-\ii,-a+\ii,-a-\ii\), none on the real axis.
+For \(|u|=R\geq4(|a|+1)\),
+\[
+ |1+u^2|\geq R^2/2,\qquad
+ |1+(u+a)^2|\geq R^2/8,\qquad |f_a(u)|\leq16/R^4.
+\]
+On the real line these bounds give an integrable tail; on compact
+intervals the integrand is continuous. Close \([-R,R]\) by the upper
+semicircle. Its integral has modulus at most \(16\pi/R^3\), hence
+vanishes as \(R\to\infty\) for fixed \(a\).
+For \(a\ne0\), the two upper poles \(\ii\) and \(-a+\ii\)
+are distinct, with residues
+\[
+ \frac1{2\ii(1+(a+\ii)^2)},\qquad
+ \frac1{2\ii(1+(-a+\ii)^2)}.
+\]
+The other two poles are in the lower half-plane because \(|\Im a|<1\).
+Multiplying the residue sum by \(2\pi\ii\) and using
+\[
+ \frac1{a(a+2\ii)}+\frac1{a(a-2\ii)}=\frac2{a^2+4}
+\]
+proves \eqref{eq:norm-integral} for \(a\ne0\). The excluded
+values \(a=\pm2\ii\) in this algebra are outside the stated strip.
+For \(a=0\) the poles coalesce, so use instead the antiderivative
+\[
+ \int\frac{du}{(1+u^2)^2}
+ =\frac{u}{2(1+u^2)}+\frac12\arctan u.
+\]
+Its limits give \(J(0)=\pi/2\), the same value as the right side of
+\eqref{eq:norm-integral}. This handles the double poles directly.
+\end{proof}
+
+\section{The squared-norm identity with horizontal displacement}
+
+Define \(N(T)=|I_T|\),
+\(M_X=\max(X^{1/2},X^{-1/2})\), and, for \(X>0\),
+\begin{align}
+ v_j(t)&=\frac{X^{\delta_j+\ii\gamma_j}}
+                  {1+((t-\gamma_j)+\ii\delta_j)^2},\qquad
+ \VS_{X,T}(t)=\sum_{j\in I_T}v_j(t),\label{eq:norm-vector}\\
+ w(z)&=\frac4{4-z^2},\qquad
+ \Phi(X,T)=\sum_{j,k\in I_T}X^{\rho_j-\rho_k}w(\rho_j-\rho_k).
+ \label{eq:norm-pair-definition}
+\end{align}
+Both definitions use all zero occurrences, with no diagonal exclusion.
+The set \(I_T\) is finite by the analytic structure of zeta on a compact
+rectangle; no quantitative zero-counting estimate is needed here.
+
+\begin{lemma}[\texttt{PAIR-NORM-001}; BGSTB Lemma 3]\label{lem:pair-norm}
+For every \(X>0\) and \(T\geq3\),
+\begin{equation}\label{eq:pair-norm}
+ \Phi(X,T)=\frac2\pi\int_{\mathbb R}|\VS_{X,T}(t)|^2\dd t.
+\end{equation}
+The integral is finite. For \(R\geq2(T+1)\) it satisfies the explicit
+tail estimate
+\begin{equation}\label{eq:norm-tail}
+ \int_{|t|>R}|\VS_{X,T}(t)|^2\dd t
+ \leq\frac{512}{27}\frac{M_X^2N(T)^2}{R^3}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+\textit{Integrability and finite expansion.}
+The elementary inequality \eqref{eq:denominator} uses only
+\(|\delta_j|<1/2\) and therefore also applies for \(0<X<1\).
+Since \(|X^{\delta_j+\ii\gamma_j}|\leq M_X\),
+\[
+ |v_j(t)|\leq\frac{4M_X}{3(1+(t-\gamma_j)^2)}.
+\]
+Consequently each \(v_j\) lies in \(L^2(\mathbb R)\); indeed
+\(\int|v_j|^2\leq(16/9)M_X^2J(0)=8\pi M_X^2/9\).
+Each \(v_j\overline{v_k}\) is integrable by Cauchy--Schwarz.
+The sum has finitely many terms, so expanding its squared modulus and
+integrating term by term is valid by linearity for integrable functions.
+For \(|t|>R\geq2(T+1)\), \(|t-\gamma_j|\geq|t|/2\), whence
+\[
+ |\VS_{X,T}(t)|^2\leq\frac{256M_X^2N(T)^2}{9t^4}.
+\]
+Integrating over both tails gives \eqref{eq:norm-tail}.
+This bound displays the dependence on \(X,T,N(T)\); no bound uniform
+as \(X\to0\), \(X\to\infty\), or \(T\to\infty\) is claimed.
+
+\textit{The integral for one ordered pair.}
+For fixed \(j,k\), set
+\[
+ d=\gamma_j-\gamma_k,\qquad h=\delta_j+\delta_k,\qquad
+ a=d-\ii h=-\ii(\rho_j+\overline{\rho_k}-1).
+\]
+Then \(|\Im a|=|h|<1\). In the integral of
+\(v_j\overline{v_k}\), substitute \(u=t-\gamma_j+\ii\delta_j\).
+This takes the real line to the line \(\Im u=\delta_j\), and gives
+\begin{equation}\label{eq:norm-shifted-line}
+ \int_{\mathbb R}v_j(t)\overline{v_k(t)}\dd t
+ =X^{h+\ii d}\int_{\mathbb R+\ii\delta_j}f_a(u)\dd u.
+\end{equation}
+Both line integrals are oriented toward increasing real part.
+The absolute convergence already established justifies translating the
+real parameter and choosing symmetric real endpoints in \(u\).
+
+\textit{The contour shift.}
+The imaginary parts of the four poles of \(f_a\) are
+\(1,-1,h+1,h-1\). Let
+\(b_- =\min(0,\delta_j)\) and \(b_+=\max(0,\delta_j)\).
+The first two poles lie outside \([b_-,b_+]\) because
+\(|\delta_j|<1/2\). For the other two,
+\[
+ h+1=\delta_j+(\delta_k+1)>\delta_j+1/2>b_+,
+ \qquad
+ h-1=\delta_j+(\delta_k-1)<\delta_j-1/2<b_-.
+\]
+Thus no pole lies in the closed strip between the two lines, including
+when \(\delta_j\) is negative or when poles coincide.
+For \(u=\pm R+\ii y\), \(b_-\leq y\leq b_+\), and
+\(R\geq4(|a|+1)\), the modulus bounds used in
+Lemma~\ref{lem:norm-integral} again give \(|f_a(u)|\leq16/R^4\):
+use \(|u|\geq R\) and \(|u+a|\geq R-|a|\).
+The total length of the two joining segments is
+\(2|\delta_j|<1\), so their total contribution has modulus at most
+\(16/R^4\). Cauchy's theorem on this rectangle, followed by
+\(R\to\infty\) with the pair fixed, therefore gives
+\begin{equation}\label{eq:norm-shift}
+ \int_{\mathbb R+\ii\delta_j}f_a(u)\dd u
+ =\int_{\mathbb R}f_a(u)\dd u
+ =\frac{2\pi}{4-(\rho_j+\overline{\rho_k}-1)^2}.
+\end{equation}
+If \(\delta_j=0\) there is no shift. If \(a=0\) use the double-pole
+case of Lemma~\ref{lem:norm-integral}. This case includes distinct
+reflected off-line zeros with the same ordinate; it is not restricted
+to equality of complex zeros.
+
+\textit{Normalization and reflection.}
+Combining \eqref{eq:norm-shifted-line}--\eqref{eq:norm-shift} and
+the finite expansion yields
+\begin{equation}\label{eq:norm-reflected-sum}
+ \frac2\pi\int_{\mathbb R}|\VS_{X,T}(t)|^2\dd t
+ =\sum_{j,k\in I_T}
+ X^{\rho_j+\overline{\rho_k}-1}
+ \frac4{4-(\rho_j+\overline{\rho_k}-1)^2}.
+\end{equation}
+The functional equation and conjugation imply that
+\(\rho_k\mapsto1-\overline{\rho_k}\) preserves the positive ordinate
+and multiplicity: the factor \(\chi\) is holomorphic and nonzero in
+\(0<\Re s<1\). It therefore induces a permutation of the finite set
+of occurrences \(I_T\), including occurrences at \(\gamma=T\).
+Reindexing \(k\) in the entire sum turns
+\(\rho_j+\overline{\rho_k}-1\) into \(\rho_j-\rho_k\), proving
+\eqref{eq:pair-norm}.
+This proof holds with \(X,T\) fixed; its only limits are the elementary
+integration contours tending to infinity. There is no limit in zero
+height and no infinite zero-sum interchange.
+\end{proof}
+
+The reflected sum in \eqref{eq:norm-reflected-sum} and the original
+sum \eqref{eq:norm-pair-definition} generally have different index
+diagonal contributions. A reflected-sum term with \(j=k\) is
+\(X^{2\delta_j}/(1-\delta_j^2)\), whereas an original index-diagonal
+term is 1. The permutation equates the complete sums, not these
+subsets. Repeated occurrences remain separate indices throughout.
+
+\begin{corollary}[\texttt{PAIR-POSITIVITY-001}]\label{cor:pair-positivity}
+For \(X>0,T\geq3\), \(\Phi(X,T)\) is real and nonnegative, and
+\(\Phi(X^{-1},T)=\Phi(X,T)\). Consequently
+\(\mathcal F_T(\alpha)=\Phi(T^\alpha,T)/(T\log T/(2\pi))\)
+is real, nonnegative and even for every real \(\alpha\).
+\end{corollary}
+\begin{proof}
+Reality and nonnegativity follow from \eqref{eq:pair-norm}.
+For the inversion identity, exchange \(j,k\) in the finite sum
+\eqref{eq:norm-pair-definition} and use \(w(-z)=w(z)\).
+The normalization is positive for \(T\geq3\), and
+\(T^{-\alpha}=(T^\alpha)^{-1}\). No asymptotic formula is used.
+\end{proof}
+
+\section{Height truncation with separate errors}
+
+For \(X\geq1\), define
+\begin{equation}\label{eq:trunc-definitions}
+ \US_X(t)=\sum_\rho v_\rho(t),\qquad
+ \US_{X,Z}(t)=\sum_{|\gamma|\leq Z}v_\rho(t),\qquad
+ L(X,T)=4\int_0^T|\US_X(t)|^2\dd t,
+\end{equation}
+where \(v_\rho(t)\) has the definition \eqref{eq:norm-vector}.
+The full sum includes all nontrivial zero occurrences, and the truncated
+sum retains full multiplicity at both \(\gamma=Z\) and \(\gamma=-Z\).
+Lemma~\ref{lem:ef-convergence} gives absolute and local uniform
+convergence. More precisely
+\(\ZS(X,t)=2X^{-\ii t}\US_X(t)\), so
+\begin{equation}\label{eq:trunc-phase}
+ L(X,T)=\int_0^T|\ZS(X,t)|^2\dd t.
+\end{equation}
+This identifies the integral with Lemma 1 without changing a normalization.
+Define the finite-height horizontal bound
+\begin{equation}\label{eq:horizontal-envelope}
+ B(Z)=\max\bigl(\{0\}\cup\{\delta_\rho:|\gamma|\leq Z\}\bigr),
+ \qquad \eta_*(Z)=\tfrac12-B(Z).
+\end{equation}
+The zero set in this maximum is finite, so
+\(0\leq B(Z)<1/2\) and \(0<\eta_*(Z)\leq1/2\), including an empty
+zero set. The definition uses actual zeros, not a zero-density or
+zero-free-region hypothesis. The definition alone supplies no quantitative lower bound
+for \(\eta_*(Z)\) as \(Z\to\infty\).
+For every retained occurrence and \(X\geq1\),
+\begin{equation}\label{eq:horizontal-majorant}
+ |v_\rho(t)|\leq\tfrac43X^{B(Z)}\kappa(t-\gamma).
+\end{equation}
+
+\begin{lemma}[\texttt{PAIR-TRUNC-001}; BGSTB Lemma 4]\label{lem:pair-trunc}
+For \(X\geq1,T\geq3,Z\geq2T\), one has the exact decomposition
+\begin{equation}\label{eq:trunc-decomposition}
+ L(X,T)=2\pi\Phi(X,T)+\ELtr+\ELh+\ELext,
+\end{equation}
+where
+\begin{align}
+ \ELtr&=4\int_0^T
+       \bigl(|\US_X(t)|^2-|\US_{X,Z}(t)|^2\bigr)\dd t,
+       \label{eq:error-trunc-definition}\\
+ \ELh&=4\int_0^T
+       \bigl(|\US_{X,Z}(t)|^2-|\VS_{X,T}(t)|^2\bigr)\dd t,
+       \label{eq:error-height-definition}\\
+ \ELext&=-4\int_{\mathbb R\setminus[0,T]}|\VS_{X,T}(t)|^2\dd t.
+       \label{eq:error-extension-definition}
+\end{align}
+Uniformly throughout this range, with absolute effective constants,
+\begin{align}
+ |\ELtr|&\ll XT\left(
+       \frac{\log(T+2)\log Z}{Z}+\frac{\log^2Z}{Z^2}\right)
+       \ll\frac{XT\log^2Z}{Z},\label{eq:error-trunc-bound}\\
+ |\ELh|&\ll X^{2B(Z)}\log^3T,\label{eq:error-height-bound}\\
+ |\ELext|&\ll X^{2B(Z)}\log^2T,\qquad \ELext\leq0.
+       \label{eq:error-extension-bound}
+\end{align}
+Consequently, for all \(X\geq1,T\geq3\), with \(Z_*=T\log^2T\),
+\begin{equation}\label{eq:pair-trunc-final}
+ \Phi(X,T)=\frac{L(X,T)}{2\pi}
+       +O\bigl(X^{2B(Z_*)}\log^3T\bigr)+O(X).
+\end{equation}
+The first error can equivalently be written using \(\eta_*(Z_*)\) as
+\(O(X^{1-2\eta_*(Z_*)}\log^3T)\). More generally, it has that bound
+with any \(0\leq\eta(Z_*)\leq1/2\) for which the established envelope
+\(B(Z_*)\leq1/2-\eta(Z_*)\) holds. The implicit constants do not
+depend on the choice of this envelope.
+\end{lemma}
+\begin{proof}
+\textit{Removing the distant zeros.}
+By \eqref{eq:denominator}, \eqref{eq:kernel-global} and
+\eqref{eq:kernel-far}, for \(0\leq t\leq T\),
+\[
+ |\US_X(t)|\ll X^{1/2}\log(T+2),\qquad
+ |R_{X,Z}(t)|\ll X^{1/2}\frac{\log Z}{Z},
+ \qquad R_{X,Z}=\US_X-\US_{X,Z}.
+\]
+These are bounds for the absolutely convergent sums, including their
+absolute-value majorants. In particular \(L\) is finite.
+Using the identity
+\[
+ |A|^2-|A-R|^2=2\Re(A\overline R)-|R|^2
+\]
+with \(A=\US_X(t)\), integration yields the first bound in
+\eqref{eq:error-trunc-bound}. Its quadratic term is retained.
+Since \(T+2\leq Z\) for \(T\geq3,Z\geq2T\) and \(Z\geq6\),
+the simpler second bound follows. No infinite double sum is expanded.
+
+\textit{Removing the lower and upper exterior occurrences.}
+Every occurrence of \(I_T\) is included in \(|\gamma|\leq Z\).
+By \eqref{eq:horizontal-majorant}, both
+\(|\US_{X,Z}(t)|\) and \(|\VS_{X,T}(t)|\) are at most
+\((4/3)X^{B(Z)}K(t)\), and
+\[
+ |\US_{X,Z}(t)-\VS_{X,T}(t)|
+ \leq\tfrac43X^{B(Z)}B_T(t).
+\]
+Dropping the cutoff \(Z\) enlarges only these nonnegative kernel
+majorants; we do not apply \(X^{B(Z)}\) to unretained zero weights.
+For complex \(A,C\),
+\(\bigl||A|^2-|C|^2\bigr|\leq|A-C|(|A|+|C|)\).
+Thus \eqref{eq:kernel-global} and \eqref{eq:kernel-boundary} give
+\begin{align*}
+ |\ELh|
+ &\ll X^{2B(Z)}\int_0^T K(t)B_T(t)\dd t\\
+ &\ll X^{2B(Z)}\log^2(T+2)
+       \int_0^T\left(\frac1{1+t}+\frac1{1+T-t}\right)\dd t\\
+ &\ll X^{2B(Z)}\log^2(T+2)\log(1+T).
+\end{align*}
+This proves \eqref{eq:error-height-bound}, because \(T\geq3\).
+In particular no lower bound on the distance from \(T\) to a zero
+ordinate is needed. All occurrences at \(\gamma=T\) remain inside.
+
+\textit{Extending the integral.}
+The same horizontal bound, now applied only to \(I_T\), and
+\eqref{eq:kernel-extension} give
+\[
+ |\ELext|
+ \ll X^{2B(Z)}\log^2(T+2)\,
+        2\int_0^\infty\frac{\dd a}{(1+a)^2}
+ \ll X^{2B(Z)}\log^2T.
+\]
+The sign follows from its definition. Telescoping the three error
+definitions, and then using \eqref{eq:pair-norm}, gives
+\[
+ L=4\int_{\mathbb R}|\VS_{X,T}(t)|^2\dd t
+       +\ELtr+\ELh+\ELext
+   =2\pi\Phi+\ELtr+\ELh+\ELext.
+\]
+This establishes \eqref{eq:trunc-decomposition}. All integrals are
+absolutely convergent by the displayed majorants. The sole infinite
+zero sum has the locally uniform interpretation already proved in
+Lemma~\ref{lem:ef-convergence}; every subsequent difference and finite
+sum is at fixed \(X,T,Z\).
+
+\textit{Choosing the auxiliary height and treating small \(T\).}
+For \(T\geq5\), \(Z_*=T\log^2T\geq2T\), and
+\(\log Z_*=\log T+2\log\log T\ll\log T\).
+Hence \(\ELtr=O(X)\); the other two errors give
+\eqref{eq:pair-trunc-final}. The choice \(Z_*\geq2T\) is not
+valid for every \(T\geq3\), so we treat \(3\leq T<5\) separately.
+The global kernel bound gives
+\(L(X,T)\ll XT\log^2(T+2)\ll X\) on that bounded range.
+For \(z=\rho_j-\rho_k=b+\ii d\), \(|b|<1\) gives
+\[
+ |4-z^2|\geq4-b^2+d^2\geq3+d^2,\qquad
+ |X^z|\leq X.
+\]
+Consequently \(|\Phi(X,T)|\leq(4/3)XN(5)^2\ll X\), with an
+effective constant from Lemma~\ref{lem:pair-count}.
+Thus \(\Phi-L/(2\pi)=O(X)\) uniformly for \(3\leq T<5\);
+the first error in \eqref{eq:pair-trunc-final} can be taken as zero
+there. This uses no numerical knowledge of the first zeta zero.
+Finally \(2B(Z_*)=1-2\eta_*(Z_*)\), and any other established
+envelope gives the claimed weaker error since \(X\geq1\).
+No quantitative zero-free region, RH, or simplicity enters the proof.
+\end{proof}
+
+\section{An explicit finite-height horizontal envelope}
+
+\begin{lemma}[\texttt{PAIR-ENVELOPE-001}]\label{lem:pair-envelope}
+For every real \(Z\geq3\), the definitions
+\eqref{eq:kv-input} and \eqref{eq:horizontal-envelope} satisfy
+\begin{equation}\label{eq:finite-height-envelope}
+ 0<\nu_{\rm KV}(Z)<\tfrac12,\qquad
+ B(Z)<\tfrac12-\nu_{\rm KV}(Z),\qquad
+ \eta_*(Z)>\nu_{\rm KV}(Z).
+\end{equation}
+Every nontrivial zero occurrence with \(|\gamma|\leq Z\) satisfies
+\begin{equation}\label{eq:two-sided-envelope}
+ |\delta_\rho|\leq B(Z)<\tfrac12-\nu_{\rm KV}(Z).
+\end{equation}
+Both height endpoints are included with full multiplicity. The claims
+about \(B\) and \(\eta_*\) also hold when the finite zero set is empty.
+Thus \(\eta(Z)=\nu_{\rm KV}(Z)\), for \(Z\geq3\), is an explicit
+admissible envelope in Lemma~\ref{lem:pair-trunc}.
+\end{lemma}
+\begin{proof}
+\textit{Size and monotonicity.}
+First, elementary integrals give
+\[
+ \log3=2\int_0^{1/2}\frac{\dd t}{1-t^2}
+ >2\int_0^{1/2}(1+t^2)\dd t=\frac{13}{12},
+ \qquad
+ \log\log3>\log(13/12)
+ =\int_1^{13/12}\frac{\dd t}{t}>\frac1{13}.
+\]
+The first strict inequality follows from
+\((1-t^2)^{-1}-(1+t^2)=t^4/(1-t^2)>0\) for \(0<t\leq1/2\).
+Since \(55241/1000>5\), these inequalities imply
+\[
+ \nu_{\rm KV}(3)^{-3}
+ =(55241/1000)^3(\log3)^2\log\log3
+ >\frac{125}{13}>8.
+\]
+Consequently \(0<\nu_{\rm KV}(3)<1/2\).
+For \(u\geq3\) all logarithms occurring in the definition are positive,
+and logarithmic differentiation gives
+\begin{equation}\label{eq:kv-monotonicity}
+ \frac{\nu_{\rm KV}'(u)}{\nu_{\rm KV}(u)}
+ =-\frac{2}{3u\log u}
+  -\frac{1}{3u\log u\log\log u}<0.
+\end{equation}
+Thus \(\nu_{\rm KV}\) is positive and decreasing on \([3,\infty)\);
+in particular \(q_Z:=1/2-\nu_{\rm KV}(Z)>0\).
+
+\textit{All retained heights.}
+Fix \(Z\geq3\). Lemma~\ref{lem:pair-count} excludes nontrivial real
+zeros, so \(\gamma=0\) contributes no occurrence.
+For \(0<|\gamma|<3\), conjugation reduces the assertion to the positive
+range in \eqref{eq:low-input}, and hence
+\(\delta_\rho=0<q_Z\).
+For \(3\leq|\gamma|\leq Z\), \eqref{eq:kv-zero-bound} and
+\eqref{eq:kv-monotonicity} give
+\[
+ \delta_\rho<\tfrac12-\nu_{\rm KV}(|\gamma|)
+ \leq\tfrac12-\nu_{\rm KV}(Z)=q_Z.
+\]
+In particular \(|\gamma|=3\) uses the inclusive KV threshold, and
+\(|\gamma|=Z\) is allowed even when the second inequality is equality.
+
+The maximum defining \(B(Z)\) is over a finite collection by
+Lemma~\ref{lem:pair-count}. Every entry, including the auxiliary \(0\),
+is strictly below \(q_Z\); hence \(B(Z)<q_Z\). If there are no
+retained zeros, this says \(B(Z)=0<q_Z\).
+Subtracting from \(1/2\) gives the asserted bound for \(\eta_*\).
+Reflection \(\rho\mapsto1-\bar\rho\) preserves the ordinate and
+multiplicity and changes \(\delta_\rho\) to \(-\delta_\rho\).
+Both displacements occur in the maximum, so
+\(|\delta_\rho|\leq B(Z)\), proving \eqref{eq:two-sided-envelope}.
+Repeated occurrences do not change a maximum.
+
+Everything is at fixed finite \(Z\); no sum, integral or limit is
+interchanged. The bounds hold for every \(Z\geq3\), with the displayed
+effective constant. Since \(Z_*=T\log^2T\geq3\) for \(T\geq3\),
+this choice of \(\eta\) is admissible throughout the final range of
+Lemma~\ref{lem:pair-trunc}.
+\end{proof}
+
+\section{Uniform comparison on the pair-theorem range}
+
+\begin{lemma}[\texttt{PAIR-COMPARE-001}]\label{lem:pair-compare}
+Uniformly for \(T\geq3\) and \(1\leq X\leq T\),
+\begin{equation}\label{eq:pair-compare}
+ L(X,T)=2\pi\Phi(X,T)+O(T)+O(X),
+\end{equation}
+with absolute effective implied constants. Both endpoints in \(X\)
+are included, and the zero sums retain the endpoint and multiplicity
+conventions of Lemma~\ref{lem:pair-trunc}.
+More explicitly, for \(Z_*=T\log^2T\),
+\begin{equation}\label{eq:compare-absorption}
+ X^{1-2\nu_{\rm KV}(Z_*)}\log^3T
+ \leq C_*T,\qquad C_*=18!\,84^{18}.
+\end{equation}
+The constant \(C_*\) bounds this auxiliary expression; the constants in
+\eqref{eq:pair-compare} also include those of Lemma~\ref{lem:pair-trunc}.
+\end{lemma}
+\begin{proof}
+Put \(y=\log T>1\), \(z=\log Z_*=y+2\log y>1\), and
+\(\nu=\nu_{\rm KV}(Z_*)\). Lemma~\ref{lem:pair-envelope} gives
+\(0<\nu<1/2\). Thus \(X\mapsto X^{1-2\nu}\) is increasing and
+\begin{equation}\label{eq:compare-x-uniform}
+ X^{1-2\nu}\log^3T
+ \leq T^{1-2\nu}y^3=T y^3e^{-2\nu y}
+ \qquad(1\leq X\leq T).
+\end{equation}
+
+We bound the last factor for every \(T\geq3\).
+Since \(\log y\leq y\), one has \(z\leq3y\).
+For \(v\geq1\), the derivative of \(\sqrt v-\log v\) is
+\((\sqrt v-2)/(2v)\), so its minimum occurs at \(v=4\).
+That minimum is \(2-2\log2>0\), since
+\(\log2=\int_1^2t^{-1}\dd t<1\).
+In particular \(\log z\leq\sqrt z\).
+Using the exact coefficient \(c_{\rm KV}=55241/1000<56\) gives
+\begin{equation}\label{eq:compare-decay}
+ 2\nu y
+ =\frac{2y}{c_{\rm KV}z^{2/3}(\log z)^{1/3}}
+ \geq\frac{2y}{c_{\rm KV}z^{5/6}}
+ \geq\frac{2}{c_{\rm KV}3^{5/6}}y^{1/6}
+ \geq\frac{y^{1/6}}{84}.
+\end{equation}
+All quantities raised to fractional powers are positive.
+For \(r=y^{1/6}/84>0\), Taylor's theorem with nonnegative remainder
+gives \(e^r\geq r^{18}/18!\). Therefore
+\[
+ y^3e^{-2\nu y}\leq y^3e^{-r}
+ =84^{18}r^{18}e^{-r}\leq18!\,84^{18}=C_*.
+\]
+This proves \eqref{eq:compare-absorption} without a numerical evaluation
+or an unspecified sufficiently-large threshold.
+
+Lemma~\ref{lem:pair-trunc}, the envelope
+\(2B(Z_*)\leq1-2\nu\), and \(X\geq1\) yield
+\[
+ L(X,T)-2\pi\Phi(X,T)
+ =O\bigl(X^{1-2\nu}\log^3T\bigr)+O(X).
+\]
+Applying \eqref{eq:compare-absorption} proves
+\eqref{eq:pair-compare}. To retain the separate error accounting,
+when \(T\geq5\) the cutoff satisfies \(Z_*\geq2T\), and
+Lemma~\ref{lem:pair-trunc} gives
+\[
+ \ELtr=O(X),\qquad
+ \ELh=O(C_*T),\qquad
+ \ELext=O(C_*T),\qquad \ELext\leq0.
+\]
+Here \(\log^2T\leq\log^3T\) absorbs the extension error, and
+\(\log Z_*\leq3\log T\) controls the truncation error.
+For \(3\leq T<5\), use the direct
+\(L-2\pi\Phi=O(X)\) argument already proved in
+Lemma~\ref{lem:pair-trunc}; no assertion \(Z_*\geq2T\) is needed there.
+Thus \(T=3\), the transition at \(T=5\), and \(X=1,T\) are all covered.
+The constants are independent of \(X,T\), and all estimates are
+pointwise at finite parameters. No new sum/integral/limit interchange,
+RH assumption, simplicity assumption, or substitution for \(\beta\)
+enters this deduction.
+\end{proof}
+
+Equation~\eqref{eq:pair-compare} reconstructs
+\cite[(2.18)]{BGSTB2024}, with the locator referring to
+arXiv:2306.04799v1. The next sections reconstruct the prime-side
+mean square needed to assemble the pair-correlation asymptotic.
+
+\section{A local Fourier mean-value bound}
+
+We use \(\widehat f(\xi)=\int_{\mathbb R}f(t)e^{-2\pi\ii t\xi}\dd t\)
+and \(e(u)=e^{2\pi\ii u}\). The bandwidth below is an auxiliary
+frequency parameter, not a Fourier-support assertion about a zero
+correlation test function.
+
+\begin{lemma}[\texttt{PAIR-MEANVALUE-001}]\label{lem:pair-meanvalue}
+Let \(\mathcal M\subset\mathbb R\) be countable and
+\(c_\mu\in\mathbb C\) satisfy \(\sum_{\mu\in\mathcal M}|c_\mu|<\infty\).
+Set \(F(t)=\sum_\mu c_\mu e(\mu t)\) and \(D=\sum_\mu|c_\mu|^2\).
+Uniformly for \(T\geq1\), \(1/(2T)\leq\delta\leq1/2\),
+\begin{equation}\label{eq:local-meanvalue}
+ \int_0^T|F(t)|^2\dd t
+ =TD+O\left(\delta^{-1}D+
+ T\sum_{\substack{\mu,\lambda\in\mathcal M\\0<|\mu-\lambda|<\delta}}
+ |c_\mu c_\lambda|\right),
+\end{equation}
+with an absolute effective constant. The sum is over ordered pairs
+of different frequencies; repeated frequencies must first be combined.
+\end{lemma}
+\begin{proof}
+Write \(s(u)=\sin(\pi u)/(\pi u)\), with \(s(0)=1\), and define
+\[
+ K(u)=\tfrac34s(u/2)^4,\qquad
+ B_0(u)=s(u/2)^2+s((u-1)/2)^2,\qquad
+ \tau(\xi)=(1-|\xi|)_+.
+\]
+Here \(B_0\) is unrelated to the zero envelope \(B(Z)\).
+The identity \(s(u)=\int_{-1/2}^{1/2}e(u\xi)\dd\xi\), followed by
+convolution of the two interval indicators, gives
+\(\widehat{s^2}=\tau\). These identities can be obtained by
+\(L^2\) Fourier inversion: the interval indicator and \(s\) are in
+\(L^2\), and \(s^2\in L^1\). The subsequent compactly supported
+convolutions are absolutely integrable, so Fubini and Fourier inversion
+give
+\begin{equation}\label{eq:meanvalue-kernel-transforms}
+ \widehat K(\xi)=\tfrac32(\tau*\tau)(2\xi),\qquad
+ \widehat B_0(\xi)=2(1+e(-\xi))\tau(2\xi).
+\end{equation}
+For example multiplication of the inverse integral for \(\tau\)
+by itself is justified by its finite \(L^1\) norm; its convolution
+is the transform of the integrable function \(s^4\).
+Thus \(K,B_0\geq0\) are in \(L^1\),
+\[
+ \int K=\tfrac32\int_{-1}^1(1-|v|)^2\dd v=1,\qquad
+ \int B_0=4,
+\]
+and their Fourier supports are respectively \([-1,1]\) and
+\([-1/2,1/2]\).
+
+Put \(H(r)=\int_{|v|\geq r}K(v)\dd v\), \(r\geq0\).
+The elementary sinc bounds imply
+\[
+ H(r)\leq1,\qquad H(r)\leq\frac8{\pi^4r^3}\quad(r>0).
+\]
+Moreover, away from the removable points \(u=0,1\),
+\[
+ B_0(u)=\frac4{\pi^2}
+ \left(\frac{\sin^2(\pi u/2)}{u^2}
+       +\frac{\cos^2(\pi u/2)}{(u-1)^2}\right)
+ \geq\frac2{\pi^2(1+u^2)}.
+\]
+Continuity covers those two points. If \(|u|\leq1\), this lower bound
+is at least \(1/\pi^2\); if \(|u|\geq1\), it is at least
+\(1/(\pi^2u^2)\). The two bounds for \(H\) therefore show
+\begin{equation}\label{eq:meanvalue-tail-majorant}
+ H(|u|)\leq64B_0(u)\qquad(u\in\mathbb R).
+\end{equation}
+The constant 64 is a convenient unoptimized choice.
+
+Let \(\chi=1_{[0,T]}\), \(K_\delta(t)=\delta K(\delta t)\), and set
+\[
+ M^\pm(t)=(\chi*K_\delta)(t)
+ \ \pm64\{B_0(\delta t)+B_0(\delta(t-T))\}.
+\]
+A change of membership in \([0,T]\) under translation by \(v\)
+requires \(|v|\geq|t|\) or \(|v|\geq|t-T|\). Since \(K_\delta\geq0\)
+and \(\int K_\delta=1\), this gives, almost everywhere,
+\[
+ |\chi*K_\delta(t)-\chi(t)|
+ \leq H(\delta|t|)+H(\delta|t-T|).
+\]
+Hence \(M^-\leq\chi\leq M^+\). Endpoints of \(\chi\) do not affect
+any integral. Both functions are in \(L^1\), with
+\[
+ \widehat M^\pm(0)=T\pm512/\delta,\qquad
+ \|M^\pm\|_1\leq T+512/\delta\leq1025T.
+\]
+Their transforms vanish for \(|\xi|>\delta\), by
+\eqref{eq:meanvalue-kernel-transforms}, scaling and convolution.
+Continuity of an \(L^1\) Fourier transform also makes them vanish
+at \(|\xi|=\delta\).
+
+The series for \(F\) converges absolutely uniformly on \(\mathbb R\).
+In particular Fubini applies to its squared modulus against \(M^\pm\),
+with absolute integral majorant
+\(\|M^\pm\|_1(\sum|c_\mu|)^2\). Therefore
+\[
+ \int_{\mathbb R}M^\pm(t)|F(t)|^2\dd t
+ =\sum_{\mu,\lambda}c_\mu\overline{c_\lambda}
+       \widehat M^\pm(\lambda-\mu).
+\]
+The diagonal is \((T\pm512/\delta)D\); only
+\(0<|\mu-\lambda|<\delta\) can contribute off the diagonal, each
+with multiplier at most \(1025T\) in modulus. Sandwiching
+\(\int_0^T|F|^2\) between these two integrals proves the claim.
+The lower function need not be nonnegative: its pointwise lower
+bound is multiplied by the nonnegative function \(|F|^2\).
+\end{proof}
+
+\section{Prime-pair counts and the diagonal}
+
+For \(X\geq1\), put
+\begin{equation}\label{eq:prime-coefficients}
+ a_X(n)=\frac{\Lambda(n)}{\sqrt n}\min\{n/X,X/n\},\quad
+ D(X)=\sum_{n\geq1}a_X(n)^2,\quad \ell_X=\log(2X).
+\end{equation}
+All integer cutoffs below have full weight. A proper prime power means
+\(p^k\) with \(k\geq2\).
+
+\begin{lemma}[\texttt{PAIR-PRIME-COUNT-001}]\label{lem:prime-count}
+Uniformly for real \(U\geq2,V\geq1\),
+\begin{equation}\label{eq:prime-pair-average}
+ \sum_{\substack{1\leq m,n\leq U\\0<|m-n|\leq V}}\Lambda(m)\Lambda(n)
+ \ll UV.
+\end{equation}
+For \(0\leq V<1\) this sum is empty.
+Also, uniformly for \(X\geq1\), \(0<\delta\leq1/2\),
+\begin{equation}\label{eq:prime-close-pairs}
+ Q(X,\delta):=
+ \sum_{\substack{m,n\geq1\\0<|\log(n/m)|<2\pi\delta}}
+ a_X(n)a_X(m)\ll\delta X.
+\end{equation}
+All pairs are ordered and all constants are absolute and effective.
+\end{lemma}
+\begin{proof}
+First restrict \eqref{eq:prime-pair-average} to primes. For even
+\(h>0\), the sieve input bounds the weighted pairs with \(n-m=h\)
+by \(CUg(h)\) when \(U\geq4\), since both logarithmic weights are
+at most \(\log U\). For an odd shift one of the primes is 2, so
+these pairs contribute \(O(V\log^2U)\).
+To average \(g\), extend its product definition to all positive
+integers. Expanding that finite product and then using nonnegativity,
+\[
+ \sum_{1\leq h\leq V}g(h)
+ \leq V\sum_{\substack{d\geq1\\d\ {\rm odd,\ squarefree}}}
+       \frac1d\prod_{p\mid d}\frac1{p-2}
+ =V\prod_{p>2}\left(1+\frac1{p(p-2)}\right)\ll V.
+\]
+The product is bounded by
+\(\exp(\sum_{n\geq3}1/(n(n-2)))=\exp(3/4)\).
+Finite products increase to the displayed series by monotone
+convergence; the bound proves convergence. Reversing the ordered
+pairs supplies negative shifts.
+
+There are at most
+\(\sum_{2\leq k\leq\log_2U}U^{1/k}\ll\sqrt U\log(2U)\)
+proper prime powers up to \(U\). For each such occurrence at most
+\(2\lfloor V\rfloor\) other integers lie at positive distance at
+most \(V\). Bounding both weights by \(\log U\), and allowing
+double counting when both entries are proper powers, gives
+\[
+ O\bigl(V\sqrt U\log^3(2U)\bigr)=O(UV).
+\]
+The last inequality is effective because
+\(\log^3(2U)/\sqrt U\) is bounded on \(U\geq2\), as follows by
+putting \(w=\log(2U)\) and maximizing \(w^3e^{-w/2}\).
+Likewise \(V\log^2U=O(UV)\). The finitely many integers involved
+when \(2\leq U<4\) are covered directly. This proves
+\eqref{eq:prime-pair-average}, including all proper-power pairs.
+
+For the second claim, the close-frequency condition implies
+\[
+ e^{-\pi}n<m<e^\pi n,\qquad
+ |m-n|\leq C_0\delta n,\quad C_0=2\pi e^\pi,
+\]
+by the mean value theorem for the exponential. If \(n\leq X\),
+use the valid bounds
+\(a_X(n)\leq\Lambda(n)\sqrt n/X\) and
+\(a_X(m)\leq\Lambda(m)\sqrt m/X\).
+Their product is at most \(C\Lambda(n)\Lambda(m)/X\).
+Both indices are at most \(e^\pi X\) and the difference is at most
+\(C_0\delta X\). Equation~\eqref{eq:prime-pair-average} bounds
+this part by \(C\delta X\); if the difference cutoff is less than 1,
+there are no pairs.
+
+For \(n>X\), partition into \(N<n\leq2N\), \(N=2^jX\), \(j\geq0\).
+The bounds \(a_X(n)\leq X\Lambda(n)n^{-3/2}\), valid for all \(n\),
+give a product at most \(CX^2\Lambda(n)\Lambda(m)/N^3\).
+Both indices are at most \(2e^\pi N\) and their difference is at
+most \(2C_0\delta N\). Applying the same average, or the empty
+cutoff case, bounds this block by \(C\delta X^2/N\).
+The nonnegative dyadic sum is bounded by
+\(C\delta X\sum_{j\geq0}2^{-j}\), proving \eqref{eq:prime-close-pairs}.
+\end{proof}
+
+\begin{lemma}[\texttt{PAIR-PRIME-DIAGONAL-001}]\label{lem:prime-diagonal}
+Uniformly for real \(X\geq1\),
+\begin{equation}\label{eq:prime-diagonal}
+ D(X)=\log X+O(1),\qquad D(X)\ll\ell_X.
+\end{equation}
+The proper-prime-power part satisfies
+\begin{equation}\label{eq:primepowers-diagonal}
+ D_{\rm pp}(X):=\sum_{\substack{n=p^k\\k\geq2}}a_X(n)^2
+ \ll X^{-1/2}\ell_X^3\ll1.
+\end{equation}
+The two portions of the full diagonal are exactly
+\[
+ D(X)=X^{-2}\sum_{n\leq X}n\Lambda(n)^2
+       +X^2\sum_{n>X}\frac{\Lambda(n)^2}{n^3}.
+\]
+Thus an integer prime power at \(X\) is counted once.
+\end{lemma}
+\begin{proof}
+Let \(A_p(u)=\sum_{p\leq u}(\log p)^2\). Partial summation of
+\eqref{eq:prime-pnt-input} gives
+\[
+ A_p(u)=\vartheta(u)\log u-\int_2^u\frac{\vartheta(v)}v\dd v
+       =u\log u+O(u)\qquad(u\geq2).
+\]
+Indeed \((\log u)e^{-c\sqrt{\log u}}\) is bounded effectively,
+and the integral error is \(O(u)\). Enlarging the constant extends
+this statement to \(1\leq u<2\).
+Define the continuous weight
+\[
+ w_X(u)=
+ \begin{cases}u/X^2,&1\leq u\leq X,\\ X^2/u^3,&u>X.\end{cases}
+\]
+Writing \(A_p(u)=u\log u+E_p(u)\), \(|E_p(u)|\leq Cu\),
+Stieltjes integration by parts yields
+\[
+ \sum_p w_X(p)(\log p)^2
+ =\int_1^\infty w_X(u)(\log u+1)\dd u+O(1)
+ =\log X+1-\frac1{4X^2}+O(1).
+\]
+Here \(E_p(1)=0\), the boundary term at infinity vanishes, and
+\[
+ \int_1^\infty u|w_X'(u)|\dd u
+ =X^{-2}\int_1^X u\dd u+
+       3X^2\int_X^\infty u^{-3}\dd u\leq2.
+\]
+The weight agrees from both sides at \(X\), so there is no jump term,
+even when \(X\) is prime. All improper integrals converge absolutely;
+the argument is first on finite intervals, then takes the upper
+endpoint to infinity at fixed \(X\).
+
+Counting all integer \(k\)-th powers, as in the elementary estimate
+\(\sum_{2\leq k\leq\log_2u}u^{1/k}\ll\sqrt u\log(2u)\), gives
+\[
+ A_{\rm pp}(u):=\sum_{\substack{p^k\leq u\\k\geq2}}(\log p)^2
+ \ll\sqrt u\log^3(2u).
+\]
+For \(n\leq X\), use \(w_X(n)\leq X^{-1}\).
+For \(2^jX<n\leq2^{j+1}X\), use
+\(w_X(n)\leq2^{-3j}/X\). Consequently
+\[
+ D_{\rm pp}(X)\ll X^{-1/2}\ell_X^3+
+ X^{-1/2}\sum_{j\geq0}2^{-5j/2}
+             \bigl(\ell_X+(j+1)\log2\bigr)^3
+ \ll X^{-1/2}\ell_X^3.
+\]
+The series is a convergent nonnegative majorant with an absolute
+effective constant, since \(\ell_X\geq\log2\).
+Maximizing a polynomial times an exponential as above shows the
+last expression is bounded on \(X\geq1\).
+Adding primes and proper powers proves the assertions.
+\end{proof}
+
+\section{The weighted prime-series mean square}
+
+\begin{lemma}[\texttt{PAIR-PRIME-MEAN-001}]\label{lem:prime-mean}
+Uniformly for \(T\geq3\) and \(1\leq X\leq T\),
+\begin{align}
+ \int_0^T|\PS(X,t)|^2\dd t
+ &=TD(X)+E_{\rm offdiag}(X,T),&
+ |E_{\rm offdiag}|&\ll\sqrt{TX\ell_X},\label{eq:prime-mean}\\
+ TD(X)&=T\log X+E_{\rm diagonal}(X,T),&
+ |E_{\rm diagonal}|&\ll T.\label{eq:prime-diagonal-error}
+\end{align}
+In particular \(\|\PS(X,\cdot)\|_{L^2(0,T)}
+\ll\sqrt{T\ell_X}\). All constants are absolute and effective.
+\end{lemma}
+\begin{proof}
+Take frequencies \(\mu_n=-\log n/(2\pi)\), \(n\geq2\), and real
+coefficients \(a_X(n)\). For fixed \(X\), the coefficient sum is
+finite: the tail is bounded by \(X\sum_{n>X}(\log n)n^{-3/2}\).
+More explicitly, for \(N\geq\max\{2,X\}\),
+\[
+ \sup_{t\in\mathbb R}\left|
+       \sum_{n>N}a_X(n)n^{-\ii t}\right|
+ \ll X\frac{\log N+1}{\sqrt N}.
+\]
+This also justifies finite-sum approximation of the squared integral
+at fixed \(X,T\). No uniformity in unbounded \(X\) is required to
+take this limit.
+
+Choose
+\begin{equation}\label{eq:prime-bandwidth}
+ \delta=\tfrac12\sqrt{\frac{\ell_X}{TX}}.
+\end{equation}
+For \(X\geq1\), \(\ell_X\leq X\), since
+\(X-\log(2X)\) is increasing and positive there.
+Also \(\ell_X/X\) increases up to \(X=e/2\) and then decreases;
+its minimum on \([1,T]\) is at an endpoint. Thus
+\[
+ T\ell_X/X\geq\min\{T\log2,\log(2T)\}>1\qquad(T\geq3).
+\]
+For example \(\log2>1/2\) follows by integrating \(1/u\) on
+\([1,2]\), and \(\log(2T)>\log3>1\).
+It follows that \(1/(2T)\leq\delta\leq1/2\), including both
+endpoints \(X=1,T\).
+
+Apply Lemma~\ref{lem:pair-meanvalue}, translating
+\(|\mu_m-\mu_n|<\delta\) exactly into
+\(|\log(m/n)|<2\pi\delta\). Lemmas~\ref{lem:prime-count}
+and \ref{lem:prime-diagonal} give
+\[
+ |E_{\rm offdiag}|
+ \ll\delta^{-1}D(X)+TQ(X,\delta)
+ \ll\delta^{-1}\ell_X+T\delta X
+ \ll\sqrt{TX\ell_X}.
+\]
+This error includes the diagonal effect of the Fourier majorants;
+its name denotes the total error after subtracting \(TD(X)\).
+The diagonal lemma then gives \eqref{eq:prime-diagonal-error}.
+Finally \(X\leq T\) and \(\ell_X\geq\log2\) imply
+\(\sqrt{TX\ell_X}\ll T\ell_X\), proving the norm bound.
+\end{proof}
+
+\section{The full prime-side squared norm}
+
+For \(t\geq0\), define exact functions
+\begin{align*}
+ A(X,t)&=X^{-1}\log(t+2),&
+ H(X,t)&=\EA+\ED+\EP+\ET,\\
+ r(X,t)&=-\PS(X,t)+A(X,t)+H(X,t).
+\end{align*}
+where the four remainders are those in Lemma~\ref{lem:pair-ef}.
+Set \(R(X,T)=\int_0^T|r(X,t)|^2\dd t\).
+The exact explicit formula gives \(r=\ZS\), so \(R=L\) with
+the existing normalization. We evaluate \(R\) from its prime-side
+expression.
+
+\begin{lemma}[\texttt{PAIR-RHS-MEAN-001}]\label{lem:rhs-mean}
+Uniformly for \(T\geq3\) and \(1\leq X\leq T\),
+\begin{equation}\label{eq:rhs-mean}
+ R(X,T)=\frac{T}{X^2}\log^2T+T\log X
+       +O\left(\frac{T\log T}{X^2}\right)
+       +O(T\sqrt{\log T}),
+\end{equation}
+with absolute effective implied constants and both endpoints included.
+This is the prime-side form of \cite[(2.19)]{BGSTB2024}.
+\end{lemma}
+\begin{proof}
+Write \(q=\log T\), \(\ell=\ell_X\), and use \(L^2(0,T)\) norms.
+The archimedean square has the exact antiderivative
+\[
+ \int_0^T\log^2(t+2)\dd t
+ =\left[(t+2)\{\log^2(t+2)-2\log(t+2)+2\}\right]_0^T.
+\]
+Since \(\log(T+2)-\log T=O(1/T)\), it follows that
+\begin{equation}\label{eq:arch-square}
+ \|A\|_2^2=\frac{Tq^2}{X^2}+E_{\rm archsquare},\qquad
+ E_{\rm archsquare}=O(Tq/X^2),\quad
+ \|A\|_2\ll\sqrt Tq/X.
+\end{equation}
+The prime/archimedean interaction is treated by oscillation.
+Integration by parts, for \(n\geq2\), gives
+\[
+ \left|\int_0^T\log(t+2)n^{-\ii t}\dd t\right|
+ \leq\frac{2\log(T+2)}{\log n}.
+\]
+Also \(\Lambda(n)/\log n\leq1\) and hence
+\[
+ \sum_{n\geq2}\frac{a_X(n)}{\log n}
+ \leq X^{-1}\sum_{2\leq n\leq X}\sqrt n
+        +X\sum_{n>X,\ n\geq2}n^{-3/2}\ll\sqrt X.
+\]
+The coefficient series is absolutely summable, so its integral
+against the bounded function \(\log(t+2)\) can be interchanged.
+Thus
+\begin{equation}\label{eq:prime-arch-cross}
+ E_{\rm primearch}:=-2\Re\int_0^T\PS(X,t)\overline{A(X,t)}\dd t
+ \ll\frac{\log(T+2)}{\sqrt X}
+\end{equation}
+in absolute value.
+
+Keep the four original errors separate initially. Lemma~\ref{lem:pair-ef}
+gives
+\begin{align*}
+ b_{\rm arch}:=\|\EA\|_2&\ll\sqrt T/X,&
+ b_{\rm DS}:=\|\ED\|_2&\ll\sqrt T/X,\\
+ b_{\rm pole}:=\|\EP\|_2&\ll\sqrt X,&
+ b_{\rm trivial}:=\|\ET\|_2&\ll X^{-5/2}.
+\end{align*}
+For the last two bounds use respectively
+\(\int_0^\infty(1+t^2)^{-2}\dd t<\infty\) and
+\(\int_0^\infty(t+2)^{-2}\dd t=1/2\).
+If \(j\) runs over these four errors, their exact contributions
+to the square, beyond \(\|-\PS+A\|_2^2\), are
+\[
+ E_{P,j}=-2\Re\int_0^T\PS\,\overline{E_j}\dd t,\qquad
+ E_{A,j}=2\Re\int_0^T A\,\overline{E_j}\dd t,\qquad
+ E_{\rm remsquare}=\|H\|_2^2.
+\]
+Cauchy--Schwarz gives
+\(|E_{P,j}|\leq2\|\PS\|_2b_j\),
+\(|E_{A,j}|\leq2\|A\|_2b_j\), and
+\(E_{\rm remsquare}\leq(\sum_jb_j)^2\).
+Using Lemma~\ref{lem:prime-mean} and \eqref{eq:arch-square},
+the separate uniform bounds are as follows; entries bound absolute values.
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\(j\) & \(E_{P,j}\) & \(E_{A,j}\)\\
+\midrule
+arch, DS & \(O(T\sqrt\ell/X)\) & \(O(Tq/X^2)\)\\
+pole & \(O(\sqrt{TX\ell})\) & \(O(\sqrt{T/X}\,q)\)\\
+trivial & \(O(\sqrt{T\ell}\,X^{-5/2})\)
+        & \(O(\sqrt Tq\,X^{-7/2})\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The sum of the four \(b_j\) is \(O(\sqrt T/X+\sqrt X)\), since
+\(T\geq3,X\geq1\); therefore
+\[
+ 0\leq E_{\rm remsquare}\ll T/X^2+X.
+\]
+
+Expanding the finite sum of five exact functions now gives
+\[
+ R=\frac{Tq^2}{X^2}+T\log X+
+ E_{\rm diagonal}+E_{\rm offdiag}+E_{\rm archsquare}
+ +E_{\rm primearch}
+ +\sum_j(E_{P,j}+E_{A,j})+E_{\rm remsquare}.
+\]
+Every term is integrable, by the preceding bounds. To combine errors,
+use \(q>1\), \(X\leq T\), \(\ell\leq\log(2T)\ll q\),
+\(\sqrt\ell/X\leq1\), and \(q\leq T\).
+The diagonal is \(O(T)\); the off-diagonal and pole/prime
+interaction are \(O(T\sqrt q)\).
+The archimedean square and its interactions with arch and DS errors
+are \(O(Tq/X^2)\). The remaining table entries and
+\(E_{\rm primearch},E_{\rm remsquare}\) are \(O(T\sqrt q)\).
+This proves \eqref{eq:rhs-mean} with the two displayed error scales.
+
+All arguments hold on the closed range \(T\geq3,1\leq X\leq T\).
+Prime powers at \(X\) are retained once, and \(n=1\) has zero
+coefficient. The prime-series limits are taken at fixed \(X,T\)
+under absolute majorants; the resulting estimates are uniform in
+the stated range. No RH, simplicity, zero-density estimate, or
+prime-pair asymptotic is used.
+\end{proof}
+
+\section{The normalized pair-correlation asymptotic}
+
+\begin{theorem}[\texttt{PAIR-ASYMPTOTIC-001}]\label{thm:pair-asymptotic}
+Assumptions: \texttt{UNCONDITIONAL}.
+Let \(I_T\) index all nontrivial zero occurrences
+\(\rho_j=\beta_j+\ii\gamma_j\) with \(0<\gamma_j\leq T\), counted with
+multiplicity and full weight at \(T\). Set
+\[
+ C_T=\frac{T\log T}{2\pi},\qquad
+ \mathcal F_T(\alpha)=\frac1{C_T}
+ \sum_{j,k\in I_T}
+ \frac{4T^{\alpha(\rho_j-\rho_k)}}{4-(\rho_j-\rho_k)^2}.
+\]
+The sum includes all ordered pairs, including equal indices and equal
+complex zeros. For every \(T\geq3\), this function is real, nonnegative
+and even on \(\mathbb R\). There are absolute effective constants
+\(C_1,C_2>0\) such that, for every \(T\geq3\) and \(|\alpha|\leq1\),
+\begin{equation}\label{eq:pair-asymptotic-bound}
+ \left|\mathcal F_T(\alpha)-T^{-2|\alpha|}\log T-|\alpha|\right|
+ \leq C_1T^{-2|\alpha|}+C_2(\log T)^{-1/2}.
+\end{equation}
+Equivalently, uniformly on this closed range,
+\begin{equation}\label{eq:pair-asymptotic}
+ \mathcal F_T(\alpha)
+ =T^{-2|\alpha|}\bigl(\log T+O(1)\bigr)
+    +|\alpha|+O\bigl((\log T)^{-1/2}\bigr).
+\end{equation}
+This reconstructs \cite[Theorem 1, (1.4)]{BGSTB2024} in the project
+normalization.
+\end{theorem}
+\begin{proof}
+Reality, nonnegativity and evenness for every real \(\alpha\) are
+Corollary~\ref{cor:pair-positivity}. To prove the estimate, first fix
+\(T\geq3\) and \(1\leq X\leq T\), and put \(q=\log T>1\).
+The exact explicit formula gives \(R=L\).
+Lemmas~\ref{lem:rhs-mean} and~\ref{lem:pair-compare} therefore give
+\begin{equation}\label{eq:pair-assembly}
+ 2\pi\Phi(X,T)
+ =TX^{-2}q^2+T\log X
+   +E_{\mathrm{peak}}+E_{\mathrm{mean}}
+   +E_{\mathrm{compare},T}+E_{\mathrm{compare},X}.
+\end{equation}
+Here the first two errors collect the two already justified
+prime-side error scales; the last two are the errors in \(2\pi\Phi-L\).
+Their signs are immaterial for the following absolute bounds.
+All implied constants are absolute and effective, uniformly on the
+closed range just stated:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Error & Before normalization & After division by \(Tq\)\\
+\midrule
+\(E_{\mathrm{peak}}\) & \(O(Tq/X^2)\) & \(O(X^{-2})\)\\
+\(E_{\mathrm{mean}}\) & \(O(T\sqrt q)\) & \(O(q^{-1/2})\)\\
+\(E_{\mathrm{compare},T}\) & \(O(T)\) & \(O(q^{-1})\)\\
+\(E_{\mathrm{compare},X}\) & \(O(X)\) & \(O(X/(Tq))\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+In particular, division of \eqref{eq:pair-assembly} gives
+\begin{align}\label{eq:pair-normalization}
+ \frac{2\pi\Phi(X,T)}{Tq}
+ &=X^{-2}q+\frac{\log X}{q}
+   +O(X^{-2})+O(q^{-1/2})\notag\\
+ &\hspace{12mm}+O(q^{-1})+O(X/(Tq)).
+\end{align}
+Since \(X/(Tq)\leq q^{-1}\leq q^{-1/2}\), the last two errors
+can now be absorbed into \(O(q^{-1/2})\).
+For \(0\leq\alpha\leq1\), set \(X=T^\alpha\).
+Then \(1\leq X\leq T\), \(\log X/q=\alpha\), \(X^{-2}=T^{-2\alpha}\),
+and the left side of \eqref{eq:pair-normalization} is exactly
+\(\mathcal F_T(\alpha)\). The uniform absolute error bounds give
+\eqref{eq:pair-asymptotic-bound} on this half interval. For
+\(-1\leq\alpha<0\), use
+\(\mathcal F_T(\alpha)=\mathcal F_T(|\alpha|)\).
+Thus no prime-side estimate is applied with \(X<1\).
+
+This proof introduces no sum, integral, or limit interchange.
+The identities are used at fixed \(T,X\), followed by a substitution
+into bounds uniform on the whole closed range. In particular, the
+asymptotic holds for every choice \(\alpha=\alpha(T)\in[-1,1]\)
+as \(T\to\infty\). Effectivity follows from the two input estimates;
+no numerical values for the complete constants \(C_1,C_2\) are claimed.
+\end{proof}
+
+At the endpoints the same theorem gives
+\[
+ \mathcal F_T(0)=\log T+O(1),\qquad
+ \mathcal F_T(\pm1)=1+T^{-2}\log T
+      +O(T^{-2})+O((\log T)^{-1/2})
+      =1+O((\log T)^{-1/2}).
+\]
+For the last absorption, writing \(q=\log T\geq1\), the elementary
+bound \(e^{2q}\geq(2q)^2/2\geq q^{3/2}\) gives
+\(T^{-2}q\leq q^{-1/2}\).
+At \(\alpha=0\), the separate \(O(T^{-2|\alpha|})\) term must be
+retained; the proof does not yield an \(O((\log T)^{-1/2})\) total error
+there. The normalization remains \(C_T\), not \(TL_T\) or \(N(T)\).
+No frequency range beyond \([-1,1]\), purely vertical unweighted
+correlation theorem, or horizontal proportion is asserted here.
+
+\section{Checks and scope of the audit}\label{sec:checks}
+
+The zero-side denominator is at least \(3/4\) in modulus when
+\(t=\gamma\); no exceptional real \(t\) is excluded.
+Conjugation of the full zero sum and reindexing \(\rho\mapsto\bar\rho\)
+give \(\ZS(X,-t)=\overline{\ZS(X,t)}\), and every exact term on the
+right has the same symmetry. The reflection \(\rho\mapsto1-\bar\rho\)
+preserves multiplicity and the strip bound used in all zero estimates;
+it reindexes the sum with \(\delta_\rho\mapsto-\delta_\rho\), and
+does not assert equality of individual summands. As a separate check
+under assumption \texttt{RH}, the zero side reduces to
+\(\sum_\gamma 2X^{\ii(\gamma-t)}/(1+(t-\gamma)^2)\), with
+multiplicity. This specialization is not used in an unconditional proof.
+
+The rational kernel is exactly the subtraction in the source's argument:
+for \(r=\rho-s\),
+\[
+ \frac1{1-r}-\frac1{-1-r}=\frac2{1-r^2}.
+\]
+This proof therefore establishes the combined identity directly, without
+assigning absolute convergence to either separate Landau zero series.
+There is no Fourier transform or mean-spacing rescaling in this lemma.
+
+For the squared norm, complex conjugation of the integrable pair product
+exchanges \(j,k\). Its explicit value in
+\eqref{eq:norm-shifted-line}--\eqref{eq:norm-shift} has the same property,
+since \(h\) is unchanged and \(d\mapsto-d\).
+Under the separate check assumption \texttt{RH}, all \(\delta_j=0\),
+so the line shift disappears and the pair integral becomes
+\(2\pi/(4+(\gamma_j-\gamma_k)^2)\) times
+\(X^{\ii(\gamma_j-\gamma_k)}\).
+The full identity then recovers the usual ordinate kernel with coefficient
+4. The formulas also apply directly at \(X=1\) and for \(0<X<1\),
+and when \(I_T\) is empty both sides vanish.
+
+For height truncation, the bounds hold at \(X=1\), even when the
+finite zero set is empty or zeros lie exactly on either cutoff.
+Under the separate check assumption \texttt{RH}, \(B(Z)=0\), so
+the height and extension bounds reduce to \(O(\log^3T)\) and
+\(O(\log^2T)\); the distant-zero estimate remains \(O(X)\) after
+the stated choice of \(Z\). This check does not assert a sharp
+RH-dependent refinement of that last error.
+
+All local statements have status \texttt{proved-draft}. The imported
+analytic inputs are identified above and the local sum/integral exchanges
+are justified within the proof. The local Lemmas 1--4 reconstruction
+uses no numerical result. The finite-height envelope
+\texttt{PAIR-ENVELOPE-001} and the uniform comparison
+\texttt{PAIR-COMPARE-001} additionally use the published inputs
+\texttt{ZETA-KV-001} and \texttt{ZETA-LOW-001}, with their external
+computational dependencies. No local numerical certificate or
+independent replay is claimed for those inputs.
+The local RH-contamination review is recorded in the research audit files.
+Independent mathematical review, upstream proof reconstruction, final
+journal comparisons and clean-checkout reproduction remain pending.
+The normalized theorem is reconstructed as
+\texttt{PAIR-ASYMPTOTIC-001}; it inherits the external computational
+dependencies of \texttt{PAIR-COMPARE-001}.
+The prime-side mean square is reconstructed as \texttt{PAIR-RHS-MEAN-001}
+from the explicit formula, a local Fourier argument, and the imported
+unconditional PNT and sieve bounds; this part uses no numerical input.
+Finite arithmetic regression scripts check
+the elementary kernel, endpoint, residue, reindexing and truncation
+algebra, as well as the final main-term and error normalization;
+they do not certify any analytic estimate.
+
+\bibliographystyle{plain}
+\bibliography{../research/literature}
+\end{document}

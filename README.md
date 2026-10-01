@@ -87,10 +87,14 @@ python3 -B -m unittest discover -s scripts -p 'check_pair_*.py' -v
 
 ## Research status
 
-The [Work Package A closure checklist](research/work-package-a-closure.md)
-maps all required outputs to their evidence and records two open closeout
-items: independent mathematical review and a preserved full reproduction
-for the designated baseline revision.
+**Work Package A is complete within its documented reproduction scope**
+and ready to support Work Package B. The
+[closure checklist](research/work-package-a-closure.md) maps all required
+outputs to evidence and records the successful full clean-checkout run for
+baseline revision `62a21146b1a4ea0d0d46534768ecaed7233bbe42`:
+70 tests passed and the 23-page PDF built without warnings. The complete
+[reproduction manifest](artifacts/work-package-a/62a21146b1a4ea0d0d46534768ecaed7233bbe42/manifest.json)
+and output bundle are preserved in the repository.
 
 The local reconstruction has a [dependency graph](research/dependency-graph.md),
 [named error budget](research/pair-error-budget.md),
@@ -107,11 +111,12 @@ current pair baseline. It regenerates normalization and error accounting from
 the proved-draft analytic inputs; it does not re-prove their uniform estimates,
 compute the unspecified constants, or replay external computer-assisted proofs.
 Independent mathematical review, upstream foundational reconstruction and
-computational replay remain outstanding; publisher-version comparisons are
-deferred. Completing this deliverable does not promote any claim beyond its
-ledger status.
+computational replay remain nonblocking follow-ups, along with publisher-version
+comparisons. Work Package A completion does not promote any claim beyond its
+ledger status: the local theorem remains `proved-draft`.
 
 Historical completion lists in the hashed audit and literature notes describe
-their review date. This README records the later reproduction harness and
-accepted-text comparison; those historical notes have not been changed merely
-to update progress wording.
+their review date. This README and the closure checklist record the later
+completion of A; those historical notes have not been changed merely to update
+progress wording. The closure documentation postdates the tested baseline
+revision; its proof and audited inputs are unchanged.

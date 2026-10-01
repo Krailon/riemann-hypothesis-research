@@ -1,0 +1,45 @@
+\begin{thebibliography}{1}
+
+\bibitem{BGSTB2024}
+Siegfred Alan~C. Baluyot, Daniel~Alan Goldston, Ade~Irma Suriajaya, and
+  Caroline~L. Turnage-Butterbaugh.
+\newblock An unconditional {Montgomery} theorem for pair correlation of zeros
+  of the {Riemann} zeta-function.
+\newblock {\em Acta Arithmetica}, 214:357--376, 2024.
+\newblock Text consulted: arXiv:2306.04799v1 (preprint); comparison with the
+  final journal text is pending.
+
+\bibitem{MV2007}
+Hugh~L. Montgomery and Robert~C. Vaughan.
+\newblock {\em Multiplicative Number Theory {I}: Classical Theory}, volume~97
+  of {\em Cambridge Studies in Advanced Mathematics}.
+\newblock Cambridge University Press, 2007.
+\newblock Author-hosted publisher chapter PDFs consulted 2026-09-25: Chapter
+  12, Lemmas 12.2 and 12.4; Chapter 14, Corollary 14.3; Appendix C, Theorem C.1
+  and equation (C.17). Additionally checked 2026-09-26: Chapter 6, Theorem 6.9,
+  equations (6.12)--(6.13), pp. 179--181; Chapter 3, Corollary 3.14, p. 97 and
+  preceding sieve proof.
+
+\bibitem{MTY2024}
+Michael~J. Mossinghoff, Timothy~S. Trudgian, and Andrew Yang.
+\newblock Explicit zero-free regions for the {Riemann} zeta-function.
+\newblock {\em Research in Number Theory}, 10(1):Article 11, 1--27, 2024.
+\newblock Version of record, published 12 January 2024; Theorem 1.1, equation
+  (1.5), p. 2; proof in Section 5; computational ingredients in Sections 8--9.
+
+\bibitem{DLMF}
+{National Institute of Standards and Technology}.
+\newblock {NIST Digital Library of Mathematical Functions}.
+\newblock Consulted 2026-09-25: sections 25.2(i), 25.2(iv), 25.10(i), and
+  equation (25.4.2); precise links are recorded in the pair-lemma1 audit note.
+
+\bibitem{PT2021}
+Dave Platt and Tim Trudgian.
+\newblock The {Riemann} hypothesis is true up to {$3\cdot 10^{12}$}.
+\newblock {\em Bulletin of the London Mathematical Society}, 53(3):792--797,
+  2021.
+\newblock Publisher metadata and abstract checked 2026-09-26; detailed text
+  consulted: arXiv:2004.09765v1, Theorem 1 and Section 2; full
+  final-journal-text comparison pending.
+
+\end{thebibliography}
