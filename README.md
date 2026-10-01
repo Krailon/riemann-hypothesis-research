@@ -92,14 +92,21 @@ The local reconstruction has a [dependency graph](research/dependency-graph.md),
 [Fourier/support table](research/pair-conventions.json), and
 [RH-contamination review](research/pair-rh-audit.md).
 
+The [BGSTB accepted-text comparison](research/literature-notes/bgstb-accepted-comparison.md)
+is complete for the agreed Kyushu manuscript: the theorem and proof match
+our baseline, with two domain/exposition issues already handled locally.
+Publisher-version verification is deferred and does not block further work.
+
 The harness implements the clean-checkout regeneration deliverable for the
 current pair baseline. It regenerates normalization and error accounting from
 the proved-draft analytic inputs; it does not re-prove their uniform estimates,
 compute the unspecified constants, or replay external computer-assisted proofs.
-Independent mathematical review, upstream foundational reconstruction, final
-journal comparisons and computational replay remain outstanding. Completing
-this deliverable does not promote any claim beyond its ledger status.
+Independent mathematical review, upstream foundational reconstruction and
+computational replay remain outstanding; publisher-version comparisons are
+deferred. Completing this deliverable does not promote any claim beyond its
+ledger status.
 
 Historical completion lists in the hashed audit and literature notes describe
-their review date. This README records the later reproduction-harness addition;
-those reviewed files have not been changed merely to update progress wording.
+their review date. This README records the later reproduction harness and
+accepted-text comparison; those historical notes have not been changed merely
+to update progress wording.

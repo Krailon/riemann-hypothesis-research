@@ -291,7 +291,15 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "9c293b7fb7d2345ce6ee3ebaad39c7c228f5fb3e220777707d9f535150001091",
+  "ledger_sha256": "d2eda9ac6f88525cc8475c151c3742b2db84cc9033af45c851b00bb2ca24b67e",
+  "ledger_metadata_review": {
+    "reviewed_on": "2026-10-01",
+    "scope": "source_comparison_metadata_only",
+    "report": "research/literature-notes/bgstb-accepted-comparison.md",
+    "changes": "Replaced provisional first-page metadata with completed agreed-source comparison for PAIR-BGSTB-001 and PAIR-ASYMPTOTIC-001; deferred their publisher-version checks as nonblocking. Removing the two comparison blocks and restoring those two pending values exactly recovers the original reviewed ledger. Statements, assumptions, dependencies, statuses, proof files and original RH-audit verdicts are unchanged.",
+    "previous_ledger_sha256": "7cc1ca077fdbd2179793b30e33bcfac9fd61b12754b7ba185cc0076be8bb2782",
+    "original_reviewed_ledger_sha256": "9c293b7fb7d2345ce6ee3ebaad39c7c228f5fb3e220777707d9f535150001091"
+  },
   "evidence": [
     {
       "id": "analytic",

@@ -126,7 +126,19 @@ claims:
       task_type: exposition_and_source_verification
       statement_checked_against: arXiv_v1_pdf
       publication_metadata_checked: "2026-09-25"
-      final_journal_text_comparison: pending
+      final_journal_text_comparison: deferred_nonblocking
+      accepted_text_comparison:
+        report: research/literature-notes/bgstb-accepted-comparison.md
+        reviewed_on: "2026-10-01"
+        status: completed_for_agreed_source
+        source_url: https://catalog.lib.kyushu-u.ac.jp/opac_download_md/7377443/7377443.pdf
+        source_sha256: 79e68a339842642764467a806bd335d5bbdffc5ae4247729ab98ec7834a3aa54
+        source_designation: user_agreed_accepted_text
+        scope: theorem_1_full_section_2_and_local_fourier_passage
+        theorem_and_proof_comparison: completed
+        outcome: equivalent_with_existing_local_domain_clarifications
+        arxiv_v1_comparison: all_13_manuscript_pages_have_identical_extracted_text
+        unresolved_local_mathematical_discrepancies: []
       proof_reconstruction: completed_draft
       local_reconstruction: PAIR-ASYMPTOTIC-001
       rh_contamination_audit: pending
@@ -192,7 +204,19 @@ claims:
       local_computation_used_in_proof: false
       local_certificate_replay: not_performed
       independent_verification: pending
-      final_journal_text_comparison: pending
+      final_journal_text_comparison: deferred_nonblocking
+      accepted_text_comparison:
+        report: research/literature-notes/bgstb-accepted-comparison.md
+        reviewed_on: "2026-10-01"
+        status: completed_for_agreed_source
+        source_url: https://catalog.lib.kyushu-u.ac.jp/opac_download_md/7377443/7377443.pdf
+        source_sha256: 79e68a339842642764467a806bd335d5bbdffc5ae4247729ab98ec7834a3aa54
+        source_designation: user_agreed_accepted_text
+        scope: theorem_1_full_section_2_and_local_fourier_passage
+        theorem_and_proof_comparison: completed
+        outcome: equivalent_with_existing_local_domain_clarifications
+        arxiv_v1_comparison: all_13_manuscript_pages_have_identical_extracted_text
+        unresolved_local_mathematical_discrepancies: []
       regression_checks: "43 exact tests passed on 2026-09-28: 38 existing and 5 normalization checks. Main-term coefficients, separate error scales, signed comparison, endpoint substitutions and absorption algebra checked; no analytic proof certificate."
       source_structure_checks: "28 unique claim IDs and 10 source nodes; dependency resolution/acyclicity including reconstruction links, theorem-label mapping, references, citations, local file links and Python syntax passed. The local theorem closure is unconditional, retains computational provenance, and excludes PAIR-BGSTB-001."
       compilation: passed_pdflatex_bibtex
