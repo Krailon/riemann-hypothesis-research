@@ -87,6 +87,11 @@ python3 -B -m unittest discover -s scripts -p 'check_pair_*.py' -v
 
 ## Research status
 
+The [Work Package A closure checklist](research/work-package-a-closure.md)
+maps all required outputs to their evidence and records two open closeout
+items: independent mathematical review and a preserved full reproduction
+for the designated baseline revision.
+
 The local reconstruction has a [dependency graph](research/dependency-graph.md),
 [named error budget](research/pair-error-budget.md),
 [Fourier/support table](research/pair-conventions.json), and
