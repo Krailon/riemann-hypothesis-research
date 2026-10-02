@@ -4,6 +4,13 @@ schema_version: 1
 # null in audit fields means unknown/pending, never false or certified.
 # source_nodes are provenance locators, not proved claims; local reconstructions
 # are linked explicitly and retain their own claim status.
+rh_audit:
+  record: research/pair-rh-audit.json
+  report: research/pair-rh-audit.md
+  reviewed_on: 2026-09-28
+  scope: local_pair_proof_and_imported_statement_hypotheses
+  outcome: no_contamination_found_in_reviewed_scope
+  independent_review: pending
 source_nodes:
   - id: BGSTB-EF
     bibliography_key: BGSTB2024
@@ -16,27 +23,63 @@ source_nodes:
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Lemma 2; equations (2.4)-(2.5)"
-    audit_status: pending
+    audit_status: reconstructed_draft
+    local_claim: PAIR-COUNT-001
+    notes: "Inclusive and local counts derived from imported unconditional Riemann-von Mangoldt; kernel consequences in PAIR-COUNT-KERNEL-001. Independent review and journal comparison pending."
   - id: BGSTB-NORM
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Lemma 3; equations (2.6)-(2.8)"
-    audit_status: pending
+    audit_status: reconstructed_draft
+    local_claim: PAIR-NORM-001
+    notes: "Integral, contour shift, multiplicity and positivity reconstructed; independent review and final journal comparison pending."
   - id: BGSTB-TRUNC
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Lemma 4; equations (2.13)-(2.16)"
-    audit_status: pending
+    audit_status: reconstructed_draft
+    local_claim: PAIR-TRUNC-001
+    notes: "Three separate errors, finite-height horizontal envelope and bounded-height treatment reconstructed; no quantitative zero-free region used. Independent review and journal comparison pending."
   - id: BGSTB-ZFR
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Proof of Theorem 1, Korobov-Vinogradov bound before (2.18)"
-    audit_status: pending_primary_source
+    audit_status: reconstructed_draft
+    verified_input_claim: ZETA-KV-001
+    envelope_claim: PAIR-ENVELOPE-001
+    local_claim: PAIR-COMPARE-001
+    notes: "The finite-height envelope and uniform O(T)+O(X) comparison are reconstructed as proved-draft claims using published MTY2024 and PT2021 inputs. Independent review and BGSTB journal comparison remain pending; the upstream computational proofs have not been replayed."
   - id: BGSTB-MEAN
     bibliography_key: BGSTB2024
     version: arXiv:2306.04799v1
     locator: "Equations (2.17)-(2.19) and following remark"
-    audit_status: pending_primary_source
+    audit_status: reconstructed_draft
+    local_claim: PAIR-RHS-MEAN-001
+    notes: "Prime-side mean square reconstructed using a local Fourier mean-value proof and published MV2007 PNT/sieve inputs. GM87 full text was inaccessible; its Lemma 6 is a comparison pointer, not an imported unchecked dependency. Independent review and BGSTB journal comparison pending."
+  - id: MV-PNT-PROOF
+    bibliography_key: MV2007
+    version: author_hosted_publisher_chapter
+    locator: "Chapter 6, Theorem 6.9, pp. 179-181; classical zero-free-region inputs in Section 6.1"
+    audit_status: statement_and_proof_structure_checked
+    notes: "Unconditional effective PNT; statement and proof structure checked, upstream proof not fully reconstructed. No numerical proof input or modern computational KV theorem is used."
+  - id: MV-SIEVE-PROOF
+    bibliography_key: MV2007
+    version: author_hosted_publisher_chapter
+    locator: "Chapter 3, Corollary 3.14, p. 97; Theorem 3.10, Lemma 3.12 and Theorem 3.13"
+    audit_status: statement_and_proof_structure_checked
+    notes: "Unconditional elementary upper-bound sieve, uniform in the even nonzero shift. Effectivity follows from the displayed sieve construction; upstream proof not fully reconstructed."
+  - id: MTY-KV-PROOF
+    bibliography_key: MTY2024
+    version: published_version_of_record_2024-01-12
+    locator: "Sections 3-5 and 8-9; Theorems 1.3-1.4 used within the proof of Theorem 1.1"
+    audit_status: proof_structure_inspected
+    notes: "Provenance pointer for the analytic inputs, intermediate regions, polynomial construction and numerical inequalities. Upstream proofs and computations have not been independently reconstructed or replayed."
+  - id: PT-LOW-ZEROS
+    bibliography_key: PT2021
+    version: arXiv:2004.09765v1
+    locator: "Theorem 1 and Section 2, pp. 2-3; publisher abstract also checked"
+    audit_status: source_statement_verified_computation_not_replayed
+    notes: "Primary source for the rigorous verification used by MTY up to height 3*10^12; uses Arb and a variation of Turing's method. The v1 theorem gives the stronger height 3000175332800. Only the published 3*10^12 range is recorded for this dependency; full journal-text comparison is pending."
 
 claims:
   - id: PAIR-BGSTB-001
@@ -59,11 +102,12 @@ claims:
     assumptions: [UNCONDITIONAL]
     dependencies:
       - PAIR-EF-001
-      - BGSTB-COUNT
-      - BGSTB-NORM
-      - BGSTB-TRUNC
-      - BGSTB-ZFR
-      - BGSTB-MEAN
+      - PAIR-COUNT-001
+      - PAIR-NORM-001
+      - PAIR-POSITIVITY-001
+      - PAIR-TRUNC-001
+      - PAIR-COMPARE-001
+      - PAIR-RHS-MEAN-001
     dependency_graph_complete: false
     source:
       file: research/literature-notes/pair-baseline.md
@@ -75,24 +119,108 @@ claims:
       publication_doi: 10.4064/aa230612-20-3
     constants_effective: null
     all_limit_interchanges_justified: null
-    computation_used_in_proof: false
+    computation_used_in_proof: true
     certificate_artifact_hash: null
     limit_order: "T -> infinity uniformly over alpha in [0,1]."
     project_audit:
       task_type: exposition_and_source_verification
       statement_checked_against: arXiv_v1_pdf
       publication_metadata_checked: "2026-09-25"
-      final_journal_text_comparison: pending
-      proof_reconstruction: pending
+      final_journal_text_comparison: deferred_nonblocking
+      accepted_text_comparison:
+        report: research/literature-notes/bgstb-accepted-comparison.md
+        reviewed_on: "2026-10-01"
+        status: completed_for_agreed_source
+        source_url: https://catalog.lib.kyushu-u.ac.jp/opac_download_md/7377443/7377443.pdf
+        source_sha256: 79e68a339842642764467a806bd335d5bbdffc5ae4247729ab98ec7834a3aa54
+        source_designation: user_agreed_accepted_text
+        scope: theorem_1_full_section_2_and_local_fourier_passage
+        theorem_and_proof_comparison: completed
+        outcome: equivalent_with_existing_local_domain_clarifications
+        arxiv_v1_comparison: all_13_manuscript_pages_have_identical_extracted_text
+        unresolved_local_mathematical_discrepancies: []
+      proof_reconstruction: completed_draft
+      local_reconstruction: PAIR-ASYMPTOTIC-001
       rh_contamination_audit: pending
       effectivity_audit: pending
       interchange_audit: pending
-      numerical_certification: not_applicable
+      numerical_certification: no_project_certificate
+      computational_provenance: "The reconstructed dependency PAIR-COMPARE-001 uses published computer-assisted zero-free-region and low-height inputs. This flag records that dependency; no local certificate or replay is claimed."
       notes: |
         Published status records the external work, not a completed project
-        proof audit. Lemma 1 now depends on the local PAIR-EF-001 draft.
-        The other section-2 source pointers await reconstruction.
+        proof audit. Lemmas 1-4 now depend on local proved-draft claims;
+        Lemma 2 retains Riemann-von Mangoldt as a stated imported input.
+        The quantitative zero-free-region source is verified as ZETA-KV-001;
+        PAIR-ENVELOPE-001 derives its finite-height envelope, and
+        PAIR-COMPARE-001 proves the uniform O(T)+O(X) comparison in draft.
+        PAIR-RHS-MEAN-001 reconstructs the prime-side mean square.
+        PAIR-ASYMPTOTIC-001 assembles the normalized theorem in draft.
+        Independent review and the broader project audit remain pending.
         The source's conditional Theorems 2-3 are not imported.
+
+  - id: PAIR-ASYMPTOTIC-001
+    title: Uniform unconditional normalized pair-correlation asymptotic
+    kind: theorem
+    statement: |
+      For T>=3 let I_T index every nontrivial zero occurrence
+      rho_j=beta_j+i gamma_j with 0<gamma_j<=T, counted with multiplicity
+      and full endpoint weight. Define C_T=T log(T)/(2 pi) and
+      F_T(alpha)=C_T^(-1) sum_{j,k in I_T}
+        4 T^(alpha(rho_j-rho_k))/(4-(rho_j-rho_k)^2).
+      All ordered pairs are included, including equal indices and equal
+      complex zeros. F_T is real, nonnegative and even for every real alpha.
+      There exist absolute effective C_1,C_2>0 such that for every T>=3
+      and |alpha|<=1,
+      |F_T(alpha)-T^(-2|alpha|)log T-|alpha||
+        <= C_1 T^(-2|alpha|)+C_2(log T)^(-1/2).
+      Equivalently F_T(alpha)=T^(-2|alpha|)(log T+O(1))
+        +|alpha|+O((log T)^(-1/2)), uniformly on this closed range.
+      In particular F_T(0)=log T+O(1) and
+      F_T(1)=F_T(-1)=1+O((log T)^(-1/2)).
+      No RH or simplicity assumption is used.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-COMPARE-001, PAIR-RHS-MEAN-001, PAIR-POSITIVITY-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: thm:pair-asymptotic
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Theorem 1, equation (1.4)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Algebra at fixed T,X; substitute X=T^alpha for 0<=alpha<=1, then use exact evenness. Bounds uniform for T>=3, |alpha|<=1, including alpha depending on T. No new interchange."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Use R=L, the zero-side comparison and prime-side mean square; divide 2 pi Phi by T log T and absorb only the two comparison errors."
+      endpoint_audit: "T=3 and alpha=0,+1,-1 included. Negative alpha uses evenness, not a prime-side estimate at X<1. Multiplicity and full height-endpoint weights retained."
+      error_audit: "Keep O(X^(-2)), O((log T)^(-1/2)), O((log T)^(-1)) and O(X/(T log T)) separate until uniform absorption. Preserve O(T^(-2|alpha|)) at alpha=0."
+      rh_contamination_audit: "Completed local line-by-line review and imported-statement hypothesis check; see research/pair-rh-audit.json and .md. No contamination found in the reviewed scope. Full upstream reconstruction and independent review remain pending."
+      interchange_audit: "No new interchange; local justifications and outstanding upstream proof-review scope are inherited unchanged."
+      computational_provenance: "True records published computer-assisted inputs through PAIR-COMPARE-001 and PAIR-ENVELOPE-001. The local assembly is analytic; exact regression checks are not proof certificates."
+      local_computation_used_in_proof: false
+      local_certificate_replay: not_performed
+      independent_verification: pending
+      final_journal_text_comparison: deferred_nonblocking
+      accepted_text_comparison:
+        report: research/literature-notes/bgstb-accepted-comparison.md
+        reviewed_on: "2026-10-01"
+        status: completed_for_agreed_source
+        source_url: https://catalog.lib.kyushu-u.ac.jp/opac_download_md/7377443/7377443.pdf
+        source_sha256: 79e68a339842642764467a806bd335d5bbdffc5ae4247729ab98ec7834a3aa54
+        source_designation: user_agreed_accepted_text
+        scope: theorem_1_full_section_2_and_local_fourier_passage
+        theorem_and_proof_comparison: completed
+        outcome: equivalent_with_existing_local_domain_clarifications
+        arxiv_v1_comparison: all_13_manuscript_pages_have_identical_extracted_text
+        unresolved_local_mathematical_discrepancies: []
+      regression_checks: "43 exact tests passed on 2026-09-28: 38 existing and 5 normalization checks. Main-term coefficients, separate error scales, signed comparison, endpoint substitutions and absorption algebra checked; no analytic proof certificate."
+      source_structure_checks: "28 unique claim IDs and 10 source nodes; dependency resolution/acyclicity including reconstruction links, theorem-label mapping, references, citations, local file links and Python syntax passed. The local theorem closure is unconditional, retains computational provenance, and excludes PAIR-BGSTB-001."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined manuscript built on 2026-09-28: 23 pages, resolved references/citations, no final-pass warnings or overfull/underfull boxes."
 
   - id: PAIR-TRANSLATION-001
     title: Exact bookkeeping and scale translation for the pair observable
@@ -283,7 +411,7 @@ claims:
       absolute effective constant. All zeros are counted with multiplicity.
     status: proved-draft
     assumptions: [UNCONDITIONAL]
-    dependencies: [ZETA-ANALYTIC-001, ZETA-COUNT-001]
+    dependencies: [ZETA-ANALYTIC-001, PAIR-COUNT-001]
     dependency_graph_complete: false
     source:
       file: proofs/pair_baseline.tex
@@ -402,5 +530,655 @@ claims:
       source_structure_checks: "Ledger dependencies, theorem labels, citations, local links and TeX delimiter/environment checks passed."
       independent_verification: pending
       final_journal_text_comparison: pending
-      compilation: unavailable_no_tex_toolchain
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
       notes: "All interchanges inside the reconstruction are justified. Upstream proofs of classical imported inputs are not fully reconstructed."
+
+  - id: ZETA-KV-001
+    title: Published explicit Korobov-Vinogradov zero-free region
+    kind: imported_theorem
+    statement: |
+      Let nu_KV(u)=1/((55241/1000)(log u)^(2/3)(log log u)^(1/3))
+      for real u>=3, with natural logarithms and positive real powers.
+      For real sigma,t with |t|>=3 and sigma>=1-nu_KV(|t|),
+      zeta(sigma+i t) is nonzero. Both boundary inequalities are inclusive.
+      Equivalently every nontrivial zero rho=beta+i gamma with |gamma|>=3
+      satisfies beta<1-nu_KV(|gamma|), regardless of multiplicity.
+      The coefficient 55241/1000=55.241 and threshold 3 are exact.
+      No assertion for 0<|gamma|<3 or for the full finite-height envelope
+      B(Z) is included in this imported claim.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MTY-KV-PROOF, PT-LOW-ZEROS]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: inp:kv
+      bibliography_key: MTY2024
+      version_consulted: published_version_of_record_2024-01-12
+      url: https://link.springer.com/content/pdf/10.1007/s40993-023-00498-y.pdf
+      locator: "Theorem 1.1, equation (1.5), p. 2 of 27; proof in Section 5"
+      publication_doi: 10.1007/s40993-023-00498-y
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Pointwise theorem for every |t|>=3; no project limit interchange is used in importing its statement."
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-26"
+      statement_checked_against: publisher_html_and_version_of_record_pdf
+      publication_metadata_checked: "2026-09-26"
+      final_journal_text_comparison: completed_for_statement
+      endpoint_audit: "Closed zero-free boundary implies strict beta inequality; |t|=3 included; smaller heights not covered."
+      rh_contamination_audit: "Theorem 1.1 is unconditional. Its finite-height RH verification is a published computational theorem, not an unproved RH assumption."
+      proof_structure_audit: "Section 5 separates low, intermediate and large heights; Sections 8-9 describe polynomial discovery and numerical ingredients. This is a source map, not a complete proof audit."
+      computational_provenance: |
+        Published proof uses PT2021 finite-height verification and external
+        numerical ingredients. No certificate has been generated, retrieved
+        or replayed by this project. A null artifact hash records that gap;
+        it is not a claim of no computation or local certification.
+      proof_reconstruction: not_attempted
+      interchange_audit: pending_upstream_proof_review
+      independent_verification: pending
+      local_certificate_replay: not_performed
+      finite_height_application: "Envelope reconstructed as PAIR-ENVELOPE-001; uniform error comparison reconstructed as PAIR-COMPARE-001. Both are proved-draft."
+      source_structure_checks: "Unique YAML keys/IDs, dependency resolution/acyclicity, exact rational constant, provenance flags, labels, citations, local links and whitespace checked on 2026-09-26."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built on 2026-09-26: 14 pages, all citations/references resolved, no final-pass warnings or overfull/underfull boxes."
+      notes: "No claim of the best currently known constant is made. This input is not a dependency of the local Lemmas 1-4."
+
+  - id: ZETA-LOW-001
+    title: Published critical-line verification in a finite height range
+    kind: imported_theorem
+    statement: |
+      Every nontrivial zero rho=beta+i gamma with 0<gamma<=H,
+      where H=3*10^12 exactly, satisfies beta=1/2.
+      The assertion applies to every occurrence, with the upper endpoint
+      included. No simplicity assertion is imported.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PT-LOW-ZEROS]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: inp:low
+      bibliography_key: PT2021
+      version_consulted: published_abstract_and_arXiv_2004.09765v1
+      url: https://doi.org/10.1112/blms.12460
+      locator: "Published abstract; arXiv:2004.09765v1 Theorem 1 and Section 2, pp. 2-3"
+      publication_doi: 10.1112/blms.12460
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fixed finite interval; importing the statement uses no local limit interchange."
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-26"
+      statement_checked_against: publisher_abstract_and_arXiv_v1_theorem
+      final_journal_text_comparison: pending_beyond_abstract
+      endpoint_audit: "Published range 0<gamma<=3*10^12; no reliance on the larger v1 height 3000175332800."
+      rh_contamination_audit: "Published unconditional finite-range verification; no unproved RH or simplicity assumption."
+      computational_provenance: "External rigorous Arb computation and Turing-method zero accounting; computation and upstream analytic inputs not independently replayed or reconstructed."
+      proof_reconstruction: not_attempted
+      independent_verification: pending
+      local_certificate_replay: not_performed
+      numerical_certification: no_project_level_assigned
+
+  - id: PAIR-ENVELOPE-001
+    title: Explicit finite-height horizontal envelope including low ordinates
+    kind: lemma
+    statement: |
+      For every real Z>=3 define
+      nu_KV(Z)=1/((55241/1000)(log Z)^(2/3)(log log Z)^(1/3)),
+      with natural logarithms and positive real powers, and
+      B(Z)=max({0} union {delta_rho:|gamma|<=Z}), eta_*(Z)=1/2-B(Z),
+      where rho=1/2+delta_rho+i gamma runs over all nontrivial zero
+      occurrences with multiplicity and full weight at both endpoints.
+      Then 0<nu_KV(Z)<1/2, B(Z)<1/2-nu_KV(Z), and eta_*(Z)>nu_KV(Z).
+      Every retained occurrence satisfies
+      |delta_rho|<=B(Z)<1/2-nu_KV(Z).
+      The bounds for B and eta_* include an empty zero set, where B(Z)=0.
+      There are no nontrivial real zeros; occurrences with 0<|gamma|<3
+      have delta_rho=0 by ZETA-LOW-001 and conjugation.
+      The function nu_KV is strictly decreasing on [3,infinity).
+      Thus eta(Z)=nu_KV(Z) is an admissible envelope in PAIR-TRUNC-001,
+      including at Z_*=T log(T)^2 for every T>=3.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZETA-KV-001, ZETA-LOW-001, PAIR-COUNT-001, ZETA-ANALYTIC-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-envelope
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fixed finite Z throughout; bounds hold for every Z>=3. No local sum/integral/limit interchange."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Analytic logarithm bounds and differentiation, low-height verification, monotonicity, finite maximum and reflection."
+      endpoint_audit: "gamma=0 excluded by PAIR-COUNT-001; 0<|gamma|<3 covered by PT; |gamma|=3 and Z covered by the inclusive KV input; empty set and repeated occurrences included."
+      rh_contamination_audit: "Low-range delta=0 follows only from a published finite-range theorem; no assumption about arbitrary heights or simplicity."
+      computational_provenance: "True records the imported computer-assisted dependencies. The local deduction is analytic and uses no numerical approximation; no local certificate or replay is claimed."
+      local_computation_used_in_proof: false
+      local_certificate_replay: not_performed
+      interchange_audit: "No local interchange is needed; upstream audits remain as recorded in the imported claims."
+      independent_verification: pending
+      uniform_error_application: "Reconstructed as PAIR-COMPARE-001; independent review pending."
+      regression_checks: "All 28 existing exact checks passed on 2026-09-26; no new numerical algorithm or proof certificate."
+      source_structure_checks: "Unique YAML keys and 19 claim IDs, dependency resolution/acyclicity including source links, labels, references, bibliography keys, local links, exact rational bound and provenance flags checked on 2026-09-26."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built on 2026-09-26: 15 pages, all citations/references resolved, no final-pass warnings or overfull/underfull boxes."
+
+  - id: PAIR-COMPARE-001
+    title: Uniform comparison of the zero-side squared norm and pair sum
+    kind: lemma
+    statement: |
+      With L and Phi as in PAIR-TRUNC-001, uniformly for real T>=3
+      and 1<=X<=T,
+      L(X,T)=2 pi Phi(X,T)+O(T)+O(X),
+      with absolute effective implied constants. Both X endpoints are
+      included; zero occurrences retain full endpoint weight and multiplicity.
+      More explicitly, put Z_*=T log(T)^2 and nu=nu_KV(Z_*).
+      Then X^(1-2nu)log(T)^3 <= C_* T, where C_*=18!*84^18.
+      This is an auxiliary absorption constant, not the complete implied
+      constant of the comparison. For T>=5 the named Lemma 4 errors obey
+      E_trunc=O(X), E_height=O(T), E_extension=O(T), E_extension<=0.
+      For 3<=T<5 the existing direct comparison is O(X).
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-TRUNC-001, PAIR-ENVELOPE-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-compare
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Theorem 1 proof, equation (2.18)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Pointwise finite T and X throughout; estimates uniform on T>=3, 1<=X<=T. No new sum/integral/limit interchange."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Positive exponent gives monotonicity in X; elementary logarithm bounds and a finite Taylor lower bound absorb the logarithmic loss with an explicit constant."
+      endpoint_audit: "X=1 and X=T included; absorption valid at T=3; Lemma 4 named errors used only for T>=5 and its direct bounded-height argument for 3<=T<5."
+      error_audit: "Keep truncation O(X) separate from height and extension O(T); preserve the 2 pi normalization and extension sign."
+      rh_contamination_audit: "Uses only the unconditional truncation and established finite-height envelope; no new substitution for beta or assumption of simplicity."
+      computational_provenance: "True records inherited published computer-assisted inputs through PAIR-ENVELOPE-001. The local comparison is analytic; its auxiliary constant needs no numerical evaluation or certificate."
+      local_computation_used_in_proof: false
+      local_certificate_replay: not_performed
+      interchange_audit: "No new interchange; prior local justifications and upstream pending audits retain their recorded scope."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+      regression_checks: "All 28 existing exact regression checks passed on 2026-09-26; the auxiliary exponents and coarse constant were checked with exact rational arithmetic. These are algebra checks, not analytic proof certificates."
+      source_structure_checks: "Unique YAML keys and 20 claim IDs, dependency resolution/acyclicity including source links, labels, citations, references, local links and computational provenance checked on 2026-09-26."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built on 2026-09-26: 16 pages, resolved citations/references, no final-pass warnings or overfull/underfull boxes."
+
+  - id: PRIME-PNT-001
+    title: Effective classical prime number theorem
+    kind: imported_theorem
+    statement: |
+      There exist absolute effective constants c,C>0 such that for real u>=2,
+      |psi(u)-u|+|theta(u)-u| <= C u exp(-c sqrt(log u)),
+      where psi(u)=sum_{n<=u} Lambda(n), theta(u)=sum_{p<=u} log p.
+      All endpoints have full weight; logarithms are natural.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MV-PNT-PROOF]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: inp:prime-pnt
+      bibliography_key: MV2007
+      url: https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/10.0_pp_168_198_The_Prime_Number_Theorem.pdf
+      locator: "Theorem 6.9, equations (6.12)-(6.13), p. 179; proof pp. 180-181"
+      version_consulted: author_hosted_publisher_chapter
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Imported pointwise bounds for every u>=2; upstream interchange audit incomplete."
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-26"
+      proof_structure_audit: "Classical zero-free region, Perron truncation and contour shift; effective constants, no unproved RH or computational verification."
+      proof_reconstruction: not_attempted
+      independent_verification: pending
+
+  - id: PRIME-SIEVE-001
+    title: Uniform upper bound for prime pairs with even shift
+    kind: imported_theorem
+    statement: |
+      Uniformly for real U>=4 and positive even integer h,
+      #{p<=U: p and p+h prime} <= C g(h) U/(log U)^2,
+      where g(h)=product_{p|h,p>2} (p-1)/(p-2) and C is absolute
+      and effective, independent of U,h. No prime-pair asymptotic is assumed.
+    status: published
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MV-SIEVE-PROOF]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: inp:prime-sieve
+      bibliography_key: MV2007
+      url: https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/07.0_pp_76_107_Principles_and_first_examples_of_sieve_methods.pdf
+      locator: "Corollary 3.14, p. 97, specialized to x=0,y=U; fixed product and bounded error factor absorbed"
+      version_consulted: author_hosted_publisher_chapter
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Uniform imported upper bound; no local limiting operation."
+    project_audit:
+      task_type: source_verification
+      statement_checked: "2026-09-26"
+      uniformity_audit: "Source explicitly uniform in the nonzero even shift; elementary sieve constants effective."
+      proof_reconstruction: not_attempted
+      independent_verification: pending
+
+  - id: PAIR-MEANVALUE-001
+    title: Fourier mean-value bound with a strict nearby-frequency cutoff
+    kind: lemma
+    statement: |
+      Let M be a countable set of distinct real frequencies and c_mu complex
+      with sum_mu |c_mu| finite. Put F(t)=sum_mu c_mu exp(2 pi i mu t),
+      D=sum_mu |c_mu|^2. For T>=1 and 1/(2T)<=delta<=1/2,
+      integral_0^T |F(t)|^2 dt =
+      T D + O(delta^(-1) D
+        + T sum_{mu,lambda in M,0<|mu-lambda|<delta} |c_mu c_lambda|).
+      The pairs are ordered. Constants are absolute and effective.
+      Repeated frequencies must first be combined.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-meanvalue
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed T,delta; absolute coefficient summability permits Fubini and finite-sum approximation."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Explicit sinc-power convolution and endpoint majorants. Ordinary L1/L2 Fourier inversion; no imported Goldston-Montgomery lemma."
+      fourier_audit: "Negative-sign 2 pi transform; Khat=(3/2)(tau*tau)(2xi), B0hat=2(1+exp(-2 pi i xi))tau(2xi). Bandwidth delta in cycles."
+      boundary_audit: "Continuous L1 transforms vanish at +/-delta; time endpoints have measure zero."
+      interchange_audit: "Compact convolution integrals and ||M^pm||_1 (sum|c|)^2 majorant justify all exchanges."
+      independent_verification: pending
+
+  - id: PAIR-PRIME-COUNT-001
+    title: Averaged von Mangoldt pair counts and weighted nearby frequencies
+    kind: lemma
+    statement: |
+      For real U>=2,V>=1,
+      sum_{1<=m,n<=U,0<|m-n|<=V} Lambda(m)Lambda(n) << U V.
+      For 0<=V<1 the sum is empty. For X>=1,0<delta<=1/2 and
+      a_X(n)=Lambda(n)n^(-1/2)min(n/X,X/n),
+      Q(X,delta)=sum_{m,n>=1,0<|log(n/m)|<2 pi delta} a_X(n)a_X(m)
+      << delta X. All pairs are ordered; constants are absolute effective.
+      Odd prime shifts and all pairs involving proper prime powers are included.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PRIME-SIEVE-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:prime-count
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Finite U,V first; singular-factor expansion and dyadic tails use nonnegative convergent majorants."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      primepower_audit: "At most O(sqrt(U)log(2U)) proper powers; their ordered pairs contribute O(V sqrt(U)log^3(2U))=O(UV)."
+      uniformity_audit: "Sieve constant uniform in shift; average g(h) bounded by V exp(3/4). Cutoffs below 1 contribute no pairs."
+      independent_verification: pending
+
+  - id: PAIR-PRIME-DIAGONAL-001
+    title: Weighted diagonal with proper prime powers and inclusive cutoffs
+    kind: lemma
+    statement: |
+      For real X>=1, put ell_X=log(2X) and
+      D(X)=sum_n Lambda(n)^2 n^(-1) min(n/X,X/n)^2.
+      Then D(X)=log X+O(1) and D(X)<<ell_X.
+      The proper-prime-power contribution D_pp(X) is
+      O(X^(-1/2)ell_X^3)=O(1).
+      Exactly D(X)=X^(-2)sum_{n<=X}n Lambda(n)^2
+        +X^2 sum_{n>X}Lambda(n)^2/n^3.
+      Prime powers at n=X are counted once; constants are absolute effective.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PRIME-PNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:prime-diagonal
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Partial summation on finite intervals, then upper endpoint to infinity at fixed X; integrable derivative and dyadic tail bounds."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      endpoint_audit: "Weight continuous at real X, so no jump term even at a prime or proper prime power; X=1 included."
+      primepower_audit: "Elementary integer-power count, followed by a convergent nonnegative dyadic series."
+      independent_verification: pending
+
+  - id: PAIR-PRIME-MEAN-001
+    title: Weighted prime-series mean square through X=T
+    kind: lemma
+    statement: |
+      For T>=3,1<=X<=T, with P(X,t)=sum_n a_X(n)n^(-it) and
+      D,ell_X as in PAIR-PRIME-DIAGONAL-001,
+      integral_0^T |P(X,t)|^2 dt = T D(X)+E_offdiag,
+      |E_offdiag|<<sqrt(T X ell_X);
+      T D(X)=T log X+E_diagonal, |E_diagonal|<<T.
+      In particular ||P||_{L2(0,T)}<<sqrt(T ell_X).
+      Constants are absolute effective and both X endpoints are included.
+      E_offdiag is the entire error after subtracting T D, including the
+      diagonal cost of the auxiliary Fourier majorants.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-MEANVALUE-001, PAIR-PRIME-COUNT-001, PAIR-PRIME-DIAGONAL-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:prime-mean
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Prime-series tails vanish uniformly in t at fixed X,T; resulting estimates are uniform on 1<=X<=T."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      bandwidth_audit: "mu_n=-log(n)/(2 pi), delta=(1/2)sqrt(log(2X)/(TX)); 1/(2T)<=delta<=1/2 verified including X=1,T."
+      tail_audit: "For N>=max(2,X), sup_t |sum_{n>N} a_X(n)n^(-it)| << X(log N+1)/sqrt N."
+      independent_verification: pending
+
+  - id: PAIR-RHS-MEAN-001
+    title: Full unconditional prime-side mean square with separate error scales
+    kind: lemma
+    statement: |
+      Define A(X,t)=X^(-1)log(t+2) for t>=0,
+      H=E_arch+E_DS+E_pole+E_trivial using the exact PAIR-EF-001 remainders,
+      r(X,t)=-P(X,t)+A(X,t)+H(X,t), R(X,T)=integral_0^T |r(X,t)|^2 dt.
+      The explicit formula gives R=L with the existing normalization.
+      Uniformly for T>=3,1<=X<=T,
+      R(X,T)=T X^(-2)log(T)^2+T log X
+        +O(T log(T)/X^2)+O(T sqrt(log T)).
+      Constants are absolute effective; both X endpoints are included.
+      In particular the prime/archimedean cross term is
+      O(log(T+2)/sqrt X), proved by integration by parts.
+      Proper prime powers and all four named remainders are retained.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-EF-001, PAIR-PRIME-MEAN-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:rhs-mean
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, equations (2.17),(2.19) and remark"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed X,T for absolutely convergent series/integrals; all final estimates uniform for T>=3,1<=X<=T."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      error_audit: "Separate diagonal, off-diagonal, archimedean square, oscillatory prime/archimedean interaction, each original remainder's cross terms, and remainder square before combining."
+      rh_contamination_audit: "Uses unconditional PNT and upper-bound sieve, elementary Fourier analysis and PAIR-EF-001; no RH, simplicity, zero-density, prime-pair conjecture or computer-assisted KV input."
+      source_audit: "GM87 full text inaccessible; required mean-value bound proved locally, not imported from an unchecked citation. MV2007 PNT/sieve statements and proof structure checked."
+      endpoint_audit: "X=1,X=T,T=3 and n=X prime-power cutoffs included; n=1 has zero coefficient."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+      regression_checks: "38 exact tests passed on 2026-09-26: 28 existing and 10 new prime-side checks. New checks include independent kernel-convolution calculations, Fourier phase/support, finite diagonal and divisor identities, bandwidth algebra and cross-term signs; no numerical proof certificate."
+      source_structure_checks: "Unique YAML keys and 27 claim IDs, dependency resolution/acyclicity, theorem-label mapping, references, citations, local links and Python syntax passed. Prime-side dependency closure has only UNCONDITIONAL claims and no computational KV input."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined manuscript built on 2026-09-26: 22 pages, resolved references/citations, no final-pass warnings or overfull/underfull boxes."
+
+  - id: PAIR-NORM-INTEGRAL-001
+    title: Complex rational integral including coincident poles
+    kind: lemma
+    statement: |
+      For every complex a with |Im(a)|<1, the integral over real u of
+      1/((1+u^2)(1+(u+a)^2)) converges absolutely and equals 2 pi/(4+a^2).
+      At a=0 its value is pi/2. For the upper semicircle of radius
+      R>=4(|a|+1), the integral over the arc has modulus <=16 pi/R^3.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:norm-integral
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, equation (2.7)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed a, then semicircle radius R -> infinity; a=0 evaluated separately."
+    project_audit:
+      task_type: proof
+      interchange_justification: "No sum interchange; absolute real integral and explicit vanishing arc bound."
+      independent_verification: pending
+
+  - id: PAIR-NORM-001
+    title: Unconditional squared-norm identity retaining horizontal displacements
+    kind: lemma
+    statement: |
+      For X>0 and T>=3 let I_T index every nontrivial zeta zero occurrence
+      rho_j=1/2+delta_j+i gamma_j with 0<gamma_j<=T, counting multiplicity.
+      Put N(T)=|I_T|, M_X=max(X^(1/2),X^(-1/2)),
+      V_{X,T}(t)=sum_{j in I_T} X^(delta_j+i gamma_j)
+                            /(1+((t-gamma_j)+i delta_j)^2),
+      Phi(X,T)=sum_{j,k in I_T} X^(rho_j-rho_k) 4/(4-(rho_j-rho_k)^2).
+      Powers use the real logarithm of X. All ordered pairs are included.
+      V is in L^2(R) and Phi(X,T)=(2/pi) integral_R |V_{X,T}(t)|^2 dt.
+      For R>=2(T+1), integral_{|t|>R}|V_{X,T}(t)|^2 dt
+      <= (512/27) M_X^2 N(T)^2/R^3.
+      The identity includes X=1, 0<X<1, repeated zeros, same-ordinate
+      distinct complex zeros, and all zero occurrences at gamma=T.
+      No RH, simplicity, or quantitative zero-counting estimate is used.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-NORM-INTEGRAL-001, ZETA-ANALYTIC-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-norm
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Lemma 3, equations (2.6)-(2.8)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed X,T and ordered pair; contour radius -> infinity; only a finite pair sum follows."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      interchange_justification: |
+        Each summand is bounded by 4 M_X/(3(1+(t-gamma_j)^2));
+        pair products are L^1 by Cauchy-Schwarz and the sum is finite.
+        For a=(gamma_j-gamma_k)-i(delta_j+delta_k), the strip between
+        Im(u)=delta_j and Im(u)=0 has no poles; the joining sides contribute
+        at most 16/R^4 for R>=4(|a|+1). Coincident poles a=0 are covered.
+      rh_contamination_audit: "Only strip location, discreteness and multiplicity-preserving reflection of zeros are imported; RH appears solely in a marked specialization check."
+      diagonal_audit: "Reflection reindexes the full occurrence sum, not its index or equal-complex-zero diagonals."
+      regression_checks: "11 exact Lemma 3 tests and 8 existing Lemma 1 tests passed on 2026-09-25; these are not proof certificates."
+      source_structure_checks: "Ledger dependencies, theorem labels, references, citations, local links, TeX structure and Python syntax passed."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+
+  - id: PAIR-POSITIVITY-001
+    title: Reality, nonnegativity and inversion symmetry of the full pair sum
+    kind: corollary
+    statement: |
+      With Phi as in PAIR-NORM-001, for every X>0,T>=3, Phi(X,T) is real
+      and nonnegative, and Phi(X^(-1),T)=Phi(X,T).
+      Therefore F_T(alpha)=Phi(T^alpha,T)/(T log(T)/(2 pi)) is real,
+      nonnegative and even for all real alpha. No asymptotic is used.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-NORM-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: cor:pair-positivity
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Exact at fixed X,T; finite index exchange only."
+    project_audit:
+      task_type: proof
+      proof_method: "Squared norm and exchange of the two indices using the even rational weight."
+      independent_verification: pending
+
+  - id: PAIR-COUNT-001
+    title: Inclusive and local zero counts with full endpoint multiplicities
+    kind: lemma
+    statement: |
+      Let N(v) count every nontrivial zeta zero occurrence with 0<gamma<=v.
+      Uniformly for v>=3,
+      N(v)=v log(v/(2 pi))/(2 pi)-v/(2 pi)+O(log v),
+      and N(v)~v log(v)/(2 pi) as v->infinity.
+      An absolute effective C_count exists such that, for every real v,
+      #{rho:v<=gamma<=v+1}<=C_count log(|v|+2), with full endpoint
+      multiplicities. For V>=2, #{rho:|gamma|<=V}<<V log(V+2).
+      There are no nontrivial zeros with gamma=0, as established by
+      the locally uniformly convergent paired alternating series.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZETA-COUNT-001, ZETA-ANALYTIC-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-count
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Lemma 2, equations (2.4)-(2.5)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Endpoint translations are finite sandwiches; v->infinity only for the stated count asymptotic."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      imported_scope: "Riemann-von Mangoldt remains ZETA-COUNT-001; its upstream proof is not reconstructed."
+      endpoint_audit: "Padded midpoint counts bound full-weight endpoints; conjugation and an effective bounded-height count cover all real intervals."
+      interchange_justification: "Paired alternating-series terms have locally summable O_K(n^(-1-epsilon)) majorants for Re(s)>0."
+      rh_contamination_audit: "Uses MV2007 Corollary 14.3; the RH-dependent Corollary 14.4 is excluded."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+
+  - id: PAIR-COUNT-KERNEL-001
+    title: Global, distant and boundary rational-kernel estimates from local counts
+    kind: lemma
+    statement: |
+      Write kappa(y)=1/(1+y^2) and sum over all nontrivial zero occurrences.
+      K(t)=sum_rho kappa(t-gamma)<<log(|t|+2) for all real t.
+      For T>=3,Z>=2T,0<=t<=T,
+      sum_{|gamma|>Z} kappa(t-gamma)<<log(Z)/Z.
+      For T>=3, put B_T(t)=sum_{gamma<=0 or gamma>T} kappa(t-gamma)
+      and A_T^ker(t)=sum_{0<gamma<=T} kappa(t-gamma).
+      For 0<=t<=T,
+      B_T(t)<<log(T+2)(1/(1+t)+1/(1+T-t)).
+      For t outside [0,T],
+      A_T^ker(t)<<log(T+2)/(1+dist(t,[0,T])).
+      The infinite sums converge absolutely; all constants are absolute
+      and effective, uniformly in the displayed parameter ranges.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:count-kernel
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, equations (2.14)-(2.15) and boundary estimates after (2.15)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed parameters; nonnegative shell sums are justified by monotone convergence and summable majorants."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      proof_method: "Unit-interval counts, elementary shifted series and dyadic shells; no imported pair-correlation theorem."
+      independent_verification: pending
+      final_journal_text_comparison: pending
+
+  - id: PAIR-TRUNC-001
+    title: Unconditional height truncation with separate uniform errors
+    kind: lemma
+    statement: |
+      For X>=1 let v_rho(t)=X^(delta_rho+i gamma)
+      /(1+((t-gamma)+i delta_rho)^2), U_X=sum_rho v_rho,
+      U_{X,Z}=sum_{|gamma|<=Z} v_rho, and V_{X,T}=sum_{0<gamma<=T} v_rho.
+      Powers use the real logarithm. All sums count occurrences with
+      multiplicity and full weight at their included endpoints.
+      Define L(X,T)=4 integral_0^T |U_X(t)|^2 dt
+      =integral_0^T |S(X,t)|^2 dt, where S is PAIR-EF-CONVERGENCE-001.
+      Set B(Z)=max({0} union {delta_rho:|gamma|<=Z}), so 0<=B(Z)<1/2.
+      For X>=1,T>=3,Z>=2T, with Phi as in PAIR-NORM-001,
+      L(X,T)=2 pi Phi(X,T)+E_trunc+E_height+E_extension, exactly, where
+      E_trunc=4 integral_0^T (|U_X|^2-|U_{X,Z}|^2) dt,
+      E_height=4 integral_0^T (|U_{X,Z}|^2-|V_{X,T}|^2) dt,
+      E_extension=-4 integral_{R outside [0,T]} |V_{X,T}|^2 dt.
+      Uniformly,
+      |E_trunc|<<XT(log(T+2)log(Z)/Z+log(Z)^2/Z^2)<<XT log(Z)^2/Z,
+      |E_height|<<X^(2B(Z))log(T)^3,
+      |E_extension|<<X^(2B(Z))log(T)^2, and E_extension<=0.
+      Consequently for all X>=1,T>=3 and Z_*=T log(T)^2,
+      Phi(X,T)=L(X,T)/(2 pi)+O(X^(2B(Z_*))log(T)^3)+O(X).
+      With eta_*(Z)=1/2-B(Z), the first error is
+      O(X^(1-2eta_*(Z_*))log(T)^3). It has the same bound with any
+      established envelope 0<=eta(Z_*)<=1/2 satisfying B(Z_*)<=1/2-eta(Z_*).
+      Constants are absolute and effective, independent of that envelope.
+      No quantitative zero-free region, RH or simplicity is assumed.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-COUNT-KERNEL-001, PAIR-EF-CONVERGENCE-001, PAIR-NORM-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/pair_baseline.tex
+      label: lem:pair-trunc
+      comparison_bibliography_key: BGSTB2024
+      comparison_locator: "arXiv:2306.04799v1, Lemma 4, equations (2.12)-(2.16)"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Full zero sum first defined by local uniform convergence at fixed X,T; finite Z estimates are uniform; choose Z=T log(T)^2 only for T>=5."
+    project_audit:
+      task_type: proof
+      proof_reconstruction: completed_draft
+      interchange_justification: "Absolutely convergent kernel majorants control the full sum; use squared-modulus differences, not an infinite double-sum expansion. All integrals are absolutely convergent."
+      small_height_audit: "For 3<=T<5, Z_*=T log(T)^2 need not be >=2T; bound L and Phi directly by O(X) instead."
+      endpoint_audit: "gamma=T and gamma=+/-Z included with full multiplicity; X=1, bounded heights and empty finite sets covered."
+      horizontal_audit: "Apply X^B(Z) only to retained zeros before extending nonnegative unweighted kernel bounds; no unproved eta bound is imported."
+      regression_checks: "9 exact Lemmas 2/4 checks, 8 Lemma 1 checks and 11 Lemma 3 checks passed on 2026-09-25; none is a proof certificate."
+      source_structure_checks: "Ledger dependency resolution/acyclicity, theorem labels, references, citations, local links, TeX structure, Python syntax and whitespace checks passed."
+      compilation: passed_pdflatex_bibtex
+      compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
+      independent_verification: pending
+      final_journal_text_comparison: pending

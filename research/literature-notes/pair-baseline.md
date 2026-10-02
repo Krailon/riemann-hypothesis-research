@@ -3,7 +3,9 @@
 Task: exposition and source verification. Assumptions: `UNCONDITIONAL`;
 the explicitly marked RH specialization is a check under `RH`.
 Ledger: `PAIR-BGSTB-001` (imported result), `PAIR-TRANSLATION-001`
-(local algebra, `proved-draft`). Conventions: [notation](../notation.md).
+(local algebra), and `PAIR-ASYMPTOTIC-001` (local theorem);
+both local claims have status `proved-draft`.
+Conventions: [notation](../notation.md).
 
 Source: Baluyot–Goldston–Suriajaya–Turnage-Butterbaugh,
 *An unconditional Montgomery theorem for pair correlation of zeros of the
@@ -14,7 +16,7 @@ confirms publication. The mathematical text consulted is the
 [arXiv v1 PDF](https://arxiv.org/pdf/2306.04799v1), a **PREPRINT version of
 the published work**; all source labels below refer to that version.
 Access checked 2026-09-25. Comparison with the final journal text and the
-project's proof audit are pending.
+imported proof's full audit are pending; the local audit is recorded below.
 
 ## 1. Imported theorem — PAIR-BGSTB-001
 
@@ -118,30 +120,169 @@ asserts no boundary extension for a later correlation theorem. Keep \(q_T\)
 exact: although it tends to one, changing normalization at the height
 \(\log T\) peak can produce an \(O(1)\) difference.
 
-## 4. Inputs to reconstruct next
+These definitions, identities and boundary conventions are now recorded
+in the [machine-checkable table](../pair-conventions.json).
+The [exact checker](../../scripts/check_pair_conventions.py) consumes
+its formulas and interval metadata, including the separate mean-value
+bandwidth and kernel support conventions; see
+[the format and commands](../notation.md#machine-checkable-pair-conventions).
 
-The following source map records the remaining reconstruction work.
-Lemma 1 now has a local `proved-draft` reconstruction; independent review
+## 4. Reconstructed inputs and remaining audits
+
+The following source map records the reconstructed inputs and outstanding audits.
+Lemmas 1–4 now have local `proved-draft` reconstructions; Lemma 2 retains
+Riemann–von Mangoldt as an explicitly imported input. Independent review
 remains pending. Source IDs and local claim IDs are linked in the ledger.
 
 | ID | Source locator | Role and outstanding check |
 | --- | --- | --- |
 | `BGSTB-EF` | Lemma 1, (2.2)–(2.3) | Reconstructed as `PAIR-EF-001`; see the [proof and endpoint audit](pair-lemma1-audit.md). Independent review and journal comparison pending. |
-| `BGSTB-COUNT` | Lemma 2, (2.4)–(2.5) | Verify multiplicity-aware zero counting and local bounds used for tails. |
-| `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Check the squared-norm identity, contour shift and rational integral for nonzero \(\delta,\delta'\). |
-| `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Audit height removal and tails at \(Z=T\log^2T\); retain \(X^{1-2\eta(Z)}\log^3T\) and \(O(X)\) separately. |
-| `BGSTB-ZFR` | Theorem 1 proof, before (2.18) | Locate a primary Korobov–Vinogradov bound and verify its use uniformly for \(1\leq X\leq T\). |
-| `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstruct the prime-side mean square, including prime powers and cross terms; verify the cited Goldston–Montgomery Lemma 6 refinement and endpoint \(X=T\). |
+| `BGSTB-COUNT` | Lemma 2, (2.4)–(2.5) | Inclusive and local counts reconstructed as `PAIR-COUNT-001`; kernel bounds in `PAIR-COUNT-KERNEL-001`. See the [counting and truncation audit](pair-lemma4-audit.md). |
+| `BGSTB-NORM` | Lemma 3, (2.6)–(2.8) | Reconstructed as `PAIR-NORM-001`, with integral and positivity claims; see the [contour and multiplicity audit](pair-lemma3-audit.md). Independent review and journal comparison pending. |
+| `BGSTB-TRUNC` | Lemma 4, (2.13)–(2.16) | Reconstructed as `PAIR-TRUNC-001` with three named errors and a separate small-height argument; see the [audit](pair-lemma4-audit.md). Independent review and journal comparison pending. |
+| `BGSTB-ZFR` | Theorem 1 proof, (2.18) | Reconstructed as `PAIR-COMPARE-001`, using the finite-height envelope `PAIR-ENVELOPE-001` and published KV/low-height inputs; see the [audit](korobov-vinogradov-audit.md). Independent review and journal comparison pending. |
+| `BGSTB-MEAN` | (2.17)–(2.19) and following remark | Reconstructed as `PAIR-RHS-MEAN-001`, with a local Fourier mean-value proof, published PNT/sieve inputs, prime powers, cross terms and \(X=T\) covered; see the [audit](pair-prime-mean-audit.md). Independent review and journal comparison pending. |
 
-The last row is an unresolved citation chain, not permission to use an
-RH-dependent pair theorem. Work only on \(1\leq X\leq T\); v1's printed
+The cited Goldston–Montgomery mean-value estimate is proved locally in
+`PAIR-MEANVALUE-001`; its original full text was inaccessible, and it
+is not imported as an unchecked dependency. The theorem assembly uses
+\(1\leq X\leq T\); v1's printed
 \(0\leq X\leq T\) before (2.19) cannot include \(X=0\), where its formula
-is undefined. The full dependency graph, named error budget, and RH
-contamination audit remain Work Package A tasks.
+is undefined. The [dependency graph](../dependency-graph.md) now maps
+every currently recorded dependency of the local normalized theorem,
+including imported sources and computational provenance. The
+[consolidated error budget](../pair-error-budget.md) traces each component
+through normalization, with signs, parameter ranges, and limit conventions.
+The [RH-contamination audit](../pair-rh-audit.md) covers the local proof
+and imported-statement hypotheses; upstream reconstruction remains pending.
 
-**Completed local proof task:** Lemma 1 now has an exact contour identity,
+**Completed local proof tasks:** Lemma 1 now has an exact contour identity,
 absolute/local uniform convergence, prime-power and \(X=1\) conventions,
 and separately bounded remainders; see [the reconstruction](../../proofs/pair_baseline.tex).
-**Next bounded proof task:** reconstruct Lemma 3's squared-norm identity,
-including its contour shift for nonzero horizontal displacements. The
-pair-correlation asymptotic itself remains an imported theorem.
+Lemma 3 now has a squared-norm proof, an explicit integral tail bound,
+the off-line contour shift including coincident poles, and a
+multiplicity-preserving reflection argument. Its corollary proves reality,
+nonnegativity and evenness without the asymptotic theorem.
+Lemma 2's inclusive/local counting consequences and Lemma 4's height
+truncation are now reconstructed. The latter applies for all \(X\geq1,T\geq3\),
+with `E_trunc`, `E_height` and `E_extension` bounded separately. Its
+horizontal envelope is defined from the finite zero set and carries no
+unproved quantitative zero-free-region assumption.
+**Completed source task:** a published quantitative Korobov–Vinogradov
+theorem is recorded as `ZETA-KV-001`, with explicit threshold, closed
+boundary and external computational provenance. Its proof has not been
+independently reconstructed or its computations replayed.
+**Completed envelope proof draft:** `PAIR-ENVELOPE-001` derives
+\(B(Z)<1/2-\nu_{\rm KV}(Z)\) for every \(Z\geq3\), including the
+low-ordinate range through the published input `ZETA-LOW-001`.
+It checks monotonicity, both signs, endpoints, multiplicity, and the empty
+zero set. External computational provenance is retained in the ledger.
+**Completed uniform comparison draft:** `PAIR-COMPARE-001` proves
+\(L(X,T)=2\pi\Phi(X,T)+O(T)+O(X)\), uniformly for \(T\geq3\) and
+\(1\leq X\leq T\), with effective constants and all endpoints covered.
+It keeps truncation separate from the height and extension errors and
+inherits the recorded external computational provenance.
+**Completed prime-side draft:** `PAIR-RHS-MEAN-001` proves
+\[
+ R(X,T)=TX^{-2}\log^2T+T\log X+
+ O(TX^{-2}\log T)+O(T\sqrt{\log T})
+\]
+uniformly for \(T\geq3,1\leq X\leq T\), with \(R=L\) by the
+existing explicit formula. Its local Fourier argument and published
+PNT/sieve inputs retain proper prime powers and named cross-term errors.
+This part uses no numerical proof input.
+**Completed normalized theorem draft:** `PAIR-ASYMPTOTIC-001`
+assembles these estimates, as detailed below.
+**Completed dependency map:** the [graph](../dependency-graph.md) covers
+26 claims, four source pointers, and all 39 recorded dependency edges.
+It distinguishes proof inputs from provenance and comparison links;
+upstream foundational completeness is not claimed.
+**Completed error budget:** the [named budget](../pair-error-budget.md)
+connects the explicit-formula remainders, thirteen prime-side square
+components, zero-side comparison, and final two error scales. It separates
+included prime-power contributions and vanishing auxiliary tails.
+**Completed convention table:** the [JSON records](../pair-conventions.json)
+and [checker](../../scripts/check_pair_conventions.py) cover Fourier signs,
+exact scales and phases, normalizations, domains, kernel supports and
+endpoint conventions. These are regression checks of existing mathematics.
+**Completed local RH-contamination review:** see the [audit](../pair-rh-audit.md).
+**Remaining Work Package A work:** the clean-checkout reproduction harness.
+Independent review and final journal-text comparison remain pending.
+
+## 5. Local normalized theorem — PAIR-ASYMPTOTIC-001
+
+Task: proof. Assumptions: `UNCONDITIONAL`. Status: `proved-draft`.
+The [manuscript](../../proofs/pair_baseline.tex), label
+`thm:pair-asymptotic`, proves that there are absolute effective
+\(C_1,C_2>0\) such that, for every \(T\geq3\) and \(|\alpha|\leq1\),
+\[
+ \left|\mathcal F_T(\alpha)-T^{-2|\alpha|}\log T-|\alpha|\right|
+ \leq C_1T^{-2|\alpha|}+C_2(\log T)^{-1/2}.
+\]
+The observable and all diagonal/multiplicity conventions are those in §1.
+The normalization remains \(C_T=T\log T/(2\pi)\).
+This is a local reconstruction of the imported theorem; its proof depends
+on `PAIR-COMPARE-001`, `PAIR-RHS-MEAN-001`, and
+`PAIR-POSITIVITY-001`, without using `PAIR-BGSTB-001` as a premise.
+
+At fixed \(T\geq3,1\leq X\leq T\), use \(R=L\), then divide the
+resulting expression for \(2\pi\Phi\) by \(Tq\), where \(q=\log T>1\).
+The four errors normalize as follows:
+
+| Source error | Normalized bound |
+| --- | --- |
+| Prime-side peak error \(O(Tq/X^2)\) | \(O(X^{-2})\) |
+| Remaining prime-side error \(O(T\sqrt q)\) | \(O(q^{-1/2})\) |
+| Comparison \(O(T)\) | \(O(q^{-1})\) |
+| Comparison \(O(X)\) | \(O(X/(Tq))\) |
+
+Since \(X/(Tq)\leq q^{-1}\leq q^{-1/2}\), absorb the comparison
+errors and substitute \(X=T^\alpha\) for \(0\leq\alpha\leq1\).
+Negative \(\alpha\) uses exact evenness, not the prime-side estimate at
+\(X<1\). Reality and nonnegativity on all of \(\mathbb R\) are already
+proved by `PAIR-POSITIVITY-001`.
+
+Both endpoints are included:
+\(\mathcal F_T(0)=\log T+O(1)\) and
+\(\mathcal F_T(\pm1)=1+O((\log T)^{-1/2})\).
+The peak error cannot be discarded at zero. There is no new interchange:
+the estimates hold uniformly even for \(\alpha=\alpha(T)\in[-1,1]\).
+No extension beyond this closed interval is claimed.
+The exact scale translation in §3 remains applicable.
+
+Effectivity is inherited from the local input estimates; complete numerical
+values of \(C_1,C_2\) are not supplied. The comparison retains published
+computer-assisted zero-free-region and low-height inputs. No local
+certificate or independent replay is claimed, and the remaining upstream
+audit obligations are unchanged.
+
+The standard-library script
+`python3 -B scripts/check_pair_asymptotic.py`
+checks both main-term coefficients, all four error scales, signed comparison
+errors, rational-power substitutions including endpoints, and the elementary
+absorption algebra. These are exact regression checks, not certificates
+of the asymptotic or numerical evidence about zeta zeros.
+
+Validation on 2026-09-28: all 43 exact regression tests passed (38 existing
+and 5 normalization tests), using
+`python3 -B -m unittest discover -s scripts -p 'check_pair_*.py' -v`.
+The 28-claim ledger passed unique-key/ID, dependency-resolution and
+acyclicity checks, including source-node and reconstruction links.
+The local theorem's dependency closure contains only `UNCONDITIONAL`
+claims, retains the published computational inputs, and excludes the
+imported headline theorem. Theorem-label mappings, references, citations,
+local file links and Python syntax passed.
+The manuscript compiled in an isolated temporary directory with pdfLaTeX,
+BibTeX and two resolving LaTeX passes to a 23-page PDF, with no final-pass
+warnings, unresolved references/citations, or overfull/underfull boxes.
+
+Convention-table validation on 2026-09-28: all 52 regression tests passed
+(43 existing tests and nine new convention checks). The JSON table contains
+43 records: seven domains, one Fourier convention, ten definitions,
+thirteen identities, ten intervals, one zero-count convention and one
+test-function requirement. The new checker passed both directly and under
+unittest discovery, including deliberate mutations of signs, scales,
+normalizations, domains and endpoint flags. Source claim IDs, local source
+labels, documentation links and Python syntax were checked. No new
+dependency, analytic claim, numerical certificate or PDF rebuild was needed;
+the manuscript and theorem ledger are unchanged.

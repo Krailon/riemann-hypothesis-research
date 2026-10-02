@@ -1,0 +1,437 @@
+{
+  "absorption": {
+    "comparison_T_over_mean": {
+      "coefficient": "1",
+      "expression": "q^(-1/2)",
+      "powers": {
+        "q": "-1/2"
+      }
+    },
+    "comparison_X_over_comparison_T": {
+      "coefficient": "1",
+      "expression": "T^(-1) * X",
+      "powers": {
+        "T": "-1",
+        "X": "1"
+      }
+    },
+    "justification": "X/T<=1 and q^(-1/2)<=1. Constants remain unspecified.",
+    "source": {
+      "claim_id": "PAIR-ASYMPTOTIC-001",
+      "file": "proofs/pair_baseline.tex",
+      "label": "eq:pair-normalization"
+    }
+  },
+  "analytic_proof_certificate": false,
+  "assumptions": [
+    "UNCONDITIONAL"
+  ],
+  "claim_id": "PAIR-ASYMPTOTIC-001",
+  "claim_status": "proved-draft",
+  "comparison_signs": {
+    "2piPhi_minus_L": {
+      "E_extension": -1,
+      "E_height": -1,
+      "E_trunc": -1
+    },
+    "L_minus_2piPhi": {
+      "E_extension": 1,
+      "E_height": 1,
+      "E_trunc": 1
+    },
+    "domain": "T>=5, Z=T log^2 T, 1<=X<=T",
+    "small_height": "For 3<=T<5 use E_compare_X=2 pi Phi-L and E_compare_T=0.",
+    "source": {
+      "claim_id": "PAIR-TRUNC-001",
+      "file": "proofs/pair_baseline.tex",
+      "label": "eq:trunc-decomposition"
+    }
+  },
+  "definitions": {
+    "C_T": "T log T / (2 pi)",
+    "a": "|alpha|",
+    "l": "log X",
+    "q": "log T",
+    "v": "T^a"
+  },
+  "domains": [
+    "T>=3",
+    "1<=X<=T",
+    "q=log T>1",
+    "|alpha|<=1"
+  ],
+  "endpoints": [
+    {
+      "absolute_error_scales": [
+        {
+          "coefficient": "1",
+          "expression": "1",
+          "powers": {}
+        },
+        {
+          "coefficient": "1",
+          "expression": "q^(-1/2)",
+          "powers": {
+            "q": "-1/2"
+          }
+        }
+      ],
+      "alpha": "0",
+      "main_terms": [
+        {
+          "coefficient": "1",
+          "expression": "q",
+          "powers": {
+            "q": "1"
+          }
+        },
+        {
+          "coefficient": "0",
+          "expression": "0",
+          "powers": {}
+        }
+      ]
+    },
+    {
+      "absolute_error_scales": [
+        {
+          "coefficient": "1",
+          "expression": "T^(-2)",
+          "powers": {
+            "T": "-2"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "q^(-1/2)",
+          "powers": {
+            "q": "-1/2"
+          }
+        }
+      ],
+      "alpha": "1",
+      "main_terms": [
+        {
+          "coefficient": "1",
+          "expression": "T^(-2) * q",
+          "powers": {
+            "T": "-2",
+            "q": "1"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "1",
+          "powers": {}
+        }
+      ]
+    },
+    {
+      "absolute_error_scales": [
+        {
+          "coefficient": "1",
+          "expression": "T^(-2)",
+          "powers": {
+            "T": "-2"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "q^(-1/2)",
+          "powers": {
+            "q": "-1/2"
+          }
+        }
+      ],
+      "alpha": "-1",
+      "main_terms": [
+        {
+          "coefficient": "1",
+          "expression": "T^(-2) * q",
+          "powers": {
+            "T": "-2",
+            "q": "1"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "1",
+          "powers": {}
+        }
+      ]
+    }
+  ],
+  "final": {
+    "absolute_error_scales": [
+      {
+        "coefficient": "1",
+        "expression": "T^(-2*a)",
+        "powers": {
+          "v": "-2"
+        }
+      },
+      {
+        "coefficient": "1",
+        "expression": "q^(-1/2)",
+        "powers": {
+          "q": "-1/2"
+        }
+      }
+    ],
+    "main_terms": [
+      {
+        "coefficient": "1",
+        "expression": "q * T^(-2*a)",
+        "powers": {
+          "q": "1",
+          "v": "-2"
+        }
+      },
+      {
+        "coefficient": "1",
+        "expression": "a",
+        "powers": {
+          "a": "1"
+        }
+      }
+    ],
+    "source": {
+      "claim_id": "PAIR-ASYMPTOTIC-001",
+      "file": "proofs/pair_baseline.tex",
+      "label": "eq:pair-asymptotic-bound"
+    }
+  },
+  "normalization": {
+    "divisor": {
+      "coefficient": "1",
+      "expression": "T * q",
+      "powers": {
+        "T": "1",
+        "q": "1"
+      }
+    },
+    "quantity": "2 pi Phi / (T q) = Phi / C_T",
+    "source": {
+      "claim_id": "PAIR-ASYMPTOTIC-001",
+      "file": "proofs/pair_baseline.tex",
+      "label": "eq:pair-normalization"
+    }
+  },
+  "rows": [
+    {
+      "after_normalization": {
+        "coefficient": "1",
+        "expression": "X^(-2) * q",
+        "powers": {
+          "X": "-2",
+          "q": "1"
+        }
+      },
+      "after_substitution": {
+        "coefficient": "1",
+        "expression": "q * T^(-2*a)",
+        "powers": {
+          "q": "1",
+          "v": "-2"
+        }
+      },
+      "before_normalization": {
+        "coefficient": "1",
+        "expression": "T * X^(-2) * q^(2)",
+        "powers": {
+          "T": "1",
+          "X": "-2",
+          "q": "2"
+        }
+      },
+      "id": "archimedean_main",
+      "kind": "main",
+      "source": {
+        "claim_id": "PAIR-RHS-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:rhs-mean"
+      }
+    },
+    {
+      "after_normalization": {
+        "coefficient": "1",
+        "expression": "l * q^(-1)",
+        "powers": {
+          "l": "1",
+          "q": "-1"
+        }
+      },
+      "after_substitution": {
+        "coefficient": "1",
+        "expression": "a",
+        "powers": {
+          "a": "1"
+        }
+      },
+      "before_normalization": {
+        "coefficient": "1",
+        "expression": "T * l",
+        "powers": {
+          "T": "1",
+          "l": "1"
+        }
+      },
+      "id": "prime_main",
+      "kind": "main",
+      "source": {
+        "claim_id": "PAIR-RHS-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:rhs-mean"
+      }
+    },
+    {
+      "after_normalization": {
+        "coefficient": "1",
+        "expression": "X^(-2)",
+        "powers": {
+          "X": "-2"
+        }
+      },
+      "after_substitution": {
+        "coefficient": "1",
+        "expression": "T^(-2*a)",
+        "powers": {
+          "v": "-2"
+        }
+      },
+      "before_normalization": {
+        "coefficient": "1",
+        "expression": "T * X^(-2) * q",
+        "powers": {
+          "T": "1",
+          "X": "-2",
+          "q": "1"
+        }
+      },
+      "id": "E_peak",
+      "kind": "error",
+      "source": {
+        "claim_id": "PAIR-RHS-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:rhs-mean"
+      }
+    },
+    {
+      "after_normalization": {
+        "coefficient": "1",
+        "expression": "q^(-1/2)",
+        "powers": {
+          "q": "-1/2"
+        }
+      },
+      "after_substitution": {
+        "coefficient": "1",
+        "expression": "q^(-1/2)",
+        "powers": {
+          "q": "-1/2"
+        }
+      },
+      "before_normalization": {
+        "coefficient": "1",
+        "expression": "T * q^(1/2)",
+        "powers": {
+          "T": "1",
+          "q": "1/2"
+        }
+      },
+      "id": "E_mean",
+      "kind": "error",
+      "source": {
+        "claim_id": "PAIR-RHS-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:rhs-mean"
+      }
+    },
+    {
+      "after_normalization": {
+        "coefficient": "1",
+        "expression": "q^(-1)",
+        "powers": {
+          "q": "-1"
+        }
+      },
+      "after_substitution": {
+        "coefficient": "1",
+        "expression": "q^(-1)",
+        "powers": {
+          "q": "-1"
+        }
+      },
+      "before_normalization": {
+        "coefficient": "1",
+        "expression": "T",
+        "powers": {
+          "T": "1"
+        }
+      },
+      "id": "E_compare_T",
+      "kind": "error",
+      "source": {
+        "claim_id": "PAIR-COMPARE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:pair-compare"
+      }
+    },
+    {
+      "after_normalization": {
+        "coefficient": "1",
+        "expression": "T^(-1) * X * q^(-1)",
+        "powers": {
+          "T": "-1",
+          "X": "1",
+          "q": "-1"
+        }
+      },
+      "after_substitution": {
+        "coefficient": "1",
+        "expression": "T^(-1) * q^(-1) * T^a",
+        "powers": {
+          "T": "-1",
+          "q": "-1",
+          "v": "1"
+        }
+      },
+      "before_normalization": {
+        "coefficient": "1",
+        "expression": "X",
+        "powers": {
+          "X": "1"
+        }
+      },
+      "id": "E_compare_X",
+      "kind": "error",
+      "source": {
+        "claim_id": "PAIR-COMPARE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:pair-compare"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "scope": [
+    "Analytic bounds and uniformity are inputs from the written proof.",
+    "Big-O constants are effective but are not computed here.",
+    "At alpha=0 retain the peak error scale 1, giving total error O(1).",
+    "At alpha=+/-1 the written proof absorbs T^(-2)q into O(q^(-1/2)).",
+    "Full complex-zero weights, multiplicities and C_T are unchanged.",
+    "Published computer-assisted dependencies are not replayed."
+  ],
+  "substitution": {
+    "identities": [
+      "X=T^a",
+      "l=a*q"
+    ],
+    "negative_alpha": "Use exact evenness, not a prime estimate at X<1.",
+    "source": {
+      "claim_id": "PAIR-POSITIVITY-001",
+      "file": "proofs/pair_baseline.tex",
+      "label": "cor:pair-positivity"
+    }
+  },
+  "task": "verification_and_exposition"
+}

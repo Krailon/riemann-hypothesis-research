@@ -78,7 +78,8 @@ For a TeX-equipped checkout, compile from `proofs/`:
 latexmk -pdf -interaction=nonstopmode -halt-on-error pair_baseline.tex
 ```
 
-The current environment has no `latexmk`, `pdflatex`, `tectonic`, or `bibtex`.
-Source-level label/citation and ledger checks are performed; PDF compilation
-is unavailable. Independent mathematical review, journal-version comparison,
-and the other pair-baseline lemmas remain pending.
+After installation of the missing TeX packages, the combined draft compiled
+successfully on 2026-09-25: 13 pages, with bibliography and references resolved
+and no final-pass warnings. See the [build record](pair-lemma4-audit.md).
+Independent mathematical review and journal-version comparison remain pending.
+Current reconstruction status is in the [baseline note](pair-baseline.md).

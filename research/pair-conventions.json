@@ -1,0 +1,647 @@
+{
+  "schema_version": 1,
+  "task": "exposition_and_exact_regression",
+  "assumptions": [
+    "UNCONDITIONAL"
+  ],
+  "symbols": {
+    "T": "Real height; domain restrictions are recorded per entry.",
+    "X": "Positive prime-side base.",
+    "p": "Formal symbol for 2*pi, not a rational approximation.",
+    "ell": "Formal symbol for log(T).",
+    "c": "Formal symbol for log(2*pi); log(T/(2*pi)) is ell-c.",
+    "ell_X": "Formal symbol for log(2*X).",
+    "b": "beta_j-beta_k; horizontal real-part difference.",
+    "d": "gamma_j-gamma_k; opposite orientation to u/L_T.",
+    "alpha": "Pair theorem frequency.",
+    "delta": "Auxiliary Fourier bandwidth in cycles per unit t.",
+    "lambda_n": "Formal log(n).",
+    "lambda_m": "Formal log(m).",
+    "Phi": "Common unnormalized observable at the matched exponential base.",
+    "i": "Imaginary unit, evaluated with exact Gaussian rational arithmetic."
+  },
+  "records": [
+    {
+      "id": "all",
+      "kind": "domain",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "conditions": []
+    },
+    {
+      "id": "pair",
+      "kind": "domain",
+      "source": {
+        "claim_id": "PAIR-ASYMPTOTIC-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "thm:pair-asymptotic"
+      },
+      "conditions": [
+        {
+          "left": "T",
+          "relation": ">=",
+          "right": "3"
+        }
+      ]
+    },
+    {
+      "id": "spacing",
+      "kind": "domain",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "conditions": [
+        {
+          "left": "T",
+          "relation": ">",
+          "right": "p"
+        }
+      ]
+    },
+    {
+      "id": "meanvalue",
+      "kind": "domain",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "conditions": [
+        {
+          "left": "T",
+          "relation": ">=",
+          "right": "1"
+        }
+      ]
+    },
+    {
+      "id": "prime",
+      "kind": "domain",
+      "source": {
+        "claim_id": "PAIR-PRIME-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:prime-bandwidth"
+      },
+      "conditions": [
+        {
+          "left": "T",
+          "relation": ">=",
+          "right": "3"
+        },
+        {
+          "left": "X",
+          "relation": ">=",
+          "right": "1"
+        },
+        {
+          "left": "X",
+          "relation": "<=",
+          "right": "T"
+        }
+      ]
+    },
+    {
+      "id": "bandwidth",
+      "kind": "domain",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "conditions": [
+        {
+          "left": "T",
+          "relation": ">=",
+          "right": "1"
+        },
+        {
+          "left": "delta",
+          "relation": ">=",
+          "right": "1/(2*T)"
+        },
+        {
+          "left": "delta",
+          "relation": "<=",
+          "right": "1/2"
+        }
+      ]
+    },
+    {
+      "id": "nearby",
+      "kind": "domain",
+      "source": {
+        "claim_id": "PAIR-PRIME-COUNT-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:prime-close-pairs"
+      },
+      "conditions": [
+        {
+          "left": "X",
+          "relation": ">=",
+          "right": "1"
+        },
+        {
+          "left": "delta",
+          "relation": ">",
+          "right": "0"
+        },
+        {
+          "left": "delta",
+          "relation": "<=",
+          "right": "1/2"
+        }
+      ]
+    },
+    {
+      "id": "fourier",
+      "kind": "fourier",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "all",
+      "forward_sign": -1,
+      "inverse_sign": 1,
+      "angular_factor": "p"
+    },
+    {
+      "id": "def.A_T",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "pair",
+      "symbol": "A_T",
+      "expression": "ell/p"
+    },
+    {
+      "id": "def.L_T",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "symbol": "L_T",
+      "expression": "(ell-c)/p"
+    },
+    {
+      "id": "def.q_T",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "symbol": "q_T",
+      "expression": "A_T/L_T"
+    },
+    {
+      "id": "def.C_T",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "pair",
+      "symbol": "C_T",
+      "expression": "T*A_T"
+    },
+    {
+      "id": "def.u",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "symbol": "u",
+      "expression": "-L_T*d"
+    },
+    {
+      "id": "def.x_diff",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "pair",
+      "symbol": "x_diff",
+      "expression": "b*ell"
+    },
+    {
+      "id": "def.xi",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "symbol": "xi",
+      "expression": "q_T*alpha"
+    },
+    {
+      "id": "def.mu_n",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-PRIME-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-mean"
+      },
+      "domain": "prime",
+      "symbol": "mu_n",
+      "expression": "-lambda_n/p"
+    },
+    {
+      "id": "def.mu_m",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-PRIME-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-mean"
+      },
+      "domain": "prime",
+      "symbol": "mu_m",
+      "expression": "-lambda_m/p"
+    },
+    {
+      "id": "def.delta_sq",
+      "kind": "definition",
+      "source": {
+        "claim_id": "PAIR-PRIME-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:prime-bandwidth"
+      },
+      "domain": "prime",
+      "symbol": "delta_sq",
+      "expression": "ell_X/(4*T*X)"
+    },
+    {
+      "id": "identity.scale",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "p*q_T*L_T",
+      "right": "ell"
+    },
+    {
+      "id": "identity.ratio",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "q_T",
+      "right": "ell/(ell-c)"
+    },
+    {
+      "id": "identity.normalization",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "C_T",
+      "right": "q_T*T*L_T"
+    },
+    {
+      "id": "identity.vertical_phase",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "i*alpha*d*ell",
+      "right": "forward_sign*i*angular_factor*xi*u"
+    },
+    {
+      "id": "identity.horizontal_phase",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "alpha*x_diff",
+      "right": "(xi/q_T)*x_diff"
+    },
+    {
+      "id": "identity.complex_argument",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "i*A_T*(b+i*d)",
+      "right": "q_T*u+i*x_diff/p"
+    },
+    {
+      "id": "identity.complex_evaluation_exponent",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "forward_sign*i*angular_factor*alpha*(i*A_T*(b+i*d))",
+      "right": "alpha*ell*(b+i*d)"
+    },
+    {
+      "id": "identity.same_exponential_base",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "xi*(ell-c)",
+      "right": "alpha*ell"
+    },
+    {
+      "id": "identity.observable_normalization",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "Phi/(T*L_T)",
+      "right": "q_T*(Phi/C_T)"
+    },
+    {
+      "id": "identity.jacobian",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "1/q_T",
+      "right": "(ell-c)/ell"
+    },
+    {
+      "id": "identity.inverse_fourier_phase",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "left": "inverse_sign*i*angular_factor*xi*u",
+      "right": "i*p*xi*u"
+    },
+    {
+      "id": "identity.prime_frequency",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-PRIME-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-mean"
+      },
+      "domain": "prime",
+      "left": "mu_n-mu_m",
+      "right": "-(lambda_n-lambda_m)/p"
+    },
+    {
+      "id": "identity.bandwidth_square",
+      "kind": "identity",
+      "source": {
+        "claim_id": "PAIR-PRIME-MEAN-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:prime-bandwidth"
+      },
+      "domain": "prime",
+      "left": "4*T*X*delta_sq",
+      "right": "ell_X"
+    },
+    {
+      "id": "range.alpha",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-ASYMPTOTIC-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "thm:pair-asymptotic"
+      },
+      "domain": "pair",
+      "variable": "alpha",
+      "lower": "-1",
+      "upper": "1",
+      "lower_closed": true,
+      "upper_closed": true,
+      "role": "theorem_frequency",
+      "zero_at_endpoints": null
+    },
+    {
+      "id": "range.xi",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "variable": "xi",
+      "lower": "-q_T",
+      "upper": "q_T",
+      "lower_closed": true,
+      "upper_closed": true,
+      "role": "translated_frequency",
+      "zero_at_endpoints": null
+    },
+    {
+      "id": "range.delta",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "domain": "meanvalue",
+      "variable": "delta",
+      "lower": "1/(2*T)",
+      "upper": "1/2",
+      "lower_closed": true,
+      "upper_closed": true,
+      "role": "auxiliary_bandwidth",
+      "zero_at_endpoints": null
+    },
+    {
+      "id": "support.K",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:meanvalue-kernel-transforms"
+      },
+      "domain": "all",
+      "variable": "frequency",
+      "lower": "-1",
+      "upper": "1",
+      "lower_closed": true,
+      "upper_closed": true,
+      "role": "kernel_support",
+      "zero_at_endpoints": true
+    },
+    {
+      "id": "support.B0",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:meanvalue-kernel-transforms"
+      },
+      "domain": "all",
+      "variable": "frequency",
+      "lower": "-1/2",
+      "upper": "1/2",
+      "lower_closed": true,
+      "upper_closed": true,
+      "role": "kernel_support",
+      "zero_at_endpoints": true
+    },
+    {
+      "id": "support.K_delta",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "domain": "bandwidth",
+      "variable": "frequency",
+      "lower": "-delta",
+      "upper": "delta",
+      "lower_closed": true,
+      "upper_closed": true,
+      "role": "kernel_support",
+      "zero_at_endpoints": true
+    },
+    {
+      "id": "support.B0_delta",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "domain": "bandwidth",
+      "variable": "frequency",
+      "lower": "-delta/2",
+      "upper": "delta/2",
+      "lower_closed": true,
+      "upper_closed": true,
+      "role": "kernel_support",
+      "zero_at_endpoints": true
+    },
+    {
+      "id": "support.M",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "domain": "bandwidth",
+      "variable": "frequency",
+      "lower": "-delta",
+      "upper": "delta",
+      "lower_closed": true,
+      "upper_closed": true,
+      "role": "kernel_support",
+      "zero_at_endpoints": true
+    },
+    {
+      "id": "near.frequency",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-MEANVALUE-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "domain": "bandwidth",
+      "variable": "abs_frequency_difference",
+      "lower": "0",
+      "upper": "delta",
+      "lower_closed": false,
+      "upper_closed": false,
+      "role": "nearby_pair",
+      "zero_at_endpoints": null
+    },
+    {
+      "id": "near.log",
+      "kind": "interval",
+      "source": {
+        "claim_id": "PAIR-PRIME-COUNT-001",
+        "file": "proofs/pair_baseline.tex",
+        "label": "eq:prime-close-pairs"
+      },
+      "domain": "nearby",
+      "variable": "abs_log_ratio",
+      "lower": "0",
+      "upper": "p*delta",
+      "lower_closed": false,
+      "upper_closed": false,
+      "role": "nearby_pair",
+      "zero_at_endpoints": null
+    },
+    {
+      "id": "zero_count",
+      "kind": "count",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "2. Horizontal dependence and diagonals — PAIR-TRANSLATION-001"
+      },
+      "domain": "pair",
+      "symbol": "N_T",
+      "meaning": "Number of zero occurrences with 0 < gamma <= T, counted with multiplicity.",
+      "exact_normalization": false
+    },
+    {
+      "id": "complex_test_function",
+      "kind": "requirement",
+      "source": {
+        "claim_id": "PAIR-TRANSLATION-001",
+        "file": "research/literature-notes/pair-baseline.md",
+        "label": "3. Exact Fourier and scale translation — PAIR-TRANSLATION-001"
+      },
+      "domain": "spacing",
+      "function_class": "C_c_infinity(R)",
+      "mere_L1_sufficient": false,
+      "later_support_boundary_extension": false,
+      "justification": "Compact support gives absolute convergence at complex arguments; the zero sum is finite at fixed T."
+    }
+  ]
+}

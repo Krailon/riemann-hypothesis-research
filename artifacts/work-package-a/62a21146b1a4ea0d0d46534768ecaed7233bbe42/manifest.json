@@ -1,0 +1,248 @@
+{
+  "analytic_proof_certificate": false,
+  "assumptions": [
+    "UNCONDITIONAL"
+  ],
+  "claim_ids": [
+    "PAIR-ASYMPTOTIC-001"
+  ],
+  "claim_status": "proved-draft",
+  "environment": {
+    "bibtex": {
+      "executable": "/usr/bin/bibtex",
+      "version": "BibTeX 0.99d (TeX Live 2023/Debian)\nkpathsea version 6.3.5\nCopyright 2023 Oren Patashnik.\nThere is NO warranty.  Redistribution of this software is\ncovered by the terms of both the BibTeX copyright and\nthe Lesser GNU General Public License.\nFor more information about these matters, see the file\nnamed COPYING and the BibTeX source.\nPrimary author of BibTeX: Oren Patashnik."
+    },
+    "git": "git version 2.43.0",
+    "pdflatex": {
+      "executable": "/usr/bin/pdflatex",
+      "version": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)\nkpathsea version 6.3.5\nCopyright 2023 Han The Thanh (pdfTeX) et al.\nThere is NO warranty.  Redistribution of this software is\ncovered by the terms of both the pdfTeX copyright and\nthe Lesser GNU General Public License.\nFor more information about these matters, see the file\nnamed COPYING and the pdfTeX source.\nPrimary author of pdfTeX: Han The Thanh (pdfTeX) et al.\nCompiled with libpng 1.6.43; using libpng 1.6.43\nCompiled with zlib 1.3; using zlib 1.3\nCompiled with xpdf version 4.04"
+    },
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "provisioned_by_harness": false,
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "python_executable": "/usr/bin/python3"
+  },
+  "external_computational_proofs_replayed": false,
+  "finished_utc": "2026-10-01T19:38:35.045066+00:00",
+  "inputs": {
+    ".gitignore": "a49307ba5804a4186fc1a957c9b649dcf2ac3721f3e61595680fd16f11ff56ce",
+    "AGENTS.md": "b16914b05b74ec577a753183a1ecb28c1be11891c0204c2128a3d038df18e925",
+    "LICENSE": "0ad6ec26085f6972b7d597c006c70576a929189d506208653e29fc9f12cf6ebd",
+    "README.md": "fbbd70ac3239e4b3ac763755d7463a0690a4f1a2d324756100fbcb7efcfa6019",
+    "proofs/pair_baseline.tex": "9c9babe07d775a03cdc70f1fd00ada87ab0d34a7d7812ff47161b0eaefc15ba2",
+    "research/dependency-graph.md": "d43124da1183143c15494b99dafa21eb0708268c1971db81f657285ceb25d310",
+    "research/literature-notes/bgstb-accepted-comparison.md": "fde2b21b8c5a466ca7a9cbb802e9d17c95ed640e01981571bb3a8ce0215d400f",
+    "research/literature-notes/korobov-vinogradov-audit.md": "bbaf4ebc53d5209ba7c541405ebddecff4cd7c2373f5056fdd3604e7c880b9bf",
+    "research/literature-notes/pair-baseline.md": "264e2c7ad2942c39d40ce0639214f766642fa402416687dd0544cbeca1776106",
+    "research/literature-notes/pair-lemma1-audit.md": "17ab426fea1c0c921b1bb1051433913be0e3c1c81cace7b39e4252ff834a661b",
+    "research/literature-notes/pair-lemma3-audit.md": "1256952753495b49ab591e907b2f6326ec26cb2615e1e38f0ab9df54f7a1127b",
+    "research/literature-notes/pair-lemma4-audit.md": "ca5b343d6178773bab3b1c8cf99c9c861e1cec62b6650423214be078f65ff068",
+    "research/literature-notes/pair-prime-mean-audit.md": "f57c19c89995069d4bdb7f2bb92f6040a59ac1e35f4dce679f7150dd8202e2e2",
+    "research/literature.bib": "cebea8c1e5d9d07861d347401a93378ff1b5f76fe22c41c492e2cb8eaab97be9",
+    "research/notation.md": "fe07556f4b6c3c257f1bb11971bd196723b48106645cb954ebc562039cf59239",
+    "research/pair-conventions.json": "0c8a601d33c517b69f71b29817e2b9fc4ac54d73931b7a9bdba9ac5da848523d",
+    "research/pair-error-budget.md": "03a153eea059886ead0563b88922d1df8acc727f3a5a50c8922c7a39703cb252",
+    "research/pair-rh-audit.json": "41652f5b83a44887cffb73e1245071e336aafc97e8019188756a0732dff425a5",
+    "research/pair-rh-audit.md": "92a892881793c4174f96f9b9c9f7905519f0c1e8c0e8446a9485ddd6c9e5a29b",
+    "research/theorem-ledger.yaml": "d2eda9ac6f88525cc8475c151c3742b2db84cc9033af45c851b00bb2ca24b67e",
+    "research/work-package-a-closure.md": "26000c2411ad60b442436f5a171ea52865a3d28ed8e4e39c5598507285e1d581",
+    "scripts/check_pair_asymptotic.py": "96b74f00ef827b679e04c02cb724735301054b95a49953947a1235c6cde2e17c",
+    "scripts/check_pair_conventions.py": "d1b4bb2fb54e399322162a405ea6c2a6955f6b2ef3c850190f678c95ed0bc2fc",
+    "scripts/check_pair_lemma1.py": "b5f93694f7d8e00e6d6ddd5cfefe2ab8dc5936bf1aec5cb4323d4029cbcc36cd",
+    "scripts/check_pair_lemma3.py": "09e0b6104d7da983a821caa0110d5b03855f67335803de62d3a74a2186d7b67e",
+    "scripts/check_pair_lemma4.py": "069244f2e339ff663895ab8d23a1861178442b23d35a0f66053b07b299a2551e",
+    "scripts/check_pair_prime_mean.py": "4981dfbd27e71302b16a88eb392a7e326baa99b3c74f751b6060c8723f0eeac0",
+    "scripts/check_pair_reproduction.py": "08804d0ffc7bb6728be26a4f8f09d696750df0a91b94008a73f0eb95de4abe52",
+    "scripts/check_pair_rh_audit.py": "554a1c21963f8b098bc09e795689852b4247772fc15f344a51cf00ff7097afb9",
+    "scripts/pair_normalization.py": "7a3a9c730aabe4692242db953420feb3a8862d5c7e4bdd0ce74441f6999c895b",
+    "scripts/reproduce.sh": "90979912dffca305c3c6c00d3ce5ed1fd5a302d348ee3b2c281160f64aa2f17f",
+    "scripts/reproduce_pair.py": "fb3e9b8822d8398e7715c5616a86d14a0f70f4248b4630c81d1a2aa61a529a0d"
+  },
+  "mode": "full",
+  "outputs": {
+    "build/proofs/pair_baseline.aux": "3452e46152698fc17aac43ee4d6afa9876099d83aa0ad163598e6ff33169480d",
+    "build/proofs/pair_baseline.bbl": "cb3bcf5d53a911218b1588f63eb053abb7da76a0ee5209642a910e6df3fa27a4",
+    "build/proofs/pair_baseline.blg": "ac9aab8da3698059b0cb0cd2ff9c7a04adddf1373d9baa74a66cc9f3cb77951a",
+    "build/proofs/pair_baseline.log": "bf2a2853a43081ad8ae637bde499283b05b79c3cfc86dc9025f8d20e66a618bb",
+    "build/proofs/pair_baseline.out": "4bb013d8ec016ba6f4428e47bfc88f8aed142e06c8fa15da8733d8906ff3a4f2",
+    "build/proofs/pair_baseline.pdf": "9b6d46b7cb1caac6e9adeb174c17bcaf17a2af26dcfb4e10593f44f51cdf4f23",
+    "build/proofs/pair_baseline.tex": "9c9babe07d775a03cdc70f1fd00ada87ab0d34a7d7812ff47161b0eaefc15ba2",
+    "build/research/literature.bib": "cebea8c1e5d9d07861d347401a93378ff1b5f76fe22c41c492e2cb8eaab97be9",
+    "logs/bibtex-version.log": "5a424c58f1e6bd404fe4f4d183365623886fda6507e1d0f64b49b00523ffceb9",
+    "logs/bibtex.log": "ef352d7b5e005f1937c3a801bdf5093075f8ace7f0de536fac19117a8b841f40",
+    "logs/checks.log": "e174b1503eb38029cb07c8e716b4e472a90d71123e21d1d55b42fa12a3397000",
+    "logs/git-version.log": "25f3602b5caaf92437be1e76b53698e8d73f14a6c71c2e91c8d5875f923ab29f",
+    "logs/pdflatex-version.log": "64d3bedadc9885f9fbc5ebc4eb66de7dbb72dcf3f0748f5b8b6ca4030ded7062",
+    "logs/source-commit.log": "066d3f1795ba546ab8a0d9b03048ad791880eeee3370c2cf0a6659e147227726",
+    "logs/source-status.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/tex-1.log": "d39e91688551bc6d4c078574e36d0d938e2cdee9aff738f3f672691e0e169968",
+    "logs/tex-2.log": "5d4095d372957d4676f58887f9d1d3f6b824c7b72b0efa052a9e7a1acb858b32",
+    "logs/tex-3.log": "b8d55c85173656d11682ed8a19433a0b40dfee16bf05206ca5118c5ca6877c62",
+    "pair-normalization.json": "6aaae974153d6dca9b054275029e755a70888a53bdd5451bf6720d51900fa249",
+    "pair-normalization.md": "7185888e3feba02c56b706a2b1f4916c0b9c583a74d8d0583c58ed2315e69b14",
+    "pair_baseline.pdf": "9b6d46b7cb1caac6e9adeb174c17bcaf17a2af26dcfb4e10593f44f51cdf4f23"
+  },
+  "pdf": {
+    "failures": [],
+    "pages": 23,
+    "status": "pass",
+    "warnings": []
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "62a21146b1a4ea0d0d46534768ecaed7233bbe42",
+    "dirty": false,
+    "git_status": [],
+    "root": "/tmp/work-package-a-closeout-p9qe59vd/checkout"
+  },
+  "stages": [
+    {
+      "command": [
+        "/usr/bin/git",
+        "--version"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/checkout",
+      "log": "logs/git-version.log",
+      "name": "git-version",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/checkout",
+      "log": "logs/source-commit.log",
+      "name": "source-commit",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/checkout",
+      "log": "logs/source-status.log",
+      "name": "source-status",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "--version"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/checkout",
+      "log": "logs/pdflatex-version.log",
+      "name": "pdflatex-version",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/bibtex",
+        "--version"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/checkout",
+      "log": "logs/bibtex-version.log",
+      "name": "bibtex-version",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "check_pair_*.py",
+        "-v"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/checkout",
+      "log": "logs/checks.log",
+      "name": "checks",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "name": "normalization",
+      "operation": "exact monomial normalization and substitution",
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-no-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "pair_baseline.tex"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/bundle/build/proofs",
+      "log": "logs/tex-1.log",
+      "name": "tex-1",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/bibtex",
+        "pair_baseline"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/bundle/build/proofs",
+      "log": "logs/bibtex.log",
+      "name": "bibtex",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-no-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "pair_baseline.tex"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/bundle/build/proofs",
+      "log": "logs/tex-2.log",
+      "name": "tex-2",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-no-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "pair_baseline.tex"
+      ],
+      "cwd": "/tmp/work-package-a-closeout-p9qe59vd/bundle/build/proofs",
+      "log": "logs/tex-3.log",
+      "name": "tex-3",
+      "returncode": 0,
+      "status": "pass"
+    }
+  ],
+  "started_utc": "2026-10-01T19:38:33.410207+00:00",
+  "status": "pass",
+  "task": "verification_and_exposition",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "run": 70,
+    "skipped": 0,
+    "status": "pass"
+  }
+}
