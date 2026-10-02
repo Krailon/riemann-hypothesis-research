@@ -120,3 +120,23 @@ their review date. This README and the closure checklist record the later
 completion of A; those historical notes have not been changed merely to update
 progress wording. The closure documentation postdates the tested baseline
 revision; its proof and audited inputs are unchanged.
+
+## Work Package B: first exact identity
+
+`TRIPLE-MASTER-001` is a **proved-draft** exact smoothed triple identity
+retaining the full complex zeros. The [proof](proofs/triple_explicit_formula.tex)
+and [bookkeeping tables](research/triple-master-bookkeeping.md) give the five
+index-diagonal patterns, all 27 prime/archimedean/remainder terms, and the
+cubic prime resonance. Convergence and smoothing dependence are explicit.
+The support-restricted asymptotic and a new horizontal consequence remain
+targets. The next step is a uniform estimate of these terms.
+
+Run the additional Work Package B regression checks with:
+
+```bash
+python3 -B scripts/check_triple_master.py
+```
+
+These exact finite checks supplement the 70-test pair suite; they are not
+an analytic proof certificate. The pair reproduction harness retains its
+Work Package A scope.

@@ -1182,3 +1182,56 @@ claims:
       compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
       independent_verification: pending
       final_journal_text_comparison: pending
+
+  - id: TRIPLE-MASTER-001
+    title: Exact smoothed triple master identity with full zero coordinates
+    kind: lemma
+    statement: |
+      Fix real nonnegative omega in C_c^infinity((1,2)), integral omega=1.
+      For T>=3 and X,Y>=1, put Z=XY and I_T(f,g,h)=T^(-1)
+      integral_R omega(t/T) f(t)g(t)conj(h(t)) dt. Set C_{3,T}(X,Y)
+      =I_T(S(X,.),S(Y,.),S(Z,.)), with the full-zero S of
+      PAIR-EF-CONVERGENCE-001, both signs and multiplicities retained.
+      For rho_j=1/2+delta_j+i gamma_j let D_j(t)=1+((t-gamma_j)+i delta_j)^2
+      and K_T(j,k,l)=T^(-1) integral_R omega(t/T)/(D_j D_k conj(D_l)) dt.
+      Then C_{3,T}=8 sum_{j,k,l} X^(rho_j+conj(rho_l)-1)
+      Y^(rho_k+conj(rho_l)-1) K_T(j,k,l), absolutely convergently.
+      Its five disjoint index subseries have patterns 123,12|3,13|2,23|1,1|2|3;
+      distinct indices need not denote distinct complex zeros or ordinates.
+      C_{3,T}(X,Y)=C_{3,T}(Y,X), and |C_{3,T}| <= (8/3)^3 C_0^3 XY
+      log(2T+2)^3 ||omega||_1, with C_0 from PAIR-COUNT-KERNEL-001.
+      With P_x=P(x,.), A_x(t)=x^(-1)log(|t|+2), and exact
+      H_x=E_arch+E_DS+E_pole+E_trivial from PAIR-EF-001, C_{3,T}
+      equals sum_{w in {P,A,H}^3} (-1)^(number of P in w)
+      I_T(w_1 at X,w_2 at Y,w_3 at Z). All 27 ordered words are retained.
+      For a_x(n)=Lambda(n)n^(-1/2)min(n/x,x/n), the unsigned PPP term is
+      sum_{m,n,k>=1} a_X(m)a_Y(n)a_Z(k)
+      omega_hat(T log(mn/k)/(2pi)), absolutely convergently, where
+      omega_hat(xi)=integral_R omega(u)exp(-2pi i u xi) du.
+      Its exact resonance mn=k equals sum_{p prime} sum_{a,b>=1}
+      a_X(p^a)a_Y(p^b)a_Z(p^(a+b)); the PPP sign in C_{3,T} is negative.
+      |omega_hat(xi)|<=||omega||_1 and, for xi!=0 and integer N>=1,
+      |omega_hat(xi)|<=||omega^(N)||_1/(2pi|xi|)^N.
+      No asymptotic, compact Fourier support region, or negligible
+      off-resonance/remainder estimate is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-EF-CONVERGENCE-001, PAIR-EF-001, PAIR-COUNT-KERNEL-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-master
+      bookkeeping: research/triple-master-bookkeeping.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix T,X,Y,omega; remove the three zero cutoffs independently or jointly by the integrable kernel majorant; prime cutoffs by absolute convergence. No asymptotic or varying-smoothing limit is taken."
+    project_audit:
+      task_type: proof
+      proof_method: "Absolute-convergence trilinear expansion of the exact pair explicit formula, disjoint index partitions, Fourier substitution, and unique factorization."
+      horizontal_audit: "Full delta coordinates retained; simultaneous horizontal reflection reindexes every index subseries. No RH, simplicity or critical-line zero restriction."
+      endpoint_audit: "X=1,Y=1,T=3 included; smooth center window, no zero-height truncation. Cutoff endpoints carry full multiplicity."
+      verification_script: scripts/check_triple_master.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "Outside the existing Work Package A audit; that audit's original claim scope is unchanged."

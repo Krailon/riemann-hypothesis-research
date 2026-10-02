@@ -1,0 +1,314 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{lemma}{Lemma}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\ZS}{\mathcal S}
+\newcommand{\PS}{\mathcal P}
+\newcommand{\CT}{\mathcal C_{3,T}}
+\newcommand{\IT}{\mathfrak I_T}
+\newcommand{\dd}{\,\mathrm d}
+\title{Work Package B: an exact smoothed triple identity}
+\author{Project proof draft}
+\date{October 1, 2026}
+\begin{document}
+\maketitle
+
+\noindent Task: proof and bookkeeping. Assumptions: \texttt{UNCONDITIONAL}.
+Ledger status: \texttt{proved-draft}. This is the first exact identity for
+Work Package B; the support-restricted asymptotic remains a target.
+
+\section{Definitions and imported inputs}
+
+Let \(\mathcal I\) index all occurrences of nontrivial zeros, with
+multiplicity and both signs of the ordinate. Write
+\(\rho_j=1/2+\delta_j+\ii\gamma_j\), so \(|\delta_j|<1/2\).
+Equality of indices, complex zeros, and ordinates are three different
+conditions. All powers of positive real numbers use the real logarithm.
+For \(x\geq1\) and \(t\in\mathbb R\), put
+\begin{align}
+ D_j(t)&=1+((t-\gamma_j)+\ii\delta_j)^2,\notag\\
+ \ZS(x,t)&=\sum_{j\in\mathcal I}
+       \frac{2x^{\delta_j+\ii(\gamma_j-t)}}{D_j(t)},
+       \label{eq:triple-S}\\
+ a_x(n)&=\frac{\Lambda(n)}{\sqrt n}\min\{n/x,x/n\},\qquad
+ \PS(x,t)=\sum_{n\geq1}a_x(n)e^{-\ii t\log n}.
+       \label{eq:triple-P}
+\end{align}
+Here \(\Lambda(1)=0\). The three direct dependencies, all reconstructed
+in \texttt{proofs/pair\_baseline.tex}, are:
+\begin{itemize}
+ \item \texttt{PAIR-EF-CONVERGENCE-001} (label \texttt{lem:ef-convergence}):
+ absolute and locally uniform convergence of both series;
+ \item \texttt{PAIR-COUNT-KERNEL-001} (label \texttt{lem:count-kernel}):
+ \[
+ Q(t):=\sum_j(1+(t-\gamma_j)^2)^{-1}\leq C_0\log(|t|+2),
+ \]
+ with an effective absolute constant \(C_0\);
+ \item \texttt{PAIR-EF-001} (label \texttt{lem:pair-ef}): the exact identity
+ \begin{equation}\label{eq:triple-EF}
+ \ZS(x,t)=-\PS(x,t)+A_x(t)+H_x(t),\qquad
+ A_x(t)=x^{-1}\log(|t|+2).
+ \end{equation}
+\end{itemize}
+For precision, \(H_x\) is the following exact function, not an unspecified
+error symbol. With \(s=1/2+\ii t\) and
+\(\chi(w)=2^w\pi^{w-1}\sin(\pi w/2)\Gamma(1-w)\), set
+\begin{align}
+ H_x&=E_{\rm arch}(x,\cdot)+E_{\rm DS}(x,\cdot)
+             +E_{\rm pole}(x,\cdot)+E_{\rm trivial}(x,\cdot),\notag\\
+ E_{\rm arch}(x,t)&=x^{-1}\left[-\frac{\chi'}{\chi}(-1/2+\ii t)
+                                     -\log(|t|+2)\right],\notag\\
+ E_{\rm DS}(x,t)&=x^{-1}\frac{\zeta'}{\zeta}(3/2-\ii t),\notag\\
+ E_{\rm pole}(x,t)&=\frac{2x^{1/2-\ii t}}{(1/2+\ii t)(3/2-\ii t)},\notag\\
+ E_{\rm trivial}(x,t)&=2\sum_{m\geq1}
+       \frac{x^{-2m-s}}{(2m+s-1)(2m+s+1)}.\label{eq:triple-H}
+\end{align}
+The last series is absolutely locally uniformly convergent, including
+\(x=1\). The imported separate bounds, uniform in \(x\geq1,t\in\mathbb R\), are
+\begin{align}
+ |E_{\rm arch}|&\leq C_{\rm arch}/x,&
+ |E_{\rm DS}|&\leq C_{\rm DS}/x,\notag\\
+ |E_{\rm pole}|&\leq4\sqrt{x}/(1+t^2),&
+ |E_{\rm trivial}|&\leq12x^{-5/2}/(|t|+2).\label{eq:triple-H-bounds}
+\end{align}
+All constants here are effective. Their propagation through products
+will be a separate error-budget step.
+
+\section{The exact identity}
+
+\begin{lemma}[\texttt{TRIPLE-MASTER-001}]\label{lem:triple-master}
+Fix a real nonnegative \(\omega\in C_c^\infty((1,2))\) with
+\(\int_{\mathbb R}\omega(u)\dd u=1\). For \(T\geq3\), \(X,Y\geq1\),
+set \(Z=XY\) and
+\begin{align}
+ \IT(f,g,h)&=\frac1T\int_{\mathbb R}\omega(t/T)f(t)g(t)\overline{h(t)}\dd t,
+       \label{eq:triple-I}\\
+ \CT(X,Y)&=\IT(\ZS(X,\cdot),\ZS(Y,\cdot),\ZS(Z,\cdot)),\notag\\
+ K_T(j,k,\ell)&=\frac1T\int_{\mathbb R}
+       \frac{\omega(t/T)}{D_j(t)D_k(t)\overline{D_\ell(t)}}\dd t.
+       \label{eq:triple-K}
+\end{align}
+Then the following absolutely convergent expansion holds:
+\begin{equation}\label{eq:triple-zero}
+ \CT(X,Y)=8\sum_{j,k,\ell\in\mathcal I}
+ X^{\rho_j+\overline{\rho_\ell}-1}
+ Y^{\rho_k+\overline{\rho_\ell}-1}K_T(j,k,\ell).
+\end{equation}
+Its five disjoint index subseries are listed in Table~\ref{tab:diagonals}.
+In particular \(\CT(X,Y)=\CT(Y,X)\), and
+\begin{equation}\label{eq:triple-majorant}
+ |\CT(X,Y)|\leq(8/3)^3 C_0^3XY\log^3(2T+2)\|\omega\|_1.
+\end{equation}
+Write \(P_x=\PS(x,\cdot)\). For a word \(w\in\{P,A,H\}^3\),
+let \(N_P(w)\) be its number of letters \(P\). There is also the exact expansion
+\begin{equation}\label{eq:triple-27}
+ \CT(X,Y)=\sum_{w\in\{P,A,H\}^3}(-1)^{N_P(w)}
+ \IT(w_1{}_X,w_2{}_Y,w_3{}_Z).
+\end{equation}
+Table~\ref{tab:words} records all 27 ordered terms. In the Fourier convention
+\(\widehat\omega(\xi)=\int\omega(u)e^{-2\pi\ii u\xi}\dd u\),
+the unsigned cubic prime term is
+\begin{equation}\label{eq:triple-prime}
+ \IT(P_X,P_Y,P_Z)=\sum_{m,n,k\geq1}a_X(m)a_Y(n)a_Z(k)
+ \widehat\omega\!\left(\frac{T}{2\pi}\log\frac{mn}{k}\right).
+\end{equation}
+The series is absolutely convergent. Its exact resonance \(mn=k\) equals
+\begin{equation}\label{eq:triple-resonance}
+ R_{\rm res}(X,Y)=\sum_{p\ {\rm prime}}\ \sum_{a,b\geq1}
+       a_X(p^a)a_Y(p^b)a_Z(p^{a+b}).
+\end{equation}
+If \(R_{\rm off}(X,Y,T)\) denotes the subseries in
+\eqref{eq:triple-prime} with \(mn\ne k\), its contribution together with
+the resonance to \(\CT\) is \(-R_{\rm res}-R_{\rm off}\).
+No estimate making \(R_{\rm off}\) negligible is asserted.
+\end{lemma}
+
+\begin{proof}
+For real \(v\), \(|\delta|<1/2\),
+\[
+ |1+(v+\ii\delta)^2|\geq1+v^2-\delta^2
+                         \geq\tfrac34(1+v^2).
+\]
+Consequently the sum of absolute values of the individual products
+in the integrand defining \(\CT\) is at most
+\[
+ (8/3)^3(XYZ)^{1/2}Q(t)^3
+ \leq(8/3)^3XY C_0^3\log^3(|t|+2).
+\]
+Multiplication by \(|\omega(t/T)|/T\) gives an integrable dominating
+function supported inside \((T,2T)\). Tonelli applied to absolute values
+and then Fubini justify the three zero sums and their integration.
+They give \eqref{eq:triple-majorant} and absolute convergence even before
+integrating the absolute values of individual terms.
+The numerator of a product is
+\[
+ 8X^{\delta_j+\ii(\gamma_j-t)}
+   Y^{\delta_k+\ii(\gamma_k-t)}
+   Z^{\delta_\ell-\ii(\gamma_\ell-t)}
+ =8X^{\delta_j+\delta_\ell+\ii(\gamma_j-\gamma_\ell)}
+    Y^{\delta_k+\delta_\ell+\ii(\gamma_k-\gamma_\ell)}.
+\]
+This uses \(\log Z=\log X+\log Y\); all center phases cancel.
+The conjugated third denominator is \(\overline{D_\ell(t)}\).
+This proves \eqref{eq:triple-zero}. Exchanging the first two slots proves
+the stated symmetry. Partitioning ordered index triples into their five
+equality patterns proves Table~\ref{tab:diagonals}; absolute convergence
+allows this regrouping without a limiting-order convention.
+
+Substitute \eqref{eq:triple-EF} into the three slots of \(\IT\).
+Each slot has three summands. The sign of a term is
+\((-1)^{N_P(w)}\), including when the third slot is \(-P_Z\),
+because \(-1\) is real. This proves \eqref{eq:triple-27} and
+Table~\ref{tab:words}. Every function is continuous on the compact
+integration window, so this finite distribution is legitimate.
+Each \(H\) may in turn be expanded into its four exact named terms in
+\eqref{eq:triple-H}; conjugation remains on every third-slot term.
+
+For the prime expansion, set \(B(x)=\sum_{n\geq1}a_x(n)\).
+The majorant
+\(a_x(n)\leq x(\log n)n^{-3/2}\), \(n\geq2\), gives \(B(x)<\infty\).
+The integral of the absolute product series is at most
+\(\|\omega\|_1 B(X)B(Y)B(Z)\), which proves Fubini's hypotheses.
+The oscillation is \(e^{-\ii t(\log m+\log n-\log k)}\).
+Substituting \(t=Tu\) cancels \(1/T\) and gives exactly the argument
+\(T\log(mn/k)/(2\pi)\) in \eqref{eq:triple-prime}.
+In particular there is no extra factor of \(T\) or \(2\pi\).
+Nonzero resonant coefficients require \(m,n,k\) all to be prime powers
+greater than one. Unique factorization and \(mn=k\) then force
+\(m=p^a,n=p^b,k=p^{a+b}\) for a single prime and \(a,b\geq1\).
+Conversely every such triple is resonant. Since \(\widehat\omega(0)=1\),
+\eqref{eq:triple-resonance} follows, with ordered \((a,b)\) and no
+division by two. Both subseries converge absolutely by the preceding
+majorant. The negative sign is the \(PPP\) row of Table~\ref{tab:words}.
+\end{proof}
+
+\section{Zero-index bookkeeping}
+
+Set \(B_{jk\ell}=8X^{\rho_j+\overline{\rho_\ell}-1}
+Y^{\rho_k+\overline{\rho_\ell}-1}K_T(j,k,\ell)\).
+The last column gives counts for a finite set of \(q\) occurrences.
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{llll}
+\toprule
+Partition & Condition & Contribution & Count\\
+\midrule
+\(123\) & \(j=k=\ell\) & \(\sum_j B_{jjj}\) & \(q\)\\
+\(12|3\) & \(j=k\ne\ell\) & \(\sum_{j\ne\ell}B_{jj\ell}\) & \(q(q-1)\)\\
+\(13|2\) & \(j=\ell\ne k\) & \(\sum_{j\ne k}B_{jkj}\) & \(q(q-1)\)\\
+\(23|1\) & \(k=\ell\ne j\) & \(\sum_{j\ne k}B_{jkk}\) & \(q(q-1)\)\\
+\(1|2|3\) & all indices distinct & \(\sum_{j,k,\ell\ {\rm distinct}}B_{jk\ell}\)
+ & \(q(q-1)(q-2)\)\\
+\bottomrule
+\end{tabular}
+\caption{Disjoint index diagonals.}\label{tab:diagonals}
+\end{table}
+
+Distinct indices can represent repeated copies of the same complex zero;
+distinct complex zeros can have the same ordinate. No row imposes either
+of these stronger distinctions. The three partial diagonals have different
+kernels and weights; they have not been replaced by three times one row.
+
+Horizontal reflection \(\rho\mapsto1-\bar\rho\) acts by
+\((\delta,\gamma)\mapsto(-\delta,\gamma)\) and preserves multiplicity.
+Choose any corresponding bijection on occurrences. Simultaneous reindexing
+of all three slots preserves each row and its sum, by absolute convergence.
+In the reindexed summand the horizontal factor becomes
+\(X^{-\delta_j-\delta_\ell}Y^{-\delta_k-\delta_\ell}\) and the denominator
+inside the kernel becomes \(\overline{D_j}\,\overline{D_k}D_\ell\);
+the ordinate phases are unchanged. This is an equality of full subseries,
+not a termwise invariance. Reindexing only one slot preserves the unrestricted
+sum but need not preserve an index diagonal. Thus retaining these horizontal
+factors is compatible with functional-equation symmetry without setting
+any \(\delta\) to zero.
+
+\section{Prime, archimedean, and remainder bookkeeping}
+
+In Table~\ref{tab:words}, each row denotes its sign times the normalized
+integral of the displayed product against \(\omega(t/T)\).
+All factors are evaluated at \(t\), and \(Z=XY\).
+There are eight rows without \(H\) and nineteen with at least one \(H\).
+The latter are retained exactly; their number is not an error estimate.
+
+\begin{longtable}{cclc}
+\caption{The 27 ordered words in \eqref{eq:triple-27}.}\label{tab:words}\\
+\toprule Word & Sign & Integrand & Contains \(H\)\\\midrule
+\endfirsthead
+\toprule Word & Sign & Integrand & Contains \(H\)\\\midrule
+\endhead
+\bottomrule\endfoot
+PPP & $-$ & $P_XP_Y\overline{P_Z}$ & no\\
+PPA & $+$ & $P_XP_Y\overline{A_Z}$ & no\\
+PPH & $+$ & $P_XP_Y\overline{H_Z}$ & yes\\
+PAP & $+$ & $P_XA_Y\overline{P_Z}$ & no\\
+PAA & $-$ & $P_XA_Y\overline{A_Z}$ & no\\
+PAH & $-$ & $P_XA_Y\overline{H_Z}$ & yes\\
+PHP & $+$ & $P_XH_Y\overline{P_Z}$ & yes\\
+PHA & $-$ & $P_XH_Y\overline{A_Z}$ & yes\\
+PHH & $-$ & $P_XH_Y\overline{H_Z}$ & yes\\
+APP & $+$ & $A_XP_Y\overline{P_Z}$ & no\\
+APA & $-$ & $A_XP_Y\overline{A_Z}$ & no\\
+APH & $-$ & $A_XP_Y\overline{H_Z}$ & yes\\
+AAP & $-$ & $A_XA_Y\overline{P_Z}$ & no\\
+AAA & $+$ & $A_XA_Y\overline{A_Z}$ & no\\
+AAH & $+$ & $A_XA_Y\overline{H_Z}$ & yes\\
+AHP & $-$ & $A_XH_Y\overline{P_Z}$ & yes\\
+AHA & $+$ & $A_XH_Y\overline{A_Z}$ & yes\\
+AHH & $+$ & $A_XH_Y\overline{H_Z}$ & yes\\
+HPP & $+$ & $H_XP_Y\overline{P_Z}$ & yes\\
+HPA & $-$ & $H_XP_Y\overline{A_Z}$ & yes\\
+HPH & $-$ & $H_XP_Y\overline{H_Z}$ & yes\\
+HAP & $-$ & $H_XA_Y\overline{P_Z}$ & yes\\
+HAA & $+$ & $H_XA_Y\overline{A_Z}$ & yes\\
+HAH & $+$ & $H_XA_Y\overline{H_Z}$ & yes\\
+HHP & $-$ & $H_XH_Y\overline{P_Z}$ & yes\\
+HHA & $+$ & $H_XH_Y\overline{A_Z}$ & yes\\
+HHH & $+$ & $H_XH_Y\overline{H_Z}$ & yes\\
+\end{longtable}
+
+\section{Endpoints, uniformity, and the next estimates}
+
+The endpoints \(X=1\), \(Y=1\), and \(T=3\) are included. The smooth
+weight vanishes in neighborhoods of \(t=T,2T\); there are no half weights.
+The height window is a condition on the center \(t\), not on the zeros:
+all ordinates, including \(0<|\gamma|<3\) if present, remain in the sums.
+No use of \(L_T^{-1}\) or a change of local-spacing normalization is made.
+
+Limit order is explicit: fix \(T,X,Y,\omega\); truncate each zero sum at
+\(|\gamma|\leq U_r\), including endpoints with full multiplicity; then let
+the three \(U_r\) tend to infinity independently. The displayed dominating
+function proves convergence in any order or jointly. Prime truncations
+are removed in the same way using \(B(X)B(Y)B(Z)\).
+No \(T\to\infty\) limit, moving Fourier support, or shrinking smoothing
+width has been interchanged with those limits. The bounds are locally
+uniform in the finite parameters and explicitly retain \(\|\omega\|_1\).
+
+Integration by parts, with no boundary terms, gives for every integer
+\(N\geq1\)
+\begin{equation}\label{eq:triple-decay}
+ |\widehat\omega(\xi)|\leq\|\omega\|_1,\qquad
+ |\widehat\omega(\xi)|\leq
+ \frac{\|\omega^{(N)}\|_1}{(2\pi|\xi|)^N}\quad(\xi\ne0).
+\end{equation}
+For \(mn\ne k\), the second denominator becomes
+\((T|\log(mn/k)|)^N\). Uniformity for a varying family of weights
+requires bounds on these derivative norms. Smooth compact height support
+does not supply a compact Fourier support or exact off-resonance removal.
+Near \(mn=k\) a new arithmetic estimate is still needed.
+
+As an algebraic lower-level check, replacing the second input of \(\IT\)
+by the constant function \(1\) gives the smoothed pair form
+\(T^{-1}\int\omega(t/T)f(t)\overline{h(t)}\dd t\).
+Taking \(Y=1\) in the actual lemma does \emph{not} perform that replacement:
+\(\ZS(1,t)\) remains a zero sum.
+
+The next task is to estimate the eight rows without \(H\) and propagate
+the four separate bounds in \eqref{eq:triple-H-bounds} through the other
+nineteen rows, before choosing any growing range for \(X,Y\). The zero
+index diagonals and prime resonances are separate decompositions, with
+no asserted rowwise correspondence. A Fourier-support region, an
+asymptotic main term, positivity, and a new horizontal conclusion are
+not established by this lemma.
+\end{document}

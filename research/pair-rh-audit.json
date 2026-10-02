@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "d2eda9ac6f88525cc8475c151c3742b2db84cc9033af45c851b00bb2ca24b67e",
+  "ledger_sha256": "7cfb525b87516a874690c36bfbd060c3adeabb5a3d01ba423b4c9d9f574022d1",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2326,5 +2326,15 @@
       "scope": "outside_current_review",
       "description": "Clean-checkout reproduction entry point and environment; structural audit checks do not prove the asymptotic."
     }
-  ]
+  ],
+  "ledger_extension_review": {
+    "reviewed_on": "2026-10-01",
+    "scope": "append_only_work_package_b_ledger_entry",
+    "report": "research/triple-master-bookkeeping.md",
+    "previous_ledger_sha256": "d2eda9ac6f88525cc8475c151c3742b2db84cc9033af45c851b00bb2ca24b67e",
+    "added_claim_ids": [
+      "TRIPLE-MASTER-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix; only TRIPLE-MASTER-001 is appended. Existing claims, dependencies, audited proof files and claim snapshot are unchanged. The Work Package A RH audit does not cover the new Work Package B proof."
+  }
 }
