@@ -1235,3 +1235,73 @@ claims:
       verification_script: scripts/check_triple_master.py
       independent_verification: pending
       pair_rh_audit_coverage: "Outside the existing Work Package A audit; that audit's original claim scope is unchanged."
+
+  - id: TRIPLE-UNIFORM-001
+    title: Uniform smoothed triple bounds and a named signed error budget
+    kind: lemma
+    statement: |
+      Under the weight and parameter hypotheses of TRIPLE-MASTER-001, set
+      Z=XY, dmu_T=T^(-1)omega(t/T)dt, q=log T, L=log(2T+2), ell_x=log(2x),
+      W_0=||omega||_1=1, W_inf=||omega||_inf, W_1=||omega'||_1.
+      Put C_B=1+2/(1-2^(-1/2))^2, C_1=1+2/(1-2^(-1/2)),
+      b_x=C_B sqrt(x)ell_x, alpha_x=L/x, C_M=sqrt(2 C_pair),
+      where integral_0^V |P_x|^2 <= C_pair V ell_x for 1<=x<=V, V>=3.
+      Let m_x=min(b_x,C_M sqrt(W_inf ell_x)) for 1<=x<=2T and m_x=b_x
+      for x>2T. Then ||P_x||_inf<=sum_n a_x(n)<=b_x,
+      sum_{n>=2}a_x(n)/log n<=C_1 sqrt(x), ||P_x||_{L2(mu_T)}<=m_x,
+      and ||A_x||_{Linf(T,2T)}<=alpha_x. On the same window each exact
+      E_nu has sup norm at most h_nu(x), where h_arch=C_arch/x,
+      h_DS=C_DS/x, h_pole=4 sqrt(x)/(1+T^2),
+      h_trivial=12 x^(-5/2)/(T+2); set h_x=sum_nu h_nu(x).
+      For r=1,2,3 let J_r=integral_1^2 omega(u)log(Tu+2)^r du.
+      Then q^r<=J_r<=L^r. Define D(a,b)=sum_n a_a(n)a_b(n);
+      0<=D(a,b)<=d_{a,b}=C_D sqrt(ell_a ell_b), where D(x,x)<=C_D ell_x.
+      For r=1,2, Omega_{r,1}=||(omega(u)log(Tu+2)^r)'||_1
+      <=V_r=W_1 L^r+r W_0 L^(r-1), using zero extension outside (1,2).
+      Let M_T=q^3/Z^2+J_1 D(X,Z)/Y+J_1 D(Y,Z)/X-R_res(X,Y).
+      Exactly C_{3,T}=M_T+E_archcube+E_PPA+E_PAA+E_APA+E_AAP
+      +E_PAP,off+E_APP,off+E_PPP,off+sum_{w containing H}E_w.
+      E_archcube=(J_3-q^3)/Z^2 is nonnegative and <=(L^3-q^3)/Z^2.
+      E_PPA=I_T(P_X,P_Y,A_Z) has absolute bound b_X b_Y V_1/(ZT log 4).
+      E_PAA=-I_T(P_X,A_Y,A_Z), E_APA=-I_T(A_X,P_Y,A_Z),
+      E_AAP=-I_T(A_X,A_Y,P_Z) have respective absolute bounds
+      C_1 sqrt(X)V_2/(TYZ), C_1 sqrt(Y)V_2/(TXZ), C_1 sqrt(Z)V_2/(TXY).
+      E_PAP,off=I_T(P_X,A_Y,P_Z)-J_1 D(X,Z)/Y has absolute bound
+      (L/Y)(m_X m_Z+d_{X,Z}); E_APP,off has the X,Y-swapped definition
+      and bound. E_PPP,off=-I_T(P_X,P_Y,P_Z)+R_res has absolute bound
+      U+R_res<=U+b_X b_Y b_Z, where
+      U=min(b_X m_Y m_Z,b_Y m_X m_Z,b_Z m_X m_Y).
+      Each V_r can be replaced by Omega_{r,1}.
+      For every word w containing H and ordered assignment kappa of
+      its H slots to arch,DS,pole,trivial, define E_{w;kappa} as the
+      exact trilinear integral with those substitutions and sign (-1)^(#P).
+      Its absolute value is bounded by the product of m_{x_i} at P slots,
+      alpha_{x_i} at A slots and h_{kappa(i)}(x_i) at H slots, with
+      (x_1,x_2,x_3)=(X,Y,Z). E_w=sum_kappa E_{w;kappa}, and its bound
+      replaces each h_{kappa(i)} by h_{x_i}. There are 208 refined terms
+      grouped into 19 words, not additional errors.
+      Bounds hold for T>=3,X,Y>=1; all prime slots admit the sharper
+      branch if XY<=2T, including equality. No asymptotic main term,
+      negligible off-diagonal error or Fourier-support region is claimed.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-MASTER-001, PAIR-EF-001, PAIR-PRIME-MEAN-001, PAIR-PRIME-DIAGONAL-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-uniform
+      bookkeeping: research/triple-error-budget.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed T,X,Y,omega before removing absolutely convergent cutoffs; integration by parts acts only on compact smooth weights. No asymptotic or shrinking-width limit."
+    project_audit:
+      task_type: proof
+      proof_method: "Elementary coefficient sums, imported mean square and diagonal bounds, weighted Cauchy-Schwarz, integration by parts, and exact signed finite expansion."
+      horizontal_audit: "Estimates the exact master identity retaining all horizontal coordinates and multiplicities; no new zero restriction or RH assumption."
+      endpoint_audit: "T=3,X=1,Y=1 and x=2T included. The sharper norm branch is never used for x>2T; integer n=x is counted once."
+      smoothing_audit: "W_inf,W_1 and W_0 retained explicitly; mass normalization alone does not bound the first two."
+      verification_script: scripts/check_triple_uniform.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "Outside the existing Work Package A audit; the append-only ledger extension does not expand its claim coverage."

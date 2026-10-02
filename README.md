@@ -121,20 +121,25 @@ completion of A; those historical notes have not been changed merely to update
 progress wording. The closure documentation postdates the tested baseline
 revision; its proof and audited inputs are unchanged.
 
-## Work Package B: first exact identity
+## Work Package B: exact identity and uniform estimates
 
 `TRIPLE-MASTER-001` is a **proved-draft** exact smoothed triple identity
 retaining the full complex zeros. The [proof](proofs/triple_explicit_formula.tex)
 and [bookkeeping tables](research/triple-master-bookkeeping.md) give the five
 index-diagonal patterns, all 27 prime/archimedean/remainder terms, and the
 cubic prime resonance. Convergence and smoothing dependence are explicit.
-The support-restricted asymptotic and a new horizontal consequence remain
-targets. The next step is a uniform estimate of these terms.
+`TRIPLE-UNIFORM-001`, also **proved-draft**, supplies the
+[uniform estimates and named error budget](research/triple-error-budget.md)
+for all 27 terms and their 208 named remainder refinements. Bounds hold for
+all `T >= 3, X,Y >= 1`, with stronger prime norm bounds when `XY <= 2T`.
+The next step is to sharpen the mixed-prime and cubic off-diagonal estimates
+and assess the remainder scales on a growing parameter range. The
+support-restricted asymptotic and a new horizontal consequence remain targets.
 
 Run the additional Work Package B regression checks with:
 
 ```bash
-python3 -B scripts/check_triple_master.py
+python3 -B -m unittest discover -s scripts -p 'check_triple_*.py' -v
 ```
 
 These exact finite checks supplement the 70-test pair suite; they are not

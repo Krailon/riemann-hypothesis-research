@@ -176,17 +176,19 @@ are `SYNTHETIC_MODEL`, respecting the full symmetries. These checks are
 verification aids; the written convergence argument supplies the proof.
 No numerical proof certificate is used.
 
-Validation on 2026-10-01: all 11 triple checks and all 70 existing pair
+Validation of the initial master draft on 2026-10-01: all 11 triple checks and all 70 existing pair
 checks passed. The standalone proof compiled with three `pdflatex` passes
 (`-no-shell-escape`) to five pages, with no final-pass warnings, unresolved
 references, or overfull/underfull boxes. Ledger dependency resolution and
 acyclicity, local documentation links, and whitespace checks passed.
 
-Next: estimate the eight terms without \(H\), and propagate the four named
-remainder bounds through the nineteen other terms with explicit \(X,Y,T\)
-and smoothing dependence. This should identify the arithmetic obstruction
-before selecting a growing parameter range and Fourier-support region.
-The asymptotic main term and horizontal consequences remain open.
+The next lemma, **TRIPLE-UNIFORM-001**, now supplies the
+[uniform bounds and named error budget](triple-error-budget.md) for all
+27 words, including all 208 named remainder refinements. Its mixed-prime
+and cubic off-diagonal estimates do not establish cancellation.
+Next: sharpen those estimates and assess the remainder scales on a chosen
+growing parameter range. The support-restricted asymptotic and horizontal
+consequences remain open.
 
 The pair RH audit continues to cover its original Work Package A claims.
 The new ledger entry is an append-only extension outside that audit's

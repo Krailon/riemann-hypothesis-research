@@ -9,7 +9,7 @@
 \newcommand{\CT}{\mathcal C_{3,T}}
 \newcommand{\IT}{\mathfrak I_T}
 \newcommand{\dd}{\,\mathrm d}
-\title{Work Package B: an exact smoothed triple identity}
+\title{Work Package B: the smoothed triple identity\\and its uniform error budget}
 \author{Project proof draft}
 \date{October 1, 2026}
 \begin{document}
@@ -304,11 +304,321 @@ by the constant function \(1\) gives the smoothed pair form
 Taking \(Y=1\) in the actual lemma does \emph{not} perform that replacement:
 \(\ZS(1,t)\) remains a zero sum.
 
-The next task is to estimate the eight rows without \(H\) and propagate
+The following sections estimate the eight rows without \(H\) and propagate
 the four separate bounds in \eqref{eq:triple-H-bounds} through the other
 nineteen rows, before choosing any growing range for \(X,Y\). The zero
 index diagonals and prime resonances are separate decompositions, with
 no asserted rowwise correspondence. A Fourier-support region, an
 asymptotic main term, positivity, and a new horizontal conclusion are
 not established by this lemma.
+
+\section{Uniform norm bounds and the named budget}
+
+The task remains a proof under \texttt{UNCONDITIONAL} assumptions.
+In addition to Lemma~\ref{lem:triple-master}, the direct analytic inputs are
+\texttt{PAIR-EF-001}, \texttt{PAIR-PRIME-MEAN-001}, and
+\texttt{PAIR-PRIME-DIAGONAL-001}, in the pair draft at labels
+\texttt{lem:pair-ef}, \texttt{lem:prime-mean}, and
+\texttt{lem:prime-diagonal}. The latter two give, with effective absolute
+constants \(C_{\rm pair},C_D\),
+\[
+ \int_0^V|P_x(t)|^2\dd t\leq C_{\rm pair}V\log(2x)
+ \quad(V\geq3,\ 1\leq x\leq V),\qquad
+ \sum_n a_x(n)^2\leq C_D\log(2x)\quad(x\geq1).
+\]
+These are unconditional estimates including prime powers.
+
+Keep the hypotheses on \(T,X,Y,Z,\omega\) from
+Lemma~\ref{lem:triple-master}, and define
+\begin{align}
+ d\mu_T(t)&=T^{-1}\omega(t/T)\dd t,&
+ q&=\log T,& L&=\log(2T+2),& \ell_x&=\log(2x),\notag\\
+ W_0&=\|\omega\|_1=1,&W_\infty&=\|\omega\|_\infty,&
+ W_1&=\|\omega'\|_1.&&\label{eq:uniform-parameters}
+\end{align}
+The measure \(\mu_T\) is a probability measure. Set
+\begin{align}
+ C_B&=1+\frac{2}{(1-2^{-1/2})^2},&
+ C_1&=1+\frac{2}{1-2^{-1/2}},&
+ C_M&=\sqrt{2C_{\rm pair}},\notag\\
+ b_x&=C_B\sqrt{x}\ell_x,&\alpha_x&=L/x,&&\notag\\
+ m_x&=
+ \begin{cases}
+ \min\{b_x,C_M\sqrt{W_\infty\ell_x}\},&1\leq x\leq2T,\\
+ b_x,&x>2T,
+ \end{cases}&&&&\label{eq:uniform-primitives}\\
+ h_{\rm arch}(x)&=C_{\rm arch}/x,&
+ h_{\rm DS}(x)&=C_{\rm DS}/x,\notag\\
+ h_{\rm pole}(x)&=\frac{4\sqrt{x}}{1+T^2},&
+ h_{\rm trivial}(x)&=\frac{12x^{-5/2}}{T+2},&
+ h_x&=\sum_{\nu\in\mathcal J}h_\nu(x),\label{eq:uniform-remainders}
+\end{align}
+where \(\mathcal J=\{{\rm arch},{\rm DS},{\rm pole},{\rm trivial}\}\).
+The subscripts \(x\) on \(m,h,\alpha\) suppress their displayed
+dependence on \(T,\omega\).
+
+For \(r=1,2,3\), put
+\[
+ J_r=\int\omega(u)\log^r(Tu+2)\dd u,\qquad
+ D(a,b)=\sum_{n\geq1}a_a(n)a_b(n),\qquad
+ d_{a,b}=C_D\sqrt{\ell_a\ell_b}.
+\]
+Integrals here and below involving \(\log(Tu+2)\) are over \((1,2)\);
+the weighted functions are extended by zero outside that interval.
+In particular they are smooth and compactly supported. For \(r=1,2\), set
+\begin{equation}\label{eq:uniform-Omega}
+ \Omega_{r,1}=\|(\omega(u)\log^r(Tu+2))'\|_1,\qquad
+ V_r=W_1L^r+rW_0L^{r-1}.
+\end{equation}
+The notation \(D(a,b)\) refers to prime coefficients and has no relation
+to the zero denominators \(D_j(t)\).
+
+\begin{lemma}[\texttt{TRIPLE-UNIFORM-001}]\label{lem:triple-uniform}
+Uniformly for \(T\geq3,\ X,Y\geq1\) and every admissible \(\omega\), the
+following bounds hold, with the smoothing dependence explicitly retained:
+\begin{align}
+ \|P_x\|_\infty&\leq\sum_na_x(n)\leq b_x,&
+ \sum_{n\geq2}\frac{a_x(n)}{\log n}&\leq C_1\sqrt{x},\notag\\
+ \|P_x\|_{L^2(\mu_T)}&\leq m_x,&
+ \|A_x\|_{L^\infty(T,2T)}&\leq\alpha_x,&
+ \|E_\nu(x,\cdot)\|_{L^\infty(T,2T)}&\leq h_\nu(x),\notag\\
+ 0\leq D(a,b)&\leq d_{a,b},&
+ 0\leq J_r&\leq L^r,&
+ \Omega_{r,1}&\leq V_r\quad(r=1,2).
+ \label{eq:uniform-norms}
+\end{align}
+Define the retained expression
+\begin{equation}\label{eq:uniform-retained}
+ M_T=\frac{q^3}{Z^2}+\frac{J_1}{Y}D(X,Z)+\frac{J_1}{X}D(Y,Z)
+                    -R_{\rm res}(X,Y).
+\end{equation}
+It is not asserted to be an asymptotic main term. There is the exact identity
+\begin{align}
+ \CT={}&M_T+E_{\rm archcube}
+   +E_{PPA}+E_{PAA}+E_{APA}+E_{AAP}\notag\\
+   &+E_{PAP,{\rm off}}+E_{APP,{\rm off}}+E_{PPP,{\rm off}}
+   +\sum_{\substack{w\in\{P,A,H\}^3\\H\ {\rm occurs\ in}\ w}}E_w.
+   \label{eq:uniform-budget}
+\end{align}
+The eight errors on the first two lines are defined and bounded in
+Table~\ref{tab:uniform-eight}. In that table,
+\begin{equation}\label{eq:uniform-U}
+ U=\min\{b_Xm_Ym_Z,\ b_Ym_Xm_Z,\ b_Zm_Xm_Y\},\qquad
+ 0\leq R_{\rm res}\leq b_Xb_Yb_Z,
+\end{equation}
+and the complete cubic satisfies \(|\IT(P_X,P_Y,P_Z)|\leq U\).
+
+For the remaining nineteen words, let \(x_1=X,x_2=Y,x_3=Z\), and
+\(S_H(w)=\{i:w_i=H\}\). For each assignment
+\(\kappa:S_H(w)\to\mathcal J\), replace the corresponding factors by
+\(E_{\kappa(i)}(x_i,\cdot)\), retaining \(P,A\) elsewhere, to get
+functions \(f_1,f_2,f_3\). Define
+\begin{equation}\label{eq:uniform-refinement}
+ E_{w;\kappa}=(-1)^{N_P(w)}\IT(f_1,f_2,f_3),\qquad
+ E_w=\sum_\kappa E_{w;\kappa}.
+\end{equation}
+Then, separately for every assignment,
+\begin{equation}\label{eq:uniform-component-bound}
+ |E_{w;\kappa}|\leq
+ \prod_{\{i:w_i=P\}}m_{x_i}
+ \prod_{\{i:w_i=A\}}\alpha_{x_i}
+ \prod_{\{i:w_i=H\}}h_{\kappa(i)}(x_i).
+\end{equation}
+Summing these nonnegative bounds gives
+\begin{equation}\label{eq:uniform-word-bound}
+ |E_w|\leq
+ \prod_{\{i:w_i=P\}}m_{x_i}
+ \prod_{\{i:w_i=A\}}\alpha_{x_i}
+ \prod_{\{i:w_i=H\}}h_{x_i}.
+\end{equation}
+There are \(208\) refined remainder terms, grouped into nineteen words;
+the refined terms and their aggregates are two descriptions of the same
+summands. All constants in these assertions are effective and independent
+of \(T,X,Y,\omega\), apart from the displayed norms.
+\end{lemma}
+
+\begin{table}[p]
+\centering\small
+\begin{tabular}{p{0.23\textwidth}p{0.36\textwidth}p{0.32\textwidth}}
+\toprule
+Name & Exact signed definition & Absolute bound\\
+\midrule
+\(E_{\rm archcube}\) &
+ \((J_3-q^3)/Z^2\) &
+ \((L^3-q^3)/Z^2\)\\[5pt]
+\(E_{PPA}\) & \(\IT(P_X,P_Y,A_Z)\) &
+ \(b_Xb_Y V_1/(ZT\log4)\)\\[5pt]
+\(E_{PAA}\) & \(-\IT(P_X,A_Y,A_Z)\) &
+ \(C_1\sqrt{X}V_2/(TYZ)\)\\[5pt]
+\(E_{APA}\) & \(-\IT(A_X,P_Y,A_Z)\) &
+ \(C_1\sqrt{Y}V_2/(TXZ)\)\\[5pt]
+\(E_{AAP}\) & \(-\IT(A_X,A_Y,P_Z)\) &
+ \(C_1\sqrt{Z}V_2/(TXY)\)\\[5pt]
+\(E_{PAP,{\rm off}}\) &
+ \(\IT(P_X,A_Y,P_Z)-J_1D(X,Z)/Y\) &
+ \((L/Y)(m_Xm_Z+d_{X,Z})\)\\[5pt]
+\(E_{APP,{\rm off}}\) &
+ \(\IT(A_X,P_Y,P_Z)-J_1D(Y,Z)/X\) &
+ \((L/X)(m_Ym_Z+d_{Y,Z})\)\\[5pt]
+\(E_{PPP,{\rm off}}\) &
+ \(-\IT(P_X,P_Y,P_Z)+R_{\rm res}\) &
+ \(U+R_{\rm res}\leq U+b_Xb_Yb_Z\)\\
+\bottomrule
+\end{tabular}
+\caption{Named errors from the eight words without \(H\).
+Each \(V_r\) may be replaced by the sharper \(\Omega_{r,1}\).
+The mixed-prime and cubic off-diagonal bounds make no assertion of
+cancellation.}\label{tab:uniform-eight}
+\end{table}
+
+\begin{proof}
+For \(n\leq x\), the inequality \(\Lambda(n)\leq\log n\) gives
+\[
+ \sum_{2\leq n\leq x}a_x(n)
+ \leq x^{-1}\sum_{2\leq n\leq x}\sqrt n\log n
+ \leq\sqrt{x}\ell_x.
+\]
+For \(j\geq0\), the interval \(2^jx<n\leq2^{j+1}x\) contains at most
+\(2^{j+1}x\) positive integers. Consequently its contribution is at most
+\[
+ 2\sqrt{x}\,2^{-j/2}\log(2^{j+1}x)
+ \leq2\sqrt{x}\ell_x(j+1)2^{-j/2}.
+\]
+Summing the geometric series and its derivative gives \(b_x\) as stated.
+Using \(\Lambda(n)/\log n\leq1\) in the same argument removes the
+factor \((j+1)\ell_x\), giving \(C_1\sqrt{x}\).
+The split counts an integer \(n=x\) exactly once and applies also to
+\(1\leq x<2\). All series are nonnegative and convergent.
+
+Since \(\mu_T\) has mass one, \(\|P_x\|_{L^2(\mu_T)}\leq b_x\).
+If \(x\leq2T\), positivity of the weight and the imported mean-square bound
+with \(V=2T\) give
+\[
+ \int|P_x|^2\dd\mu_T
+ \leq \frac{W_\infty}{T}\int_0^{2T}|P_x(t)|^2\dd t
+ \leq2C_{\rm pair}W_\infty\ell_x.
+\]
+This proves the piecewise bound, including \(x=2T\). No extension of
+the imported mean-square theorem to \(x>2T\) is used.
+The \(A\) and four remainder bounds follow pointwise from
+\eqref{eq:triple-H-bounds} on \(T<t<2T\). Cauchy--Schwarz for the
+coefficient sequences and the imported diagonal bound give
+\(D(a,b)\leq\sqrt{D(a,a)D(b,b)}\leq d_{a,b}\).
+
+On the support of \(\omega\), \(q\leq\log(Tu+2)\leq L\) and
+\(T/(Tu+2)\leq1\). Thus \(q^r\leq J_r\leq L^r\), and the product rule
+gives
+\[
+ \Omega_{r,1}\leq
+ \|\omega'\|_1L^r+r\|\omega\|_1L^{r-1}=V_r.
+\]
+There are no endpoint derivative contributions: \(\omega\) vanishes
+in neighborhoods of \(1,2\). In particular
+\(0\leq E_{\rm archcube}\leq(L^3-q^3)/Z^2\).
+
+For the oscillating terms, set
+\[
+ F_r(\lambda)=\int\omega(u)\log^r(Tu+2)e^{-\ii Tu\lambda}\dd u .
+\]
+One integration by parts gives
+\begin{equation}\label{eq:uniform-ibp}
+ |F_r(\lambda)|\leq\frac{\Omega_{r,1}}{T|\lambda|}
+ \quad(\lambda\ne0).
+\end{equation}
+In project Fourier units \(F_r(\lambda)\) is the transform of
+\(\omega(u)\log^r(Tu+2)\) at \(T\lambda/(2\pi)\).
+The \(2\pi\) from differentiation cancels against this denominator;
+the normalized substitution \(t=Tu\) introduces no further factor.
+Since all prime coefficient sums are absolutely convergent and the
+weights bounded, Fubini applies at fixed parameters.
+
+The \(PPA\) integral is
+\[
+ \frac1Z\sum_{m,n\geq2}a_X(m)a_Y(n)F_1(\log(mn)).
+\]
+Here \(\log(mn)\geq\log4\), which proves its table bound.
+The \(PAA,APA,AAP\) integrals have respective frequencies
+\(\log n,\log n,-\log n\) and scalar denominators \(YZ,XZ,XY\).
+Apply \eqref{eq:uniform-ibp} and the bound for
+\(\sum a_x(n)/\log n\). The third of these terms still has its conjugation;
+the change of frequency sign does not affect the absolute bound.
+
+For example the mixed term is exactly
+\[
+ \IT(P_X,A_Y,P_Z)=
+ \frac1Y\sum_{m,k\geq2}a_X(m)a_Z(k)F_1(\log(m/k)).
+\]
+The diagonal is \(J_1D(X,Z)/Y\). Cauchy--Schwarz bounds the
+full integral in absolute value by \((L/Y)m_Xm_Z\).
+Subtracting its diagonal gives the bound in the table by the triangle
+inequality. The \(APP\) calculation is identical with \(X,Y\) interchanged.
+These bounds do not treat the near frequencies as separated from zero.
+
+For the cubic integral take any one factor in sup norm and the other two
+in \(L^2(\mu_T)\). The three choices give \(U\).
+The resonant sum is a nonnegative subseries of the product of the three
+coefficient sums, so \(R_{\rm res}\leq b_Xb_Yb_Z\). Its signed
+off-resonance error is \(-R_{\rm off}\) from Lemma~\ref{lem:triple-master};
+the triangle inequality gives \(U+R_{\rm res}\).
+
+Each word containing \(H\) has at most two \(P\) slots. Bound all other
+factors in sup norm, and use Cauchy--Schwarz for two prime factors or
+\(\|P_x\|_{L^1(\mu_T)}\leq\|P_x\|_{L^2(\mu_T)}\) for one.
+This proves \eqref{eq:uniform-component-bound}. Finite distributivity
+proves \eqref{eq:uniform-word-bound}, with no absorbed constants.
+There are twelve words with one \(H\), six with two, and one with three:
+\[
+ 12\cdot4+6\cdot4^2+4^3=208.
+\]
+Finally substitute the exact signed definitions into
+\eqref{eq:triple-27}. The \(AAA\) term is \(J_3/(XYZ)=J_3/Z^2\).
+Extracting its \(q^3/Z^2\), the two mixed diagonals, and the negatively
+signed cubic resonance proves \eqref{eq:uniform-budget}.
+\end{proof}
+
+\section{Range, interpretation, and remaining losses}
+
+All estimates in Lemma~\ref{lem:triple-uniform} hold on the entire range
+\(T\geq3,\ X,Y\geq1\), using the specified branch of \(m_x\).
+If \(XY\leq2T\), all three prime factors admit the sharper branch since
+\(1\leq X,Y\leq XY\); equality \(XY=2T\) is included.
+The line \(x=2T\) is a boundary of an estimate's applicability, not a
+Fourier-support boundary. For \(x>2T\) the elementary bound remains valid.
+The norm majorant need not be continuous when its branch changes.
+
+Every zero occurrence from Lemma~\ref{lem:triple-master} is still retained.
+Its symmetry under simultaneous horizontal reflection therefore persists;
+estimating its exactly equal prime-side expression does not set
+\(\delta_\rho=0\). Swapping \(X,Y\) interchanges \(PAA,APA\) and the two
+mixed off-diagonal errors; the other definitions transform by their
+ordered slots. Setting a slot function to \(1\) recovers the ordinary
+weighted pair Cauchy--Schwarz bound. Setting its base to \(1\) does not
+remove that slot.
+
+The limit order remains fixed \(T,X,Y,\omega\), followed by removal of
+absolutely convergent prime or zero cutoffs. Bounds involving \(\omega'\)
+are used only after the weighted integrals are defined; no differentiation
+of an infinite prime series is taken. All displayed estimates are then
+uniform on their stated ranges. No shrinking-width limit is taken.
+Varying weights must retain \(W_\infty,W_1\); mass normalization alone
+does not bound them.
+
+The pure archimedean term and the one-prime and same-sign two-prime terms
+have elementary bounds, including the displayed \(1/T\) oscillatory gain.
+The mixed-prime diagonal bound imports PNT-level information through
+\texttt{PAIR-PRIME-DIAGONAL-001}. The weighted prime norms import the
+unconditional mean-value and prime-counting inputs in
+\texttt{PAIR-PRIME-MEAN-001}. No new prime-pair or prime-triple conjecture is
+used. The mixed-prime and cubic off-diagonal bounds are triangle-inequality
+bounds and do not yield a uniform negligible error. No rowwise matching
+with zero-index diagonals has been established.
+
+The file \path{research/triple-error-budget.md} records the nineteen
+remainder-containing rows and their component assignments. They form one budget:
+an aggregate error and its component terms must never both be added.
+There is no height-truncation, desmoothing, or support-boundary error in
+this identity. The next analytic task is to sharpen the mixed-prime and
+cubic off-diagonal bounds and assess the remainder scales on a chosen
+growing parameter range; the present bounds alone do not settle an
+asymptotic or supply horizontal information.
 \end{document}
