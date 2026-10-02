@@ -160,10 +160,17 @@ by `log T`, integration against smooth restrictions supported in
 to an origin mass `1/4` plus density `3r/4` on each positive axis.
 The [boundary budget and conventions](research/triple-test-functions.md)
 include an effective error and the full-zero identity. The one-sided
-inverse Fourier tests are generally not Schwartz. The next step is
-signed-sector analysis for smooth Fourier tests crossing the axes.
-The general Work Package B theorem and a new horizontal consequence
-remain targets.
+inverse Fourier tests are generally not Schwartz.
+`TRIPLE-SIGNED-SECTORS-001` and `TRIPLE-SIGNED-TEST-FUNCTION-001`, also
+**proved-draft**, extend the native weighted correlation to Schwartz tests
+with arbitrary smooth Fourier transforms compactly supported in the open
+hexagon `max(|xi|,|eta|,|xi+eta|) < 1`. The normalized limit is an origin
+mass `3/2` and three line contributions with coefficient `3/2` and weight
+`|r|`, parameterized by `(r,0)`, `(0,r)` and `(r,-r)`, each with measure
+`dr`. The [sector table](research/triple-signed-sectors.json) records the
+six maps and conjugation rules. The effective error, complex zero arguments
+and native kernel remain explicit. Kernel removal, GUE identification,
+and new horizontal consequences remain separate research tasks.
 
 Run the additional Work Package B regression checks with:
 

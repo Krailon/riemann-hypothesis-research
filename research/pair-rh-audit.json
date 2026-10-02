@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "f55baada22fa86eb4f3bf9e6a82e0f3cdb6c68c6b216ec6b3a4000f8f972174a",
+  "ledger_sha256": "894c2168e26c22806437efc7b6d8f9cafbb2c84609c998e39881fc3199ec61dc",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2381,5 +2381,16 @@
       "TRIPLE-QUADRANT-LIMIT-001"
     ],
     "changes": "The previous ledger is an unchanged byte prefix, followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. Both new claims explicitly record the positive-quadrant support assumption. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_signed_sector_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_signed_sector_and_schwartz_claims",
+    "report": "research/triple-test-functions.md",
+    "previous_ledger_sha256": "f55baada22fa86eb4f3bf9e6a82e0f3cdb6c68c6b216ec6b3a4000f8f972174a",
+    "added_claim_ids": [
+      "TRIPLE-SIGNED-SECTORS-001",
+      "TRIPLE-SIGNED-TEST-FUNCTION-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The new Schwartz theorem explicitly records its open-hexagon support assumption. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
   }
 }

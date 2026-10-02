@@ -182,7 +182,8 @@ This proves a vanishing interior limit for arbitrary tests in the stated
 Fourier class, with the native smoothing kernel and horizontal shifts.
 It does not complete the general Work Package B target. Sections 6--7
 below subsequently handle the frequency axes and origin from the positive
-quadrant; signed-sector extension and kernel modification remain separate.
+quadrant; Sections 8--9 extend to signed sectors. Kernel modification
+remains separate.
 No GUE main term, relative asymptotic, real-ordinate-only formula, positivity,
 or new horizontal constraint follows from this zero limit.
 
@@ -372,11 +373,11 @@ with a nonzero value there, one may instead use signed tests whose two
 weighted axis integrals vanish. Interior-supported tests give zero
 limit and retain the earlier stronger unnormalized estimate.
 
-This establishes a nonzero weighted one-sided boundary limit. The next
-step is signed-sector analysis for smooth Fourier tests crossing the
-axes. Kernel removal, a general Schwartz correlation theorem around the
-origin, and horizontal extraction remain open; no new horizontal
-constraint or completion of Work Package B is asserted here.
+This establishes a nonzero weighted one-sided boundary limit. Sections
+8--9 subsequently handle signed sectors and Schwartz tests crossing the
+axes for the native weighted observable. Kernel removal and horizontal
+extraction remain separate; no new horizontal constraint or completion
+of Work Package B is asserted here.
 
 Validation of the boundary extension on 2026-10-02: all 50 triple checks
 (including nine new boundary checks) and all 70 pair checks passed.
@@ -392,3 +393,180 @@ ledger is an unchanged byte prefix followed by exactly these two claims.
 Its original claim coverage, claim snapshot, audited pair proof and
 Work Package A reproduction archive remain unchanged. The new claims are
 outside that audit's scope.
+
+## 8. Signed sectors and reciprocal reflection
+
+Task: proof and bookkeeping. Claim **TRIPLE-SIGNED-SECTORS-001**, label
+**lem:triple-signed-sectors**, is **proved-draft**, with assumptions
+`UNCONDITIONAL`. Extend the full-zero series \(S(x,t)\) to all \(x>0\).
+The majorant
+\[
+|2x^{\delta_j+i(\gamma_j-t)}/D_j(t)|
+\le (8/3)\max(x,x^{-1})^{1/2}(1+(t-\gamma_j)^2)^{-1}
+\]
+proves absolute, locally uniform convergence. Conjugating and reindexing
+by \((\delta,\gamma)\mapsto(-\delta,\gamma)\), with multiplicity, gives
+\[
+S(x^{-1},t)=\overline{S(x,t)}.
+\]
+This uses the full zero multiset, including its transformed denominators;
+it does not set any horizontal displacement to zero.
+
+Extend \(\mathcal C_{3,T}(X,Y)\) by its same smoothed product to
+\(X,Y>0\), and set
+\[
+\widetilde{\mathcal C}_T(\xi,\eta)=\mathcal C_{3,T}(B^\xi,B^\eta),\quad
+R(\xi,\eta)=(\eta,-\xi-\eta),\quad
+h(\xi,\eta)=\max\{|\xi|,|\eta|,|\xi+\eta|\}.
+\]
+The integrand is \(S(B^\xi,t)S(B^\eta,t)S(B^{-\xi-\eta},t)\).
+Its factor permutations and conjugation give
+\[
+\widetilde{\mathcal C}_T(R(\xi,\eta))=\widetilde{\mathcal C}_T(\xi,\eta),\quad
+\widetilde{\mathcal C}_T(-\xi,-\eta)=\overline{\widetilde{\mathcal C}_T(\xi,\eta)},\quad
+\widetilde{\mathcal C}_T(\eta,\xi)=\widetilde{\mathcal C}_T(\xi,\eta).
+\]
+No new prime estimate at bases below one is needed.
+
+The [machine-checkable sector table](triple-signed-sectors.json) contains
+the following determinant-one maps from \(Q\). Conjugation is applied
+to \(\widetilde{\mathcal C}_T(u,v)\), not to the frequency coordinates.
+
+| Map | Image \((\xi,\eta)\) | Closed cone | Conjugate observable? |
+| --- | --- | --- | --- |
+| \(I\) | \((u,v)\) | \(\xi,\eta\ge0\) | No |
+| \(R\) | \((v,-u-v)\) | \(\xi\ge0,\xi+\eta\le0\) | No |
+| \(R^2\) | \((-u-v,u)\) | \(\eta\ge0,\xi+\eta\le0\) | No |
+| \(-I\) | \((-u,-v)\) | \(\xi,\eta\le0\) | Yes |
+| \(-R\) | \((-v,u+v)\) | \(\xi\le0,\xi+\eta\ge0\) | Yes |
+| \(-R^2\) | \((u+v,-u)\) | \(\eta\le0,\xi+\eta\ge0\) | Yes |
+
+The interiors are disjoint and cover the plane away from
+\(\xi\eta(\xi+\eta)=0\). The closed cones overlap only on these seams.
+There the integrand is \(S(1,t)|S(B^r,t)|^2\), in some factor order,
+and is real, so all sector descriptions agree. Each map satisfies
+\(h(\pm R^k(u,v))=u+v\), and globally
+\[
+h(\xi,\eta)=\tfrac12(|\xi|+|\eta|+|\xi+\eta|).
+\]
+The symmetries concern full sums. Reflections of selected zero slots
+need not preserve an individual index-diagonal subseries.
+
+The extended master identity retains the original \(K_T\) and complex
+arguments. Collecting the anchor delta before estimating gives
+\[
+|B^{\xi(\delta_{i_2}+\delta_{i_1})+
+       \eta(\delta_{i_3}+\delta_{i_1})}|
+\le B^{(|\xi|+|\eta|+|\xi+\eta|)/2}=B^h.
+\]
+For integrable \(\phi\) supported in \(h\le1-\kappa\), the integrated
+absolute zero-series bound is therefore
+\(C\|\phi\|_1B^{1-\kappa}\log^3(2T+2)\). This proves the needed
+Fubini statements without discarding any horizontal factor.
+
+## 9. Schwartz correlation on the open hexagon
+
+Claim **TRIPLE-SIGNED-TEST-FUNCTION-001**, label
+**thm:triple-signed-test-function**, is **proved-draft**, with assumptions
+`UNCONDITIONAL` and `SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)`.
+Let \(\phi\in C_c^\infty(\mathcal H)\) be arbitrary complex-valued, where
+\[
+\mathcal H=\{h<1\},\qquad \mathcal H_\kappa=\{h\le1-\kappa\},\quad0<\kappa<1.
+\]
+Every such test has support in some \(\mathcal H_\kappa\). The outer
+hexagon vertices are \((1,0),(0,1),(-1,1),(-1,0),(0,-1),(1,-1)\);
+its entire outer boundary is excluded. Internal axes, the diagonal
+\(\xi+\eta=0\), and the origin are included. A smooth bump supported
+in \((-1/4,1/4)^2\), nonzero at the origin, crosses all three seams
+and has \(h\le1/2\) on its support.
+
+For \(B=T/(2\pi),q=\log T\), define
+\[
+\mathcal A_T[\phi]=q^{-1}\int_{\mathbb R^2}\phi(\xi,\eta)
+\widetilde{\mathcal C}_T(\xi,\eta)\,d\xi\,d\eta.
+\]
+The theorem gives
+\[
+\mathcal A_T[\phi]\longrightarrow\mathcal A[\phi]
+=\frac32\phi(0,0)+\frac32\int_{\mathbb R}|r|
+ [\phi(r,0)+\phi(0,r)+\phi(r,-r)]\,dr.
+\]
+More precisely, for support in \(\mathcal H_\kappa\), \(T\ge2\pi e\),
+\(b=\log B\), and \(L=\log(2T+2)\),
+\[
+|\mathcal A_T[\phi]-\mathcal A[\phi]|
+\ll\|\phi\|_{C^1}(1+W_\infty+W_1)
+\{b^{-1}+B^{-\kappa}L^3\}.
+\]
+The constant is effective, absolute, and independent of \(\kappa\).
+Here \(\|\phi\|_{C^1}\) is the sum of the sup norms of \(\phi\)
+and its two first partial derivatives.
+
+For the proof use quadrant tests
+\[
+\psi_{+,k}=\phi\circ R^k,\qquad
+\psi_{-,k}=\overline{\phi\circ(-R^k)},\quad k=0,1,2.
+\]
+Their relative supports lie in \(Q_\kappa\) and
+\(N_1(\psi_{\pm,k})\le2\|\phi\|_{C^1}\). Exactly,
+\[
+\mathcal A_T[\phi]=\sum_{k=0}^2
+\left(\mathcal B_T[\psi_{+,k}]+
+      \overline{\mathcal B_T[\psi_{-,k}]}\right).
+\]
+The conjugation of the negative-sector test is required even though the
+limiting coefficients are real. Apply the quadrant theorem to each term.
+Each of six origin contributions is \(\phi(0,0)/4\). Each of the six
+rays is a column of two sector matrices and receives two contributions
+\(3r/4\), yielding coefficient \(3/2\) in the full-plane formula.
+The planar seams have measure zero at finite \(T\); the adjacent
+sectors both contribute to the limiting line measures. No additional
+half weights apply. The diagonal is parameterized by \((r,-r)\),
+with measure **\(dr\)**, not Euclidean arclength; no extra
+\(\sqrt2\) factor appears.
+
+Define
+\[
+F(z_1,z_2)=\int_{\mathbb R^2}\phi(\xi,\eta)
+ e^{2\pi i(\xi z_1+\eta z_2)}\,d\xi\,d\eta.
+\]
+Then \(F\) is entire, Schwartz on the real plane, and \(\widehat F=\phi\)
+in the project convention. For \(T>2\pi\), the exact identity is
+\[
+\mathcal A_T[\phi]=\frac8q\sum_{i_1,i_2,i_3\in\mathcal I}
+K_T(i_2,i_3,i_1)F(z_{21},z_{31}).
+\]
+It includes the full zero multiset, both ordinate signs, multiplicities,
+all five index patterns, conjugated anchor and the same imaginary sums
+of deltas. The only extra normalization is \(1/q\); \(1/T\) remains
+in the kernel and there is no mean-spacing Jacobian.
+
+Remove independent zero cutoffs at fixed \(T,\phi,\omega\) using the
+majorant in Section 8; then let \(T\to\infty\) with test, margin and
+smoothing fixed. For varying families require the displayed error to
+vanish. Reality, positivity and permutation symmetry of tests are not
+required. Hermitian frequency symmetry may be imposed to obtain real
+Schwartz tests. A test supported strictly within one sector gives zero
+limit, recovering the earlier interior behavior.
+
+This supplies smooth Fourier tests across every internal seam for the
+native weighted full-zero correlation. The one-sided class in Sections
+6--7 remains a useful intermediate result with different regularity.
+Kernel removal, GUE identification, and horizontal extraction remain
+separate tasks; this does not assert completion of Work Package B.
+
+Validation of the signed-sector extension on 2026-10-02: all 60 triple
+checks (including ten new signed-sector checks) and all 70 pair checks
+passed. The 24-page PDF compiled with shell escape disabled, with no
+final-pass warnings, unresolved references, or overfull/underfull boxes.
+The new exact checks cover the full-zero reciprocal reflection, bases
+below one, sector geometry and seams, complex-test conjugation, collected
+anchor bounds, chain-rule norms, ray incidence, support fixtures and
+rejection of deliberately corrupted sector records. These are finite
+verification aids, not an analytic or numerical proof certificate.
+
+The pair-audit ledger hash was refreshed after verifying that the previous
+ledger is an unchanged byte prefix followed by exactly the two signed-sector
+claims. Existing claim statements, audit snapshot, audited Work Package A
+proof files and reproduction archive remain unchanged. The new claims are
+outside the Work Package A audit's coverage.

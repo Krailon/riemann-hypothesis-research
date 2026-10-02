@@ -338,8 +338,12 @@ The same note now records **TRIPLE-BOUNDARY-ESTIMATES-001** and
 axes and origin, and their one-sided limit after division by `log T`.
 These extend the frequency analysis using the bounds valid at `X=1,Y=1`;
 they do not apply the growing-range corollary at epsilon zero.
-Signed-sector extensions, the general Work Package B theorem,
-a GUE identification, and horizontal consequences remain open.
+The subsequent **TRIPLE-SIGNED-SECTORS-001** and
+**TRIPLE-SIGNED-TEST-FUNCTION-001** transport this integrated budget through
+six determinant-one maps to Schwartz tests with Fourier support compactly
+inside the open hexagon `max(|xi|,|eta|,|xi+eta|)<1`. No new prime-side
+estimate is used in that step. Kernel removal, GUE identification and
+horizontal consequences remain open.
 
 ## 7. Regression checks
 

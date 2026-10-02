@@ -20,8 +20,9 @@
 \noindent Task: proof and bookkeeping. Assumptions: \texttt{UNCONDITIONAL}.
 Ledger status: \texttt{proved-draft}. This draft develops the exact
 smoothed identity, its uniform budget, the interior vanishing theorem,
-and a one-sided positive-quadrant boundary limit. The general Schwartz
-correlation target for Work Package B remains open.
+the one-sided positive-quadrant boundary limit, and a native weighted
+Schwartz correlation theorem on an open hexagon. Kernel removal and
+horizontal extraction remain separate Work Package B tasks.
 
 \section{Definitions and imported inputs}
 
@@ -1490,9 +1491,247 @@ reflection is still a reindexing of full zeros and kernel denominators.
 For varying tests, margins or smoothing, a limiting assertion requires
 the right side of \eqref{eq:triple-quadrant-limit} to tend to zero.
 
-This proves a nonzero one-sided weighted correlation limit. Extending
-across signed frequency sectors to smooth Fourier tests surrounding the
-origin, removing the native kernel, and extracting horizontal information
-remain separate tasks. In particular this is not the general Schwartz
-test-function target of Work Package B.
+This proves a nonzero one-sided weighted correlation limit. The following
+sections extend across signed frequency sectors to smooth Fourier tests
+surrounding the origin. Removing the native kernel and extracting
+horizontal information remain separate tasks.
+\section{Signed frequency sectors and reciprocal reflection}
+
+Task: proof and bookkeeping. The next lemma is \texttt{UNCONDITIONAL};
+the following theorem also records its explicit Fourier-support
+restriction. Both have ledger status \texttt{proved-draft}.
+Extend \(\ZS(x,t)\) to every \(x>0\) by the same full-zero series
+\eqref{eq:triple-S}, and define \(\CT(X,Y)\) by the same smoothed
+product for every \(X,Y>0\). No prime-side formula for \(x<1\)
+is being imported. For \(T>2\pi\), put
+\[
+ \widetilde{\mathcal C}_T(\xi,\eta)=\CT(B^\xi,B^\eta),\qquad
+ h(\xi,\eta)=\max\{|\xi|,|\eta|,|\xi+\eta|\},
+ \qquad B=T/(2\pi).
+\]
+Let \(R(u,v)=(v,-u-v)\), so \(R^3=I\).
+
+\begin{lemma}[\texttt{TRIPLE-SIGNED-SECTORS-001}]
+\label{lem:triple-signed-sectors}
+The extended zero series converges absolutely, locally uniformly in
+\(x>0,t\in\mathbb R\), and
+\begin{equation}\label{eq:triple-reciprocal-reflection}
+ \ZS(x^{-1},t)=\overline{\ZS(x,t)}.
+\end{equation}
+For all real frequencies,
+\begin{equation}\label{eq:triple-signed-symmetries}
+ \widetilde{\mathcal C}_T(R(\xi,\eta))=\widetilde{\mathcal C}_T(\xi,\eta),\quad
+ \widetilde{\mathcal C}_T(-\xi,-\eta)=\overline{\widetilde{\mathcal C}_T(\xi,\eta)},\quad
+ \widetilde{\mathcal C}_T(\eta,\xi)=\widetilde{\mathcal C}_T(\xi,\eta).
+\end{equation}
+The six closed cones \(\sigma R^kQ\), \(\sigma\in\{1,-1\}\),
+\(k=0,1,2\), cover the plane with disjoint interiors. Their overlaps
+are on \(\xi\eta(\xi+\eta)=0\), and for \((u,v)\in Q\),
+\[
+ \det(\sigma R^k)=1,\qquad h(\sigma R^k(u,v))=u+v.
+\]
+The master zero-side identity holds for every \(X,Y>0\). In particular,
+if an integrable \(\phi\) is supported in \(h\leq1-\kappa\), where
+\(0<\kappa<1\), its integrated absolute zero-series majorant is
+\begin{equation}\label{eq:triple-signed-majorant}
+ 8\sum_{i_1,i_2,i_3}\int_{\mathbb R^2}
+ |\phi(\xi,\eta)K_T(i_2,i_3,i_1)
+       e^{2\pi\ii(\xi z_{21}+\eta z_{31})}|\dd\xi\dd\eta
+ \ll\|\phi\|_1B^{1-\kappa}\log^3(2T+2).
+\end{equation}
+Here the complex zero arguments are still \eqref{eq:triple-test-arguments}.
+\end{lemma}
+\begin{proof}
+Since \(|\delta_j|<1/2\),
+\[
+ \left|\frac{2x^{\delta_j+\ii(\gamma_j-t)}}{D_j(t)}\right|
+ \leq\frac{8}{3}\max(x,x^{-1})^{1/2}
+                  (1+(t-\gamma_j)^2)^{-1}.
+\]
+On a compact set of \(x,t\), this is a constant times
+\((1+\gamma_j^2)^{-1}\), whose zero sum converges by the imported
+counting bound. This proves local uniform absolute convergence.
+Conjugate the series and reindex by the multiplicity-preserving map
+\((\delta,\gamma)\mapsto(-\delta,\gamma)\). Its denominator changes
+from \(\overline{D_j(t)}\) to the denominator of the reflected zero,
+and the numerator becomes \(2x^{-\delta_j-\ii(\gamma_j-t)}\).
+This proves \eqref{eq:triple-reciprocal-reflection} with no restriction
+on the horizontal locations of the zeros.
+
+The frequency integrand is now
+\[
+ \ZS(B^\xi,t)\ZS(B^\eta,t)\ZS(B^{-\xi-\eta},t).
+\]
+Cyclic permutation of its three frequencies gives \(R\); exchange
+of the first two factors gives the coordinate swap. Negating all three
+frequencies conjugates the product, and the smoothing is real. This
+proves \eqref{eq:triple-signed-symmetries}.
+
+The six maps and their images are recorded explicitly below. All
+inequalities in this table include equality; only the interiors are
+disjoint. A conjugation flag means conjugate \(\widetilde{\mathcal C}_T(u,v)\).
+\begin{center}\small
+\begin{tabular}{llll}
+\toprule
+Map & Image of \((u,v)\) & Cone & Conjugate?\\
+\midrule
+\(I\)&\((u,v)\)&\(\xi,\eta\geq0\)&no\\
+\(R\)&\((v,-u-v)\)&\(\xi\geq0,\ \xi+\eta\leq0\)&no\\
+\(R^2\)&\((-u-v,u)\)&\(\eta\geq0,\ \xi+\eta\leq0\)&no\\
+\(-I\)&\((-u,-v)\)&\(\xi,\eta\leq0\)&yes\\
+\(-R\)&\((-v,u+v)\)&\(\xi\leq0,\ \xi+\eta\geq0\)&yes\\
+\(-R^2\)&\((u+v,-u)\)&\(\eta\leq0,\ \xi+\eta\geq0\)&yes\\
+\bottomrule
+\end{tabular}
+\end{center}
+The mixed-sign quadrants split according to the sign of \(\xi+\eta\),
+proving coverage and disjointness of the six interiors. The three
+positive matrices are
+\[
+ I,\quad \begin{pmatrix}0&1\\-1&-1\end{pmatrix},\quad
+ \begin{pmatrix}-1&-1\\1&0\end{pmatrix}.
+\]
+Each matrix and its negative has determinant one. The absolute values
+of the three frequencies on each cone are \(u,v,u+v\), in some order.
+This proves the formula for \(h\), as well as the global identity
+\begin{equation}\label{eq:triple-hexagon-gauge}
+ h(\xi,\eta)=\frac{|\xi|+|\eta|+|\xi+\eta|}{2}.
+\end{equation}
+On a seam the three frequencies are \(r,0,-r\), in some order.
+The integrand is \(\ZS(1,t)|\ZS(B^r,t)|^2\), which is real because
+\eqref{eq:triple-reciprocal-reflection} makes \(\ZS(1,t)\) real.
+Thus the conjugated and unconjugated descriptions agree on all seams,
+including the origin.
+
+The product of the three absolutely convergent series has the same
+phase cancellation and factor eight as before, for arbitrary positive
+bases. For an individual summand its horizontal numerator is bounded by
+\[
+ \left|B^{\xi(\delta_{i_2}+\delta_{i_1})+
+                  \eta(\delta_{i_3}+\delta_{i_1})}\right|
+ \leq B^{(|\xi|+|\eta|+|\xi+\eta|)/2}=B^{h(\xi,\eta)}.
+\]
+It is essential here to collect the coefficient of the anchor delta
+before taking absolute values. The three denominator majorants and the
+zero-counting bound then give an integrated absolute sum
+\(O(B^h\log^3(2T+2))\). Integrating against \(|\phi|\) proves
+\eqref{eq:triple-signed-majorant} and the asserted master extension.
+All interchanges are at fixed parameters under these majorants.
+The symmetry identities concern the full occurrence sum; reindexing
+only some slots need not preserve an individual index-diagonal subseries.
+\end{proof}
+
+\section{Schwartz tests with hexagonal Fourier support}
+
+Let \(\mathcal H=\{h<1\}\) and
+\(\mathcal H_\kappa=\{h\leq1-\kappa\}\), \(0<\kappa<1\).
+Every compact subset of \(\mathcal H\) lies in some
+\(\mathcal H_\kappa\). The outer hexagon has vertices
+\((1,0),(0,1),(-1,1),(-1,0),(0,-1),(1,-1)\), all excluded.
+
+\begin{theorem}[\texttt{TRIPLE-SIGNED-TEST-FUNCTION-001}]
+\label{thm:triple-signed-test-function}
+Let \(\phi\in C_c^\infty(\mathcal H)\) be arbitrary and complex-valued,
+and let \(F\) be its entire inverse Fourier transform in the project
+convention. Then \(F|_{\mathbb R^2}\) is Schwartz and \(\widehat F=\phi\).
+For \(T>2\pi\), define
+\begin{align}
+ \mathcal A_T[\phi]&=\frac1q\int_{\mathbb R^2}
+             \phi(\xi,\eta)\widetilde{\mathcal C}_T(\xi,\eta)\dd\xi\dd\eta,
+             \qquad q=\log T,\notag\\
+ \mathcal A[\phi]&=\frac32\phi(0,0)+\frac32\int_{\mathbb R}|r|
+       \{\phi(r,0)+\phi(0,r)+\phi(r,-r)\}\dd r.
+       \label{eq:triple-signed-limit-functional}
+\end{align}
+There is the exact absolutely convergent identity
+\begin{equation}\label{eq:triple-signed-zero-identity}
+ \mathcal A_T[\phi]=\frac8q\sum_{i_1,i_2,i_3\in\mathcal I}
+       K_T(i_2,i_3,i_1)F(z_{21},z_{31}).
+\end{equation}
+If \(\operatorname{supp}\phi\subset\mathcal H_\kappa\), then, uniformly
+for \(T\geq2\pi e\),
+\begin{equation}\label{eq:triple-signed-limit-error}
+ |\mathcal A_T[\phi]-\mathcal A[\phi]|
+ \ll \|\phi\|_{C^1}(1+W_\infty+W_1)
+       \{b^{-1}+B^{-\kappa}\log^3(2T+2)\},\qquad b=\log B.
+\end{equation}
+Here \(\|\phi\|_{C^1}=\|\phi\|_\infty+
+\|\partial_\xi\phi\|_\infty+\|\partial_\eta\phi\|_\infty\).
+The constant is effective and absolute, including independence from
+\(\kappa\). For fixed \(\phi,\kappa,\omega\), the limit is
+\(\mathcal A[\phi]\).
+\end{theorem}
+\begin{proof}
+Compact smooth frequency support gives the entire extension by locally
+uniform differentiation and gives Schwartz decay on the real plane by
+repeated integration by parts. Fourier inversion has exactly the
+negative-forward, positive-inverse \(2\pi\) convention already fixed.
+Lemma~\ref{lem:triple-signed-sectors} and its absolute majorant permit
+Fubini with the zero sums and prove \eqref{eq:triple-signed-zero-identity}.
+
+For \(k=0,1,2\), put, on \(Q\),
+\[
+ \psi_{+,k}(u,v)=\phi(R^k(u,v)),\qquad
+ \psi_{-,k}(u,v)=\overline{\phi(-R^k(u,v))}.
+\]
+Each is the restriction of a compactly supported smooth function on
+the plane, with relative support in \(Q_\kappa\). The chain rule gives
+\(N_1(\psi_{\pm,k})\leq2\|\phi\|_{C^1}\), since the absolute
+row sums of every matrix are at most two. The planar seams have measure
+zero. Change variables by the six determinant-one maps to obtain
+the exact decomposition
+\begin{equation}\label{eq:triple-six-sector-decomposition}
+ \mathcal A_T[\phi]
+ =\sum_{k=0}^2\left\{\mathcal B_T[\psi_{+,k}]
+                   +\overline{\mathcal B_T[\psi_{-,k}]}\right\}.
+\end{equation}
+The conjugation of the test in the negative sectors is necessary for
+complex tests. Apply Theorem~\ref{thm:triple-quadrant-limit} to each
+term. Its real coefficients ensure that conjugating the negative-sector
+limit restores \(\phi(-R^k(u,v))\), with no conjugate on the resulting
+values of \(\phi\). The six errors sum to the bound
+\eqref{eq:triple-signed-limit-error}.
+
+Each sector contributes \(\phi(0,0)/4\), giving \(3\phi(0,0)/2\).
+The images of the two coordinate rays under all six maps are
+\[
+ (r,0),\ (0,r),\ (-r,r),\ (-r,0),\ (0,-r),\ (r,-r),
+ \qquad r\geq0,
+\]
+each occurring twice. One way to check the incidence is to list the
+columns of \(I,R,R^2,-I,-R,-R^2\); they are precisely those six
+directions with multiplicity two. Thus each ray carries
+\(2(3r/4)\dd r\). Pairing opposite rays gives
+\eqref{eq:triple-signed-limit-functional}. In particular the diagonal
+line is parameterized by \((r,-r)\) with measure \(\dd r\), not
+Euclidean arclength. There is no missing square-root-of-two factor.
+Both adjacent sectors contribute to a limiting ray even though the
+finite-\(T\) planar seam has measure zero. No extra half weights are
+introduced, and the origin term is counted once per sector.
+
+At fixed \(T,\phi,\omega\), remove independent zero cutoffs using
+\eqref{eq:triple-signed-majorant}. Only then take \(T\to\infty\),
+with the test, margin and smoothing fixed. The explicit bound remains
+valid for varying families, but a convergence claim requires its right
+side to tend to zero.
+\end{proof}
+
+A smooth nonzero bump supported in \((-1/4,1/4)^2\), nonzero at
+the origin, supplies a test crossing all three seams: its support has
+\(h\leq1/2\). Thus the class includes real Schwartz tests by choosing
+\(\phi(-\xi,-\eta)=\overline{\phi(\xi,\eta)}\); this symmetry is
+optional. All tests are allowed to be complex and need no permutation
+symmetry or positivity. A test supported strictly inside one sector has
+zero limiting functional, consistent with the quadrant interior result.
+
+The origin and all three internal lines are included. The outer boundary
+\(h=1\) is excluded; this proof does not extend it by a continuity
+argument. The normalization is still precisely \(8/q\) on the zero side,
+with \(1/T\) already in \(K_T\) and no extra mean-spacing Jacobian.
+Both ordinate signs, full multiplicities, all five index patterns, and
+the imaginary sums of horizontal displacements remain present. The
+result supplies a Schwartz test-function theorem for the native weighted
+full-zero observable. Removing its kernel, identifying a GUE expression,
+or extracting a horizontal constraint requires additional analysis;
+no such conclusion or completion of Work Package B is asserted here.
 \end{document}

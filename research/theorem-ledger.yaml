@@ -1626,3 +1626,101 @@ claims:
       verification_script: scripts/check_triple_boundary.py
       independent_verification: pending
       pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-SIGNED-SECTORS-001
+    title: Reciprocal full-zero reflection and six signed frequency sectors
+    kind: lemma
+    statement: |
+      Extend S(x,t) to every x>0 by the full-zero series of TRIPLE-MASTER-001
+      and C_{3,T}(X,Y) to X,Y>0 by the same smoothed product. The series is
+      absolutely locally uniformly convergent in x>0,t real, and
+      S(x^(-1),t)=conjugate(S(x,t)) by multiplicity-preserving horizontal
+      reflection. For T>2pi set B=T/(2pi), Ctilde_T(xi,eta)=C_{3,T}(B^xi,B^eta),
+      R(xi,eta)=(eta,-xi-eta), and h=max(abs(xi),abs(eta),abs(xi+eta)).
+      Ctilde_T(R(xi,eta))=Ctilde_T(xi,eta),
+      Ctilde_T(-xi,-eta)=conjugate(Ctilde_T(xi,eta)), and coordinate swap
+      preserves Ctilde_T. The six closed cones sigma R^k Q, Q=[0,infinity)^2,
+      sigma in {1,-1}, k=0,1,2 cover R2 with disjoint interiors. Their only
+      overlaps are on xi eta (xi+eta)=0. All maps have determinant one;
+      h(sigma R^k(u,v))=u+v for u,v>=0, and globally
+      h=(abs(xi)+abs(eta)+abs(xi+eta))/2. On every seam the integrand is a
+      permutation of S(1,t)|S(B^r,t)|^2 and is real, so sector descriptions
+      agree. The master full-zero identity extends to all X,Y>0. For any
+      integrable phi supported in h<=1-kappa, 0<kappa<1, its integrated
+      absolute zero-series majorant is C||phi||_1 B^(1-kappa)log(2T+2)^3,
+      before division by log T. Sector identities concern full sums and
+      need not preserve individual index-diagonal subseries.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-MASTER-001, PAIR-COUNT-KERNEL-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-signed-sectors
+      bookkeeping: research/triple-signed-sectors.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "All series products, conjugations and reindexings are at fixed parameters under absolute majorants; convergence is locally uniform in x>0,t real. No asymptotic limit is used."
+    project_audit:
+      task_type: proof
+      proof_method: "Full-zero reciprocal reflection, permutation of three frequencies with sum zero, exact determinant-one cone maps and the collected anchor-delta bound."
+      endpoint_audit: "x=1 and all internal seams, including the origin, are included. T>2pi for the frequency base; the optional support majorant uses 0<kappa<1."
+      horizontal_audit: "Retains all deltas and denominators. Reflection is reindexing; no individual zero or index-diagonal invariance is assumed."
+      verification_script: scripts/check_triple_signed_sectors.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-SIGNED-TEST-FUNCTION-001
+    title: Native weighted full-zero Schwartz correlation with hexagonal Fourier support
+    kind: theorem
+    statement: |
+      Let H={(xi,eta):h(xi,eta)<1}, h=max(abs(xi),abs(eta),abs(xi+eta)),
+      and let phi in C_c^infinity(H) be arbitrary complex-valued. Its entire
+      inverse Fourier transform F is Schwartz on R2 with Fourier transform
+      phi in the negative-forward, positive-inverse 2pi convention. For
+      T>2pi set B=T/(2pi),q=log T,b=log B,L=log(2T+2), and
+      A_T[phi]=q^(-1)integral_R2 phi(xi,eta)C_{3,T}(B^xi,B^eta) dxi deta.
+      Exactly and absolutely convergently,
+      A_T[phi]=(8/q)sum_{i1,i2,i3 in I} K_T(i2,i3,i1)F(z21,z31), where
+      z21=L_T((gamma_i2-gamma_i1)-i(delta_i2+delta_i1)),
+      z31=L_T((gamma_i3-gamma_i1)-i(delta_i3+delta_i1)), L_T=log B/(2pi).
+      The full occurrence multiset, both ordinate signs, multiplicities,
+      conjugated anchor and all partial diagonals are included.
+      Define A[phi]=(3/2)phi(0,0)+(3/2)integral_R abs(r)
+      (phi(r,0)+phi(0,r)+phi(r,-r)) dr. For support in h<=1-kappa,
+      0<kappa<1, and T>=2pi e,
+      |A_T[phi]-A[phi]|<<||phi||_{C1}(1+||omega||_inf+||omega'||_1)
+      (1/b+B^(-kappa)L^3) with an effective absolute constant independent
+      of kappa. The C1 norm is the sum of the sup norms of phi and its two
+      first partial derivatives. Thus A_T tends to A for fixed phi,kappa,omega.
+      Every compact subset of H admits such a margin. Each of the six
+      sectors contributes an origin mass 1/4 and each ray has two incident
+      sectors with coefficient 3/4. No additional half weights are applied.
+      All line integrals use parameter r and measure dr, including (r,-r),
+      not Euclidean arclength. No RH, simplicity, test symmetry or positivity
+      is required. The outer boundary h=1, kernel removal, GUE identification
+      and horizontal extraction are not established by this theorem.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"]
+    dependencies: [TRIPLE-SIGNED-SECTORS-001, TRIPLE-QUADRANT-LIMIT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: thm:triple-signed-test-function
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Remove independent zero cutoffs at fixed T,phi,omega under C||phi||_1 B^(1-kappa)L^3. Then fix phi,kappa,omega and let T grow; varying families require the displayed error to vanish."
+    project_audit:
+      task_type: proof
+      proof_method: "Six determinant-one quadrant pullbacks, conjugation of negative-sector tests, chain-rule seminorm bounds, incidence accounting and compact-frequency Fourier inversion."
+      endpoint_audit: "All internal axes, the diagonal xi+eta=0 and the origin included; h=1 excluded. Identity holds for T>2pi; estimate for T>=2pi e."
+      scaling_audit: "Only the extra factor 1/log T; 1/T remains inside K_T. Sector Jacobians are one and diagonal line measure is dr."
+      horizontal_audit: "Full complex test arguments and native kernel retained; sector identities do not assert separate preservation of index-diagonal subseries."
+      verification_script: scripts/check_triple_signed_sectors.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
