@@ -345,6 +345,13 @@ inside the open hexagon `max(|xi|,|eta|,|xi+eta|)<1`. No new prime-side
 estimate is used in that step. Kernel removal, GUE identification and
 horizontal consequences remain open.
 
+The later [kernel-localization budget](triple-kernel.md) adds the named
+near, far-center and far-anchor errors for replacing the native height
+integral by an explicit rational profile. Their summed bound is
+`O((||omega'||_inf L^4 + ||omega||_inf L^3)/T)`, preserving the signed
+correlation main term on the same support region. The new derivative
+sup norm is recorded separately from the existing derivative L1 norm.
+
 ## 7. Regression checks
 
 Run the standard-library exact checks with:

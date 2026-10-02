@@ -169,8 +169,17 @@ mass `3/2` and three line contributions with coefficient `3/2` and weight
 `|r|`, parameterized by `(r,0)`, `(0,r)` and `(r,-r)`, each with measure
 `dr`. The [sector table](research/triple-signed-sectors.json) records the
 six maps and conjugation rules. The effective error, complex zero arguments
-and native kernel remain explicit. Kernel removal, GUE identification,
-and new horizontal consequences remain separate research tasks.
+and native kernel remain explicit.
+`TRIPLE-KERNEL-PROFILE-001`, `TRIPLE-KERNEL-LOCALIZATION-001` and
+`TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001`, also **proved-draft**, now give
+an [explicit rational kernel profile](research/triple-kernel.md) with every
+horizontal displacement retained. A summable height-localization error
+justifies replacing the original kernel by this profile times the
+anchor height weight, preserving the same correlation main term.
+The separately evaluated critical-line microscopic profile is `3*pi/8`,
+explaining the local normalization factor `3/2`; its application to all
+zero tuples would require RH. Global constant-kernel replacement, GUE
+identification and new horizontal consequences remain separate tasks.
 
 Run the additional Work Package B regression checks with:
 

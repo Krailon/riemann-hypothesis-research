@@ -555,6 +555,13 @@ native weighted full-zero correlation. The one-sided class in Sections
 Kernel removal, GUE identification, and horizontal extraction remain
 separate tasks; this does not assert completion of Work Package B.
 
+The subsequent [kernel analysis](triple-kernel.md) gives an explicit
+full-horizontal rational profile and a summable error for freezing the
+height weight at the anchor. Its replacement in the full zero sum
+preserves the main term above. The separately evaluated critical-line
+microscopic profile explains the local `3/2` normalization; global
+replacement by a constant kernel remains unproved.
+
 Validation of the signed-sector extension on 2026-10-02: all 60 triple
 checks (including ten new signed-sector checks) and all 70 pair checks
 passed. The 24-page PDF compiled with shell escape disabled, with no

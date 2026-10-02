@@ -21,8 +21,10 @@
 Ledger status: \texttt{proved-draft}. This draft develops the exact
 smoothed identity, its uniform budget, the interior vanishing theorem,
 the one-sided positive-quadrant boundary limit, and a native weighted
-Schwartz correlation theorem on an open hexagon. Kernel removal and
-horizontal extraction remain separate Work Package B tasks.
+Schwartz correlation theorem on an open hexagon. An explicit rational
+kernel profile and a summable height-localization error preserve that
+theorem's main term. Global constant-kernel replacement and horizontal
+extraction remain separate Work Package B tasks.
 
 \section{Definitions and imported inputs}
 
@@ -1734,4 +1736,369 @@ result supplies a Schwartz test-function theorem for the native weighted
 full-zero observable. Removing its kernel, identifying a GUE expression,
 or extracting a horizontal constraint requires additional analysis;
 no such conclusion or completion of Work Package B is asserted here.
+\section{An explicit full-zero kernel profile}
+
+Task: proof and bookkeeping. Assumptions: \texttt{UNCONDITIONAL}.
+The correlation consequence also has the stated support restriction.
+The next three claims have ledger status \texttt{proved-draft}.
+
+The critical-line specialization restricts kernel parameters; it does not impose RH
+on the unconditional zero sums.
+
+For \(K_T(j,k,\ell)\) put
+\[
+ a=\gamma_j-\gamma_\ell,\quad b=\gamma_k-\gamma_\ell,\qquad
+ z_1=a-\ii\delta_j,\quad z_2=b-\ii\delta_k,\quad z_3=\ii\delta_\ell,
+ \quad d_{mn}=z_m-z_n.
+\]
+Here \(z_1,z_2,z_3\) are integration centers, distinct from the scaled
+test arguments \(z_{21},z_{31}\). Allow \(|\delta_j|,|\delta_k|,
+|\delta_\ell|\leq1/2\) in the analytic profile, including the closed
+parameter endpoints; actual nontrivial zeros lie in the open strip.
+
+\begin{lemma}[\texttt{TRIPLE-KERNEL-PROFILE-001}]
+\label{lem:triple-kernel-profile}
+For real \(a,b\) and the preceding horizontal parameters, the absolutely
+convergent integral
+\begin{equation}\label{eq:triple-kernel-profile-integral}
+ \mathcal J(a,b;\delta_j,\delta_k,\delta_\ell)
+ :=\int_{\mathbb R}\prod_{m=1}^3\frac1{1+(v-z_m)^2}\dd v
+\end{equation}
+has the closed form
+\begin{equation}\label{eq:triple-kernel-profile-rational}
+ \mathcal J=\pi\,
+ \frac{24+d_{12}^2+d_{13}^2+d_{23}^2}
+ {(4+d_{12}^2)(4+d_{13}^2)(4+d_{23}^2)}.
+\end{equation}
+The formula includes coincident centers. Its denominators never vanish
+on the stated domain. It is smooth in the real parameters, locally
+uniformly up to all horizontal endpoints, and satisfies
+\begin{align*}
+ \mathcal J(a,b;\delta_j,\delta_k,\delta_\ell)
+ &=\mathcal J(b,a;\delta_k,\delta_j,\delta_\ell),\\
+ \mathcal J(a,b;-\delta_j,-\delta_k,-\delta_\ell)
+ &=\overline{\mathcal J(a,b;\delta_j,\delta_k,\delta_\ell)}.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Each center has imaginary part at most \(1/2\) in absolute value.
+The real-axis denominator bound used for the master identity gives an
+integrable product majorant. On compact real-gap sets, this product is
+\(O((1+v^2)^{-3})\), uniformly in the closed horizontal cube.
+
+First suppose that the three centers are distinct. The upper poles
+are \(z_m+\ii\), separated from the real axis by at least \(1/2\);
+the lower poles are \(z_m-\ii\). Upper and lower poles cannot coincide,
+since \(|\operatorname{Im}d_{mn}|\leq1\). Closing a large semicircle
+in the upper half-plane gives no arc contribution: for fixed centers
+the integrand is \(O(|v|^{-6})\) there. The residue theorem yields
+\begin{equation}\label{eq:triple-profile-residue-sum}
+ \mathcal J=\pi\sum_{m=1}^3
+      \prod_{n\ne m}\frac1{d_{mn}(d_{mn}+2\ii)}.
+\end{equation}
+Here the factor \(\pi\) is \(2\pi\ii/(2\ii)\).
+
+For an explicit cancellation check write \(A=d_{13},B=d_{23}\),
+\(D=A-B=d_{12}\). Multiply the rational sum in
+\eqref{eq:triple-profile-residue-sum} by
+\(D^2A^2B^2(D^2+4)(A^2+4)(B^2+4)\). Its three terms are
+\begin{align*}
+ &D(D-2\ii)A(A-2\ii)B^2(B^2+4),\\
+ &D(D+2\ii)B(B-2\ii)A^2(A^2+4),\\
+ &A(A+2\ii)B(B+2\ii)D^2(D^2+4).
+\end{align*}
+Their sum is \(D^2A^2B^2(24+D^2+A^2+B^2)\). To verify this
+polynomial identity, expand the three lines: their imaginary parts,
+after removing \(2\ii ABD\), sum to
+\[
+ -(D+A)B(B^2+4)+(B-D)A(A^2+4)
+                       +(A+B)D(D^2+4)=0
+\]
+using \(D=A-B\). For the real parts the needed remaining identity is
+\[
+ -DA B^2(B^2+4)+DB A^2(A^2+4)-AB D^2(D^2+4)
+                         =3D^2A^2B^2;
+\]
+divide by \(ABD\) at generic parameters and substitute \(D=A-B\),
+or multiply out to cover zero parameters. These two identities give
+the stated sum and hence \eqref{eq:triple-kernel-profile-rational}.
+
+For \(d=x+\ii y\), \(|y|\leq1\),
+\(\operatorname{Re}(4+d^2)=4+x^2-y^2\geq3+x^2\).
+Thus the final denominators have no zeros, including at coincident
+centers. Dominated convergence under the compact-set majorant extends
+the formula to those centers; the residue expression with separate
+simple poles is not used there. The rational formula also proves the
+asserted smoothness and effective derivative bounds on compact gap sets.
+Exchange of the first two factors proves the first symmetry. Conjugation
+of the integral proves the second, with all three deltas negated.
+\end{proof}
+
+\section{Freezing the height weight with a summable error}
+
+Extend \(\omega\) by zero to \(\mathbb R\), as its compact smooth support
+already permits, and write
+\(W_\infty=\|\omega\|_\infty\),
+\(W'_{\infty}=\|\omega'\|_\infty\), \(L=\log(2T+2)\).
+The derivative norm here is a new explicit smoothing dependence,
+distinct from the earlier \(W_1=\|\omega'\|_1\).
+
+\begin{lemma}[\texttt{TRIPLE-KERNEL-LOCALIZATION-001}]
+\label{lem:triple-kernel-localization}
+For \(T\geq3\), all zero occurrences satisfy
+\begin{equation}\label{eq:triple-kernel-freeze}
+ K_T(j,k,\ell)=\frac{\omega(\gamma_\ell/T)}T
+       \mathcal J(a,b;\delta_j,\delta_k,\delta_\ell)
+       +E_{\rm kernel}(j,k,\ell),
+\end{equation}
+where, uniformly in all ordinates and horizontal parameters,
+\begin{equation}\label{eq:triple-kernel-point-error}
+ |E_{\rm kernel}(j,k,\ell)|
+ \leq\frac{64\pi W'_{\infty}}
+               {27T^2\{4+(a-b)^2\}}.
+\end{equation}
+More importantly, over the full occurrence multiset,
+\begin{equation}\label{eq:triple-kernel-sum-error}
+ \sum_{j,k,\ell}|E_{\rm kernel}(j,k,\ell)|
+ \ll\frac{W'_{\infty}L^4+W_\infty L^3}{T}.
+\end{equation}
+All constants are effective and absolute; all index patterns and both
+ordinate signs are included.
+
+For the tests of Theorem~\ref{thm:triple-signed-test-function}, define
+\begin{align}
+ \mathcal A_T^{\mathcal J}[\phi]
+ :=\frac8{Tq}\sum_{i_1,i_2,i_3\in\mathcal I}
+ &\omega(\gamma_{i_1}/T)
+ \mathcal J(\gamma_{i_2}-\gamma_{i_1},\gamma_{i_3}-\gamma_{i_1};
+                   \delta_{i_2},\delta_{i_3},\delta_{i_1})\notag\\[-2pt]
+ &\hspace{30mm}{}\times F(z_{21},z_{31}),\qquad q=\log T.
+ \label{eq:triple-profile-statistic}
+\end{align}
+This series is absolutely convergent. For support in \(h\leq1-\kappa\),
+\(0<\kappa<1\), and \(T\geq2\pi e\), the additional named error is
+\begin{equation}\label{eq:triple-profile-transfer-error}
+ |\mathcal A_T[\phi]-\mathcal A_T^{\mathcal J}[\phi]|
+ \ll\|\phi\|_1(W_\infty+W'_{\infty})B^{-\kappa}L^3.
+\end{equation}
+Consequently \(\mathcal A_T^{\mathcal J}\) has the same limit
+\(\mathcal A[\phi]\) as in \eqref{eq:triple-signed-limit-functional},
+with error bounded by the sum of
+\eqref{eq:triple-signed-limit-error} and
+\eqref{eq:triple-profile-transfer-error}.
+\end{lemma}
+\begin{proof}
+Substitute \(t=\gamma_\ell+v\) in the kernel. Its three denominators
+become exactly those of \eqref{eq:triple-kernel-profile-integral}.
+Subtract the constant \(\omega(\gamma_\ell/T)\) inside the integral.
+The Lipschitz bound on the difference of weights gives
+\[
+ |E_{\rm kernel}|\leq\frac{64W'_{\infty}}{27T^2}
+ \int_{\mathbb R}\frac{|v|\dd v}
+ {(1+v^2)(1+(v-a)^2)(1+(v-b)^2)}.
+\]
+Use \(|v|/(1+v^2)\leq1/2\) and
+\[
+ \int_{\mathbb R}\frac{\dd v}{(1+(v-a)^2)(1+(v-b)^2)}
+                         =\frac{2\pi}{4+(a-b)^2}.
+\]
+For completeness the latter identity follows by the same upper-pole
+calculation: with \(d=a-b\ne0\), its value is
+\(\pi\{[d(d+2\ii)]^{-1}+[d(d-2\ii)]^{-1}\}\).
+This simplifies to \(2\pi/(d^2+4)\), and dominated convergence
+includes \(d=0\). This proves \eqref{eq:triple-kernel-point-error}.
+That tuplewise estimate alone is not summed over all triples.
+
+For the summable bound put \(k(v)=(1+v^2)^{-1}\),
+\(Q(t)=\sum_j k(t-\gamma_j)\ll\log(|t|+2)\), and
+\(\Delta_\ell(t)=\omega(t/T)-\omega(\gamma_\ell/T)\).
+Tonelli applied to absolute values gives the upper bound
+\begin{equation}\label{eq:triple-kernel-sum-majorant}
+ \frac{64}{27T}\int_{\mathbb R}Q(t)^2
+       \sum_\ell k(t-\gamma_\ell)|\Delta_\ell(t)|\dd t.
+\end{equation}
+This is legitimate as a nonnegative integral before proving it finite.
+Split the error integrals into three disjoint pieces. The first has
+\(|t-\gamma_\ell|\leq T\). The second has
+\(|t-\gamma_\ell|>T\) and \(t\in[T,2T]\). The third has
+\(|t-\gamma_\ell|>T\), \(t\notin[T,2T]\), and
+\(\gamma_\ell\in[T,2T]\). Outside these pieces the weight difference
+is zero. Call them \(E_{\rm kernel,near}\),
+\(E_{\rm kernel,far\text{-}center}\), and
+\(E_{\rm kernel,far\text{-}anchor}\), respectively.
+
+On the near piece a nonzero difference forces \(0\leq t\leq3T\).
+The local counting bound, including multiplicities, gives
+\[
+ \sum_{|t-\gamma_\ell|\leq T}
+     |t-\gamma_\ell|k(t-\gamma_\ell)
+ \ll L\sum_{0\leq m\leq\lceil T\rceil}(1+m)^{-1}\ll L^2.
+\]
+Indeed each unit shell contains \(O(L)\) occurrences uniformly on
+this range, and its weight is \(O((1+m)^{-1})\).
+As \(|\Delta_\ell(t)|\leq W'_{\infty}|t-\gamma_\ell|/T\),
+the integral in \eqref{eq:triple-kernel-sum-majorant}, restricted to
+the near piece, is \(O(W'_{\infty}L^4/T)\).
+
+For \(t\in[T,2T]\), distant shells of radius \(2^mT\) contain
+\(O(2^mT(L+m))\) occurrences. Hence
+\[
+ \sum_{|t-\gamma_\ell|>T}k(t-\gamma_\ell)
+ \ll T^{-1}\sum_{m\geq0}2^{-m}(L+m)\ll L/T.
+\]
+The far-center piece uses \(|\Delta_\ell|\leq2W_\infty\),
+\(Q(t)^2\ll L^2\), and an interval of length \(T\), giving
+\(O(W_\infty L^3/T)\) after the outer factor \(1/T\).
+
+For the far-anchor piece, there are \(O(TL)\) possible anchor
+occurrences. At \(|v|=|t-\gamma_\ell|>T\) with
+\(\gamma_\ell\in[T,2T]\), \(|t|+2\leq3|v|+2\), so
+\[
+ \int_{|t-\gamma_\ell|>T}Q(t)^2k(t-\gamma_\ell)\dd t
+ \ll\int_{|v|>T}\frac{\log^2(3|v|+2)}{v^2}\dd v
+ \ll T^{-1}\sum_{m\geq0}2^{-m}(L+m)^2\ll L^2/T.
+\]
+Here \(|\Delta_\ell(t)|=|\omega(\gamma_\ell/T)|\leq W_\infty\).
+Multiplying by the anchor count and the outer \(1/T\) gives the same
+\(O(W_\infty L^3/T)\) bound. We have thus retained all sources:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Summed absolute error & Bound\\
+\midrule
+\(E_{\rm kernel,near}\) & \(O(W'_{\infty}L^4/T)\)\\
+\(E_{\rm kernel,far\text{-}center}\) & \(O(W_\infty L^3/T)\)\\
+\(E_{\rm kernel,far\text{-}anchor}\) & \(O(W_\infty L^3/T)\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+These arguments use only the reconstructed local counts and kernel
+bound \texttt{PAIR-COUNT-001}, \texttt{PAIR-COUNT-KERNEL-001}.
+They prove \eqref{eq:triple-kernel-sum-error}, including all far anchors
+and negative ordinates. All cutoff removals follow from the finite
+nonnegative majorants just established.
+
+The original master estimate gives \(\sum|K_T|\ll L^3\).
+The triangle inequality and \eqref{eq:triple-kernel-sum-error} therefore
+also give absolute summability of
+\(\omega(\gamma_\ell/T)\mathcal J/T\).
+For the complex test arguments the compact-frequency representation,
+with the anchor delta collected as in
+\eqref{eq:triple-signed-majorant}, gives uniformly in all zero triples
+\[
+ |F(z_{21},z_{31})|\leq\|\phi\|_1 B^{1-\kappa}.
+\]
+Multiplying the summable error by this bound and \(8/q\) proves
+\eqref{eq:triple-profile-transfer-error}, since
+\(B^{1-\kappa}/T=B^{-\kappa}/(2\pi)\) and \(L/q\ll1\).
+It proves absolute convergence of the profile statistic as well.
+The old and new errors have now been checked separately for smoothing
+uniformity, so their sum is a valid error for the inherited main term.
+Fix the test, margin and smoothing before the limit; varying families
+must make both displayed errors tend to zero.
+\end{proof}
+
+\section{Microscopic profile and critical-line specialization}
+
+\begin{corollary}[\texttt{TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001}]
+\label{cor:triple-kernel-critical}
+Put
+\[
+ h_{12}=\delta_j-\delta_k,\qquad
+ h_{13}=\delta_j+\delta_\ell,\qquad
+ h_{23}=\delta_k+\delta_\ell.
+\]
+The zero-gap horizontal profile is
+\begin{equation}\label{eq:triple-horizontal-profile}
+ \mathcal J(0,0;\boldsymbol\delta)
+ =\pi\frac{24-h_{12}^2-h_{13}^2-h_{23}^2}
+ {(4-h_{12}^2)(4-h_{13}^2)(4-h_{23}^2)}.
+\end{equation}
+For every fixed \(R>0\), uniformly for \(|u|,|v|\leq R\) and
+\(\boldsymbol\delta\in[-1/2,1/2]^3\), as \(T\to\infty\),
+\begin{equation}\label{eq:triple-micro-horizontal}
+ \mathcal J(u/L_T,v/L_T;\boldsymbol\delta)
+ =\mathcal J(0,0;\boldsymbol\delta)+O_R(L_T^{-1}).
+\end{equation}
+For kernel parameters \(\boldsymbol\delta=\mathbf0\), separately,
+\begin{equation}\label{eq:triple-critical-profile}
+ \mathcal J(a,b;\mathbf0)
+ =\pi\frac{24+a^2+b^2+(a-b)^2}
+ {(4+a^2)(4+b^2)(4+(a-b)^2)}.
+\end{equation}
+Its microscopic expansion is
+\begin{equation}\label{eq:triple-critical-micro}
+ \mathcal J(u/L_T,v/L_T;\mathbf0)
+ =\frac{3\pi}{8}-\frac{5\pi}{32L_T^2}(u^2+v^2-uv)
+                         +O_R(L_T^{-4}).
+\end{equation}
+The constants are effective and uniform in the horizontal cube for
+\eqref{eq:triple-micro-horizontal}. In particular a critical-line tuple
+with these bounded scaled gaps has
+\[
+ K_T(j,k,\ell)=\frac{3\pi}{8T}\omega(\gamma_\ell/T)
+       +O_R\left(\frac{W_\infty}{TL_T^2}
+                         +\frac{W'_{\infty}}{T^2}\right).
+\]
+This is a tuplewise assertion on critical-line parameters, not a
+replacement of every tuple in the unconditional correlation sum.
+\end{corollary}
+\begin{proof}
+At zero gaps, \(d_{mn}=-\ii h_{mn}\); substitute into
+\eqref{eq:triple-kernel-profile-rational} to get
+\eqref{eq:triple-horizontal-profile}. Uniform first derivatives on a
+compact real-gap set times the closed horizontal cube follow from the
+same rational formula and \(|4+d_{mn}^2|\geq3\).
+The mean value estimate proves \eqref{eq:triple-micro-horizontal}.
+It does not require convergence of the horizontal parameters as \(T\)
+varies. The corresponding tuplewise kernel error relative to the
+zero-gap horizontal profile is
+\(O_R(W_\infty/(TL_T)+W'_{\infty}/T^2)\).
+
+Set all three deltas to zero to obtain
+\eqref{eq:triple-critical-profile}. If
+\(s=a^2+b^2+(a-b)^2\), its denominator is
+\(64+16s+O((|a|+|b|)^4)\). Thus
+\[
+ \mathcal J(a,b;\mathbf0)/\pi
+ =\frac38-\frac5{64}s+O((|a|+|b|)^4).
+\]
+Since \(s=2(a^2+b^2-ab)\), this is
+\eqref{eq:triple-critical-micro}. Uniform Taylor remainder bounds on
+compact sets follow from nonvanishing denominators. Finally apply
+\eqref{eq:triple-kernel-point-error}, whose right side is at most
+\(16\pi W'_{\infty}/(27T^2)\), to obtain the tuplewise kernel formula.
+All microscopic limits fix \(R\) before \(T\to\infty\).
+\end{proof}
+
+The profile \eqref{eq:triple-horizontal-profile} still depends on the
+horizontal parameters. For example, at the algebraic parameters
+\(\delta_j=\delta_k=\delta_\ell=d\), it is
+\(\pi(3-d^2)/(8(1-d^2)^2)\), which at \(d=1/4\) is
+\(94\pi/225\), rather than \(3\pi/8\). This is a parameter calculation,
+not an assertion that an off-line zeta zero exists.
+
+The critical-line normalization comparison is the exact identity
+\begin{equation}\label{eq:triple-critical-normalization}
+ \frac8{T\log T}\frac{3\pi}{8}
+ =\frac{3\log(T/2\pi)}{2\log T}\,\frac1{TL_T}.
+\end{equation}
+Its coefficient relative to \((TL_T)^{-1}\) tends to \(3/2\).
+This explains that coefficient through the local critical-line kernel;
+it does not identify the entire main term with a random-matrix formula.
+
+\paragraph{Assumption separation.}
+All three claims above are unconditional. Evaluating a kernel at
+\(\boldsymbol\delta=\mathbf0\), or applying it to a tuple already known
+to lie on the line, needs no global hypothesis. The statement that this
+specialization applies to every zero tuple uses \texttt{RH}; that
+conditional interpretation is not used in any preceding proof.
+Even under that interpretation, the bounded-gap expansion alone does
+not justify replacing \(\mathcal J\) by \(3\pi/8\) in the infinite
+sum: an additional summed error and tail estimate is needed.
+Unconditionally, real-plane Schwartz decay cannot by itself localize
+the complex test arguments. The full-gap rational profile and the
+summable height-localization estimate have been proved for the actual
+full-zero sum; constant-kernel replacement, GUE identification and
+horizontal consequences remain separate tasks.
 \end{document}

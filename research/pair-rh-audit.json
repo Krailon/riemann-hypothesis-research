@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "894c2168e26c22806437efc7b6d8f9cafbb2c84609c998e39881fc3199ec61dc",
+  "ledger_sha256": "e66289f5142c07ed273ff934c10ba8742d35c72888c1b81c119abc86dd302d4f",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2392,5 +2392,17 @@
       "TRIPLE-SIGNED-TEST-FUNCTION-001"
     ],
     "changes": "The previous ledger is an unchanged byte prefix followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The new Schwartz theorem explicitly records its open-hexagon support assumption. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_kernel_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_kernel_profile_localization_and_specialization",
+    "report": "research/triple-kernel.md",
+    "previous_ledger_sha256": "894c2168e26c22806437efc7b6d8f9cafbb2c84609c998e39881fc3199ec61dc",
+    "added_claim_ids": [
+      "TRIPLE-KERNEL-PROFILE-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix followed only by the three listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The correlation consequence states its support assumption; the critical-line result is an unconditional kernel-parameter specialization, with the all-zero RH interpretation explicitly isolated and unused. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
   }
 }

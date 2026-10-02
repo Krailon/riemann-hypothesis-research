@@ -1724,3 +1724,136 @@ claims:
       verification_script: scripts/check_triple_signed_sectors.py
       independent_verification: pending
       pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-KERNEL-PROFILE-001
+    title: Exact rational triple-kernel profile with full horizontal parameters
+    kind: lemma
+    statement: |
+      For real a,b and delta_j,delta_k,delta_l in [-1/2,1/2], put
+      z1=a-i delta_j,z2=b-i delta_k,z3=i delta_l,d_mn=z_m-z_n. The absolutely
+      convergent profile J(a,b;deltas)=integral_R product_{m=1}^3
+      (1+(v-z_m)^2)^(-1) dv equals
+      pi(24+d12^2+d13^2+d23^2)/((4+d12^2)(4+d13^2)(4+d23^2)).
+      The formula includes coincident centers and the closed horizontal
+      endpoints. Re(4+d^2)>=3+(Re d)^2 on this domain, so denominators do
+      not vanish. J is smooth with effective uniform derivative bounds
+      on compact real-gap sets times the closed horizontal cube.
+      Exchanging a,b and delta_j,delta_k preserves J. Negating all three
+      deltas conjugates J. For zero tuples a=gamma_j-gamma_l,
+      b=gamma_k-gamma_l; the third center reflects the conjugated anchor.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-MASTER-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-kernel-profile
+      bookkeeping: research/triple-kernel.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Residues for distinct centers at fixed parameters; then dominated convergence on compact gap sets extends to center collisions and horizontal endpoints."
+    project_audit:
+      task_type: proof
+      proof_method: "Upper-half-plane residues, explicit cleared-denominator polynomial cancellation and dominated convergence at collisions."
+      endpoint_audit: "All real gaps, coincident centers, and |delta_m|<=1/2 included; upper and lower poles stay separated."
+      horizontal_audit: "All deltas retained; anchor center is +i delta_l and the two other centers have -i delta."
+      verification_script: scripts/check_triple_kernel.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-KERNEL-LOCALIZATION-001
+    title: Summable height-localization error and explicit-profile correlation
+    kind: lemma
+    statement: |
+      For T>=3, all full zero occurrences satisfy
+      K_T(j,k,l)=omega(gamma_l/T)J(gamma_j-gamma_l,gamma_k-gamma_l;
+      delta_j,delta_k,delta_l)/T+E_kernel(j,k,l). With W_inf=||omega||_inf,
+      Wprime_inf=||omega'||_inf,L=log(2T+2), the uniform tuplewise bound is
+      |E_kernel|<=64pi Wprime_inf/(27T^2(4+(gamma_j-gamma_k)^2)).
+      Separately, sum_{j,k,l}|E_kernel|<<(Wprime_inf L^4+W_inf L^3)/T.
+      The near, far-center and far-anchor error integrals form a disjoint
+      decomposition; their summed bounds are Wprime_inf L^4/T,
+      W_inf L^3/T and W_inf L^3/T. Both ordinate signs, all multiplicities
+      and all index patterns are included. Constants are effective and
+      absolute. The tuplewise estimate alone is not used to sum errors.
+      For the tests of TRIPLE-SIGNED-TEST-FUNCTION-001 let phi=Fourier(F),
+      B=T/(2pi),q=log T and support phi in h<=1-kappa,0<kappa<1.
+      Define A_T^J[phi]=(8/(Tq))sum_{i1,i2,i3 in I}omega(gamma_i1/T)
+      J(gamma_i2-gamma_i1,gamma_i3-gamma_i1;delta_i2,delta_i3,delta_i1)
+      F(z21,z31), with the same complex test arguments and anchor as before.
+      The series is absolutely convergent. For T>=2pi e,
+      |A_T[phi]-A_T^J[phi]|<<||phi||_1(W_inf+Wprime_inf)B^(-kappa)L^3.
+      A_T^J therefore inherits the existing signed-test main term, with
+      error the sum of this new bound and that theorem's error. The kernel
+      estimates themselves require no Fourier-support assumption.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"]
+    dependencies: [TRIPLE-KERNEL-PROFILE-001, TRIPLE-MASTER-001, PAIR-COUNT-001, PAIR-COUNT-KERNEL-001, TRIPLE-SIGNED-SECTORS-001, TRIPLE-SIGNED-TEST-FUNCTION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-kernel-localization
+      bookkeeping: research/triple-kernel.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Tonelli for nonnegative error majorants at fixed T and smoothing; unit and dyadic shell bounds prove finiteness before zero cutoffs are removed. For the correlation limit fix test, support margin and smoothing; varying families must make both errors vanish."
+    project_audit:
+      task_type: proof
+      proof_method: "Freeze the smooth height weight at the anchor; prove a tuplewise convolution bound and an independent summable near/far decomposition using local zero counts. Transfer via the compact-frequency horizontal majorant."
+      endpoint_audit: "T=3 included for kernel estimates, T>=2pi e for transfer; near includes |t-gamma_l|=T, far is strict, and far-center has priority over far-anchor. All coincidences included."
+      smoothing_audit: "New Wprime_inf=||omega'||_inf is distinct from W_1=||omega'||_1. The two old/new correlation errors retain their stated norms separately."
+      horizontal_audit: "Full rational profile and full complex test arguments retained; no delta is set to zero."
+      verification_script: scripts/check_triple_kernel.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001
+    title: Microscopic horizontal profile and isolated critical-line specialization
+    kind: corollary
+    statement: |
+      Put h12=delta_j-delta_k,h13=delta_j+delta_l,h23=delta_k+delta_l.
+      J(0,0;deltas)=pi(24-h12^2-h13^2-h23^2)/
+      ((4-h12^2)(4-h13^2)(4-h23^2)). For each fixed R>0, uniformly for
+      |u|,|v|<=R and deltas in [-1/2,1/2]^3, as T tends to infinity,
+      J(u/L_T,v/L_T;deltas)=J(0,0;deltas)+O_R(1/L_T).
+      At the restricted kernel parameters deltas=0,
+      J(a,b;0)=pi(24+a^2+b^2+(a-b)^2)/
+      ((4+a^2)(4+b^2)(4+(a-b)^2)), and
+      J(u/L_T,v/L_T;0)=3pi/8-5pi(u^2+v^2-uv)/(32L_T^2)+O_R(L_T^(-4)).
+      Thus for a critical-line tuple with these bounded scaled gaps,
+      K_T=(3pi/(8T))omega(gamma_l/T)+
+      O_R(W_inf/(T L_T^2)+Wprime_inf/T^2).
+      Constants are effective, with horizontal uniformity in the general
+      expansion. Exactly (8/(T log T))(3pi/8)=
+      (3 log(T/(2pi))/(2 log T))/(T L_T), whose coefficient tends to 3/2.
+      This is an unconditional parameter specialization or a formula on
+      tuples already known to lie on the line. Applying the specialization
+      to every zero tuple would require RH and is not used in preceding
+      claims. No global constant-kernel replacement, GUE identification or
+      horizontal consequence follows from these local expansions alone.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-KERNEL-PROFILE-001, TRIPLE-KERNEL-LOCALIZATION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: cor:triple-kernel-critical
+      bookkeeping: research/triple-kernel.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix the scaled-gap bound R before T tends to infinity; the horizontal parameters may vary arbitrarily within the closed cube. No microscopic limit is interchanged with an infinite zero sum."
+    project_audit:
+      task_type: proof
+      proof_method: "Substitution in the rational profile, compact-set derivative estimates, an explicit quadratic Taylor expansion and exact local-spacing normalization."
+      endpoint_audit: "Zero gaps, repeated occurrences and closed horizontal endpoints included; L_T=log(T/(2pi))/(2pi), T>2pi."
+      horizontal_audit: "General profile retains deltas; only a separately stated kernel parameter specialization sets them to zero."
+      assumption_separation: "The global all-zero critical-line interpretation is marked RH and is not an input. The localization lemma is used here only for its unrestricted tuplewise bound, not its support-restricted correlation consequence."
+      verification_script: scripts/check_triple_kernel.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
