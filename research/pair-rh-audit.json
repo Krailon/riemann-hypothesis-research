@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "6c31b8978c0d8c300db91374c436e8eb0d9c5fd56ac914d5dc4747b0cd061b63",
+  "ledger_sha256": "37c6f404b7f9de1f8181ef60effd9afcf43d9a1d7e5c760c60356a4ab0c23bdb",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2358,5 +2358,17 @@
       "TRIPLE-SMOOTHED-ADDITIVE-001"
     ],
     "changes": "The previous ledger is an unchanged byte prefix. Only the three listed Work Package B claims are appended. Existing claim statements, the pair-audit claim snapshot, audited Work Package A proof files and archived reproduction bundle are unchanged. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_test_function_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_retained_and_test_function_claims",
+    "report": "research/triple-test-functions.md",
+    "previous_ledger_sha256": "6c31b8978c0d8c300db91374c436e8eb0d9c5fd56ac914d5dc4747b0cd061b63",
+    "added_claim_ids": [
+      "TRIPLE-RETAINED-001",
+      "TRIPLE-INTERIOR-VANISHING-001",
+      "TRIPLE-TEST-FUNCTION-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix, followed only by the three listed claims. Existing claim statements, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The new test-function claim explicitly records its Fourier-support assumption. This refresh does not extend Work Package A audit coverage to Work Package B."
   }
 }

@@ -188,9 +188,12 @@ The next lemma, **TRIPLE-UNIFORM-001**, now supplies the
 **TRIPLE-OFFDIAG-001** now improves the mixed-prime and cubic off-diagonal
 bounds, and **TRIPLE-SMOOTHED-ADDITIVE-001** combines them into an additive
 formula on an interior growing range. The budget records both advances.
-Next: evaluate the retained terms at the intended scale and connect the
-observable to a test-function correlation statement. The general
-support-restricted theorem and horizontal consequences remain open.
+The [retained-term and test-function results](triple-test-functions.md)
+now evaluate those terms and prove a vanishing weighted statistic for
+arbitrary smooth Fourier transforms supported compactly inside the
+positive triangle. The kernel and horizontal shifts remain explicit.
+Frequency-axis and origin analysis, the general Work Package B target,
+and horizontal consequences remain open.
 
 The pair RH audit continues to cover its original Work Package A claims.
 The new ledger entry is an append-only extension outside that audit's

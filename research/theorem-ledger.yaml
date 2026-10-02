@@ -1416,3 +1416,122 @@ claims:
       verification_script: scripts/check_triple_offdiag.py
       independent_verification: pending
       pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-RETAINED-001
+    title: Evaluation and bounds for the retained triple terms
+    kind: lemma
+    statement: |
+      Under the normalized weight conventions of TRIPLE-UNIFORM-001,
+      mu_omega=integral_1^2 omega(u)log u du satisfies 0<=mu_omega<=log 2,
+      and 0<=J_1-log T-mu_omega<=2/T for T>=3.
+      Uniformly for 1<=a<=b,
+      D(a,b)=(a/(2b))(1+log(b/a))log(ab)
+      +O((a/b)(1+log(b/a))); use symmetry for reversed arguments.
+      Proper prime powers and integer endpoints are included.
+      For all X,Y>=1,Z=XY, 0<=R_res(X,Y)<<Z^(-1/2)log(2Z)^3.
+      Define G(X,Y)=(1+log Y)log(XZ)/(2Y^2)
+      +(1+log X)log(YZ)/(2X^2), and Delta(a,b) as D minus the displayed
+      leading expression with its arguments ordered.
+      Exactly M_T=q^3/Z^2+(q+mu_omega)G+E_D+E_J-R_res, where q=log T,
+      E_D=J_1(Delta(X,Z)/Y+Delta(Y,Z)/X), E_J=(J_1-q-mu_omega)G,
+      |E_D|<<log(2T+2)((1+log Y)/Y^2+(1+log X)/X^2),
+      and 0<=E_J<=2G/T. Constants are absolute and effective.
+      These are additive evaluations, not relative asymptotics.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-UNIFORM-001, TRIPLE-OFFDIAG-001, PRIME-PNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-retained
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed parameters before Stieltjes upper endpoints and nonnegative dyadic sums tend to infinity; explicit summable majorants and vanishing boundary terms."
+    project_audit:
+      task_type: proof
+      proof_method: "Effective PNT, elementary proper-power counting, continuous mixed weight, exact integration and dyadic resonance estimates."
+      endpoint_audit: "a=b,a=1,Z=1,T=3 included; all integer and dyadic endpoints counted once."
+      verification_script: scripts/check_triple_test_functions.py
+      independent_verification: pending
+
+  - id: TRIPLE-INTERIOR-VANISHING-001
+    title: Vanishing of the native triple observable on an interior growing range
+    kind: corollary
+    statement: |
+      For 0<epsilon<1/3,T>=3,T^epsilon<=X,Y,XY<=T^(1-epsilon),
+      |M_T|<<T^(-epsilon)log(2T+2)^3 and
+      |C_{3,T}(X,Y)|<<(1+||omega||_inf+||omega'||_1)
+      T^(-epsilon)log(2T+2)^4.
+      Effective absolute constants are independent of epsilon and all
+      displayed parameters. Consequently C_{3,T} tends uniformly to zero
+      for fixed epsilon and fixed admissible smoothing.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-RETAINED-001, TRIPLE-SMOOTHED-ADDITIVE-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: cor:triple-interior-vanishing
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Convergent sums are defined at fixed parameters; then fix epsilon and omega and let T tend to infinity uniformly in the stated X,Y range."
+    project_audit:
+      task_type: proof
+      proof_method: "Retained-term bounds and the previously proved additive error estimate."
+      endpoint_audit: "T=3 and all X,Y,XY range boundaries included; epsilon remains strictly between 0 and 1/3."
+      verification_script: scripts/check_triple_test_functions.py
+      independent_verification: pending
+
+  - id: TRIPLE-TEST-FUNCTION-001
+    title: Interior weighted full-zero test-function correlation with vanishing limit
+    kind: theorem
+    statement: |
+      Let Omega_plus={(xi,eta):xi>0,eta>0,xi+eta<1} and let
+      phi in C_c^infinity(Omega_plus) be complex-valued.
+      F(z_1,z_2)=integral_R2 phi(xi,eta)exp(2pi i(xi z_1+eta z_2)) dxi deta
+      is entire, Schwartz on R2, and has Fourier transform phi in the
+      project convention. For T>2pi set B=T/(2pi), L_T=log B/(2pi),
+      z_21=L_T((gamma_i2-gamma_i1)-i(delta_i2+delta_i1)),
+      z_31=L_T((gamma_i3-gamma_i1)-i(delta_i3+delta_i1)).
+      Then R^K_{3,T}[F;omega]=8 sum_{i1,i2,i3 in I}
+      K_T(i2,i3,i1)F(z_21,z_31)
+      =integral_R2 phi(xi,eta)C_{3,T}(B^xi,B^eta) dxi deta,
+      absolutely convergently. I includes every nontrivial zero occurrence,
+      both ordinate signs, full multiplicity and all partial diagonals.
+      K_T is exactly the master kernel; it already includes 1/T.
+      If supp phi is contained in Omega_epsilon={xi>=epsilon,eta>=epsilon,
+      xi+eta<=1-epsilon}, 0<epsilon<1/3, then
+      |R^K_{3,T}[F;omega]|<<||phi||_1(1+||omega||_inf+||omega'||_1)
+      B^(-epsilon)log(2T+2)^4 with an absolute effective constant.
+      The statistic tends to zero for fixed phi, support margin and omega.
+      Compact subsets of Omega_plus admit such a margin. No extension to
+      frequency axes, origin, xi+eta=1, or an unweighted real-ordinate
+      statistic is asserted. No positivity, GUE or horizontal conclusion.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"]
+    dependencies: [TRIPLE-INTERIOR-VANISHING-001, TRIPLE-MASTER-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: thm:triple-test-function
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix T,phi,omega and remove zero cutoffs under C||phi||_1 B^(1-epsilon)log(2T+2)^3; only then let T grow with phi,epsilon,omega fixed."
+    project_audit:
+      task_type: proof
+      proof_method: "Compact-frequency entire extension, Schwartz Fourier inversion, absolute zero-series Fubini, and exact local-spacing conversion."
+      horizontal_audit: "Imaginary shifts retain sums of deltas; the conjugated anchor kernel and full multiplicities are unchanged."
+      endpoint_audit: "T>2pi is strict. Omega_epsilon boundaries are included, but axes and the outer Omega_plus boundary are excluded."
+      scaling_audit: "theta_T=log(T/(2pi))/log T, epsilon_T=epsilon theta_T; use the margin-uniform pointwise bound and T^(-epsilon_T)=(T/(2pi))^(-epsilon). No extra Jacobian or L_T^2."
+      verification_script: scripts/check_triple_test_functions.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."

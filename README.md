@@ -121,7 +121,7 @@ completion of A; those historical notes have not been changed merely to update
 progress wording. The closure documentation postdates the tested baseline
 revision; its proof and audited inputs are unchanged.
 
-## Work Package B: an additive smoothed formula
+## Work Package B: an interior weighted test-function theorem
 
 `TRIPLE-MASTER-001` is a **proved-draft** exact smoothed triple identity
 retaining the full complex zeros. The [proof](proofs/triple_explicit_formula.tex)
@@ -145,10 +145,16 @@ T^{-\varepsilon}\log^4(2T+2)\right),
 uniformly for `T >= 3`, fixed `0 < epsilon < 1/3`,
 `T^epsilon <= X,Y`, and `XY <= T^(1-epsilon)`. For fixed smoothing
 this is an additive `o(1)` error, not a relative `o(M_T)` assertion.
-The retained expression is defined in the budget; its terms remain exact.
-The next step is to evaluate them at the intended scale and connect this
-observable to a test-function correlation statement. The general Work
-Package B theorem and a new horizontal consequence remain targets.
+The retained expression is defined in the budget. The subsequent
+[retained-term evaluation and test-function theorem](research/triple-test-functions.md)
+are recorded as `TRIPLE-RETAINED-001`, `TRIPLE-INTERIOR-VANISHING-001`, and
+`TRIPLE-TEST-FUNCTION-001`, all **proved-draft**. They show the interior
+observable tends to zero and prove a weighted full-zero correlation statement
+for arbitrary smooth Fourier transforms compactly supported in
+`xi > 0, eta > 0, xi + eta < 1`. The native kernel, multiplicities, and
+complex arguments carrying horizontal zero coordinates are retained.
+The next step is analysis near the frequency axes and origin. The general
+Work Package B theorem and a new horizontal consequence remain targets.
 
 Run the additional Work Package B regression checks with:
 

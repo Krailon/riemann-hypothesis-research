@@ -4,6 +4,7 @@
 \usepackage[hidelinks]{hyperref}
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{theorem}[lemma]{Theorem}
 \newcommand{\ii}{\mathrm i}
 \newcommand{\ZS}{\mathcal S}
 \newcommand{\PS}{\mathcal P}
@@ -892,12 +893,295 @@ conventions remain those of Lemma~\ref{lem:triple-master}; no zero-side
 truncation or substitution of \(\beta=1/2\) has occurred.
 The formulas and bounds respect exchange of \(X,Y\).
 
-Neither the estimate range \(XY\leq2T\) nor
-\eqref{eq:triple-interior-range} is a proved Fourier-support region for
-a general two-variable test function. The retained quantities
-\(J_1,D(X,Z),D(Y,Z),R_{\rm res}\) have not been asymptotically replaced.
-They need not dominate the additive error. The next step is to evaluate
-these retained terms at the intended scale and establish the connection
-to a test-function correlation statement. No GUE main term, general
-Work Package B theorem, or new horizontal consequence is claimed here.
+The parameter bounds above do not by themselves constitute a test-function
+theorem. The following sections evaluate the retained quantities and
+derive the precise weighted test-function consequence. No dominance over
+the additive error, GUE main term, general Work Package B theorem, or new
+horizontal consequence is asserted.
+
+\section{Evaluation of the retained expression}
+
+These claims remain \texttt{UNCONDITIONAL}, with status
+\texttt{proved-draft}. The additional analytic input is the effective
+classical PNT already registered as \texttt{PRIME-PNT-001}, in the pair
+draft at label \texttt{inp:prime-pnt}. No new literature theorem is imported.
+
+\begin{lemma}[\texttt{TRIPLE-RETAINED-001}]\label{lem:triple-retained}
+For the existing normalized weight, set
+\(\mu_\omega=\int_1^2\omega(u)\log u\dd u\). Then, for \(T\geq3\),
+\begin{equation}\label{eq:retained-J}
+ 0\leq J_1-\log T-\mu_\omega\leq2/T,\qquad
+ 0\leq\mu_\omega\leq\log2.
+\end{equation}
+Uniformly for \(1\leq a\leq b\), the full prime-power mixed diagonal is
+\begin{equation}\label{eq:retained-D}
+ D(a,b)=\frac{a}{2b}(1+\log(b/a))\log(ab)
+              +O\bigl((a/b)(1+\log(b/a))\bigr).
+\end{equation}
+For reversed arguments use \(D(a,b)=D(b,a)\). Uniformly for \(X,Y\geq1\),
+\begin{equation}\label{eq:retained-resonance}
+ 0\leq R_{\rm res}(X,Y)\ll Z^{-1/2}\ell_Z^3,\qquad Z=XY.
+\end{equation}
+All constants are absolute and effective. Define
+\begin{equation}\label{eq:retained-G}
+ G(X,Y)=\frac{(1+\log Y)\log(XZ)}{2Y^2}
+                  +\frac{(1+\log X)\log(YZ)}{2X^2}.
+\end{equation}
+Let \(\Delta(a,b)\) be \(D(a,b)\) minus the displayed leading expression
+in \eqref{eq:retained-D}, with the arguments ordered first. Exactly,
+\begin{align}
+ M_T={}&q^3/Z^2+(q+\mu_\omega)G+E_D+E_J-R_{\rm res},\notag\\
+ E_D={}&J_1\{\Delta(X,Z)/Y+\Delta(Y,Z)/X\},\notag\\
+ E_J={}&(J_1-q-\mu_\omega)G,\label{eq:retained-evaluation}\\
+ |E_D|&\ll L\left\{\frac{1+\log Y}{Y^2}+
+                          \frac{1+\log X}{X^2}\right\},\qquad
+ 0\leq E_J\leq2G/T.\notag
+\end{align}
+This evaluation has additive errors; no relative precision is asserted.
+\end{lemma}
+\begin{proof}
+On \(1<u<2\),
+\(\log(Tu+2)=q+\log u+\log(1+2/(Tu))\), and the last term lies
+between zero and \(2/T\). Integrating against the nonnegative
+unit-mass weight proves \eqref{eq:retained-J}.
+
+Let \(N_{\rm pp}(u)\) count distinct integers that are proper prime
+powers, and let it be zero below \(2\). Counting all integer powers gives,
+for \(u\geq2\),
+\[
+ N_{\rm pp}(u)\leq\sqrt u+u^{1/3}\frac{\log u}{\log2}
+ \leq\left(1+\frac{6}{e\log2}\right)\sqrt u.
+\]
+The last inequality follows by maximizing \(y e^{-y/6}\) for \(y\geq0\).
+Overcounting integers with multiple power representations is harmless.
+PNT and partial summation give
+\(\sum_{p\leq u}(\log p)^2=u\log u+O(u)\).
+For example, use
+\(\vartheta(u)\log u-\int_2^u\vartheta(v)/v\dd v\) and the existing
+effective bound for \(\vartheta(u)-u\).
+The proper-power contribution is at most
+\(N_{\rm pp}(u)\log^2u\ll\sqrt u\log^2u\ll u\).
+Thus, including the bounded range \(1\leq u<2\),
+\[
+ A(u):=\sum_{n\leq u}\Lambda(n)^2=u\log u+E(u),\qquad
+ |E(u)|\leq C u,\qquad E(1)=0.
+\]
+For \(1\leq a\leq b\), the continuous weight for \(D(a,b)\) is
+\[
+ w_{a,b}(u)=
+ \begin{cases}
+ u/(ab),&1\leq u\leq a,\\
+ a/(bu),&a<u\leq b,\\
+ ab/u^3,&u>b.
+ \end{cases}
+\]
+Stieltjes integration by parts gives
+\[
+ D(a,b)=\int_1^\infty w_{a,b}(u)(\log u+1)\dd u
+              +O\left(\int_1^\infty u|w'_{a,b}(u)|\dd u\right).
+\]
+The lower error boundary vanishes because \(E(1)=0\); the upper one
+vanishes by the \(u^{-3}\) decay. Continuity at \(a,b\) removes all jump
+terms, including \(a=b\) and integer prime-power endpoints.
+Writing \(r=a/b\), \(h=\log(b/a)\), direct integration yields
+\begin{align*}
+ \int_1^\infty u|w'_{a,b}(u)|\dd u
+ &=r(2+h)-\frac1{2ab},\\
+ \int_1^\infty w_{a,b}(u)(\log u+1)\dd u
+ &=\frac r2(1+h)\log(ab)+r(1+h)-\frac1{4ab}.
+\end{align*}
+Since \(1/(ab)\leq r\), this proves \eqref{eq:retained-D}.
+The improper operations can first be made on finite intervals; the
+displayed majorants justify their limits at fixed \(a,b\).
+
+For the resonance, only \(r=p^k\), \(k\geq2\), contributes to
+\(\sum_r c_{X,Y}(r)a_Z(r)\). Its divisor convolution is exactly
+\((\Lambda*\Lambda)(p^k)=(k-1)(\log p)^2\).
+Using \eqref{eq:triple-weight-product},
+\[
+ R_{\rm res}\leq\sum_{\substack{r=p^k\\k\geq2}}
+ \frac{v_Z(r)^2}{r}(k-1)(\log p)^3
+ \leq\sum_{\substack{r=p^k\\k\geq2}}
+             \frac{v_Z(r)^2}{r}\log^3r .
+\]
+On \(Z2^{-j-1}<r\leq Z2^{-j}\), \(j\geq0\), the last weight is
+at most \(2^{-j}Z^{-1}\ell_Z^3\); the count is
+\(O(\sqrt Z\,2^{-j/2})\).
+On \(2^jZ<r\leq2^{j+1}Z\), it is at most
+\(2^{-3j}Z^{-1}(j+2)^3\ell_Z^3\), with count
+\(O(\sqrt Z\,2^{j/2})\).
+Both geometric sums converge, proving \eqref{eq:retained-resonance},
+including \(Z=1\). These are disjoint ranges with full upper endpoints;
+the original ordered factorizations were already combined in \(c_{X,Y}\).
+Finally substitute \eqref{eq:retained-D} and \eqref{eq:retained-J} into
+\eqref{eq:uniform-retained}. Since \(G\geq0\), this proves all of
+\eqref{eq:retained-evaluation}.
+\end{proof}
+
+\begin{corollary}[\texttt{TRIPLE-INTERIOR-VANISHING-001}]
+\label{cor:triple-interior-vanishing}
+Uniformly for \(0<\varepsilon<1/3,\ T\geq3\) and
+\(T^\varepsilon\leq X,Y,\ XY\leq T^{1-\varepsilon}\),
+\begin{align}
+ |M_T|&\ll T^{-\varepsilon}L^3,\notag\\
+ |\CT(X,Y)|&\ll(1+W_\infty+W_1)T^{-\varepsilon}L^4.
+ \label{eq:triple-interior-zero}
+\end{align}
+The effective constants are absolute, including independence of epsilon.
+In particular \(\CT\to0\) uniformly on this range for fixed positive
+epsilon and fixed smoothing.
+\end{corollary}
+\begin{proof}
+Here \(Z\geq T^{2\varepsilon}\) and \(\ell_X,\ell_Y,\ell_Z\leq L\).
+Lemma~\ref{lem:triple-retained} bounds the archimedean term by
+\(T^{-4\varepsilon}L^3\), the two mixed contributions by
+\(O(T^{-2\varepsilon}L^3)\), and the resonance by
+\(O(T^{-\varepsilon}L^3)\).
+This proves the first bound; combine it with
+Corollary~\ref{cor:triple-smoothed-additive} for the second.
+All constants are uniform and \(L>1\). The asymptotic consequence fixes
+epsilon and smoothing before taking \(T\to\infty\).
+\end{proof}
+
+\section{An interior weighted test-function theorem}
+
+Define
+\[
+ \Omega_+=\{(\xi,\eta):\xi>0,\ \eta>0,\ \xi+\eta<1\},\qquad
+ \Omega_\varepsilon=\{(\xi,\eta):\xi,\eta\geq\varepsilon,\
+                                  \xi+\eta\leq1-\varepsilon\}.
+\]
+For \(0<\varepsilon<1/3\), this compact triangle is contained in
+\(\Omega_+\). Every compact subset of \(\Omega_+\) is contained in
+some \(\Omega_\varepsilon\). This margin does not assert extension to
+the axes or to \(\xi+\eta=1\).
+
+\begin{theorem}[\texttt{TRIPLE-TEST-FUNCTION-001}]
+\label{thm:triple-test-function}
+Let \(\phi\in C_c^\infty(\Omega_+)\) be complex-valued, and set
+\begin{equation}\label{eq:triple-entire-test}
+ F(z_1,z_2)=\int_{\mathbb R^2}\phi(\xi,\eta)
+                   e^{2\pi\ii(\xi z_1+\eta z_2)}\dd\xi\dd\eta.
+\end{equation}
+Then \(F|_{\mathbb R^2}\) is Schwartz, \(\widehat F=\phi\) in the
+project convention, and the displayed expression is its entire extension.
+For \(T>2\pi\), put \(B=T/(2\pi)\), \(L_T=\log B/(2\pi)\), and
+\begin{align}
+ z_{21}&=L_T\{(\gamma_{i_2}-\gamma_{i_1})
+                          -\ii(\delta_{i_2}+\delta_{i_1})\},\notag\\
+ z_{31}&=L_T\{(\gamma_{i_3}-\gamma_{i_1})
+                          -\ii(\delta_{i_3}+\delta_{i_1})\}.
+ \label{eq:triple-test-arguments}
+\end{align}
+There is the exact identity of absolutely convergent expressions
+\begin{align}
+ \mathcal R^K_{3,T}[F;\omega]
+ &:=8\sum_{i_1,i_2,i_3\in\mathcal I}
+             K_T(i_2,i_3,i_1)F(z_{21},z_{31})\notag\\
+ &=\int_{\mathbb R^2}\phi(\xi,\eta)
+                      \CT(B^\xi,B^\eta)\dd\xi\dd\eta .
+ \label{eq:triple-test-identity}
+\end{align}
+All ordered zero occurrences, both ordinate signs, full multiplicities,
+and all five index-diagonal patterns are included. There is no additional
+height or mean-spacing normalization outside the existing \(K_T\).
+If \(\operatorname{supp}\phi\subset\Omega_\varepsilon\), then
+\begin{equation}\label{eq:triple-test-bound}
+ |\mathcal R^K_{3,T}[F;\omega]|
+ \ll \|\phi\|_1(1+W_\infty+W_1)B^{-\varepsilon}\log^4(2T+2).
+\end{equation}
+The constant is absolute and effective. For fixed
+\(\phi,\varepsilon,\omega\), the weighted statistic tends to zero as
+\(T\to\infty\).
+\end{theorem}
+\begin{proof}
+Compact frequency support permits differentiation under
+\eqref{eq:triple-entire-test}, locally uniformly in complex \(z_1,z_2\),
+proving the entire extension. Repeated integration by parts in the
+frequency variables proves rapid decay of every real-variable derivative.
+Schwartz Fourier inversion, with the stated \(2\pi\) convention, gives
+\(\widehat F=\phi\).
+
+Apply Lemma~\ref{lem:triple-master} with
+\(X=B^\xi,\ Y=B^\eta\), and relabel \((j,k,\ell)=(i_2,i_3,i_1)\).
+The numerator is exactly
+\[
+ X^{\rho_{i_2}+\bar\rho_{i_1}-1}
+ Y^{\rho_{i_3}+\bar\rho_{i_1}-1}
+ =e^{2\pi\ii(\xi z_{21}+\eta z_{31})}.
+\]
+In particular the imaginary shifts have a minus sign and involve sums
+of horizontal displacements. The third slot is the conjugated anchor
+in \(K_T(i_2,i_3,i_1)\).
+
+For fixed \(T\) and support in \(\Omega_\varepsilon\), the integrated
+absolute zero-series majorant from the master proof bounds
+\[
+ 8\sum_{i_1,i_2,i_3}\int_{\mathbb R^2}
+ |\phi(\xi,\eta)K_T(i_2,i_3,i_1)|
+ \left|e^{2\pi\ii(\xi z_{21}+\eta z_{31})}\right|
+ \dd\xi\dd\eta
+ \ll \|\phi\|_1 B^{1-\varepsilon}\log^3(2T+2).
+\]
+Indeed \(XY=B^{\xi+\eta}\leq B^{1-\varepsilon}\) on the support.
+This finite dominating quantity proves Tonelli/Fubini, the identity,
+and absolute convergence of the zero expression. No bound on \(F\)
+at complex arguments is inferred from real-axis Schwartz decay.
+
+To use the precise spacing convention, set
+\[
+ \theta_T=\frac{\log B}{\log T}\in(0,1),\qquad
+ \varepsilon_T=\varepsilon\theta_T\in(0,1/3).
+\]
+For \((\xi,\eta)\in\Omega_\varepsilon\), \(X,Y\geq
+T^{\varepsilon_T}\), and
+\[
+ Z\leq T^{(1-\varepsilon)\theta_T}
+       \leq T^{1-\varepsilon_T},
+\]
+where the last inequality is just \(\theta_T\leq1\).
+Apply the explicit bound of
+Corollary~\ref{cor:triple-interior-vanishing} at this value of its
+margin, using its constant independent of that margin. Since
+\(T^{-\varepsilon_T}=B^{-\varepsilon}\), integration against
+\(|\phi|\) proves \eqref{eq:triple-test-bound}.
+This is a pointwise application of the uniform estimate, not an
+invocation of an unproved varying-epsilon limit. For fixed frequency
+margin epsilon the displayed \(B^{-\varepsilon}\log^4(2T+2)\) tends to zero.
+\end{proof}
+
+The class is nonempty: a nonzero smooth bump supported in the square
+\([3/16,5/16]^2\) has support in \(\Omega_{1/8}\).
+Functions in this single positive-frequency class are allowed to be
+complex; no reality, positivity, or full permutation symmetry is assumed.
+Exchanging indices \(i_2,i_3\) corresponds to exchanging the arguments
+of \(F\). Simultaneous horizontal reflection negates all deltas and
+conjugates the kernel denominators; it preserves the full statistic
+by reindexing, without termwise invariance. All multiplicity and
+partial-diagonal conventions remain those of the master identity.
+
+For project horizontal coordinates \(x_\rho=\delta_\rho\log T\),
+the first imaginary shift is
+\[
+ -L_T(x_{\rho_{i_2}}+x_{\rho_{i_1}})/\log T,
+\]
+and similarly for the second.
+Thus \eqref{eq:triple-test-identity} is a weighted full-zero correlation,
+not a replacement by \(F\) of the real ordinate differences alone.
+The factor \(8\) is unchanged, \(1/T\) is already in \(K_T\), and no
+Jacobian or extra \(L_T^2\) appears in the frequency integral.
+
+Fix \(T,\phi,\omega\) before removing independent zero cutoffs by the
+displayed absolute majorant. Only then take \(T\to\infty\), with fixed
+test function, support margin, and smoothing. Varying families may use
+the explicit bound, but a vanishing conclusion requires its right side
+to vanish. The condition \(T>2\pi\) is strict; parameter and support-margin
+boundaries inside \(\Omega_\varepsilon\) are included.
+
+This theorem covers arbitrary test functions in the stated interior
+Fourier class with the native kernel retained. Removing that kernel,
+handling frequency axes or the origin, taking a real-ordinate-only
+statistic, or proving the full Work Package B theorem requires additional
+analysis. The zero interior limit establishes none of a GUE main term,
+a relative asymptotic, or a new horizontal constraint.
 \end{document}

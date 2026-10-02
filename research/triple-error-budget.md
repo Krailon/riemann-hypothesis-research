@@ -321,12 +321,20 @@ estimate remains valid but its displayed right side must tend to zero
 to conclude \(o(1)\).
 
 This is an additive formula, not relative error \(o(M_T)\).
-\(J_1,D(X,Z),D(Y,Z),R_{\rm res}\) remain exact and have not been shown
+The original retained expression remains exact and has not been shown
 to dominate the error. Full horizontal zero coordinates and multiplicities
-are retained. This parameter range is not a proved Fourier-support region.
-Next: evaluate the retained terms at the intended scale and connect this
-observable to a test-function correlation statement. The general Work
-Package B theorem, a GUE main term, and horizontal consequences remain open.
+are retained. This parameter range by itself is not a proved Fourier-support region.
+
+The subsequent [retained-term evaluation and test-function theorem](triple-test-functions.md)
+record **TRIPLE-RETAINED-001**, **TRIPLE-INTERIOR-VANISHING-001**, and
+**TRIPLE-TEST-FUNCTION-001**. They evaluate \(J_1,D\), give a decaying
+proper-power bound for \(R_{\rm res}\), and prove the interior observable
+tends to zero. The exact refinements \(E_D,E_J\) belong inside \(M_T\);
+they are not additional errors when \(M_T\) is retained in this budget.
+The resulting test-function theorem covers compact Fourier support inside
+the positive triangle with the native kernel and complex zero arguments.
+Analysis at the axes and origin, the general Work Package B theorem,
+a GUE main term, and horizontal consequences remain open.
 
 ## 7. Regression checks
 
