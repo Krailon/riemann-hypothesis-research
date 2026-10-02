@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "15dc3a9d09a236ce90b8f7366437a10c474222e0800672ff8b2a3fd926d4b8e8",
+  "ledger_sha256": "6c31b8978c0d8c300db91374c436e8eb0d9c5fd56ac914d5dc4747b0cd061b63",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2346,5 +2346,17 @@
       "TRIPLE-UNIFORM-001"
     ],
     "changes": "The previous ledger, including TRIPLE-MASTER-001, is an unchanged byte prefix. Only TRIPLE-UNIFORM-001 is appended. All existing claims, the pair-audit claim snapshot and audited Work Package A proof files are unchanged. This hash refresh does not extend the Work Package A RH audit to either Work Package B lemma."
+  },
+  "ledger_additive_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_offdiagonal_and_additive_claims",
+    "report": "research/triple-error-budget.md",
+    "previous_ledger_sha256": "15dc3a9d09a236ce90b8f7366437a10c474222e0800672ff8b2a3fd926d4b8e8",
+    "added_claim_ids": [
+      "TRIPLE-LOG-GAP-001",
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-SMOOTHED-ADDITIVE-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix. Only the three listed Work Package B claims are appended. Existing claim statements, the pair-audit claim snapshot, audited Work Package A proof files and archived reproduction bundle are unchanged. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
   }
 }

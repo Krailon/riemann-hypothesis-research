@@ -184,11 +184,13 @@ acyclicity, local documentation links, and whitespace checks passed.
 
 The next lemma, **TRIPLE-UNIFORM-001**, now supplies the
 [uniform bounds and named error budget](triple-error-budget.md) for all
-27 words, including all 208 named remainder refinements. Its mixed-prime
-and cubic off-diagonal estimates do not establish cancellation.
-Next: sharpen those estimates and assess the remainder scales on a chosen
-growing parameter range. The support-restricted asymptotic and horizontal
-consequences remain open.
+27 words, including all 208 named remainder refinements.
+**TRIPLE-OFFDIAG-001** now improves the mixed-prime and cubic off-diagonal
+bounds, and **TRIPLE-SMOOTHED-ADDITIVE-001** combines them into an additive
+formula on an interior growing range. The budget records both advances.
+Next: evaluate the retained terms at the intended scale and connect the
+observable to a test-function correlation statement. The general
+support-restricted theorem and horizontal consequences remain open.
 
 The pair RH audit continues to cover its original Work Package A claims.
 The new ledger entry is an append-only extension outside that audit's

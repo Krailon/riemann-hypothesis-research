@@ -1,7 +1,10 @@
 # Uniform triple estimates and named error budget
 
 Task: proof and exposition. Assumptions: **UNCONDITIONAL**.
-Claim: **TRIPLE-UNIFORM-001**, status **proved-draft**.
+Initial claim: **TRIPLE-UNIFORM-001**, status **proved-draft**.
+The sharper estimates and additive formula in Sections 5–6 are also
+**proved-draft**, recorded as **TRIPLE-LOG-GAP-001**,
+**TRIPLE-OFFDIAG-001**, and **TRIPLE-SMOOTHED-ADDITIVE-001**.
 Source: [triple proof](../proofs/triple_explicit_formula.tex),
 label **lem:triple-uniform**; registry: [theorem ledger](theorem-ledger.yaml).
 This extends the [exact master identity](triple-master-bookkeeping.md).
@@ -110,9 +113,10 @@ The Fourier frequency is always \(T\lambda/(2\pi)\). Substitution
 \(t=Tu\) cancels the original \(1/T\); differentiation cancels \(2\pi\).
 Compact smoothing produces no boundary terms.
 
-The two mixed-prime off-diagonal bounds and the cubic off-resonance bound
+The initial two mixed-prime off-diagonal bounds and the cubic off-resonance bound
 use triangle inequalities. They are uniform but do not establish
 cancellation or a negligible error on a growing parameter range.
+Section 5 supplies additional bounds for these same signed errors.
 
 ## 3. All nineteen remainder-containing words
 
@@ -175,7 +179,7 @@ an aggregate and its components to the budget.
 | Mixed-prime diagonal bound | **PAIR-PRIME-DIAGONAL-001**, including its PNT-level input. |
 | Weighted prime norms | **PAIR-PRIME-MEAN-001**, including the existing unconditional mean-value and prime-counting dependencies. |
 | Four remainder components | **PAIR-EF-001**, restricted to the smooth center window. |
-| Mixed-prime and cubic off-diagonals | Uniform triangle-inequality bounds only; sharper estimates remain open. No prime-pair/triple conjecture is assumed. |
+| Mixed-prime and cubic off-diagonals | Initial triangle-inequality bounds above; Section 5 improves them using the new logarithmic-gap lemma. No prime-pair/triple conjecture is assumed. |
 
 The endpoints \(T=3,X=1,Y=1,x=2T\) are included. Integer coefficient
 splits at \(n=x\) count the endpoint once. The smooth center window does
@@ -194,13 +198,137 @@ smoothing-width limit is invoked. Uniformity for varying weights retains
 
 There is no height-truncation, desmoothing, or support-boundary error:
 those operations have not been performed. Zero-index diagonals and
-prime resonances remain different decompositions. The next analytic
-task is to sharpen the mixed-prime and cubic off-diagonal bounds and
-assess the remainder scales on a chosen growing parameter range.
-The present budget supplies neither a Fourier-support theorem nor a
-new horizontal conclusion.
+prime resonances remain different decompositions. Sections 5–6 combine
+the improved bounds on a growing parameter range. The resulting additive
+formula supplies neither a general Fourier-support theorem nor a new
+horizontal conclusion.
 
-## 5. Regression checks
+## 5. Sharper off-diagonal bounds
+
+Source: **TRIPLE-LOG-GAP-001**, label **lem:triple-log-gap**, and
+**TRIPLE-OFFDIAG-001**, label **lem:triple-offdiag** in the proof.
+These estimates apply for every \(T\ge3,\ X,Y\ge1\), without requiring
+\(XY\le2T\). Constants are absolute and effective.
+
+| Existing signed error | Additional absolute bound |
+| --- | --- |
+| \(E_{PPP,{\rm off}}\) | \(O(W_1Z\ell_Z^4/T)\) |
+| \(E_{PAP,{\rm off}}\) | \(O((\Omega_{1,1}/T)(X/\sqrt Y)(\ell_X\ell_Z)^{3/2})\) |
+| \(E_{APP,{\rm off}}\) | \(O((\Omega_{1,1}/T)(Y/\sqrt X)(\ell_Y\ell_Z)^{3/2})\) |
+
+Both the old and new bounds remain valid; their minimum is available.
+These are new estimates of existing errors, not extra summands.
+The mixed diagonals and the negative cubic resonance are unchanged.
+
+For complex sequences on integers \(n\ge2\), let
+\[
+B(c)=\sum_n|c_n|,\qquad \mathcal E(c)=\sum_n n\log(2n)|c_n|^2.
+\]
+The new gap lemma proves the explicit inequality
+\[
+\sum_{m\ne n}\frac{|c_md_n|}{|\log(m/n)|}
+\le \frac{B(c)B(d)}{\log2}
+   +4\sqrt2\sqrt{\mathcal E(c)\mathcal E(d)}.
+\]
+It assumes both coefficient sums and both energies are finite. The proof
+splits at ratios \(1/2,2\), uses integer gaps and harmonic sums on
+comparable indices, and proves absolute convergence by monotone convergence.
+Ratios exactly \(1/2,2\) belong to the comparable part; the diagonal is
+excluded before division.
+
+To use this for the cubic, combine all repeated product frequencies:
+\[
+c_{X,Y}(r)=\sum_{\substack{mn=r\\m,n\ge2}}a_X(m)a_Y(n),\qquad
+P_XP_Y=\sum_{r\ge2}c_{X,Y}(r)r^{-it}.
+\]
+All ordered factorizations contribute. Tonelli gives
+\(B(c_{X,Y})=B(a_X)B(a_Y)\). With \(v_x(n)=\min(n/x,x/n)\),
+\[
+v_X(m)v_Y(n)\le v_Z(mn),\qquad
+(\Lambda*\Lambda)(r)\le\log^2r,\qquad
+c_{X,Y}(r)\le r^{-1/2}v_Z(r)\log^2r.
+\]
+The divisor bound follows directly from \(\sum_{d\mid r}\Lambda(d)=\log r\).
+Dyadic summation proves
+\[
+\mathcal E(a_x)\le K_3x\ell_x^3,\qquad
+\mathcal E(c_{X,Y})\le K_5Z\ell_Z^5,\qquad
+K_k=1+2\sum_{j\ge0}2^{-j}(j+2)^k<\infty.
+\]
+One integration by parts supplies \(W_1/(T|\log(r/k)|)\), or
+\(\Omega_{1,1}/(T|\log(m/k)|)\) for the mixed-prime weight.
+The gap lemma now controls the entire off-diagonal, including large
+indices with small relative gaps. No prime-pair/triple conjecture or
+additional sieve estimate is used.
+
+The removed cubic diagonal is exactly
+\(\sum_r c_{X,Y}(r)a_Z(r)=R_{\rm res}\). Frequencies use
+\(T\log(r/k)/(2\pi)\); all signs and normalization are inherited unchanged.
+Absolute coefficient sums justify convolution and integration; the finite
+reciprocal-log majorants justify removal of off-diagonal cutoffs in any
+order at fixed parameters.
+
+## 6. Additive formula on an interior growing range
+
+Source: **TRIPLE-SMOOTHED-ADDITIVE-001**, label
+**cor:triple-smoothed-additive**. For
+\[
+0<\varepsilon<1/3,\qquad T\ge3,\qquad
+T^\varepsilon\le X,Y,\qquad Z=XY\le T^{1-\varepsilon},
+\]
+the existing retained expression satisfies
+\[
+|C_{3,T}(X,Y)-M_T|
+\le C(1+W_\infty+W_1)T^{-\varepsilon}L^4
+\]
+with an absolute effective \(C\), independent of epsilon and the other
+parameters. For fixed epsilon and smoothing this gives \(C_{3,T}=M_T+o(1)\)
+uniformly over the stated range.
+
+| Budget contribution | Absolute bound up to an effective absolute constant |
+| --- | --- |
+| \(E_{\rm archcube}\) | \(T^{-4\varepsilon}L^2\) |
+| \(E_{PPA}\) | \((1+W_1)T^{-1-\varepsilon}L^3\) |
+| \(E_{PAA},E_{APA}\) | \((1+W_1)T^{-1-5\varepsilon/2}L^2\) |
+| \(E_{AAP}\) | \((1+W_1)T^{-1-\varepsilon}L^2\) |
+| \(E_{PAP,{\rm off}},E_{APP,{\rm off}}\) | \((1+W_1)T^{-\varepsilon}L^4\) |
+| \(E_{PPP,{\rm off}}\) | \(W_1T^{-\varepsilon}L^4\) |
+| Sum of the nineteen H-containing words | \((1+W_\infty)T^{-\varepsilon}L^2\) |
+
+Indeed every base \(x=X,Y,Z\) lies between \(T^\varepsilon\) and
+\(T^{1-\varepsilon}<2T\), while \(Z\ge T^{2\varepsilon}\). Hence
+\(m_x\ll\sqrt{W_\infty L}\), \(\alpha_x\le T^{-\varepsilon}L\), and
+\(h_x\ll T^{-\varepsilon}\). The pole component is bounded by
+\(4T^{-(3+\varepsilon)/2}\); the trivial-zero component by
+\(12T^{-1-5\varepsilon/2}\). The H-containing words split into three with
+two P slots, nine with one, and seven with none, giving
+\[
+\sum_{w:\,H\text{ occurs}}|E_w|
+\ll W_\infty T^{-\varepsilon}L
+  +\sqrt{W_\infty}T^{-2\varepsilon}L^{3/2}
+  +T^{-3\varepsilon}L^2.
+\]
+This proves the last row without double counting component refinements.
+The remaining rows follow from Sections 2 and 5; the proof gives their
+individual exponent calculations.
+
+The \(X,Y,Z\) boundaries and \(T=3\) are included. The range is nonempty:
+\(X=Y=T^\varepsilon\) is admissible. Epsilon is strictly between 0 and
+\(1/3\); no epsilon-zero or varying-epsilon limit is claimed.
+First remove convergent cutoffs at fixed parameters, then let \(T\) grow
+with epsilon and smoothing fixed. For varying weights, the explicit
+estimate remains valid but its displayed right side must tend to zero
+to conclude \(o(1)\).
+
+This is an additive formula, not relative error \(o(M_T)\).
+\(J_1,D(X,Z),D(Y,Z),R_{\rm res}\) remain exact and have not been shown
+to dominate the error. Full horizontal zero coordinates and multiplicities
+are retained. This parameter range is not a proved Fourier-support region.
+Next: evaluate the retained terms at the intended scale and connect this
+observable to a test-function correlation statement. The general Work
+Package B theorem, a GUE main term, and horizontal consequences remain open.
+
+## 7. Regression checks
 
 Run the standard-library exact checks with:
 
@@ -214,13 +342,26 @@ conjugation, norm-bound assignment, oscillatory scales, endpoints,
 dependencies and source labels. They are verification aids, not an
 analytic or numerical proof certificate.
 
-Validation on 2026-10-01: all 22 triple checks (11 master-identity and
+Validation of the initial uniform-budget draft on 2026-10-01: all 22 triple checks (11 master-identity and
 11 uniform-budget checks) and all 70 pair checks passed. Three
 pdflatex passes with shell escape disabled compiled the expanded draft
 to ten pages, with no final-pass warnings, unresolved references, or
 overfull/underfull boxes.
 
 The existing pair RH audit retains its original claim coverage.
-Its ledger hash was refreshed after verifying that the previous ledger
+On 2026-10-01 its ledger hash was refreshed after verifying that the previous ledger
 is an unchanged byte prefix and only TRIPLE-UNIFORM-001 was appended.
 This metadata review does not extend that audit to Work Package B.
+
+Validation on 2026-10-02: all 32 triple checks (including ten new
+off-diagonal/additive checks) and all 70 pair checks passed. Three
+pdflatex passes with shell escape disabled compiled the expanded proof
+to fourteen pages with no final-pass warnings, unresolved references,
+or overfull/underfull boxes. Dependency acyclicity, source labels,
+documentation links and whitespace checks passed.
+
+The additional ledger hash refresh on 2026-10-02 records an unchanged
+previous-ledger prefix followed by exactly the three new claims
+TRIPLE-LOG-GAP-001, TRIPLE-OFFDIAG-001 and TRIPLE-SMOOTHED-ADDITIVE-001.
+Existing audit metadata, its claim coverage, the pair proof, and the
+Work Package A archive remain unchanged.

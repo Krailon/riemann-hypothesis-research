@@ -121,7 +121,7 @@ completion of A; those historical notes have not been changed merely to update
 progress wording. The closure documentation postdates the tested baseline
 revision; its proof and audited inputs are unchanged.
 
-## Work Package B: exact identity and uniform estimates
+## Work Package B: an additive smoothed formula
 
 `TRIPLE-MASTER-001` is a **proved-draft** exact smoothed triple identity
 retaining the full complex zeros. The [proof](proofs/triple_explicit_formula.tex)
@@ -132,9 +132,23 @@ cubic prime resonance. Convergence and smoothing dependence are explicit.
 [uniform estimates and named error budget](research/triple-error-budget.md)
 for all 27 terms and their 208 named remainder refinements. Bounds hold for
 all `T >= 3, X,Y >= 1`, with stronger prime norm bounds when `XY <= 2T`.
-The next step is to sharpen the mixed-prime and cubic off-diagonal estimates
-and assess the remainder scales on a growing parameter range. The
-support-restricted asymptotic and a new horizontal consequence remain targets.
+`TRIPLE-LOG-GAP-001` and `TRIPLE-OFFDIAG-001` sharpen the off-diagonal
+estimates. Combining them with the budget gives
+`TRIPLE-SMOOTHED-ADDITIVE-001`, also **proved-draft**:
+
+\[
+\mathcal C_{3,T}(X,Y)=M_T(X,Y)
++O\!\left((1+\|\omega\|_\infty+\|\omega'\|_1)
+T^{-\varepsilon}\log^4(2T+2)\right),
+\]
+
+uniformly for `T >= 3`, fixed `0 < epsilon < 1/3`,
+`T^epsilon <= X,Y`, and `XY <= T^(1-epsilon)`. For fixed smoothing
+this is an additive `o(1)` error, not a relative `o(M_T)` assertion.
+The retained expression is defined in the budget; its terms remain exact.
+The next step is to evaluate them at the intended scale and connect this
+observable to a test-function correlation statement. The general Work
+Package B theorem and a new horizontal consequence remain targets.
 
 Run the additional Work Package B regression checks with:
 
