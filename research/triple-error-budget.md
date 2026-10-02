@@ -333,8 +333,13 @@ tends to zero. The exact refinements \(E_D,E_J\) belong inside \(M_T\);
 they are not additional errors when \(M_T\) is retained in this budget.
 The resulting test-function theorem covers compact Fourier support inside
 the positive triangle with the native kernel and complex zero arguments.
-Analysis at the axes and origin, the general Work Package B theorem,
-a GUE main term, and horizontal consequences remain open.
+The same note now records **TRIPLE-BOUNDARY-ESTIMATES-001** and
+**TRIPLE-QUADRANT-LIMIT-001**: an integrated budget up to the positive
+axes and origin, and their one-sided limit after division by `log T`.
+These extend the frequency analysis using the bounds valid at `X=1,Y=1`;
+they do not apply the growing-range corollary at epsilon zero.
+Signed-sector extensions, the general Work Package B theorem,
+a GUE identification, and horizontal consequences remain open.
 
 ## 7. Regression checks
 

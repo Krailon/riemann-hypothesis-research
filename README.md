@@ -153,8 +153,17 @@ observable tends to zero and prove a weighted full-zero correlation statement
 for arbitrary smooth Fourier transforms compactly supported in
 `xi > 0, eta > 0, xi + eta < 1`. The native kernel, multiplicities, and
 complex arguments carrying horizontal zero coordinates are retained.
-The next step is analysis near the frequency axes and origin. The general
-Work Package B theorem and a new horizontal consequence remain targets.
+`TRIPLE-BOUNDARY-ESTIMATES-001` and `TRIPLE-QUADRANT-LIMIT-001`, also
+**proved-draft**, give the positive-quadrant boundary limit. After division
+by `log T`, integration against smooth restrictions supported in
+`xi >= 0, eta >= 0, xi + eta <= 1-kappa`, for fixed `0 < kappa < 1`, tends
+to an origin mass `1/4` plus density `3r/4` on each positive axis.
+The [boundary budget and conventions](research/triple-test-functions.md)
+include an effective error and the full-zero identity. The one-sided
+inverse Fourier tests are generally not Schwartz. The next step is
+signed-sector analysis for smooth Fourier tests crossing the axes.
+The general Work Package B theorem and a new horizontal consequence
+remain targets.
 
 Run the additional Work Package B regression checks with:
 

@@ -18,8 +18,10 @@
 \maketitle
 
 \noindent Task: proof and bookkeeping. Assumptions: \texttt{UNCONDITIONAL}.
-Ledger status: \texttt{proved-draft}. This is the first exact identity for
-Work Package B; the support-restricted asymptotic remains a target.
+Ledger status: \texttt{proved-draft}. This draft develops the exact
+smoothed identity, its uniform budget, the interior vanishing theorem,
+and a one-sided positive-quadrant boundary limit. The general Schwartz
+correlation target for Work Package B remains open.
 
 \section{Definitions and imported inputs}
 
@@ -1184,4 +1186,313 @@ handling frequency axes or the origin, taking a real-ordinate-only
 statistic, or proving the full Work Package B theorem requires additional
 analysis. The zero interior limit establishes none of a GUE main term,
 a relative asymptotic, or a new horizontal constraint.
+\section{Boundary layers in the positive frequency quadrant}
+
+Task: proof and bookkeeping. The following two claims are
+\texttt{UNCONDITIONAL}, with the stated support restriction, and have
+status \texttt{proved-draft}. Put
+\[
+ Q=[0,\infty)^2,\quad Q_\kappa=\{(\xi,\eta)\in Q:\xi+\eta\leq1-\kappa\},
+ \quad 0<\kappa<1.
+\]
+A smooth test on \(Q\) means the restriction \(\psi\) of a function in
+\(C_c^\infty(\mathbb R^2)\). Require its support relative to \(Q\) to
+lie in \(Q_\kappa\). Its values on the axes are its continuous traces.
+Write \(N_1(\psi)=\|\psi\|_{\infty,Q}+
+\|\partial_\xi\psi\|_{\infty,Q}+\|\partial_\eta\psi\|_{\infty,Q}\).
+For the estimates in this section assume \(T\geq2\pi e\), and set
+\[
+ b=\log B,\quad B=T/(2\pi),\quad q=\log T,
+ \quad L=\log(2T+2),\quad \mathcal W=1+W_\infty+W_1.
+\]
+Thus \(b\geq1\), \(q=b+\log(2\pi)\), and \(L\asymp q\asymp b\)
+with absolute constants. In frequency integrals always set
+\(X=B^\xi,Y=B^\eta,Z=XY\). In particular
+\(1\leq X,Y\leq Z\leq B^{1-\kappa}<T\); no positive lower
+frequency margin is imposed.
+
+\begin{lemma}[\texttt{TRIPLE-BOUNDARY-ESTIMATES-001}]
+\label{lem:triple-boundary-estimates}
+With \(G\) and \(\mu_\omega\) as in Lemma~\ref{lem:triple-retained}, put
+\[
+ R_T(X,Y)=\CT(X,Y)-q^3/Z^2-(q+\mu_\omega)G(X,Y).
+\]
+There is an effective absolute constant such that
+\begin{equation}\label{eq:triple-boundary-integrated-error}
+ \int_Q|\psi(\xi,\eta)R_T(B^\xi,B^\eta)|\dd\xi\dd\eta
+ \ll\|\psi\|_{\infty,Q}\mathcal W(1+B^{-\kappa}L^4).
+\end{equation}
+For fixed admissible smoothing there are also the local profiles
+\begin{align}
+ q^{-3}\CT(e^u,e^v)&\longrightarrow e^{-2(u+v)},
+       \label{eq:triple-origin-profile}\\
+ q^{-2}\CT(B^r,e^s)&\longrightarrow r(1+s)e^{-2s}.
+       \label{eq:triple-axis-profile}
+\end{align}
+The first convergence is uniform on compact subsets of \(u,v\geq0\);
+the second on compact subsets of \(0<r<1,s\geq0\).
+The exchanged-axis profile holds as well, including \(s=0\).
+\end{lemma}
+\begin{proof}
+Use the exact budget of Lemma~\ref{lem:triple-uniform}, replacing its
+retained terms by Lemma~\ref{lem:triple-retained}, and use
+Lemma~\ref{lem:triple-offdiag} for the three off-diagonal errors.
+Consequently \(R_T\) is exactly the sum of the eight old non-\(H\)
+errors, all nineteen signed \(H\) words, \(E_D,E_J\), and
+\(-R_{\rm res}\). There is no repeated retained term.
+
+Here is the integrated budget. Each entry bounds the integral of the
+absolute value over \(Q_\kappa\), before multiplication by
+\(\|\psi\|_{\infty,Q}\). Absolute effective constants are suppressed.
+The last row is expanded separately below.
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Source & Integrated bound \\
+\midrule
+\(E_{\rm archcube}\) & \(L^2/b^2\) \\
+\(E_D\) & \(L/b\) \\
+\(E_J\) & \(1/T\) \\
+\(-R_{\rm res}\) & \(b^{-2}\) \\
+\(E_{PPA}\) & \((1+W_1)L^3/T\) \\
+\(E_{PAA},E_{APA},E_{AAP}\), each & \((1+W_1)L^2/T\) \\
+\(E_{PAP,\rm off},E_{APP,\rm off},E_{PPP,\rm off}\), each
+ & \((1+W_1)B^{-\kappa}L^4\) \\
+All nineteen \(H\) words & \((1+W_\infty)(1+T^{-3/2}L^2)\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For completeness these bounds remain valid at both axes. The
+archimedean cube bound follows from \(L^3-q^3\ll L^2\) and
+\(\int_Q e^{-2b(\xi+\eta)}\dd\xi\dd\eta=1/(4b^2)\).
+For \(E_D\), integrate \(L(1+b\eta)e^{-2b\eta}\) in \(\eta\),
+and bound the other coordinate's interval by length one; also exchange
+the coordinates. For \(G\), the substitution \(s=b\eta\) gives
+\begin{equation}\label{eq:triple-axis-substitution}
+ G_1(B^\xi,B^\eta)\dd\eta
+ =e^{-2s}(1+s)\left(\xi+\frac{s}{2b}\right)\dd s,
+ \quad
+ G_1=\frac{(1+\log Y)\log(XZ)}{2Y^2}.
+\end{equation}
+Integrating with \(0\leq\xi\leq1\) bounds \(\int_{Q_\kappa}G\)
+absolutely, proving the \(E_J\) row. The resonance estimate integrates
+after \(u=b\xi,v=b\eta\) to at most
+\[
+ Cb^{-2}\int_0^\infty\int_0^\infty
+ e^{-(u+v)/2}(\log2+u+v)^3\dd u\dd v\ll b^{-2}.
+\]
+For \(PPA\), its pointwise bound is at most
+\(C(1+W_1)L^3/(T\sqrt Z)\). The three single-prime words are
+at most \(C(1+W_1)L^2/T\), since all scalar denominators only
+improve their bounds for \(X,Y\geq1\). The mixed off-diagonal bounds
+use \(X/\sqrt Y,Y/\sqrt X\leq Z\),
+\(\ell_X,\ell_Y,\ell_Z\ll L\), and
+\(V_1\ll(1+W_1)L\). The cubic bound uses
+\(Z/T\leq B^{-\kappa}/(2\pi)\). Integration costs at most unit area.
+
+To account for the remainders, split \(H_x=H_x^0+E_{\rm pole}(x,\cdot)\),
+where \(H^0\) is the sum of the archimedean, Dirichlet-series and trivial
+components. Individually their sup-norm majorants are
+\[
+ C_{\rm arch}/x,\qquad C_{\rm DS}/x,\qquad
+ 12x^{-5/2}/(T+2)\leq12/(Tx).
+\]
+Thus \(H_x^0\) has majorant \(C/x\). Retain these three component
+labels under finite distributivity; no cancellation among them is used.
+For a word with \(p\) prime factors, \(a\) archimedean main factors
+and \(h\geq1\) factors \(H^0\), the uniform product bound is
+\(C(1+W_\infty)L^{p/2+a}\) times the product of \(x^{-1}\)
+over its nonprime slots. There are at most two primes. A factor in the
+\(X,Y,Z\) slot supplies respectively the decay vectors
+\((1,0),(0,1),(1,1)\). Any two such vectors have positive sum in
+both coordinates. Integrating the resulting exponential on
+\(Q_\kappa\subset[0,1]^2\) gives the complete table
+\begin{center}
+\begin{tabular}{rrrrl}
+\toprule
+\(p\)&\(a\)&\(h\)&Number& Bound after removing \(C(1+W_\infty)\)\\
+\midrule
+2&0&1&3& \(L/b\) (the \(H^0_Z\) case has \(L/b^2\))\\
+1&1&1&6& \(L^{3/2}/b^2\)\\
+0&2&1&3& \(L^2/b^2\)\\
+1&0&2&3& \(L^{1/2}/b^2\)\\
+0&1&2&3& \(L/b^2\)\\
+0&0&3&1& \(b^{-2}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Their sum is bounded absolutely since \(b\geq1,L\asymp b\).
+Every refined word with at least one pole factor has that factor
+bounded by \(4\sqrt Z/T^2\leq4T^{-3/2}\). All its remaining
+nonprime factors are \(O(L)\); the prime factors use their weighted
+\(L^2\) bounds. Its integral is therefore at most
+\(C(1+W_\infty)T^{-3/2}L^2\). This covers all 208 refined words:
+\(12\cdot4+6\cdot4^2+4^3\), grouped without overlap according to
+whether a pole component occurs. The trivial component's additional
+\(T^{-1}\) may be retained in every occurrence. Summing proves
+\eqref{eq:triple-boundary-integrated-error}; in particular none of these
+errors can contribute at the integrated scale \(q\).
+
+For the origin profile, on any fixed compact rectangle in \(u,v\),
+all prime bases and their coefficient norms are bounded. The cube is
+\(q^3e^{-2(u+v)}\); its evaluation error and all \(H\) words are
+\(O_\omega(q^2)\), the mixed retained terms are \(O_\omega(q)\),
+and all other bounds are smaller. This proves
+\eqref{eq:triple-origin-profile} uniformly, including \(u=v=0\).
+
+For the axis profile take \(r_0\leq r\leq r_1<1,0\leq s\leq S\)
+with \(r_0>0\). For sufficiently large \(T\), all bases are below
+\(T\), and \(Z/T\ll_S B^{-(1-r_1)}\). The off-diagonal errors
+are \(O_{\omega,S}(B^{-(1-r_1)}L^4)\). The first summand of
+\((q+\mu_\omega)G/q^2\) is
+\[
+ \frac{(q+\mu_\omega)b}{q^2}
+ e^{-2s}(1+s)\left(r+\frac{s}{2b}\right),
+\]
+which converges uniformly to the stated profile. The other summand
+and the cube, after division by \(q^2\), are
+\(O_{\omega,S}(q e^{-2br_0})\). The mixed evaluation errors are
+\(O_{\omega,S}(q+q^2e^{-2br_0})\) before division; the resonance
+bound is smaller than \(q^2\). Among the remainder words, the
+\(H_YPP\) word is \(O_{\omega,S}(q)\), as are all words with
+two primes. Every word with fewer primes and a factor in the \(X\)
+or \(Z\) slot bounded by an inverse base is
+\(O_{\omega,S}(q^2e^{-br_0})\); words containing a pole are
+\(O_\omega(T^{-3/2}L^2)\). These alternatives cover all remaining
+\(H\) words. The archimedean cube error and the other old errors
+also become zero uniformly after division by \(q^2\).
+This proves \eqref{eq:triple-axis-profile}. Symmetry exchanges \(X,Y\).
+\end{proof}
+
+\section{The one-sided quadrant limit}
+
+\begin{theorem}[\texttt{TRIPLE-QUADRANT-LIMIT-001}]
+\label{thm:triple-quadrant-limit}
+For the preceding tests and smoothing define
+\[
+ \mathcal B_T[\psi]=\frac1q\int_Q\psi(\xi,\eta)
+                      \CT(B^\xi,B^\eta)\dd\xi\dd\eta,
+ \qquad
+ \mathcal B[\psi]=\frac14\psi(0,0)
+       +\frac34\int_0^\infty r\{\psi(r,0)+\psi(0,r)\}\dd r.
+\]
+Uniformly for \(T\geq2\pi e\) and \(0<\kappa<1\),
+\begin{equation}\label{eq:triple-quadrant-limit}
+ |\mathcal B_T[\psi]-\mathcal B[\psi]|
+ \ll N_1(\psi)\mathcal W
+       \{b^{-1}+B^{-\kappa}L^3\},
+\end{equation}
+with an effective absolute constant. In particular, for fixed
+\(\psi,\kappa,\omega\), the limit is \(\mathcal B[\psi]\).
+
+Define the entire function
+\[
+ F_+(z_1,z_2)=\int_Q\psi(\xi,\eta)
+                   e^{2\pi\ii(\xi z_1+\eta z_2)}\dd\xi\dd\eta.
+\]
+With the full-zero arguments of \eqref{eq:triple-test-arguments},
+there is also the exact absolutely convergent identity
+\begin{equation}\label{eq:triple-quadrant-zero-identity}
+ \mathcal B_T[\psi]=\frac8q\sum_{i_1,i_2,i_3\in\mathcal I}
+             K_T(i_2,i_3,i_1)F_+(z_{21},z_{31}).
+\end{equation}
+All multiplicity, horizontal, conjugated-anchor and partial-diagonal
+conventions of the master identity apply unchanged.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:triple-boundary-estimates}, replacing \(\CT\) by
+\(q^3/Z^2+(q+\mu_\omega)G\) in \(\mathcal B_T\) incurs
+\(O(\|\psi\|_\infty\mathcal W(b^{-1}+B^{-\kappa}L^3))\).
+It remains to integrate those two retained terms, not to integrate
+the local profiles without a dominating bound.
+
+The cube contributes exactly
+\[
+ \frac{q^2}{b^2}\int_0^\infty\int_0^\infty
+ e^{-2(u+v)}\psi(u/b,v/b)\dd u\dd v.
+\]
+The mean value bound
+\(|\psi(u/b,v/b)-\psi(0,0)|\leq N_1(\psi)(u+v)/b\)
+holds along line segments in \(Q\). The moments
+\begin{equation}\label{eq:triple-boundary-moments}
+ \int_0^\infty s^k e^{-2s}\dd s=\frac{k!}{2^{k+1}}
+ \quad(k\geq0)
+\end{equation}
+follow by integration by parts, with vanishing exponential boundary
+terms. Since \(q/b=1+\log(2\pi)/b\), the cube is
+\(\psi(0,0)/4+O(N_1(\psi)/b)\).
+
+For the first mixed term, \eqref{eq:triple-axis-substitution} gives
+\[
+ \frac{q+\mu_\omega}{q}
+ \int_0^\infty\int_0^\infty
+ e^{-2s}(1+s)\left(\xi+\frac{s}{2b}\right)
+                   \psi(\xi,s/b)\dd s\dd\xi.
+\]
+Both \(\psi(\xi,s/b)\) and its trace vanish for \(\xi>1\).
+On \(0\leq\xi\leq1\), replacing the former by \(\psi(\xi,0)\)
+costs at most \(N_1(\psi)s/b\); the term \(s/(2b)\) also costs
+\(O(N_1(\psi)/b)\) after integration. The coefficient
+\((q+\mu_\omega)/q\) is \(1+O(1/b)\), uniformly in the normalized
+nonnegative smoothing. Formula~\eqref{eq:triple-boundary-moments}
+gives \(\int_0^\infty(1+s)e^{-2s}\dd s=3/4\).
+Thus this term is \((3/4)\int_0^\infty\xi\psi(\xi,0)\dd\xi
++O(N_1(\psi)/b)\). Exchanging coordinates gives the other axis.
+Every majorant used here is integrable, including its first moment.
+This proves \eqref{eq:triple-quadrant-limit}.
+
+The compactly supported integrable frequency function
+\(\mathbf1_Q\psi\), extended by zero, defines \(F_+\) independently
+of its values on the boundary, which has planar measure zero.
+Differentiation under its integral is valid locally uniformly at complex
+arguments, proving that \(F_+\) is entire. On the real plane it is
+bounded, hence tempered, and its Fourier transform is
+\(\mathbf1_Q\psi\) in the sense of tempered distributions, with the
+project convention. It need not be Schwartz: a nonzero boundary trace
+prevents the zero extension from having a continuous representative
+across that axis, whereas the Fourier transform of a Schwartz function
+is Schwartz.
+
+At fixed \(T,\psi,\omega\), the master majorant gives
+\[
+ 8\sum_{i_1,i_2,i_3}\int_Q
+ |\psi K_T(i_2,i_3,i_1)e^{2\pi\ii(\xi z_{21}+\eta z_{31})}|
+ \dd\xi\dd\eta
+ \ll\|\psi\|_{L^1(Q)}B^{1-\kappa}L^3<\infty.
+\]
+Tonelli/Fubini and the exact phase identity from
+Theorem~\ref{thm:triple-test-function} now prove
+\eqref{eq:triple-quadrant-zero-identity}. This argument uses compact
+frequency support rather than any real-axis decay of \(F_+\).
+Remove independent zero cutoffs at fixed parameters under this majorant;
+only then let \(T\) grow with \(\psi,\kappa,\omega\) fixed.
+\end{proof}
+
+The limiting functional acts on smooth restrictions to the closed
+quadrant. Its origin mass \(1/4\) and positive-axis densities \(3r/4\)
+are full one-sided masses: no further half-weight convention applies.
+The traces are determined by the smooth restriction, not by assigning
+arbitrary values to its zero extension on a null set. The pointwise
+sizes \(q^3\) at the origin and \(q^2\) on an axis are distinct from
+the integrated scale \(q\). The mixed terms carry no additional origin
+atom, as their integrated error estimate shows.
+
+If the test vanishes near both axes, this limiting functional is zero,
+consistent with the earlier stronger unnormalized interior estimate.
+Tests near the origin and tests meeting just one axis are both allowed.
+The axes and the inner boundary \(\xi+\eta=1-\kappa\) are included;
+the outer boundary \(\xi+\eta=1\) remains excluded. The identity itself
+holds for \(T>2\pi\); \(T\geq2\pi e\) is the convenient threshold
+for the explicit estimate. No symmetry or reality of the test is needed.
+Swapping the two non-anchor indices exchanges the axis terms; horizontal
+reflection is still a reindexing of full zeros and kernel denominators.
+For varying tests, margins or smoothing, a limiting assertion requires
+the right side of \eqref{eq:triple-quadrant-limit} to tend to zero.
+
+This proves a nonzero one-sided weighted correlation limit. Extending
+across signed frequency sectors to smooth Fourier tests surrounding the
+origin, removing the native kernel, and extracting horizontal information
+remain separate tasks. In particular this is not the general Schwartz
+test-function target of Work Package B.
 \end{document}

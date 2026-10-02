@@ -1535,3 +1535,94 @@ claims:
       verification_script: scripts/check_triple_test_functions.py
       independent_verification: pending
       pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-BOUNDARY-ESTIMATES-001
+    title: Local boundary profiles and integrated positive-quadrant error budget
+    kind: lemma
+    statement: |
+      Let Q=[0,infinity)^2, 0<kappa<1, and let psi be a restriction of a
+      compactly supported smooth function on R2 with relative support in
+      Q_kappa={(xi,eta) in Q:xi+eta<=1-kappa}. Use the normalized nonnegative
+      smoothing of TRIPLE-UNIFORM-001. For T>=2pi e set B=T/(2pi), b=log B,
+      q=log T, L=log(2T+2), W=1+||omega||_inf+||omega'||_1, X=B^xi,Y=B^eta,
+      Z=XY, and R_T=C_{3,T}-q^3/Z^2-(q+mu_omega)G, with G and mu_omega
+      defined in TRIPLE-RETAINED-001. Then integral_Q |psi R_T| dxi deta
+      <<||psi||_{infinity,Q} W (1+B^(-kappa)L^4), with an effective absolute
+      constant independent of kappa. The budget counts all eight old
+      non-H errors, nineteen H words (208 component refinements), E_D,E_J
+      and -R_res once. For fixed smoothing, as T tends to infinity,
+      q^(-3)C_{3,T}(exp u,exp v) tends uniformly to exp(-2(u+v)) on compact
+      subsets of u,v>=0; q^(-2)C_{3,T}(B^r,exp s) tends uniformly to
+      r(1+s)exp(-2s) on compact subsets of 0<r<1,s>=0. Exchange X,Y for the
+      other axis. The local profiles themselves require no test function.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"]
+    dependencies: [TRIPLE-UNIFORM-001, TRIPLE-OFFDIAG-001, TRIPLE-RETAINED-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-boundary-estimates
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Convergent zero/prime expressions at fixed parameters first; then fix smoothing and compact profile ranges before T tends to infinity. Integrated estimate is uniform in kappa and the stated test class."
+    project_audit:
+      task_type: proof
+      proof_method: "Integrate the existing exact named budget with exponential decay vectors; keep pole, archimedean, Dirichlet-series and trivial components identifiable; derive local profiles directly."
+      endpoint_audit: "X=1,Y=1,axes,origin and inner support boundary included. T>=2pi e for the budget; local profiles use compact r-subsets strictly inside (0,1). Outer frequency boundary remains excluded."
+      smoothing_audit: "Explicit dependence W=1+W_inf+W_1 for the integrated estimate; fixed smoothing for the local-profile limits."
+      horizontal_audit: "Full-zero observable, kernel, multiplicity and index-diagonal conventions inherited unchanged."
+      verification_script: scripts/check_triple_boundary.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-QUADRANT-LIMIT-001
+    title: One-sided axis and origin limit for the native weighted triple correlation
+    kind: theorem
+    statement: |
+      Under TRIPLE-BOUNDARY-ESTIMATES-001 let N_1(psi)=||psi||_{infinity,Q}
+      +||partial_xi psi||_{infinity,Q}+||partial_eta psi||_{infinity,Q}.
+      Define B_T[psi]=q^(-1)integral_Q psi(xi,eta)C_{3,T}(B^xi,B^eta) dxi deta
+      and B_limit[psi]=psi(0,0)/4+(3/4)integral_0^infinity
+      r(psi(r,0)+psi(0,r)) dr. For T>=2pi e,
+      |B_T[psi]-B_limit[psi]|<<N_1(psi) W (1/b+B^(-kappa)L^3), with an
+      effective absolute constant. For fixed psi,kappa,omega the limit is
+      B_limit[psi]. The coefficients are full one-sided masses on the
+      closed quadrant; no extra half weights are applied.
+      F_plus(z1,z2)=integral_Q psi(xi,eta)exp(2pi i(xi z1+eta z2)) dxi deta
+      is entire; its Fourier transform on R2 is the zero extension of psi
+      as a tempered distribution. It is generally not Schwartz.
+      For T>2pi the exact absolutely convergent zero-side identity is
+      B_T[psi]=(8/q)sum_{i1,i2,i3 in I} K_T(i2,i3,i1)F_plus(z21,z31), where
+      z21=L_T((gamma_i2-gamma_i1)-i(delta_i2+delta_i1)),
+      z31=L_T((gamma_i3-gamma_i1)-i(delta_i3+delta_i1)), L_T=log B/(2pi).
+      I is the full zero-occurrence multiset, both ordinate signs,
+      multiplicities and all partial diagonals included. K_T already
+      contains 1/T. The majorant before division by q is
+      C||psi||_{L1(Q)} B^(1-kappa)log(2T+2)^3. No signed-sector extension,
+      kernel removal, real-ordinate-only correlation, positivity or new
+      horizontal consequence is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"]
+    dependencies: [TRIPLE-BOUNDARY-ESTIMATES-001, TRIPLE-MASTER-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: thm:triple-quadrant-limit
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T,psi,omega remove independent zero cutoffs under the explicit absolute majorant. Then fix psi,kappa,omega and let T tend to infinity. Varying families require the displayed bound to vanish."
+    project_audit:
+      task_type: proof
+      proof_method: "Exact exponential moments, first-moment trace estimates, integrated named remainder bounds, compact-frequency entire extension and absolute Fubini."
+      endpoint_audit: "Smooth restrictions have continuous boundary traces; axes,origin and Q_kappa boundary included. No half masses. Outer line xi+eta=1 excluded."
+      scaling_audit: "b=log(T/(2pi)),q=log T, origin Jacobian b^(-2), transverse axis Jacobian b^(-1); only the extra 1/q normalization is introduced."
+      horizontal_audit: "Imaginary sums of deltas and the native conjugated-anchor kernel remain; no substitution beta=1/2."
+      verification_script: scripts/check_triple_boundary.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."

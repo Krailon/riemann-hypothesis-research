@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "37c6f404b7f9de1f8181ef60effd9afcf43d9a1d7e5c760c60356a4ab0c23bdb",
+  "ledger_sha256": "f55baada22fa86eb4f3bf9e6a82e0f3cdb6c68c6b216ec6b3a4000f8f972174a",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2370,5 +2370,16 @@
       "TRIPLE-TEST-FUNCTION-001"
     ],
     "changes": "The previous ledger is an unchanged byte prefix, followed only by the three listed claims. Existing claim statements, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The new test-function claim explicitly records its Fourier-support assumption. This refresh does not extend Work Package A audit coverage to Work Package B."
+  },
+  "ledger_boundary_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_boundary_and_quadrant_claims",
+    "report": "research/triple-test-functions.md",
+    "previous_ledger_sha256": "37c6f404b7f9de1f8181ef60effd9afcf43d9a1d7e5c760c60356a4ab0c23bdb",
+    "added_claim_ids": [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-QUADRANT-LIMIT-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix, followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. Both new claims explicitly record the positive-quadrant support assumption. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
   }
 }

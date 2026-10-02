@@ -180,9 +180,9 @@ statistic, including the transformed kernel; it is not termwise invariance.
 
 This proves a vanishing interior limit for arbitrary tests in the stated
 Fourier class, with the native smoothing kernel and horizontal shifts.
-It does not complete the general Work Package B target. The next research
-step is analysis near the frequency axes and origin, followed by any
-justified extension of the support or modification of the kernel.
+It does not complete the general Work Package B target. Sections 6--7
+below subsequently handle the frequency axes and origin from the positive
+quadrant; signed-sector extension and kernel modification remain separate.
 No GUE main term, relative asymptotic, real-ordinate-only formula, positivity,
 or new horizontal constraint follows from this zero limit.
 
@@ -208,3 +208,187 @@ The pair RH-audit ledger hash was refreshed after verifying that the
 previous ledger is an unchanged byte prefix with exactly these three
 claims appended. Its existing audit metadata and claim coverage, the
 pair proof, and the Work Package A reproduction archive remain unchanged.
+
+## 6. Positive-quadrant boundary estimates
+
+Task: proof and bookkeeping. Claims **TRIPLE-BOUNDARY-ESTIMATES-001**
+(label **lem:triple-boundary-estimates**) and **TRIPLE-QUADRANT-LIMIT-001**
+(label **thm:triple-quadrant-limit**) extend the analysis above to the
+axes and origin from within the positive quadrant. Both are
+**proved-draft**, with `UNCONDITIONAL` and the explicit support assumption.
+The earlier interior statements retain their original domains.
+
+Write
+\[
+Q=[0,\infty)^2,\quad Q_\kappa=\{(\xi,\eta)\in Q:\xi+\eta\le1-\kappa\},
+\quad 0<\kappa<1.
+\]
+A test \(\psi\) is a restriction of a member of \(C_c^\infty(\mathbb R^2)\)
+to \(Q\), with relative support in \(Q_\kappa\). Nonzero boundary
+traces are allowed. Define
+\[
+N_1(\psi)=\|\psi\|_{\infty,Q}+\|\partial_\xi\psi\|_{\infty,Q}
++\|\partial_\eta\psi\|_{\infty,Q}.
+\]
+For \(T\ge2\pi e\), set \(B=T/(2\pi), b=\log B\ge1, q=\log T\),
+\(L=\log(2T+2)\), and \(\mathcal W=1+W_\infty+W_1\).
+Then \(b\asymp q\asymp L\) with absolute constants. Set
+\(X=B^\xi,Y=B^\eta,Z=XY\), so \(1\le X,Y\le Z\le B^{1-\kappa}<T\).
+The interior growing-range corollary is not used at these endpoints.
+
+For fixed smoothing, the local profiles are
+\[
+q^{-3}\mathcal C_{3,T}(e^u,e^v)\longrightarrow e^{-2(u+v)},\qquad
+q^{-2}\mathcal C_{3,T}(B^r,e^s)\longrightarrow r(1+s)e^{-2s}.
+\]
+Convergence is uniform on compact subsets of \(u,v\ge0\), respectively
+\(0<r<1,s\ge0\); exchange the arguments for the other axis.
+Thus the pointwise sizes are \(q^3\) at the origin and \(q^2\) on
+an axis away from the origin. These differ from the integrated scale.
+
+Define the exact remainder
+\[
+R_T=\mathcal C_{3,T}-q^3/Z^2-(q+\mu_\omega)G.
+\]
+It consists of the eight old non-\(H\) errors, nineteen signed \(H\)
+words, \(E_D,E_J\), and \(-R_{\rm res}\), each counted once.
+The following entries bound integrals of absolute values over
+\(Q_\kappa\), before multiplying by \(\|\psi\|_{\infty,Q}\).
+All implicit constants are effective and absolute.
+
+| Source | Integrated bound |
+| --- | --- |
+| \(E_{\rm archcube}\) | \(O(L^2/b^2)\) |
+| \(E_D\) | \(O(L/b)\) |
+| \(E_J\) | \(O(T^{-1})\) |
+| \(-R_{\rm res}\) | \(O(b^{-2})\) |
+| \(E_{PPA}\) | \(O((1+W_1)L^3/T)\) |
+| \(E_{PAA},E_{APA},E_{AAP}\), each | \(O((1+W_1)L^2/T)\) |
+| \(E_{PAP,\rm off},E_{APP,\rm off},E_{PPP,\rm off}\), each | \(O((1+W_1)B^{-\kappa}L^4)\) |
+| All nineteen \(H\) words | \(O((1+W_\infty)(1+T^{-3/2}L^2))\) |
+
+The remainder words keep all four original component labels. Split
+\(H=H^0+E_{\rm pole}\). For \(H^0\), the separate bounds are
+\(C_{\rm arch}/x,C_{\rm DS}/x,12/(Tx)\); every trivial component
+can retain its additional \(T^{-1}\). With \((p,a,h)\) denoting counts
+of \(P,A,H^0\), the following table records all nineteen words.
+Bounds omit a factor \(C(1+W_\infty)\).
+
+| Counts \((p,a,h)\) | Number | Integrated bound |
+| --- | --- | --- |
+| \((2,0,1)\) | 3 | \(L/b\); the third-slot remainder improves to \(L/b^2\) |
+| \((1,1,1)\) | 6 | \(L^{3/2}/b^2\) |
+| \((0,2,1)\) | 3 | \(L^2/b^2\) |
+| \((1,0,2)\) | 3 | \(L^{1/2}/b^2\) |
+| \((0,1,2)\) | 3 | \(L/b^2\) |
+| \((0,0,3)\) | 1 | \(b^{-2}\) |
+
+A nonprime factor in the \(X,Y,Z\) slot supplies decay vectors
+\((1,0),(0,1),(1,1)\), respectively. Two nonprime slots therefore
+supply decay in both frequency coordinates. Each refined word with a
+pole factor is bounded instead by
+\(C(1+W_\infty)T^{-3/2}L^2\), since \(x\le Z<T\).
+This accounts for all 208 refinements without overlap. Consequently
+\[
+\int_Q|\psi R_T|\ll\|\psi\|_{\infty,Q}\mathcal W
+(1+B^{-\kappa}L^4).
+\]
+
+## 7. One-sided limit and full-zero interpretation
+
+The new normalized functional and its limit are
+\[
+\mathcal B_T[\psi]=\frac1q\int_Q\psi(\xi,\eta)
+ \mathcal C_{3,T}(B^\xi,B^\eta)\,d\xi\,d\eta,
+\]
+\[
+\mathcal B[\psi]=\frac14\psi(0,0)
+ +\frac34\int_0^\infty r[\psi(r,0)+\psi(0,r)]\,dr.
+\]
+The theorem gives the uniform, effective estimate
+\[
+|\mathcal B_T[\psi]-\mathcal B[\psi]|
+\ll N_1(\psi)\mathcal W\{b^{-1}+B^{-\kappa}L^3\}.
+\]
+The origin substitution \((u,v)=b(\xi,\eta)\) gives a factor
+\(q^2/b^2\) after normalization. For the first mixed term,
+\[
+G_1(B^\xi,B^\eta)\,d\eta
+=e^{-2s}(1+s)(\xi+s/(2b))\,ds,\qquad s=b\eta.
+\]
+The coefficients follow from exact exponential moments:
+\[
+\int_0^\infty s^ke^{-2s}\,ds=k!/2^{k+1},\quad
+(1/2)^2=1/4,\quad 1/2+1/4=3/4.
+\]
+First-moment bounds control the replacement of the test by its trace,
+with error \(O(N_1(\psi)/b)\). The proof integrates the retained
+expressions under explicit majorants; it does not infer integrated
+limits merely from the local profiles. The mixed terms have no extra
+origin atom.
+
+| Convention | Definition or endpoint rule |
+| --- | --- |
+| Frequency domain | Closed positive quadrant, relative support in \(Q_\kappa\) |
+| Outer margin | Fixed \(0<\kappa<1\); \(\xi+\eta=1\) excluded |
+| Axis/origin weights | Full one-sided masses; no additional half weights |
+| Test traces | Continuous traces of the smooth restriction to \(Q\) |
+| Integration | Planar Lebesgue measure; axis terms use the displayed coordinate \(r\) |
+| Extra normalization | Precisely \(1/q=1/\log T\) in addition to the existing master kernel |
+| Estimate threshold | \(T\ge2\pi e\), including equality |
+| Exact identity threshold | \(T>2\pi\) |
+
+Set
+\[
+F_+(z_1,z_2)=\int_Q\psi(\xi,\eta)e^{2\pi i(\xi z_1+\eta z_2)}\,d\xi\,d\eta.
+\]
+This is entire, and its real-plane Fourier transform is the zero
+extension \(\mathbf1_Q\psi\), in the sense of tempered distributions.
+**It is generally not Schwartz**: nonzero boundary traces produce jumps
+in that zero extension. Arbitrary reassignment of values on the
+measure-zero boundary does not change \(F_+\); the limiting functional
+uses the traces determined by the smooth restriction.
+
+The exact identity is
+\[
+\mathcal B_T[\psi]=\frac8q\sum_{i_1,i_2,i_3\in\mathcal I}
+K_T(i_2,i_3,i_1)F_+(z_{21},z_{31}).
+\]
+The arguments, horizontal shifts, conjugated anchor, all ordered zero
+occurrences, multiplicities and all five partial-diagonal patterns are
+exactly those in Section 3. There is no extra \(L_T^2\) or height factor.
+At fixed parameters the integrated absolute majorant is
+\(C\|\psi\|_{L^1(Q)}B^{1-\kappa}L^3\), proving Fubini and removal of
+independent zero cutoffs. Only then let \(T\to\infty\) with
+\(\psi,\kappa,\omega\) fixed. For varying families, require the
+explicit error bound to vanish. Exchange of the two non-anchor slots
+exchanges the axes; full horizontal reflection remains a reindexing,
+with the kernel denominators transformed as before.
+
+Tests meeting one axis away from the origin isolate that axis term.
+Tests with both axis traces zero isolate the origin only if their origin
+trace is also zero, by continuity; to separate the origin contribution
+with a nonzero value there, one may instead use signed tests whose two
+weighted axis integrals vanish. Interior-supported tests give zero
+limit and retain the earlier stronger unnormalized estimate.
+
+This establishes a nonzero weighted one-sided boundary limit. The next
+step is signed-sector analysis for smooth Fourier tests crossing the
+axes. Kernel removal, a general Schwartz correlation theorem around the
+origin, and horizontal extraction remain open; no new horizontal
+constraint or completion of Work Package B is asserted here.
+
+Validation of the boundary extension on 2026-10-02: all 50 triple checks
+(including nine new boundary checks) and all 70 pair checks passed.
+Three pdflatex passes with shell escape disabled produced a 21-page proof
+with no final-pass warnings, unresolved references, or overfull/underfull
+boxes. Exact checks cover exponential moments, coordinate substitutions,
+normalization, the nineteen words and 208 refinements, axis exchange,
+and finite models isolating the origin, an axis, or zero boundary traces.
+These are verification aids, not analytic or numerical proof certificates.
+
+The pair-audit ledger hash was refreshed after verifying that the previous
+ledger is an unchanged byte prefix followed by exactly these two claims.
+Its original claim coverage, claim snapshot, audited pair proof and
+Work Package A reproduction archive remain unchanged. The new claims are
+outside that audit's scope.
