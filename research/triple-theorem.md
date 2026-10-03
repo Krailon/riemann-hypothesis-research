@@ -128,12 +128,13 @@ through exact multiplication by `2/3`. No delta is set to zero.
 | Three-level main term matching the benchmark | This theorem gives the all-ordered sine main term for the explicit weighted full-zero observable, with additive `o(1)` error |
 | Symmetric Schwartz test target | The class allows arbitrary complex tests, hence includes admissible symmetric tests |
 | Conventional real-ordinate-only interpretation | Additional work: the current observable has complex test arguments and a horizontal-dependent kernel |
-| Consolidated dependency and RH audit | The assembled theorem's complete recorded dependency inventory is available in the [graph](triple-dependency-graph.md); the Work Package B line-by-line RH-contamination audit remains to be assembled |
+| Consolidated dependency and RH audit | The assembled theorem's complete recorded dependency inventory is available in the [graph](triple-dependency-graph.md); the [Work Package B RH-contamination audit](triple-rh-audit.md) now records complete manuscript coverage and no contamination found in reviewed scope |
 | Clean-checkout reproduction | Exact triple checks exist; a dedicated Work Package B reproduction harness, including the proof build and recorded outputs, remains to be assembled |
 
 The weighted form of the three-level target now has a standalone theorem.
 The root dependency inventory is consolidated. Work Package B remains
-open for the line-by-line audit and clean-checkout reproduction.
+open for clean-checkout reproduction. The completed local RH-contamination
+audit retains proved-draft status and the inherited source-review limits.
 Kernel removal, a weighted zeta cumulant identity, and horizontal
 consequences are separate extensions; none is a conclusion of this theorem.
 

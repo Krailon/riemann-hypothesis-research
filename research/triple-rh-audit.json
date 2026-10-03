@@ -1,0 +1,4296 @@
+{
+  "schema_version": 1,
+  "task": "exposition_and_proof_review",
+  "reviewed_on": "2026-10-03",
+  "assumptions": [
+    "UNCONDITIONAL"
+  ],
+  "independent_review": false,
+  "analytic_proof_certificate": false,
+  "outcome": "no_contamination_found_in_reviewed_scope",
+  "context": {
+    "root_claim": "TRIPLE-SMOOTHED-CORRELATION-001",
+    "triple_claim_ids": [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-INTERIOR-VANISHING-001",
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-KERNEL-PROFILE-001",
+      "TRIPLE-LOG-GAP-001",
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-MASTER-001",
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-QUADRANT-LIMIT-001",
+      "TRIPLE-RETAINED-001",
+      "TRIPLE-SIGNED-SECTORS-001",
+      "TRIPLE-SIGNED-TEST-FUNCTION-001",
+      "TRIPLE-SINE-MEASURE-001",
+      "TRIPLE-SMOOTHED-ADDITIVE-001",
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-TEST-FUNCTION-001",
+      "TRIPLE-UNIFORM-001"
+    ],
+    "claim_snapshot": {
+      "GAMMA-DIGAMMA-001": {
+        "status": "published",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "sec:analytic-inputs",
+          "bibliography_key": "MV2007",
+          "locator": "Appendix C, Theorem C.1, equation (C.17), p.523 and proof pp.523-524",
+          "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/20.3_pp_520_534_The_gamma_function.pdf"
+        },
+        "ledger_block_sha256": "bffd7d38928738ccc17a725f082cee5f28948b0f1824b636ca3c2b679c42339a",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": null,
+        "dependency_graph_complete": false
+      },
+      "PAIR-COUNT-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "ZETA-COUNT-001",
+          "ZETA-ANALYTIC-001"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:pair-count",
+          "comparison_bibliography_key": "BGSTB2024",
+          "comparison_locator": "arXiv:2306.04799v1, Lemma 2, equations (2.4)-(2.5)"
+        },
+        "ledger_block_sha256": "b628a2539372f6345266d549a513e18465ed29e2591c536def14134e3a63998c",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "PAIR-COUNT-KERNEL-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "PAIR-COUNT-001"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:count-kernel",
+          "comparison_bibliography_key": "BGSTB2024",
+          "comparison_locator": "arXiv:2306.04799v1, equations (2.14)-(2.15) and boundary estimates after (2.15)"
+        },
+        "ledger_block_sha256": "837ceb27d4d8d22f72d3611440e517bbe0303c4d2bdd8065bef79050fa7f2021",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "PAIR-EF-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "PAIR-EF-EXACT-001",
+          "ZETA-ANALYTIC-001",
+          "GAMMA-DIGAMMA-001"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:pair-ef",
+          "comparison_bibliography_key": "BGSTB2024",
+          "comparison_locator": "arXiv:2306.04799v1, Lemma 1, (2.2)"
+        },
+        "ledger_block_sha256": "8b9910c89c60ac0d104777021db87693e5977d31613f43ae1ac8cf5eba032a3e",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "PAIR-EF-CONVERGENCE-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "ZETA-ANALYTIC-001",
+          "PAIR-COUNT-001"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:ef-convergence"
+        },
+        "ledger_block_sha256": "3fd06811cc473c5f3e2ab3ab29191bd6c3c05503937dcf9d60437163d596216b",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "PAIR-EF-EXACT-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "ZETA-ANALYTIC-001",
+          "ZETA-CONTOUR-001",
+          "PAIR-EF-CONVERGENCE-001",
+          "PAIR-EF-MELLIN-001"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "prop:ef-exact"
+        },
+        "ledger_block_sha256": "870ac3842f65bac21970ca85c604bf566f003b56918e40d668e4e3aacadc4182",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "PAIR-EF-MELLIN-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:ef-mellin"
+        },
+        "ledger_block_sha256": "1cee155d7deb1ed46253870cf2bacf47155f814439e0e7f9c4cb9fabceef88e3",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": true
+      },
+      "PAIR-MEANVALUE-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:pair-meanvalue"
+        },
+        "ledger_block_sha256": "7e31a436b5087966367a8769270990a8a4167e2741b4c7109435b31b1d33e749",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": true
+      },
+      "PAIR-PRIME-COUNT-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "PRIME-SIEVE-001"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:prime-count"
+        },
+        "ledger_block_sha256": "62a8ff42d64b6895b3d619410aedc6886523edff52d0bb20effb5c60c8c5f4d0",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "PAIR-PRIME-DIAGONAL-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "PRIME-PNT-001"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:prime-diagonal"
+        },
+        "ledger_block_sha256": "2b07ab65fb069c80ec587e5b990b1734a2f2bfccff6960b025857ef3ee4f2815",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "PAIR-PRIME-MEAN-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "PAIR-MEANVALUE-001",
+          "PAIR-PRIME-COUNT-001",
+          "PAIR-PRIME-DIAGONAL-001"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "lem:prime-mean"
+        },
+        "ledger_block_sha256": "d339b8995e0ac023cbbbaf2df6c1852f2e496f0088e7dcc64a6c24fe0877f049",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "PRIME-PNT-001": {
+        "status": "published",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "MV-PNT-PROOF"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "inp:prime-pnt",
+          "bibliography_key": "MV2007",
+          "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/10.0_pp_168_198_The_Prime_Number_Theorem.pdf",
+          "locator": "Theorem 6.9, equations (6.12)-(6.13), p. 179; proof pp. 180-181",
+          "version_consulted": "author_hosted_publisher_chapter"
+        },
+        "ledger_block_sha256": "89b31f66fd34987303a0f6e0b178c94549a9fd637c16952f6f17c82aaf7ff191",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": null,
+        "dependency_graph_complete": false
+      },
+      "PRIME-SIEVE-001": {
+        "status": "published",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "MV-SIEVE-PROOF"
+        ],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "inp:prime-sieve",
+          "bibliography_key": "MV2007",
+          "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/07.0_pp_76_107_Principles_and_first_examples_of_sieve_methods.pdf",
+          "locator": "Corollary 3.14, p. 97, specialized to x=0,y=U; fixed product and bounded error factor absorbed",
+          "version_consulted": "author_hosted_publisher_chapter"
+        },
+        "ledger_block_sha256": "7c7634db14fc79c5fc762fca389ede7057824ad05fca346f2d801df358db1989",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": null,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-BOUNDARY-ESTIMATES-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]",
+        "dependencies": [
+          "TRIPLE-UNIFORM-001",
+          "TRIPLE-OFFDIAG-001",
+          "TRIPLE-RETAINED-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-boundary-estimates",
+          "bookkeeping": "research/triple-test-functions.md"
+        },
+        "ledger_block_sha256": "65c2dd5c9ddfce2742aaa096625640633ff39809e2015790556e502fbb966cd0",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-INTERIOR-VANISHING-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "TRIPLE-RETAINED-001",
+          "TRIPLE-SMOOTHED-ADDITIVE-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "cor:triple-interior-vanishing",
+          "bookkeeping": "research/triple-test-functions.md"
+        },
+        "ledger_block_sha256": "4462cc79b13d36d988092522fd5c366bdb2d77c6497296aa060bc82306f8e943",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "TRIPLE-KERNEL-PROFILE-001",
+          "TRIPLE-KERNEL-LOCALIZATION-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "cor:triple-kernel-critical",
+          "bookkeeping": "research/triple-kernel.md"
+        },
+        "ledger_block_sha256": "4f7171141988ff04f2e0b963eddaac6de2a5a90a0910359a42cf9613e33f88de",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-KERNEL-LOCALIZATION-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]",
+        "dependencies": [
+          "TRIPLE-KERNEL-PROFILE-001",
+          "TRIPLE-MASTER-001",
+          "PAIR-COUNT-001",
+          "PAIR-COUNT-KERNEL-001",
+          "TRIPLE-SIGNED-SECTORS-001",
+          "TRIPLE-SIGNED-TEST-FUNCTION-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-kernel-localization",
+          "bookkeeping": "research/triple-kernel.md"
+        },
+        "ledger_block_sha256": "6113275e16c7012c7d78008d4c1c3d5ec099c4a5252739090f5ca66782fd8395",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-KERNEL-PROFILE-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "TRIPLE-MASTER-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-kernel-profile",
+          "bookkeeping": "research/triple-kernel.md"
+        },
+        "ledger_block_sha256": "7ed4e2de3a54251bf0183e2833996c9202e3c76f1a195ec6e206a9315309b7b0",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-LOG-GAP-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-log-gap"
+        },
+        "ledger_block_sha256": "17fdd5568a3189c47bc00db8880d7c91e9c458cf5eb4f6ccb328a452bb3a8d06",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": true
+      },
+      "TRIPLE-MAIN-TERM-COMPARISON-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]",
+        "dependencies": [
+          "TRIPLE-SINE-MEASURE-001",
+          "TRIPLE-SIGNED-TEST-FUNCTION-001",
+          "TRIPLE-KERNEL-LOCALIZATION-001",
+          "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-main-term-comparison",
+          "bookkeeping": "research/triple-main-term-comparison.md"
+        },
+        "ledger_block_sha256": "281585d4336dfcf6150ca639630e67bbdaf0962802e2e63b8a953e53080de8fd",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-MASTER-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "PAIR-EF-CONVERGENCE-001",
+          "PAIR-EF-001",
+          "PAIR-COUNT-KERNEL-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-master",
+          "bookkeeping": "research/triple-master-bookkeeping.md"
+        },
+        "ledger_block_sha256": "84d6bb1daf41a31def210cc8147cdc08729349aa96182d79121be3f6dffb753b",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-OFFDIAG-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "TRIPLE-LOG-GAP-001",
+          "TRIPLE-UNIFORM-001",
+          "TRIPLE-MASTER-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-offdiag",
+          "bookkeeping": "research/triple-error-budget.md"
+        },
+        "ledger_block_sha256": "159192e43fe71eab2f3f8678b60dfaa996e4305f2ec5c6ec7c9432f49bc786bc",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-QUADRANT-LIMIT-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]",
+        "dependencies": [
+          "TRIPLE-BOUNDARY-ESTIMATES-001",
+          "TRIPLE-MASTER-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "thm:triple-quadrant-limit",
+          "bookkeeping": "research/triple-test-functions.md"
+        },
+        "ledger_block_sha256": "efc79256b64818592b277927de138c907affa5233c77028a69f2480b137d6c0d",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-RETAINED-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "TRIPLE-UNIFORM-001",
+          "TRIPLE-OFFDIAG-001",
+          "PRIME-PNT-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-retained",
+          "bookkeeping": "research/triple-test-functions.md"
+        },
+        "ledger_block_sha256": "fdf2fd15696b763fb794111b21cf30b37d0b4db02adc83d91233fd8943d436a5",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-SIGNED-SECTORS-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "TRIPLE-MASTER-001",
+          "PAIR-COUNT-KERNEL-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-signed-sectors",
+          "bookkeeping": "research/triple-signed-sectors.json"
+        },
+        "ledger_block_sha256": "2faeb5a88141cde981e811f98d63344b7f77de42cd36311fc3a5a931752a588e",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-SIGNED-TEST-FUNCTION-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]",
+        "dependencies": [
+          "TRIPLE-SIGNED-SECTORS-001",
+          "TRIPLE-QUADRANT-LIMIT-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "thm:triple-signed-test-function",
+          "bookkeeping": "research/triple-test-functions.md"
+        },
+        "ledger_block_sha256": "2fb612f94e994e40b1d700a49f3faccd1ea26ec335a57b483c8fb55bad6ec68d",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-SINE-MEASURE-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-sine-measure",
+          "bookkeeping": "research/triple-main-term-comparison.md",
+          "provenance": "research/literature-notes/triple-sine-comparison.md",
+          "bibliography_key": "ConreySnaith2014",
+          "imported_scope": "Theorem 1, equation (2), author manuscript v2 p. 2 fixes the distinct-index unitary determinant convention; all claimed identities are proved directly."
+        },
+        "ledger_block_sha256": "f70b8187841e2f0337efee1ba5d966127ad029cd1675b300ad6c9c60c29908fa",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": true
+      },
+      "TRIPLE-SMOOTHED-ADDITIVE-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "TRIPLE-UNIFORM-001",
+          "TRIPLE-OFFDIAG-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "cor:triple-smoothed-additive",
+          "bookkeeping": "research/triple-error-budget.md"
+        },
+        "ledger_block_sha256": "d536e340d37939d4ace55d36feb2f95fc997484eba1f750ab958aa2c76a6bfd6",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-SMOOTHED-CORRELATION-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]",
+        "dependencies": [
+          "TRIPLE-KERNEL-PROFILE-001",
+          "TRIPLE-KERNEL-LOCALIZATION-001",
+          "TRIPLE-SINE-MEASURE-001",
+          "TRIPLE-MAIN-TERM-COMPARISON-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "thm:triple-smoothed-correlation",
+          "bookkeeping": "research/triple-theorem.md"
+        },
+        "ledger_block_sha256": "5458f41e6400d18bb8b49ac720c2605ebc5612b00deeca3e3493d00b1947b33c",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-TEST-FUNCTION-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]",
+        "dependencies": [
+          "TRIPLE-INTERIOR-VANISHING-001",
+          "TRIPLE-MASTER-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "thm:triple-test-function",
+          "bookkeeping": "research/triple-test-functions.md"
+        },
+        "ledger_block_sha256": "61d15a99399edc9a4cde0387c14f1ff592dafc0e32b3fbf0e58593e0e72eaa6f",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "TRIPLE-UNIFORM-001": {
+        "status": "proved-draft",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [
+          "TRIPLE-MASTER-001",
+          "PAIR-EF-001",
+          "PAIR-PRIME-MEAN-001",
+          "PAIR-PRIME-DIAGONAL-001"
+        ],
+        "source": {
+          "file": "proofs/triple_explicit_formula.tex",
+          "label": "lem:triple-uniform",
+          "bookkeeping": "research/triple-error-budget.md"
+        },
+        "ledger_block_sha256": "3a85b5b74c984c057b47c9b30c665a26e9c171f7dd3b692f4acd4b41af031dcf",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "ZETA-ANALYTIC-001": {
+        "status": "published",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "sec:analytic-inputs",
+          "bibliography_key": "DLMF",
+          "locator": "Sections 25.2(i), 25.2(iv), 25.10(i); equation (25.4.2)",
+          "url": "https://dlmf.nist.gov/25.4#E2"
+        },
+        "ledger_block_sha256": "47e06db1e4af51e5060110b2092d40603bf7f50e3f0b91621c58431af36aa9c2",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": true,
+        "dependency_graph_complete": false
+      },
+      "ZETA-CONTOUR-001": {
+        "status": "published",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "sec:analytic-inputs",
+          "bibliography_key": "MV2007",
+          "locator": "Chapter 12, Lemma 12.2 p.398 and Lemma 12.4 pp.399-400",
+          "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/16.0_pp_397_418_Explicit_formulae.pdf"
+        },
+        "ledger_block_sha256": "539736699ea955c434f96e36f0736c2facfb5fba9bb8b13d2cfd07072a87226f",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": null,
+        "dependency_graph_complete": false
+      },
+      "ZETA-COUNT-001": {
+        "status": "published",
+        "assumptions": "[UNCONDITIONAL]",
+        "dependencies": [],
+        "source": {
+          "file": "proofs/pair_baseline.tex",
+          "label": "sec:analytic-inputs",
+          "bibliography_key": "MV2007",
+          "locator": "Chapter 14, definition p.452 and Corollary 14.3 p.454",
+          "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/18.0_pp_452_462_Zeros.pdf"
+        },
+        "ledger_block_sha256": "bf9fe655a25e65c90d0a2979b39d8eb619fcc7f3e936244ca8af90379ea658d2",
+        "computation_used_in_proof": false,
+        "constants_effective": true,
+        "all_limit_interchanges_justified": null,
+        "dependency_graph_complete": false
+      }
+    },
+    "source_node_ids": [
+      "MV-PNT-PROOF",
+      "MV-SIEVE-PROOF"
+    ],
+    "edges": [
+      [
+        "PAIR-COUNT-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      [
+        "PAIR-COUNT-001",
+        "ZETA-COUNT-001"
+      ],
+      [
+        "PAIR-COUNT-KERNEL-001",
+        "PAIR-COUNT-001"
+      ],
+      [
+        "PAIR-EF-001",
+        "GAMMA-DIGAMMA-001"
+      ],
+      [
+        "PAIR-EF-001",
+        "PAIR-EF-EXACT-001"
+      ],
+      [
+        "PAIR-EF-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      [
+        "PAIR-EF-CONVERGENCE-001",
+        "PAIR-COUNT-001"
+      ],
+      [
+        "PAIR-EF-CONVERGENCE-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      [
+        "PAIR-EF-EXACT-001",
+        "PAIR-EF-CONVERGENCE-001"
+      ],
+      [
+        "PAIR-EF-EXACT-001",
+        "PAIR-EF-MELLIN-001"
+      ],
+      [
+        "PAIR-EF-EXACT-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      [
+        "PAIR-EF-EXACT-001",
+        "ZETA-CONTOUR-001"
+      ],
+      [
+        "PAIR-PRIME-COUNT-001",
+        "PRIME-SIEVE-001"
+      ],
+      [
+        "PAIR-PRIME-DIAGONAL-001",
+        "PRIME-PNT-001"
+      ],
+      [
+        "PAIR-PRIME-MEAN-001",
+        "PAIR-MEANVALUE-001"
+      ],
+      [
+        "PAIR-PRIME-MEAN-001",
+        "PAIR-PRIME-COUNT-001"
+      ],
+      [
+        "PAIR-PRIME-MEAN-001",
+        "PAIR-PRIME-DIAGONAL-001"
+      ],
+      [
+        "PRIME-PNT-001",
+        "MV-PNT-PROOF"
+      ],
+      [
+        "PRIME-SIEVE-001",
+        "MV-SIEVE-PROOF"
+      ],
+      [
+        "TRIPLE-BOUNDARY-ESTIMATES-001",
+        "TRIPLE-OFFDIAG-001"
+      ],
+      [
+        "TRIPLE-BOUNDARY-ESTIMATES-001",
+        "TRIPLE-RETAINED-001"
+      ],
+      [
+        "TRIPLE-BOUNDARY-ESTIMATES-001",
+        "TRIPLE-UNIFORM-001"
+      ],
+      [
+        "TRIPLE-INTERIOR-VANISHING-001",
+        "TRIPLE-RETAINED-001"
+      ],
+      [
+        "TRIPLE-INTERIOR-VANISHING-001",
+        "TRIPLE-SMOOTHED-ADDITIVE-001"
+      ],
+      [
+        "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001"
+      ],
+      [
+        "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+        "TRIPLE-KERNEL-PROFILE-001"
+      ],
+      [
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "PAIR-COUNT-001"
+      ],
+      [
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "PAIR-COUNT-KERNEL-001"
+      ],
+      [
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "TRIPLE-KERNEL-PROFILE-001"
+      ],
+      [
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "TRIPLE-MASTER-001"
+      ],
+      [
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "TRIPLE-SIGNED-SECTORS-001"
+      ],
+      [
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "TRIPLE-SIGNED-TEST-FUNCTION-001"
+      ],
+      [
+        "TRIPLE-KERNEL-PROFILE-001",
+        "TRIPLE-MASTER-001"
+      ],
+      [
+        "TRIPLE-MAIN-TERM-COMPARISON-001",
+        "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+      ],
+      [
+        "TRIPLE-MAIN-TERM-COMPARISON-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001"
+      ],
+      [
+        "TRIPLE-MAIN-TERM-COMPARISON-001",
+        "TRIPLE-SIGNED-TEST-FUNCTION-001"
+      ],
+      [
+        "TRIPLE-MAIN-TERM-COMPARISON-001",
+        "TRIPLE-SINE-MEASURE-001"
+      ],
+      [
+        "TRIPLE-MASTER-001",
+        "PAIR-COUNT-KERNEL-001"
+      ],
+      [
+        "TRIPLE-MASTER-001",
+        "PAIR-EF-001"
+      ],
+      [
+        "TRIPLE-MASTER-001",
+        "PAIR-EF-CONVERGENCE-001"
+      ],
+      [
+        "TRIPLE-OFFDIAG-001",
+        "TRIPLE-LOG-GAP-001"
+      ],
+      [
+        "TRIPLE-OFFDIAG-001",
+        "TRIPLE-MASTER-001"
+      ],
+      [
+        "TRIPLE-OFFDIAG-001",
+        "TRIPLE-UNIFORM-001"
+      ],
+      [
+        "TRIPLE-QUADRANT-LIMIT-001",
+        "TRIPLE-BOUNDARY-ESTIMATES-001"
+      ],
+      [
+        "TRIPLE-QUADRANT-LIMIT-001",
+        "TRIPLE-MASTER-001"
+      ],
+      [
+        "TRIPLE-RETAINED-001",
+        "PRIME-PNT-001"
+      ],
+      [
+        "TRIPLE-RETAINED-001",
+        "TRIPLE-OFFDIAG-001"
+      ],
+      [
+        "TRIPLE-RETAINED-001",
+        "TRIPLE-UNIFORM-001"
+      ],
+      [
+        "TRIPLE-SIGNED-SECTORS-001",
+        "PAIR-COUNT-KERNEL-001"
+      ],
+      [
+        "TRIPLE-SIGNED-SECTORS-001",
+        "TRIPLE-MASTER-001"
+      ],
+      [
+        "TRIPLE-SIGNED-TEST-FUNCTION-001",
+        "TRIPLE-QUADRANT-LIMIT-001"
+      ],
+      [
+        "TRIPLE-SIGNED-TEST-FUNCTION-001",
+        "TRIPLE-SIGNED-SECTORS-001"
+      ],
+      [
+        "TRIPLE-SMOOTHED-ADDITIVE-001",
+        "TRIPLE-OFFDIAG-001"
+      ],
+      [
+        "TRIPLE-SMOOTHED-ADDITIVE-001",
+        "TRIPLE-UNIFORM-001"
+      ],
+      [
+        "TRIPLE-SMOOTHED-CORRELATION-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001"
+      ],
+      [
+        "TRIPLE-SMOOTHED-CORRELATION-001",
+        "TRIPLE-KERNEL-PROFILE-001"
+      ],
+      [
+        "TRIPLE-SMOOTHED-CORRELATION-001",
+        "TRIPLE-MAIN-TERM-COMPARISON-001"
+      ],
+      [
+        "TRIPLE-SMOOTHED-CORRELATION-001",
+        "TRIPLE-SINE-MEASURE-001"
+      ],
+      [
+        "TRIPLE-TEST-FUNCTION-001",
+        "TRIPLE-INTERIOR-VANISHING-001"
+      ],
+      [
+        "TRIPLE-TEST-FUNCTION-001",
+        "TRIPLE-MASTER-001"
+      ],
+      [
+        "TRIPLE-UNIFORM-001",
+        "PAIR-EF-001"
+      ],
+      [
+        "TRIPLE-UNIFORM-001",
+        "PAIR-PRIME-DIAGONAL-001"
+      ],
+      [
+        "TRIPLE-UNIFORM-001",
+        "PAIR-PRIME-MEAN-001"
+      ],
+      [
+        "TRIPLE-UNIFORM-001",
+        "TRIPLE-MASTER-001"
+      ]
+    ],
+    "inherited_claim_ids": [
+      "GAMMA-DIGAMMA-001",
+      "PAIR-COUNT-001",
+      "PAIR-COUNT-KERNEL-001",
+      "PAIR-EF-001",
+      "PAIR-EF-CONVERGENCE-001",
+      "PAIR-EF-EXACT-001",
+      "PAIR-EF-MELLIN-001",
+      "PAIR-MEANVALUE-001",
+      "PAIR-PRIME-COUNT-001",
+      "PAIR-PRIME-DIAGONAL-001",
+      "PAIR-PRIME-MEAN-001",
+      "PRIME-PNT-001",
+      "PRIME-SIEVE-001",
+      "ZETA-ANALYTIC-001",
+      "ZETA-CONTOUR-001",
+      "ZETA-COUNT-001"
+    ],
+    "inherited_passages": {
+      "GAMMA-DIGAMMA-001": [
+        "proofs/pair_baseline.tex: P008"
+      ],
+      "PAIR-COUNT-001": [
+        "proofs/pair_baseline.tex: P013",
+        "proofs/pair_baseline.tex: P014",
+        "proofs/pair_baseline.tex: P015",
+        "proofs/pair_baseline.tex: P016"
+      ],
+      "PAIR-COUNT-KERNEL-001": [
+        "proofs/pair_baseline.tex: P017",
+        "proofs/pair_baseline.tex: P018",
+        "proofs/pair_baseline.tex: P019",
+        "proofs/pair_baseline.tex: P020",
+        "proofs/pair_baseline.tex: P021"
+      ],
+      "PAIR-EF-001": [
+        "proofs/pair_baseline.tex: P002",
+        "proofs/pair_baseline.tex: P003",
+        "proofs/pair_baseline.tex: P036",
+        "proofs/pair_baseline.tex: P037",
+        "proofs/pair_baseline.tex: P038",
+        "proofs/pair_baseline.tex: P039",
+        "proofs/pair_baseline.tex: P040",
+        "proofs/pair_baseline.tex: P041",
+        "proofs/pair_baseline.tex: P107",
+        "proofs/pair_baseline.tex: P108",
+        "scripts/check_pair_lemma1.py: C001"
+      ],
+      "PAIR-EF-CONVERGENCE-001": [
+        "proofs/pair_baseline.tex: P003",
+        "proofs/pair_baseline.tex: P022",
+        "proofs/pair_baseline.tex: P023",
+        "proofs/pair_baseline.tex: P024"
+      ],
+      "PAIR-EF-EXACT-001": [
+        "proofs/pair_baseline.tex: P027",
+        "proofs/pair_baseline.tex: P028",
+        "proofs/pair_baseline.tex: P029",
+        "proofs/pair_baseline.tex: P030",
+        "proofs/pair_baseline.tex: P031",
+        "proofs/pair_baseline.tex: P032",
+        "proofs/pair_baseline.tex: P033",
+        "proofs/pair_baseline.tex: P034",
+        "proofs/pair_baseline.tex: P035",
+        "proofs/pair_baseline.tex: P109"
+      ],
+      "PAIR-EF-MELLIN-001": [
+        "proofs/pair_baseline.tex: P025",
+        "proofs/pair_baseline.tex: P026"
+      ],
+      "PAIR-MEANVALUE-001": [
+        "proofs/pair_baseline.tex: P072",
+        "proofs/pair_baseline.tex: P073",
+        "proofs/pair_baseline.tex: P074",
+        "proofs/pair_baseline.tex: P075",
+        "proofs/pair_baseline.tex: P076",
+        "proofs/pair_baseline.tex: P077"
+      ],
+      "PAIR-PRIME-COUNT-001": [
+        "proofs/pair_baseline.tex: P078",
+        "proofs/pair_baseline.tex: P079",
+        "proofs/pair_baseline.tex: P080",
+        "proofs/pair_baseline.tex: P081",
+        "proofs/pair_baseline.tex: P082",
+        "proofs/pair_baseline.tex: P083"
+      ],
+      "PAIR-PRIME-DIAGONAL-001": [
+        "proofs/pair_baseline.tex: P078",
+        "proofs/pair_baseline.tex: P084",
+        "proofs/pair_baseline.tex: P085",
+        "proofs/pair_baseline.tex: P086",
+        "proofs/pair_baseline.tex: P087"
+      ],
+      "PAIR-PRIME-MEAN-001": [
+        "proofs/pair_baseline.tex: P088",
+        "proofs/pair_baseline.tex: P089",
+        "proofs/pair_baseline.tex: P090",
+        "proofs/pair_baseline.tex: P091"
+      ],
+      "PRIME-PNT-001": [
+        "proofs/pair_baseline.tex: P011"
+      ],
+      "PRIME-SIEVE-001": [
+        "proofs/pair_baseline.tex: P012"
+      ],
+      "ZETA-ANALYTIC-001": [
+        "proofs/pair_baseline.tex: P004",
+        "proofs/pair_baseline.tex: P005"
+      ],
+      "ZETA-CONTOUR-001": [
+        "proofs/pair_baseline.tex: P007"
+      ],
+      "ZETA-COUNT-001": [
+        "proofs/pair_baseline.tex: P006"
+      ]
+    },
+    "inherited_evidence": [
+      {
+        "id": "analytic",
+        "claim_id": "ZETA-ANALYTIC-001",
+        "urls": [
+          "https://dlmf.nist.gov/25.2",
+          "https://dlmf.nist.gov/25.4",
+          "https://dlmf.nist.gov/25.10"
+        ],
+        "locator": "DLMF 25.2(i),(iv), 25.4.2, 25.10(i); authoritative reference, not an original proof reconstruction.",
+        "reviewed_on": "2026-09-28",
+        "scope": "stated_hypotheses_and_local_application",
+        "outcome": "no_unproved_RH_assumption_found"
+      },
+      {
+        "id": "countinput",
+        "claim_id": "ZETA-COUNT-001",
+        "urls": [
+          "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/18.0_pp_452_462_Zeros.pdf"
+        ],
+        "locator": "MV Chapter 14 pp. 452,454: midpoint definition and Corollary 14.3; neighboring Corollary 14.4 excluded.",
+        "reviewed_on": "2026-09-28",
+        "scope": "stated_hypotheses_and_local_application",
+        "outcome": "no_unproved_RH_assumption_found"
+      },
+      {
+        "id": "contour",
+        "claim_id": "ZETA-CONTOUR-001",
+        "urls": [
+          "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/16.0_pp_397_418_Explicit_formulae.pdf"
+        ],
+        "locator": "MV Chapter 12 pp. 398-400: Lemmas 12.2,12.4 and surrounding proof hypotheses.",
+        "reviewed_on": "2026-09-28",
+        "scope": "stated_hypotheses_and_local_application",
+        "outcome": "no_unproved_RH_assumption_found"
+      },
+      {
+        "id": "gamma",
+        "claim_id": "GAMMA-DIGAMMA-001",
+        "urls": [
+          "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/20.3_pp_520_534_The_gamma_function.pdf"
+        ],
+        "locator": "MV Appendix C pp. 523-524: Theorem C.1, (C.17), fixed-sector hypotheses and Euler-Maclaurin proof.",
+        "reviewed_on": "2026-09-28",
+        "scope": "stated_hypotheses_and_local_application",
+        "outcome": "no_unproved_RH_assumption_found"
+      },
+      {
+        "id": "pnt",
+        "claim_id": "PRIME-PNT-001",
+        "urls": [
+          "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/10.0_pp_168_198_The_Prime_Number_Theorem.pdf"
+        ],
+        "locator": "MV Chapter 6 pp. 179-181: Theorem 6.9 and classical zero-free-region/Perron proof structure.",
+        "reviewed_on": "2026-09-28",
+        "scope": "stated_hypotheses_and_local_application",
+        "outcome": "no_unproved_RH_assumption_found"
+      },
+      {
+        "id": "sieve",
+        "claim_id": "PRIME-SIEVE-001",
+        "urls": [
+          "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/07.0_pp_76_107_Principles_and_first_examples_of_sieve_methods.pdf"
+        ],
+        "locator": "MV Chapter 3 p.97: Corollary 3.14, Theorem 3.13; adjacent asymptotic conjecture excluded.",
+        "reviewed_on": "2026-09-28",
+        "scope": "stated_hypotheses_and_local_application",
+        "outcome": "no_unproved_RH_assumption_found"
+      }
+    ]
+  },
+  "input_hashes": {
+    "research/theorem-ledger.yaml": "2298eb3185db8bca13d17168633224d1ba5ed5d2a3a8235a663b38fb5324f29a",
+    "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
+    "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
+    "research/pair-rh-audit.json": "c2acc36f53b1baa362f919c011e2f5812d60529ede928c0c39859db8474fd8e8"
+  },
+  "supplemental_evidence": {
+    "sine-context": {
+      "path": "research/literature-notes/triple-sine-comparison.md",
+      "scope": "Stored benchmark-convention provenance only; no external zeta theorem imported and no fresh external source review claimed."
+    }
+  },
+  "files": [
+    {
+      "path": "proofs/triple_explicit_formula.tex",
+      "sha256": "6c5f62a0c66319cb3f079e75e5804fd34b83fcdfb109bfbb7a8da07b71b3762b",
+      "line_count": 2470,
+      "coverage": "complete",
+      "passages": [
+        {
+          "id": "B001",
+          "start_line": 1,
+          "end_line": 19,
+          "kind": "nonmathematical",
+          "claim_ids": [],
+          "assumptions": [],
+          "claim_assumptions": {},
+          "reason": "Preamble, macros, title and date specify typesetting only; no inference about zeros is made.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B002",
+          "start_line": 20,
+          "end_line": 31,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The opening summary describes the weighted full-zero result and leaves kernel removal and horizontal extraction open; its support requirement is supplied by the final theorem.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B003",
+          "start_line": 32,
+          "end_line": 48,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Zeros retain delta, multiplicity and both ordinate signs; D_j has the complex horizontal shift, and prime coefficients include all von Mangoldt prime powers.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B004",
+          "start_line": 49,
+          "end_line": 64,
+          "kind": "imported_input",
+          "claim_ids": [
+            "TRIPLE-MASTER-001",
+            "PAIR-EF-CONVERGENCE-001",
+            "PAIR-COUNT-KERNEL-001",
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]",
+            "PAIR-EF-CONVERGENCE-001": "[UNCONDITIONAL]",
+            "PAIR-COUNT-KERNEL-001": "[UNCONDITIONAL]",
+            "PAIR-EF-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The three named inputs are reconstructed unconditional statements. Q bounds all zero occurrences; S=-P+A+H is an exact full-zero identity, not a critical-line zero substitution.",
+          "evidence_ids": [
+            "analytic",
+            "countinput",
+            "contour",
+            "gamma"
+          ],
+          "verdict": "justified"
+        },
+        {
+          "id": "B005",
+          "start_line": 65,
+          "end_line": 88,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-MASTER-001",
+            "PAIR-EF-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]",
+            "PAIR-EF-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The evaluation variable s=1/2+it does not identify any rho with a critical-line zero. Four exact H components and their uniform bounds match the inherited formula, including x=1 and bounded t.",
+          "evidence_ids": [
+            "analytic",
+            "gamma"
+          ],
+          "verdict": "justified"
+        },
+        {
+          "id": "B006",
+          "start_line": 89,
+          "end_line": 115,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The smoothed trilinear product retains the conjugated anchor, all ordered occurrences and factor eight; nonnegative unit-mass omega is a chosen weight.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B007",
+          "start_line": 116,
+          "end_line": 137,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The 27-term expansion is finite distributivity. The unsigned prime cube has the negative-forward Fourier sign, and its exact resonances are ordered same-prime powers with the negative PPP coefficient.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B008",
+          "start_line": 138,
+          "end_line": 169,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The strip bound gives |D|>=3(1+v^2)/4. The product of absolute sums is dominated by XY Q(t)^3 on a compact center window, so Tonelli and Fubini precede all zero-sum regrouping.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B009",
+          "start_line": 170,
+          "end_line": 178,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Substitution into three continuous factors is finite; conjugating a negative prime term does not change its real sign. The four exact remainders are distributed without an asymptotic assumption.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B010",
+          "start_line": 179,
+          "end_line": 196,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Absolute prime coefficient sums justify integration. Substituting t=Tu cancels 1/T and yields T log(mn/k)/(2pi); unique factorization classifies every nonzero resonant coefficient without dividing ordered pairs by two.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B011",
+          "start_line": 197,
+          "end_line": 218,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The five finite index partitions exhaust ordered triples. Counts q, q(q-1) and q(q-1)(q-2) concern occurrences, and the table does not collapse partial diagonals into identical weights.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B012",
+          "start_line": 219,
+          "end_line": 223,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Equal indices, equal complex zeros and equal ordinates are explicitly distinguished; no simplicity is inferred from any partition.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B013",
+          "start_line": 224,
+          "end_line": 236,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The same multiplicity-preserving horizontal reflection in every slot preserves equality patterns. Numerators and denominators both transform, so the assertion is equality of reindexed subseries and not termwise invariance.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B014",
+          "start_line": 237,
+          "end_line": 280,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The 27 signed words retain conjugation on every third slot; eight contain no H and nineteen contain H. This is exact bookkeeping, not a negligible-error assertion.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B015",
+          "start_line": 281,
+          "end_line": 288,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The smooth center cutoff adds no zero-height restriction or endpoint half weight. Low and negative ordinates remain included; no low-zero verification is invoked.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B016",
+          "start_line": 289,
+          "end_line": 297,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The explicit integrable product majorant permits independent or joint zero cutoffs at fixed parameters, and absolute coefficient sums permit prime cutoffs. No varying support or smoothing limit is interchanged.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B017",
+          "start_line": 298,
+          "end_line": 310,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Compact smooth weight derivatives justify integration by parts with no boundary terms. Fourier decay is not asserted to be compact support or suppression of arbitrarily near resonances.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B018",
+          "start_line": 311,
+          "end_line": 316,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Replacing an input function by one reduces the trilinear form algebraically; setting its base Y=1 leaves S(1,t) present and does not delete zeros.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B019",
+          "start_line": 317,
+          "end_line": 324,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The paragraph reserves off-diagonal bounds and support conclusions for later sections and distinguishes zero-index partitions from arithmetic resonances.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B020",
+          "start_line": 325,
+          "end_line": 340,
+          "kind": "imported_input",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001",
+            "PAIR-PRIME-MEAN-001",
+            "PAIR-PRIME-DIAGONAL-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]",
+            "PAIR-PRIME-MEAN-001": "[UNCONDITIONAL]",
+            "PAIR-PRIME-DIAGONAL-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The inherited prime mean square is used only for 1<=x<=V, V>=3; the diagonal bound includes proper prime powers. Neither estimate assumes RH or a prime-pair asymptotic.",
+          "evidence_ids": [
+            "pnt",
+            "sieve"
+          ],
+          "verdict": "justified"
+        },
+        {
+          "id": "B021",
+          "start_line": 341,
+          "end_line": 369,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The probability measure comes from the prescribed nonnegative weight. m_x uses the sharper mean-square branch only for x<=2T, and elementary coefficient bounds elsewhere; four remainder norms stay separate.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B022",
+          "start_line": 370,
+          "end_line": 385,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "J_r and weighted derivatives are supported in (1,2); their zero extensions are smooth. D(a,b) is a coefficient diagonal, unrelated to the complex zero denominator.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B023",
+          "start_line": 386,
+          "end_line": 420,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Norm and exact-budget statements are uniform in the displayed ranges and retain smoothing norms. M_T is a retained expression without a relative-asymptotic claim.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B024",
+          "start_line": 421,
+          "end_line": 449,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "At most two P slots occur in an H word; component bounds multiply sup norms and L2 norms. The 208 refinements and nineteen aggregates represent the same terms rather than additive budgets.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B025",
+          "start_line": 450,
+          "end_line": 483,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Every non-H error has an exact signed definition. Off-diagonal bounds initially use triangle inequalities, never presumed oscillatory cancellation or positivity of the full triple statistic.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B026",
+          "start_line": 484,
+          "end_line": 502,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Elementary Lambda(n)<=log n and dyadic interval counts prove finite coefficient sums including x=1 and integer endpoints; no prime-distribution hypothesis enters.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B027",
+          "start_line": 503,
+          "end_line": 517,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Positivity of omega bounds the weighted squared norm by the inherited integral with V=2T. The sharper estimate is not used beyond its range; coefficient Cauchy-Schwarz bounds the mixed diagonal.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B028",
+          "start_line": 518,
+          "end_line": 528,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Bounds for log(Tu+2) and its derivative on 1<u<2 give V_r with explicit W_1 and W_0; compact support removes derivative endpoint contributions.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B029",
+          "start_line": 529,
+          "end_line": 544,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "F_r is the transform of a smooth compact weight. One integration by parts acts on the weight, not an infinite prime series; fixed-parameter absolute sums justify Fubini and the 2pi cancellation.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B030",
+          "start_line": 545,
+          "end_line": 555,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Same-sign two-prime frequencies have log(mn)>=log4; one-prime frequencies are bounded away from zero by log n. The conjugated slot changes a sign, not the absolute estimate.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B031",
+          "start_line": 556,
+          "end_line": 566,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The mixed prime diagonal is extracted exactly and the remaining term bounded by triangle inequality after Cauchy-Schwarz. Near frequencies are not incorrectly treated as separated from zero.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B032",
+          "start_line": 567,
+          "end_line": 573,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "One sup norm and two L2 norms bound the full cubic integral. Resonance is a nonnegative coefficient subseries; its negative sign in the original cubic expansion is retained.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B033",
+          "start_line": 574,
+          "end_line": 588,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Probability-measure Holder/Cauchy-Schwarz handles at most two prime slots. Finite distributivity counts all components once and exact signed substitution recovers the retained expression and budget.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B034",
+          "start_line": 589,
+          "end_line": 607,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The x=2T threshold is the range of an inherited estimate, not Fourier support. Full-zero reflection is inherited from the identity; changing a base is not deletion of an input.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B035",
+          "start_line": 608,
+          "end_line": 615,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Cutoffs are removed at fixed parameters and only the weight is differentiated. W_inf and W_1 are retained for varying smoothing; normalization alone does not bound them.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B036",
+          "start_line": 616,
+          "end_line": 634,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Arithmetic input is explicitly PNT-level and unconditional mean-value/counting. Aggregate errors are not counted twice and no horizontal or support conclusion is deduced from the initial budget alone.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B037",
+          "start_line": 635,
+          "end_line": 656,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-LOG-GAP-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-LOG-GAP-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The gap estimate concerns arbitrary integer coefficient sequences with finite absolute sums and weighted energies. It imports no prime-correlation theorem and excludes equal frequencies.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B038",
+          "start_line": 657,
+          "end_line": 684,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-LOG-GAP-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-LOG-GAP-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Far ratios give a log2 lower bound; comparable ratios give |log(m/n)|>=|m-n|/max(m,n). Cauchy-Schwarz and harmonic row/column sums bound the finite sum; monotone convergence proves the infinite version.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B039",
+          "start_line": 685,
+          "end_line": 703,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-OFFDIAG-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-OFFDIAG-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The three off-diagonal estimates state their W_1 or Omega dependence uniformly for all positive bases without requiring the prime mean-square branch beyond x<=2T.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B040",
+          "start_line": 704,
+          "end_line": 719,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-OFFDIAG-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-OFFDIAG-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Ordered factorizations are combined into a finite convolution coefficient. Tonelli and absolute coefficient sums justify the product series and preserve repeated product frequencies.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B041",
+          "start_line": 720,
+          "end_line": 737,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-OFFDIAG-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-OFFDIAG-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The logarithmic triangle inequality bounds v_X(m)v_Y(n) by v_Z(mn); the elementary divisor identity sum Lambda(d)=log r gives a coefficient envelope without prime-tuple information.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B042",
+          "start_line": 738,
+          "end_line": 756,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-OFFDIAG-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-OFFDIAG-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Dyadic integer counts bound the third and fifth logarithmic moments with convergent geometric sums, including x=1 and full endpoints. The energy bounds are effective and deterministic.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B043",
+          "start_line": 757,
+          "end_line": 778,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-OFFDIAG-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-OFFDIAG-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The cubic nonresonant series is absolutely integrable before integration by parts. The gap lemma then gives a summable reciprocal-log majorant; extracting the resonance restores its original negative sign.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B044",
+          "start_line": 779,
+          "end_line": 794,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-OFFDIAG-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-OFFDIAG-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The mixed term applies the same gap estimate with the smooth log-weight, retaining the factor 1/Y and identity sqrt(XZ)/Y=X/sqrt(Y). Swapping the non-anchor slots gives the second estimate.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B045",
+          "start_line": 795,
+          "end_line": 803,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-OFFDIAG-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-OFFDIAG-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The normalized substitution and Fourier derivative factors cancel exactly. Fixed-parameter absolute reciprocal-log bounds justify cutoff removal before uniform growing-range use.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B046",
+          "start_line": 804,
+          "end_line": 824,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-ADDITIVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-ADDITIVE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The interior region has a fixed positive epsilon and the result is additive, with constants independent of epsilon; no relative o(M_T) assertion is made.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B047",
+          "start_line": 825,
+          "end_line": 839,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-ADDITIVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-ADDITIVE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "All bases lie below 2T on this region, so the sharper norm branch is applicable. Pole and trivial components decay at least as T^-epsilon without restricting any zero horizontally.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B048",
+          "start_line": 840,
+          "end_line": 851,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-ADDITIVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-ADDITIVE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "H words with two, one and zero prime slots give the displayed bounds by the proved component estimates. Aggregates are used once and smoothing dependence is retained.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B049",
+          "start_line": 852,
+          "end_line": 880,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-ADDITIVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-ADDITIVE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Each non-H error is bounded using its scalar denominators and Z/T<=T^-epsilon; L-log T is uniformly bounded. The displayed powers follow without cancellation of errors.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B050",
+          "start_line": 881,
+          "end_line": 887,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-ADDITIVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-ADDITIVE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Summing the named absolute bounds gives the uniform additive result; T^-epsilon log^4 T tends to zero only after epsilon and smoothing are fixed.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B051",
+          "start_line": 888,
+          "end_line": 903,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-ADDITIVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-ADDITIVE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The parameter boundaries are included for positive epsilon, but no epsilon=0 limit is asserted. Zero cutoffs precede T growth and all full-zero coordinates remain unchanged.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B052",
+          "start_line": 904,
+          "end_line": 909,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-ADDITIVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-ADDITIVE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The interior additive formula is explicitly insufficient by itself for a test-function main term or horizontal consequence.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B053",
+          "start_line": 910,
+          "end_line": 916,
+          "kind": "imported_input",
+          "claim_ids": [
+            "TRIPLE-RETAINED-001",
+            "PRIME-PNT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-RETAINED-001": "[UNCONDITIONAL]",
+            "PRIME-PNT-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The only extra arithmetic input for retained-term evaluation is the recorded effective classical PNT; its error is unconditional, not an RH-strength remainder.",
+          "evidence_ids": [
+            "pnt"
+          ],
+          "verdict": "justified"
+        },
+        {
+          "id": "B054",
+          "start_line": 917,
+          "end_line": 949,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-RETAINED-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-RETAINED-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The mixed diagonal and resonance statements include all prime powers and all bases >=1. The errors E_D and E_J are additive and have explicit endpoint and smoothing dependence.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B055",
+          "start_line": 950,
+          "end_line": 955,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-RETAINED-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-RETAINED-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The log(Tu+2) decomposition and a nonnegative unit-mass weight bound the J_1 correction uniformly by 2/T and mu_omega by log2.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B056",
+          "start_line": 956,
+          "end_line": 976,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-RETAINED-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-RETAINED-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Proper powers are overcounted by integer powers, an upper bound of order sqrt(u); PNT plus partial summation yields sum Lambda(n)^2=u log u+O(u), including the bounded initial range.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B057",
+          "start_line": 977,
+          "end_line": 1004,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-RETAINED-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-RETAINED-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The piecewise weight is continuous at both breakpoints. Stieltjes integration by parts has zero error endpoints and integrable derivative; exact integrals yield the displayed mixed-diagonal error also at a=b.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B058",
+          "start_line": 1005,
+          "end_line": 1028,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-RETAINED-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-RETAINED-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Only proper powers contribute to exact cubic resonance. The convolution coefficient and disjoint dyadic ranges preserve ordered factorizations; convergent geometric tails justify fixed-parameter limits.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B059",
+          "start_line": 1029,
+          "end_line": 1041,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-INTERIOR-VANISHING-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-INTERIOR-VANISHING-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The interior vanishing claim uses retained estimates and the additive bound on the same positive-margin range, retaining smoothing norms and uniform constants.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B060",
+          "start_line": 1042,
+          "end_line": 1053,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-INTERIOR-VANISHING-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-INTERIOR-VANISHING-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Z>=T^(2epsilon) controls each retained term and the prior additive estimate controls the total. This bounds the exact full-zero observable without deleting off-line contributions.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B061",
+          "start_line": 1054,
+          "end_line": 1066,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "The positive triangle and its compact margins exclude the axes and outer boundary. The test is a complex entire inverse Fourier transform, not an arbitrary real test evaluated off its domain.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B062",
+          "start_line": 1067,
+          "end_line": 1104,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "The anchored arguments use minus i times sums of horizontal displacements and K_T has the conjugated anchor. All ordered indices remain present with no extra spacing Jacobian.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B063",
+          "start_line": 1105,
+          "end_line": 1112,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "Compact smooth frequency support permits complex differentiation and real-plane integration by parts. Schwartz inversion uses the fixed negative-forward convention.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B064",
+          "start_line": 1113,
+          "end_line": 1124,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "Substituting X=B^xi and Y=B^eta yields the exact full-zero phase with horizontal sums and the original factor eight; no beta=1/2 substitution occurs.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B065",
+          "start_line": 1125,
+          "end_line": 1138,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "The integrated absolute zero-series bound uses XY<=B^(1-epsilon) and Q(t)^3. This justifies Fubini at complex arguments independently of real-axis Schwartz decay.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B066",
+          "start_line": 1139,
+          "end_line": 1160,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "The margin epsilon_T=epsilon log B/log T is used pointwise in a bound already uniform in epsilon. It is not an unproved moving-margin asymptotic; the fixed support margin still yields decay.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B067",
+          "start_line": 1161,
+          "end_line": 1170,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "A compact bump witnesses nonempty support. Reflection changes both horizontal arguments and kernel denominators and is justified by reindexing, without simplicity or termwise invariance.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B068",
+          "start_line": 1171,
+          "end_line": 1188,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "The x_rho scaling retains imaginary shifts and no L_T^2 Jacobian. Independent zero cutoffs are removed under the explicit majorant before the fixed-test height limit.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B069",
+          "start_line": 1189,
+          "end_line": 1196,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]"
+          },
+          "reason": "The zero interior limit alone is not identified with an unweighted or positive correlation. The heading begins the subsequent boundary analysis rather than extending the interior estimate to epsilon zero.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B070",
+          "start_line": 1197,
+          "end_line": 1219,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001",
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]",
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "Tests are smooth restrictions to the closed positive quadrant with continuous traces and positive outer margin. T>=2pi e implies all bases stay below T, so the relevant norm bounds apply on the axes too.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B071",
+          "start_line": 1220,
+          "end_line": 1241,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The integrated error is for the exact remainder after removing the cube and mixed expression; local origin/axis profiles have explicit compact parameter ranges and fixed smoothing.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B072",
+          "start_line": 1242,
+          "end_line": 1249,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The remainder is assembled from the exact earlier budget and retained evaluation; neither resonance nor any H aggregate is counted twice.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B073",
+          "start_line": 1250,
+          "end_line": 1271,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The integrated table retains each source and its smoothing loss. A unit-area bound for off-diagonals and decay integrals for boundary terms are used before combining the errors.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B074",
+          "start_line": 1272,
+          "end_line": 1299,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "Exponential moments bound the cube, diagonal error, J correction and resonance up to both axes. The mixed substitution has the correct b factor and no boundary half weight.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B075",
+          "start_line": 1300,
+          "end_line": 1342,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "H is split into inverse-base components and a pole component. Nonprime slots are distinct, so any two decay vectors cover both coordinates; the 19-word table and 208 refinements are bounded without cancellation.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B076",
+          "start_line": 1343,
+          "end_line": 1349,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "At bounded u,v all coefficient norms are bounded. The cube is order q^3 and every remaining word is at most order q^2; this gives the compact origin profile without changing zero locations.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B077",
+          "start_line": 1350,
+          "end_line": 1373,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "Axis compactness r>=r0>0 and r<=r1<1 controls both exponential tails and Z/T. The retained mixed term has the stated limit; H_Y with two primes is only O(q), and other H words have decaying slots or a pole.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B078",
+          "start_line": 1374,
+          "end_line": 1408,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The one-sided origin and ray coefficients are stated with coordinate dr. The exact zero-side identity retains full complex arguments and all occurrence patterns.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B079",
+          "start_line": 1409,
+          "end_line": 1415,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The integrated remainder estimate is divided by q before any limiting step; the local pointwise profiles are not integrated without domination.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B080",
+          "start_line": 1416,
+          "end_line": 1431,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "Rescaling the cube produces q^2/b^2 and integrable exponential moments. A first-derivative bound gives the origin mass 1/4 with explicit O(1/b) error.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B081",
+          "start_line": 1432,
+          "end_line": 1450,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The mixed trace replacement has an integrable first-moment bound; support limits xi to [0,1]. The exponential integral gives ray weight 3/4 and no additional origin atom.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B082",
+          "start_line": 1451,
+          "end_line": 1462,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The quadrant extension need only be integrable and compactly supported. Its inverse is entire and tempered; a nonzero boundary trace prevents Schwartz regularity, as explicitly acknowledged.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B083",
+          "start_line": 1463,
+          "end_line": 1477,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "Compact-frequency horizontal majorants justify the full zero identity and independent cutoffs before T growth. No decay on complex arguments is inferred from Schwartz regularity.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B084",
+          "start_line": 1478,
+          "end_line": 1498,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "Continuous one-sided traces determine full masses; planar null-set values cannot change them. Internal endpoints are included, the outer boundary excluded, and varying families must make the explicit error vanish.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B085",
+          "start_line": 1499,
+          "end_line": 1504,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The one-sided result is weighted and leaves kernel removal and horizontal extraction open; the next section extends the signed frequency class.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B086",
+          "start_line": 1505,
+          "end_line": 1518,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-SIGNED-SECTORS-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The full-zero series defines x<1 as well as x>=1; no prime-side formula is imported below one. Frequencies retain B=T/(2pi) and the three-term gauge.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B087",
+          "start_line": 1519,
+          "end_line": 1548,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SIGNED-SECTORS-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Reciprocal reflection and six sector maps concern the unrestricted occurrence sum; the integrated support consequence states the horizontal majorant explicitly.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B088",
+          "start_line": 1549,
+          "end_line": 1565,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SIGNED-SECTORS-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The strip bound yields locally uniform summability for all x>0. Conjugating and reflecting every occurrence changes both delta and its denominator, proving the reciprocal identity without RH.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B089",
+          "start_line": 1566,
+          "end_line": 1574,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SIGNED-SECTORS-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Replacing the conjugated factor via reciprocal reflection makes the three-frequency product symmetric under cyclic permutation. Negation conjugates the product because the prescribed smoothing is real.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B090",
+          "start_line": 1575,
+          "end_line": 1610,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SIGNED-SECTORS-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The six explicit determinant-one maps cover the plane with overlaps only on seams. On seams S(1,t)|S(B^r,t)|^2 is real, so the two conjugation descriptions agree without requiring positivity of S(1,t).",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B091",
+          "start_line": 1611,
+          "end_line": 1628,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SIGNED-SECTORS-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Collecting the anchor-delta coefficient before taking absolute values gives B^h. The denominator/counting majorants justify integration, and single-slot reindexing is not claimed to preserve index diagonals.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B092",
+          "start_line": 1629,
+          "end_line": 1636,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "Compact subsets of h<1 have positive margin; the excluded outer vertices are explicit. The entire test can be complex and need not have permutation symmetry.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B093",
+          "start_line": 1637,
+          "end_line": 1668,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "The native normalization is 1/q and zero-side factor 8/q. Both signed error sources retain test and smoothing norms; the support margin is positive and the limit order fixed.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B094",
+          "start_line": 1669,
+          "end_line": 1676,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "Entire extension and real Schwartz decay are justified separately. The signed absolute majorant, not real-plane decay, supplies Fubini for the zero expression.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B095",
+          "start_line": 1677,
+          "end_line": 1699,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "Negative sectors conjugate the pulled-back test, then conjugate the whole quadrant functional. Determinant-one changes and first-derivative bounds preserve support and yield a complex-linear limit.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B096",
+          "start_line": 1700,
+          "end_line": 1716,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "Six origin masses give 3/2, and each ray occurs in two sectors. Opposite rays combine with measure dr, without a sqrt(2) or additional half weight despite planar seams having measure zero.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B097",
+          "start_line": 1717,
+          "end_line": 1731,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "Zero cutoffs precede the height limit. The nonempty smooth test class may cross every seam and needs no positivity; vanishing interior limit agrees with the earlier result.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B098",
+          "start_line": 1732,
+          "end_line": 1742,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "The theorem keeps both ordinate signs, full multiplicity and imaginary horizontal sums. The outer support boundary remains excluded and no unweighted or horizontal conclusion is asserted.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B099",
+          "start_line": 1743,
+          "end_line": 1762,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-KERNEL-PROFILE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-PROFILE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The three integration centers retain the conjugated-anchor sign. The analytic domain includes closed delta endpoints only for the profile; actual zeros stay in the open strip.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B100",
+          "start_line": 1763,
+          "end_line": 1786,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-KERNEL-PROFILE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-PROFILE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The rational integral formula includes collisions and reflection/conjugation symmetries on the full horizontal cube, without specializing actual zeros to the line.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B101",
+          "start_line": 1787,
+          "end_line": 1792,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-PROFILE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-PROFILE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The same real-axis denominator bound supplies an integrable compact-gap majorant uniform in horizontal parameters.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B102",
+          "start_line": 1793,
+          "end_line": 1804,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-PROFILE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-PROFILE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Upper poles stay at least 1/2 above the real line and cannot meet lower poles. The semicircle contribution vanishes at fixed centers, giving the residue sum without a contour crossing assumption about zeros.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B103",
+          "start_line": 1805,
+          "end_line": 1829,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-PROFILE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-PROFILE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The cleared-denominator polynomial identities yield the rational profile at generic centers; cancellation is algebraic and the final formula does not depend on a numerical test.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B104",
+          "start_line": 1830,
+          "end_line": 1840,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-PROFILE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-PROFILE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Re(4+d^2)>=3+x^2 prevents poles in the final expression. Dominated convergence extends the identity to coincident centers, then establishes the recorded symmetries.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B105",
+          "start_line": 1841,
+          "end_line": 1849,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "The derivative sup norm for height freezing is introduced separately from the earlier L1 derivative norm; the smooth zero extension adds no endpoint jump.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B106",
+          "start_line": 1850,
+          "end_line": 1871,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "The tuplewise kernel error and independently summed error are stated separately for full occurrences. The general kernel estimate uses no Fourier support restriction.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B107",
+          "start_line": 1872,
+          "end_line": 1893,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "Only the correlation-transfer consequence uses h<=1-kappa. The same complex arguments and anchor order are retained, with the additional derivative-sup-norm loss explicit.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B108",
+          "start_line": 1894,
+          "end_line": 1915,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "Freezing omega at the anchor and applying the Lipschitz bound gives the two-factor convolution estimate; collision continuity is justified. This tuplewise bound is explicitly not summed over all triples.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B109",
+          "start_line": 1916,
+          "end_line": 1933,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "Tonelli may first give an infinite nonnegative majorant; the following disjoint near/far regions establish finiteness. The weight difference vanishes outside their union.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B110",
+          "start_line": 1934,
+          "end_line": 1946,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "A nonzero near weight difference forces t into [0,3T]. Local counts in unit shells give L^2, and the Lipschitz factor plus the outer 1/T yields the summed L^4/T bound.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B111",
+          "start_line": 1947,
+          "end_line": 1956,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "Distant shells viewed from t in [T,2T] give a convergent geometric sum L/T. The center interval length and outer normalization give the stated far-center error.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B112",
+          "start_line": 1957,
+          "end_line": 1984,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "Only O(TL) anchors have a nonzero frozen weight. The distant Q(t)^2 kernel integral is O(L^2/T); summing it with the outer 1/T bounds far anchors, including negative ordinates.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B113",
+          "start_line": 1985,
+          "end_line": 2004,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "Absolute summability of the frozen profile follows from the original kernel and the summed difference. Multiplication by ||phi||_1 B^(1-kappa) and 8/q yields the transfer bound with both derivative norms distinct.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B114",
+          "start_line": 2005,
+          "end_line": 2026,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The general zero-gap profile retains all deltas and its microscopic estimate is uniform on compact scaled gaps and the horizontal cube; no convergence of deltas is required.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B115",
+          "start_line": 2027,
+          "end_line": 2049,
+          "kind": "parameter_specialization",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The displayed zero-delta formula and critical-line tuple estimate restrict kernel parameters. They do not replace all tuples in the unconditional sum.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B116",
+          "start_line": 2050,
+          "end_line": 2061,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Substituting imaginary differences yields the horizontal profile; denominators uniformly bounded away from zero justify the compact mean-value estimate with deltas retained.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B117",
+          "start_line": 2062,
+          "end_line": 2077,
+          "kind": "parameter_specialization",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Setting kernel parameters to zero gives an ordinary Taylor expansion and a tuplewise bound. Fixed-radius limits are not interchanged with an infinite zero sum.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B118",
+          "start_line": 2078,
+          "end_line": 2084,
+          "kind": "parameter_specialization",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The equal-delta numerical example is exact algebra on kernel parameters and explicitly does not assert an off-line zero exists.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B119",
+          "start_line": 2085,
+          "end_line": 2093,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The local factor is exactly 3 log(T/(2pi))/(2 log T), tending to 3/2. No finite-height equality with its limit or global critical-line substitution is made.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B120",
+          "start_line": 2094,
+          "end_line": 2102,
+          "kind": "conditional_interpretation",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The global interpretation applying zero-delta specialization to every zero tuple explicitly requires RH and is unused. Even that interpretation would not justify replacing the profile by a constant without a summed tail estimate.",
+          "evidence_ids": [],
+          "verdict": "isolated_conditional_interpretation"
+        },
+        {
+          "id": "B121",
+          "start_line": 2103,
+          "end_line": 2108,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+            "TRIPLE-KERNEL-LOCALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]",
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]"
+          },
+          "reason": "Real-plane Schwartz decay is explicitly insufficient for complex arguments. The proved replacement retains the full-gap horizontal profile and leaves constant-kernel removal open.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B122",
+          "start_line": 2109,
+          "end_line": 2122,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The cited finite-unitary source fixes a sine-benchmark convention only. The project proves the deterministic transforms directly and imports no zeta correlation theorem from that source.",
+          "evidence_ids": [
+            "sine-context"
+          ],
+          "verdict": "justified"
+        },
+        {
+          "id": "B123",
+          "start_line": 2123,
+          "end_line": 2151,
+          "kind": "definition",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The determinant, three partial diagonals and all-equal atom define a bilinear tempered measure with absolutely convergent Schwartz pairings. Coordinate line measure and occurrence distinctions are explicit.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B124",
+          "start_line": 2152,
+          "end_line": 2180,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The transform separates the origin atom, three line measures and planar g. The ordinary benchmark cumulant vanishes on small support, while the factorial cycle is explicitly nonzero.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B125",
+          "start_line": 2181,
+          "end_line": 2195,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Compact interval representations of sinc justify distributional Fourier convolution under an integrable Schwartz majorant; interval overlap gives (1-h)_+, including endpoints.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B126",
+          "start_line": 2196,
+          "end_line": 2224,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The five partition transforms have correct line normals and coordinate measures. The physical all-equal atom gives a constant frequency density, distinct from the frequency origin atom.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B127",
+          "start_line": 2225,
+          "end_line": 2243,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The identity sum of absolute three-frequencies=2h proves the planar cancellation. Moment-cumulant subtraction is deterministic for the sine benchmark, not a zeta cumulant theorem.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B128",
+          "start_line": 2244,
+          "end_line": 2273,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The comparison retains complex tests and positive outer support margin. The two existing error bounds and their smoothing norms are separately stated without claiming unweighted zeta correlations.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B129",
+          "start_line": 2274,
+          "end_line": 2288,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "Bilinear Fourier pairing gives phi(-.), removed by central evenness of the measure rather than conjugating the test. Support kills g, and existing signed/profile bounds give the asymptotic without a new estimate.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B130",
+          "start_line": 2289,
+          "end_line": 2297,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "Three-frequency support conversion reverses sign for negative-exponential convention only. Benchmark cancellation at h=1 does not extend the zeta support theorem there.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B131",
+          "start_line": 2298,
+          "end_line": 2310,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "Finite local normalization and its limit are distinguished. The comparison keeps the full weighted statistic and does not transfer ordinary benchmark cumulant cancellation to weighted zeta cumulants.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B132",
+          "start_line": 2311,
+          "end_line": 2317,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The final theorem is a synthesis at proved-draft status under unconditional assumptions and explicit Fourier support, not a new imported headline result.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B133",
+          "start_line": 2318,
+          "end_line": 2339,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "All occurrence indices, both ordinate signs, prescribed smoothing and compact positive-margin frequency support are specified; the Fourier test has its entire extension and may be complex.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B134",
+          "start_line": 2340,
+          "end_line": 2364,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "Spacing, imaginary shifts and the rational profile are stated with the conjugated anchor. The epsilon notation typo has been corrected; the denominators include collisions without imposing critical-line zeros.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B135",
+          "start_line": 2365,
+          "end_line": 2379,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The normalized statistic includes every index pattern and only height-localizes the anchor. The coefficient is 16/(3Tq), preserving all horizontal parameters.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B136",
+          "start_line": 2380,
+          "end_line": 2422,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The all-ordered sine determinant includes partial diagonals and the all-equal term. The explicit error retains C1/L1 test norms and both smoothing derivative norms; o(1) is additive with fixed parameters.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B137",
+          "start_line": 2423,
+          "end_line": 2437,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "Compact Fourier support bounds the entire test at the full-zero arguments. The localization lemma proves profile summability before zero cutoffs or the height limit are taken.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B138",
+          "start_line": 2438,
+          "end_line": 2451,
+          "kind": "proof",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The observable is exactly (2/3)A_T^J. The comparison and sine lemmas identify its main term with both named errors; fixed positive kappa makes each error vanish.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B139",
+          "start_line": 2452,
+          "end_line": 2463,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "Zero main terms are covered additively; no division by them is made. Internal seams are included while the outer support boundary is excluded. All horizontal dependence and occurrence conventions persist.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B140",
+          "start_line": 2464,
+          "end_line": 2469,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The scope statement explicitly leaves kernel removal, unweighted real-ordinate correlations and horizontal consequences to separate arguments; the audit does not close Work Package B.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B141",
+          "start_line": 2470,
+          "end_line": 2470,
+          "kind": "nonmathematical",
+          "claim_ids": [],
+          "assumptions": [],
+          "claim_assumptions": {},
+          "reason": "The document closing command contains no mathematical assertion or additional dependency.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        }
+      ]
+    },
+    {
+      "path": "research/triple-theorem.md",
+      "sha256": "aae58b6d20b0ca6acf126e69c4f09f1e7712bc8a7da11e5472416c9c70ecd185",
+      "line_count": 163,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B142",
+          "start_line": 1,
+          "end_line": 37,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The overview retains both signs and multiplicity, the entire complex test arguments, explicit full horizontal centers, and a positive support margin.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B143",
+          "start_line": 38,
+          "end_line": 75,
+          "kind": "statement",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001",
+            "TRIPLE-SINE-MEASURE-001",
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]",
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]",
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The statistic includes all five occurrence patterns; its coefficient is exactly two thirds of the native profile statistic. Bilinear sine pairings use coordinate line measure.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B144",
+          "start_line": 76,
+          "end_line": 96,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SMOOTHED-CORRELATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SMOOTHED-CORRELATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The two error sources retain distinct smoothing derivative norms. Independent cutoffs precede the fixed-test height limit; the asymptotic is additive, and h=1 remains excluded.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        }
+      ]
+    },
+    {
+      "path": "research/triple-kernel.md",
+      "sha256": "50db3df433499550ea536f9661b4a65313cffa3d486a92c073139c53099f9ee5",
+      "line_count": 231,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B145",
+          "start_line": 156,
+          "end_line": 188,
+          "kind": "parameter_specialization",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The zero-delta rational formula and Taylor estimate specialize kernel parameters or already critical-line tuples only. The explicit displaced-parameter example makes no assertion about actual zeros; the normalization is exact before its limit.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B146",
+          "start_line": 189,
+          "end_line": 193,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-KERNEL-PROFILE-001",
+            "TRIPLE-KERNEL-LOCALIZATION-001",
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-PROFILE-001": "[UNCONDITIONAL]",
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]",
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The scope table separates the full-horizontal profile theorem, its supported correlation consequence, and the unconditional evaluation at zero kernel parameters.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B147",
+          "start_line": 194,
+          "end_line": 194,
+          "kind": "conditional_interpretation",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "RH"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The table marks the assertion that all zero tuples have zero deltas as RH, explicitly conditional and unused in the preceding claims.",
+          "evidence_ids": [],
+          "verdict": "isolated_conditional_interpretation"
+        },
+        {
+          "id": "B148",
+          "start_line": 195,
+          "end_line": 203,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+            "TRIPLE-KERNEL-LOCALIZATION-001",
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]",
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]",
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "Constant-kernel removal still needs a summed microscopic error and tail estimate; real-plane Schwartz decay is not applied to complex arguments. The full-gap comparison retains all horizontal dependence.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        }
+      ]
+    },
+    {
+      "path": "research/triple-main-term-comparison.md",
+      "sha256": "bea64d3e4dfb0238e9aa2d45367f4dd3ec41c4e0eebc4d8399418408c33caa7f",
+      "line_count": 162,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B149",
+          "start_line": 68,
+          "end_line": 113,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "Central evenness removes phi(-.) without conjugating a complex test. Exact finite-height and limiting constants are distinct; both inherited errors and the positive support margin remain explicit.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        },
+        {
+          "id": "B150",
+          "start_line": 114,
+          "end_line": 133,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001",
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]",
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The ordinary cumulant cancellation belongs to the deterministic sine benchmark. The factorial cycle remains nonzero; a weighted zeta cumulant would need compatible lower-order statistics, and no such conclusion is asserted.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        }
+      ]
+    },
+    {
+      "path": "research/literature-notes/triple-sine-comparison.md",
+      "sha256": "b256bbf6b507e6f304616a26da2d2b349310c7a0b2ff0f594bba1ffc3b23aa49",
+      "line_count": 58,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B151",
+          "start_line": 1,
+          "end_line": 58,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001",
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]",
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The stored source note identifies the author manuscript and the finite-unitary normalization used for context. Theorem 2 is used only for Fourier conventions; no zeta theorem, assumption, error or proof step is imported. The deterministic project identities are proved locally. This review reuses the recorded source inspection rather than claiming a fresh external verification.",
+          "evidence_ids": [
+            "sine-context"
+          ],
+          "verdict": "justified"
+        }
+      ]
+    },
+    {
+      "path": "research/triple-signed-sectors.json",
+      "sha256": "e0c8ce60dd824b93d5fd6e3ead89c4e1cc7dc540201761ee9af451a5c41c5368",
+      "line_count": 42,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B152",
+          "start_line": 1,
+          "end_line": 42,
+          "kind": "exposition",
+          "claim_ids": [
+            "TRIPLE-SIGNED-SECTORS-001",
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]",
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "The six exact matrices, conjugation flags, open outer support boundary and coordinate line measures agree with the signed-sector proof. Seam overlap does not delete either limiting ray mass, and no critical-line assumption enters this finite table.",
+          "evidence_ids": [],
+          "verdict": "justified"
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_triple_master.py",
+      "sha256": "a92d818cf4c0c77044ce63fff3271916cdda4f460343d8e8741a0adca44c3a6d",
+      "line_count": 253,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B153",
+          "start_line": 1,
+          "end_line": 8,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-MASTER-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SYNTHETIC_MODEL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The finite algebra checks use explicit symmetric off-line fixtures with multiplicity; their formal phases do not certify a zeta limit or supply empirical RH evidence.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_triple_uniform.py",
+      "sha256": "1f3533da0aa2b02a0ebf2ce94fb7ad81570868b90ada062976e103dcb16990f9",
+      "line_count": 227,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B154",
+          "start_line": 1,
+          "end_line": 7,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-UNIFORM-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-UNIFORM-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The header limits these checks to exact algebra and finite accounting; it does not certify prime estimates, analytic asymptotics or numerical facts about zeta zeros.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": false
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_triple_offdiag.py",
+      "sha256": "7d4be894fc422122256caae3fb1d818bdde45d4098526dc7d06cb04ecd0489cd",
+      "line_count": 234,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B155",
+          "start_line": 1,
+          "end_line": 7,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-LOG-GAP-001",
+            "TRIPLE-OFFDIAG-001",
+            "TRIPLE-SMOOTHED-ADDITIVE-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-LOG-GAP-001": "[UNCONDITIONAL]",
+            "TRIPLE-OFFDIAG-001": "[UNCONDITIONAL]",
+            "TRIPLE-SMOOTHED-ADDITIVE-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The header uses formal polynomial logarithms for finite identities and expressly excludes certification of analytic estimates and limiting arguments.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": false
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_triple_boundary.py",
+      "sha256": "5c9dd1b76892b25e838d9dcf8908db2f794358198493ac6a83f674008c41e3fb",
+      "line_count": 223,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B156",
+          "start_line": 1,
+          "end_line": 7,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-BOUNDARY-ESTIMATES-001",
+            "TRIPLE-QUADRANT-LIMIT-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)",
+            "SYNTHETIC_MODEL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-BOUNDARY-ESTIMATES-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]",
+            "TRIPLE-QUADRANT-LIMIT-001": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]"
+          },
+          "reason": "The boundary checks use finite synthetic zeros and exact scaling identities. They do not replace the domination, boundary-layer limits or analytic error proofs.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_triple_kernel.py",
+      "sha256": "d63bf8f47fc79ab24ca5d26c2bfe8a5e5d962dc72fa48af5fccf8c62f6820c65",
+      "line_count": 267,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B157",
+          "start_line": 1,
+          "end_line": 8,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-KERNEL-PROFILE-001",
+            "TRIPLE-KERNEL-LOCALIZATION-001",
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)",
+            "SYNTHETIC_MODEL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-KERNEL-PROFILE-001": "[UNCONDITIONAL]",
+            "TRIPLE-KERNEL-LOCALIZATION-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]",
+            "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The kernel checks test exact algebra and synthetic full-zero configurations. Critical-line parameter examples test a specialization, not a universal zero-location premise.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_triple_main_term.py",
+      "sha256": "27bee9c68dc2134b2d28669b13370f146f6002f453bc9ea8a50a8b4e12be517f",
+      "line_count": 255,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B158",
+          "start_line": 1,
+          "end_line": 8,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-SINE-MEASURE-001",
+            "TRIPLE-MAIN-TERM-COMPARISON-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(h<=1-kappa, 0<kappa<1)",
+            "SYNTHETIC_MODEL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SINE-MEASURE-001": "[UNCONDITIONAL]",
+            "TRIPLE-MAIN-TERM-COMPARISON-001": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]"
+          },
+          "reason": "The comparison checks verify determinant and partition algebra and synthetic occurrence conventions. The deterministic sine benchmark is not data about zeta zeros or proof of an asymptotic.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_triple_signed_sectors.py",
+      "sha256": "b8ef8f53205003314194e182dbf301d495db414022a57563e98de9553269c810",
+      "line_count": 275,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B159",
+          "start_line": 1,
+          "end_line": 7,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-SIGNED-SECTORS-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SYNTHETIC_MODEL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]"
+          },
+          "reason": "The signed-sector checks use symmetric off-line configurations with multiplicity; exact reflection and matrix checks do not assert critical-line locations for the actual zeros.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_triple_test_functions.py",
+      "sha256": "cd0551fd7ff93d4ea9dc6d97054de40f382e9cad8eed8571f2e02f02b9805374",
+      "line_count": 203,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B160",
+          "start_line": 1,
+          "end_line": 8,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-TEST-FUNCTION-001",
+            "TRIPLE-SIGNED-TEST-FUNCTION-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)",
+            "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)",
+            "SYNTHETIC_MODEL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)\"]",
+            "TRIPLE-SIGNED-TEST-FUNCTION-001": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]"
+          },
+          "reason": "Finite synthetic full-zero tests check Fourier signs and complex argument conventions only; they do not certify infinite-sum interchange, analytic decay or RH.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": true
+        }
+      ]
+    },
+    {
+      "path": "scripts/check_pair_lemma3.py",
+      "sha256": "09e0b6104d7da983a821caa0110d5b03855f67335803de62d3a74a2186d7b67e",
+      "line_count": 188,
+      "coverage": "selected_passages",
+      "passages": [
+        {
+          "id": "B161",
+          "start_line": 70,
+          "end_line": 74,
+          "kind": "verification_only",
+          "claim_ids": [
+            "TRIPLE-MASTER-001",
+            "TRIPLE-SIGNED-SECTORS-001"
+          ],
+          "assumptions": [
+            "UNCONDITIONAL",
+            "SYNTHETIC_MODEL"
+          ],
+          "claim_assumptions": {
+            "TRIPLE-MASTER-001": "[UNCONDITIONAL]",
+            "TRIPLE-SIGNED-SECTORS-001": "[UNCONDITIONAL]"
+          },
+          "reason": "Only the pure occurrences constructor is imported as a synthetic fixture: it includes repeated off-line pairs and their negative-ordinate partners. RH-specialization tests elsewhere in that module are not called by this constructor or imported as analytic premises.",
+          "evidence_ids": [],
+          "verdict": "justified",
+          "synthetic_fixture": true
+        }
+      ]
+    }
+  ],
+  "conditional_interpretation_ids": [
+    "B120",
+    "B147"
+  ],
+  "parameter_specialization_ids": [
+    "B115",
+    "B117",
+    "B118",
+    "B145"
+  ],
+  "findings": [
+    {
+      "id": "F001",
+      "category": "editorial",
+      "status": "resolved",
+      "path": "proofs/triple_explicit_formula.tex",
+      "line": 2352,
+      "before": "\\mathcal J(a_2,a_3;epsilon_2,epsilon_3,epsilon_1)",
+      "after": "\\mathcal J(a_2,a_3;\\epsilon_2,\\epsilon_3,\\epsilon_1)",
+      "previous_sha256": "4a9f515be9b45daaa273641aca5870c271540e69181eac8a24341016fde5d9f4",
+      "resolution": "Restored the three missing LaTeX epsilon command backslashes; kernel parameters, formulas, assumptions and ledger statement are unchanged."
+    }
+  ],
+  "unresolved_ids": []
+}

@@ -195,8 +195,11 @@ Global constant-kernel replacement, an unweighted zeta correlation, and
 new horizontal consequences remain separate tasks. The
 [complete recorded dependency graph](research/triple-dependency-graph.md)
 traces 31 claims, two provenance nodes and 58 edges, with inherited
-Work Package A audit coverage identified. Work Package B-wide line-by-line
-audit and clean-checkout reproduction work remains before closure.
+Work Package A audit coverage identified. The
+[Work Package B RH-contamination audit](research/triple-rh-audit.md) reviews
+the entire triple manuscript and records no contamination found in its
+reviewed scope; claims retain proved-draft status. Clean-checkout
+reproduction work remains before closure.
 
 Run the additional Work Package B regression checks with:
 

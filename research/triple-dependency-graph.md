@@ -434,9 +434,10 @@ or edges, stale metadata, unknown dependencies, cycles and false audit coverage.
 The report prose remains an authored interpretation, not mechanically
 verified mathematics.
 
-This completes the root's **recorded dependency inventory**. Next comes the
-line-by-line Work Package B RH-contamination audit, then the clean-checkout
-reproduction harness. Kernel removal and horizontal consequences remain
+This completes the root's **recorded dependency inventory**. The
+[Work Package B RH-contamination audit](triple-rh-audit.md) now records the
+line-by-line review, including the three earlier triple claims outside this
+root closure. The next task is the clean-checkout reproduction harness. Kernel removal and horizontal consequences remain
 separate extensions of the current weighted theorem.
 
 Validation on **2026-10-03**: all **89 triple checks** (including seven new
