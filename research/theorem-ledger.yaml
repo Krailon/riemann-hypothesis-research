@@ -2016,3 +2016,242 @@ claims:
       verification_script: scripts/check_triple_main_term.py
       independent_verification: pending
       pair_rh_audit_coverage: "This Work Package B theorem is outside the existing Work Package A audit."
+  - id: ORDINATE-PAIR-INPUT-001
+    title: Close-pair upper bound with full ordinate multiplicity
+    kind: proposition
+    statement: |
+      For V sufficiently large, L_V=log(V)/(2pi), uniformly 1<=lambda<=sqrt(L_V),
+      the sum over all ordered zero occurrences 0<gamma,gamma_prime<=V with
+      |gamma-gamma_prime|L_V<=lambda of (1-|gamma-gamma_prime|L_V/lambda) is O(V
+      log(V) lambda). Equal ordinates are included. This is the weak upper-bound
+      corollary of GLSS arXiv:2503.15449v4 equation (6.1), derived there
+      unconditionally from Propositions 1 and 2. No PCC-dependent theorem or RH
+      refinement is used.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: prop:pair-input
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      source_version: "PREPRINT arXiv:2503.15449v4, equation (6.1); only its unconditional upper bound is imported."
+
+  - id: ORDINATE-DENSITY-INPUT-001
+    title: Uniform density input near the critical line
+    kind: proposition
+    statement: |
+      For V>=H0=3.0610046*10^10 and 0<=D<=0.331, N(1/2+D,2V)-N(1/2+D,V) <<
+      V^(1-D/4)log V+(log V)^2 uniformly with an effective absolute constant.
+      N(sigma,V) counts beta>sigma and 0<gamma<=V with multiplicity. This is a
+      corollary of Simonic Theorem 1 in the consulted arXiv:1910.08274v2
+      (published JMAA 491 (2020), 124303); its explicit constants and external
+      computational provenance are imported, not recomputed or locally certified.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: prop:density-input
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited external explicit-density inputs; not a new project computation, no local replay or archived certificate. The open target inherits this dependency only as a proposed proof route."
+
+  - id: ORDINATE-TRANSFER-001
+    title: Absolutely convergent signed ordinate transfer
+    kind: lemma
+    statement: |
+      With all definitions in proofs/triple_ordinate_reduction.tex, for T>=2pi e,
+      smooth nonnegative anchor weight omega of mass one supported in (1,2), and
+      phi smooth compactly supported in h<=1-kappa, set O_T=(T L_T)^(-1) sum omega
+      F(u,v). All ordered zero occurrences of both signs are included. Define
+      E_arguments=c_T sum omega J_delta(F(z)-F(u,v)), E_horizontal=c_T sum omega
+      (J_delta-J_0)F(u,v), E_gaps=c_T sum omega (J_0-3pi/8)F(u,v), with
+      c_T=16/(3Tq), q=log T, b=log(T/(2pi)). All sums converge absolutely at fixed
+      T. Exactly R_T^J=(b/q)O_T+E_arguments+E_horizontal+E_gaps, and
+      O_T-S3=(q/b)(R_T^J-S3-E_arguments-E_horizontal-E_gaps)+(q/b-1)S3.
+      Independent zero cutoffs are removed first at fixed T.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [PAIR-COUNT-001, TRIPLE-KERNEL-PROFILE-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:transfer
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-COUNT-001
+    title: Near and far cumulative triple counts
+    kind: lemma
+    statement: |
+      Let H_T(R) count all ordered zero occurrences with anchor ordinate in [T,2T]
+      and max(|L_T(gamma2-gamma1)|,|L_T(gamma3-gamma1)|)<=R. For T sufficiently
+      large, H_T(R)<<T q^2 R^2 uniformly 1<=R<=q^(1/4), and H_T(R)<<T q^3(1+R)^4
+      for all R>=1, q=log T. With A20(F)=sup (1+max(|u|,|v|))^20 |F(u,v)| and
+      W=||omega||infinity, the sums of omega |F| normalized by Tq are <<W A20 q on
+      r<=q^(1/4), and <<W A20 q^(-2) on the complementary tail.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ORDINATE-PAIR-INPUT-001, PAIR-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:counts
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-REAL-KERNEL-001
+    title: Vanishing kernel errors for real Schwartz arguments
+    kind: theorem
+    statement: |
+      For every Schwartz F on R^2 and fixed nonnegative smooth omega supported in
+      (1,2) of integral one, the signed errors defined in equations (horizontal)
+      and (gaps) of the ordinate reduction satisfy |E_gaps|<<W A20(F)/q and
+      |E_horizontal|<<W A20(F)(log q)^2/q, q=log T, for T sufficiently large.
+      Constants and lower threshold are independent of F and omega. Horizontal
+      reflection is performed on the entire ordered tuple sum before a
+      second-order Taylor bound; bad zeros at |delta|>64 log q/q are bounded by
+      the imported density theorem. All multiplicities and partial diagonals
+      remain. No support restriction is needed for these real-test estimates. This
+      does not bound E_arguments.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ORDINATE-TRANSFER-001, ORDINATE-COUNT-001, ORDINATE-DENSITY-INPUT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: thm:real-kernel
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited external explicit-density inputs; not a new project computation, no local replay or archived certificate. The open target inherits this dependency only as a proposed proof route."
+
+  - id: ORDINATE-ARGUMENT-BOUND-001
+    title: Reflected positive majorant for the complex-argument error
+    kind: lemma
+    statement: |
+      For the supported Fourier tests in the ordinate reduction, let s=1-kappa,
+      x=q max_j |delta_ij|, r=max(|u|,|v|), P22(phi)=sum_{|alpha|<=22}
+      ||partial^alpha phi||_1, and M_T(s)=(Tq)^(-1) sum omega (1+r)^(-20)
+      x^2(1+x)^22 exp(2s x). For T sufficiently large, |E_arguments|<=C P22(phi)
+      M_T(s) with an absolute C independent of T,phi,omega,kappa. M_T(s) is finite
+      at each fixed T. Simultaneous horizontal reflection cancels the first-order
+      term. Neither M_T(s)=o(1) nor E_arguments=o(1) is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-TRANSFER-001, PAIR-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:arguments
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-ARGUMENT-VANISHING-001
+    title: Open signed complex-argument estimate
+    kind: target
+    statement: |
+      Target, not proved: E_arguments=o(1) for each fixed smooth nonnegative
+      mass-one omega supported in (1,2) and each fixed phi in C_c^infinity
+      supported in h<=1-kappa, 0<kappa<1, with all definitions of the ordinate
+      reduction. The proved positive moment bound is only sufficient; no vanishing
+      estimate for that moment is known in this work.
+    status: idea
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-ARGUMENT-BOUND-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: target:arguments
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-TRIPLE-001
+    title: Open conventional all-ordered smoothed ordinate correlation
+    kind: target
+    statement: |
+      Target, not proved: O_T[F]=S3[F]+o(1), with O_T=(T L_T)^(-1) sum
+      omega(gamma1/T) F(L_T(gamma2-gamma1),L_T(gamma3-gamma1)), all ordered zero
+      occurrences with multiplicity and both ordinate signs, only the anchor
+      localized. Fix omega nonnegative smooth supported in (1,2) of mass one, and
+      phi in C_c^infinity supported in h<=1-kappa, 0<kappa<1, with F its inverse
+      Fourier transform in project units. S3 is the all-ordered sine benchmark
+      including the three partial diagonals and total diagonal. The transfer
+      identity and real-kernel estimates reduce this target exactly to the
+      unresolved signed estimate E_arguments=o(1).
+    status: idea
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [TRIPLE-SMOOTHED-CORRELATION-001, ORDINATE-TRANSFER-001, ORDINATE-REAL-KERNEL-001, ORDINATE-ARGUMENT-VANISHING-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: target:ordinate
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited external explicit-density inputs; not a new project computation, no local replay or archived certificate. The open target inherits this dependency only as a proposed proof route."

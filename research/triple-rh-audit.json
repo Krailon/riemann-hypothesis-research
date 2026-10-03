@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "2298eb3185db8bca13d17168633224d1ba5ed5d2a3a8235a663b38fb5324f29a",
+    "research/theorem-ledger.yaml": "9d13fdae639a6b2ee46be43dbf73be8df26d4db442386e36150da35b2ee85fc8",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "c2acc36f53b1baa362f919c011e2f5812d60529ede928c0c39859db8474fd8e8"
+    "research/pair-rh-audit.json": "62c154bd4ecaa261f20fd894d11b0c1f841430976807f67abd24601149faabe1"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4292,5 +4292,23 @@
       "resolution": "Restored the three missing LaTeX epsilon command backslashes; kernel parameters, formulas, assumptions and ledger statement are unchanged."
     }
   ],
-  "unresolved_ids": []
+  "unresolved_ids": [],
+  "ledger_ordinate_extension_review": {
+    "reviewed_on": "2026-10-03",
+    "previous_ledger_sha256": "2298eb3185db8bca13d17168633224d1ba5ed5d2a3a8235a663b38fb5324f29a",
+    "added_claim_ids": [
+      "ORDINATE-ARGUMENT-BOUND-001",
+      "ORDINATE-ARGUMENT-VANISHING-001",
+      "ORDINATE-COUNT-001",
+      "ORDINATE-DENSITY-INPUT-001",
+      "ORDINATE-PAIR-INPUT-001",
+      "ORDINATE-REAL-KERNEL-001",
+      "ORDINATE-TRANSFER-001",
+      "ORDINATE-TRIPLE-001"
+    ],
+    "report": "research/triple-ordinate-reduction.md",
+    "changes": "The prior ledger is an unchanged byte prefix and every pre-existing indexed block is identical. Only the listed ORD claim family is appended. No historical mathematical verdict, claim snapshot, audited manuscript or archive is changed. This metadata refresh does not extend either RH audit to the ordinate extension.",
+    "previous_pair_record_sha256": "c2acc36f53b1baa362f919c011e2f5812d60529ede928c0c39859db8474fd8e8",
+    "scope": "Whole-input hash maintenance only; historical context and review coverage unchanged."
+  }
 }

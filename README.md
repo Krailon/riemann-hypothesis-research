@@ -218,6 +218,21 @@ for this baseline. Older pending-work statements in audit-bound notes
 describe their review dates; the checklist and this README give the current
 status without changing the mathematical or archived evidence.
 
+### Active Work Package B extension: ordinate-only correlation
+
+The stronger ordinate-only target is now active. The
+[reduction draft](research/triple-ordinate-reduction.md) proves an exact
+transfer identity and bounds both kernel errors on real test arguments:
+`E_gaps=O(1/log T)` and `E_horizontal=O((log log T)^2/log T)` for fixed
+Schwartz tests and smoothing. These claims have **proved-draft** status.
+The remaining complex-argument error has a quadratic moment bound, but its
+vanishing is **unproved**. Accordingly `ORDINATE-TRIPLE-001` remains **idea**;
+we do not yet have the conventional ordinate-only asymptotic.
+
+The eight new exact algebra checks supplement the historical 109 triple
+checks. This extension has its own manuscript and source notes; the archived
+weighted baseline and the scope of its RH audit remain as recorded.
+
 Run the additional Work Package B regression checks with:
 
 ```bash
@@ -249,7 +264,7 @@ when invoked by path from outside the repository.
 Each run writes `triple-normalization.json`, its Markdown rendering,
 `manifest.json`, and logs. Full runs additionally build
 `triple_explicit_formula.pdf` in three isolated passes with shell escape
-disabled. Both the **70-test pair suite** and **109-test triple suite** run,
+disabled. Both the **70-test pair suite** and **117-test triple suite** run,
 including graph and audit validation. The harness makes no downloads,
 installs no dependencies, and never updates audit hashes.
 

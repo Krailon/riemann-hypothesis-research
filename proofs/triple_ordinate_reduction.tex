@@ -1,0 +1,394 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{theorem}[lemma]{Theorem}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,d}
+\newcommand{\Ea}{E_{\mathrm{arguments}}}
+\newcommand{\Eh}{E_{\mathrm{horizontal}}}
+\newcommand{\Eg}{E_{\mathrm{gaps}}}
+\title{An ordinate-only reduction for the smoothed triple statistic}
+\author{Work Package B extension: proof draft}
+\date{October 3, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give an exact transfer identity from the existing weighted full-zero
+theorem, and prove that its two real-test kernel errors vanish.
+The remaining complex-argument error is isolated, with a sufficient
+positive-moment bound. Its vanishing is open: this draft does not prove
+an ordinate-only correlation asymptotic.
+\end{abstract}
+
+\section{Conventions and the target}
+Task: proof and source review. Assumptions: \texttt{UNCONDITIONAL}, and
+\texttt{SUPPORT}\,$(h\leq1-\kappa,\ 0<\kappa<1)$ wherever the weighted
+theorem or a Fourier test is used. Let $I$ index all occurrences of
+nontrivial zeros $\rho_i=1/2+\delta_i+i\gamma_i$, with both ordinate
+signs and full multiplicities. Every sum below is over all ordered
+triples in $I^3$. Equal indices, equal complex zeros at different indices,
+and distinct zeros with equal ordinates are all included.
+Fix nonnegative $\omega\in C_c^\infty((1,2))$ of integral one, extended
+by zero. For $T\geq2\pi e$ put
+\[
+ q=\log T,\qquad b=\log(T/(2\pi)),\qquad \ell=\frac b{2\pi},
+ \qquad c_T=\frac{16}{3Tq}.
+\]
+Fix $\phi\in C_c^\infty(\R^2)$ supported in
+$h(\xi,\eta)=\max(|\xi|,|\eta|,|\xi+\eta|)\leq s=1-\kappa<1$.
+Use $\widehat F(\xi,\eta)=\int F(u,v)e^{-2\pi i(u\xi+v\eta)}\dd u\dd v$
+and the entire extension
+\[
+ F(z_1,z_2)=\int_{\R^2}\phi(\xi,\eta)
+              e^{2\pi i(\xi z_1+\eta z_2)}\dd\xi\dd\eta.
+\]
+For a triple, abbreviate
+\[
+ a=\gamma_{i_2}-\gamma_{i_1},\quad d=\gamma_{i_3}-\gamma_{i_1},\quad
+ (u,v)=\ell(a,d),\quad r=\max(|u|,|v|),
+\]
+\[
+ z=(u-i\ell(\delta_{i_2}+\delta_{i_1}),
+       v-i\ell(\delta_{i_3}+\delta_{i_1})),\qquad
+ w=\omega(\gamma_{i_1}/T).
+\]
+The conventional all-ordered ordinate statistic is
+\begin{equation}\label{eq:ordinate}
+ O_T[F]=\frac1{T\ell}\sum_{I^3}wF(u,v).
+\end{equation}
+Only the anchor is localized. No simplicity, ordinate-distinctness,
+sharp cutoff, or exclusion of partial diagonals is imposed.
+
+Write $J_\delta=J(a,d;\delta_{i_2},\delta_{i_3},\delta_{i_1})$,
+$J_0=J(a,d;0,0,0)$, and $J_*=3\pi/8$. Explicitly, with
+$c_1=a-i\delta_{i_2}$, $c_2=d-i\delta_{i_3}$, $c_3=i\delta_{i_1}$,
+and $d_{mn}=c_m-c_n$,
+\begin{equation}\label{eq:profile}
+ J_\delta=\pi\frac{24+d_{12}^2+d_{13}^2+d_{23}^2}
+ {(4+d_{12}^2)(4+d_{13}^2)(4+d_{23}^2)}
+ =\int_\R\prod_{m=1}^3\frac1{1+(t-c_m)^2}\dd t.
+\end{equation}
+The profile and its integral representation are
+\texttt{TRIPLE-KERNEL-PROFILE-001}. The baseline theorem
+\texttt{TRIPLE-SMOOTHED-CORRELATION-001} states that
+$R_T^J=c_T\sum wJ_\delta F(z)=S_3[F]+o(1)$ for fixed data.
+Here, with $s_0(t)=\sin(\pi t)/(\pi t)$ and $s_0(0)=1$,
+\begin{align*}
+ R_2(t)&=1-s_0(t)^2,\\
+ R_3(u,v)&=\det\begin{pmatrix}1&s_0(u)&s_0(v)\\s_0(u)&1&s_0(u-v)\\
+ s_0(v)&s_0(u-v)&1\end{pmatrix},\\
+ S_3[F]&=\int_{\R^2}FR_3\dd u\dd v+
+ \int_\R R_2(t)\{F(0,t)+F(t,0)+F(t,t)\}\dd t+F(0,0).
+\end{align*}
+Pairings are bilinear; $F$ need not be real or symmetric.
+\paragraph{Open target (\texttt{ORDINATE-TRIPLE-001}).}\label{target:ordinate}
+Prove $O_T[F]=S_3[F]+o(1)$ for the fixed tests above.
+The target has ledger status \texttt{idea}, not \texttt{proved-draft}.
+
+\section{Exact transfer and convergence}
+\begin{lemma}[Exact reduction; \texttt{ORDINATE-TRANSFER-001}]
+\label{lem:transfer}
+Define signed errors, without taking absolute values inside the sums, by
+\begin{align}
+ \Ea&=c_T\sum wJ_\delta\{F(z)-F(u,v)\},\label{eq:arguments}\\
+ \Eh&=c_T\sum w(J_\delta-J_0)F(u,v),\label{eq:horizontal}\\
+ \Eg&=c_T\sum w(J_0-J_*)F(u,v).\label{eq:gaps}
+\end{align}
+All these sums converge absolutely at each fixed $T$. Exactly,
+\begin{align}
+ R_T^J&=\frac bq O_T+\Ea+\Eh+\Eg,\label{eq:transfer}\\
+ O_T-S_3[F]&=\frac qb\{R_T^J-S_3[F]-\Ea-\Eh-\Eg\}
+                   +\left(\frac qb-1\right)S_3[F].\label{eq:main-transfer}
+\end{align}
+Zero cutoffs may tend independently to infinity at fixed $T$ and fixed
+test; only afterwards is $T$ allowed to grow.
+\end{lemma}
+\begin{proof}
+For real $x$ and $|e|\leq1/2$,
+$|1+(x-ie)^2|\geq1+x^2-e^2\geq\tfrac34(1+x^2)$.
+The first two $e$ derivatives of its reciprocal are bounded by
+$C(1+x^2)^{-1}$: differentiate the rational function and use this
+inequality, with $|x-ie|\ll(1+x^2)^{1/2}$.
+Consequently $J$ and its horizontal derivatives through order two are
+uniformly bounded for all real gaps and the closed parameter cube
+$[-1/2,1/2]^3$. Indeed, bound two real kernels by one and integrate the
+third. Differentiation under the integral is justified locally in the
+parameters by an integrable dominating function; the resulting bounds
+are global. Colliding centers cause no exception.
+
+The anchor has finitely many occurrences. The unit-interval count
+\texttt{PAIR-COUNT-001} gives $O(\log(|t|+2))$ zeros in a unit interval
+near $t$, with multiplicity. At fixed $T$ the imaginary coordinates
+of $z$ are bounded by $\ell$. Integrating the compact smooth Fourier
+integral by parts gives, for every $N$, a bound
+$|F(z)|+|F(u,v)|\leq C_{T,N,\phi}(1+r)^{-N}$.
+Two unit-interval summations therefore converge absolutely. This
+also justifies reindexing by horizontal reflection and all cutoff
+limits here. Telescope each summand. Finally
+$c_TJ_*=2\pi/(Tq)=(b/q)/(T\ell)$, proving both identities.
+\end{proof}
+
+\section{Two unconditional counting inputs}
+These are imported source statements, not numerical project certificates.
+Their upstream analytic proofs have not been reconstructed in this extension.
+
+\begin{proposition}[Close-pair input; \texttt{ORDINATE-PAIR-INPUT-001}]
+\label{prop:pair-input}
+For $V$ sufficiently large, $L_V=\log V/(2\pi)$ and
+$1\leq\lambda\leq\sqrt{L_V}$,
+\begin{equation}\label{eq:pair-input}
+ \sum_{\substack{0<\gamma,\gamma'\leq V\\
+                  |\gamma-\gamma'|L_V\leq\lambda}}
+ \left(1-\frac{|\gamma-\gamma'|L_V}{\lambda}\right)
+ \ll V\log V\,\lambda.
+\end{equation}
+The sum includes all ordered occurrences, including equal ordinates.
+\end{proposition}
+\begin{proof}[Source and deduction]
+GLSS~\cite{GLSS} (\textbf{PREPRINT}), equation (6.1), gives the left side as
+$VL_V\{\lambda+\log(2+\lambda)/(\pi^2\lambda)
++O(\sqrt{\log(2+\lambda)}/\lambda)\}$ uniformly for
+$0<\lambda^2\leq L_V$. For $\lambda\geq1$ each displayed term is
+$O(\lambda)$. Their Section 6 derives this from the unconditional
+Propositions 1--2; their PCC-dependent main theorem and the RH improvement
+in Remark 2 are not used. No explicit constant is asserted here.
+\end{proof}
+
+\begin{proposition}[Density input; \texttt{ORDINATE-DENSITY-INPUT-001}]
+\label{prop:density-input}
+Let $N(\sigma,V)$ count $\beta>\sigma$, $0<\gamma\leq V$, with
+multiplicity. Uniformly for $0\leq D\leq0.331$ and
+$V\geq H_0=3.0610046\cdot10^{10}$,
+\begin{equation}\label{eq:density-input}
+ N(1/2+D,2V)-N(1/2+D,V)
+ \ll V^{1-D/4}\log V+(\log V)^2.
+\end{equation}
+\end{proposition}
+\begin{proof}[Source and deduction]
+Simoni\v c, Theorem 1, consulted in arXiv:1910.08274v2, p.~2
+(published in J.~Math.~Anal.~Appl.~491 (2020), 124303), bounds this
+difference by
+\[
+10395.2 V^{1-D/4}\log V+1.104\log^2V+
+0.173\log V\log\log V+0.51\log V.
+\]
+This implies \eqref{eq:density-input} with an effective absolute constant.
+The consulted author text is distinguished from the journal version.
+Its external finite-height and numerical inputs are inherited, not replayed.
+No zero in our sums is replaced by a critical-line zero.
+\end{proof}
+
+\begin{lemma}[Triple counts; \texttt{ORDINATE-COUNT-001}]
+\label{lem:counts}
+Let $H_T(R)$ count all triples with $T\leq\gamma_{i_1}\leq2T$
+and $r\leq R$. For sufficiently large $T$,
+\begin{align}
+ H_T(R)&\ll Tq^2R^2 &&(1\leq R\leq R_0=q^{1/4}),\label{eq:small-count}\\
+ H_T(R)&\ll Tq^3(1+R)^4 &&(R\geq1).\label{eq:global-count}
+\end{align}
+Put $A_{20}(F)=\sup_{u,v}(1+\max(|u|,|v|))^{20}|F(u,v)|$ and
+$W=\|\omega\|_\infty$. Then
+\begin{align}
+ \frac1{Tq}\sum_{r\leq R_0}w|F(u,v)|&\ll WA_{20}(F)q,\label{eq:mass}\\
+ \frac1{Tq}\sum_{r>R_0}w|F(u,v)|&\ll WA_{20}(F)q^{-2}.\label{eq:tail}
+\end{align}
+\end{lemma}
+\begin{proof}
+For the small range $R/\ell<1$. All participating zeros have positive
+ordinates at most $3T$, and each anchor has $O(q)$ possible partners.
+Apply \eqref{eq:pair-input} at $V=3T$ and
+$\lambda=2RL_{3T}/\ell$. For large $T$ this belongs to
+$[1,\sqrt{L_{3T}}]$ throughout $R\leq R_0$. Every pair at distance
+at most $R/\ell$ has triangular weight at least $1/2$.
+Thus there are $O(TqR)$ anchor--partner pairs. Multiplying by the
+$O(q)$ choices for the third occurrence proves even $O(Tq^2R)$,
+and hence \eqref{eq:small-count}.
+
+Globally there are $O(Tq)$ anchors and at most
+$C(1+R/\ell)\log(T+R/\ell+2)$ partners per anchor, by unit counts
+and conjugation for negative ordinates. Since $\ell\geq1$ eventually,
+this is at most $Cq(1+R)^2$, giving \eqref{eq:global-count}.
+For \eqref{eq:mass}, use $r\leq1$ and dyadic shells up to $R_0$;
+their normalized bounds are $CWA_{20}q\sum_{k\geq0}2^{(2-20)k}$.
+A shell cut by $R_0$ uses $H_T(R_0)$ and has the same bound.
+For the tail use shells $2^kR_0<r\leq2^{k+1}R_0$ and
+\eqref{eq:global-count}; the result is
+$CWA_{20}q^2R_0^{4-20}=CWA_{20}q^{-2}$.
+\end{proof}
+
+\section{Removing the real-test kernel}
+\begin{theorem}[Real-test errors; \texttt{ORDINATE-REAL-KERNEL-001}]
+\label{thm:real-kernel}
+For every Schwartz $F$ on $\R^2$ and the smoothing above, as $T\to\infty$,
+\begin{equation}\label{eq:kernel-errors}
+ |\Eg|\ll \frac{WA_{20}(F)}q,\qquad
+ |\Eh|\ll WA_{20}(F)\frac{(\log q)^2}q.
+\end{equation}
+Constants and the lower threshold for $T$ are independent of $F,\omega$.
+No Fourier support is needed for these two estimates.
+\end{theorem}
+\begin{proof}
+The rational profile is smooth near $(a,d)=(0,0)$, is even under
+$(a,d)\mapsto(-a,-d)$, and equals $J_*$ at the origin. Together
+with its global bound this gives
+$|J_0-J_*|\leq C\min(a^2+d^2,1)$.
+On $r\leq R_0$ use $C r^2/\ell^2$ and the same dyadic argument as
+\eqref{eq:mass}: the bound is
+\[
+CWA_{20}q\ell^{-2}\sum_{k\geq0}2^{(4-20)k}\ll WA_{20}/q.
+\]
+On the tail use \eqref{eq:tail}.
+
+For the horizontal error, reflect all three indices simultaneously by
+$\rho\mapsto1-\bar\rho$. This preserves ordinates, multiplicities,
+$w$, $F(u,v)$ and every index coincidence pattern, while sending
+$\delta\mapsto-\delta$. Hence in \eqref{eq:horizontal} one may
+replace $J_\delta-J_0$ by
+$\tfrac12(J_\delta+J_{-\delta})-J_0$.
+Taylor's formula and the uniform second-derivative bounds in the proof
+of Lemma~\ref{lem:transfer} give
+\[
+ \left|\tfrac12(J_\delta+J_{-\delta})-J_0\right|
+ \leq C\max_j|\delta_{i_j}|^2.
+\]
+This is a reindexing of the sum, not a termwise positivity assertion.
+
+Take $D=64\log q/q$, eventually in $(0,0.331)$.
+On $r\leq R_0$ with every $|\delta_{i_j}|\leq D$, equation
+\eqref{eq:mass} bounds the error by $CWA_{20}qD^2$.
+For the remaining tuples some occurrence with $|\delta|>D$ lies in
+$[T-1,2T+1]$. Reflection and \eqref{eq:density-input}, applied to the
+three windows $(T/2,T],(T,2T],(2T,4T]$, show that their number is
+\[
+ B_T(D)\ll Tq\exp\{-D\log(T/2)/4\}+q^2
+          \ll Tq^{-7}+q^2.
+\]
+The last inequality uses $\log(T/2)/q\geq1/2$ and thus an exponent
+at most $-8\log q$. Each such occurrence belongs to at most $Cq^2$
+of our near tuples: fix its slot, and use two unit-interval counts
+within distance two. Union over the three slots only increases this
+bound. Boundedness of the kernel and $|F|\leq A_{20}$ give a normalized
+contribution $CWA_{20}(q^{-6}+q^3/T)$.
+The tail is $CWA_{20}q^{-2}$ by \eqref{eq:tail}.
+Combining these proves the second bound. Strict $|\delta|>D$ matches
+the source's strict $\beta>\sigma$; equality belongs to the good set.
+\end{proof}
+
+\section{What remains at the complex arguments}
+Define the nonnegative quantity (not assumed small)
+\begin{equation}\label{eq:moment}
+ M_T(s)=\frac1{Tq}\sum_{I^3}w(1+r)^{-20}
+ x^2(1+x)^{22}e^{2sx},\qquad x=q\max_j|\delta_{i_j}|,
+\end{equation}
+and $P_{22}(\phi)=\sum_{|\alpha|\leq22}\|\partial^\alpha\phi\|_1$.
+\begin{lemma}[Reflected argument bound; \texttt{ORDINATE-ARGUMENT-BOUND-001}]
+\label{lem:arguments}
+Uniformly for the fixed-support class above and $T$ sufficiently large,
+\begin{equation}\label{eq:argument-bound}
+ |\Ea|\leq C P_{22}(\phi)M_T(s).
+\end{equation}
+The moment is finite for every fixed $T$. Its convergence to zero has
+not been established.
+\end{lemma}
+\begin{proof}
+For one triple set $y=(\ell(\delta_{i_2}+\delta_{i_1}),
+\ell(\delta_{i_3}+\delta_{i_1}))$ and
+$G(t)=J(a,d;t\delta)\{F((u,v)-ity)-F(u,v)\}$ for $-1\leq t\leq1$.
+Simultaneous reflection replaces its contribution by
+$(G(1)+G(-1))/2$. Since $G(0)=0$, Taylor's integral remainder bounds
+this by $\tfrac12\sup_{|t|\leq1}|G''(t)|$.
+Inside the Fourier integral the real exponent is $tA$, where
+\[
+ A=b\{\delta_{i_2}\xi+\delta_{i_3}\eta+
+                   \delta_{i_1}(\xi+\eta)\}.
+\]
+The exact identity $|\xi|+|\eta|+|\xi+\eta|=2h(\xi,\eta)$ gives
+$|A|\leq2sx$, since $b/q<1$. Also $|\nabla A|\leq Cx$.
+Apply $(1-\Delta_{\xi,\eta})^{10}$ in the Fourier integral.
+For $k=0,1,2$, the derivatives of $A^ke^{tA}\phi$ have $L^1$ norm
+at most $CP_{22}(\phi)x^k(1+x)^{20}e^{2sx}$.
+The integration-by-parts denominator is
+$(1+4\pi^2(u^2+v^2))^{10}$, so these estimates supply decay
+$(1+r)^{-20}$. Compact support makes the boundary terms zero.
+In $G''$, the three product-rule terms involve respectively $J''$,
+$2J'$ and $J$, where the first two derivatives along $t\delta$ are
+$O((x/q)^2)$ and $O(x/q)$. Bound the undifferentiated difference
+of tests by the sum of their absolute values. It follows that
+\[
+ |G''(t)|\leq CP_{22}(\phi)(1+r)^{-20}
+                  x^2(1+x)^{22}e^{2sx}.
+\]
+Sum this estimate using Lemma~\ref{lem:transfer}. Finiteness of
+\eqref{eq:moment} follows from $x\leq q/2$ at fixed $T$ and the
+global count \eqref{eq:global-count}.
+\end{proof}
+
+\paragraph{Exact remaining criterion.}\label{target:arguments}
+For each fixed admissible test and smoothing, \eqref{eq:main-transfer},
+the baseline theorem, and Theorem~\ref{thm:real-kernel} imply
+\[
+ O_T[F]=S_3[F]+o(1)\quad\Longleftrightarrow\quad\Ea=o(1).
+\]
+This is a consequence of \texttt{ORDINATE-TRANSFER-001}, not a new
+assertion that either limit holds. In particular $M_T(s)=o(1)$ would
+be sufficient. The other named errors are the inherited
+$R_T^J-S_3[F]$, the two bounds \eqref{eq:kernel-errors}, and the exact
+scale error $(q/b-1)S_3[F]$; all enter with the signs in
+\eqref{eq:main-transfer}. For varying tests one must make each of
+these bounds, including $P_{22}(\phi)M_T(s)$, tend to zero.
+
+\paragraph{Why the density input does not finish this step.}
+Small unscaled $\delta$ does not give small $q\delta$.
+The density bound gives no vanishing bound for the fraction at
+$|\delta|=c/q$, with fixed $c>0$. The cutoff $64\log q/q$ used for
+the kernel leaves shifts of size $O(\log q)$ in the test arguments.
+It therefore cannot be used to make those arguments real by continuity.
+Signed cancellation might still prove $\Ea=o(1)$ without the positive
+moment condition; we assert no impossibility theorem.
+
+\paragraph{Finite sensitivity check (\texttt{SYNTHETIC\_MODEL}).}
+Put occurrences with $\delta=\pm c/q$ at one positive ordinate and
+include their negative conjugates. At zero vertical gaps the kernel
+tends to $J_*$ as $q\to\infty$. Averaging a Fourier mode over the
+eight ordered choices of positive-ordinate signs gives the multiplier
+\[
+ \cosh((b/q)c\xi)\cosh((b/q)c\eta)
+                       \cosh((b/q)c(\xi+\eta)).
+\]
+Its limit is greater than one when $c>0$ and $(\xi,\eta)\ne(0,0)$.
+This proves pointwise sensitivity after symmetry averaging. A finite
+quartet has vanishing mass after normalization by $Tq$; it is not a
+counterexample to the zeta asymptotic. A Fourier mode is used only for
+this finite identity, not as an admissible Schwartz test.
+
+\section{Provenance and scope}
+This extension uses \texttt{PAIR-COUNT-001}, the recorded kernel profile,
+and the baseline weighted theorem. The two new source statements are
+imported as unconditional inputs with their ranges intact. Neither
+PCC, RH, simplicity nor an all-zero critical-line specialization occurs
+in the reduction. The prior line-by-line audit and archived reproduction
+cover the weighted baseline; they do not certify this extension.
+The new exact regression script checks finite algebra and normalization,
+not asymptotic analysis or the imported theorems.
+All limits here fix $\omega,\phi,\kappa$ first, remove zero cutoffs by
+absolute convergence at fixed $T$, and then send $T\to\infty$.
+Internal Fourier axes and the origin are included; the outer support
+boundary is excluded by $\kappa>0$. No new endpoint extension is used.
+
+\begin{thebibliography}{9}
+\bibitem{GLSS}
+D.~A.~Goldston, J.~Lee, J.~Schettler, A.~I.~Suriajaya,
+\emph{Pair Correlation Conjecture for the zeros of the Riemann
+zeta-function I: simple and critical zeros},
+\href{https://arxiv.org/abs/2503.15449v4}{arXiv:2503.15449v4},
+PREPRINT, 2026. Section 6, equation (6.1).
+\bibitem{Simonic}
+A.~Simoni\v c, \emph{Explicit zero density estimate for the Riemann
+zeta-function near the critical line}, J.~Math.~Anal.~Appl.~491 (2020),
+124303, \href{https://doi.org/10.1016/j.jmaa.2020.124303}{DOI}.
+Consulted \href{https://arxiv.org/abs/1910.08274v2}{arXiv:1910.08274v2},
+Theorem 1, p.~2; proof Section 4.5.
+\end{thebibliography}
+\end{document}

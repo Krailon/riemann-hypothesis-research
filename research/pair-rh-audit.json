@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "2298eb3185db8bca13d17168633224d1ba5ed5d2a3a8235a663b38fb5324f29a",
+  "ledger_sha256": "9d13fdae639a6b2ee46be43dbf73be8df26d4db442386e36150da35b2ee85fc8",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2425,5 +2425,21 @@
       "TRIPLE-SMOOTHED-CORRELATION-001"
     ],
     "changes": "The previous ledger is an unchanged byte prefix followed only by the listed theorem. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The theorem assembles the existing weighted full-zero result with both named errors and the positive support margin. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_ordinate_extension_review": {
+    "reviewed_on": "2026-10-03",
+    "previous_ledger_sha256": "2298eb3185db8bca13d17168633224d1ba5ed5d2a3a8235a663b38fb5324f29a",
+    "added_claim_ids": [
+      "ORDINATE-ARGUMENT-BOUND-001",
+      "ORDINATE-ARGUMENT-VANISHING-001",
+      "ORDINATE-COUNT-001",
+      "ORDINATE-DENSITY-INPUT-001",
+      "ORDINATE-PAIR-INPUT-001",
+      "ORDINATE-REAL-KERNEL-001",
+      "ORDINATE-TRANSFER-001",
+      "ORDINATE-TRIPLE-001"
+    ],
+    "report": "research/triple-ordinate-reduction.md",
+    "changes": "The prior ledger is an unchanged byte prefix and every pre-existing indexed block is identical. Only the listed ORD claim family is appended. No historical mathematical verdict, claim snapshot, audited manuscript or archive is changed. This metadata refresh does not extend either RH audit to the ordinate extension."
   }
 }
