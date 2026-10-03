@@ -1,0 +1,452 @@
+{
+  "analytic_proof_certificate": false,
+  "assumptions": [
+    "UNCONDITIONAL",
+    "SUPPORT(h<=1-kappa, 0<kappa<1)"
+  ],
+  "boundary_assembly": {
+    "moment_identity": "integral_0^infinity s^k exp(-2s) ds=k!/2^(k+1)",
+    "moments": {
+      "0": "1/2",
+      "1": "1/4",
+      "2": "1/4"
+    },
+    "quadrant_origin": "1/4",
+    "quadrant_ray": "3/4",
+    "rays": [
+      {
+        "direction": [
+          -1,
+          0
+        ],
+        "incidence": 2,
+        "native_density_coefficient": "3/2",
+        "normalized_density_coefficient": "1"
+      },
+      {
+        "direction": [
+          -1,
+          1
+        ],
+        "incidence": 2,
+        "native_density_coefficient": "3/2",
+        "normalized_density_coefficient": "1"
+      },
+      {
+        "direction": [
+          0,
+          -1
+        ],
+        "incidence": 2,
+        "native_density_coefficient": "3/2",
+        "normalized_density_coefficient": "1"
+      },
+      {
+        "direction": [
+          0,
+          1
+        ],
+        "incidence": 2,
+        "native_density_coefficient": "3/2",
+        "normalized_density_coefficient": "1"
+      },
+      {
+        "direction": [
+          1,
+          -1
+        ],
+        "incidence": 2,
+        "native_density_coefficient": "3/2",
+        "normalized_density_coefficient": "1"
+      },
+      {
+        "direction": [
+          1,
+          0
+        ],
+        "incidence": 2,
+        "native_density_coefficient": "3/2",
+        "normalized_density_coefficient": "1"
+      }
+    ],
+    "sector_count": 6,
+    "source": {
+      "claim_id": "TRIPLE-QUADRANT-LIMIT-001",
+      "file": "proofs/triple_explicit_formula.tex",
+      "label": "eq:triple-quadrant-limit"
+    }
+  },
+  "claim_id": "TRIPLE-SMOOTHED-CORRELATION-001",
+  "claim_status": "proved-draft",
+  "conventions": {
+    "arguments": [
+      "L_T*(gamma_i2-gamma_i1-i*(delta_i2+delta_i1))",
+      "L_T*(gamma_i3-gamma_i1-i*(delta_i3+delta_i1))"
+    ],
+    "asymptotic": "additive, including zero main terms; varying families must make both errors vanish",
+    "centers": [
+      "gamma_i2-gamma_i1-i*delta_i2",
+      "gamma_i3-gamma_i1-i*delta_i3",
+      "i*delta_i1"
+    ],
+    "differences": "d_mn=c_m-c_n; delta_i=beta_i-1/2",
+    "equalities": "equal indices, complex zeros and ordinates are distinct conditions",
+    "forward": "exp(-2*pi*i*(u*xi+v*eta))",
+    "inverse": "exp(+2*pi*i*(u*xi+v*eta))",
+    "limit_order": "Remove independent zero cutoffs at fixed parameters; then fix test, margin and smoothing before T tends to infinity.",
+    "line_measure": "dr, not arclength",
+    "pairing": "bilinear, no conjugation",
+    "profile": "J=pi*(24+d12^2+d13^2+d23^2)/((4+d12^2)*(4+d13^2)*(4+d23^2))",
+    "tuples": "all ordered zero occurrences, both ordinate signs, with multiplicity",
+    "weight": "omega(gamma_i1/T), anchor only"
+  },
+  "critical_parameter_specialization": {
+    "assembled_relative_to_1_over_T_LT": "b/q",
+    "limits": {
+      "assembled": "1",
+      "native": "3/2"
+    },
+    "native_relative_to_1_over_T_LT": "3*b/(2*q)",
+    "profile_at_zero_gaps_in_units_of_pi": "3/8",
+    "scope": "Kernel parameters delta=0 only; applying to every zero would require RH.",
+    "source": {
+      "claim_id": "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+      "file": "proofs/triple_explicit_formula.tex",
+      "label": "eq:triple-critical-normalization"
+    }
+  },
+  "definitions": {
+    "B": "T/(2*pi)",
+    "L": "log(2T+2)",
+    "L_T": "b/(2*pi)",
+    "R3": "det[[1,s(u),s(v)],[s(u),1,s(u-v)],[s(v),s(u-v),1]]",
+    "W_1": "integral |omega_prime|",
+    "W_inf": "sup|omega|",
+    "Wprime_inf": "sup|omega_prime|",
+    "b": "log B",
+    "decay": "B^(-kappa)",
+    "phi_C1": "sup|phi|+sup|partial_xi phi|+sup|partial_eta phi|",
+    "phi_L1": "integral |phi|",
+    "q": "log T",
+    "s(r)": "sin(pi*r)/(pi*r), s(0)=1"
+  },
+  "domain": {
+    "height": "T>=2*pi*e",
+    "internal_axes_and_origin_included": true,
+    "margin": "0<kappa<1",
+    "outer_boundary_included": false,
+    "smoothing": "omega real nonnegative smooth, compact support in (1,2), integral one",
+    "support": "max(|xi|,|eta|,|xi+eta|)<=1-kappa",
+    "test": "phi complex smooth compactly supported; F its entire positive-inverse transform"
+  },
+  "error_constant_convention": "Each inherited absolute bound is multiplied by 2/3 exactly. The final theorem absorbs this factor and the inherited effective unspecified constants into an unspecified absolute C; no numerical C is computed.",
+  "errors": [
+    {
+      "after_exact_scaling": [
+        {
+          "coefficient": "2/3",
+          "expression": "2/3 * b^(-1) * phi_C1",
+          "powers": {
+            "b": "-1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "2/3",
+          "expression": "2/3 * L^(3) * decay * phi_C1",
+          "powers": {
+            "L": "3",
+            "decay": "1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "2/3",
+          "expression": "2/3 * W_inf * b^(-1) * phi_C1",
+          "powers": {
+            "W_inf": "1",
+            "b": "-1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "2/3",
+          "expression": "2/3 * L^(3) * W_inf * decay * phi_C1",
+          "powers": {
+            "L": "3",
+            "W_inf": "1",
+            "decay": "1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "2/3",
+          "expression": "2/3 * W_1 * b^(-1) * phi_C1",
+          "powers": {
+            "W_1": "1",
+            "b": "-1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "2/3",
+          "expression": "2/3 * L^(3) * W_1 * decay * phi_C1",
+          "powers": {
+            "L": "3",
+            "W_1": "1",
+            "decay": "1",
+            "phi_C1": "1"
+          }
+        }
+      ],
+      "before_normalization": [
+        {
+          "coefficient": "1",
+          "expression": "b^(-1) * phi_C1",
+          "powers": {
+            "b": "-1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "L^(3) * decay * phi_C1",
+          "powers": {
+            "L": "3",
+            "decay": "1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "W_inf * b^(-1) * phi_C1",
+          "powers": {
+            "W_inf": "1",
+            "b": "-1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "L^(3) * W_inf * decay * phi_C1",
+          "powers": {
+            "L": "3",
+            "W_inf": "1",
+            "decay": "1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "W_1 * b^(-1) * phi_C1",
+          "powers": {
+            "W_1": "1",
+            "b": "-1",
+            "phi_C1": "1"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "L^(3) * W_1 * decay * phi_C1",
+          "powers": {
+            "L": "3",
+            "W_1": "1",
+            "decay": "1",
+            "phi_C1": "1"
+          }
+        }
+      ],
+      "formula": "phi_C1*(1+W_inf+W_1)*(b^(-1)+decay*L^3)",
+      "id": "E_signed",
+      "source": {
+        "claim_id": "TRIPLE-SMOOTHED-CORRELATION-001",
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "eq:triple-assembled-errors"
+      }
+    },
+    {
+      "after_exact_scaling": [
+        {
+          "coefficient": "2/3",
+          "expression": "2/3 * L^(3) * W_inf * decay * phi_L1",
+          "powers": {
+            "L": "3",
+            "W_inf": "1",
+            "decay": "1",
+            "phi_L1": "1"
+          }
+        },
+        {
+          "coefficient": "2/3",
+          "expression": "2/3 * L^(3) * Wprime_inf * decay * phi_L1",
+          "powers": {
+            "L": "3",
+            "Wprime_inf": "1",
+            "decay": "1",
+            "phi_L1": "1"
+          }
+        }
+      ],
+      "before_normalization": [
+        {
+          "coefficient": "1",
+          "expression": "L^(3) * W_inf * decay * phi_L1",
+          "powers": {
+            "L": "3",
+            "W_inf": "1",
+            "decay": "1",
+            "phi_L1": "1"
+          }
+        },
+        {
+          "coefficient": "1",
+          "expression": "L^(3) * Wprime_inf * decay * phi_L1",
+          "powers": {
+            "L": "3",
+            "Wprime_inf": "1",
+            "decay": "1",
+            "phi_L1": "1"
+          }
+        }
+      ],
+      "formula": "phi_L1*(W_inf+Wprime_inf)*decay*L^3",
+      "id": "E_kernel",
+      "source": {
+        "claim_id": "TRIPLE-SMOOTHED-CORRELATION-001",
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "eq:triple-assembled-errors"
+      }
+    }
+  ],
+  "main_functional": {
+    "formula": "phi(0,0)+integral |r|*(phi(r,0)+phi(0,r)+phi(r,-r)) dr",
+    "line_directions": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "source": {
+      "claim_id": "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "file": "proofs/triple_explicit_formula.tex",
+      "label": "eq:triple-main-term-comparison"
+    }
+  },
+  "normalization": {
+    "assembled_observable_coefficient": {
+      "coefficient": "16/3",
+      "expression": "16/3 * T^(-1) * q^(-1)",
+      "powers": {
+        "T": "-1",
+        "q": "-1"
+      }
+    },
+    "factor": "2/3",
+    "native_observable_coefficient": {
+      "coefficient": "8",
+      "expression": "8 * T^(-1) * q^(-1)",
+      "powers": {
+        "T": "-1",
+        "q": "-1"
+      }
+    },
+    "native_origin": "3/2",
+    "normalized_origin": "1",
+    "source": {
+      "claim_id": "TRIPLE-SMOOTHED-CORRELATION-001",
+      "file": "proofs/triple_explicit_formula.tex",
+      "label": "eq:triple-assembled-observable"
+    }
+  },
+  "schema_version": 1,
+  "sine_fourier": {
+    "basis": {
+      "cycle_overlap": "(1-max(|xi|,|eta|,|xi+eta|))_+",
+      "line_eta": "delta(eta)",
+      "line_sum": "delta(xi+eta)",
+      "line_xi": "delta(xi)",
+      "origin": "delta_(0,0)",
+      "planar_one": "constant planar density 1",
+      "triangle_eta": "(1-|eta|)_+",
+      "triangle_on_line_eta": "(1-|xi|)_+ delta(eta)",
+      "triangle_on_line_sum": "(1-|xi|)_+ delta(xi+eta)",
+      "triangle_on_line_xi": "(1-|eta|)_+ delta(xi)",
+      "triangle_sum": "(1-|xi+eta|)_+",
+      "triangle_xi": "(1-|xi|)_+"
+    },
+    "planar_cancellation": "1-tau(xi)-tau(eta)-tau(xi+eta)+2*(1-h)_+=0 for h<=1",
+    "scope": "Deterministic benchmark; cancellation at h=1 does not extend zeta support.",
+    "source": {
+      "claim_id": "TRIPLE-SINE-MEASURE-001",
+      "file": "proofs/triple_explicit_formula.tex",
+      "label": "eq:triple-sine-fourier"
+    },
+    "sum": {
+      "cycle_overlap": 2,
+      "line_eta": 1,
+      "line_sum": 1,
+      "line_xi": 1,
+      "origin": 1,
+      "planar_one": 1,
+      "triangle_eta": -1,
+      "triangle_on_line_eta": -1,
+      "triangle_on_line_sum": -1,
+      "triangle_on_line_xi": -1,
+      "triangle_sum": -1,
+      "triangle_xi": -1
+    }
+  },
+  "sine_partitions": [
+    {
+      "fourier_basis": {
+        "planar_one": 1
+      },
+      "id": "all_equal",
+      "physical_pairing": "F(0,0)"
+    },
+    {
+      "fourier_basis": {
+        "line_eta": 1,
+        "triangle_eta": -1
+      },
+      "id": "12_equal",
+      "physical_pairing": "integral F(0,r)*(1-s(r)^2) dr"
+    },
+    {
+      "fourier_basis": {
+        "line_xi": 1,
+        "triangle_xi": -1
+      },
+      "id": "13_equal",
+      "physical_pairing": "integral F(r,0)*(1-s(r)^2) dr"
+    },
+    {
+      "fourier_basis": {
+        "line_sum": 1,
+        "triangle_sum": -1
+      },
+      "id": "23_equal",
+      "physical_pairing": "integral F(r,r)*(1-s(r)^2) dr"
+    },
+    {
+      "fourier_basis": {
+        "cycle_overlap": 2,
+        "origin": 1,
+        "triangle_on_line_eta": -1,
+        "triangle_on_line_sum": -1,
+        "triangle_on_line_xi": -1
+      },
+      "id": "all_distinct",
+      "physical_pairing": "integral F(u,v)*R3(u,v) du dv"
+    }
+  ],
+  "task": "verification_and_exposition"
+}

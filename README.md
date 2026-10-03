@@ -201,7 +201,12 @@ the entire triple manuscript and records no contamination found in its
 reviewed scope; claims retain proved-draft status. The
 [triple reproduction harness](research/triple-reproduction.md) regenerates
 the exact normalization and error records, runs both suites, and builds
-the manuscript. A final baseline archive and closure review remain.
+the manuscript. Baseline revision
+`e3f5173f9703e6de263bb807d85ea7018c7a1ee0` passed full clean-checkout
+reproduction; its [complete bundle](artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/manifest.json)
+is preserved in the repository. The [archive record](research/triple-reproduction.md#archived-baseline)
+documents 70 pair tests, 109 triple tests and a warning-free 34-page PDF.
+The Work Package B closure review remains.
 
 Run the additional Work Package B regression checks with:
 

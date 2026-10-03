@@ -1,0 +1,628 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+entering extended mode
+(./triple_explicit_formula.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+No file triple_explicit_formula.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd)
+
+LaTeX Warning: Reference `tab:diagonals' on page 2 undefined on input line 109.
+
+
+
+LaTeX Warning: Reference `tab:words' on page 2 undefined on input line 120.
+
+[2]
+
+LaTeX Warning: Reference `eq:triple-prime' on page 3 undefined on input line 13
+3.
+
+
+LaTeX Warning: Reference `eq:triple-majorant' on page 3 undefined on input line
+ 153.
+
+
+LaTeX Warning: Reference `eq:triple-zero' on page 3 undefined on input line 165
+.
+
+
+LaTeX Warning: Reference `tab:diagonals' on page 3 undefined on input line 167.
+
+
+
+LaTeX Warning: Reference `eq:triple-EF' on page 3 undefined on input line 170.
+
+
+LaTeX Warning: Reference `eq:triple-27' on page 3 undefined on input line 173.
+
+
+LaTeX Warning: Reference `tab:words' on page 3 undefined on input line 174.
+
+
+LaTeX Warning: Reference `eq:triple-H' on page 3 undefined on input line 177.
+
+
+LaTeX Warning: Reference `eq:triple-prime' on page 3 undefined on input line 18
+6.
+
+
+LaTeX Warning: Reference `eq:triple-resonance' on page 3 undefined on input lin
+e 192.
+
+
+LaTeX Warning: Reference `tab:words' on page 3 undefined on input line 194.
+
+[3]
+
+LaTeX Warning: Reference `tab:words' on page 4 undefined on input line 239.
+
+
+LaTeX Warning: Reference `eq:triple-27' on page 4 undefined on input line 246.
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 2 on input line 279.
+
+[4]
+
+LaTeX Warning: Reference `eq:triple-H-bounds' on page 5 undefined on input line
+ 318.
+
+
+LaTeX Warning: Reference `lem:triple-master' on page 5 undefined on input line 
+328.
+
+[5]
+
+LaTeX Warning: Reference `lem:triple-master' on page 6 undefined on input line 
+342.
+
+[6]
+
+LaTeX Warning: Reference `tab:uniform-eight' on page 7 undefined on input line 
+414.
+
+
+LaTeX Warning: Reference `eq:triple-H-bounds' on page 7 undefined on input line
+ 514.
+
+[7]
+
+LaTeX Warning: Reference `eq:uniform-ibp' on page 8 undefined on input line 552
+.
+
+
+LaTeX Warning: Reference `lem:triple-master' on page 8 undefined on input line 
+571.
+
+
+LaTeX Warning: Reference `eq:uniform-component-bound' on page 8 undefined on in
+put line 577.
+
+
+LaTeX Warning: Reference `eq:uniform-word-bound' on page 8 undefined on input l
+ine 578.
+
+
+LaTeX Warning: Reference `eq:triple-27' on page 8 undefined on input line 584.
+
+
+LaTeX Warning: Reference `eq:uniform-budget' on page 8 undefined on input line 
+586.
+
+
+LaTeX Warning: Reference `lem:triple-uniform' on page 8 undefined on input line
+ 591.
+
+[8]
+
+LaTeX Warning: Reference `lem:triple-master' on page 9 undefined on input line 
+599.
+
+
+LaTeX Warning: Reference `lem:triple-uniform' on page 9 undefined on input line
+ 632.
+
+[9]
+
+LaTeX Warning: Reference `eq:triple-log-gap' on page 10 undefined on input line
+ 678.
+
+
+LaTeX Warning: Reference `lem:triple-uniform' on page 10 undefined on input lin
+e 688.
+
+
+LaTeX Warning: Reference `lem:triple-uniform' on page 10 undefined on input lin
+e 711.
+
+[10]
+
+LaTeX Warning: Reference `lem:triple-log-gap' on page 11 undefined on input lin
+e 750.
+
+
+LaTeX Warning: Reference `lem:triple-log-gap' on page 11 undefined on input lin
+e 766.
+
+
+LaTeX Warning: Reference `lem:triple-master' on page 11 undefined on input line
+ 776.
+
+
+LaTeX Warning: Reference `eq:uniform-ibp' on page 11 undefined on input line 78
+4.
+
+
+LaTeX Warning: Reference `eq:triple-coefficient-energies' on page 11 undefined 
+on input line 785.
+
+
+LaTeX Warning: Reference `eq:triple-mixed-sharp' on page 11 undefined on input 
+line 793.
+
+[11]
+
+LaTeX Warning: Reference `eq:uniform-retained' on page 12 undefined on input li
+ne 813.
+
+
+LaTeX Warning: Reference `eq:triple-interior-range' on page 12 undefined on inp
+ut line 821.
+
+
+LaTeX Warning: Reference `lem:triple-uniform' on page 12 undefined on input lin
+e 828.
+
+
+LaTeX Warning: Reference `eq:triple-interior-range' on page 12 undefined on inp
+ut line 853.
+
+
+LaTeX Warning: Reference `eq:triple-cubic-sharp' on page 12 undefined on input 
+line 879.
+
+
+LaTeX Warning: Reference `eq:triple-interior-H' on page 12 undefined on input l
+ine 881.
+
+
+LaTeX Warning: Reference `eq:triple-additive' on page 12 undefined on input lin
+e 882.
+
+
+LaTeX Warning: Reference `eq:uniform-budget' on page 12 undefined on input line
+ 883.
+
+
+LaTeX Warning: Reference `eq:triple-interior-range' on page 12 undefined on inp
+ut line 888.
+
+
+LaTeX Warning: Reference `eq:triple-additive' on page 12 undefined on input lin
+e 892.
+
+
+LaTeX Warning: Reference `lem:triple-master' on page 12 undefined on input line
+ 900.
+
+[12]
+
+LaTeX Warning: Reference `eq:retained-D' on page 13 undefined on input line 939
+.
+
+
+LaTeX Warning: Reference `eq:retained-J' on page 13 undefined on input line 954
+.
+
+[13]
+
+LaTeX Warning: Reference `eq:retained-D' on page 14 undefined on input line 100
+1.
+
+
+LaTeX Warning: Reference `eq:triple-weight-product' on page 14 undefined on inp
+ut line 1008.
+
+
+LaTeX Warning: Reference `eq:retained-resonance' on page 14 undefined on input 
+line 1021.
+
+
+LaTeX Warning: Reference `eq:retained-D' on page 14 undefined on input line 102
+4.
+
+
+LaTeX Warning: Reference `eq:retained-J' on page 14 undefined on input line 102
+4.
+
+
+LaTeX Warning: Reference `eq:uniform-retained' on page 14 undefined on input li
+ne 1025.
+
+
+LaTeX Warning: Reference `eq:retained-evaluation' on page 14 undefined on input
+ line 1026.
+
+
+LaTeX Warning: Reference `lem:triple-retained' on page 14 undefined on input li
+ne 1044.
+
+
+LaTeX Warning: Reference `cor:triple-smoothed-additive' on page 14 undefined on
+ input line 1049.
+
+[14]
+
+LaTeX Warning: Reference `eq:triple-entire-test' on page 15 undefined on input 
+line 1107.
+
+
+LaTeX Warning: Reference `lem:triple-master' on page 15 undefined on input line
+ 1113.
+
+[15]
+
+LaTeX Warning: Reference `cor:triple-interior-vanishing' on page 16 undefined o
+n input line 1152.
+
+
+LaTeX Warning: Reference `eq:triple-test-bound' on page 16 undefined on input l
+ine 1155.
+
+
+LaTeX Warning: Reference `eq:triple-test-identity' on page 16 undefined on inpu
+t line 1177.
+
+[16]
+
+LaTeX Warning: Reference `lem:triple-retained' on page 17 undefined on input li
+ne 1222.
+
+
+LaTeX Warning: Reference `lem:triple-uniform' on page 17 undefined on input lin
+e 1243.
+
+
+LaTeX Warning: Reference `lem:triple-retained' on page 17 undefined on input li
+ne 1244.
+
+
+LaTeX Warning: Reference `lem:triple-offdiag' on page 17 undefined on input lin
+e 1245.
+
+[17]
+
+LaTeX Warning: Reference `eq:triple-boundary-integrated-error' on page 18 undef
+ined on input line 1340.
+
+
+LaTeX Warning: Reference `eq:triple-origin-profile' on page 18 undefined on inp
+ut line 1348.
+
+
+LaTeX Warning: Reference `eq:triple-axis-profile' on page 18 undefined on input
+ line 1371.
+
+[18]
+
+LaTeX Warning: Reference `eq:triple-test-arguments' on page 19 undefined on inp
+ut line 1400.
+
+
+LaTeX Warning: Reference `lem:triple-boundary-estimates' on page 19 undefined o
+n input line 1410.
+
+
+LaTeX Warning: Reference `eq:triple-axis-substitution' on page 19 undefined on 
+input line 1432.
+
+
+LaTeX Warning: Reference `eq:triple-boundary-moments' on page 19 undefined on i
+nput line 1444.
+
+
+LaTeX Warning: Reference `eq:triple-quadrant-limit' on page 19 undefined on inp
+ut line 1449.
+
+[19]
+
+LaTeX Warning: Reference `thm:triple-test-function' on page 20 undefined on inp
+ut line 1471.
+
+
+LaTeX Warning: Reference `eq:triple-quadrant-zero-identity' on page 20 undefine
+d on input line 1472.
+
+
+LaTeX Warning: Reference `eq:triple-quadrant-limit' on page 20 undefined on inp
+ut line 1497.
+
+
+LaTeX Warning: Reference `eq:triple-S' on page 20 undefined on input line 1509.
+
+
+[20]
+
+LaTeX Warning: Reference `eq:triple-test-arguments' on page 21 undefined on inp
+ut line 1547.
+
+
+LaTeX Warning: Reference `eq:triple-reciprocal-reflection' on page 21 undefined
+ on input line 1563.
+
+
+LaTeX Warning: Reference `eq:triple-signed-symmetries' on page 21 undefined on 
+input line 1573.
+
+[21]
+
+LaTeX Warning: Reference `eq:triple-reciprocal-reflection' on page 22 undefined
+ on input line 1607.
+
+
+LaTeX Warning: Reference `eq:triple-signed-majorant' on page 22 undefined on in
+put line 1623.
+
+
+LaTeX Warning: Reference `lem:triple-signed-sectors' on page 22 undefined on in
+put line 1674.
+
+
+LaTeX Warning: Reference `eq:triple-signed-zero-identity' on page 22 undefined 
+on input line 1675.
+
+[22]
+
+LaTeX Warning: Reference `thm:triple-quadrant-limit' on page 23 undefined on in
+put line 1694.
+
+
+LaTeX Warning: Reference `eq:triple-signed-limit-error' on page 23 undefined on
+ input line 1698.
+
+
+LaTeX Warning: Reference `eq:triple-signed-limit-functional' on page 23 undefin
+ed on input line 1710.
+
+
+LaTeX Warning: Reference `eq:triple-signed-majorant' on page 23 undefined on in
+put line 1718.
+
+[23]
+
+LaTeX Warning: Reference `eq:triple-profile-residue-sum' on page 24 undefined o
+n input line 1807.
+
+[24]
+
+LaTeX Warning: Reference `eq:triple-kernel-profile-rational' on page 25 undefin
+ed on input line 1828.
+
+
+LaTeX Warning: Reference `thm:triple-signed-test-function' on page 25 undefined
+ on input line 1872.
+
+
+LaTeX Warning: Reference `eq:triple-signed-limit-functional' on page 25 undefin
+ed on input line 1889.
+
+
+LaTeX Warning: Reference `eq:triple-signed-limit-error' on page 25 undefined on
+ input line 1891.
+
+
+LaTeX Warning: Reference `eq:triple-profile-transfer-error' on page 25 undefine
+d on input line 1892.
+
+
+LaTeX Warning: Reference `eq:triple-kernel-profile-integral' on page 25 undefin
+ed on input line 1896.
+
+[25]
+
+LaTeX Warning: Reference `eq:triple-kernel-point-error' on page 26 undefined on
+ input line 1913.
+
+
+LaTeX Warning: Reference `eq:triple-kernel-sum-majorant' on page 26 undefined o
+n input line 1944.
+
+
+LaTeX Warning: Reference `eq:triple-kernel-sum-error' on page 26 undefined on i
+nput line 1981.
+
+[26]
+
+LaTeX Warning: Reference `eq:triple-kernel-sum-error' on page 27 undefined on i
+nput line 1986.
+
+
+LaTeX Warning: Reference `eq:triple-signed-majorant' on page 27 undefined on in
+put line 1991.
+
+
+LaTeX Warning: Reference `eq:triple-profile-transfer-error' on page 27 undefine
+d on input line 1996.
+
+
+LaTeX Warning: Reference `eq:triple-micro-horizontal' on page 27 undefined on i
+nput line 2040.
+
+
+LaTeX Warning: Reference `eq:triple-kernel-profile-rational' on page 27 undefin
+ed on input line 2052.
+
+
+LaTeX Warning: Reference `eq:triple-horizontal-profile' on page 27 undefined on
+ input line 2053.
+
+
+LaTeX Warning: Reference `eq:triple-micro-horizontal' on page 27 undefined on i
+nput line 2056.
+
+
+LaTeX Warning: Reference `eq:triple-critical-profile' on page 27 undefined on i
+nput line 2063.
+
+
+LaTeX Warning: Reference `eq:triple-critical-micro' on page 27 undefined on inp
+ut line 2071.
+
+
+LaTeX Warning: Reference `eq:triple-kernel-point-error' on page 27 undefined on
+ input line 2073.
+
+[27]
+
+LaTeX Warning: Reference `eq:triple-horizontal-profile' on page 28 undefined on
+ input line 2078.
+
+[28] [29]
+
+LaTeX Warning: Reference `eq:triple-sine-fourier' on page 30 undefined on input
+ line 2221.
+
+
+LaTeX Warning: Reference `eq:triple-sine-functional' on page 30 undefined on in
+put line 2233.
+
+
+LaTeX Warning: Reference `eq:triple-sine-fourier' on page 30 undefined on input
+ line 2277.
+
+
+LaTeX Warning: Reference `eq:triple-signed-limit-functional' on page 30 undefin
+ed on input line 2281.
+
+
+LaTeX Warning: Reference `thm:triple-signed-test-function' on page 30 undefined
+ on input line 2282.
+
+
+LaTeX Warning: Reference `lem:triple-kernel-localization' on page 30 undefined 
+on input line 2283.
+
+
+LaTeX Warning: Reference `eq:triple-sine-comparison-errors' on page 30 undefine
+d on input line 2284.
+
+[30]
+
+LaTeX Warning: Reference `eq:triple-critical-normalization' on page 31 undefine
+d on input line 2299.
+
+[31]
+
+LaTeX Warning: Reference `lem:triple-kernel-profile' on page 32 undefined on in
+put line 2424.
+
+
+LaTeX Warning: Reference `lem:triple-kernel-localization' on page 32 undefined 
+on input line 2433.
+
+
+LaTeX Warning: Reference `lem:triple-main-term-comparison' on page 32 undefined
+ on input line 2443.
+
+
+LaTeX Warning: Reference `eq:triple-assembled-theorem' on page 32 undefined on 
+input line 2444.
+
+
+LaTeX Warning: Reference `lem:triple-sine-measure' on page 32 undefined on inpu
+t line 2445.
+
+
+LaTeX Warning: Reference `eq:triple-assembled-main' on page 32 undefined on inp
+ut line 2446.
+
+[32]
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+[33] [34] (./triple_explicit_formula.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `triple_explicit_formula.out' has changed.
+
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ ) </tmp/texfonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on triple_explicit_formula.pdf (34 pages, 442098 bytes).
+Transcript written on triple_explicit_formula.log.

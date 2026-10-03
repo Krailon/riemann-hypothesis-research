@@ -93,10 +93,61 @@ inputs, not an analytic proof certificate, independent mathematical
 verification, replay of external computational proofs, or a theorem-status
 upgrade. Broader environment provisioning and CI remain deferred.
 The existing hash-bound audit documents retain their historical scope.
-A final Work Package B baseline selection, durable artifact archive and
-closure review are separate from implementing and exercising this harness.
+The selected Work Package B baseline and its durable artifact archive are
+recorded below. The Work Package B closure review remains a separate step.
 
-## Validation evidence
+## Archived baseline
+
+Selected baseline: **`e3f5173f9703e6de263bb807d85ea7018c7a1ee0`**, the committed
+triple reproduction harness revision. Root claim:
+**TRIPLE-SMOOTHED-CORRELATION-001**, status **proved-draft**.
+
+A fresh local clone was explicitly checked out at this revision and ran
+full reproduction on **2026-10-03**:
+
+```bash
+./scripts/reproduce_triple.sh --require-clean --output-dir /tmp/work-package-b-baseline-g05jzkdw/bundle
+```
+
+The command was invoked by its absolute path from outside the checkout.
+Both initial and final Git states were clean. Every one of the **60
+manifest-listed source inputs** was checked against both the checkout
+bytes and the corresponding Git blob at the selected revision.
+
+| Evidence | Recorded result |
+| --- | --- |
+| [Manifest](../artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/manifest.json) | `mode: full`, `status: pass`, `require_clean: true`; all stages passed |
+| Source state | Selected revision above; `dirty: false` and empty Git status at start and finish |
+| [Pair test log](../artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/logs/pair-checks.log) | 70 passed; no failures, errors or skips |
+| [Triple test log](../artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/logs/triple-checks.log) | 109 passed; no failures, errors or skips |
+| Graph and audits | Existing dependency graph and both RH-audit records validated; no audit hashes updated |
+| [Manuscript PDF](../artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/triple_explicit_formula.pdf) | 34 pages; three passes with shell escape disabled; no warnings, unresolved references or rerun requests |
+| [Normalization JSON](../artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/triple-normalization.json) / [readable formulas](../artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/triple-normalization.md) | Regenerated exact main-term and named-error accounting |
+| Archive integrity | All 19 manifest-listed output hashes verified; all 20 files, including the manifest, copied byte for byte |
+| Manifest SHA256 | `7039fe0191f73fbce3e0353e80647569cdc6cc27270dfa534938dcaa117b253f` |
+
+The complete bundle is preserved under
+`artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/`,
+outside the ignored development-output directory. It includes all command
+logs and TeX intermediates. The manifest retains original execution paths;
+relative output paths resolve within the archived bundle. Existing different
+archive contents are never overwritten.
+
+This is evidence for the selected committed baseline, superseding the
+historical temporary-snapshot run below as the canonical reproduction record.
+The archive and these README/report updates postdate the tested revision.
+Every other manifest-listed input, including the proof, scripts, theorem
+ledger and audit records, is unchanged. These later documentation updates
+are not represented as part of the clean run.
+
+Baseline selection and archival are complete. This does not close Work
+Package B or promote any mathematical claim beyond `proved-draft`.
+The remaining closeout step is the Work Package B closure review.
+Future changes to the proof or audited inputs require appropriate review
+and a new reproduction record; this archive remains evidence for the
+specific revision named above.
+
+## Historical harness validation
 
 Validation completed on **2026-10-03**. The full development run
 passed, and the checks-only run reported `partial` with a skipped PDF.
