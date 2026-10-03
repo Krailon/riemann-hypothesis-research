@@ -108,6 +108,10 @@ flowchart TD
     T --> M[TRIPLE-MAIN-TERM-COMPARISON-001]
 ```
 
+The [complete recorded dependency graph](triple-dependency-graph.md) now
+traces all 31 claims, two provenance nodes and 58 edges, including
+assumptions, convergence obligations and inherited pair-audit coverage.
+
 The assembly adds no analytic estimate or external literature premise.
 It inherits the existing full-zero reflection and conjugation conventions
 through exact multiplication by `2/3`. No delta is set to zero.
@@ -124,11 +128,12 @@ through exact multiplication by `2/3`. No delta is set to zero.
 | Three-level main term matching the benchmark | This theorem gives the all-ordered sine main term for the explicit weighted full-zero observable, with additive `o(1)` error |
 | Symmetric Schwartz test target | The class allows arbitrary complex tests, hence includes admissible symmetric tests |
 | Conventional real-ordinate-only interpretation | Additional work: the current observable has complex test arguments and a horizontal-dependent kernel |
-| Consolidated dependency and RH audit | Local ledger dependencies and assumption separation exist; a Work Package B-wide dependency inventory and line-by-line RH-contamination audit remain to be assembled |
+| Consolidated dependency and RH audit | The assembled theorem's complete recorded dependency inventory is available in the [graph](triple-dependency-graph.md); the Work Package B line-by-line RH-contamination audit remains to be assembled |
 | Clean-checkout reproduction | Exact triple checks exist; a dedicated Work Package B reproduction harness, including the proof build and recorded outputs, remains to be assembled |
 
 The weighted form of the three-level target now has a standalone theorem.
-Work Package B remains open for consolidation, audit and reproduction.
+The root dependency inventory is consolidated. Work Package B remains
+open for the line-by-line audit and clean-checkout reproduction.
 Kernel removal, a weighted zeta cumulant identity, and horizontal
 consequences are separate extensions; none is a conclusion of this theorem.
 

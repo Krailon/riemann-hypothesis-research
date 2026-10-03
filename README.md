@@ -192,8 +192,11 @@ Its explicitly weighted full-zero observable has normalization
 with both named errors retained. The statement includes every hypothesis,
 complex argument, multiplicity convention and limit order.
 Global constant-kernel replacement, an unweighted zeta correlation, and
-new horizontal consequences remain separate tasks. Work Package B-wide
-audit and reproduction work remains before closure.
+new horizontal consequences remain separate tasks. The
+[complete recorded dependency graph](research/triple-dependency-graph.md)
+traces 31 claims, two provenance nodes and 58 edges, with inherited
+Work Package A audit coverage identified. Work Package B-wide line-by-line
+audit and clean-checkout reproduction work remains before closure.
 
 Run the additional Work Package B regression checks with:
 
