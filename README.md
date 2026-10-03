@@ -198,8 +198,10 @@ traces 31 claims, two provenance nodes and 58 edges, with inherited
 Work Package A audit coverage identified. The
 [Work Package B RH-contamination audit](research/triple-rh-audit.md) reviews
 the entire triple manuscript and records no contamination found in its
-reviewed scope; claims retain proved-draft status. Clean-checkout
-reproduction work remains before closure.
+reviewed scope; claims retain proved-draft status. The
+[triple reproduction harness](research/triple-reproduction.md) regenerates
+the exact normalization and error records, runs both suites, and builds
+the manuscript. A final baseline archive and closure review remain.
 
 Run the additional Work Package B regression checks with:
 
@@ -210,3 +212,31 @@ python3 -B -m unittest discover -s scripts -p 'check_triple_*.py' -v
 These exact finite checks supplement the 70-test pair suite; they are not
 an analytic proof certificate. The pair reproduction harness retains its
 Work Package A scope.
+
+## Reproduce the weighted triple theorem
+
+Use installed Python **3.12**, Git and Bash. Full runs also need `pdflatex`
+and the manuscript's `geometry`, `amsmath`, `amssymb`, `amsthm`, `booktabs`,
+`longtable`, `hyperref` packages and their dependencies. BibTeX is not used.
+From a fresh checkout:
+
+```bash
+./scripts/reproduce_triple.sh --require-clean
+```
+
+For development, omit `--require-clean`; the manifest records the dirty
+state. Use `--checks-only` for explicit partial reproduction without TeX,
+and `--output-dir /tmp/triple-reproduction` for a new or empty destination.
+The default is a unique ignored directory under `artifacts/reproduction/`.
+Relative destinations are relative to the caller; the command also works
+when invoked by path from outside the repository.
+
+Each run writes `triple-normalization.json`, its Markdown rendering,
+`manifest.json`, and logs. Full runs additionally build
+`triple_explicit_formula.pdf` in three isolated passes with shell escape
+disabled. Both the **70-test pair suite** and **109-test triple suite** run,
+including graph and audit validation. The harness makes no downloads,
+installs no dependencies, and never updates audit hashes.
+
+See the [reproduction report](research/triple-reproduction.md) for artifact
+scope, failure behavior, clean-clone evidence and reproducibility limits.
