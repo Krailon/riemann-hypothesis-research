@@ -15,6 +15,7 @@ import unittest
 
 from check_pair_lemma3 import G, occurrences
 from check_pair_rh_audit import field, id_list, indexed_blocks
+from check_triple_kernel import centers, profile
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -157,6 +158,64 @@ class TripleMainTermChecks(unittest.TestCase):
             self.assertEqual(8/(T*q)*(3*p/16), finite/(T*LT))
             self.assertNotEqual(finite, Q(3, 2))
             self.assertEqual(Q(3, 2)-finite, 3*c/(2*q))
+
+    def test_assembled_observable_normalization_and_additive_errors(self):
+        # Synthetic finite algebra only: rational scale, polynomial test,
+        # anchor weights, and J/pi. These fixtures assert no asymptotic.
+        zeros = occurrences()
+        selected = (0, 1, 2, 5)
+        LT = Q(7, 3)
+        total = G()
+        for anchor, j, k in product(selected, repeat=3):
+            dl, gl = zeros[anchor]
+            dj, gj = zeros[j]
+            dk, gk = zeros[k]
+            a, b = gj-gl, gk-gl
+            z21, z31 = LT*G(a, -dj-dl), LT*G(b, -dk-dl)
+            test_value = 1+z21+2*z31+z21*z31
+            total += Q(anchor+1, 7)*profile(centers(a, b, (dj, dk, dl)))*test_value
+        self.assertNotEqual(total, G())
+        for T, q in ((Q(20), Q(3)), (Q(100), Q(7))):
+            old = 8/(T*q)*total
+            assembled = 16/(3*T*q)*total
+            self.assertEqual(assembled, Q(2, 3)*old)
+            for main in (G(), G(1, 2), G(Q(-3, 7), Q(2, 5))):
+                signed_error, kernel_error = G(Q(1, 9)), G(0, Q(-2, 11))
+                original = Q(3, 2)*main+signed_error+kernel_error
+                self.assertEqual(Q(2, 3)*original-main,
+                                 Q(2, 3)*(signed_error+kernel_error))
+            # Critical profile 3*pi/8 gives pi/(Tq); with p=2*pi,
+            # this is (b/q)/(T L_T), retaining the finite-height ratio.
+            p, b = Q(6), Q(2)
+            self.assertEqual(16/(3*T*q)*(3*p/16), (b/q)/(T*(b/p)))
+
+    def test_assembled_theorem_metadata_and_links(self):
+        blocks = indexed_blocks((ROOT/'research/theorem-ledger.yaml').read_text())
+        block = blocks['TRIPLE-SMOOTHED-CORRELATION-001']
+        dependencies = {'TRIPLE-KERNEL-PROFILE-001', 'TRIPLE-KERNEL-LOCALIZATION-001',
+                        'TRIPLE-SINE-MEASURE-001', 'TRIPLE-MAIN-TERM-COMPARISON-001'}
+        self.assertEqual(set(id_list(field(block, 'dependencies'))), dependencies)
+        self.assertEqual(field(block, 'kind'), 'theorem')
+        self.assertEqual(field(block, 'status'), 'proved-draft')
+        self.assertEqual(field(block, 'computation_used_in_proof'), 'false')
+        self.assertEqual(field(block, 'all_limit_interchanges_justified'), 'true')
+        self.assertEqual(field(block, 'constants_effective'), 'true')
+        self.assertEqual(field(block, 'assumptions'),
+                         '[UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]')
+        label = 'thm:triple-smoothed-correlation'
+        self.assertIn('label: '+label, block)
+        tex = (ROOT/'proofs/triple_explicit_formula.tex').read_text()
+        self.assertEqual(tex.count(r'\label{'+label+'}'), 1)
+        for equation in ('observable', 'main', 'errors', 'theorem'):
+            self.assertIn(r'\label{eq:triple-assembled-'+equation+'}', tex)
+        md_path = ROOT/'research/triple-theorem.md'
+        md = md_path.read_text()
+        self.assertIn(label, md)
+        for dependency in dependencies:
+            self.assertIn(dependency, md)
+        for target in re.findall(r'\[[^\]]*\]\(([^)]+)\)', md):
+            self.assertTrue((md_path.parent/target).is_file(), target)
+        self.assertIn('research/triple-theorem.md', (ROOT/'README.md').read_text())
 
     def test_claims_provenance_labels_and_links(self):
         blocks = indexed_blocks((ROOT/'research/theorem-ledger.yaml').read_text())

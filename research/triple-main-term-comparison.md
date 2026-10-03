@@ -156,3 +156,7 @@ warnings, unresolved references or overfull/underfull boxes.
 python3 -B -m unittest discover -s scripts -p 'check_triple_*.py'
 python3 -B -m unittest discover -s scripts -p 'check_pair_*.py'
 ```
+
+The [assembled theorem](triple-theorem.md) now collects this comparison
+and the explicit profile in unit benchmark normalization, with every
+hypothesis and both errors stated together.

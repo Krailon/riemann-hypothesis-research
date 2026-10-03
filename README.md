@@ -185,8 +185,15 @@ the all-ordered sine-kernel benchmark. The
 [comparison proof and partition table](research/triple-main-term-comparison.md)
 include the origin, partial diagonals and ordinary-cumulant cancellation,
 with the existing signed-test and localization errors retained separately.
+`TRIPLE-SMOOTHED-CORRELATION-001`, **proved-draft**, assembles these results
+into a [standalone unconditional smoothed three-level theorem](research/triple-theorem.md).
+Its explicitly weighted full-zero observable has normalization
+`16/(3T log T)` and converges additively to the all-ordered sine benchmark,
+with both named errors retained. The statement includes every hypothesis,
+complex argument, multiplicity convention and limit order.
 Global constant-kernel replacement, an unweighted zeta correlation, and
-new horizontal consequences remain separate tasks.
+new horizontal consequences remain separate tasks. Work Package B-wide
+audit and reproduction work remains before closure.
 
 Run the additional Work Package B regression checks with:
 

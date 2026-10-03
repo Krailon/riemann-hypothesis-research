@@ -1952,3 +1952,67 @@ claims:
       verification_script: scripts/check_triple_main_term.py
       independent_verification: pending
       pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-SMOOTHED-CORRELATION-001
+    title: Unconditional smoothed weighted three-level correlation in unit sine-benchmark normalization
+    kind: theorem
+    statement: |
+      Let I index all nontrivial zeta-zero occurrences, with multiplicity
+      and both ordinate signs, rho_j=1/2+delta_j+i gamma_j. Let omega be
+      real, nonnegative, smooth and compactly supported in (1,2), with
+      integral one and zero extension to R. Fix 0<kappa<1 and complex
+      phi in C_c^infinity(R^2), supported in h<=1-kappa, where
+      h(xi,eta)=max(|xi|,|eta|,|xi+eta|). Let F(z1,z2)=integral
+      phi(xi,eta)exp(2pi i(xi z1+eta z2))d xi d eta, so its real-plane
+      restriction is Schwartz and Fourier(F)=phi in the negative-forward
+      convention. For T>=2pi e set B=T/(2pi),b=log B,q=log T,
+      L_T=b/(2pi),L=log(2T+2). For each tuple put a2=gamma_i2-gamma_i1,
+      a3=gamma_i3-gamma_i1,z21=L_T(a2-i(delta_i2+delta_i1)),
+      z31=L_T(a3-i(delta_i3+delta_i1)). For real gaps and |epsilon_j|<=1/2,
+      define J(a2,a3;epsilon2,epsilon3,epsilon1) using
+      c1=a2-i epsilon2,c2=a3-i epsilon3,c3=i epsilon1,d_mn=c_m-c_n by
+      J=pi(24+d12^2+d13^2+d23^2)/((4+d12^2)(4+d13^2)(4+d23^2)).
+      The sum R^J_3,T[F;omega]=(16/(3Tq))sum_{i1,i2,i3 in I}
+      omega(gamma_i1/T)J(a2,a3;delta_i2,delta_i3,delta_i1)F(z21,z31)
+      is absolutely convergent and includes every ordered index pattern.
+      Only the anchor is height localized. Put s(r)=sin(pi r)/(pi r),
+      s(0)=1,R2(r)=1-s(r)^2 and
+      R3(u,v)=det[[1,s(u),s(v)],[s(u),1,s(u-v)],[s(v),s(u-v),1]].
+      Then S3[F]=integral F R3 du dv+integral R2(r)
+      (F(0,r)+F(r,0)+F(r,r))dr+F(0,0) is absolutely convergent, with
+      coordinate line measure dr and bilinear pairings. Set W_inf=||omega||_inf,
+      W_1=||omega'||_1,Wprime_inf=||omega'||_inf and
+      ||phi||_C1=||phi||_inf+||partial_xi phi||_inf+||partial_eta phi||_inf.
+      Define E_signed=||phi||_C1(1+W_inf+W_1)(b^(-1)+B^(-kappa)L^3)
+      and E_kernel=||phi||_1(W_inf+Wprime_inf)B^(-kappa)L^3.
+      Uniformly |R^J_3,T[F;omega]-S3[F]|<=C(E_signed+E_kernel), with an
+      effective absolute C independent of T,kappa,phi,omega. Thus for fixed
+      test, margin and smoothing, R^J_3,T=S3[F]+o(1). For varying families
+      the difference tends to zero whenever both named bounds do.
+      Exactly R^J_3,T=(2/3)A_T^J[phi]. The result is additive even if
+      S3[F]=0. No reality or permutation symmetry of phi is required.
+      Full horizontal dependence, both ordinate signs and multiplicities
+      are retained; unequal indices may have equal zeros or ordinates.
+      No kernel removal, outer-support-boundary extension, unweighted
+      real-ordinate correlation or horizontal consequence is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [TRIPLE-KERNEL-PROFILE-001, TRIPLE-KERNEL-LOCALIZATION-001, TRIPLE-SINE-MEASURE-001, TRIPLE-MAIN-TERM-COMPARISON-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: thm:triple-smoothed-correlation
+      bookkeeping: research/triple-theorem.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T,test,smoothing, absolute convergence permits arbitrary independent zero-cutoff limits. Then fix test, support margin and smoothing before T tends to infinity; varying families must make both named errors vanish."
+    project_audit:
+      task_type: proof_synthesis
+      proof_method: "Repeat the complete definitions, apply the proved absolute-convergence and profile lemmas, identify R^J=(2/3)A_T^J exactly, and use the main-term comparison. No new analytic estimate."
+      endpoint_audit: "T>=2pi e; internal frequency axes and origin included, outer boundary excluded by positive kappa. Smooth anchor cutoff has no endpoint half weights; coincident centers and closed horizontal parameter endpoints are allowed."
+      horizontal_audit: "Anchor center has +i delta_i1, other centers have -i delta; test shifts contain sums of horizontal displacements. No critical-line substitution."
+      verification_script: scripts/check_triple_main_term.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "This Work Package B theorem is outside the existing Work Package A audit."

@@ -24,7 +24,9 @@ the one-sided positive-quadrant boundary limit, and a native weighted
 Schwartz correlation theorem on an open hexagon. An explicit rational
 kernel profile and a summable height-localization error preserve that
 theorem's main term, identified below as three halves of the all-ordered
-sine benchmark. Global constant-kernel replacement and horizontal
+sine benchmark. A self-contained theorem in the final section assembles
+these results in unit benchmark normalization. Global constant-kernel
+replacement and horizontal
 extraction remain separate Work Package B tasks.
 
 \section{Definitions and imported inputs}
@@ -1734,9 +1736,10 @@ with \(1/T\) already in \(K_T\) and no extra mean-spacing Jacobian.
 Both ordinate signs, full multiplicities, all five index patterns, and
 the imaginary sums of horizontal displacements remain present. The
 result supplies a Schwartz test-function theorem for the native weighted
-full-zero observable. Removing its kernel, identifying a GUE expression,
-or extracting a horizontal constraint requires additional analysis;
-no such conclusion or completion of Work Package B is asserted here.
+full-zero observable. The later comparison lemma identifies its sine
+benchmark, and the final theorem assembles the result. Kernel removal and
+horizontal extraction require additional analysis; completion of Work
+Package B is not asserted here.
 \section{An explicit full-zero kernel profile}
 
 Task: proof and bookkeeping. Assumptions: \texttt{UNCONDITIONAL}.
@@ -2303,5 +2306,165 @@ neither removes the kernel nor asserts an unweighted real-ordinate zeta
 correlation. Likewise the ordinary-cumulant cancellation proved above
 is a property of the benchmark; transferring it to a weighted zeta
 cumulant would require compatible lower-order weighted statistics.
+
+
+\section{An unconditional smoothed three-level theorem}
+
+Task: proof synthesis and exposition. The following self-contained
+statement collects the weighted correlation result in unit benchmark
+normalization. Its ledger status is \texttt{proved-draft}; its assumptions
+are \texttt{UNCONDITIONAL} and the stated Fourier-support restriction.
+
+\begin{theorem}[\texttt{TRIPLE-SMOOTHED-CORRELATION-001}]
+\label{thm:triple-smoothed-correlation}
+Let \(\mathcal I\) index all occurrences of nontrivial zeta zeros,
+with multiplicity and both signs of the ordinate, and write
+\(\rho_j=1/2+\delta_j+\ii\gamma_j\).
+Let \(\omega\in C_c^\infty((1,2))\) be real and nonnegative with
+\(\int\omega=1\), extended by zero to \(\mathbb R\).
+Fix \(0<\kappa<1\) and a complex-valued
+\(\phi\in C_c^\infty(\mathbb R^2)\) such that
+\[
+ \operatorname{supp}\phi\subset\{(\xi,\eta):h(\xi,\eta)\leq1-\kappa\},
+ \qquad h(\xi,\eta)=\max(|\xi|,|\eta|,|\xi+\eta|).
+\]
+Use the negative-forward \(2\pi\) Fourier convention and its entire
+positive-inverse extension
+\[
+ F(z_1,z_2)=\int_{\mathbb R^2}\phi(\xi,\eta)
+                  e^{2\pi\ii(\xi z_1+\eta z_2)}\dd\xi\dd\eta.
+\]
+Then \(F|_{\mathbb R^2}\) is Schwartz and \(\widehat F=\phi\).
+No reality or permutation symmetry of the test is required.
+
+For \(T\geq2\pi e\), put
+\[
+ B=T/(2\pi),\quad b=\log B,\quad q=\log T,\quad
+ L_T=b/(2\pi),\quad L=\log(2T+2).
+\]
+For a triple \((i_1,i_2,i_3)\), set
+\[
+ a_2=\gamma_{i_2}-\gamma_{i_1},\quad
+ a_3=\gamma_{i_3}-\gamma_{i_1},\qquad
+ z_{21}=L_T\{a_2-\ii(\delta_{i_2}+\delta_{i_1})\},\quad
+ z_{31}=L_T\{a_3-\ii(\delta_{i_3}+\delta_{i_1})\}.
+\]
+Define the profile \(\mathcal J(a_2,a_3;epsilon_2,epsilon_3,epsilon_1)\)
+for real gaps and \(|\epsilon_j|\leq1/2\) as follows:
+\begin{align*}
+ c_1&=a_2-\ii\epsilon_2,\quad c_2=a_3-\ii\epsilon_3,
+ \quad c_3=\ii\epsilon_1,\quad d_{mn}=c_m-c_n,\\
+ \mathcal J(a_2,a_3;\epsilon_2,\epsilon_3,\epsilon_1)
+ &=\pi\frac{24+d_{12}^2+d_{13}^2+d_{23}^2}
+ {(4+d_{12}^2)(4+d_{13}^2)(4+d_{23}^2)}.
+\end{align*}
+The \(c_m\) are integration centers, not scaled test arguments; the
+positive sign in \(c_3\) records the conjugated anchor. The rational
+formula is defined also at coincident centers and horizontal endpoints.
+
+The following sum is absolutely convergent:
+\begin{equation}\label{eq:triple-assembled-observable}
+ \begin{split}
+ \mathcal R^{\mathcal J}_{3,T}[F;\omega]
+ :=\frac{16}{3Tq}\sum_{i_1,i_2,i_3\in\mathcal I}
+ &\omega(\gamma_{i_1}/T)
+ \mathcal J(a_2,a_3;\delta_{i_2},\delta_{i_3},\delta_{i_1})\\
+ &\hspace{15mm}{}\times F(z_{21},z_{31}).
+ \end{split}
+\end{equation}
+It includes all ordered occurrence triples and all five index partitions.
+Equality of indices, complex zeros, and ordinates are distinct conditions.
+Only the anchor is height localized; the other two slots range over all
+of \(\mathcal I\).
+
+Put \(s(r)=\sin(\pi r)/(\pi r)\), \(s(0)=1\), and
+\[
+ R_2(r)=1-s(r)^2,\qquad
+ R_3(u,v)=\det\begin{pmatrix}
+ 1&s(u)&s(v)\\s(u)&1&s(u-v)\\s(v)&s(u-v)&1
+ \end{pmatrix}.
+\]
+The all-ordered sine benchmark is
+\begin{equation}\label{eq:triple-assembled-main}
+ \begin{split}
+ \mathcal S_3[F]={}&\int_{\mathbb R^2}F(u,v)R_3(u,v)\dd u\dd v\\
+ &+\int_{\mathbb R}R_2(r)\{F(0,r)+F(r,0)+F(r,r)\}\dd r+F(0,0).
+ \end{split}
+\end{equation}
+Each line uses coordinate measure \(\dd r\), without an arclength
+factor. All pairings are bilinear, without complex conjugation.
+Define
+\[
+ W_\infty=\|\omega\|_\infty,\quad W_1=\|\omega'\|_1,\quad
+ W'_\infty=\|\omega'\|_\infty,\qquad
+ \|\phi\|_{C^1}=\|\phi\|_\infty+
+ \|\partial_\xi\phi\|_\infty+\|\partial_\eta\phi\|_\infty,
+\]
+and retain the named bounds
+\begin{align}
+ \mathfrak E_{\rm signed}
+ &=\|\phi\|_{C^1}(1+W_\infty+W_1)
+              \{b^{-1}+B^{-\kappa}L^3\},\notag\\
+ \mathfrak E_{\rm kernel}
+ &=\|\phi\|_1(W_\infty+W'_\infty)B^{-\kappa}L^3.
+ \label{eq:triple-assembled-errors}
+\end{align}
+There is an effective absolute constant \(C\), independent of
+\(T,\kappa,\phi,\omega\), such that
+\begin{equation}\label{eq:triple-assembled-theorem}
+ \left|\mathcal R^{\mathcal J}_{3,T}[F;\omega]-\mathcal S_3[F]\right|
+ \leq C(\mathfrak E_{\rm signed}+\mathfrak E_{\rm kernel}).
+\end{equation}
+In particular, for fixed test, margin and smoothing,
+\(\mathcal R^{\mathcal J}_{3,T}[F;\omega]=\mathcal S_3[F]+o(1)\).
+For varying families, the same conclusion about the difference holds
+whenever both displayed error bounds tend to zero.
+\end{theorem}
+\begin{proof}
+The profile is precisely that of Lemma~\ref{lem:triple-kernel-profile}.
+Compact smooth frequency support gives the entire extension by locally
+uniform differentiation and real-plane Schwartz decay by integration
+by parts. For the full complex zero arguments,
+\[
+ |F(z_{21},z_{31})|\leq\|\phi\|_1B^{1-\kappa},
+\]
+since \(|\delta_j|<1/2\) and
+\((|\xi|+|\eta|+|\xi+\eta|)/2=h\).
+Lemma~\ref{lem:triple-kernel-localization} proves absolute summability
+of the height-weighted profile and of its product with this test bound.
+Thus all five index subseries and any independent zero-cutoff limits
+are justified at fixed \(T,\phi,\omega\), before the height limit.
+
+By the definitions, including the anchor order, the exact normalization is
+\[
+ \mathcal R^{\mathcal J}_{3,T}[F;\omega]
+       =\tfrac23\mathcal A_T^{\mathcal J}[\phi].
+\]
+Lemma~\ref{lem:triple-main-term-comparison} therefore proves
+\eqref{eq:triple-assembled-theorem}, retaining the two inherited error
+bounds separately. Lemma~\ref{lem:triple-sine-measure} identifies the
+benchmark with \eqref{eq:triple-assembled-main}, whose integrals converge
+absolutely by Schwartz decay. No additional sum--limit interchange is
+needed. Fixing the parameters in the stated order makes both errors
+vanish, since \(b\to\infty\) and \(B^{-\kappa}L^3\to0\).
+\end{proof}
+
+\paragraph{Interpretation and remaining scope.}
+The theorem is an additive asymptotic for a weighted full-zero statistic.
+When \(\mathcal S_3[F]=0\), its assertion is still meaningful as \(o(1)\);
+no division by the main term is made. The test class includes the
+symmetric tests requested in the weighted three-level program.
+The origin and internal frequency axes are included, while the outer
+boundary \(h=1\) remains excluded by the positive margin.
+There is no sharp height cutoff or endpoint half weight.
+The rational profile and the complex arguments retain all horizontal
+displacements. The functional-equation reindexings used in the signed
+sector theorem are inherited unchanged by the exact scalar normalization.
+
+This synthesis neither assumes that the deltas vanish nor removes the
+kernel. An unweighted real-ordinate theorem, a weighted zeta cumulant
+identity, and horizontal consequences need their own additional arguments.
+The assembled theorem is available for the Work Package B audit and
+reproduction tasks; it does not declare that work package closed.
 
 \end{document}

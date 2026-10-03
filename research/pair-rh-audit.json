@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "397da939e5b193fd017c798cd3308fce670de7cc76cb55ad021ba48fd1a3e06b",
+  "ledger_sha256": "2298eb3185db8bca13d17168633224d1ba5ed5d2a3a8235a663b38fb5324f29a",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2415,5 +2415,15 @@
       "TRIPLE-MAIN-TERM-COMPARISON-001"
     ],
     "changes": "The previous ledger is an unchanged byte prefix followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The comparison retains full-zero weighting and the strict support margin; it imports no external zeta theorem. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_smoothed_theorem_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_assembled_smoothed_theorem",
+    "report": "research/triple-theorem.md",
+    "previous_ledger_sha256": "397da939e5b193fd017c798cd3308fce670de7cc76cb55ad021ba48fd1a3e06b",
+    "added_claim_ids": [
+      "TRIPLE-SMOOTHED-CORRELATION-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix followed only by the listed theorem. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The theorem assembles the existing weighted full-zero result with both named errors and the positive support margin. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
   }
 }
