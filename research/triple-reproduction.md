@@ -94,7 +94,9 @@ verification, replay of external computational proofs, or a theorem-status
 upgrade. Broader environment provisioning and CI remain deferred.
 The existing hash-bound audit documents retain their historical scope.
 The selected Work Package B baseline and its durable artifact archive are
-recorded below. The Work Package B closure review remains a separate step.
+recorded below. The [closure review](work-package-b-closure.md) records
+Work Package B complete within its documented smoothed, weighted full-zero
+scope, with every local claim retaining its ledger status.
 
 ## Archived baseline
 
@@ -140,9 +142,10 @@ Every other manifest-listed input, including the proof, scripts, theorem
 ledger and audit records, is unchanged. These later documentation updates
 are not represented as part of the clean run.
 
-Baseline selection and archival are complete. This does not close Work
-Package B or promote any mathematical claim beyond `proved-draft`.
-The remaining closeout step is the Work Package B closure review.
+Baseline selection and archival are complete. The subsequent
+[closure review](work-package-b-closure.md) closes Work Package B within
+its documented smoothed, weighted full-zero scope. No mathematical claim
+is promoted beyond `proved-draft`.
 Future changes to the proof or audited inputs require appropriate review
 and a new reproduction record; this archive remains evidence for the
 specific revision named above.

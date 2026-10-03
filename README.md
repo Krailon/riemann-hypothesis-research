@@ -121,7 +121,14 @@ completion of A; those historical notes have not been changed merely to update
 progress wording. The closure documentation postdates the tested baseline
 revision; its proof and audited inputs are unchanged.
 
-## Work Package B: an interior weighted test-function theorem
+## Work Package B: completed smoothed weighted three-level baseline
+
+**Work Package B is complete within its documented smoothed, weighted
+full-zero scope.** The [closure review](research/work-package-b-closure.md)
+maps all six required tasks to the draft theorem, dependency and assumption
+records, and archived clean-checkout reproduction. The root theorem remains
+**proved-draft**. Kernel removal, unweighted correlations, support enlargement
+and horizontal consequences remain separate research extensions.
 
 `TRIPLE-MASTER-001` is a **proved-draft** exact smoothed triple identity
 retaining the full complex zeros. The [proof](proofs/triple_explicit_formula.tex)
@@ -206,7 +213,10 @@ the manuscript. Baseline revision
 reproduction; its [complete bundle](artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/manifest.json)
 is preserved in the repository. The [archive record](research/triple-reproduction.md#archived-baseline)
 documents 70 pair tests, 109 triple tests and a warning-free 34-page PDF.
-The Work Package B closure review remains.
+The [closure review](research/work-package-b-closure.md) records completion
+for this baseline. Older pending-work statements in audit-bound notes
+describe their review dates; the checklist and this README give the current
+status without changing the mathematical or archived evidence.
 
 Run the additional Work Package B regression checks with:
 
