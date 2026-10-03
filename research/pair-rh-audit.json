@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "e66289f5142c07ed273ff934c10ba8742d35c72888c1b81c119abc86dd302d4f",
+  "ledger_sha256": "397da939e5b193fd017c798cd3308fce670de7cc76cb55ad021ba48fd1a3e06b",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2404,5 +2404,16 @@
       "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
     ],
     "changes": "The previous ledger is an unchanged byte prefix followed only by the three listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The correlation consequence states its support assumption; the critical-line result is an unconditional kernel-parameter specialization, with the all-zero RH interpretation explicitly isolated and unused. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_main_term_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_sine_measure_and_main_term_comparison",
+    "report": "research/triple-main-term-comparison.md",
+    "previous_ledger_sha256": "e66289f5142c07ed273ff934c10ba8742d35c72888c1b81c119abc86dd302d4f",
+    "added_claim_ids": [
+      "TRIPLE-SINE-MEASURE-001",
+      "TRIPLE-MAIN-TERM-COMPARISON-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The comparison retains full-zero weighting and the strict support margin; it imports no external zeta theorem. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
   }
 }

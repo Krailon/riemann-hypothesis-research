@@ -178,8 +178,15 @@ justifies replacing the original kernel by this profile times the
 anchor height weight, preserving the same correlation main term.
 The separately evaluated critical-line microscopic profile is `3*pi/8`,
 explaining the local normalization factor `3/2`; its application to all
-zero tuples would require RH. Global constant-kernel replacement, GUE
-identification and new horizontal consequences remain separate tasks.
+zero tuples would require RH.
+`TRIPLE-SINE-MEASURE-001` and `TRIPLE-MAIN-TERM-COMPARISON-001`, also
+**proved-draft**, identify the limiting functional as exactly `3/2` times
+the all-ordered sine-kernel benchmark. The
+[comparison proof and partition table](research/triple-main-term-comparison.md)
+include the origin, partial diagonals and ordinary-cumulant cancellation,
+with the existing signed-test and localization errors retained separately.
+Global constant-kernel replacement, an unweighted zeta correlation, and
+new horizontal consequences remain separate tasks.
 
 Run the additional Work Package B regression checks with:
 

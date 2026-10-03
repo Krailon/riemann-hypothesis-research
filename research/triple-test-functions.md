@@ -552,8 +552,10 @@ limit, recovering the earlier interior behavior.
 This supplies smooth Fourier tests across every internal seam for the
 native weighted full-zero correlation. The one-sided class in Sections
 6--7 remains a useful intermediate result with different regularity.
-Kernel removal, GUE identification, and horizontal extraction remain
-separate tasks; this does not assert completion of Work Package B.
+The subsequent [main-term comparison](triple-main-term-comparison.md)
+identifies this limiting functional with three halves of the all-ordered
+sine benchmark. Kernel removal and horizontal extraction remain separate
+tasks; this does not assert completion of Work Package B.
 
 The subsequent [kernel analysis](triple-kernel.md) gives an explicit
 full-horizontal rational profile and a summable error for freezing the

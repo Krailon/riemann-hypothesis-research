@@ -182,8 +182,9 @@ The exact normalization comparison is
 =\frac{3\log(T/2\pi)}{2\log T}\frac1{TL_T}.
 \]
 The coefficient relative to \((TL_T)^{-1}\) tends to \(3/2\).
-This accounts for the local critical-line normalization; it is not a
-GUE identification of the full main term.
+This accounts for the local critical-line normalization. The subsequent
+[main-term comparison](triple-main-term-comparison.md) identifies the full
+limiting functional as three halves of the all-ordered sine benchmark.
 
 | Statement | Assumption and scope |
 | --- | --- |
@@ -197,8 +198,8 @@ The next missing ingredient for constant-kernel replacement is a summed
 microscopic error and tail estimate. Unconditionally, Schwartz decay on
 the real plane alone cannot localize the complex test arguments. The
 proved full-gap profile replacement already preserves the main term;
-further kernel removal, GUE identification and horizontal extraction
-remain separate tasks.
+further kernel removal and horizontal extraction remain separate tasks.
+Main-term identification is now supplied by the comparison lemma.
 
 ## 5. Verification and provenance
 

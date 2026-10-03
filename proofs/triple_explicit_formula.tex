@@ -23,7 +23,8 @@ smoothed identity, its uniform budget, the interior vanishing theorem,
 the one-sided positive-quadrant boundary limit, and a native weighted
 Schwartz correlation theorem on an open hexagon. An explicit rational
 kernel profile and a summable height-localization error preserve that
-theorem's main term. Global constant-kernel replacement and horizontal
+theorem's main term, identified below as three halves of the all-ordered
+sine benchmark. Global constant-kernel replacement and horizontal
 extraction remain separate Work Package B tasks.
 
 \section{Definitions and imported inputs}
@@ -2085,7 +2086,7 @@ The critical-line normalization comparison is the exact identity
 \end{equation}
 Its coefficient relative to \((TL_T)^{-1}\) tends to \(3/2\).
 This explains that coefficient through the local critical-line kernel;
-it does not identify the entire main term with a random-matrix formula.
+the full main-term comparison is proved in the next section.
 
 \paragraph{Assumption separation.}
 All three claims above are unconditional. Evaluating a kernel at
@@ -2099,6 +2100,208 @@ sum: an additional summed error and tail estimate is needed.
 Unconditionally, real-plane Schwartz decay cannot by itself localize
 the complex test arguments. The full-gap rational profile and the
 summable height-localization estimate have been proved for the actual
-full-zero sum; constant-kernel replacement, GUE identification and
-horizontal consequences remain separate tasks.
+full-zero sum; constant-kernel replacement and horizontal consequences
+remain separate tasks. The next section identifies its limiting functional.
+
+\section{Comparison with the all-ordered sine benchmark}
+
+This section is an unconditional deterministic Fourier calculation followed
+by an application of the already proved weighted correlation theorem.
+It uses the unit-density sine determinant as a benchmark. For provenance,
+Conrey--Snaith, \emph{In support of n-correlation}, author manuscript
+arXiv:1212.5537v2, Theorem 1, equation (2), p.~2, records the distinct-index
+unitary determinant with kernel
+\(S_N(\alpha)=\sin(N\alpha/2)/\sin(\alpha/2)\).
+The elementary scaling
+\(N^{-1}S_N(2\pi x/N)\to\sin(\pi x)/(\pi x)\)
+fixes our unit-density convention. We prove the benchmark identities
+below directly; no zeta correlation theorem from that source is imported.
+
+Put \(s(x)=\sin(\pi x)/(\pi x)\), with \(s(0)=1\), and define
+\begin{align}
+ R_2(r)&=1-s(r)^2,\notag\\
+ R_3(u,v)&=\det\begin{pmatrix}
+ 1&s(u)&s(v)\\ s(u)&1&s(u-v)\\s(v)&s(u-v)&1
+ \end{pmatrix}\notag\\
+ &=1-s(u)^2-s(v)^2-s(u-v)^2+2s(u)s(v)s(u-v).
+ \label{eq:triple-sine-determinant}
+\end{align}
+Define the all-ordered benchmark measure \(M_3\) by its pairing with a
+Schwartz function \(F\):
+\begin{equation}\label{eq:triple-sine-functional}
+ \begin{split}
+ \mathcal S_3[F]:=\langle M_3,F\rangle
+ &=\int_{\mathbb R^2}F(u,v)R_3(u,v)\dd u\dd v+F(0,0)\\
+ &\quad+\int_{\mathbb R}R_2(r)
+       \{F(0,r)+F(r,0)+F(r,r)\}\dd r.
+ \end{split}
+\end{equation}
+Every pairing here and below is bilinear, with no complex conjugation.
+All integrals converge absolutely since the densities are bounded and
+the restrictions of a Schwartz function to these lines are Schwartz.
+Line delta distributions mean integration in the displayed coordinate
+\(r\); in particular \(\delta(u-v)\) pairs as \(\int F(r,r)\dd r\),
+without an arclength factor. These measures represent the five partitions
+of three ordered occurrence indices. For zeta, unequal indices can still
+represent equal complex zeros or equal ordinates; nothing here changes
+that convention or asserts simplicity of zeta zeros.
+
+\begin{lemma}[\texttt{TRIPLE-SINE-MEASURE-001}]
+\label{lem:triple-sine-measure}
+With the project's negative-forward Fourier convention, put
+\[
+ \tau(r)=(1-|r|)_+,\quad m(r)=1-\tau(r),\quad
+ c(\xi,\eta)=(1-h(\xi,\eta))_+,
+ \qquad h=\max(|\xi|,|\eta|,|\xi+\eta|).
+\]
+As tempered distributions,
+\begin{equation}\label{eq:triple-sine-fourier}
+ \widehat M_3=\delta_{(0,0)}+m(\xi)\delta(\eta)
+ +m(\eta)\delta(\xi)+m(\xi)\delta(\xi+\eta)+g(\xi,\eta),
+\end{equation}
+where the final term is a planar density,
+\begin{equation}\label{eq:triple-sine-cumulant-density}
+ g(\xi,\eta)=1-\tau(\xi)-\tau(\eta)-\tau(\xi+\eta)+2c(\xi,\eta).
+\end{equation}
+It vanishes on \(h\leq1\). It is the Fourier transform of the reduced
+ordinary third cumulant distribution
+\begin{equation}\label{eq:triple-sine-ordinary-cumulant}
+ \begin{split}
+ C_3^{\rm ord}={}&\delta_{(0,0)}-\delta(u)s(v)^2
+ -\delta(v)s(u)^2-\delta(u-v)s(u)^2\\
+ &+2s(u)s(v)s(u-v).
+ \end{split}
+\end{equation}
+The factorial third cumulant is the last cycle term alone and has
+transform \(2c\); it does not vanish in this region.
+\end{lemma}
+\begin{proof}
+Write \(I=[-1/2,1/2]\). The integral representation
+\(s(x)=\int_I e^{2\pi\ii xt}\dd t\) gives
+\(\widehat{s^2}=\mathbf1_I*\mathbf1_I=\tau\), including the endpoints.
+For the cycle \(s(u)s(v)s(u-v)\), the interval parameters have frequency
+vector \((a+d,b-d)\). Consequently its transform is
+\[
+ \int\mathbf1_I(d)\mathbf1_I(\xi-d)\mathbf1_I(\eta+d)\dd d
+ =|I\cap(\xi+I)\cap(-\eta+I)|=c(\xi,\eta).
+\]
+Indeed, the span of the three centers \(0,\xi,-\eta\) is
+\(\max(|\xi|,|\eta|,|\xi+\eta|)\); the common interval has length
+\((1-h)_+\). This is a distributional Fourier calculation on Schwartz
+tests: the compact parameter integrations can be exchanged with the
+real-plane integral under the integrable majorant \(|F(u,v)|\).
+The two-factor calculation has the same justification. Lifting the
+one-dimensional transforms to the plane gives the following complete
+table. Here a scalar function without a delta is a planar density.
+\begin{center}
+\small
+\begin{tabular}{lll}
+\toprule
+Index partition & Physical measure & Fourier transform\\
+\midrule
+\(123\) & \(\delta_{(0,0)}\) & \(1\)\\
+\(12|3\) & \(\delta(u)R_2(v)\) & \(\delta(\eta)-\tau(\eta)\)\\
+\(13|2\) & \(\delta(v)R_2(u)\) & \(\delta(\xi)-\tau(\xi)\)\\
+\(23|1\) & \(\delta(u-v)R_2(u)\) & \(\delta(\xi+\eta)-\tau(\xi+\eta)\)\\
+\(1|2|3\) & \(R_3(u,v)\dd u\dd v\) & \(\widehat R_3\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The determinant expansion gives
+\[
+ \widehat R_3=\delta_{(0,0)}-\tau(\xi)\delta(\eta)
+ -\tau(\eta)\delta(\xi)-\tau(\xi)\delta(\xi+\eta)+2c.
+\]
+For the last line, use \(u=r+w,v=w\), a determinant-one change of
+variables. Thus no \(\sqrt2\) factor occurs on the frequency line
+\(\xi+\eta=0\) either. Summing the five rows proves
+\eqref{eq:triple-sine-fourier}. Notice that the frequency atom at the
+origin comes from the constant physical density in \(R_3\); the physical
+all-equal atom instead transforms to the constant frequency density.
+
+The elementary identity
+\(|\xi|+|\eta|+|\xi+\eta|=2h\) follows by separating equal and opposite
+signs of \(\xi,\eta\). Hence on \(h\leq1\),
+\(g=1-(3-2h)+2(1-h)=0\), also at the axes and vertices.
+For example \(g(3/4,3/4)=1/2\), so this cancellation is support dependent.
+Finally let \(c_2(x)=\delta_0(x)-s(x)^2\), the reduced ordinary covariance
+of the unit-density benchmark, and lift each one-variable distribution
+with constant density in the remaining coordinate. Direct subtraction
+from \eqref{eq:triple-sine-functional} yields
+\[
+ M_3=1+c_2(u)+c_2(v)+c_2(u-v)+C_3^{\rm ord}.
+\]
+This is the third moment--cumulant identity with mean density one;
+Fourier transformation gives \(\widehat{C_3^{\rm ord}}=g\).
+The determinant's connected factorial cycle has transform \(2c\),
+which equals two at the origin. All equalities are distributional;
+no infinite zero sum or asymptotic limit enters this lemma.
+\end{proof}
+
+\begin{lemma}[\texttt{TRIPLE-MAIN-TERM-COMPARISON-001}]
+\label{lem:triple-main-term-comparison}
+Let \(\phi\in C_c^\infty(\mathcal H)\), \(F=\mathcal F^{-1}\phi\),
+and \(\operatorname{supp}\phi\subset\{h\leq1-\kappa\}\),
+\(0<\kappa<1\). No reality or symmetry of \(\phi\) is required. Then
+\begin{equation}\label{eq:triple-main-term-comparison}
+ \begin{split}
+ \mathcal S_3[F]&=\phi(0,0)+\int_{\mathbb R}|r|
+       \{\phi(r,0)+\phi(0,r)+\phi(r,-r)\}\dd r,\\
+ \mathcal A[\phi]&=\tfrac32\mathcal S_3[F].
+ \end{split}
+\end{equation}
+With the previous notation \(B=T/(2\pi), b=\log B, q=\log T\),
+\(L=\log(2T+2)\), retain the two errors separately:
+\begin{align*}
+ \mathfrak E_{\rm signed}&=\|\phi\|_{C^1}(1+W_\infty+W_1)
+                    \{b^{-1}+B^{-\kappa}L^3\},\\
+ \mathfrak E_{\rm kernel}&=\|\phi\|_1(W_\infty+W'_\infty)
+                         B^{-\kappa}L^3.
+\end{align*}
+Under the existing smoothing hypotheses, uniformly for \(T\geq2\pi e\),
+\begin{align}
+ \mathcal A_T[\phi]&=\tfrac32\mathcal S_3[F]
+                         +O(\mathfrak E_{\rm signed}),\notag\\
+ \mathcal A_T^{\mathcal J}[\phi]&=\tfrac32\mathcal S_3[F]
+                 +O(\mathfrak E_{\rm signed}+\mathfrak E_{\rm kernel}).
+ \label{eq:triple-sine-comparison-errors}
+\end{align}
+Constants are effective and absolute as in the preceding bounds.
+\end{lemma}
+\begin{proof}
+For the stated Fourier convention and bilinear pairing,
+\(\langle M_3,F\rangle=\langle\widehat M_3,\phi(-\cdot)\rangle\).
+Every distribution in \eqref{eq:triple-sine-fourier} is centrally even,
+so this also equals \(\langle\widehat M_3,\phi\rangle\), without conjugating
+\(\phi\). The planar term vanishes on its support; on each line
+\(m(r)=|r|\) there. This proves the first identity, and comparison with
+\eqref{eq:triple-signed-limit-functional} proves the second.
+Theorem~\ref{thm:triple-signed-test-function} and
+Lemma~\ref{lem:triple-kernel-localization} now give
+\eqref{eq:triple-sine-comparison-errors}, with no new analytic error.
+Fix test, support margin and smoothing before taking \(T\to\infty\);
+varying families must make both displayed errors vanish.
+\end{proof}
+
+\paragraph{Normalization, support, and scope.}
+For \(F(x_2-x_1,x_3-x_1)\), the positive-inverse three-frequency vector is
+\((-\xi-\eta,\xi,\eta)\), of \(\ell^1\)-size \(2h\). In a
+negative-exponential representation its sign is reversed. Thus our
+margin corresponds to \(\sum|\lambda_j|\leq2-2\kappa\); this is a
+convention translation, not an import of a zeta theorem. The benchmark
+cancellation holds even on \(h=1\), but the zeta estimate still requires
+compact support in \(h<1\). No boundary extension is claimed.
+
+The finite-height local normalization factor in
+\eqref{eq:triple-critical-normalization} is \(3b/(2q)\), whose limit is
+\(3/2\). It is not set equal to \(3/2\) at finite height. Multiplying
+\(\mathcal A_T\) or \(\mathcal A_T^{\mathcal J}\) by \(2/3\) gives the
+benchmark as its limiting functional, while retaining every kernel and
+complex test argument of the original statistic. The result identifies
+the main term of that unconditional weighted full-zero statistic. It
+neither removes the kernel nor asserts an unweighted real-ordinate zeta
+correlation. Likewise the ordinary-cumulant cancellation proved above
+is a property of the benchmark; transferring it to a weighted zeta
+cumulant would require compatible lower-order weighted statistics.
+
 \end{document}

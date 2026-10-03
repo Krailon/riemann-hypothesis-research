@@ -1857,3 +1857,98 @@ claims:
       verification_script: scripts/check_triple_kernel.py
       independent_verification: pending
       pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-SINE-MEASURE-001
+    title: All-ordered sine measure and its third-cumulant Fourier cancellation
+    kind: lemma
+    statement: |
+      Put s(x)=sin(pi x)/(pi x),s(0)=1,R2(x)=1-s(x)^2 and
+      R3(u,v)=1-s(u)^2-s(v)^2-s(u-v)^2+2s(u)s(v)s(u-v).
+      For Schwartz F define S3[F]=integral F R3 du dv+F(0,0)+
+      integral R2(r)(F(0,r)+F(r,0)+F(r,r))dr. This absolutely convergent
+      bilinear pairing defines the all-ordered tempered benchmark measure M3.
+      Its five summands correspond to the five partitions of ordered
+      occurrence indices, not distinct complex zeros or distinct ordinates.
+      Set h=max(|xi|,|eta|,|xi+eta|),tau(r)=(1-|r|)_+,m=1-tau,c=(1-h)_+.
+      In the negative-forward 2pi convention,
+      Fourier(M3)=delta_00+m(xi)delta(eta)+m(eta)delta(xi)+
+      m(xi)delta(xi+eta)+g, where g=1-tau(xi)-tau(eta)-tau(xi+eta)+2c.
+      Line deltas use coordinate dr, without arclength factors.
+      The cycle transform is Fourier(s(u)s(v)s(u-v))=c.
+      The reduced ordinary third cumulant is
+      C3ord=delta_00-delta(u)s(v)^2-delta(v)s(u)^2-delta(u-v)s(u)^2+
+      2s(u)s(v)s(u-v); its transform g vanishes on h<=1.
+      The factorial third cumulant is the cycle alone, with transform 2c,
+      and does not vanish there. The density g is not globally zero:
+      g(3/4,3/4)=1/2. These are deterministic benchmark identities,
+      not assertions about zeta simplicity or weighted zeta cumulants.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-sine-measure
+      bookkeeping: research/triple-main-term-comparison.md
+      provenance: research/literature-notes/triple-sine-comparison.md
+      bibliography_key: ConreySnaith2014
+      imported_scope: "Theorem 1, equation (2), author manuscript v2 p. 2 fixes the distinct-index unitary determinant convention; all claimed identities are proved directly."
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "No asymptotic limit. Compact interval parameter integrals are exchanged against Schwartz tests under an integrable absolute majorant; all measure pairings converge absolutely."
+    project_audit:
+      task_type: proof
+      proof_method: "Determinant expansion, five occurrence-index partitions, compact interval convolution and explicit distributional moment-cumulant subtraction."
+      endpoint_audit: "s(0)=1; overlap lengths include all collisions and endpoints. Benchmark cancellation holds on h<=1, without extending any zeta support theorem."
+      fourier_audit: "Negative-forward 2pi convention; bilinear pairing; line deltas use coordinate dr. The physical all-equal atom transforms to planar density one, not a frequency atom."
+      verification_script: scripts/check_triple_main_term.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-MAIN-TERM-COMPARISON-001
+    title: Exact sine-benchmark identification of the weighted triple main term
+    kind: lemma
+    statement: |
+      For arbitrary complex phi in C_c^infinity({h<1}), with h as in
+      TRIPLE-SINE-MEASURE-001, let F be its positive-inverse Fourier transform
+      and choose 0<kappa<1 with support phi in h<=1-kappa. Then
+      S3[F]=phi(0,0)+integral |r|(phi(r,0)+phi(0,r)+phi(r,-r))dr
+      and A[phi]=(3/2)S3[F] exactly. With the smoothing hypotheses and
+      observables of TRIPLE-SIGNED-TEST-FUNCTION-001 and
+      TRIPLE-KERNEL-LOCALIZATION-001, for T>=2pi e put B=T/(2pi),
+      b=log B,q=log T,L=log(2T+2),W_inf=||omega||_inf,W_1=||omega'||_1,
+      Wprime_inf=||omega'||_inf. Let E_signed=||phi||_C1(1+W_inf+W_1)
+      (b^(-1)+B^(-kappa)L^3),E_kernel=||phi||_1(W_inf+Wprime_inf)B^(-kappa)L^3.
+      Uniformly A_T[phi]=(3/2)S3[F]+O(E_signed) and
+      A_T^J[phi]=(3/2)S3[F]+O(E_signed+E_kernel), with effective absolute
+      constants inherited unchanged. Pairings are bilinear, with central
+      inversion removed by evenness of the benchmark distribution, not by
+      a symmetry or reality assumption on phi. The finite-height local
+      critical normalization remains 3b/(2q), whose limit is 3/2.
+      Full complex zero arguments, kernel, horizontal displacements and all
+      occurrence-index patterns are retained. No unweighted real-ordinate
+      zeta correlation, kernel removal, boundary-support extension or
+      weighted zeta cumulant cancellation is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [TRIPLE-SINE-MEASURE-001, TRIPLE-SIGNED-TEST-FUNCTION-001, TRIPLE-KERNEL-LOCALIZATION-001, TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-main-term-comparison
+      bookkeeping: research/triple-main-term-comparison.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, support margin and smoothing before T tends to infinity. Varying families must make both retained errors vanish; no new zero-sum interchange is used."
+    project_audit:
+      task_type: proof
+      proof_method: "Pair the exact benchmark transform with the compact frequency test, then substitute into the two existing weighted asymptotic formulas."
+      endpoint_audit: "Internal axes and origin included; outer boundary h=1 remains excluded by a fixed positive margin for the zeta theorem."
+      horizontal_audit: "No critical-line substitution; the full weighted statistic and complex test arguments are unchanged."
+      verification_script: scripts/check_triple_main_term.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."

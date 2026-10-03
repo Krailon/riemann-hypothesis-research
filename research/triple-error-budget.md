@@ -342,8 +342,10 @@ The subsequent **TRIPLE-SIGNED-SECTORS-001** and
 **TRIPLE-SIGNED-TEST-FUNCTION-001** transport this integrated budget through
 six determinant-one maps to Schwartz tests with Fourier support compactly
 inside the open hexagon `max(|xi|,|eta|,|xi+eta|)<1`. No new prime-side
-estimate is used in that step. Kernel removal, GUE identification and
-horizontal consequences remain open.
+estimate is used in that step. The subsequent
+[main-term comparison](triple-main-term-comparison.md) identifies the limit
+as three halves of the all-ordered sine benchmark without adding an error.
+Kernel removal and horizontal consequences remain open.
 
 The later [kernel-localization budget](triple-kernel.md) adds the named
 near, far-center and far-anchor errors for replacing the native height
