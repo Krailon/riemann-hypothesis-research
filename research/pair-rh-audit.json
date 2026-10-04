@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "9d13fdae639a6b2ee46be43dbf73be8df26d4db442386e36150da35b2ee85fc8",
+  "ledger_sha256": "830d25f85b064a239a697baa4911d139786bba71c3311bb7f71921627dbb4044",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2441,5 +2441,17 @@
     ],
     "report": "research/triple-ordinate-reduction.md",
     "changes": "The prior ledger is an unchanged byte prefix and every pre-existing indexed block is identical. Only the listed ORD claim family is appended. No historical mathematical verdict, claim snapshot, audited manuscript or archive is changed. This metadata refresh does not extend either RH audit to the ordinate extension."
+  },
+  "ledger_cancellation_extension_review": {
+    "reviewed_on": "2026-10-03",
+    "previous_ledger_sha256": "9d13fdae639a6b2ee46be43dbf73be8df26d4db442386e36150da35b2ee85fc8",
+    "added_claim_ids": [
+      "ORDINATE-CANCELLATION-BUDGET-001",
+      "ORDINATE-DENSITY-MIX-001",
+      "ORDINATE-QUADRATIC-001",
+      "ORDINATE-SIGN-AVERAGE-001"
+    ],
+    "report": "research/triple-ordinate-reduction.md",
+    "changes": "The previous ledger is an unchanged byte prefix; every previous indexed block, including both open ordinate targets, is identical. Only four new cancellation claims are appended. The ordinate-extension manuscript is updated outside the historical audits. No historical verdict, coverage, baseline proof or archive is changed."
   }
 }

@@ -41,7 +41,7 @@ smoothing before the height limit.
 | Weighted baseline error | `R_T^J-S3[F]` | Existing named signed-test and localization bounds; o(1) for fixed data. |
 | `E_gaps` | `c sum omega (J0-J*) F(u,v)` | `O(W A20/q)`, proved-draft. |
 | `E_horizontal` | `c sum omega (Jdelta-J0) F(u,v)` | `O(W A20 (log q)^2/q)`, proved-draft; reflection precedes absolute values. |
-| `E_arguments` | `c sum omega Jdelta (F(z)-F(u,v))` | `O(P22(phi) M_T(1-kappa))`; vanishing **open**. |
+| `E_arguments` | `c sum omega Jdelta (F(z)-F(u,v))` | Exactly `E_even+E_kernel-mix`; vanishing **open**. The earlier `O(P22 M_T)` bound remains valid. |
 | Scale error | `(q/b-1) S3[F]` | Exact; O(1/q) for fixed F. |
 
 Exactly,
@@ -67,6 +67,10 @@ argument estimate without proving this stronger positive-moment condition.
 | `COUNT` | Pair input plus existing unit counts | Proved-draft bounds on cumulative near/far triple counts. |
 | `REAL-KERNEL` | Transfer bounds, counts, density input | Proved-draft removal of the kernel on real test arguments. |
 | `ARGUMENT-BOUND` | Transfer and unit counts | Proved-draft quadratic majorant after simultaneous reflection. |
+| `SIGN-AVERAGE` | Transfer, kernel profile, unit counts | Proved-draft eight-reflection identity, parity, positivity of the even kernel coefficient and odd-coefficient gap factor. |
+| `QUADRATIC` | Sign average and argument bound | Proved-draft full quadratic term including kernel derivatives; controlled remainder for `x<=1`. |
+| `CANCELLATION-BUDGET` | Sign average, quadratic term, counts | Proved-draft even and kernel-mixing moment bounds. |
+| `DENSITY-MIX` | Cancellation budget, density and counts; baseline and transfer for the concluding equivalence | Proved-draft vanishing kernel mixing on the smaller support `h<=s<331/4000`. |
 | `ARGUMENT-VANISHING` | Argument bound or a future signed method | **Idea: unresolved estimate.** |
 | `TRIPLE` | Weighted theorem, transfer, real-kernel bounds, argument vanishing | **Idea: unresolved ordinate-only theorem.** |
 
@@ -76,6 +80,73 @@ For horizontal kernel removal, use simultaneous reflection, a second-order
 Taylor bound, and the cutoff `D=64 log q/q`. Three dyadic density windows
 cover `[T-1,2T+1]`; strict `|delta|>D` agrees with strict `beta>sigma` in the
 source. This avoids inferring a triple bound merely from a density-one claim.
+
+## Cancellation after eight independent reflections
+
+Set `a1=b delta1(xi+eta)`, `a2=b delta2 xi`, `a3=b delta3 eta`, with
+anchor-first slot order. Define `J_S` as the average of the eight reflected
+kernels weighted by `prod_{j in S} epsilon_j`. The exact averaged frequency
+factor in `E_arguments` is
+
+`J_empty (prod_j cosh(a_j)-1) + sum_{S nonempty} J_S prod_{j in S}sinh(a_j) prod_{j not in S}cosh(a_j)`.
+
+After pairing with `c omega phi exp(2pi i(u xi+v eta))` and summing, these
+give `E_even` and `E_kernel-mix`, respectively. The whole ordered sum is
+invariant under independent reflections. Individual index-diagonal classes
+need not be invariant. The proof uses symmetric finite ordinate cutoffs and
+an integrable kernel majorant before interchanging Fourier integration and
+the zero sums.
+
+The coefficients satisfy `conjugate(J_S)=(-1)^|S| J_S` and
+`|J_S|<=C prod_{j in S}|delta_j|`. Odd-cardinality coefficients additionally
+gain `min(|a|+|d|,1)` and vanish at zero vertical gaps. Although `J_empty>0`,
+the Fourier-paired expression remains oscillatory. In particular positivity
+does not establish a sign for `E_even`.
+
+### Updated signed error budget
+
+Define `P24(phi)=sum_{|alpha|<=24}||partial^alpha phi||_1` and
+`M24,T(s)=(Tq)^(-1) sum omega (1+r)^(-20) x^2(1+x)^24 exp(2s x)`.
+
+| Term | Original support `0<s=1-kappa<1` | Restriction to `x<=m`, fixed m |
+| --- | --- | --- |
+| `E_even` | `O(P24 M24,T(s))` | `O_m(W P24 q)`; no vanishing conclusion. |
+| `E_kernel-mix` | `O(P24 M24,T(s)/q^2)` | `O_m(W P24/q)`; tends to zero. |
+
+The extra `q^-2` uses the odd-coefficient gap factor, not just horizontal
+smallness. The complete quadratic expression is
+
+`-(J0 ell^2/2) sum delta_j^2 D_j^2 F - i ell sum delta_j^2 K_j D_j F`,
+
+where `D1=partial_u+partial_v`, `D2=partial_u`, `D3=partial_v`, and
+`K_j=partial_delta_j J(0)` in anchor-first order. On `x<=1` its pointwise
+remainder is `O(P24 x^4 (1+r)^(-20))`; on `x<=epsilon<=1`, the normalized
+summed remainder is `O(W P24 q epsilon^4)`. This is not a global Taylor
+approximation and does not control the complementary tuples.
+
+### A smaller support region where kernel mixing vanishes
+
+Let `alpha=331/4000`. For each fixed `0<s<1/8`, the existing density input
+and counting lemmas give
+
+`M24,T(s) <<_s W [q^(1+8s)(1+log q)^26 + q^28 T^(s-alpha) + q^29 T^(s-1)]`.
+
+Divide this bound by `q^2` for the kernel-mixing error. All three terms then
+tend to zero for **fixed `0<s<331/4000`** and fixed test/smoothing. The support
+threshold is not claimed optimal, and its endpoint is excluded. This result
+does not enlarge or silently replace the support of the original theorem.
+
+The proof controls the weighted tail of `x` by the smaller of `O(Wq)` and
+`O(W(q^2 exp(-v/4)+q^3/T))`, splitting the layer integral at `v=4 log q`.
+Density applies only while `r<=T ell/2`, when all ordinates lie in
+`[T/2,5T/2]`. The remaining, possibly negative or arbitrarily high partner
+ordinates are handled by the global Schwartz tail. At `v=(331/1000)q` the
+density estimate is frozen at its allowed endpoint, producing `T^-alpha`.
+
+On this smaller fixed support the outstanding estimate is exactly
+**`E_even=o(1)`**. Its current absolute bound grows rather than vanishes.
+For the original larger class, the outstanding estimate remains
+`E_even+E_kernel-mix=o(1)`. Neither statement is proved here.
 
 ## Source review and limits of coverage
 
@@ -101,25 +172,38 @@ pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -output-direct
 pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -output-directory=/tmp/ordinate-reduction-build proofs/triple_ordinate_reduction.tex
 ```
 
-The eight exact regression checks cover telescoping signs, normalization,
+The fourteen exact regression checks cover telescoping signs, normalization,
 reflection with multiplicities and index partitions, colliding centers,
 closed horizontal parameter endpoints, support-sector identities, finite
 count majorization and microscopic sensitivity. They do not verify analytic
 asymptotics. Polynomial and mode fixtures are used for finite identities
 only, and are not passed off as admissible Schwartz tests. The full triple
 test discovery also includes these checks; the existing PDF harness still
-builds the weighted baseline manuscript.
+builds the weighted baseline manuscript. The six cancellation checks add the
+eight-reflection expansion, coefficient parity and gap reflection, scalar
+positivity, the failure of independent reflection to preserve index diagonals,
+the full quadratic coefficient via exact series division, and the density
+exponents including the excluded support endpoint.
 
-Validation on 2026-10-03 (Python 3.12.3): all 70 pair tests and 117 triple
+Initial reduction validation on 2026-10-03 (Python 3.12.3): all 70 pair tests and 117 triple
 tests passed. The separate six-page reduction PDF compiled with no remaining
 warnings or unresolved references. Both historical audit validators passed;
 the old claim blocks and archived baseline remained unchanged. This was a
 development-worktree validation, not a newly archived clean-checkout baseline.
 
+Cancellation-extension validation on 2026-10-03: all **70 pair tests and
+123 triple tests** passed, including 14 ordinate-extension checks. The revised
+**10-page PDF** compiled without warnings or unresolved references. Both
+historical audit validators passed after the documented append-only ledger
+review. This remains development-worktree validation; no new clean-checkout
+archive or analytic proof certificate is claimed.
+
 ## Remaining research step
 
-Prove `E_arguments=o(1)` for the fixed admissible class, or find an alternative
-ordinate-only argument. Density at unscaled horizontal distances is
+Prove `E_even=o(1)` first on a fixed region `h<=s<331/4000`, or find an
+alternative ordinate-only argument. This would establish the target on a
+nonempty support region. The original larger class still requires the full
+signed sum to vanish. Density at unscaled horizontal distances is
 insufficient for the present continuity argument; see
 [the recorded failed inference](dead-ends.md#ordinate-transfer-at-microscopic-horizontal-distance).
 There is no proof here that the target is impossible or equivalent to RH.

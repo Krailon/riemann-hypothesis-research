@@ -2255,3 +2255,140 @@ claims:
       independent_verification: pending
       baseline_audit_coverage: "Outside both historical pair and triple RH audits."
       computation_provenance: "Inherited external explicit-density inputs; not a new project computation, no local replay or archived certificate. The open target inherits this dependency only as a proposed proof route."
+  - id: ORDINATE-SIGN-AVERAGE-001
+    title: Eight-reflection identity and kernel coefficient bounds
+    kind: lemma
+    statement: |
+      In the ordinate reduction, write mathcalJ(delta)=J(a,d;delta2,delta3,delta1)
+      with anchor first, and J_S=(1/8)sum_epsilon prod_{j in S}epsilon_j
+      mathcalJ(epsilon delta). Set a1=b delta1(xi+eta), a2=b delta2 xi, a3=b
+      delta3 eta, Cj=cosh(aj), Sj=sinh(aj). Exactly (1/8)sum_epsilon
+      mathcalJ(epsilon delta)(exp(sum epsilon_j aj)-1)=J_empty(prod Cj-1)+sum_{S
+      nonempty}J_S prod_{j in S}Sj prod_{j not in S}Cj. Pairing these two parts
+      with c_T omega phi exp(2pi i(u xi+v eta)) and summing gives
+      E_arguments=E_even+E_kernel-mix, with absolute Fubini at fixed T.
+      Independent reflections preserve the full ordered Cartesian product with
+      multiplicity but need not preserve separate index diagonals. Uniformly for
+      all real gaps and |delta_j|<=1/2, conjugate(J_S)=(-1)^|S| J_S, J_empty>0,
+      |J_S|<=C prod_{j in S}|delta_j| for nonempty S, and odd-cardinality S gain
+      the additional factor min(|a|+|d|,1). J_empty is distinct from J_0.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-TRANSFER-001, TRIPLE-KERNEL-PROFILE-001, PAIR-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:sign-average
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T remove independent reflection-invariant ordinate cutoffs using the integral kernel majorant; fix smoothing, test and the stated support margin before T tends to infinity."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-QUADRATIC-001
+    title: Full quadratic term after independent horizontal reflections
+    kind: lemma
+    statement: |
+      Let D1=partial_u+partial_v, D2=partial_u, D3=partial_v, and
+      K_j=partial_delta_j mathcalJ(0), in anchor-first slot order. The eight-sign
+      average of mathcalJ(epsilon delta)[F((u,v)-i y(epsilon delta))-F(u,v)]
+      equals Q_delta[F]+R_delta[F], where Q_delta=-(J_0 ell^2/2)sum delta_j^2
+      D_j^2 F-i ell sum delta_j^2 K_j D_j F. For x=q max|delta_j|<=1, |R_delta|<=C
+      P24(phi)x^4(1+r)^(-20), uniformly for sufficiently large T and the original
+      supported test class. The K_j are imaginary and O(min(|a|+|d|,1)). All
+      real-plane derivatives are evaluated at (u,v). The remainder bound makes no
+      Taylor claim on x>1.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-SIGN-AVERAGE-001, ORDINATE-ARGUMENT-BOUND-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:quadratic
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T remove independent reflection-invariant ordinate cutoffs using the integral kernel majorant; fix smoothing, test and the stated support margin before T tends to infinity."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-CANCELLATION-BUDGET-001
+    title: Even and kernel-mixing signed error bounds
+    kind: theorem
+    statement: |
+      For 0<s=1-kappa<1 define P24=sum_{|alpha|<=24}||partial^alpha phi||_1 and
+      M24,T(s)=(Tq)^(-1)sum omega (1+r)^(-20)x^2(1+x)^24 exp(2s x). With the
+      definitions of ORDINATE-SIGN-AVERAGE-001, |E_even|<=C P24 M24,T and
+      |E_kernel-mix|<=C P24 M24,T/q^2, with absolute constants for sufficiently
+      large T. These bounds also hold for restriction to any
+      horizontal-reflection-invariant tuple set with its restricted moment. For
+      fixed m>0, on x<=m the errors are respectively O_m(W P24 q) and O_m(W
+      P24/q), W=||omega||infinity. On x<=epsilon<=1 the normalized summed
+      quadratic remainder is O(W P24 q epsilon^4). These are bounds, not an
+      assertion that E_even or the unrestricted kernel-mixing error vanishes in
+      the original support class.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-SIGN-AVERAGE-001, ORDINATE-QUADRATIC-001, ORDINATE-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: thm:cancellation-budget
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T remove independent reflection-invariant ordinate cutoffs using the integral kernel majorant; fix smoothing, test and the stated support margin before T tends to infinity."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-DENSITY-MIX-001
+    title: Vanishing kernel mixing on a smaller fixed support region
+    kind: theorem
+    statement: |
+      Set alpha=331/4000. For fixed 0<s<1/8, phi smooth compactly supported in
+      h<=s, omega nonnegative smooth supported in (1,2) of mass one, q=log T and
+      W=||omega||infinity, M24,T(s)<<_s W[q^(1+8s)(1+log q)^26+q^28
+      T^(s-alpha)+q^29 T^(s-1)]. Consequently |E_kernel-mix|<<_s W
+      P24[q^(-1+8s)(1+log q)^26+q^26 T^(s-alpha)+q^27 T^(s-1)]. In particular for
+      fixed data and 0<s<alpha the kernel-mixing error is o(1), and the
+      ordinate-only target is equivalent to E_even=o(1). The latter estimate is
+      not proved. The endpoint s=alpha is excluded, and this is not a claim of
+      vanishing kernel mixing for the original full support class. Density is
+      applied only to heights [T/2,5T/2]; all remote partners are bounded
+      separately by Schwartz decay and unit counts. Constants can depend on s; no
+      uniform endpoint limit is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=s, 0<s<1/8)"]
+    dependencies: [ORDINATE-CANCELLATION-BUDGET-001, ORDINATE-DENSITY-INPUT-001, ORDINATE-COUNT-001, ORDINATE-REAL-KERNEL-001, ORDINATE-TRANSFER-001, TRIPLE-SMOOTHED-CORRELATION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: thm:density-mix
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "At fixed T remove independent reflection-invariant ordinate cutoffs using the integral kernel majorant; fix smoothing, test and the stated support margin before T tends to infinity."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited explicit-density source inputs, not a new project numerical proof; no local replay or certificate. See ORDINATE-DENSITY-INPUT-001."

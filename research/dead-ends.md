@@ -28,3 +28,29 @@ theorem for other methods or for signed cancellation.
 [reduction](triple-ordinate-reduction.md), prove its sufficient weighted
 microscopic moment tends to zero, or construct a different direct
 ordinate-only explicit-formula argument.
+
+## Reflection alone cancels only the odd horizontal contributions
+
+Date: 2026-10-03. Task: proof diagnosis. Assumptions: `UNCONDITIONAL` for
+the exact decomposition; `SYNTHETIC_MODEL` for the quartet fixture above.
+
+**Attempt.** Obtain the missing signed cancellation by independently
+reflecting all three occurrences and discarding odd terms.
+
+**Obstruction.** The eight-reflection identity retains
+`J_empty (prod cosh(a_j)-1)`. Its quadratic term contains the horizontal
+squares multiplying second derivatives of F. The quartet already recorded
+above gives a nonzero even mode multiplier. Reflection has no further sign
+with which to cancel it. Positivity of this frequency multiplier also does
+not imply positivity after pairing with vertical phases and a general test.
+Independent reflections act on the full Cartesian product, not separately
+on each equality pattern of indices.
+
+**Type.** An algebraic limit of this symmetry argument, not a theorem that
+the full zeta sum cannot cancel across ordinates or frequencies.
+
+**Repair.** The new kernel-mixing estimate removes that term on fixed
+`h<=s<331/4000`. What remains is a signed weighted correlation estimate for
+`E_even`, or horizontal concentration strong enough to make its sufficient
+moment small. The current density bound does neither. No finite synthetic
+configuration is presented as a counterexample to a normalized zeta limit.

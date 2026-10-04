@@ -225,11 +225,14 @@ The stronger ordinate-only target is now active. The
 transfer identity and bounds both kernel errors on real test arguments:
 `E_gaps=O(1/log T)` and `E_horizontal=O((log log T)^2/log T)` for fixed
 Schwartz tests and smoothing. These claims have **proved-draft** status.
-The remaining complex-argument error has a quadratic moment bound, but its
-vanishing is **unproved**. Accordingly `ORDINATE-TRIPLE-001` remains **idea**;
-we do not yet have the conventional ordinate-only asymptotic.
+The complex-argument error now has an exact eight-reflection decomposition
+into an even hyperbolic term and a kernel-mixing term. The latter is
+**proved-draft** to vanish for fixed support `h<=s<331/4000`. Vanishing of
+the even term is **unproved**, so `ORDINATE-TRIPLE-001` remains **idea**;
+we do not yet have the conventional ordinate-only asymptotic. For the
+original larger support class the full signed error remains unresolved.
 
-The eight new exact algebra checks supplement the historical 109 triple
+The fourteen extension checks supplement the historical 109 triple
 checks. This extension has its own manuscript and source notes; the archived
 weighted baseline and the scope of its RH audit remain as recorded.
 
@@ -264,7 +267,7 @@ when invoked by path from outside the repository.
 Each run writes `triple-normalization.json`, its Markdown rendering,
 `manifest.json`, and logs. Full runs additionally build
 `triple_explicit_formula.pdf` in three isolated passes with shell escape
-disabled. Both the **70-test pair suite** and **117-test triple suite** run,
+disabled. Both the **70-test pair suite** and **123-test triple suite** run,
 including graph and audit validation. The harness makes no downloads,
 installs no dependencies, and never updates audit hashes.
 

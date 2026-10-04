@@ -6,7 +6,7 @@ Polynomial tests and rational scales below check finite identities only.
 """
 from collections import Counter
 from fractions import Fraction as Q
-from itertools import product
+from itertools import combinations, product
 from pathlib import Path
 import re
 import unittest
@@ -16,6 +16,66 @@ from check_pair_rh_audit import field, indexed_blocks
 from check_triple_kernel import centers, profile
 
 ROOT = Path(__file__).resolve().parents[1]
+SIGNS = tuple(product((-1, 1), repeat=3))
+SUBSETS = tuple(s for n in range(4) for s in combinations(range(3), n))
+
+
+def prod(values):
+    result = 1
+    for value in values:
+        result *= value
+    return result
+
+
+def sign_coefficients(a, d, delta):
+    values = {e: profile(centers(a, d, (e[1]*delta[1], e[2]*delta[2],
+                                      e[0]*delta[0]))) for e in SIGNS}
+    coefficients = {s: sum((prod(e[j] for j in s)*values[e]
+                            for e in SIGNS), G())/8 for s in SUBSETS}
+    return values, coefficients
+
+
+class Jet:
+    """Exact coefficients through t^2; used only to differentiate fixtures."""
+    def __init__(self, c0=0, c1=0, c2=0):
+        self.c = tuple(c if isinstance(c, G) else G(c) for c in (c0, c1, c2))
+
+    @staticmethod
+    def coerce(value):
+        return value if isinstance(value, Jet) else Jet(value)
+
+    def __add__(self, other):
+        return Jet(*(a+b for a, b in zip(self.c, self.coerce(other).c)))
+
+    __radd__ = __add__
+
+    def __neg__(self):
+        return Jet(*(-a for a in self.c))
+
+    def __sub__(self, other):
+        return self + (-self.coerce(other))
+
+    def __mul__(self, other):
+        b = self.coerce(other).c
+        return Jet(*(sum((self.c[j]*b[n-j] for j in range(n+1)), G())
+                     for n in range(3)))
+
+    __rmul__ = __mul__
+
+    def __truediv__(self, other):
+        b = self.coerce(other).c
+        out = []
+        for n in range(3):
+            out.append((self.c[n]-sum((out[j]*b[n-j] for j in range(n)), G()))/b[0])
+        return Jet(*out)
+
+
+def kernel_jet(a, d, delta):
+    e1, e2, e3 = delta
+    z = (Jet(a, G(0, -e2)), Jet(d, G(0, -e3)), Jet(0, G(0, e1)))
+    ds = (z[0]-z[1], z[0]-z[2], z[1]-z[2])
+    squares = [v*v for v in ds]
+    return (24+sum(squares, Jet())) / prod(4+v for v in squares)
 
 
 def fixture():
@@ -130,6 +190,91 @@ class OrdinateReductionChecks(unittest.TestCase):
             if key.startswith('ORDINATE-'):
                 label = re.search(r'^      label: (.+)$', block, re.M).group(1)
                 self.assertIn('\\label{'+label+'}', proof)
+
+    def test_eight_sign_expansion_including_frequency_seams(self):
+        for a, d in [(0, 0), (Q(1, 3), Q(-2, 5))]:
+            delta = (Q(1, 2), Q(-1, 2), Q(0))
+            js, coefficients = sign_coefficients(a, d, delta)
+            for xi, eta in [(0, 0), (1, 0), (0, -1), (1, -1), (1, 2)]:
+                # b=log 4 is formal, so these half-integral exponents are exact.
+                exponents = [2*delta[0]*(xi+eta), 2*delta[1]*xi, 2*delta[2]*eta]
+                t = [Q(2)**int(e) for e in exponents]
+                ch, sh = [(v+1/v)/2 for v in t], [(v-1/v)/2 for v in t]
+                direct = sum((js[e]*(prod(t[j]**e[j] for j in range(3))-1)
+                              for e in SIGNS), G())/8
+                expanded = coefficients[()]*(prod(ch)-1)
+                expanded += sum((coefficients[s]*prod(sh[j] if j in s else ch[j]
+                                                       for j in range(3))
+                                 for s in SUBSETS if s), G())
+                self.assertEqual(direct, expanded)
+
+    def test_sign_coefficients_parity_gap_reflection_and_zero_factors(self):
+        for delta in [(Q(1, 2), Q(-1, 3), Q(1, 4)),
+                      (Q(0), Q(1, 2), Q(-1, 2))]:
+            _, zero = sign_coefficients(0, 0, delta)
+            _, forward = sign_coefficients(Q(1, 3), Q(-2, 5), delta)
+            _, backward = sign_coefficients(Q(-1, 3), Q(2, 5), delta)
+            for s in SUBSETS:
+                self.assertEqual(forward[s].conjugate(), (-1)**len(s)*forward[s])
+                self.assertEqual(backward[s], (-1)**len(s)*forward[s])
+                if len(s) % 2:
+                    self.assertEqual(zero[s], G())
+                if any(delta[j] == 0 for j in s):
+                    self.assertEqual(forward[s], G())
+
+    def test_positive_scalar_sign_average_with_closed_endpoints(self):
+        for t, e in product([Q(0), Q(1, 3), Q(-4)], [Q(0), Q(-1, 2), Q(1, 2)]):
+            z = G(t, -e)
+            direct = (1/(1+z*z)+1/(1+z.conjugate()*z.conjugate()))/2
+            expected = (1+t*t-e*e)/((1+t*t-e*e)**2+4*t*t*e*e)
+            self.assertEqual(direct, G(expected))
+            self.assertGreater(expected, 0)
+
+    def test_independent_reflections_preserve_full_sum_but_not_index_diagonals(self):
+        reflection = [1, 0, 3, 2, 4, 6, 5, 8, 7, 9]
+        indices = list(product(range(10), repeat=3))
+        for signs in SIGNS:
+            mapped = [tuple(reflection[i] if signs[j] == -1 else i
+                            for j, i in enumerate(ids)) for ids in indices]
+            self.assertEqual(Counter(mapped), Counter(indices))
+        original = (0, 0, 0)
+        reflected = (0, reflection[0], 0)
+        self.assertEqual(len(set(original)), 1)
+        self.assertEqual(len(set(reflected)), 2)
+        self.assertEqual([fixture()[i][1] for i in original],
+                         [fixture()[i][1] for i in reflected])
+
+    def test_complete_quadratic_coefficient_by_exact_series_division(self):
+        a, d, ell = Q(1, 3), Q(-2, 5), Q(3, 2)
+        delta = (Q(1, 5), Q(-1, 4), Q(1, 3))
+        u, v = G(ell*a), G(ell*d)
+        j0 = profile(centers(a, d, (0, 0, 0)))
+        k = [kernel_jet(a, d, tuple(Q(1) if i == j else Q(0)
+                                   for i in range(3))).c[1] for j in range(3)]
+        observed = G()
+        for e in SIGNS:
+            ds = tuple(e[j]*delta[j] for j in range(3))
+            z1 = Jet(u, G(0, -ell*(ds[0]+ds[1])))
+            z2 = Jet(v, G(0, -ell*(ds[0]+ds[2])))
+            shifted = 1+z1+z2*G(0, 1)+z1*z1+z1*z2
+            observed += (kernel_jet(a, d, ds)*(shifted-polynomial(u, v))).c[2]/8
+        fu, fv = 1+2*u+v, G(0, 1)+u
+        leading = -j0*ell*ell/2*(4*delta[0]**2+2*delta[1]**2)
+        mixing = -G(0, 1)*ell*sum((delta[j]**2*k[j]*df
+                                    for j, df in enumerate([fu+fv, fu, fv])), G())
+        self.assertEqual(observed, leading+mixing)
+        self.assertNotEqual(mixing, G())  # Dropping kernel derivatives fails.
+
+    def test_density_exponents_and_strict_support_threshold(self):
+        alpha = Q(331, 4000)
+        self.assertEqual(alpha, Q(331, 1000)/4)
+        self.assertLess(alpha, Q(1, 8))
+        for s in [Q(1, 64), Q(1, 32), alpha-Q(1, 100000)]:
+            self.assertLess(-1+8*s, 0)
+            self.assertLess(s-alpha, 0)
+            self.assertLess(s-1, 0)
+            self.assertEqual(2-4*(Q(1, 4)-2*s), 1+8*s)
+        self.assertEqual(alpha-alpha, 0)  # Endpoint has no power saving.
 
 
 if __name__ == '__main__':

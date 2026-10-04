@@ -18,7 +18,9 @@
 We give an exact transfer identity from the existing weighted full-zero
 theorem, and prove that its two real-test kernel errors vanish.
 The remaining complex-argument error is isolated, with a sufficient
-positive-moment bound. Its vanishing is open: this draft does not prove
+positive-moment bound. Eight independent reflections isolate an even
+hyperbolic term; the remaining kernel-mixing error vanishes on a smaller
+fixed support region. The even term is still open: this draft does not prove
 an ordinate-only correlation asymptotic.
 \end{abstract}
 
@@ -362,6 +364,263 @@ This proves pointwise sensitivity after symmetry averaging. A finite
 quartet has vanishing mass after normalization by $Tq$; it is not a
 counterexample to the zeta asymptotic. A Fourier mode is used only for
 this finite identity, not as an admissible Schwartz test.
+
+\section{Eight reflections and the surviving signed term}
+Task: proof. Assumptions remain \texttt{UNCONDITIONAL} and the displayed
+Fourier support. In this section $\delta_j=\delta_{i_j}$ is in slot order
+(anchor first); write $\mathcal J(\delta)=J(a,d;\delta_2,\delta_3,\delta_1)$.
+For $\varepsilon\in\{\pm1\}^3$ and $S\subseteq\{1,2,3\}$ set
+\[
+ \chi_S(\varepsilon)=\prod_{j\in S}\varepsilon_j,\qquad
+ J_S=\frac18\sum_\varepsilon\chi_S(\varepsilon)
+                          \mathcal J(\varepsilon\delta).
+\]
+Thus $J_\varnothing$ is an average, whereas $J_0=\mathcal J(0)$
+is a parameter specialization. These are different functions.
+Put $a_1=b\delta_1(\xi+\eta)$, $a_2=b\delta_2\xi$, $a_3=b\delta_3\eta$,
+$C_j=\cosh a_j$, $S_j=\sinh a_j$, and $P=2\pi(u\xi+v\eta)$.
+
+\begin{lemma}[Eight reflections; \texttt{ORDINATE-SIGN-AVERAGE-001}]
+\label{lem:sign-average}
+For every tuple and frequency,
+\begin{align}
+ \frac18\sum_\varepsilon\mathcal J(\varepsilon\delta)
+       (e^{\sum_j\varepsilon_ja_j}-1)
+ &=J_\varnothing(C_1C_2C_3-1)\notag\\
+ &\quad+\sum_{S\ne\varnothing}J_S
+           \prod_{j\in S}S_j\prod_{j\notin S}C_j.\label{eq:eight-sign}
+\end{align}
+Define $E_{\rm even}$ and $E_{\rm kernel\text{-}mix}$ by multiplying the
+first and second terms, respectively, by $c_Tw\phi(\xi,\eta)e^{iP}$,
+integrating over $\R^2$, and summing over all ordered occurrences. Then
+\begin{equation}\label{eq:signed-split}
+ \Ea=E_{\rm even}+E_{\rm kernel\text{-}mix}.
+\end{equation}
+These operations are absolutely convergent at fixed $T$. Uniformly in all
+real gaps and $|\delta_j|\leq1/2$,
+\begin{align}
+ \overline{J_S}&=(-1)^{|S|}J_S,\qquad J_\varnothing>0,\label{eq:sign-parity}\\
+ |J_S|&\leq C\prod_{j\in S}|\delta_j|\quad(S\ne\varnothing),\label{eq:sign-size}\\
+ |J_S|&\leq C\min(|a|+|d|,1)\prod_{j\in S}|\delta_j|
+                         \quad(|S|\text{ odd}).\label{eq:odd-gap}
+\end{align}
+\end{lemma}
+\begin{proof}
+Expand $e^{\varepsilon_ja_j}=C_j+\varepsilon_jS_j$, multiply, and use
+orthogonality of the eight characters $\chi_S$. The subtracted constant
+has coefficient $J_\varnothing$, proving \eqref{eq:eight-sign}.
+Horizontal reflection is a multiplicity-preserving involution of zero
+occurrences. Apply it independently in each slot of a finite sum with
+cutoffs $|\gamma_{i_j}|\leq U_j$. These cutoffs and the anchor weight are
+invariant. An individual index-diagonal class need not be invariant;
+we reindex the whole Cartesian product, never a separated diagonal class.
+
+For completeness the Fourier interchange needs a kernel majorant even
+before using Schwartz decay. With $k(t)=(1+t^2)^{-1}$, the integral profile
+is bounded by $C\int k(t)k(t-a)k(t-d)\dd t$. Unit counts give
+$\sum_i k(v-\gamma_i)\ll\log(|v|+2)$: split into unit intervals near
+$v$ and sum $\log(|v|+|n|+2)/(1+n^2)$.
+For a fixed anchor, the sum of this profile majorant over both partners
+is therefore at most
+$C\int k(v-\gamma_{i_1})\log^2(|v|+2)\dd v<\infty$.
+There are finitely many anchors. On the compact Fourier support every
+exponential is bounded by $e^{2sx}\leq T^s$ at fixed $T$.
+This supplies absolute Fubini and independent cutoff limits for all eight
+terms, and proves \eqref{eq:signed-split}.
+
+Conjugating the profile reflects all three horizontal parameters, which
+proves the first identity in \eqref{eq:sign-parity}. In its integral,
+independent sign averaging replaces each scalar kernel by
+\[
+ \frac12\left(\frac1{1+(t-ie)^2}+\frac1{1+(t+ie)^2}\right)
+ =\frac{1+t^2-e^2}{(1+t^2-e^2)^2+4t^2e^2}>0.
+\]
+Use this with the three real centers $a,d,0$ to obtain $J_\varnothing>0$.
+For any fixed derivative order, real-center and horizontal derivatives
+of a scalar kernel are $O((1+t^2)^{-1})$ on the closed strip. The profile
+therefore has uniformly bounded mixed derivatives of the orders used here,
+by the same domination as Lemma~\ref{lem:transfer}.
+An odd finite difference in each coordinate in $S$, followed by the
+fundamental theorem of calculus in those coordinates, gives
+\eqref{eq:sign-size}. Also
+$\mathcal J(-a,-d;\delta)=\mathcal J(a,d;-\delta)$ by $t\mapsto-t$.
+At zero gaps all odd-cardinality coefficients vanish identically in
+$\delta$. Apply the real-gap mean value theorem to the preceding mixed
+finite-difference integral, and combine with \eqref{eq:sign-size}, to
+obtain \eqref{eq:odd-gap}.
+\end{proof}
+
+\begin{lemma}[Complete quadratic term; \texttt{ORDINATE-QUADRATIC-001}]
+\label{lem:quadratic}
+Let $D_1=\partial_u+\partial_v$, $D_2=\partial_u$, $D_3=\partial_v$,
+and $K_j=\partial_{\delta_j}\mathcal J(0)$. The sign-averaged contribution
+before multiplying by $c_Tw$ has the expansion
+\begin{align}
+ &\frac18\sum_\varepsilon\mathcal J(\varepsilon\delta)
+       \{F((u,v)-iy(\varepsilon\delta))-F(u,v)\}
+       =Q_\delta[F]+\mathcal R_\delta[F],\label{eq:quadratic-expansion}\\
+ &Q_\delta[F]= -\frac{J_0\ell^2}{2}\sum_{j=1}^3\delta_j^2D_j^2F
+                 -i\ell\sum_{j=1}^3\delta_j^2K_jD_jF,\label{eq:quadratic}\\
+ &|\mathcal R_\delta[F]|\leq C P_{24}(\phi)x^4(1+r)^{-20}
+                         \quad(0\leq x\leq1).\label{eq:quadratic-remainder}
+\end{align}
+Here $y(\delta)=\ell(\delta_1+\delta_2,\delta_1+\delta_3)$,
+$P_{24}(\phi)=\sum_{|\alpha|\leq24}\|\partial^\alpha\phi\|_1$,
+and derivatives of $F$ are evaluated on the real plane. The $K_j$ are
+purely imaginary and $|K_j|\ll\min(|a|+|d|,1)$.
+\end{lemma}
+\begin{proof}
+Along $t\delta$ the first and second test derivatives at zero are
+\[
+-i\ell\sum_j\delta_jD_jF,\qquad
+-\ell^2\sum_{j,k}\delta_j\delta_kD_jD_kF.
+\]
+In the product with $\mathcal J(t\delta)$, the constant test difference
+is zero. The quadratic coefficient is consequently the half second test
+derivative times $J_0$, plus the product of the first derivatives.
+Independent sign averaging kills $\delta_j\delta_k$ for $j\ne k$,
+giving both terms in \eqref{eq:quadratic}. Conjugation and the zero-gap
+identity in Lemma~\ref{lem:sign-average} prove the assertions about $K_j$.
+
+The averaged function of $t$ is even. Taylor's theorem to degree three
+leaves a remainder bounded by its fourth derivative divided by $24$.
+The profile derivatives of order $m$ along $t\delta$ are $O((x/q)^m)$.
+Fourier integration by parts, as in Lemma~\ref{lem:arguments}, bounds
+its accompanying test derivative of order $4-m$ by
+$CP_{24}x^{4-m}(1+r)^{-20}$ on $x\leq1$, $|t|\leq1$.
+For $m=4$, bound the test difference by the two tests. This proves
+\eqref{eq:quadratic-remainder}. No Taylor expansion on $x>1$ is asserted.
+\end{proof}
+
+\begin{theorem}[Signed error budget; \texttt{ORDINATE-CANCELLATION-BUDGET-001}]
+\label{thm:cancellation-budget}
+For $0<s=1-\kappa<1$, define
+\[
+ M_{24,T}(s)=\frac1{Tq}\sum w(1+r)^{-20}
+                         x^2(1+x)^{24}e^{2sx}.
+\]
+For sufficiently large $T$, with absolute constants,
+\begin{equation}\label{eq:signed-budget}
+ |E_{\rm even}|\leq CP_{24}M_{24,T}(s),\qquad
+ |E_{\rm kernel\text{-}mix}|\leq\frac{CP_{24}}{q^2}M_{24,T}(s).
+\end{equation}
+These bounds hold also for sums restricted to any reflection-invariant
+set of tuples, with the restricted moment on the right. In particular,
+for fixed $m>0$ the restrictions $x\leq m$ satisfy
+\[
+ |E_{\rm even}^{\leq m}|\ll_m WP_{24}q,\qquad
+ |E_{\rm kernel\text{-}mix}^{\leq m}|\ll_m WP_{24}/q.
+\]
+For $0<\epsilon\leq1$, the summed remainder from
+\eqref{eq:quadratic-remainder} on $x\leq\epsilon$ is at most
+$CWP_{24}q\epsilon^4$.
+\end{theorem}
+\begin{proof}
+Apply $(1-\Delta_{\xi,\eta})^{11}$ to the Fourier integrands; its
+integration-by-parts denominator gives $(1+r)^{-22}$ decay.
+The $L^1$ norms of the resulting derivatives of
+$\phi(\prod C_j-1)$ are bounded by
+$CP_{24}x^2(1+x)^{22}e^{2sx}$. This follows either by twice differentiating
+in the common scale of the $a_j$, or by the quadratic vanishing of the
+product of coshes at zero. Derivatives of
+$\phi\prod_{j\in S}S_j\prod_{j\notin S}C_j$ have $L^1$ norm at most
+$CP_{24}x^{|S|}(1+x)^{22}e^{2sx}$: a differentiated sinh retains a
+factor from $\nabla a_j$, and an undifferentiated one is bounded by
+$C x e^{|a_j|}$. All exponents together are at most $2sx$.
+
+Write $m=|S|$. The profile bounds multiply these estimates by
+$C(x/q)^m$, and additionally by $\min(|a|+|d|,1)$ when $m$ is odd.
+Since $\ell\asymp q$, this extra factor is at most $Cr/q$.
+For $m=1,2,3$, the products are bounded respectively by
+\[
+ C\frac{x^2r}{q^2},\qquad C\frac{x^4}{q^2},\qquad
+ C\frac{x^6r}{q^4}\leq C\frac{x^4r}{q^2},
+\]
+using $x/q\leq1/2$ in the last step. The extra $r$ is absorbed by the
+22 powers of real-plane decay; the extra $x^2$ by the 24 powers in the
+moment. This proves \eqref{eq:signed-budget} pointwise after Fourier
+integration and hence after any indicated restriction and summation.
+The counting argument of Lemma~\ref{lem:counts}, applied directly to
+$(1+r)^{-20}$, gives $(Tq)^{-1}\sum w(1+r)^{-20}\ll Wq$.
+It proves the restricted statements and the summed Taylor remainder.
+\end{proof}
+
+\begin{theorem}[Density bound for kernel mixing; \texttt{ORDINATE-DENSITY-MIX-001}]
+\label{thm:density-mix}
+Put $\alpha=331/4000$. For fixed $0<s<1/8$, uniformly for tests supported
+in $h\leq s$, as $T\to\infty$,
+\begin{align}
+ M_{24,T}(s)\ll_s W\{&q^{1+8s}(1+\log q)^{26}
+                +q^{28}T^{s-\alpha}+q^{29}T^{s-1}\},\label{eq:density-moment}\\
+ |E_{\rm kernel\text{-}mix}|\ll_s WP_{24}\{&q^{-1+8s}(1+\log q)^{26}
+                +q^{26}T^{s-\alpha}+q^{27}T^{s-1}\}.\label{eq:density-mix}
+\end{align}
+Thus $E_{\rm kernel\text{-}mix}=o(1)$ for fixed test and smoothing when
+$0<s<\alpha$. In this smaller support region the ordinate-only target is
+therefore equivalent to $E_{\rm even}=o(1)$, which remains open.
+The endpoint $s=\alpha$ is not included.
+\end{theorem}
+\begin{proof}
+Set $R_*=T\ell/2$. On $r\leq R_*$ all three ordinates belong to
+$[T/2,5T/2]$. For $0\leq v\leq(331/1000)q$, reflection and the density
+input on dyadic windows from $T/4$ through $4T$ bound the number of
+occurrences there with $|\delta|>v/q$ by
+\[
+ B_T(v)\ll Tq e^{-v/4}+q^2.
+\]
+Replacing a dyadic window's logarithm by $q$ in the exponent costs an
+absolute factor because $v/q\leq331/1000$. At large $T$ every window
+satisfies the source height threshold. On a shell $r\leq R$, a fixed bad
+occurrence, in any of the three slots, has at most
+$Cq^2(1+R/\ell)^2$ possible partners, by unit counts within distance
+$2R/\ell$. Dyadic summation against $(1+r)^{-20}$ therefore gives
+\[
+ \frac1{Tq}\sum_{\substack{r\leq R_*\\x>v}}w(1+r)^{-20}
+       \ll W(q^2e^{-v/4}+q^3/T).
+\]
+It is also at most $CWq$ by Lemma~\ref{lem:counts}. On $r>R_*$ the
+global count gives weighted mass at most $CWq^2R_*^{-16}$.
+These estimates include all slots, multiplicities and all gap sizes;
+no density theorem is applied to arbitrarily remote partner heights.
+
+Let $g(v)=v^2(1+v)^{24}e^{2sv}$, an increasing function with $g(0)=0$.
+Tonelli gives the exact layer integral of $g'(v)$ against the preceding
+weighted tail count, up to $v=q/2$. For $v\leq v_0=4\log q$, use
+$CWq$; the contribution is at most $CWqg(v_0)$.
+For $v_0<v\leq(331/1000)q$, use the density estimate. Since
+$1/4-2s>0$, its exponential part contributes at most
+\[
+ CWq^2\int_{v_0}^\infty(1+v)^{26}e^{-(1/4-2s)v}\dd v
+ \ll_s Wq^{1+8s}(1+\log q)^{26}.
+\]
+Above $(331/1000)q$, use monotonicity of the tail count at that endpoint;
+its exponential part is at most $CWq^2T^{-\alpha}g(q/2)$.
+The additive density remainder contributes $CW(q^3/T)g(q/2)$.
+Finally the remote-gap contribution is at most
+$CWq^2R_*^{-16}g(q/2)$. Since $g(q/2)\ll q^{26}T^s$, these are the
+last two terms of \eqref{eq:density-moment}, with the remote-gap term
+absorbed into the last one. The split requires only sufficiently large
+$T$ so that $v_0<(331/1000)q$.
+Apply \eqref{eq:signed-budget} to finish. For $s<\alpha<1/8$ all three
+terms of \eqref{eq:density-mix} vanish. Constants may depend on $s$;
+no uniform limit at $s=1/8$ or $s=\alpha$ is asserted.
+\end{proof}
+
+\paragraph{Remaining cancellation, stated precisely.}
+For the original support class $h\leq1-\kappa$, the open estimate is
+$E_{\rm even}+E_{\rm kernel\text{-}mix}=o(1)$.
+For the additional fixed support restriction $h\leq s<331/4000$, only
+\[
+ c_T\sum w\int_{\R^2}\phi(\xi,\eta)e^{2\pi i(u\xi+v\eta)}
+ J_\varnothing\{\cosh a_1\cosh a_2\cosh a_3-1\}\dd\xi\dd\eta=o(1)
+\]
+remains. The bound \eqref{eq:density-moment} does not make this expression
+vanish: even its first upper-bound term grows with $q$. Positivity of
+$J_\varnothing$ and of the cosh difference does not imply positivity
+of this oscillatory, test-paired expression. Reflection cancels neither
+its quadratic part nor its full even part. A new signed weighted
+correlation estimate, or stronger microscopic horizontal information,
+is needed for this route. This is not an impossibility theorem.
 
 \section{Provenance and scope}
 This extension uses \texttt{PAIR-COUNT-001}, the recorded kernel profile,

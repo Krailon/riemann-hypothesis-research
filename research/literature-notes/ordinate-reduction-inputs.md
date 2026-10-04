@@ -42,3 +42,13 @@ Use three dyadic windows covering `[T-1,2T+1]`, reflect the left half-strip,
 and set `D=64 log log T/log T`. All application heights eventually exceed
 the source threshold. This controls the real-test kernel error; it provides
 no vanishing bound for the required moment of `(beta-1/2)log T`.
+
+### Reuse in the signed cancellation budget
+
+No additional source theorem is imported. The same dyadic density estimate
+is applied with `D=v/log T` up to its stated endpoint `331/1000`; at larger
+v monotonicity retains the endpoint bound. The weighted triple tail has
+factor `exp(-v/4)`. This yields the explicitly restricted kernel-mixing
+result `h<=s<331/4000`, using the new local `q^-2` gain. The density estimate
+is applied only to comparable heights; remote partners are separately
+bounded. It still gives no vanishing bound for the even hyperbolic term.
