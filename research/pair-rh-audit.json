@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "d2eda9ac6f88525cc8475c151c3742b2db84cc9033af45c851b00bb2ca24b67e",
+  "ledger_sha256": "af44a611736bd2d26f226b646ecc2ac09a8d1c2f5bb5b87d6890d207cb261935",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2326,5 +2326,141 @@
       "scope": "outside_current_review",
       "description": "Clean-checkout reproduction entry point and environment; structural audit checks do not prove the asymptotic."
     }
-  ]
+  ],
+  "ledger_extension_review": {
+    "reviewed_on": "2026-10-01",
+    "scope": "append_only_work_package_b_ledger_entry",
+    "report": "research/triple-master-bookkeeping.md",
+    "previous_ledger_sha256": "d2eda9ac6f88525cc8475c151c3742b2db84cc9033af45c851b00bb2ca24b67e",
+    "added_claim_ids": [
+      "TRIPLE-MASTER-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix; only TRIPLE-MASTER-001 is appended. Existing claims, dependencies, audited proof files and claim snapshot are unchanged. The Work Package A RH audit does not cover the new Work Package B proof."
+  },
+  "ledger_uniform_extension_review": {
+    "reviewed_on": "2026-10-01",
+    "scope": "append_only_work_package_b_uniform_lemma",
+    "report": "research/triple-error-budget.md",
+    "previous_ledger_sha256": "7cfb525b87516a874690c36bfbd060c3adeabb5a3d01ba423b4c9d9f574022d1",
+    "added_claim_ids": [
+      "TRIPLE-UNIFORM-001"
+    ],
+    "changes": "The previous ledger, including TRIPLE-MASTER-001, is an unchanged byte prefix. Only TRIPLE-UNIFORM-001 is appended. All existing claims, the pair-audit claim snapshot and audited Work Package A proof files are unchanged. This hash refresh does not extend the Work Package A RH audit to either Work Package B lemma."
+  },
+  "ledger_additive_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_offdiagonal_and_additive_claims",
+    "report": "research/triple-error-budget.md",
+    "previous_ledger_sha256": "15dc3a9d09a236ce90b8f7366437a10c474222e0800672ff8b2a3fd926d4b8e8",
+    "added_claim_ids": [
+      "TRIPLE-LOG-GAP-001",
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-SMOOTHED-ADDITIVE-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix. Only the three listed Work Package B claims are appended. Existing claim statements, the pair-audit claim snapshot, audited Work Package A proof files and archived reproduction bundle are unchanged. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_test_function_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_retained_and_test_function_claims",
+    "report": "research/triple-test-functions.md",
+    "previous_ledger_sha256": "6c31b8978c0d8c300db91374c436e8eb0d9c5fd56ac914d5dc4747b0cd061b63",
+    "added_claim_ids": [
+      "TRIPLE-RETAINED-001",
+      "TRIPLE-INTERIOR-VANISHING-001",
+      "TRIPLE-TEST-FUNCTION-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix, followed only by the three listed claims. Existing claim statements, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The new test-function claim explicitly records its Fourier-support assumption. This refresh does not extend Work Package A audit coverage to Work Package B."
+  },
+  "ledger_boundary_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_boundary_and_quadrant_claims",
+    "report": "research/triple-test-functions.md",
+    "previous_ledger_sha256": "37c6f404b7f9de1f8181ef60effd9afcf43d9a1d7e5c760c60356a4ab0c23bdb",
+    "added_claim_ids": [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-QUADRANT-LIMIT-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix, followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. Both new claims explicitly record the positive-quadrant support assumption. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_signed_sector_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_signed_sector_and_schwartz_claims",
+    "report": "research/triple-test-functions.md",
+    "previous_ledger_sha256": "f55baada22fa86eb4f3bf9e6a82e0f3cdb6c68c6b216ec6b3a4000f8f972174a",
+    "added_claim_ids": [
+      "TRIPLE-SIGNED-SECTORS-001",
+      "TRIPLE-SIGNED-TEST-FUNCTION-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The new Schwartz theorem explicitly records its open-hexagon support assumption. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_kernel_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_kernel_profile_localization_and_specialization",
+    "report": "research/triple-kernel.md",
+    "previous_ledger_sha256": "894c2168e26c22806437efc7b6d8f9cafbb2c84609c998e39881fc3199ec61dc",
+    "added_claim_ids": [
+      "TRIPLE-KERNEL-PROFILE-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix followed only by the three listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The correlation consequence states its support assumption; the critical-line result is an unconditional kernel-parameter specialization, with the all-zero RH interpretation explicitly isolated and unused. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_main_term_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_sine_measure_and_main_term_comparison",
+    "report": "research/triple-main-term-comparison.md",
+    "previous_ledger_sha256": "e66289f5142c07ed273ff934c10ba8742d35c72888c1b81c119abc86dd302d4f",
+    "added_claim_ids": [
+      "TRIPLE-SINE-MEASURE-001",
+      "TRIPLE-MAIN-TERM-COMPARISON-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix followed only by the two listed claims. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The comparison retains full-zero weighting and the strict support margin; it imports no external zeta theorem. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_smoothed_theorem_extension_review": {
+    "reviewed_on": "2026-10-02",
+    "scope": "append_only_work_package_b_assembled_smoothed_theorem",
+    "report": "research/triple-theorem.md",
+    "previous_ledger_sha256": "397da939e5b193fd017c798cd3308fce670de7cc76cb55ad021ba48fd1a3e06b",
+    "added_claim_ids": [
+      "TRIPLE-SMOOTHED-CORRELATION-001"
+    ],
+    "changes": "The previous ledger is an unchanged byte prefix followed only by the listed theorem. Existing claims, pair-audit snapshot, audited Work Package A proof files and reproduction archive are unchanged. The theorem assembles the existing weighted full-zero result with both named errors and the positive support margin. This hash refresh does not extend Work Package A RH-audit coverage to Work Package B."
+  },
+  "ledger_ordinate_extension_review": {
+    "reviewed_on": "2026-10-03",
+    "previous_ledger_sha256": "2298eb3185db8bca13d17168633224d1ba5ed5d2a3a8235a663b38fb5324f29a",
+    "added_claim_ids": [
+      "ORDINATE-ARGUMENT-BOUND-001",
+      "ORDINATE-ARGUMENT-VANISHING-001",
+      "ORDINATE-COUNT-001",
+      "ORDINATE-DENSITY-INPUT-001",
+      "ORDINATE-PAIR-INPUT-001",
+      "ORDINATE-REAL-KERNEL-001",
+      "ORDINATE-TRANSFER-001",
+      "ORDINATE-TRIPLE-001"
+    ],
+    "report": "research/triple-ordinate-reduction.md",
+    "changes": "The prior ledger is an unchanged byte prefix and every pre-existing indexed block is identical. Only the listed ORD claim family is appended. No historical mathematical verdict, claim snapshot, audited manuscript or archive is changed. This metadata refresh does not extend either RH audit to the ordinate extension."
+  },
+  "ledger_cancellation_extension_review": {
+    "reviewed_on": "2026-10-03",
+    "previous_ledger_sha256": "9d13fdae639a6b2ee46be43dbf73be8df26d4db442386e36150da35b2ee85fc8",
+    "added_claim_ids": [
+      "ORDINATE-CANCELLATION-BUDGET-001",
+      "ORDINATE-DENSITY-MIX-001",
+      "ORDINATE-QUADRATIC-001",
+      "ORDINATE-SIGN-AVERAGE-001"
+    ],
+    "report": "research/triple-ordinate-reduction.md",
+    "changes": "The previous ledger is an unchanged byte prefix; every previous indexed block, including both open ordinate targets, is identical. Only four new cancellation claims are appended. The ordinate-extension manuscript is updated outside the historical audits. No historical verdict, coverage, baseline proof or archive is changed."
+  },
+  "ledger_constant_kernel_extension_review": {
+    "reviewed_on": "2026-10-05",
+    "previous_ledger_sha256": "830d25f85b064a239a697baa4911d139786bba71c3311bb7f71921627dbb4044",
+    "added_claim_ids": [
+      "ORDINATE-CONSTANT-KERNEL-001"
+    ],
+    "report": "research/triple-ordinate-reduction.md",
+    "changes": "The previous ledger is an unchanged byte prefix and every previous indexed block is identical. Only the constant-kernel replacement lemma is appended. Existing open targets retain idea status. The changed ordinate-extension manuscript and checks remain outside both historical audits. No historical verdict, coverage, baseline proof or archive is changed."
+  }
 }

@@ -120,3 +120,158 @@ their review date. This README and the closure checklist record the later
 completion of A; those historical notes have not been changed merely to update
 progress wording. The closure documentation postdates the tested baseline
 revision; its proof and audited inputs are unchanged.
+
+## Work Package B: completed smoothed weighted three-level baseline
+
+**Work Package B is complete within its documented smoothed, weighted
+full-zero scope.** The [closure review](research/work-package-b-closure.md)
+maps all six required tasks to the draft theorem, dependency and assumption
+records, and archived clean-checkout reproduction. The root theorem remains
+**proved-draft**. Kernel removal, unweighted correlations, support enlargement
+and horizontal consequences remain separate research extensions.
+
+`TRIPLE-MASTER-001` is a **proved-draft** exact smoothed triple identity
+retaining the full complex zeros. The [proof](proofs/triple_explicit_formula.tex)
+and [bookkeeping tables](research/triple-master-bookkeeping.md) give the five
+index-diagonal patterns, all 27 prime/archimedean/remainder terms, and the
+cubic prime resonance. Convergence and smoothing dependence are explicit.
+`TRIPLE-UNIFORM-001`, also **proved-draft**, supplies the
+[uniform estimates and named error budget](research/triple-error-budget.md)
+for all 27 terms and their 208 named remainder refinements. Bounds hold for
+all `T >= 3, X,Y >= 1`, with stronger prime norm bounds when `XY <= 2T`.
+`TRIPLE-LOG-GAP-001` and `TRIPLE-OFFDIAG-001` sharpen the off-diagonal
+estimates. Combining them with the budget gives
+`TRIPLE-SMOOTHED-ADDITIVE-001`, also **proved-draft**:
+
+\[
+\mathcal C_{3,T}(X,Y)=M_T(X,Y)
++O\!\left((1+\|\omega\|_\infty+\|\omega'\|_1)
+T^{-\varepsilon}\log^4(2T+2)\right),
+\]
+
+uniformly for `T >= 3`, fixed `0 < epsilon < 1/3`,
+`T^epsilon <= X,Y`, and `XY <= T^(1-epsilon)`. For fixed smoothing
+this is an additive `o(1)` error, not a relative `o(M_T)` assertion.
+The retained expression is defined in the budget. The subsequent
+[retained-term evaluation and test-function theorem](research/triple-test-functions.md)
+are recorded as `TRIPLE-RETAINED-001`, `TRIPLE-INTERIOR-VANISHING-001`, and
+`TRIPLE-TEST-FUNCTION-001`, all **proved-draft**. They show the interior
+observable tends to zero and prove a weighted full-zero correlation statement
+for arbitrary smooth Fourier transforms compactly supported in
+`xi > 0, eta > 0, xi + eta < 1`. The native kernel, multiplicities, and
+complex arguments carrying horizontal zero coordinates are retained.
+`TRIPLE-BOUNDARY-ESTIMATES-001` and `TRIPLE-QUADRANT-LIMIT-001`, also
+**proved-draft**, give the positive-quadrant boundary limit. After division
+by `log T`, integration against smooth restrictions supported in
+`xi >= 0, eta >= 0, xi + eta <= 1-kappa`, for fixed `0 < kappa < 1`, tends
+to an origin mass `1/4` plus density `3r/4` on each positive axis.
+The [boundary budget and conventions](research/triple-test-functions.md)
+include an effective error and the full-zero identity. The one-sided
+inverse Fourier tests are generally not Schwartz.
+`TRIPLE-SIGNED-SECTORS-001` and `TRIPLE-SIGNED-TEST-FUNCTION-001`, also
+**proved-draft**, extend the native weighted correlation to Schwartz tests
+with arbitrary smooth Fourier transforms compactly supported in the open
+hexagon `max(|xi|,|eta|,|xi+eta|) < 1`. The normalized limit is an origin
+mass `3/2` and three line contributions with coefficient `3/2` and weight
+`|r|`, parameterized by `(r,0)`, `(0,r)` and `(r,-r)`, each with measure
+`dr`. The [sector table](research/triple-signed-sectors.json) records the
+six maps and conjugation rules. The effective error, complex zero arguments
+and native kernel remain explicit.
+`TRIPLE-KERNEL-PROFILE-001`, `TRIPLE-KERNEL-LOCALIZATION-001` and
+`TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001`, also **proved-draft**, now give
+an [explicit rational kernel profile](research/triple-kernel.md) with every
+horizontal displacement retained. A summable height-localization error
+justifies replacing the original kernel by this profile times the
+anchor height weight, preserving the same correlation main term.
+The separately evaluated critical-line microscopic profile is `3*pi/8`,
+explaining the local normalization factor `3/2`; its application to all
+zero tuples would require RH.
+`TRIPLE-SINE-MEASURE-001` and `TRIPLE-MAIN-TERM-COMPARISON-001`, also
+**proved-draft**, identify the limiting functional as exactly `3/2` times
+the all-ordered sine-kernel benchmark. The
+[comparison proof and partition table](research/triple-main-term-comparison.md)
+include the origin, partial diagonals and ordinary-cumulant cancellation,
+with the existing signed-test and localization errors retained separately.
+`TRIPLE-SMOOTHED-CORRELATION-001`, **proved-draft**, assembles these results
+into a [standalone unconditional smoothed three-level theorem](research/triple-theorem.md).
+Its explicitly weighted full-zero observable has normalization
+`16/(3T log T)` and converges additively to the all-ordered sine benchmark,
+with both named errors retained. The statement includes every hypothesis,
+complex argument, multiplicity convention and limit order.
+Global constant-kernel replacement, an unweighted zeta correlation, and
+new horizontal consequences remain separate tasks. The
+[complete recorded dependency graph](research/triple-dependency-graph.md)
+traces 31 claims, two provenance nodes and 58 edges, with inherited
+Work Package A audit coverage identified. The
+[Work Package B RH-contamination audit](research/triple-rh-audit.md) reviews
+the entire triple manuscript and records no contamination found in its
+reviewed scope; claims retain proved-draft status. The
+[triple reproduction harness](research/triple-reproduction.md) regenerates
+the exact normalization and error records, runs both suites, and builds
+the manuscript. Baseline revision
+`e3f5173f9703e6de263bb807d85ea7018c7a1ee0` passed full clean-checkout
+reproduction; its [complete bundle](artifacts/work-package-b/e3f5173f9703e6de263bb807d85ea7018c7a1ee0/manifest.json)
+is preserved in the repository. The [archive record](research/triple-reproduction.md#archived-baseline)
+documents 70 pair tests, 109 triple tests and a warning-free 34-page PDF.
+The [closure review](research/work-package-b-closure.md) records completion
+for this baseline. Older pending-work statements in audit-bound notes
+describe their review dates; the checklist and this README give the current
+status without changing the mathematical or archived evidence.
+
+### Active Work Package B extension: ordinate-only correlation
+
+The stronger ordinate-only target is now active. The
+[reduction draft](research/triple-ordinate-reduction.md) proves an exact
+transfer identity and bounds both kernel errors on real test arguments:
+`E_gaps=O(1/log T)` and `E_horizontal=O((log log T)^2/log T)` for fixed
+Schwartz tests and smoothing. These claims have **proved-draft** status.
+The complex-argument error now has an exact eight-reflection decomposition
+into an even hyperbolic term and a kernel-mixing term. The latter is
+**proved-draft** to vanish for fixed support `h<=s<331/4000`. On that same
+support the averaged even kernel can now be replaced by `3pi/8` with an
+o(1) error. The remaining kernel-free signed error `E_constant` is
+**unproved** to vanish, so `ORDINATE-TRIPLE-001` remains **idea**; we do not
+yet have the conventional ordinate-only asymptotic. For the original larger
+support class the full signed error remains unresolved.
+
+The seventeen extension checks supplement the historical 109 triple
+checks. This extension has its own manuscript and source notes; the archived
+weighted baseline and the scope of its RH audit remain as recorded.
+
+Run the additional Work Package B regression checks with:
+
+```bash
+python3 -B -m unittest discover -s scripts -p 'check_triple_*.py' -v
+```
+
+These exact finite checks supplement the 70-test pair suite; they are not
+an analytic proof certificate. The pair reproduction harness retains its
+Work Package A scope.
+
+## Reproduce the weighted triple theorem
+
+Use installed Python **3.12**, Git and Bash. Full runs also need `pdflatex`
+and the manuscript's `geometry`, `amsmath`, `amssymb`, `amsthm`, `booktabs`,
+`longtable`, `hyperref` packages and their dependencies. BibTeX is not used.
+From a fresh checkout:
+
+```bash
+./scripts/reproduce_triple.sh --require-clean
+```
+
+For development, omit `--require-clean`; the manifest records the dirty
+state. Use `--checks-only` for explicit partial reproduction without TeX,
+and `--output-dir /tmp/triple-reproduction` for a new or empty destination.
+The default is a unique ignored directory under `artifacts/reproduction/`.
+Relative destinations are relative to the caller; the command also works
+when invoked by path from outside the repository.
+
+Each run writes `triple-normalization.json`, its Markdown rendering,
+`manifest.json`, and logs. Full runs additionally build
+`triple_explicit_formula.pdf` in three isolated passes with shell escape
+disabled. Both the **70-test pair suite** and **126-test triple suite** run,
+including graph and audit validation. The harness makes no downloads,
+installs no dependencies, and never updates audit hashes.
+
+See the [reproduction report](research/triple-reproduction.md) for artifact
+scope, failure behavior, clean-clone evidence and reproducibility limits.

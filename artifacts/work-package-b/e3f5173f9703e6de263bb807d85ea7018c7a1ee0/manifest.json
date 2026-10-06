@@ -1,0 +1,334 @@
+{
+  "analytic_proof_certificate": false,
+  "assumptions": [
+    "UNCONDITIONAL",
+    "SUPPORT(h<=1-kappa, 0<kappa<1)"
+  ],
+  "claim_ids": [
+    "TRIPLE-SMOOTHED-CORRELATION-001"
+  ],
+  "claim_status": "proved-draft",
+  "environment": {
+    "git": "git version 2.43.0",
+    "pdflatex": {
+      "executable": "/usr/bin/pdflatex",
+      "version": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)\nkpathsea version 6.3.5\nCopyright 2023 Han The Thanh (pdfTeX) et al.\nThere is NO warranty.  Redistribution of this software is\ncovered by the terms of both the pdfTeX copyright and\nthe Lesser GNU General Public License.\nFor more information about these matters, see the file\nnamed COPYING and the pdfTeX source.\nPrimary author of pdfTeX: Han The Thanh (pdfTeX) et al.\nCompiled with libpng 1.6.43; using libpng 1.6.43\nCompiled with zlib 1.3; using zlib 1.3\nCompiled with xpdf version 4.04"
+    },
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "provisioned_by_harness": false,
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "python_executable": "/usr/bin/python3"
+  },
+  "external_computational_proofs_replayed": false,
+  "finished_utc": "2026-10-03T20:51:16.689327+00:00",
+  "independent_mathematical_verification": false,
+  "inputs": {
+    ".gitignore": "a49307ba5804a4186fc1a957c9b649dcf2ac3721f3e61595680fd16f11ff56ce",
+    "AGENTS.md": "b16914b05b74ec577a753183a1ecb28c1be11891c0204c2128a3d038df18e925",
+    "LICENSE": "0ad6ec26085f6972b7d597c006c70576a929189d506208653e29fc9f12cf6ebd",
+    "README.md": "4d43e9f2273d63575fb4f1d99fdeacaf4637e2837aee1bc9bed1c0a9e8674587",
+    "proofs/pair_baseline.tex": "9c9babe07d775a03cdc70f1fd00ada87ab0d34a7d7812ff47161b0eaefc15ba2",
+    "proofs/triple_explicit_formula.tex": "6c5f62a0c66319cb3f079e75e5804fd34b83fcdfb109bfbb7a8da07b71b3762b",
+    "research/dependency-graph.md": "d43124da1183143c15494b99dafa21eb0708268c1971db81f657285ceb25d310",
+    "research/literature-notes/bgstb-accepted-comparison.md": "fde2b21b8c5a466ca7a9cbb802e9d17c95ed640e01981571bb3a8ce0215d400f",
+    "research/literature-notes/korobov-vinogradov-audit.md": "bbaf4ebc53d5209ba7c541405ebddecff4cd7c2373f5056fdd3604e7c880b9bf",
+    "research/literature-notes/pair-baseline.md": "264e2c7ad2942c39d40ce0639214f766642fa402416687dd0544cbeca1776106",
+    "research/literature-notes/pair-lemma1-audit.md": "17ab426fea1c0c921b1bb1051433913be0e3c1c81cace7b39e4252ff834a661b",
+    "research/literature-notes/pair-lemma3-audit.md": "1256952753495b49ab591e907b2f6326ec26cb2615e1e38f0ab9df54f7a1127b",
+    "research/literature-notes/pair-lemma4-audit.md": "ca5b343d6178773bab3b1c8cf99c9c861e1cec62b6650423214be078f65ff068",
+    "research/literature-notes/pair-prime-mean-audit.md": "f57c19c89995069d4bdb7f2bb92f6040a59ac1e35f4dce679f7150dd8202e2e2",
+    "research/literature-notes/triple-sine-comparison.md": "b256bbf6b507e6f304616a26da2d2b349310c7a0b2ff0f594bba1ffc3b23aa49",
+    "research/literature.bib": "0be4afffaacb5f910dcf3cb8fa2ecaab1d19de2521d231ff7e37351bd6dacc14",
+    "research/notation.md": "fe07556f4b6c3c257f1bb11971bd196723b48106645cb954ebc562039cf59239",
+    "research/pair-conventions.json": "0c8a601d33c517b69f71b29817e2b9fc4ac54d73931b7a9bdba9ac5da848523d",
+    "research/pair-error-budget.md": "03a153eea059886ead0563b88922d1df8acc727f3a5a50c8922c7a39703cb252",
+    "research/pair-rh-audit.json": "c2acc36f53b1baa362f919c011e2f5812d60529ede928c0c39859db8474fd8e8",
+    "research/pair-rh-audit.md": "92a892881793c4174f96f9b9c9f7905519f0c1e8c0e8446a9485ddd6c9e5a29b",
+    "research/theorem-ledger.yaml": "2298eb3185db8bca13d17168633224d1ba5ed5d2a3a8235a663b38fb5324f29a",
+    "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
+    "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
+    "research/triple-error-budget.md": "f0e10bb04396cd022ccd20560191ed77ee21b68f2cf199f0ac5f175d2c90b3f9",
+    "research/triple-kernel.md": "50db3df433499550ea536f9661b4a65313cffa3d486a92c073139c53099f9ee5",
+    "research/triple-main-term-comparison.md": "bea64d3e4dfb0238e9aa2d45367f4dd3ec41c4e0eebc4d8399418408c33caa7f",
+    "research/triple-master-bookkeeping.md": "526a4f7d8421f9ffdc494c68ebc7a06dbfa7e00f02b149091b1671a840e3117c",
+    "research/triple-reproduction.md": "30c73b746133df95783e7e568fb35f6b4b9ba633d2d7b73d3641efdd5a19a127",
+    "research/triple-rh-audit.json": "30e67c1cd5afe6bc3ea1f27476a7b391b647e612c5ee8172148cc9d1c7d7dfff",
+    "research/triple-rh-audit.md": "c9e0d1d0458fffc5bff6ba7c2ecba58ccbbeaf74abcd1e206ea098f349222d94",
+    "research/triple-signed-sectors.json": "e0c8ce60dd824b93d5fd6e3ead89c4e1cc7dc540201761ee9af451a5c41c5368",
+    "research/triple-test-functions.md": "008c18e7949598354ef2c786016809595e0239cc6507b02cce94283d1df3d2bd",
+    "research/triple-theorem.md": "aae58b6d20b0ca6acf126e69c4f09f1e7712bc8a7da11e5472416c9c70ecd185",
+    "research/work-package-a-closure.md": "879cfcc75eb5bc4a1600afeeb498c44f4673f996589eff631ae2fab1915493b0",
+    "scripts/check_pair_asymptotic.py": "96b74f00ef827b679e04c02cb724735301054b95a49953947a1235c6cde2e17c",
+    "scripts/check_pair_conventions.py": "d1b4bb2fb54e399322162a405ea6c2a6955f6b2ef3c850190f678c95ed0bc2fc",
+    "scripts/check_pair_lemma1.py": "b5f93694f7d8e00e6d6ddd5cfefe2ab8dc5936bf1aec5cb4323d4029cbcc36cd",
+    "scripts/check_pair_lemma3.py": "09e0b6104d7da983a821caa0110d5b03855f67335803de62d3a74a2186d7b67e",
+    "scripts/check_pair_lemma4.py": "069244f2e339ff663895ab8d23a1861178442b23d35a0f66053b07b299a2551e",
+    "scripts/check_pair_prime_mean.py": "4981dfbd27e71302b16a88eb392a7e326baa99b3c74f751b6060c8723f0eeac0",
+    "scripts/check_pair_reproduction.py": "08804d0ffc7bb6728be26a4f8f09d696750df0a91b94008a73f0eb95de4abe52",
+    "scripts/check_pair_rh_audit.py": "554a1c21963f8b098bc09e795689852b4247772fc15f344a51cf00ff7097afb9",
+    "scripts/check_triple_boundary.py": "5c9dd1b76892b25e838d9dcf8908db2f794358198493ac6a83f674008c41e3fb",
+    "scripts/check_triple_dependencies.py": "a10f2d5a078f7d2bf16722b1364f6a19c5aacc96a41bdea1d7c961448674d876",
+    "scripts/check_triple_kernel.py": "d63bf8f47fc79ab24ca5d26c2bfe8a5e5d962dc72fa48af5fccf8c62f6820c65",
+    "scripts/check_triple_main_term.py": "27bee9c68dc2134b2d28669b13370f146f6002f453bc9ea8a50a8b4e12be517f",
+    "scripts/check_triple_master.py": "a92d818cf4c0c77044ce63fff3271916cdda4f460343d8e8741a0adca44c3a6d",
+    "scripts/check_triple_offdiag.py": "7d4be894fc422122256caae3fb1d818bdde45d4098526dc7d06cb04ecd0489cd",
+    "scripts/check_triple_reproduction.py": "fc4cab0005b35c08bf4a072b8686bab96bff2e1f80010dee15936cefc5fd60a8",
+    "scripts/check_triple_rh_audit.py": "d044aac759f7ab5da645b63d893c04198c2a00fe22e34686a33065c66bb5c446",
+    "scripts/check_triple_signed_sectors.py": "b8ef8f53205003314194e182dbf301d495db414022a57563e98de9553269c810",
+    "scripts/check_triple_test_functions.py": "cd0551fd7ff93d4ea9dc6d97054de40f382e9cad8eed8571f2e02f02b9805374",
+    "scripts/check_triple_uniform.py": "1f3533da0aa2b02a0ebf2ce94fb7ad81570868b90ada062976e103dcb16990f9",
+    "scripts/pair_normalization.py": "7a3a9c730aabe4692242db953420feb3a8862d5c7e4bdd0ce74441f6999c895b",
+    "scripts/reproduce.sh": "90979912dffca305c3c6c00d3ce5ed1fd5a302d348ee3b2c281160f64aa2f17f",
+    "scripts/reproduce_pair.py": "fb3e9b8822d8398e7715c5616a86d14a0f70f4248b4630c81d1a2aa61a529a0d",
+    "scripts/reproduce_triple.py": "89167cc74168a55aa929e7745d21f63a9ecca5e222ee85b064beb4be838513f8",
+    "scripts/reproduce_triple.sh": "d5466f25569136ed3a39bd243bba98ea50e40b3078f341e1e8a0ef3e5483ba72",
+    "scripts/triple_normalization.py": "06a862009aefb5bda1c3bffcdbdfc8097d1e2bec6ad784bf262f06092dac3f5b"
+  },
+  "mode": "full",
+  "outputs": {
+    "build/proofs/triple_explicit_formula.aux": "50d8454708eb21b194dd2e8230fd3f31a92e9f2bea4a7f42856f05d5318dd135",
+    "build/proofs/triple_explicit_formula.log": "15e72876422bebbe11f679332cc74e51a3846cf581269a256b94a65fa8301ee9",
+    "build/proofs/triple_explicit_formula.out": "79bb11a3dcbc2e57bc9018f8b49fd2187d8398329f29d8751a438492420962a8",
+    "build/proofs/triple_explicit_formula.pdf": "97ac59b2b760539c71ca7983e3d570e6dc595c7a0304cc07ba727251c55ff0ce",
+    "build/proofs/triple_explicit_formula.tex": "6c5f62a0c66319cb3f079e75e5804fd34b83fcdfb109bfbb7a8da07b71b3762b",
+    "logs/git-version.log": "25f3602b5caaf92437be1e76b53698e8d73f14a6c71c2e91c8d5875f923ab29f",
+    "logs/pair-checks.log": "4204180605d9452417ae0b20adcb3b444a6efcc644fc1de743b765c37768df0b",
+    "logs/pdflatex-version.log": "64d3bedadc9885f9fbc5ebc4eb66de7dbb72dcf3f0748f5b8b6ca4030ded7062",
+    "logs/source-commit-final.log": "8e3ca871e94cff1c04c0d9a28cfc712cfece041151300d35568b1434fa39a7b0",
+    "logs/source-commit.log": "8e3ca871e94cff1c04c0d9a28cfc712cfece041151300d35568b1434fa39a7b0",
+    "logs/source-status-final.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/source-status.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/tex-1.log": "5c3c0477528ebeda2aab40be513befd77de7f1a78663fe8480bba0d3a8c32ad2",
+    "logs/tex-2.log": "77c42c3fd180043b5bf37154228f685a8e0fc5bec721a3fe1918099836822c96",
+    "logs/tex-3.log": "77c42c3fd180043b5bf37154228f685a8e0fc5bec721a3fe1918099836822c96",
+    "logs/triple-checks.log": "9fe96022f73ce5573e7142460bd2136e7c03e899be0449cbde3382818f930b7c",
+    "triple-normalization.json": "c727c01d186763ede172aeb8d2322b4842b895b8d50dcfe530303f5ca98f4c93",
+    "triple-normalization.md": "8097b227e8c90da66f58555e789070f935e62f20b38ca896c360d0d410210917",
+    "triple_explicit_formula.pdf": "97ac59b2b760539c71ca7983e3d570e6dc595c7a0304cc07ba727251c55ff0ce"
+  },
+  "pdf": {
+    "failures": [],
+    "pages": 34,
+    "status": "pass",
+    "warnings": []
+  },
+  "records": {
+    "pair_claims": 27,
+    "status": "pass",
+    "triple_audit": {
+      "claims": 34,
+      "files": 15,
+      "main_passages": 141,
+      "total_passages": 161,
+      "unresolved": []
+    },
+    "triple_dependency_graph": {
+      "claims": 31,
+      "edges": 58,
+      "imported": 6,
+      "nodes": 33,
+      "pair_local": 10,
+      "provenance": 2,
+      "triple": 15
+    }
+  },
+  "require_clean": true,
+  "schema_version": 1,
+  "source": {
+    "commit": "e3f5173f9703e6de263bb807d85ea7018c7a1ee0",
+    "dirty": false,
+    "final_state": {
+      "commit": "e3f5173f9703e6de263bb807d85ea7018c7a1ee0",
+      "dirty": false,
+      "git_status": []
+    },
+    "git_status": [],
+    "root": "/tmp/work-package-b-baseline-g05jzkdw/checkout"
+  },
+  "stages": [
+    {
+      "command": [
+        "/usr/bin/git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/checkout",
+      "log": "logs/source-commit.log",
+      "name": "source-commit",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/checkout",
+      "log": "logs/source-status.log",
+      "name": "source-status",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/git",
+        "--version"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/checkout",
+      "log": "logs/git-version.log",
+      "name": "git-version",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "--version"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/checkout",
+      "log": "logs/pdflatex-version.log",
+      "name": "pdflatex-version",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "name": "records",
+      "operation": "validate existing graph and both RH audits without updating hashes",
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "check_pair_*.py",
+        "-v"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/checkout",
+      "log": "logs/pair-checks.log",
+      "name": "pair-checks",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "check_triple_*.py",
+        "-v"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/checkout",
+      "log": "logs/triple-checks.log",
+      "name": "triple-checks",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "name": "normalization",
+      "operation": "exact boundary moments, sector incidence, partition sum and error scaling",
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-no-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "triple_explicit_formula.tex"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/bundle/build/proofs",
+      "log": "logs/tex-1.log",
+      "name": "tex-1",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-no-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "triple_explicit_formula.tex"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/bundle/build/proofs",
+      "log": "logs/tex-2.log",
+      "name": "tex-2",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-no-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "triple_explicit_formula.tex"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/bundle/build/proofs",
+      "log": "logs/tex-3.log",
+      "name": "tex-3",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/checkout",
+      "log": "logs/source-commit-final.log",
+      "name": "source-commit-final",
+      "returncode": 0,
+      "status": "pass"
+    },
+    {
+      "command": [
+        "/usr/bin/git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/work-package-b-baseline-g05jzkdw/checkout",
+      "log": "logs/source-status-final.log",
+      "name": "source-status-final",
+      "returncode": 0,
+      "status": "pass"
+    }
+  ],
+  "started_utc": "2026-10-03T20:51:13.375236+00:00",
+  "status": "pass",
+  "task": "verification_and_exposition",
+  "tests": {
+    "pair": {
+      "errors": 0,
+      "failures": 0,
+      "run": 70,
+      "skipped": 0,
+      "status": "pass"
+    },
+    "triple": {
+      "errors": 0,
+      "failures": 0,
+      "run": 109,
+      "skipped": 0,
+      "status": "pass"
+    }
+  }
+}

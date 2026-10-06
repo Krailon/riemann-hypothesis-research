@@ -1,0 +1,1244 @@
+{
+  "schema_version": 1,
+  "task": "dependency_bookkeeping",
+  "root_claim": "TRIPLE-SMOOTHED-CORRELATION-001",
+  "ledger": "research/theorem-ledger.yaml",
+  "traversal": "dependencies_only",
+  "analytic_proof_certificate": false,
+  "counts": {
+    "claims": 31,
+    "nodes": 33,
+    "edges": 58,
+    "triple": 15,
+    "pair_local": 10,
+    "imported": 6,
+    "provenance": 2
+  },
+  "nodes": [
+    {
+      "id": "GAMMA-DIGAMMA-001",
+      "dependencies": [],
+      "ledger_block_sha256": "bffd7d38928738ccc17a725f082cee5f28948b0f1824b636ca3c2b679c42339a",
+      "node_type": "claim",
+      "group": "imported",
+      "kind": "imported_theorem",
+      "title": "Uniform digamma approximation in a fixed sector",
+      "status": "published",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "sec:analytic-inputs",
+        "bibliography_key": "MV2007",
+        "locator": "Appendix C, Theorem C.1, equation (C.17), p.523 and proof pp.523-524",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/20.3_pp_520_534_The_gamma_function.pdf"
+      },
+      "project_audit_raw": "      task_type: source_verification\n      statement_checked: \"2026-09-25\"\n      scope: \"Uses a fixed sector; numerical optimization of the effective constant is not attempted.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": null,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": null
+    },
+    {
+      "id": "MV-PNT-PROOF",
+      "dependencies": [],
+      "ledger_block_sha256": "7c8a76bfa3889c47267d48214563a207c1418582e8e5996c4d18aaa3f31b4cb4",
+      "node_type": "provenance",
+      "group": "provenance",
+      "source": {
+        "bibliography_key": "MV2007",
+        "version": "author_hosted_publisher_chapter",
+        "locator": "Chapter 6, Theorem 6.9, pp. 179-181; classical zero-free-region inputs in Section 6.1",
+        "audit_status": "statement_and_proof_structure_checked",
+        "notes": "Unconditional effective PNT; statement and proof structure checked, upstream proof not fully reconstructed. No numerical proof input or modern computational KV theorem is used."
+      }
+    },
+    {
+      "id": "MV-SIEVE-PROOF",
+      "dependencies": [],
+      "ledger_block_sha256": "5a65576c6c0cfdb757983fe7fb5be79f77f6cfef8d7b4c7a67017ad76c00d023",
+      "node_type": "provenance",
+      "group": "provenance",
+      "source": {
+        "bibliography_key": "MV2007",
+        "version": "author_hosted_publisher_chapter",
+        "locator": "Chapter 3, Corollary 3.14, p. 97; Theorem 3.10, Lemma 3.12 and Theorem 3.13",
+        "audit_status": "statement_and_proof_structure_checked",
+        "notes": "Unconditional elementary upper-bound sieve, uniform in the even nonzero shift. Effectivity follows from the displayed sieve construction; upstream proof not fully reconstructed."
+      }
+    },
+    {
+      "id": "PAIR-COUNT-001",
+      "dependencies": [
+        "ZETA-COUNT-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      "ledger_block_sha256": "b628a2539372f6345266d549a513e18465ed29e2591c536def14134e3a63998c",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Inclusive and local zero counts with full endpoint multiplicities",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-count",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, Lemma 2, equations (2.4)-(2.5)"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_reconstruction: completed_draft\n      imported_scope: \"Riemann-von Mangoldt remains ZETA-COUNT-001; its upstream proof is not reconstructed.\"\n      endpoint_audit: \"Padded midpoint counts bound full-weight endpoints; conjugation and an effective bounded-height count cover all real intervals.\"\n      interchange_justification: \"Paired alternating-series terms have locally summable O_K(n^(-1-epsilon)) majorants for Re(s)>0.\"\n      rh_contamination_audit: \"Uses MV2007 Corollary 14.3; the RH-dependent Corollary 14.4 is excluded.\"\n      independent_verification: pending\n      final_journal_text_comparison: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Endpoint translations are finite sandwiches; v->infinity only for the stated count asymptotic."
+    },
+    {
+      "id": "PAIR-COUNT-KERNEL-001",
+      "dependencies": [
+        "PAIR-COUNT-001"
+      ],
+      "ledger_block_sha256": "837ceb27d4d8d22f72d3611440e517bbe0303c4d2bdd8065bef79050fa7f2021",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Global, distant and boundary rational-kernel estimates from local counts",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:count-kernel",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, equations (2.14)-(2.15) and boundary estimates after (2.15)"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_reconstruction: completed_draft\n      proof_method: \"Unit-interval counts, elementary shifted series and dyadic shells; no imported pair-correlation theorem.\"\n      independent_verification: pending\n      final_journal_text_comparison: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fixed parameters; nonnegative shell sums are justified by monotone convergence and summable majorants."
+    },
+    {
+      "id": "PAIR-EF-001",
+      "dependencies": [
+        "PAIR-EF-EXACT-001",
+        "ZETA-ANALYTIC-001",
+        "GAMMA-DIGAMMA-001"
+      ],
+      "ledger_block_sha256": "8b9910c89c60ac0d104777021db87693e5977d31613f43ae1ac8cf5eba032a3e",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Reconstructed unconditional BGSTB Lemma 1 with named uniform remainders",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-ef",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, Lemma 1, (2.2)"
+      },
+      "project_audit_raw": "      task_type: proof\n      rh_contamination_audit: \"Local argument and stated imported inputs are unconditional; RH appears only in a marked specialization check.\"\n      endpoint_audit: \"X=1, X=p^k, t=0, negative t and t=gamma covered.\"\n      proof_reconstruction: completed_draft\n      regression_checks: \"8 exact rational tests and 6 supplementary symbolic identities passed on 2026-09-25; neither is a proof certificate.\"\n      source_structure_checks: \"Ledger dependencies, theorem labels, citations, local links and TeX delimiter/environment checks passed.\"\n      independent_verification: pending\n      final_journal_text_comparison: pending\n      compilation: passed_pdflatex_bibtex\n      compilation_notes: \"Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references.\"\n      notes: \"All interchanges inside the reconstruction are justified. Upstream proofs of classical imported inputs are not fully reconstructed.\"\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Uses the exact identity after all contours are removed; estimates uniform for X>=1,t real."
+    },
+    {
+      "id": "PAIR-EF-CONVERGENCE-001",
+      "dependencies": [
+        "ZETA-ANALYTIC-001",
+        "PAIR-COUNT-001"
+      ],
+      "ledger_block_sha256": "3fd06811cc473c5f3e2ab3ab29191bd6c3c05503937dcf9d60437163d596216b",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Absolute and local uniform convergence of the paired zero and prime series",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:ef-convergence"
+      },
+      "project_audit_raw": "      task_type: proof\n      interchange_justification: \"Explicit dyadic zero-tail bound and prime majorant B log(n)/n^(3/2) on 1<=X<=B.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Zero cutoff U -> infinity, locally uniformly in (X,t); absolute prime series."
+    },
+    {
+      "id": "PAIR-EF-EXACT-001",
+      "dependencies": [
+        "ZETA-ANALYTIC-001",
+        "ZETA-CONTOUR-001",
+        "PAIR-EF-CONVERGENCE-001",
+        "PAIR-EF-MELLIN-001"
+      ],
+      "ledger_block_sha256": "870ac3842f65bac21970ca85c604bf566f003b56918e40d668e4e3aacadc4182",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "proposition",
+      "title": "Exact full-zero explicit formula with continuous endpoint conventions",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "prop:ef-exact"
+      },
+      "project_audit_raw": "      task_type: proof\n      interchange_justification: |\n        Euler series integrated with an explicit integrable majorant;\n        horizontal contours O_{X,t,M}(log^2(U_j)/U_j^2);\n        left contour O(X^(-a-1/2) log(a+|t|+2)/a), a=2M+1;\n        absolute nontrivial-zero residue convergence and trivial majorant 2/m^2;\n        endpoint extension by dominated convergence.\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fixed X>1,t,M; U_j -> infinity; M -> infinity; finally X down to 1 by local domination."
+    },
+    {
+      "id": "PAIR-EF-MELLIN-001",
+      "dependencies": [],
+      "ledger_block_sha256": "1cee155d7deb1ed46253870cf2bacf47155f814439e0e7f9c4cb9fabceef88e3",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Absolutely convergent paired Mellin kernel including its endpoint",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:ef-mellin"
+      },
+      "project_audit_raw": "      task_type: proof\n      interchange_justification: \"Absolute vertical integrals and explicit vanishing horizontal/vertical bounds.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": true,
+      "certificate_artifact_hash": null,
+      "limit_order": "Horizontal heights -> infinity at fixed shifted line; then real boundary -> infinity."
+    },
+    {
+      "id": "PAIR-MEANVALUE-001",
+      "dependencies": [],
+      "ledger_block_sha256": "7e31a436b5087966367a8769270990a8a4167e2741b4c7109435b31b1d33e749",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Fourier mean-value bound with a strict nearby-frequency cutoff",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_reconstruction: completed_draft\n      proof_method: \"Explicit sinc-power convolution and endpoint majorants. Ordinary L1/L2 Fourier inversion; no imported Goldston-Montgomery lemma.\"\n      fourier_audit: \"Negative-sign 2 pi transform; Khat=(3/2)(tau*tau)(2xi), B0hat=2(1+exp(-2 pi i xi))tau(2xi). Bandwidth delta in cycles.\"\n      boundary_audit: \"Continuous L1 transforms vanish at +/-delta; time endpoints have measure zero.\"\n      interchange_audit: \"Compact convolution integrals and ||M^pm||_1 (sum|c|)^2 majorant justify all exchanges.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": true,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fixed T,delta; absolute coefficient summability permits Fubini and finite-sum approximation."
+    },
+    {
+      "id": "PAIR-PRIME-COUNT-001",
+      "dependencies": [
+        "PRIME-SIEVE-001"
+      ],
+      "ledger_block_sha256": "62a8ff42d64b6895b3d619410aedc6886523edff52d0bb20effb5c60c8c5f4d0",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Averaged von Mangoldt pair counts and weighted nearby frequencies",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-count"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_reconstruction: completed_draft\n      primepower_audit: \"At most O(sqrt(U)log(2U)) proper powers; their ordered pairs contribute O(V sqrt(U)log^3(2U))=O(UV).\"\n      uniformity_audit: \"Sieve constant uniform in shift; average g(h) bounded by V exp(3/4). Cutoffs below 1 contribute no pairs.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Finite U,V first; singular-factor expansion and dyadic tails use nonnegative convergent majorants."
+    },
+    {
+      "id": "PAIR-PRIME-DIAGONAL-001",
+      "dependencies": [
+        "PRIME-PNT-001"
+      ],
+      "ledger_block_sha256": "2b07ab65fb069c80ec587e5b990b1734a2f2bfccff6960b025857ef3ee4f2815",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Weighted diagonal with proper prime powers and inclusive cutoffs",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-diagonal"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_reconstruction: completed_draft\n      endpoint_audit: \"Weight continuous at real X, so no jump term even at a prime or proper prime power; X=1 included.\"\n      primepower_audit: \"Elementary integer-power count, followed by a convergent nonnegative dyadic series.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Partial summation on finite intervals, then upper endpoint to infinity at fixed X; integrable derivative and dyadic tail bounds."
+    },
+    {
+      "id": "PAIR-PRIME-MEAN-001",
+      "dependencies": [
+        "PAIR-MEANVALUE-001",
+        "PAIR-PRIME-COUNT-001",
+        "PAIR-PRIME-DIAGONAL-001"
+      ],
+      "ledger_block_sha256": "d339b8995e0ac023cbbbaf2df6c1852f2e496f0088e7dcc64a6c24fe0877f049",
+      "node_type": "claim",
+      "group": "pair_local",
+      "kind": "lemma",
+      "title": "Weighted prime-series mean square through X=T",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-mean"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_reconstruction: completed_draft\n      bandwidth_audit: \"mu_n=-log(n)/(2 pi), delta=(1/2)sqrt(log(2X)/(TX)); 1/(2T)<=delta<=1/2 verified including X=1,T.\"\n      tail_audit: \"For N>=max(2,X), sup_t |sum_{n>N} a_X(n)n^(-it)| << X(log N+1)/sqrt N.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Prime-series tails vanish uniformly in t at fixed X,T; resulting estimates are uniform on 1<=X<=T."
+    },
+    {
+      "id": "PRIME-PNT-001",
+      "dependencies": [
+        "MV-PNT-PROOF"
+      ],
+      "ledger_block_sha256": "89b31f66fd34987303a0f6e0b178c94549a9fd637c16952f6f17c82aaf7ff191",
+      "node_type": "claim",
+      "group": "imported",
+      "kind": "imported_theorem",
+      "title": "Effective classical prime number theorem",
+      "status": "published",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "inp:prime-pnt",
+        "bibliography_key": "MV2007",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/10.0_pp_168_198_The_Prime_Number_Theorem.pdf",
+        "locator": "Theorem 6.9, equations (6.12)-(6.13), p. 179; proof pp. 180-181",
+        "version_consulted": "author_hosted_publisher_chapter"
+      },
+      "project_audit_raw": "      task_type: source_verification\n      statement_checked: \"2026-09-26\"\n      proof_structure_audit: \"Classical zero-free region, Perron truncation and contour shift; effective constants, no unproved RH or computational verification.\"\n      proof_reconstruction: not_attempted\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": null,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Imported pointwise bounds for every u>=2; upstream interchange audit incomplete."
+    },
+    {
+      "id": "PRIME-SIEVE-001",
+      "dependencies": [
+        "MV-SIEVE-PROOF"
+      ],
+      "ledger_block_sha256": "7c7634db14fc79c5fc762fca389ede7057824ad05fca346f2d801df358db1989",
+      "node_type": "claim",
+      "group": "imported",
+      "kind": "imported_theorem",
+      "title": "Uniform upper bound for prime pairs with even shift",
+      "status": "published",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "inp:prime-sieve",
+        "bibliography_key": "MV2007",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/07.0_pp_76_107_Principles_and_first_examples_of_sieve_methods.pdf",
+        "locator": "Corollary 3.14, p. 97, specialized to x=0,y=U; fixed product and bounded error factor absorbed",
+        "version_consulted": "author_hosted_publisher_chapter"
+      },
+      "project_audit_raw": "      task_type: source_verification\n      statement_checked: \"2026-09-26\"\n      uniformity_audit: \"Source explicitly uniform in the nonzero even shift; elementary sieve constants effective.\"\n      proof_reconstruction: not_attempted\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": null,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Uniform imported upper bound; no local limiting operation."
+    },
+    {
+      "id": "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "dependencies": [
+        "TRIPLE-UNIFORM-001",
+        "TRIPLE-OFFDIAG-001",
+        "TRIPLE-RETAINED-001"
+      ],
+      "ledger_block_sha256": "65c2dd5c9ddfce2742aaa096625640633ff39809e2015790556e502fbb966cd0",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Local boundary profiles and integrated positive-quadrant error budget",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-boundary-estimates",
+        "bookkeeping": "research/triple-test-functions.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Integrate the existing exact named budget with exponential decay vectors; keep pole, archimedean, Dirichlet-series and trivial components identifiable; derive local profiles directly.\"\n      endpoint_audit: \"X=1,Y=1,axes,origin and inner support boundary included. T>=2pi e for the budget; local profiles use compact r-subsets strictly inside (0,1). Outer frequency boundary remains excluded.\"\n      smoothing_audit: \"Explicit dependence W=1+W_inf+W_1 for the integrated estimate; fixed smoothing for the local-profile limits.\"\n      horizontal_audit: \"Full-zero observable, kernel, multiplicity and index-diagonal conventions inherited unchanged.\"\n      verification_script: scripts/check_triple_boundary.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Convergent zero/prime expressions at fixed parameters first; then fix smoothing and compact profile ranges before T tends to infinity. Integrated estimate is uniform in kappa and the stated test class."
+    },
+    {
+      "id": "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+      "dependencies": [
+        "TRIPLE-KERNEL-PROFILE-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001"
+      ],
+      "ledger_block_sha256": "4f7171141988ff04f2e0b963eddaac6de2a5a90a0910359a42cf9613e33f88de",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "corollary",
+      "title": "Microscopic horizontal profile and isolated critical-line specialization",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "cor:triple-kernel-critical",
+        "bookkeeping": "research/triple-kernel.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Substitution in the rational profile, compact-set derivative estimates, an explicit quadratic Taylor expansion and exact local-spacing normalization.\"\n      endpoint_audit: \"Zero gaps, repeated occurrences and closed horizontal endpoints included; L_T=log(T/(2pi))/(2pi), T>2pi.\"\n      horizontal_audit: \"General profile retains deltas; only a separately stated kernel parameter specialization sets them to zero.\"\n      assumption_separation: \"The global all-zero critical-line interpretation is marked RH and is not an input. The localization lemma is used here only for its unrestricted tuplewise bound, not its support-restricted correlation consequence.\"\n      verification_script: scripts/check_triple_kernel.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fix the scaled-gap bound R before T tends to infinity; the horizontal parameters may vary arbitrarily within the closed cube. No microscopic limit is interchanged with an infinite zero sum."
+    },
+    {
+      "id": "TRIPLE-KERNEL-LOCALIZATION-001",
+      "dependencies": [
+        "TRIPLE-KERNEL-PROFILE-001",
+        "TRIPLE-MASTER-001",
+        "PAIR-COUNT-001",
+        "PAIR-COUNT-KERNEL-001",
+        "TRIPLE-SIGNED-SECTORS-001",
+        "TRIPLE-SIGNED-TEST-FUNCTION-001"
+      ],
+      "ledger_block_sha256": "6113275e16c7012c7d78008d4c1c3d5ec099c4a5252739090f5ca66782fd8395",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Summable height-localization error and explicit-profile correlation",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)\"]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-kernel-localization",
+        "bookkeeping": "research/triple-kernel.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Freeze the smooth height weight at the anchor; prove a tuplewise convolution bound and an independent summable near/far decomposition using local zero counts. Transfer via the compact-frequency horizontal majorant.\"\n      endpoint_audit: \"T=3 included for kernel estimates, T>=2pi e for transfer; near includes |t-gamma_l|=T, far is strict, and far-center has priority over far-anchor. All coincidences included.\"\n      smoothing_audit: \"New Wprime_inf=||omega'||_inf is distinct from W_1=||omega'||_1. The two old/new correlation errors retain their stated norms separately.\"\n      horizontal_audit: \"Full rational profile and full complex test arguments retained; no delta is set to zero.\"\n      verification_script: scripts/check_triple_kernel.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Tonelli for nonnegative error majorants at fixed T and smoothing; unit and dyadic shell bounds prove finiteness before zero cutoffs are removed. For the correlation limit fix test, support margin and smoothing; varying families must make both errors vanish."
+    },
+    {
+      "id": "TRIPLE-KERNEL-PROFILE-001",
+      "dependencies": [
+        "TRIPLE-MASTER-001"
+      ],
+      "ledger_block_sha256": "7ed4e2de3a54251bf0183e2833996c9202e3c76f1a195ec6e206a9315309b7b0",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Exact rational triple-kernel profile with full horizontal parameters",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-kernel-profile",
+        "bookkeeping": "research/triple-kernel.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Upper-half-plane residues, explicit cleared-denominator polynomial cancellation and dominated convergence at collisions.\"\n      endpoint_audit: \"All real gaps, coincident centers, and |delta_m|<=1/2 included; upper and lower poles stay separated.\"\n      horizontal_audit: \"All deltas retained; anchor center is +i delta_l and the two other centers have -i delta.\"\n      verification_script: scripts/check_triple_kernel.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Residues for distinct centers at fixed parameters; then dominated convergence on compact gap sets extends to center collisions and horizontal endpoints."
+    },
+    {
+      "id": "TRIPLE-LOG-GAP-001",
+      "dependencies": [],
+      "ledger_block_sha256": "17fdd5568a3189c47bc00db8880d7c91e9c458cf5eb4f6ccb328a452bb3a8d06",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Absolute logarithmic-gap bound for integer frequencies",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-log-gap"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Comparable/far integer split, elementary logarithmic gap, weighted Cauchy-Schwarz, harmonic row and column sums.\"\n      endpoint_audit: \"Ratios 1/2 and 2 belong to the comparable part; equal frequencies are excluded throughout.\"\n      verification_script: scripts/check_triple_offdiag.py\n      independent_verification: pending\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": true,
+      "certificate_artifact_hash": null,
+      "limit_order": "Prove the bound for finite independent sequence truncations, then use monotone convergence on all nonnegative sums."
+    },
+    {
+      "id": "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "dependencies": [
+        "TRIPLE-SINE-MEASURE-001",
+        "TRIPLE-SIGNED-TEST-FUNCTION-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+      ],
+      "ledger_block_sha256": "281585d4336dfcf6150ca639630e67bbdaf0962802e2e63b8a953e53080de8fd",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Exact sine-benchmark identification of the weighted triple main term",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-main-term-comparison",
+        "bookkeeping": "research/triple-main-term-comparison.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Pair the exact benchmark transform with the compact frequency test, then substitute into the two existing weighted asymptotic formulas.\"\n      endpoint_audit: \"Internal axes and origin included; outer boundary h=1 remains excluded by a fixed positive margin for the zeta theorem.\"\n      horizontal_audit: \"No critical-line substitution; the full weighted statistic and complex test arguments are unchanged.\"\n      verification_script: scripts/check_triple_main_term.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fix test, support margin and smoothing before T tends to infinity. Varying families must make both retained errors vanish; no new zero-sum interchange is used."
+    },
+    {
+      "id": "TRIPLE-MASTER-001",
+      "dependencies": [
+        "PAIR-EF-CONVERGENCE-001",
+        "PAIR-EF-001",
+        "PAIR-COUNT-KERNEL-001"
+      ],
+      "ledger_block_sha256": "84d6bb1daf41a31def210cc8147cdc08729349aa96182d79121be3f6dffb753b",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Exact smoothed triple master identity with full zero coordinates",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-master",
+        "bookkeeping": "research/triple-master-bookkeeping.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Absolute-convergence trilinear expansion of the exact pair explicit formula, disjoint index partitions, Fourier substitution, and unique factorization.\"\n      horizontal_audit: \"Full delta coordinates retained; simultaneous horizontal reflection reindexes every index subseries. No RH, simplicity or critical-line zero restriction.\"\n      endpoint_audit: \"X=1,Y=1,T=3 included; smooth center window, no zero-height truncation. Cutoff endpoints carry full multiplicity.\"\n      verification_script: scripts/check_triple_master.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"Outside the existing Work Package A audit; that audit's original claim scope is unchanged.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fix T,X,Y,omega; remove the three zero cutoffs independently or jointly by the integrable kernel majorant; prime cutoffs by absolute convergence. No asymptotic or varying-smoothing limit is taken."
+    },
+    {
+      "id": "TRIPLE-OFFDIAG-001",
+      "dependencies": [
+        "TRIPLE-LOG-GAP-001",
+        "TRIPLE-UNIFORM-001",
+        "TRIPLE-MASTER-001"
+      ],
+      "ledger_block_sha256": "159192e43fe71eab2f3f8678b60dfaa996e4305f2ec5c6ec7c9432f49bc786bc",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Decaying mixed-prime and cubic off-diagonal bounds",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-offdiag",
+        "bookkeeping": "research/triple-error-budget.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Multiplicative weight inequality, elementary divisor identity, dyadic coefficient energies, logarithmic-gap lemma, and integration by parts.\"\n      endpoint_audit: \"T=3,X=1,Y=1 included; integer dyadic cutoffs count upper endpoints once; resonances excluded before dividing by logarithms.\"\n      horizontal_audit: \"Bounds the exact full-zero master identity through its prime representation, without restricting beta or multiplicity.\"\n      verification_script: scripts/check_triple_offdiag.py\n      independent_verification: pending\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fixed parameters; absolute coefficient sums justify convolution and integrals; finite reciprocal-log majorants justify removal of off-diagonal cutoffs. Only the smooth weights are differentiated."
+    },
+    {
+      "id": "TRIPLE-QUADRANT-LIMIT-001",
+      "dependencies": [
+        "TRIPLE-BOUNDARY-ESTIMATES-001",
+        "TRIPLE-MASTER-001"
+      ],
+      "ledger_block_sha256": "efc79256b64818592b277927de138c907affa5233c77028a69f2480b137d6c0d",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "theorem",
+      "title": "One-sided axis and origin limit for the native weighted triple correlation",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL, \"SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)\"]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "thm:triple-quadrant-limit",
+        "bookkeeping": "research/triple-test-functions.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Exact exponential moments, first-moment trace estimates, integrated named remainder bounds, compact-frequency entire extension and absolute Fubini.\"\n      endpoint_audit: \"Smooth restrictions have continuous boundary traces; axes,origin and Q_kappa boundary included. No half masses. Outer line xi+eta=1 excluded.\"\n      scaling_audit: \"b=log(T/(2pi)),q=log T, origin Jacobian b^(-2), transverse axis Jacobian b^(-1); only the extra 1/q normalization is introduced.\"\n      horizontal_audit: \"Imaginary sums of deltas and the native conjugated-anchor kernel remain; no substitution beta=1/2.\"\n      verification_script: scripts/check_triple_boundary.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "At fixed T,psi,omega remove independent zero cutoffs under the explicit absolute majorant. Then fix psi,kappa,omega and let T tend to infinity. Varying families require the displayed bound to vanish."
+    },
+    {
+      "id": "TRIPLE-RETAINED-001",
+      "dependencies": [
+        "TRIPLE-UNIFORM-001",
+        "TRIPLE-OFFDIAG-001",
+        "PRIME-PNT-001"
+      ],
+      "ledger_block_sha256": "fdf2fd15696b763fb794111b21cf30b37d0b4db02adc83d91233fd8943d436a5",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Evaluation and bounds for the retained triple terms",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-retained",
+        "bookkeeping": "research/triple-test-functions.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Effective PNT, elementary proper-power counting, continuous mixed weight, exact integration and dyadic resonance estimates.\"\n      endpoint_audit: \"a=b,a=1,Z=1,T=3 included; all integer and dyadic endpoints counted once.\"\n      verification_script: scripts/check_triple_test_functions.py\n      independent_verification: pending\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fixed parameters before Stieltjes upper endpoints and nonnegative dyadic sums tend to infinity; explicit summable majorants and vanishing boundary terms."
+    },
+    {
+      "id": "TRIPLE-SIGNED-SECTORS-001",
+      "dependencies": [
+        "TRIPLE-MASTER-001",
+        "PAIR-COUNT-KERNEL-001"
+      ],
+      "ledger_block_sha256": "2faeb5a88141cde981e811f98d63344b7f77de42cd36311fc3a5a931752a588e",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Reciprocal full-zero reflection and six signed frequency sectors",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-signed-sectors",
+        "bookkeeping": "research/triple-signed-sectors.json"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Full-zero reciprocal reflection, permutation of three frequencies with sum zero, exact determinant-one cone maps and the collected anchor-delta bound.\"\n      endpoint_audit: \"x=1 and all internal seams, including the origin, are included. T>2pi for the frequency base; the optional support majorant uses 0<kappa<1.\"\n      horizontal_audit: \"Retains all deltas and denominators. Reflection is reindexing; no individual zero or index-diagonal invariance is assumed.\"\n      verification_script: scripts/check_triple_signed_sectors.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "All series products, conjugations and reindexings are at fixed parameters under absolute majorants; convergence is locally uniform in x>0,t real. No asymptotic limit is used."
+    },
+    {
+      "id": "TRIPLE-SIGNED-TEST-FUNCTION-001",
+      "dependencies": [
+        "TRIPLE-SIGNED-SECTORS-001",
+        "TRIPLE-QUADRANT-LIMIT-001"
+      ],
+      "ledger_block_sha256": "2fb612f94e994e40b1d700a49f3faccd1ea26ec335a57b483c8fb55bad6ec68d",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "theorem",
+      "title": "Native weighted full-zero Schwartz correlation with hexagonal Fourier support",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL, \"SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)\"]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "thm:triple-signed-test-function",
+        "bookkeeping": "research/triple-test-functions.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Six determinant-one quadrant pullbacks, conjugation of negative-sector tests, chain-rule seminorm bounds, incidence accounting and compact-frequency Fourier inversion.\"\n      endpoint_audit: \"All internal axes, the diagonal xi+eta=0 and the origin included; h=1 excluded. Identity holds for T>2pi; estimate for T>=2pi e.\"\n      scaling_audit: \"Only the extra factor 1/log T; 1/T remains inside K_T. Sector Jacobians are one and diagonal line measure is dr.\"\n      horizontal_audit: \"Full complex test arguments and native kernel retained; sector identities do not assert separate preservation of index-diagonal subseries.\"\n      verification_script: scripts/check_triple_signed_sectors.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Remove independent zero cutoffs at fixed T,phi,omega under C||phi||_1 B^(1-kappa)L^3. Then fix phi,kappa,omega and let T grow; varying families require the displayed error to vanish."
+    },
+    {
+      "id": "TRIPLE-SINE-MEASURE-001",
+      "dependencies": [],
+      "ledger_block_sha256": "f70b8187841e2f0337efee1ba5d966127ad029cd1675b300ad6c9c60c29908fa",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "All-ordered sine measure and its third-cumulant Fourier cancellation",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-sine-measure",
+        "bookkeeping": "research/triple-main-term-comparison.md",
+        "provenance": "research/literature-notes/triple-sine-comparison.md",
+        "bibliography_key": "ConreySnaith2014",
+        "imported_scope": "Theorem 1, equation (2), author manuscript v2 p. 2 fixes the distinct-index unitary determinant convention; all claimed identities are proved directly."
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Determinant expansion, five occurrence-index partitions, compact interval convolution and explicit distributional moment-cumulant subtraction.\"\n      endpoint_audit: \"s(0)=1; overlap lengths include all collisions and endpoints. Benchmark cancellation holds on h<=1, without extending any zeta support theorem.\"\n      fourier_audit: \"Negative-forward 2pi convention; bilinear pairing; line deltas use coordinate dr. The physical all-equal atom transforms to planar density one, not a frequency atom.\"\n      verification_script: scripts/check_triple_main_term.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"These Work Package B claims are outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": true,
+      "certificate_artifact_hash": null,
+      "limit_order": "No asymptotic limit. Compact interval parameter integrals are exchanged against Schwartz tests under an integrable absolute majorant; all measure pairings converge absolutely."
+    },
+    {
+      "id": "TRIPLE-SMOOTHED-CORRELATION-001",
+      "dependencies": [
+        "TRIPLE-KERNEL-PROFILE-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "TRIPLE-SINE-MEASURE-001",
+        "TRIPLE-MAIN-TERM-COMPARISON-001"
+      ],
+      "ledger_block_sha256": "5458f41e6400d18bb8b49ac720c2605ebc5612b00deeca3e3493d00b1947b33c",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "theorem",
+      "title": "Unconditional smoothed weighted three-level correlation in unit sine-benchmark normalization",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL, \"SUPPORT(h<=1-kappa, 0<kappa<1)\"]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "thm:triple-smoothed-correlation",
+        "bookkeeping": "research/triple-theorem.md"
+      },
+      "project_audit_raw": "      task_type: proof_synthesis\n      proof_method: \"Repeat the complete definitions, apply the proved absolute-convergence and profile lemmas, identify R^J=(2/3)A_T^J exactly, and use the main-term comparison. No new analytic estimate.\"\n      endpoint_audit: \"T>=2pi e; internal frequency axes and origin included, outer boundary excluded by positive kappa. Smooth anchor cutoff has no endpoint half weights; coincident centers and closed horizontal parameter endpoints are allowed.\"\n      horizontal_audit: \"Anchor center has +i delta_i1, other centers have -i delta; test shifts contain sums of horizontal displacements. No critical-line substitution.\"\n      verification_script: scripts/check_triple_main_term.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"This Work Package B theorem is outside the existing Work Package A audit.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "At fixed T,test,smoothing, absolute convergence permits arbitrary independent zero-cutoff limits. Then fix test, support margin and smoothing before T tends to infinity; varying families must make both named errors vanish."
+    },
+    {
+      "id": "TRIPLE-UNIFORM-001",
+      "dependencies": [
+        "TRIPLE-MASTER-001",
+        "PAIR-EF-001",
+        "PAIR-PRIME-MEAN-001",
+        "PAIR-PRIME-DIAGONAL-001"
+      ],
+      "ledger_block_sha256": "3a85b5b74c984c057b47c9b30c665a26e9c171f7dd3b692f4acd4b41af031dcf",
+      "node_type": "claim",
+      "group": "triple",
+      "kind": "lemma",
+      "title": "Uniform smoothed triple bounds and a named signed error budget",
+      "status": "proved-draft",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-uniform",
+        "bookkeeping": "research/triple-error-budget.md"
+      },
+      "project_audit_raw": "      task_type: proof\n      proof_method: \"Elementary coefficient sums, imported mean square and diagonal bounds, weighted Cauchy-Schwarz, integration by parts, and exact signed finite expansion.\"\n      horizontal_audit: \"Estimates the exact master identity retaining all horizontal coordinates and multiplicities; no new zero restriction or RH assumption.\"\n      endpoint_audit: \"T=3,X=1,Y=1 and x=2T included. The sharper norm branch is never used for x>2T; integer n=x is counted once.\"\n      smoothing_audit: \"W_inf,W_1 and W_0 retained explicitly; mass normalization alone does not bound the first two.\"\n      verification_script: scripts/check_triple_uniform.py\n      independent_verification: pending\n      pair_rh_audit_coverage: \"Outside the existing Work Package A audit; the append-only ledger extension does not expand its claim coverage.\"\n",
+      "pair_audit_covered": false,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": "Fixed T,X,Y,omega before removing absolutely convergent cutoffs; integration by parts acts only on compact smooth weights. No asymptotic or shrinking-width limit."
+    },
+    {
+      "id": "ZETA-ANALYTIC-001",
+      "dependencies": [],
+      "ledger_block_sha256": "47e06db1e4af51e5060110b2092d40603bf7f50e3f0b91621c58431af36aa9c2",
+      "node_type": "claim",
+      "group": "imported",
+      "kind": "imported_theorem",
+      "title": "Classical analytic structure and functional equation of zeta",
+      "status": "published",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "sec:analytic-inputs",
+        "bibliography_key": "DLMF",
+        "locator": "Sections 25.2(i), 25.2(iv), 25.10(i); equation (25.4.2)",
+        "url": "https://dlmf.nist.gov/25.4#E2"
+      },
+      "project_audit_raw": "      task_type: source_verification\n      statement_checked: \"2026-09-25\"\n      scope: \"Standard analytic input; Euler-product differentiation justified in the draft.\"\n      foundational_reconstruction: not_attempted\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": true,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": null
+    },
+    {
+      "id": "ZETA-CONTOUR-001",
+      "dependencies": [],
+      "ledger_block_sha256": "539736699ea955c434f96e36f0736c2facfb5fba9bb8b13d2cfd07072a87226f",
+      "node_type": "claim",
+      "group": "imported",
+      "kind": "imported_theorem",
+      "title": "Unconditional logarithmic-derivative estimates for contour shifts",
+      "status": "published",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "sec:analytic-inputs",
+        "bibliography_key": "MV2007",
+        "locator": "Chapter 12, Lemma 12.2 p.398 and Lemma 12.4 pp.399-400",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/16.0_pp_397_418_Explicit_formulae.pdf"
+      },
+      "project_audit_raw": "      task_type: source_verification\n      statement_checked: \"2026-09-25\"\n      scope: \"Statements and displayed proofs read; foundational dependency reconstruction not claimed.\"\n      rh_contamination_audit: \"Neither imported lemma assumes RH or simplicity.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": null,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": null
+    },
+    {
+      "id": "ZETA-COUNT-001",
+      "dependencies": [],
+      "ledger_block_sha256": "bf9fe655a25e65c90d0a2979b39d8eb619fcc7f3e936244ca8af90379ea658d2",
+      "node_type": "claim",
+      "group": "imported",
+      "kind": "imported_theorem",
+      "title": "Riemann-von Mangoldt count with midpoint endpoint convention",
+      "status": "published",
+      "assumptions": "[UNCONDITIONAL]",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "sec:analytic-inputs",
+        "bibliography_key": "MV2007",
+        "locator": "Chapter 14, definition p.452 and Corollary 14.3 p.454",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/18.0_pp_452_462_Zeros.pdf"
+      },
+      "project_audit_raw": "      task_type: source_verification\n      statement_checked: \"2026-09-25\"\n      scope: \"Published unconditional input; full upstream proof not reconstructed.\"\n      endpoint_translation: \"Inclusive count and local count obtained by sandwiching in the draft.\"\n      rh_contamination_audit: \"Corollary 14.4 (RH) is excluded.\"\n      independent_verification: pending\n",
+      "pair_audit_covered": true,
+      "constants_effective": true,
+      "computation_used_in_proof": false,
+      "all_limit_interchanges_justified": null,
+      "dependency_graph_complete": false,
+      "certificate_artifact_hash": null,
+      "limit_order": null
+    }
+  ],
+  "edges": [
+    [
+      "PAIR-COUNT-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-COUNT-001",
+      "ZETA-COUNT-001"
+    ],
+    [
+      "PAIR-COUNT-KERNEL-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "PAIR-EF-001",
+      "GAMMA-DIGAMMA-001"
+    ],
+    [
+      "PAIR-EF-001",
+      "PAIR-EF-EXACT-001"
+    ],
+    [
+      "PAIR-EF-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-EF-CONVERGENCE-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "PAIR-EF-CONVERGENCE-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-EF-EXACT-001",
+      "PAIR-EF-CONVERGENCE-001"
+    ],
+    [
+      "PAIR-EF-EXACT-001",
+      "PAIR-EF-MELLIN-001"
+    ],
+    [
+      "PAIR-EF-EXACT-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-EF-EXACT-001",
+      "ZETA-CONTOUR-001"
+    ],
+    [
+      "PAIR-PRIME-COUNT-001",
+      "PRIME-SIEVE-001"
+    ],
+    [
+      "PAIR-PRIME-DIAGONAL-001",
+      "PRIME-PNT-001"
+    ],
+    [
+      "PAIR-PRIME-MEAN-001",
+      "PAIR-MEANVALUE-001"
+    ],
+    [
+      "PAIR-PRIME-MEAN-001",
+      "PAIR-PRIME-COUNT-001"
+    ],
+    [
+      "PAIR-PRIME-MEAN-001",
+      "PAIR-PRIME-DIAGONAL-001"
+    ],
+    [
+      "PRIME-PNT-001",
+      "MV-PNT-PROOF"
+    ],
+    [
+      "PRIME-SIEVE-001",
+      "MV-SIEVE-PROOF"
+    ],
+    [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-OFFDIAG-001"
+    ],
+    [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-RETAINED-001"
+    ],
+    [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-UNIFORM-001"
+    ],
+    [
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001"
+    ],
+    [
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+      "TRIPLE-KERNEL-PROFILE-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "PAIR-COUNT-KERNEL-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-KERNEL-PROFILE-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-SIGNED-SECTORS-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-SIGNED-TEST-FUNCTION-001"
+    ],
+    [
+      "TRIPLE-KERNEL-PROFILE-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+    ],
+    [
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001"
+    ],
+    [
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-SIGNED-TEST-FUNCTION-001"
+    ],
+    [
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-SINE-MEASURE-001"
+    ],
+    [
+      "TRIPLE-MASTER-001",
+      "PAIR-COUNT-KERNEL-001"
+    ],
+    [
+      "TRIPLE-MASTER-001",
+      "PAIR-EF-001"
+    ],
+    [
+      "TRIPLE-MASTER-001",
+      "PAIR-EF-CONVERGENCE-001"
+    ],
+    [
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-LOG-GAP-001"
+    ],
+    [
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-UNIFORM-001"
+    ],
+    [
+      "TRIPLE-QUADRANT-LIMIT-001",
+      "TRIPLE-BOUNDARY-ESTIMATES-001"
+    ],
+    [
+      "TRIPLE-QUADRANT-LIMIT-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-RETAINED-001",
+      "PRIME-PNT-001"
+    ],
+    [
+      "TRIPLE-RETAINED-001",
+      "TRIPLE-OFFDIAG-001"
+    ],
+    [
+      "TRIPLE-RETAINED-001",
+      "TRIPLE-UNIFORM-001"
+    ],
+    [
+      "TRIPLE-SIGNED-SECTORS-001",
+      "PAIR-COUNT-KERNEL-001"
+    ],
+    [
+      "TRIPLE-SIGNED-SECTORS-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-SIGNED-TEST-FUNCTION-001",
+      "TRIPLE-QUADRANT-LIMIT-001"
+    ],
+    [
+      "TRIPLE-SIGNED-TEST-FUNCTION-001",
+      "TRIPLE-SIGNED-SECTORS-001"
+    ],
+    [
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001"
+    ],
+    [
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-KERNEL-PROFILE-001"
+    ],
+    [
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-MAIN-TERM-COMPARISON-001"
+    ],
+    [
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-SINE-MEASURE-001"
+    ],
+    [
+      "TRIPLE-UNIFORM-001",
+      "PAIR-EF-001"
+    ],
+    [
+      "TRIPLE-UNIFORM-001",
+      "PAIR-PRIME-DIAGONAL-001"
+    ],
+    [
+      "TRIPLE-UNIFORM-001",
+      "PAIR-PRIME-MEAN-001"
+    ],
+    [
+      "TRIPLE-UNIFORM-001",
+      "TRIPLE-MASTER-001"
+    ]
+  ],
+  "inherited_pair_audit": {
+    "record": "research/pair-rh-audit.json",
+    "reviewed_on": "2026-09-28",
+    "independent_review": false,
+    "claim_ids": [
+      "GAMMA-DIGAMMA-001",
+      "PAIR-COUNT-001",
+      "PAIR-COUNT-KERNEL-001",
+      "PAIR-EF-001",
+      "PAIR-EF-CONVERGENCE-001",
+      "PAIR-EF-EXACT-001",
+      "PAIR-EF-MELLIN-001",
+      "PAIR-MEANVALUE-001",
+      "PAIR-PRIME-COUNT-001",
+      "PAIR-PRIME-DIAGONAL-001",
+      "PAIR-PRIME-MEAN-001",
+      "PRIME-PNT-001",
+      "PRIME-SIEVE-001",
+      "ZETA-ANALYTIC-001",
+      "ZETA-CONTOUR-001",
+      "ZETA-COUNT-001"
+    ]
+  },
+  "triple_claims_outside_closure": [
+    "TRIPLE-INTERIOR-VANISHING-001",
+    "TRIPLE-SMOOTHED-ADDITIVE-001",
+    "TRIPLE-TEST-FUNCTION-001"
+  ],
+  "pair_passages": {
+    "GAMMA-DIGAMMA-001": [
+      "proofs/pair_baseline.tex: P008"
+    ],
+    "PAIR-COUNT-001": [
+      "proofs/pair_baseline.tex: P013",
+      "proofs/pair_baseline.tex: P014",
+      "proofs/pair_baseline.tex: P015",
+      "proofs/pair_baseline.tex: P016"
+    ],
+    "PAIR-COUNT-KERNEL-001": [
+      "proofs/pair_baseline.tex: P017",
+      "proofs/pair_baseline.tex: P018",
+      "proofs/pair_baseline.tex: P019",
+      "proofs/pair_baseline.tex: P020",
+      "proofs/pair_baseline.tex: P021"
+    ],
+    "PAIR-EF-001": [
+      "proofs/pair_baseline.tex: P002",
+      "proofs/pair_baseline.tex: P003",
+      "proofs/pair_baseline.tex: P036",
+      "proofs/pair_baseline.tex: P037",
+      "proofs/pair_baseline.tex: P038",
+      "proofs/pair_baseline.tex: P039",
+      "proofs/pair_baseline.tex: P040",
+      "proofs/pair_baseline.tex: P041",
+      "proofs/pair_baseline.tex: P107",
+      "proofs/pair_baseline.tex: P108",
+      "scripts/check_pair_lemma1.py: C001"
+    ],
+    "PAIR-EF-CONVERGENCE-001": [
+      "proofs/pair_baseline.tex: P003",
+      "proofs/pair_baseline.tex: P022",
+      "proofs/pair_baseline.tex: P023",
+      "proofs/pair_baseline.tex: P024"
+    ],
+    "PAIR-EF-EXACT-001": [
+      "proofs/pair_baseline.tex: P027",
+      "proofs/pair_baseline.tex: P028",
+      "proofs/pair_baseline.tex: P029",
+      "proofs/pair_baseline.tex: P030",
+      "proofs/pair_baseline.tex: P031",
+      "proofs/pair_baseline.tex: P032",
+      "proofs/pair_baseline.tex: P033",
+      "proofs/pair_baseline.tex: P034",
+      "proofs/pair_baseline.tex: P035",
+      "proofs/pair_baseline.tex: P109"
+    ],
+    "PAIR-EF-MELLIN-001": [
+      "proofs/pair_baseline.tex: P025",
+      "proofs/pair_baseline.tex: P026"
+    ],
+    "PAIR-MEANVALUE-001": [
+      "proofs/pair_baseline.tex: P072",
+      "proofs/pair_baseline.tex: P073",
+      "proofs/pair_baseline.tex: P074",
+      "proofs/pair_baseline.tex: P075",
+      "proofs/pair_baseline.tex: P076",
+      "proofs/pair_baseline.tex: P077"
+    ],
+    "PAIR-PRIME-COUNT-001": [
+      "proofs/pair_baseline.tex: P078",
+      "proofs/pair_baseline.tex: P079",
+      "proofs/pair_baseline.tex: P080",
+      "proofs/pair_baseline.tex: P081",
+      "proofs/pair_baseline.tex: P082",
+      "proofs/pair_baseline.tex: P083"
+    ],
+    "PAIR-PRIME-DIAGONAL-001": [
+      "proofs/pair_baseline.tex: P078",
+      "proofs/pair_baseline.tex: P084",
+      "proofs/pair_baseline.tex: P085",
+      "proofs/pair_baseline.tex: P086",
+      "proofs/pair_baseline.tex: P087"
+    ],
+    "PAIR-PRIME-MEAN-001": [
+      "proofs/pair_baseline.tex: P088",
+      "proofs/pair_baseline.tex: P089",
+      "proofs/pair_baseline.tex: P090",
+      "proofs/pair_baseline.tex: P091"
+    ],
+    "PRIME-PNT-001": [
+      "proofs/pair_baseline.tex: P011"
+    ],
+    "PRIME-SIEVE-001": [
+      "proofs/pair_baseline.tex: P012"
+    ],
+    "ZETA-ANALYTIC-001": [
+      "proofs/pair_baseline.tex: P004",
+      "proofs/pair_baseline.tex: P005"
+    ],
+    "ZETA-CONTOUR-001": [
+      "proofs/pair_baseline.tex: P007"
+    ],
+    "ZETA-COUNT-001": [
+      "proofs/pair_baseline.tex: P006"
+    ]
+  }
+}

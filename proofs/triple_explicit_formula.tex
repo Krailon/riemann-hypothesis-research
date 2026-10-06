@@ -1,0 +1,2470 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{theorem}[lemma]{Theorem}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\ZS}{\mathcal S}
+\newcommand{\PS}{\mathcal P}
+\newcommand{\CT}{\mathcal C_{3,T}}
+\newcommand{\IT}{\mathfrak I_T}
+\newcommand{\dd}{\,\mathrm d}
+\title{Work Package B: the smoothed triple identity\\and its uniform error budget}
+\author{Project proof draft}
+\date{October 2, 2026}
+\begin{document}
+\maketitle
+
+\noindent Task: proof and bookkeeping. Assumptions: \texttt{UNCONDITIONAL}.
+Ledger status: \texttt{proved-draft}. This draft develops the exact
+smoothed identity, its uniform budget, the interior vanishing theorem,
+the one-sided positive-quadrant boundary limit, and a native weighted
+Schwartz correlation theorem on an open hexagon. An explicit rational
+kernel profile and a summable height-localization error preserve that
+theorem's main term, identified below as three halves of the all-ordered
+sine benchmark. A self-contained theorem in the final section assembles
+these results in unit benchmark normalization. Global constant-kernel
+replacement and horizontal
+extraction remain separate Work Package B tasks.
+
+\section{Definitions and imported inputs}
+
+Let \(\mathcal I\) index all occurrences of nontrivial zeros, with
+multiplicity and both signs of the ordinate. Write
+\(\rho_j=1/2+\delta_j+\ii\gamma_j\), so \(|\delta_j|<1/2\).
+Equality of indices, complex zeros, and ordinates are three different
+conditions. All powers of positive real numbers use the real logarithm.
+For \(x\geq1\) and \(t\in\mathbb R\), put
+\begin{align}
+ D_j(t)&=1+((t-\gamma_j)+\ii\delta_j)^2,\notag\\
+ \ZS(x,t)&=\sum_{j\in\mathcal I}
+       \frac{2x^{\delta_j+\ii(\gamma_j-t)}}{D_j(t)},
+       \label{eq:triple-S}\\
+ a_x(n)&=\frac{\Lambda(n)}{\sqrt n}\min\{n/x,x/n\},\qquad
+ \PS(x,t)=\sum_{n\geq1}a_x(n)e^{-\ii t\log n}.
+       \label{eq:triple-P}
+\end{align}
+Here \(\Lambda(1)=0\). The three direct dependencies, all reconstructed
+in \texttt{proofs/pair\_baseline.tex}, are:
+\begin{itemize}
+ \item \texttt{PAIR-EF-CONVERGENCE-001} (label \texttt{lem:ef-convergence}):
+ absolute and locally uniform convergence of both series;
+ \item \texttt{PAIR-COUNT-KERNEL-001} (label \texttt{lem:count-kernel}):
+ \[
+ Q(t):=\sum_j(1+(t-\gamma_j)^2)^{-1}\leq C_0\log(|t|+2),
+ \]
+ with an effective absolute constant \(C_0\);
+ \item \texttt{PAIR-EF-001} (label \texttt{lem:pair-ef}): the exact identity
+ \begin{equation}\label{eq:triple-EF}
+ \ZS(x,t)=-\PS(x,t)+A_x(t)+H_x(t),\qquad
+ A_x(t)=x^{-1}\log(|t|+2).
+ \end{equation}
+\end{itemize}
+For precision, \(H_x\) is the following exact function, not an unspecified
+error symbol. With \(s=1/2+\ii t\) and
+\(\chi(w)=2^w\pi^{w-1}\sin(\pi w/2)\Gamma(1-w)\), set
+\begin{align}
+ H_x&=E_{\rm arch}(x,\cdot)+E_{\rm DS}(x,\cdot)
+             +E_{\rm pole}(x,\cdot)+E_{\rm trivial}(x,\cdot),\notag\\
+ E_{\rm arch}(x,t)&=x^{-1}\left[-\frac{\chi'}{\chi}(-1/2+\ii t)
+                                     -\log(|t|+2)\right],\notag\\
+ E_{\rm DS}(x,t)&=x^{-1}\frac{\zeta'}{\zeta}(3/2-\ii t),\notag\\
+ E_{\rm pole}(x,t)&=\frac{2x^{1/2-\ii t}}{(1/2+\ii t)(3/2-\ii t)},\notag\\
+ E_{\rm trivial}(x,t)&=2\sum_{m\geq1}
+       \frac{x^{-2m-s}}{(2m+s-1)(2m+s+1)}.\label{eq:triple-H}
+\end{align}
+The last series is absolutely locally uniformly convergent, including
+\(x=1\). The imported separate bounds, uniform in \(x\geq1,t\in\mathbb R\), are
+\begin{align}
+ |E_{\rm arch}|&\leq C_{\rm arch}/x,&
+ |E_{\rm DS}|&\leq C_{\rm DS}/x,\notag\\
+ |E_{\rm pole}|&\leq4\sqrt{x}/(1+t^2),&
+ |E_{\rm trivial}|&\leq12x^{-5/2}/(|t|+2).\label{eq:triple-H-bounds}
+\end{align}
+All constants here are effective. Their propagation through products
+will be a separate error-budget step.
+
+\section{The exact identity}
+
+\begin{lemma}[\texttt{TRIPLE-MASTER-001}]\label{lem:triple-master}
+Fix a real nonnegative \(\omega\in C_c^\infty((1,2))\) with
+\(\int_{\mathbb R}\omega(u)\dd u=1\). For \(T\geq3\), \(X,Y\geq1\),
+set \(Z=XY\) and
+\begin{align}
+ \IT(f,g,h)&=\frac1T\int_{\mathbb R}\omega(t/T)f(t)g(t)\overline{h(t)}\dd t,
+       \label{eq:triple-I}\\
+ \CT(X,Y)&=\IT(\ZS(X,\cdot),\ZS(Y,\cdot),\ZS(Z,\cdot)),\notag\\
+ K_T(j,k,\ell)&=\frac1T\int_{\mathbb R}
+       \frac{\omega(t/T)}{D_j(t)D_k(t)\overline{D_\ell(t)}}\dd t.
+       \label{eq:triple-K}
+\end{align}
+Then the following absolutely convergent expansion holds:
+\begin{equation}\label{eq:triple-zero}
+ \CT(X,Y)=8\sum_{j,k,\ell\in\mathcal I}
+ X^{\rho_j+\overline{\rho_\ell}-1}
+ Y^{\rho_k+\overline{\rho_\ell}-1}K_T(j,k,\ell).
+\end{equation}
+Its five disjoint index subseries are listed in Table~\ref{tab:diagonals}.
+In particular \(\CT(X,Y)=\CT(Y,X)\), and
+\begin{equation}\label{eq:triple-majorant}
+ |\CT(X,Y)|\leq(8/3)^3 C_0^3XY\log^3(2T+2)\|\omega\|_1.
+\end{equation}
+Write \(P_x=\PS(x,\cdot)\). For a word \(w\in\{P,A,H\}^3\),
+let \(N_P(w)\) be its number of letters \(P\). There is also the exact expansion
+\begin{equation}\label{eq:triple-27}
+ \CT(X,Y)=\sum_{w\in\{P,A,H\}^3}(-1)^{N_P(w)}
+ \IT(w_1{}_X,w_2{}_Y,w_3{}_Z).
+\end{equation}
+Table~\ref{tab:words} records all 27 ordered terms. In the Fourier convention
+\(\widehat\omega(\xi)=\int\omega(u)e^{-2\pi\ii u\xi}\dd u\),
+the unsigned cubic prime term is
+\begin{equation}\label{eq:triple-prime}
+ \IT(P_X,P_Y,P_Z)=\sum_{m,n,k\geq1}a_X(m)a_Y(n)a_Z(k)
+ \widehat\omega\!\left(\frac{T}{2\pi}\log\frac{mn}{k}\right).
+\end{equation}
+The series is absolutely convergent. Its exact resonance \(mn=k\) equals
+\begin{equation}\label{eq:triple-resonance}
+ R_{\rm res}(X,Y)=\sum_{p\ {\rm prime}}\ \sum_{a,b\geq1}
+       a_X(p^a)a_Y(p^b)a_Z(p^{a+b}).
+\end{equation}
+If \(R_{\rm off}(X,Y,T)\) denotes the subseries in
+\eqref{eq:triple-prime} with \(mn\ne k\), its contribution together with
+the resonance to \(\CT\) is \(-R_{\rm res}-R_{\rm off}\).
+No estimate making \(R_{\rm off}\) negligible is asserted.
+\end{lemma}
+
+\begin{proof}
+For real \(v\), \(|\delta|<1/2\),
+\[
+ |1+(v+\ii\delta)^2|\geq1+v^2-\delta^2
+                         \geq\tfrac34(1+v^2).
+\]
+Consequently the sum of absolute values of the individual products
+in the integrand defining \(\CT\) is at most
+\[
+ (8/3)^3(XYZ)^{1/2}Q(t)^3
+ \leq(8/3)^3XY C_0^3\log^3(|t|+2).
+\]
+Multiplication by \(|\omega(t/T)|/T\) gives an integrable dominating
+function supported inside \((T,2T)\). Tonelli applied to absolute values
+and then Fubini justify the three zero sums and their integration.
+They give \eqref{eq:triple-majorant} and absolute convergence even before
+integrating the absolute values of individual terms.
+The numerator of a product is
+\[
+ 8X^{\delta_j+\ii(\gamma_j-t)}
+   Y^{\delta_k+\ii(\gamma_k-t)}
+   Z^{\delta_\ell-\ii(\gamma_\ell-t)}
+ =8X^{\delta_j+\delta_\ell+\ii(\gamma_j-\gamma_\ell)}
+    Y^{\delta_k+\delta_\ell+\ii(\gamma_k-\gamma_\ell)}.
+\]
+This uses \(\log Z=\log X+\log Y\); all center phases cancel.
+The conjugated third denominator is \(\overline{D_\ell(t)}\).
+This proves \eqref{eq:triple-zero}. Exchanging the first two slots proves
+the stated symmetry. Partitioning ordered index triples into their five
+equality patterns proves Table~\ref{tab:diagonals}; absolute convergence
+allows this regrouping without a limiting-order convention.
+
+Substitute \eqref{eq:triple-EF} into the three slots of \(\IT\).
+Each slot has three summands. The sign of a term is
+\((-1)^{N_P(w)}\), including when the third slot is \(-P_Z\),
+because \(-1\) is real. This proves \eqref{eq:triple-27} and
+Table~\ref{tab:words}. Every function is continuous on the compact
+integration window, so this finite distribution is legitimate.
+Each \(H\) may in turn be expanded into its four exact named terms in
+\eqref{eq:triple-H}; conjugation remains on every third-slot term.
+
+For the prime expansion, set \(B(x)=\sum_{n\geq1}a_x(n)\).
+The majorant
+\(a_x(n)\leq x(\log n)n^{-3/2}\), \(n\geq2\), gives \(B(x)<\infty\).
+The integral of the absolute product series is at most
+\(\|\omega\|_1 B(X)B(Y)B(Z)\), which proves Fubini's hypotheses.
+The oscillation is \(e^{-\ii t(\log m+\log n-\log k)}\).
+Substituting \(t=Tu\) cancels \(1/T\) and gives exactly the argument
+\(T\log(mn/k)/(2\pi)\) in \eqref{eq:triple-prime}.
+In particular there is no extra factor of \(T\) or \(2\pi\).
+Nonzero resonant coefficients require \(m,n,k\) all to be prime powers
+greater than one. Unique factorization and \(mn=k\) then force
+\(m=p^a,n=p^b,k=p^{a+b}\) for a single prime and \(a,b\geq1\).
+Conversely every such triple is resonant. Since \(\widehat\omega(0)=1\),
+\eqref{eq:triple-resonance} follows, with ordered \((a,b)\) and no
+division by two. Both subseries converge absolutely by the preceding
+majorant. The negative sign is the \(PPP\) row of Table~\ref{tab:words}.
+\end{proof}
+
+\section{Zero-index bookkeeping}
+
+Set \(B_{jk\ell}=8X^{\rho_j+\overline{\rho_\ell}-1}
+Y^{\rho_k+\overline{\rho_\ell}-1}K_T(j,k,\ell)\).
+The last column gives counts for a finite set of \(q\) occurrences.
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{llll}
+\toprule
+Partition & Condition & Contribution & Count\\
+\midrule
+\(123\) & \(j=k=\ell\) & \(\sum_j B_{jjj}\) & \(q\)\\
+\(12|3\) & \(j=k\ne\ell\) & \(\sum_{j\ne\ell}B_{jj\ell}\) & \(q(q-1)\)\\
+\(13|2\) & \(j=\ell\ne k\) & \(\sum_{j\ne k}B_{jkj}\) & \(q(q-1)\)\\
+\(23|1\) & \(k=\ell\ne j\) & \(\sum_{j\ne k}B_{jkk}\) & \(q(q-1)\)\\
+\(1|2|3\) & all indices distinct & \(\sum_{j,k,\ell\ {\rm distinct}}B_{jk\ell}\)
+ & \(q(q-1)(q-2)\)\\
+\bottomrule
+\end{tabular}
+\caption{Disjoint index diagonals.}\label{tab:diagonals}
+\end{table}
+
+Distinct indices can represent repeated copies of the same complex zero;
+distinct complex zeros can have the same ordinate. No row imposes either
+of these stronger distinctions. The three partial diagonals have different
+kernels and weights; they have not been replaced by three times one row.
+
+Horizontal reflection \(\rho\mapsto1-\bar\rho\) acts by
+\((\delta,\gamma)\mapsto(-\delta,\gamma)\) and preserves multiplicity.
+Choose any corresponding bijection on occurrences. Simultaneous reindexing
+of all three slots preserves each row and its sum, by absolute convergence.
+In the reindexed summand the horizontal factor becomes
+\(X^{-\delta_j-\delta_\ell}Y^{-\delta_k-\delta_\ell}\) and the denominator
+inside the kernel becomes \(\overline{D_j}\,\overline{D_k}D_\ell\);
+the ordinate phases are unchanged. This is an equality of full subseries,
+not a termwise invariance. Reindexing only one slot preserves the unrestricted
+sum but need not preserve an index diagonal. Thus retaining these horizontal
+factors is compatible with functional-equation symmetry without setting
+any \(\delta\) to zero.
+
+\section{Prime, archimedean, and remainder bookkeeping}
+
+In Table~\ref{tab:words}, each row denotes its sign times the normalized
+integral of the displayed product against \(\omega(t/T)\).
+All factors are evaluated at \(t\), and \(Z=XY\).
+There are eight rows without \(H\) and nineteen with at least one \(H\).
+The latter are retained exactly; their number is not an error estimate.
+
+\begin{longtable}{cclc}
+\caption{The 27 ordered words in \eqref{eq:triple-27}.}\label{tab:words}\\
+\toprule Word & Sign & Integrand & Contains \(H\)\\\midrule
+\endfirsthead
+\toprule Word & Sign & Integrand & Contains \(H\)\\\midrule
+\endhead
+\bottomrule\endfoot
+PPP & $-$ & $P_XP_Y\overline{P_Z}$ & no\\
+PPA & $+$ & $P_XP_Y\overline{A_Z}$ & no\\
+PPH & $+$ & $P_XP_Y\overline{H_Z}$ & yes\\
+PAP & $+$ & $P_XA_Y\overline{P_Z}$ & no\\
+PAA & $-$ & $P_XA_Y\overline{A_Z}$ & no\\
+PAH & $-$ & $P_XA_Y\overline{H_Z}$ & yes\\
+PHP & $+$ & $P_XH_Y\overline{P_Z}$ & yes\\
+PHA & $-$ & $P_XH_Y\overline{A_Z}$ & yes\\
+PHH & $-$ & $P_XH_Y\overline{H_Z}$ & yes\\
+APP & $+$ & $A_XP_Y\overline{P_Z}$ & no\\
+APA & $-$ & $A_XP_Y\overline{A_Z}$ & no\\
+APH & $-$ & $A_XP_Y\overline{H_Z}$ & yes\\
+AAP & $-$ & $A_XA_Y\overline{P_Z}$ & no\\
+AAA & $+$ & $A_XA_Y\overline{A_Z}$ & no\\
+AAH & $+$ & $A_XA_Y\overline{H_Z}$ & yes\\
+AHP & $-$ & $A_XH_Y\overline{P_Z}$ & yes\\
+AHA & $+$ & $A_XH_Y\overline{A_Z}$ & yes\\
+AHH & $+$ & $A_XH_Y\overline{H_Z}$ & yes\\
+HPP & $+$ & $H_XP_Y\overline{P_Z}$ & yes\\
+HPA & $-$ & $H_XP_Y\overline{A_Z}$ & yes\\
+HPH & $-$ & $H_XP_Y\overline{H_Z}$ & yes\\
+HAP & $-$ & $H_XA_Y\overline{P_Z}$ & yes\\
+HAA & $+$ & $H_XA_Y\overline{A_Z}$ & yes\\
+HAH & $+$ & $H_XA_Y\overline{H_Z}$ & yes\\
+HHP & $-$ & $H_XH_Y\overline{P_Z}$ & yes\\
+HHA & $+$ & $H_XH_Y\overline{A_Z}$ & yes\\
+HHH & $+$ & $H_XH_Y\overline{H_Z}$ & yes\\
+\end{longtable}
+
+\section{Endpoints, uniformity, and the next estimates}
+
+The endpoints \(X=1\), \(Y=1\), and \(T=3\) are included. The smooth
+weight vanishes in neighborhoods of \(t=T,2T\); there are no half weights.
+The height window is a condition on the center \(t\), not on the zeros:
+all ordinates, including \(0<|\gamma|<3\) if present, remain in the sums.
+No use of \(L_T^{-1}\) or a change of local-spacing normalization is made.
+
+Limit order is explicit: fix \(T,X,Y,\omega\); truncate each zero sum at
+\(|\gamma|\leq U_r\), including endpoints with full multiplicity; then let
+the three \(U_r\) tend to infinity independently. The displayed dominating
+function proves convergence in any order or jointly. Prime truncations
+are removed in the same way using \(B(X)B(Y)B(Z)\).
+No \(T\to\infty\) limit, moving Fourier support, or shrinking smoothing
+width has been interchanged with those limits. The bounds are locally
+uniform in the finite parameters and explicitly retain \(\|\omega\|_1\).
+
+Integration by parts, with no boundary terms, gives for every integer
+\(N\geq1\)
+\begin{equation}\label{eq:triple-decay}
+ |\widehat\omega(\xi)|\leq\|\omega\|_1,\qquad
+ |\widehat\omega(\xi)|\leq
+ \frac{\|\omega^{(N)}\|_1}{(2\pi|\xi|)^N}\quad(\xi\ne0).
+\end{equation}
+For \(mn\ne k\), the second denominator becomes
+\((T|\log(mn/k)|)^N\). Uniformity for a varying family of weights
+requires bounds on these derivative norms. Smooth compact height support
+does not supply a compact Fourier support or exact off-resonance removal.
+Near \(mn=k\) a new arithmetic estimate is still needed.
+
+As an algebraic lower-level check, replacing the second input of \(\IT\)
+by the constant function \(1\) gives the smoothed pair form
+\(T^{-1}\int\omega(t/T)f(t)\overline{h(t)}\dd t\).
+Taking \(Y=1\) in the actual lemma does \emph{not} perform that replacement:
+\(\ZS(1,t)\) remains a zero sum.
+
+The following sections estimate the eight rows without \(H\) and propagate
+the four separate bounds in \eqref{eq:triple-H-bounds} through the other
+nineteen rows, before choosing any growing range for \(X,Y\). The zero
+index diagonals and prime resonances are separate decompositions, with
+no asserted rowwise correspondence. A Fourier-support region, an
+asymptotic main term, positivity, and a new horizontal conclusion are
+not established by this lemma.
+
+\section{Uniform norm bounds and the named budget}
+
+The task remains a proof under \texttt{UNCONDITIONAL} assumptions.
+In addition to Lemma~\ref{lem:triple-master}, the direct analytic inputs are
+\texttt{PAIR-EF-001}, \texttt{PAIR-PRIME-MEAN-001}, and
+\texttt{PAIR-PRIME-DIAGONAL-001}, in the pair draft at labels
+\texttt{lem:pair-ef}, \texttt{lem:prime-mean}, and
+\texttt{lem:prime-diagonal}. The latter two give, with effective absolute
+constants \(C_{\rm pair},C_D\),
+\[
+ \int_0^V|P_x(t)|^2\dd t\leq C_{\rm pair}V\log(2x)
+ \quad(V\geq3,\ 1\leq x\leq V),\qquad
+ \sum_n a_x(n)^2\leq C_D\log(2x)\quad(x\geq1).
+\]
+These are unconditional estimates including prime powers.
+
+Keep the hypotheses on \(T,X,Y,Z,\omega\) from
+Lemma~\ref{lem:triple-master}, and define
+\begin{align}
+ d\mu_T(t)&=T^{-1}\omega(t/T)\dd t,&
+ q&=\log T,& L&=\log(2T+2),& \ell_x&=\log(2x),\notag\\
+ W_0&=\|\omega\|_1=1,&W_\infty&=\|\omega\|_\infty,&
+ W_1&=\|\omega'\|_1.&&\label{eq:uniform-parameters}
+\end{align}
+The measure \(\mu_T\) is a probability measure. Set
+\begin{align}
+ C_B&=1+\frac{2}{(1-2^{-1/2})^2},&
+ C_1&=1+\frac{2}{1-2^{-1/2}},&
+ C_M&=\sqrt{2C_{\rm pair}},\notag\\
+ b_x&=C_B\sqrt{x}\ell_x,&\alpha_x&=L/x,&&\notag\\
+ m_x&=
+ \begin{cases}
+ \min\{b_x,C_M\sqrt{W_\infty\ell_x}\},&1\leq x\leq2T,\\
+ b_x,&x>2T,
+ \end{cases}&&&&\label{eq:uniform-primitives}\\
+ h_{\rm arch}(x)&=C_{\rm arch}/x,&
+ h_{\rm DS}(x)&=C_{\rm DS}/x,\notag\\
+ h_{\rm pole}(x)&=\frac{4\sqrt{x}}{1+T^2},&
+ h_{\rm trivial}(x)&=\frac{12x^{-5/2}}{T+2},&
+ h_x&=\sum_{\nu\in\mathcal J}h_\nu(x),\label{eq:uniform-remainders}
+\end{align}
+where \(\mathcal J=\{{\rm arch},{\rm DS},{\rm pole},{\rm trivial}\}\).
+The subscripts \(x\) on \(m,h,\alpha\) suppress their displayed
+dependence on \(T,\omega\).
+
+For \(r=1,2,3\), put
+\[
+ J_r=\int\omega(u)\log^r(Tu+2)\dd u,\qquad
+ D(a,b)=\sum_{n\geq1}a_a(n)a_b(n),\qquad
+ d_{a,b}=C_D\sqrt{\ell_a\ell_b}.
+\]
+Integrals here and below involving \(\log(Tu+2)\) are over \((1,2)\);
+the weighted functions are extended by zero outside that interval.
+In particular they are smooth and compactly supported. For \(r=1,2\), set
+\begin{equation}\label{eq:uniform-Omega}
+ \Omega_{r,1}=\|(\omega(u)\log^r(Tu+2))'\|_1,\qquad
+ V_r=W_1L^r+rW_0L^{r-1}.
+\end{equation}
+The notation \(D(a,b)\) refers to prime coefficients and has no relation
+to the zero denominators \(D_j(t)\).
+
+\begin{lemma}[\texttt{TRIPLE-UNIFORM-001}]\label{lem:triple-uniform}
+Uniformly for \(T\geq3,\ X,Y\geq1\) and every admissible \(\omega\), the
+following bounds hold, with the smoothing dependence explicitly retained:
+\begin{align}
+ \|P_x\|_\infty&\leq\sum_na_x(n)\leq b_x,&
+ \sum_{n\geq2}\frac{a_x(n)}{\log n}&\leq C_1\sqrt{x},\notag\\
+ \|P_x\|_{L^2(\mu_T)}&\leq m_x,&
+ \|A_x\|_{L^\infty(T,2T)}&\leq\alpha_x,&
+ \|E_\nu(x,\cdot)\|_{L^\infty(T,2T)}&\leq h_\nu(x),\notag\\
+ 0\leq D(a,b)&\leq d_{a,b},&
+ 0\leq J_r&\leq L^r,&
+ \Omega_{r,1}&\leq V_r\quad(r=1,2).
+ \label{eq:uniform-norms}
+\end{align}
+Define the retained expression
+\begin{equation}\label{eq:uniform-retained}
+ M_T=\frac{q^3}{Z^2}+\frac{J_1}{Y}D(X,Z)+\frac{J_1}{X}D(Y,Z)
+                    -R_{\rm res}(X,Y).
+\end{equation}
+It is not asserted to be an asymptotic main term. There is the exact identity
+\begin{align}
+ \CT={}&M_T+E_{\rm archcube}
+   +E_{PPA}+E_{PAA}+E_{APA}+E_{AAP}\notag\\
+   &+E_{PAP,{\rm off}}+E_{APP,{\rm off}}+E_{PPP,{\rm off}}
+   +\sum_{\substack{w\in\{P,A,H\}^3\\H\ {\rm occurs\ in}\ w}}E_w.
+   \label{eq:uniform-budget}
+\end{align}
+The eight errors on the first two lines are defined and bounded in
+Table~\ref{tab:uniform-eight}. In that table,
+\begin{equation}\label{eq:uniform-U}
+ U=\min\{b_Xm_Ym_Z,\ b_Ym_Xm_Z,\ b_Zm_Xm_Y\},\qquad
+ 0\leq R_{\rm res}\leq b_Xb_Yb_Z,
+\end{equation}
+and the complete cubic satisfies \(|\IT(P_X,P_Y,P_Z)|\leq U\).
+
+For the remaining nineteen words, let \(x_1=X,x_2=Y,x_3=Z\), and
+\(S_H(w)=\{i:w_i=H\}\). For each assignment
+\(\kappa:S_H(w)\to\mathcal J\), replace the corresponding factors by
+\(E_{\kappa(i)}(x_i,\cdot)\), retaining \(P,A\) elsewhere, to get
+functions \(f_1,f_2,f_3\). Define
+\begin{equation}\label{eq:uniform-refinement}
+ E_{w;\kappa}=(-1)^{N_P(w)}\IT(f_1,f_2,f_3),\qquad
+ E_w=\sum_\kappa E_{w;\kappa}.
+\end{equation}
+Then, separately for every assignment,
+\begin{equation}\label{eq:uniform-component-bound}
+ |E_{w;\kappa}|\leq
+ \prod_{\{i:w_i=P\}}m_{x_i}
+ \prod_{\{i:w_i=A\}}\alpha_{x_i}
+ \prod_{\{i:w_i=H\}}h_{\kappa(i)}(x_i).
+\end{equation}
+Summing these nonnegative bounds gives
+\begin{equation}\label{eq:uniform-word-bound}
+ |E_w|\leq
+ \prod_{\{i:w_i=P\}}m_{x_i}
+ \prod_{\{i:w_i=A\}}\alpha_{x_i}
+ \prod_{\{i:w_i=H\}}h_{x_i}.
+\end{equation}
+There are \(208\) refined remainder terms, grouped into nineteen words;
+the refined terms and their aggregates are two descriptions of the same
+summands. All constants in these assertions are effective and independent
+of \(T,X,Y,\omega\), apart from the displayed norms.
+\end{lemma}
+
+\begin{table}[p]
+\centering\small
+\begin{tabular}{p{0.23\textwidth}p{0.36\textwidth}p{0.32\textwidth}}
+\toprule
+Name & Exact signed definition & Absolute bound\\
+\midrule
+\(E_{\rm archcube}\) &
+ \((J_3-q^3)/Z^2\) &
+ \((L^3-q^3)/Z^2\)\\[5pt]
+\(E_{PPA}\) & \(\IT(P_X,P_Y,A_Z)\) &
+ \(b_Xb_Y V_1/(ZT\log4)\)\\[5pt]
+\(E_{PAA}\) & \(-\IT(P_X,A_Y,A_Z)\) &
+ \(C_1\sqrt{X}V_2/(TYZ)\)\\[5pt]
+\(E_{APA}\) & \(-\IT(A_X,P_Y,A_Z)\) &
+ \(C_1\sqrt{Y}V_2/(TXZ)\)\\[5pt]
+\(E_{AAP}\) & \(-\IT(A_X,A_Y,P_Z)\) &
+ \(C_1\sqrt{Z}V_2/(TXY)\)\\[5pt]
+\(E_{PAP,{\rm off}}\) &
+ \(\IT(P_X,A_Y,P_Z)-J_1D(X,Z)/Y\) &
+ \((L/Y)(m_Xm_Z+d_{X,Z})\)\\[5pt]
+\(E_{APP,{\rm off}}\) &
+ \(\IT(A_X,P_Y,P_Z)-J_1D(Y,Z)/X\) &
+ \((L/X)(m_Ym_Z+d_{Y,Z})\)\\[5pt]
+\(E_{PPP,{\rm off}}\) &
+ \(-\IT(P_X,P_Y,P_Z)+R_{\rm res}\) &
+ \(U+R_{\rm res}\leq U+b_Xb_Yb_Z\)\\
+\bottomrule
+\end{tabular}
+\caption{Named errors from the eight words without \(H\).
+Each \(V_r\) may be replaced by the sharper \(\Omega_{r,1}\).
+The mixed-prime and cubic off-diagonal bounds make no assertion of
+cancellation.}\label{tab:uniform-eight}
+\end{table}
+
+\begin{proof}
+For \(n\leq x\), the inequality \(\Lambda(n)\leq\log n\) gives
+\[
+ \sum_{2\leq n\leq x}a_x(n)
+ \leq x^{-1}\sum_{2\leq n\leq x}\sqrt n\log n
+ \leq\sqrt{x}\ell_x.
+\]
+For \(j\geq0\), the interval \(2^jx<n\leq2^{j+1}x\) contains at most
+\(2^{j+1}x\) positive integers. Consequently its contribution is at most
+\[
+ 2\sqrt{x}\,2^{-j/2}\log(2^{j+1}x)
+ \leq2\sqrt{x}\ell_x(j+1)2^{-j/2}.
+\]
+Summing the geometric series and its derivative gives \(b_x\) as stated.
+Using \(\Lambda(n)/\log n\leq1\) in the same argument removes the
+factor \((j+1)\ell_x\), giving \(C_1\sqrt{x}\).
+The split counts an integer \(n=x\) exactly once and applies also to
+\(1\leq x<2\). All series are nonnegative and convergent.
+
+Since \(\mu_T\) has mass one, \(\|P_x\|_{L^2(\mu_T)}\leq b_x\).
+If \(x\leq2T\), positivity of the weight and the imported mean-square bound
+with \(V=2T\) give
+\[
+ \int|P_x|^2\dd\mu_T
+ \leq \frac{W_\infty}{T}\int_0^{2T}|P_x(t)|^2\dd t
+ \leq2C_{\rm pair}W_\infty\ell_x.
+\]
+This proves the piecewise bound, including \(x=2T\). No extension of
+the imported mean-square theorem to \(x>2T\) is used.
+The \(A\) and four remainder bounds follow pointwise from
+\eqref{eq:triple-H-bounds} on \(T<t<2T\). Cauchy--Schwarz for the
+coefficient sequences and the imported diagonal bound give
+\(D(a,b)\leq\sqrt{D(a,a)D(b,b)}\leq d_{a,b}\).
+
+On the support of \(\omega\), \(q\leq\log(Tu+2)\leq L\) and
+\(T/(Tu+2)\leq1\). Thus \(q^r\leq J_r\leq L^r\), and the product rule
+gives
+\[
+ \Omega_{r,1}\leq
+ \|\omega'\|_1L^r+r\|\omega\|_1L^{r-1}=V_r.
+\]
+There are no endpoint derivative contributions: \(\omega\) vanishes
+in neighborhoods of \(1,2\). In particular
+\(0\leq E_{\rm archcube}\leq(L^3-q^3)/Z^2\).
+
+For the oscillating terms, set
+\[
+ F_r(\lambda)=\int\omega(u)\log^r(Tu+2)e^{-\ii Tu\lambda}\dd u .
+\]
+One integration by parts gives
+\begin{equation}\label{eq:uniform-ibp}
+ |F_r(\lambda)|\leq\frac{\Omega_{r,1}}{T|\lambda|}
+ \quad(\lambda\ne0).
+\end{equation}
+In project Fourier units \(F_r(\lambda)\) is the transform of
+\(\omega(u)\log^r(Tu+2)\) at \(T\lambda/(2\pi)\).
+The \(2\pi\) from differentiation cancels against this denominator;
+the normalized substitution \(t=Tu\) introduces no further factor.
+Since all prime coefficient sums are absolutely convergent and the
+weights bounded, Fubini applies at fixed parameters.
+
+The \(PPA\) integral is
+\[
+ \frac1Z\sum_{m,n\geq2}a_X(m)a_Y(n)F_1(\log(mn)).
+\]
+Here \(\log(mn)\geq\log4\), which proves its table bound.
+The \(PAA,APA,AAP\) integrals have respective frequencies
+\(\log n,\log n,-\log n\) and scalar denominators \(YZ,XZ,XY\).
+Apply \eqref{eq:uniform-ibp} and the bound for
+\(\sum a_x(n)/\log n\). The third of these terms still has its conjugation;
+the change of frequency sign does not affect the absolute bound.
+
+For example the mixed term is exactly
+\[
+ \IT(P_X,A_Y,P_Z)=
+ \frac1Y\sum_{m,k\geq2}a_X(m)a_Z(k)F_1(\log(m/k)).
+\]
+The diagonal is \(J_1D(X,Z)/Y\). Cauchy--Schwarz bounds the
+full integral in absolute value by \((L/Y)m_Xm_Z\).
+Subtracting its diagonal gives the bound in the table by the triangle
+inequality. The \(APP\) calculation is identical with \(X,Y\) interchanged.
+These bounds do not treat the near frequencies as separated from zero.
+
+For the cubic integral take any one factor in sup norm and the other two
+in \(L^2(\mu_T)\). The three choices give \(U\).
+The resonant sum is a nonnegative subseries of the product of the three
+coefficient sums, so \(R_{\rm res}\leq b_Xb_Yb_Z\). Its signed
+off-resonance error is \(-R_{\rm off}\) from Lemma~\ref{lem:triple-master};
+the triangle inequality gives \(U+R_{\rm res}\).
+
+Each word containing \(H\) has at most two \(P\) slots. Bound all other
+factors in sup norm, and use Cauchy--Schwarz for two prime factors or
+\(\|P_x\|_{L^1(\mu_T)}\leq\|P_x\|_{L^2(\mu_T)}\) for one.
+This proves \eqref{eq:uniform-component-bound}. Finite distributivity
+proves \eqref{eq:uniform-word-bound}, with no absorbed constants.
+There are twelve words with one \(H\), six with two, and one with three:
+\[
+ 12\cdot4+6\cdot4^2+4^3=208.
+\]
+Finally substitute the exact signed definitions into
+\eqref{eq:triple-27}. The \(AAA\) term is \(J_3/(XYZ)=J_3/Z^2\).
+Extracting its \(q^3/Z^2\), the two mixed diagonals, and the negatively
+signed cubic resonance proves \eqref{eq:uniform-budget}.
+\end{proof}
+
+\section{Range, interpretation, and remaining losses}
+
+All estimates in Lemma~\ref{lem:triple-uniform} hold on the entire range
+\(T\geq3,\ X,Y\geq1\), using the specified branch of \(m_x\).
+If \(XY\leq2T\), all three prime factors admit the sharper branch since
+\(1\leq X,Y\leq XY\); equality \(XY=2T\) is included.
+The line \(x=2T\) is a boundary of an estimate's applicability, not a
+Fourier-support boundary. For \(x>2T\) the elementary bound remains valid.
+The norm majorant need not be continuous when its branch changes.
+
+Every zero occurrence from Lemma~\ref{lem:triple-master} is still retained.
+Its symmetry under simultaneous horizontal reflection therefore persists;
+estimating its exactly equal prime-side expression does not set
+\(\delta_\rho=0\). Swapping \(X,Y\) interchanges \(PAA,APA\) and the two
+mixed off-diagonal errors; the other definitions transform by their
+ordered slots. Setting a slot function to \(1\) recovers the ordinary
+weighted pair Cauchy--Schwarz bound. Setting its base to \(1\) does not
+remove that slot.
+
+The limit order remains fixed \(T,X,Y,\omega\), followed by removal of
+absolutely convergent prime or zero cutoffs. Bounds involving \(\omega'\)
+are used only after the weighted integrals are defined; no differentiation
+of an infinite prime series is taken. All displayed estimates are then
+uniform on their stated ranges. No shrinking-width limit is taken.
+Varying weights must retain \(W_\infty,W_1\); mass normalization alone
+does not bound them.
+
+The pure archimedean term and the one-prime and same-sign two-prime terms
+have elementary bounds, including the displayed \(1/T\) oscillatory gain.
+The mixed-prime diagonal bound imports PNT-level information through
+\texttt{PAIR-PRIME-DIAGONAL-001}. The weighted prime norms import the
+unconditional mean-value and prime-counting inputs in
+\texttt{PAIR-PRIME-MEAN-001}. No new prime-pair or prime-triple conjecture is
+used. The mixed-prime and cubic off-diagonal bounds in this lemma are triangle-inequality
+bounds and do not yield a uniform negligible error. No rowwise matching
+with zero-index diagonals has been established.
+
+The file \path{research/triple-error-budget.md} records the nineteen
+remainder-containing rows and their component assignments. They form one budget:
+an aggregate error and its component terms must never both be added.
+There is no height-truncation, desmoothing, or support-boundary error in
+this identity. The following sections sharpen the mixed-prime and cubic
+off-diagonal bounds and combine the budget on a growing parameter range.
+The bounds of Lemma~\ref{lem:triple-uniform} alone do not settle an
+asymptotic or supply horizontal information.
+
+\section{An absolute logarithmic-gap estimate}
+
+The next three claims have assumptions \texttt{UNCONDITIONAL} and status
+\texttt{proved-draft}. The integer-frequency estimate is proved here;
+no additional mean-value or prime-correlation theorem is imported.
+
+\begin{lemma}[\texttt{TRIPLE-LOG-GAP-001}]\label{lem:triple-log-gap}
+For complex sequences \(c=(c_n)_{n\geq2}\), \(d=(d_n)_{n\geq2}\), define
+\[
+ B(c)=\sum_{n\geq2}|c_n|,\qquad
+ \mathcal E(c)=\sum_{n\geq2}n\log(2n)|c_n|^2,
+\]
+and likewise for \(d\). If these four quantities are finite, then
+\begin{equation}\label{eq:triple-log-gap}
+ \sum_{\substack{m,n\geq2\\m\ne n}}
+ \frac{|c_md_n|}{|\log(m/n)|}
+ \leq\frac{B(c)B(d)}{\log2}
+       +4\sqrt2\sqrt{\mathcal E(c)\mathcal E(d)}.
+\end{equation}
+The sum is over ordered, distinct integer frequencies; repeated
+frequencies must be combined before applying the lemma.
+\end{lemma}
+\begin{proof}
+Start with finitely supported sequences. For
+\(n<m/2\) or \(n>2m\), the reciprocal logarithm is at most \(1/\log2\).
+This part is bounded by the first term on the right.
+On the complementary comparable range \(m/2\leq n\leq2m\), \(m\ne n\),
+integration of \(1/u\) between \(m,n\) gives
+\[
+ |\log(m/n)|\geq\frac{|m-n|}{\max(m,n)},\qquad
+ \max(m,n)\leq\sqrt{2mn}.
+\]
+Set \(u_m=\sqrt m\,|c_m|\), \(v_n=\sqrt n\,|d_n|\).
+The comparable part is at most
+\[
+ \sqrt2\sum_{\substack{m/2\leq n\leq2m\\m\ne n}}\frac{u_mv_n}{|m-n|}
+ \leq\sqrt2
+ \left(\sum_{\substack{m/2\leq n\leq2m\\m\ne n}}\frac{u_m^2}{|m-n|}\right)^{1/2}
+ \left(\sum_{\substack{m/2\leq n\leq2m\\m\ne n}}\frac{v_n^2}{|m-n|}\right)^{1/2}.
+\]
+For fixed \(m\geq2\), the row sum of \(1/|m-n|\) is at most
+\(2\sum_{h=1}^{2m}1/h\leq2(1+\log(2m))\leq4\log(2m)\).
+The comparable relation is symmetric, so the same bound holds for
+column sums. This proves the second term of \eqref{eq:triple-log-gap}.
+The equal-ratio boundaries \(n=2m\), \(m=2n\) belong to the comparable
+part; \(m=n\) is always excluded. Apply the finite result to independent
+initial truncations and pass to the limit by monotone convergence of
+nonnegative sums. The right side is finite, proving absolute convergence.
+\end{proof}
+
+\section{Sharper prime off-diagonal bounds}
+
+\begin{lemma}[\texttt{TRIPLE-OFFDIAG-001}]\label{lem:triple-offdiag}
+With the hypotheses and signed errors of Lemma~\ref{lem:triple-uniform},
+uniformly for every \(T\geq3,\ X,Y\geq1,\ Z=XY\),
+\begin{align}
+ |E_{PPP,{\rm off}}|&\ll
+ W_1\,\frac{Z\ell_Z^4}{T},\label{eq:triple-cubic-sharp}\\
+ |E_{PAP,{\rm off}}|&\ll
+ \frac{\Omega_{1,1}}{T}\frac{X}{\sqrt Y}
+       (\ell_X\ell_Z)^{3/2},\label{eq:triple-mixed-sharp}\\
+ |E_{APP,{\rm off}}|&\ll
+ \frac{\Omega_{1,1}}{T}\frac{Y}{\sqrt X}
+       (\ell_Y\ell_Z)^{3/2}.\notag
+\end{align}
+Here \(\Omega_{1,1}\leq W_1L+1\). The constants are absolute and
+effective, independent of smoothing apart from the displayed norms.
+No restriction \(Z\leq2T\) is needed for these estimates.
+\end{lemma}
+\begin{proof}
+Write \(v_x(n)=\min(n/x,x/n)\) and group the product series as
+\begin{equation}\label{eq:triple-convolution}
+ c_{X,Y}(r)=\sum_{\substack{mn=r\\m,n\geq2}}a_X(m)a_Y(n),\qquad
+ P_X(t)P_Y(t)=\sum_{r\geq2}c_{X,Y}(r)r^{-\ii t}.
+\end{equation}
+Each coefficient is a finite sum over ordered factorizations.
+Absolute convergence from Lemma~\ref{lem:triple-uniform}, or Tonelli
+for the nonnegative coefficients, gives
+\[
+ B(c_{X,Y})=B(a_X)B(a_Y)
+ \leq C_B^2\sqrt Z\,\ell_X\ell_Y.
+\]
+Thus repeated product frequencies have been combined with their full
+coefficient, not discarded.
+
+Since \(v_x(n)=\exp(-|\log(n/x)|)\), the triangle inequality gives
+\begin{equation}\label{eq:triple-weight-product}
+ v_X(m)v_Y(n)\leq v_Z(mn).
+\end{equation}
+The elementary divisor identity
+\(\sum_{d\mid r}\Lambda(d)=\log r\) follows by writing
+\(r=\prod p^{a_p}\): each prime contributes \(a_p\log p\).
+Since \(0\leq\Lambda(r/d)\leq\log r\),
+\[
+ (\Lambda*\Lambda)(r)=\sum_{d\mid r}\Lambda(d)\Lambda(r/d)
+ \leq(\log r)^2.
+\]
+Consequently
+\begin{equation}\label{eq:triple-convolution-envelope}
+ 0\leq c_{X,Y}(r)
+ \leq \frac{v_Z(r)(\log r)^2}{\sqrt r}.
+\end{equation}
+
+For \(k=3,5\), elementary dyadic summation gives, for \(x\geq1\),
+\begin{equation}\label{eq:triple-dyadic-moment}
+ \sum_{n\geq2}v_x(n)^2\log^k(2n)
+ \leq K_kx\ell_x^k,\qquad
+ K_k=1+2\sum_{j\geq0}2^{-j}(j+2)^k<\infty.
+\end{equation}
+Indeed the part \(n\leq x\) has at most \(x\) terms, each at most
+\(\ell_x^k\). On \(2^jx<n\leq2^{j+1}x\), use at most \(2^{j+1}x\)
+terms, \(v_x(n)^2\leq2^{-2j}\), and
+\(\log(2n)\leq(j+2)\ell_x\). These disjoint intervals include upper
+endpoints with full weight. The constants are effective: geometric
+series and their first \(k\) derivatives evaluate the displayed sums.
+This proves, with the energy from Lemma~\ref{lem:triple-log-gap},
+\begin{equation}\label{eq:triple-coefficient-energies}
+ \mathcal E(a_x)\leq K_3x\ell_x^3,\qquad
+ \mathcal E(c_{X,Y})\leq K_5Z\ell_Z^5.
+\end{equation}
+These arguments also cover \(x=1\), with an empty lower interval.
+
+The cubic off-diagonal, with its original sign, is
+\[
+ E_{PPP,{\rm off}}
+ =-\sum_{\substack{r,k\geq2\\r\ne k}}c_{X,Y}(r)a_Z(k)
+       \int\omega(u)e^{-\ii Tu\log(r/k)}\dd u.
+\]
+Grouping and integrating this series is justified by
+\(B(c_{X,Y})B(a_Z)<\infty\). One integration by parts bounds each
+integral by \(W_1/(T|\log(r/k)|)\). By
+Lemma~\ref{lem:triple-log-gap}, the sum of these bounds is finite and is
+\[
+ \ll\frac{W_1}{T}
+ \left(Z\ell_X\ell_Y\ell_Z+Z\ell_Z^4\right)
+ \ll\frac{W_1}{T}Z\ell_Z^4.
+\]
+Here \(\ell_X,\ell_Y\leq\ell_Z\) and \(\ell_Z\geq\log2\).
+The removed diagonal is exactly
+\(\sum_r c_{X,Y}(r)a_Z(r)=R_{\rm res}(X,Y)\):
+expanding \(c_{X,Y}\) restores \(mn=k\) and the ordered same-prime-power
+classification of Lemma~\ref{lem:triple-master}. Its negative sign in
+the retained expression is unchanged.
+
+For the mixed terms, the already established representation gives
+\[
+ E_{PAP,{\rm off}}=\frac1Y
+ \sum_{\substack{m,k\geq2\\m\ne k}}a_X(m)a_Z(k)F_1(\log(m/k)).
+\]
+Apply \eqref{eq:uniform-ibp}, the gap lemma, and
+\eqref{eq:triple-coefficient-energies}. For arbitrary \(a,b\geq1\)
+the resulting coefficient bound is
+\[
+ B(a_a)B(a_b)+\sqrt{\mathcal E(a_a)\mathcal E(a_b)}
+ \ll\sqrt{ab}(\ell_a\ell_b)^{3/2};
+\]
+the first term is absorbed using \(\sqrt{\ell_a\ell_b}\geq\log2\).
+Taking \(a=X,b=Z\), and using \(\sqrt{XZ}/Y=X/\sqrt Y\), proves
+\eqref{eq:triple-mixed-sharp}. Exchanging \(X,Y\) proves the other bound.
+
+All integrations by parts act on compact smooth weights, with no
+boundary terms. The Fourier frequency is \(T\log(r/k)/(2\pi)\);
+the \(2\pi\) derivative factor cancels, and \(dt/T=du\).
+In particular no factor of \(T\) or \(2\pi\) is omitted.
+Parameters are fixed while coefficient cutoffs are removed.
+The absolutely summable reciprocal-log bounds justify that removal in
+any order; only afterwards are the uniform estimates used.
+\end{proof}
+
+\section{An additive formula on an interior growing range}
+
+\begin{corollary}[\texttt{TRIPLE-SMOOTHED-ADDITIVE-001}]
+\label{cor:triple-smoothed-additive}
+Let \(0<\varepsilon<1/3\), \(T\geq3\), and
+\begin{equation}\label{eq:triple-interior-range}
+ T^\varepsilon\leq X,\ Y,\qquad XY\leq T^{1-\varepsilon}.
+\end{equation}
+For every admissible \(\omega\), with \(M_T\) defined in
+\eqref{eq:uniform-retained}, one has
+\begin{equation}\label{eq:triple-additive}
+ |\CT(X,Y)-M_T|
+ \leq C(1+W_\infty+W_1)T^{-\varepsilon}\log^4(2T+2),
+\end{equation}
+where \(C\) is absolute and effective, independent of
+\(\varepsilon,T,X,Y,\omega\).
+For fixed \(\varepsilon,\omega\), this is
+\(\CT(X,Y)=M_T+o(1)\) uniformly over \eqref{eq:triple-interior-range}.
+It is an additive approximation for the present smoothed observable,
+not an assertion of relative error \(o(M_T)\).
+\end{corollary}
+\begin{proof}
+All three bases \(x=X,Y,Z\) satisfy
+\(T^\varepsilon\leq x\leq T^{1-\varepsilon}<2T\), and \(Z\geq T^{2\varepsilon}\).
+Thus \(\ell_x\leq L\) and Lemma~\ref{lem:triple-uniform} gives
+\[
+ m_x\ll\sqrt{W_\infty L},\qquad
+ \alpha_x\leq T^{-\varepsilon}L,\qquad
+ h_x\ll T^{-\varepsilon}.
+\]
+For the last estimate the archimedean and Dirichlet-series components
+are bounded by constants times \(1/x\). The pole bound is at most
+\(4T^{-(3+\varepsilon)/2}\), and the trivial-zero bound is at most
+\(12T^{-1-5\varepsilon/2}\); both are at most a constant times
+\(T^{-\varepsilon}\) on the stated epsilon range.
+
+There are three remainder-containing words with two \(P\)'s, nine with
+one, and seven with none. Their component bounds sum to
+\begin{align}
+ \sum_{w:\,H\ {\rm occurs}}|E_w|
+ &\ll W_\infty T^{-\varepsilon}L
+   +\sqrt{W_\infty}T^{-2\varepsilon}L^{3/2}
+   +T^{-3\varepsilon}L^2\notag\\
+ &\ll(1+W_\infty)T^{-\varepsilon}L^2.
+ \label{eq:triple-interior-H}
+\end{align}
+This uses aggregates once, not again alongside their 208 components.
+
+The other errors from the exact budget have the following separate
+bounds on \eqref{eq:triple-interior-range}:
+\begin{center}\small
+\begin{tabular}{ll}
+\toprule
+Error & Absolute bound up to an effective absolute constant\\
+\midrule
+\(E_{\rm archcube}\) & \(T^{-4\varepsilon}L^2\)\\
+\(E_{PPA}\) & \((1+W_1)T^{-1-\varepsilon}L^3\)\\
+\(E_{PAA},E_{APA}\) & \((1+W_1)T^{-1-5\varepsilon/2}L^2\)\\
+\(E_{AAP}\) & \((1+W_1)T^{-1-\varepsilon}L^2\)\\
+\(E_{PAP,{\rm off}},E_{APP,{\rm off}}\) &
+ \((1+W_1)T^{-\varepsilon}L^4\)\\
+\(E_{PPP,{\rm off}}\) & \(W_1T^{-\varepsilon}L^4\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+For the archimedean error use
+\(L^3-q^3\leq3(L-q)L^2\) and
+\(L-q=\log(2+2/T)\leq\log(8/3)\).
+For \(PPA\), use \(b_Xb_Y\ll\sqrt Z L^2\) and
+\(\Omega_{1,1}\leq(1+W_1)L\).
+The denominators of the one-prime errors simplify respectively to
+\(T\sqrt X\,Y^2,\ T\sqrt Y\,X^2,\ T\sqrt Z\), while
+\(\Omega_{2,1}\leq(W_1+2)L^2\).
+For the mixed errors use \(X/\sqrt Y\leq Z\),
+\(Y/\sqrt X\leq Z\), and \(Z/T\leq T^{-\varepsilon}\);
+the cubic bound follows directly from \eqref{eq:triple-cubic-sharp}.
+
+Every row and \eqref{eq:triple-interior-H} is bounded by the right side of
+\eqref{eq:triple-additive}, with a constant independent of epsilon.
+Summing the exact budget \eqref{eq:uniform-budget} proves the result.
+Finally \(T^{-\varepsilon}\log^4(2T+2)\to0\) for each fixed positive
+epsilon, proving the uniform additive assertion for fixed smoothing.
+\end{proof}
+
+The lower and upper parameter boundaries in \eqref{eq:triple-interior-range}
+are included, as is \(T=3\). The range is nonempty for every allowed
+epsilon: \(X=Y=T^\varepsilon\) is an example. No assertion is made at
+\(\varepsilon=0\), or for a varying epsilon tending to zero.
+The explicit bound \eqref{eq:triple-additive} applies to varying weights,
+but its \(o(1)\) consequence then requires the displayed product with
+\(1+W_\infty+W_1\) to tend to zero.
+
+The limit order is fixed \(T,X,Y,\omega\), removal of the convergent
+coefficient and zero cutoffs, and then \(T\to\infty\) with fixed
+\(\varepsilon,\omega\) and arbitrary \(X,Y\) in the displayed range.
+All full-zero coordinates, multiplicities, and horizontal reflection
+conventions remain those of Lemma~\ref{lem:triple-master}; no zero-side
+truncation or substitution of \(\beta=1/2\) has occurred.
+The formulas and bounds respect exchange of \(X,Y\).
+
+The parameter bounds above do not by themselves constitute a test-function
+theorem. The following sections evaluate the retained quantities and
+derive the precise weighted test-function consequence. No dominance over
+the additive error, GUE main term, general Work Package B theorem, or new
+horizontal consequence is asserted.
+
+\section{Evaluation of the retained expression}
+
+These claims remain \texttt{UNCONDITIONAL}, with status
+\texttt{proved-draft}. The additional analytic input is the effective
+classical PNT already registered as \texttt{PRIME-PNT-001}, in the pair
+draft at label \texttt{inp:prime-pnt}. No new literature theorem is imported.
+
+\begin{lemma}[\texttt{TRIPLE-RETAINED-001}]\label{lem:triple-retained}
+For the existing normalized weight, set
+\(\mu_\omega=\int_1^2\omega(u)\log u\dd u\). Then, for \(T\geq3\),
+\begin{equation}\label{eq:retained-J}
+ 0\leq J_1-\log T-\mu_\omega\leq2/T,\qquad
+ 0\leq\mu_\omega\leq\log2.
+\end{equation}
+Uniformly for \(1\leq a\leq b\), the full prime-power mixed diagonal is
+\begin{equation}\label{eq:retained-D}
+ D(a,b)=\frac{a}{2b}(1+\log(b/a))\log(ab)
+              +O\bigl((a/b)(1+\log(b/a))\bigr).
+\end{equation}
+For reversed arguments use \(D(a,b)=D(b,a)\). Uniformly for \(X,Y\geq1\),
+\begin{equation}\label{eq:retained-resonance}
+ 0\leq R_{\rm res}(X,Y)\ll Z^{-1/2}\ell_Z^3,\qquad Z=XY.
+\end{equation}
+All constants are absolute and effective. Define
+\begin{equation}\label{eq:retained-G}
+ G(X,Y)=\frac{(1+\log Y)\log(XZ)}{2Y^2}
+                  +\frac{(1+\log X)\log(YZ)}{2X^2}.
+\end{equation}
+Let \(\Delta(a,b)\) be \(D(a,b)\) minus the displayed leading expression
+in \eqref{eq:retained-D}, with the arguments ordered first. Exactly,
+\begin{align}
+ M_T={}&q^3/Z^2+(q+\mu_\omega)G+E_D+E_J-R_{\rm res},\notag\\
+ E_D={}&J_1\{\Delta(X,Z)/Y+\Delta(Y,Z)/X\},\notag\\
+ E_J={}&(J_1-q-\mu_\omega)G,\label{eq:retained-evaluation}\\
+ |E_D|&\ll L\left\{\frac{1+\log Y}{Y^2}+
+                          \frac{1+\log X}{X^2}\right\},\qquad
+ 0\leq E_J\leq2G/T.\notag
+\end{align}
+This evaluation has additive errors; no relative precision is asserted.
+\end{lemma}
+\begin{proof}
+On \(1<u<2\),
+\(\log(Tu+2)=q+\log u+\log(1+2/(Tu))\), and the last term lies
+between zero and \(2/T\). Integrating against the nonnegative
+unit-mass weight proves \eqref{eq:retained-J}.
+
+Let \(N_{\rm pp}(u)\) count distinct integers that are proper prime
+powers, and let it be zero below \(2\). Counting all integer powers gives,
+for \(u\geq2\),
+\[
+ N_{\rm pp}(u)\leq\sqrt u+u^{1/3}\frac{\log u}{\log2}
+ \leq\left(1+\frac{6}{e\log2}\right)\sqrt u.
+\]
+The last inequality follows by maximizing \(y e^{-y/6}\) for \(y\geq0\).
+Overcounting integers with multiple power representations is harmless.
+PNT and partial summation give
+\(\sum_{p\leq u}(\log p)^2=u\log u+O(u)\).
+For example, use
+\(\vartheta(u)\log u-\int_2^u\vartheta(v)/v\dd v\) and the existing
+effective bound for \(\vartheta(u)-u\).
+The proper-power contribution is at most
+\(N_{\rm pp}(u)\log^2u\ll\sqrt u\log^2u\ll u\).
+Thus, including the bounded range \(1\leq u<2\),
+\[
+ A(u):=\sum_{n\leq u}\Lambda(n)^2=u\log u+E(u),\qquad
+ |E(u)|\leq C u,\qquad E(1)=0.
+\]
+For \(1\leq a\leq b\), the continuous weight for \(D(a,b)\) is
+\[
+ w_{a,b}(u)=
+ \begin{cases}
+ u/(ab),&1\leq u\leq a,\\
+ a/(bu),&a<u\leq b,\\
+ ab/u^3,&u>b.
+ \end{cases}
+\]
+Stieltjes integration by parts gives
+\[
+ D(a,b)=\int_1^\infty w_{a,b}(u)(\log u+1)\dd u
+              +O\left(\int_1^\infty u|w'_{a,b}(u)|\dd u\right).
+\]
+The lower error boundary vanishes because \(E(1)=0\); the upper one
+vanishes by the \(u^{-3}\) decay. Continuity at \(a,b\) removes all jump
+terms, including \(a=b\) and integer prime-power endpoints.
+Writing \(r=a/b\), \(h=\log(b/a)\), direct integration yields
+\begin{align*}
+ \int_1^\infty u|w'_{a,b}(u)|\dd u
+ &=r(2+h)-\frac1{2ab},\\
+ \int_1^\infty w_{a,b}(u)(\log u+1)\dd u
+ &=\frac r2(1+h)\log(ab)+r(1+h)-\frac1{4ab}.
+\end{align*}
+Since \(1/(ab)\leq r\), this proves \eqref{eq:retained-D}.
+The improper operations can first be made on finite intervals; the
+displayed majorants justify their limits at fixed \(a,b\).
+
+For the resonance, only \(r=p^k\), \(k\geq2\), contributes to
+\(\sum_r c_{X,Y}(r)a_Z(r)\). Its divisor convolution is exactly
+\((\Lambda*\Lambda)(p^k)=(k-1)(\log p)^2\).
+Using \eqref{eq:triple-weight-product},
+\[
+ R_{\rm res}\leq\sum_{\substack{r=p^k\\k\geq2}}
+ \frac{v_Z(r)^2}{r}(k-1)(\log p)^3
+ \leq\sum_{\substack{r=p^k\\k\geq2}}
+             \frac{v_Z(r)^2}{r}\log^3r .
+\]
+On \(Z2^{-j-1}<r\leq Z2^{-j}\), \(j\geq0\), the last weight is
+at most \(2^{-j}Z^{-1}\ell_Z^3\); the count is
+\(O(\sqrt Z\,2^{-j/2})\).
+On \(2^jZ<r\leq2^{j+1}Z\), it is at most
+\(2^{-3j}Z^{-1}(j+2)^3\ell_Z^3\), with count
+\(O(\sqrt Z\,2^{j/2})\).
+Both geometric sums converge, proving \eqref{eq:retained-resonance},
+including \(Z=1\). These are disjoint ranges with full upper endpoints;
+the original ordered factorizations were already combined in \(c_{X,Y}\).
+Finally substitute \eqref{eq:retained-D} and \eqref{eq:retained-J} into
+\eqref{eq:uniform-retained}. Since \(G\geq0\), this proves all of
+\eqref{eq:retained-evaluation}.
+\end{proof}
+
+\begin{corollary}[\texttt{TRIPLE-INTERIOR-VANISHING-001}]
+\label{cor:triple-interior-vanishing}
+Uniformly for \(0<\varepsilon<1/3,\ T\geq3\) and
+\(T^\varepsilon\leq X,Y,\ XY\leq T^{1-\varepsilon}\),
+\begin{align}
+ |M_T|&\ll T^{-\varepsilon}L^3,\notag\\
+ |\CT(X,Y)|&\ll(1+W_\infty+W_1)T^{-\varepsilon}L^4.
+ \label{eq:triple-interior-zero}
+\end{align}
+The effective constants are absolute, including independence of epsilon.
+In particular \(\CT\to0\) uniformly on this range for fixed positive
+epsilon and fixed smoothing.
+\end{corollary}
+\begin{proof}
+Here \(Z\geq T^{2\varepsilon}\) and \(\ell_X,\ell_Y,\ell_Z\leq L\).
+Lemma~\ref{lem:triple-retained} bounds the archimedean term by
+\(T^{-4\varepsilon}L^3\), the two mixed contributions by
+\(O(T^{-2\varepsilon}L^3)\), and the resonance by
+\(O(T^{-\varepsilon}L^3)\).
+This proves the first bound; combine it with
+Corollary~\ref{cor:triple-smoothed-additive} for the second.
+All constants are uniform and \(L>1\). The asymptotic consequence fixes
+epsilon and smoothing before taking \(T\to\infty\).
+\end{proof}
+
+\section{An interior weighted test-function theorem}
+
+Define
+\[
+ \Omega_+=\{(\xi,\eta):\xi>0,\ \eta>0,\ \xi+\eta<1\},\qquad
+ \Omega_\varepsilon=\{(\xi,\eta):\xi,\eta\geq\varepsilon,\
+                                  \xi+\eta\leq1-\varepsilon\}.
+\]
+For \(0<\varepsilon<1/3\), this compact triangle is contained in
+\(\Omega_+\). Every compact subset of \(\Omega_+\) is contained in
+some \(\Omega_\varepsilon\). This margin does not assert extension to
+the axes or to \(\xi+\eta=1\).
+
+\begin{theorem}[\texttt{TRIPLE-TEST-FUNCTION-001}]
+\label{thm:triple-test-function}
+Let \(\phi\in C_c^\infty(\Omega_+)\) be complex-valued, and set
+\begin{equation}\label{eq:triple-entire-test}
+ F(z_1,z_2)=\int_{\mathbb R^2}\phi(\xi,\eta)
+                   e^{2\pi\ii(\xi z_1+\eta z_2)}\dd\xi\dd\eta.
+\end{equation}
+Then \(F|_{\mathbb R^2}\) is Schwartz, \(\widehat F=\phi\) in the
+project convention, and the displayed expression is its entire extension.
+For \(T>2\pi\), put \(B=T/(2\pi)\), \(L_T=\log B/(2\pi)\), and
+\begin{align}
+ z_{21}&=L_T\{(\gamma_{i_2}-\gamma_{i_1})
+                          -\ii(\delta_{i_2}+\delta_{i_1})\},\notag\\
+ z_{31}&=L_T\{(\gamma_{i_3}-\gamma_{i_1})
+                          -\ii(\delta_{i_3}+\delta_{i_1})\}.
+ \label{eq:triple-test-arguments}
+\end{align}
+There is the exact identity of absolutely convergent expressions
+\begin{align}
+ \mathcal R^K_{3,T}[F;\omega]
+ &:=8\sum_{i_1,i_2,i_3\in\mathcal I}
+             K_T(i_2,i_3,i_1)F(z_{21},z_{31})\notag\\
+ &=\int_{\mathbb R^2}\phi(\xi,\eta)
+                      \CT(B^\xi,B^\eta)\dd\xi\dd\eta .
+ \label{eq:triple-test-identity}
+\end{align}
+All ordered zero occurrences, both ordinate signs, full multiplicities,
+and all five index-diagonal patterns are included. There is no additional
+height or mean-spacing normalization outside the existing \(K_T\).
+If \(\operatorname{supp}\phi\subset\Omega_\varepsilon\), then
+\begin{equation}\label{eq:triple-test-bound}
+ |\mathcal R^K_{3,T}[F;\omega]|
+ \ll \|\phi\|_1(1+W_\infty+W_1)B^{-\varepsilon}\log^4(2T+2).
+\end{equation}
+The constant is absolute and effective. For fixed
+\(\phi,\varepsilon,\omega\), the weighted statistic tends to zero as
+\(T\to\infty\).
+\end{theorem}
+\begin{proof}
+Compact frequency support permits differentiation under
+\eqref{eq:triple-entire-test}, locally uniformly in complex \(z_1,z_2\),
+proving the entire extension. Repeated integration by parts in the
+frequency variables proves rapid decay of every real-variable derivative.
+Schwartz Fourier inversion, with the stated \(2\pi\) convention, gives
+\(\widehat F=\phi\).
+
+Apply Lemma~\ref{lem:triple-master} with
+\(X=B^\xi,\ Y=B^\eta\), and relabel \((j,k,\ell)=(i_2,i_3,i_1)\).
+The numerator is exactly
+\[
+ X^{\rho_{i_2}+\bar\rho_{i_1}-1}
+ Y^{\rho_{i_3}+\bar\rho_{i_1}-1}
+ =e^{2\pi\ii(\xi z_{21}+\eta z_{31})}.
+\]
+In particular the imaginary shifts have a minus sign and involve sums
+of horizontal displacements. The third slot is the conjugated anchor
+in \(K_T(i_2,i_3,i_1)\).
+
+For fixed \(T\) and support in \(\Omega_\varepsilon\), the integrated
+absolute zero-series majorant from the master proof bounds
+\[
+ 8\sum_{i_1,i_2,i_3}\int_{\mathbb R^2}
+ |\phi(\xi,\eta)K_T(i_2,i_3,i_1)|
+ \left|e^{2\pi\ii(\xi z_{21}+\eta z_{31})}\right|
+ \dd\xi\dd\eta
+ \ll \|\phi\|_1 B^{1-\varepsilon}\log^3(2T+2).
+\]
+Indeed \(XY=B^{\xi+\eta}\leq B^{1-\varepsilon}\) on the support.
+This finite dominating quantity proves Tonelli/Fubini, the identity,
+and absolute convergence of the zero expression. No bound on \(F\)
+at complex arguments is inferred from real-axis Schwartz decay.
+
+To use the precise spacing convention, set
+\[
+ \theta_T=\frac{\log B}{\log T}\in(0,1),\qquad
+ \varepsilon_T=\varepsilon\theta_T\in(0,1/3).
+\]
+For \((\xi,\eta)\in\Omega_\varepsilon\), \(X,Y\geq
+T^{\varepsilon_T}\), and
+\[
+ Z\leq T^{(1-\varepsilon)\theta_T}
+       \leq T^{1-\varepsilon_T},
+\]
+where the last inequality is just \(\theta_T\leq1\).
+Apply the explicit bound of
+Corollary~\ref{cor:triple-interior-vanishing} at this value of its
+margin, using its constant independent of that margin. Since
+\(T^{-\varepsilon_T}=B^{-\varepsilon}\), integration against
+\(|\phi|\) proves \eqref{eq:triple-test-bound}.
+This is a pointwise application of the uniform estimate, not an
+invocation of an unproved varying-epsilon limit. For fixed frequency
+margin epsilon the displayed \(B^{-\varepsilon}\log^4(2T+2)\) tends to zero.
+\end{proof}
+
+The class is nonempty: a nonzero smooth bump supported in the square
+\([3/16,5/16]^2\) has support in \(\Omega_{1/8}\).
+Functions in this single positive-frequency class are allowed to be
+complex; no reality, positivity, or full permutation symmetry is assumed.
+Exchanging indices \(i_2,i_3\) corresponds to exchanging the arguments
+of \(F\). Simultaneous horizontal reflection negates all deltas and
+conjugates the kernel denominators; it preserves the full statistic
+by reindexing, without termwise invariance. All multiplicity and
+partial-diagonal conventions remain those of the master identity.
+
+For project horizontal coordinates \(x_\rho=\delta_\rho\log T\),
+the first imaginary shift is
+\[
+ -L_T(x_{\rho_{i_2}}+x_{\rho_{i_1}})/\log T,
+\]
+and similarly for the second.
+Thus \eqref{eq:triple-test-identity} is a weighted full-zero correlation,
+not a replacement by \(F\) of the real ordinate differences alone.
+The factor \(8\) is unchanged, \(1/T\) is already in \(K_T\), and no
+Jacobian or extra \(L_T^2\) appears in the frequency integral.
+
+Fix \(T,\phi,\omega\) before removing independent zero cutoffs by the
+displayed absolute majorant. Only then take \(T\to\infty\), with fixed
+test function, support margin, and smoothing. Varying families may use
+the explicit bound, but a vanishing conclusion requires its right side
+to vanish. The condition \(T>2\pi\) is strict; parameter and support-margin
+boundaries inside \(\Omega_\varepsilon\) are included.
+
+This theorem covers arbitrary test functions in the stated interior
+Fourier class with the native kernel retained. Removing that kernel,
+handling frequency axes or the origin, taking a real-ordinate-only
+statistic, or proving the full Work Package B theorem requires additional
+analysis. The zero interior limit establishes none of a GUE main term,
+a relative asymptotic, or a new horizontal constraint.
+\section{Boundary layers in the positive frequency quadrant}
+
+Task: proof and bookkeeping. The following two claims are
+\texttt{UNCONDITIONAL}, with the stated support restriction, and have
+status \texttt{proved-draft}. Put
+\[
+ Q=[0,\infty)^2,\quad Q_\kappa=\{(\xi,\eta)\in Q:\xi+\eta\leq1-\kappa\},
+ \quad 0<\kappa<1.
+\]
+A smooth test on \(Q\) means the restriction \(\psi\) of a function in
+\(C_c^\infty(\mathbb R^2)\). Require its support relative to \(Q\) to
+lie in \(Q_\kappa\). Its values on the axes are its continuous traces.
+Write \(N_1(\psi)=\|\psi\|_{\infty,Q}+
+\|\partial_\xi\psi\|_{\infty,Q}+\|\partial_\eta\psi\|_{\infty,Q}\).
+For the estimates in this section assume \(T\geq2\pi e\), and set
+\[
+ b=\log B,\quad B=T/(2\pi),\quad q=\log T,
+ \quad L=\log(2T+2),\quad \mathcal W=1+W_\infty+W_1.
+\]
+Thus \(b\geq1\), \(q=b+\log(2\pi)\), and \(L\asymp q\asymp b\)
+with absolute constants. In frequency integrals always set
+\(X=B^\xi,Y=B^\eta,Z=XY\). In particular
+\(1\leq X,Y\leq Z\leq B^{1-\kappa}<T\); no positive lower
+frequency margin is imposed.
+
+\begin{lemma}[\texttt{TRIPLE-BOUNDARY-ESTIMATES-001}]
+\label{lem:triple-boundary-estimates}
+With \(G\) and \(\mu_\omega\) as in Lemma~\ref{lem:triple-retained}, put
+\[
+ R_T(X,Y)=\CT(X,Y)-q^3/Z^2-(q+\mu_\omega)G(X,Y).
+\]
+There is an effective absolute constant such that
+\begin{equation}\label{eq:triple-boundary-integrated-error}
+ \int_Q|\psi(\xi,\eta)R_T(B^\xi,B^\eta)|\dd\xi\dd\eta
+ \ll\|\psi\|_{\infty,Q}\mathcal W(1+B^{-\kappa}L^4).
+\end{equation}
+For fixed admissible smoothing there are also the local profiles
+\begin{align}
+ q^{-3}\CT(e^u,e^v)&\longrightarrow e^{-2(u+v)},
+       \label{eq:triple-origin-profile}\\
+ q^{-2}\CT(B^r,e^s)&\longrightarrow r(1+s)e^{-2s}.
+       \label{eq:triple-axis-profile}
+\end{align}
+The first convergence is uniform on compact subsets of \(u,v\geq0\);
+the second on compact subsets of \(0<r<1,s\geq0\).
+The exchanged-axis profile holds as well, including \(s=0\).
+\end{lemma}
+\begin{proof}
+Use the exact budget of Lemma~\ref{lem:triple-uniform}, replacing its
+retained terms by Lemma~\ref{lem:triple-retained}, and use
+Lemma~\ref{lem:triple-offdiag} for the three off-diagonal errors.
+Consequently \(R_T\) is exactly the sum of the eight old non-\(H\)
+errors, all nineteen signed \(H\) words, \(E_D,E_J\), and
+\(-R_{\rm res}\). There is no repeated retained term.
+
+Here is the integrated budget. Each entry bounds the integral of the
+absolute value over \(Q_\kappa\), before multiplication by
+\(\|\psi\|_{\infty,Q}\). Absolute effective constants are suppressed.
+The last row is expanded separately below.
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Source & Integrated bound \\
+\midrule
+\(E_{\rm archcube}\) & \(L^2/b^2\) \\
+\(E_D\) & \(L/b\) \\
+\(E_J\) & \(1/T\) \\
+\(-R_{\rm res}\) & \(b^{-2}\) \\
+\(E_{PPA}\) & \((1+W_1)L^3/T\) \\
+\(E_{PAA},E_{APA},E_{AAP}\), each & \((1+W_1)L^2/T\) \\
+\(E_{PAP,\rm off},E_{APP,\rm off},E_{PPP,\rm off}\), each
+ & \((1+W_1)B^{-\kappa}L^4\) \\
+All nineteen \(H\) words & \((1+W_\infty)(1+T^{-3/2}L^2)\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For completeness these bounds remain valid at both axes. The
+archimedean cube bound follows from \(L^3-q^3\ll L^2\) and
+\(\int_Q e^{-2b(\xi+\eta)}\dd\xi\dd\eta=1/(4b^2)\).
+For \(E_D\), integrate \(L(1+b\eta)e^{-2b\eta}\) in \(\eta\),
+and bound the other coordinate's interval by length one; also exchange
+the coordinates. For \(G\), the substitution \(s=b\eta\) gives
+\begin{equation}\label{eq:triple-axis-substitution}
+ G_1(B^\xi,B^\eta)\dd\eta
+ =e^{-2s}(1+s)\left(\xi+\frac{s}{2b}\right)\dd s,
+ \quad
+ G_1=\frac{(1+\log Y)\log(XZ)}{2Y^2}.
+\end{equation}
+Integrating with \(0\leq\xi\leq1\) bounds \(\int_{Q_\kappa}G\)
+absolutely, proving the \(E_J\) row. The resonance estimate integrates
+after \(u=b\xi,v=b\eta\) to at most
+\[
+ Cb^{-2}\int_0^\infty\int_0^\infty
+ e^{-(u+v)/2}(\log2+u+v)^3\dd u\dd v\ll b^{-2}.
+\]
+For \(PPA\), its pointwise bound is at most
+\(C(1+W_1)L^3/(T\sqrt Z)\). The three single-prime words are
+at most \(C(1+W_1)L^2/T\), since all scalar denominators only
+improve their bounds for \(X,Y\geq1\). The mixed off-diagonal bounds
+use \(X/\sqrt Y,Y/\sqrt X\leq Z\),
+\(\ell_X,\ell_Y,\ell_Z\ll L\), and
+\(V_1\ll(1+W_1)L\). The cubic bound uses
+\(Z/T\leq B^{-\kappa}/(2\pi)\). Integration costs at most unit area.
+
+To account for the remainders, split \(H_x=H_x^0+E_{\rm pole}(x,\cdot)\),
+where \(H^0\) is the sum of the archimedean, Dirichlet-series and trivial
+components. Individually their sup-norm majorants are
+\[
+ C_{\rm arch}/x,\qquad C_{\rm DS}/x,\qquad
+ 12x^{-5/2}/(T+2)\leq12/(Tx).
+\]
+Thus \(H_x^0\) has majorant \(C/x\). Retain these three component
+labels under finite distributivity; no cancellation among them is used.
+For a word with \(p\) prime factors, \(a\) archimedean main factors
+and \(h\geq1\) factors \(H^0\), the uniform product bound is
+\(C(1+W_\infty)L^{p/2+a}\) times the product of \(x^{-1}\)
+over its nonprime slots. There are at most two primes. A factor in the
+\(X,Y,Z\) slot supplies respectively the decay vectors
+\((1,0),(0,1),(1,1)\). Any two such vectors have positive sum in
+both coordinates. Integrating the resulting exponential on
+\(Q_\kappa\subset[0,1]^2\) gives the complete table
+\begin{center}
+\begin{tabular}{rrrrl}
+\toprule
+\(p\)&\(a\)&\(h\)&Number& Bound after removing \(C(1+W_\infty)\)\\
+\midrule
+2&0&1&3& \(L/b\) (the \(H^0_Z\) case has \(L/b^2\))\\
+1&1&1&6& \(L^{3/2}/b^2\)\\
+0&2&1&3& \(L^2/b^2\)\\
+1&0&2&3& \(L^{1/2}/b^2\)\\
+0&1&2&3& \(L/b^2\)\\
+0&0&3&1& \(b^{-2}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Their sum is bounded absolutely since \(b\geq1,L\asymp b\).
+Every refined word with at least one pole factor has that factor
+bounded by \(4\sqrt Z/T^2\leq4T^{-3/2}\). All its remaining
+nonprime factors are \(O(L)\); the prime factors use their weighted
+\(L^2\) bounds. Its integral is therefore at most
+\(C(1+W_\infty)T^{-3/2}L^2\). This covers all 208 refined words:
+\(12\cdot4+6\cdot4^2+4^3\), grouped without overlap according to
+whether a pole component occurs. The trivial component's additional
+\(T^{-1}\) may be retained in every occurrence. Summing proves
+\eqref{eq:triple-boundary-integrated-error}; in particular none of these
+errors can contribute at the integrated scale \(q\).
+
+For the origin profile, on any fixed compact rectangle in \(u,v\),
+all prime bases and their coefficient norms are bounded. The cube is
+\(q^3e^{-2(u+v)}\); its evaluation error and all \(H\) words are
+\(O_\omega(q^2)\), the mixed retained terms are \(O_\omega(q)\),
+and all other bounds are smaller. This proves
+\eqref{eq:triple-origin-profile} uniformly, including \(u=v=0\).
+
+For the axis profile take \(r_0\leq r\leq r_1<1,0\leq s\leq S\)
+with \(r_0>0\). For sufficiently large \(T\), all bases are below
+\(T\), and \(Z/T\ll_S B^{-(1-r_1)}\). The off-diagonal errors
+are \(O_{\omega,S}(B^{-(1-r_1)}L^4)\). The first summand of
+\((q+\mu_\omega)G/q^2\) is
+\[
+ \frac{(q+\mu_\omega)b}{q^2}
+ e^{-2s}(1+s)\left(r+\frac{s}{2b}\right),
+\]
+which converges uniformly to the stated profile. The other summand
+and the cube, after division by \(q^2\), are
+\(O_{\omega,S}(q e^{-2br_0})\). The mixed evaluation errors are
+\(O_{\omega,S}(q+q^2e^{-2br_0})\) before division; the resonance
+bound is smaller than \(q^2\). Among the remainder words, the
+\(H_YPP\) word is \(O_{\omega,S}(q)\), as are all words with
+two primes. Every word with fewer primes and a factor in the \(X\)
+or \(Z\) slot bounded by an inverse base is
+\(O_{\omega,S}(q^2e^{-br_0})\); words containing a pole are
+\(O_\omega(T^{-3/2}L^2)\). These alternatives cover all remaining
+\(H\) words. The archimedean cube error and the other old errors
+also become zero uniformly after division by \(q^2\).
+This proves \eqref{eq:triple-axis-profile}. Symmetry exchanges \(X,Y\).
+\end{proof}
+
+\section{The one-sided quadrant limit}
+
+\begin{theorem}[\texttt{TRIPLE-QUADRANT-LIMIT-001}]
+\label{thm:triple-quadrant-limit}
+For the preceding tests and smoothing define
+\[
+ \mathcal B_T[\psi]=\frac1q\int_Q\psi(\xi,\eta)
+                      \CT(B^\xi,B^\eta)\dd\xi\dd\eta,
+ \qquad
+ \mathcal B[\psi]=\frac14\psi(0,0)
+       +\frac34\int_0^\infty r\{\psi(r,0)+\psi(0,r)\}\dd r.
+\]
+Uniformly for \(T\geq2\pi e\) and \(0<\kappa<1\),
+\begin{equation}\label{eq:triple-quadrant-limit}
+ |\mathcal B_T[\psi]-\mathcal B[\psi]|
+ \ll N_1(\psi)\mathcal W
+       \{b^{-1}+B^{-\kappa}L^3\},
+\end{equation}
+with an effective absolute constant. In particular, for fixed
+\(\psi,\kappa,\omega\), the limit is \(\mathcal B[\psi]\).
+
+Define the entire function
+\[
+ F_+(z_1,z_2)=\int_Q\psi(\xi,\eta)
+                   e^{2\pi\ii(\xi z_1+\eta z_2)}\dd\xi\dd\eta.
+\]
+With the full-zero arguments of \eqref{eq:triple-test-arguments},
+there is also the exact absolutely convergent identity
+\begin{equation}\label{eq:triple-quadrant-zero-identity}
+ \mathcal B_T[\psi]=\frac8q\sum_{i_1,i_2,i_3\in\mathcal I}
+             K_T(i_2,i_3,i_1)F_+(z_{21},z_{31}).
+\end{equation}
+All multiplicity, horizontal, conjugated-anchor and partial-diagonal
+conventions of the master identity apply unchanged.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:triple-boundary-estimates}, replacing \(\CT\) by
+\(q^3/Z^2+(q+\mu_\omega)G\) in \(\mathcal B_T\) incurs
+\(O(\|\psi\|_\infty\mathcal W(b^{-1}+B^{-\kappa}L^3))\).
+It remains to integrate those two retained terms, not to integrate
+the local profiles without a dominating bound.
+
+The cube contributes exactly
+\[
+ \frac{q^2}{b^2}\int_0^\infty\int_0^\infty
+ e^{-2(u+v)}\psi(u/b,v/b)\dd u\dd v.
+\]
+The mean value bound
+\(|\psi(u/b,v/b)-\psi(0,0)|\leq N_1(\psi)(u+v)/b\)
+holds along line segments in \(Q\). The moments
+\begin{equation}\label{eq:triple-boundary-moments}
+ \int_0^\infty s^k e^{-2s}\dd s=\frac{k!}{2^{k+1}}
+ \quad(k\geq0)
+\end{equation}
+follow by integration by parts, with vanishing exponential boundary
+terms. Since \(q/b=1+\log(2\pi)/b\), the cube is
+\(\psi(0,0)/4+O(N_1(\psi)/b)\).
+
+For the first mixed term, \eqref{eq:triple-axis-substitution} gives
+\[
+ \frac{q+\mu_\omega}{q}
+ \int_0^\infty\int_0^\infty
+ e^{-2s}(1+s)\left(\xi+\frac{s}{2b}\right)
+                   \psi(\xi,s/b)\dd s\dd\xi.
+\]
+Both \(\psi(\xi,s/b)\) and its trace vanish for \(\xi>1\).
+On \(0\leq\xi\leq1\), replacing the former by \(\psi(\xi,0)\)
+costs at most \(N_1(\psi)s/b\); the term \(s/(2b)\) also costs
+\(O(N_1(\psi)/b)\) after integration. The coefficient
+\((q+\mu_\omega)/q\) is \(1+O(1/b)\), uniformly in the normalized
+nonnegative smoothing. Formula~\eqref{eq:triple-boundary-moments}
+gives \(\int_0^\infty(1+s)e^{-2s}\dd s=3/4\).
+Thus this term is \((3/4)\int_0^\infty\xi\psi(\xi,0)\dd\xi
++O(N_1(\psi)/b)\). Exchanging coordinates gives the other axis.
+Every majorant used here is integrable, including its first moment.
+This proves \eqref{eq:triple-quadrant-limit}.
+
+The compactly supported integrable frequency function
+\(\mathbf1_Q\psi\), extended by zero, defines \(F_+\) independently
+of its values on the boundary, which has planar measure zero.
+Differentiation under its integral is valid locally uniformly at complex
+arguments, proving that \(F_+\) is entire. On the real plane it is
+bounded, hence tempered, and its Fourier transform is
+\(\mathbf1_Q\psi\) in the sense of tempered distributions, with the
+project convention. It need not be Schwartz: a nonzero boundary trace
+prevents the zero extension from having a continuous representative
+across that axis, whereas the Fourier transform of a Schwartz function
+is Schwartz.
+
+At fixed \(T,\psi,\omega\), the master majorant gives
+\[
+ 8\sum_{i_1,i_2,i_3}\int_Q
+ |\psi K_T(i_2,i_3,i_1)e^{2\pi\ii(\xi z_{21}+\eta z_{31})}|
+ \dd\xi\dd\eta
+ \ll\|\psi\|_{L^1(Q)}B^{1-\kappa}L^3<\infty.
+\]
+Tonelli/Fubini and the exact phase identity from
+Theorem~\ref{thm:triple-test-function} now prove
+\eqref{eq:triple-quadrant-zero-identity}. This argument uses compact
+frequency support rather than any real-axis decay of \(F_+\).
+Remove independent zero cutoffs at fixed parameters under this majorant;
+only then let \(T\) grow with \(\psi,\kappa,\omega\) fixed.
+\end{proof}
+
+The limiting functional acts on smooth restrictions to the closed
+quadrant. Its origin mass \(1/4\) and positive-axis densities \(3r/4\)
+are full one-sided masses: no further half-weight convention applies.
+The traces are determined by the smooth restriction, not by assigning
+arbitrary values to its zero extension on a null set. The pointwise
+sizes \(q^3\) at the origin and \(q^2\) on an axis are distinct from
+the integrated scale \(q\). The mixed terms carry no additional origin
+atom, as their integrated error estimate shows.
+
+If the test vanishes near both axes, this limiting functional is zero,
+consistent with the earlier stronger unnormalized interior estimate.
+Tests near the origin and tests meeting just one axis are both allowed.
+The axes and the inner boundary \(\xi+\eta=1-\kappa\) are included;
+the outer boundary \(\xi+\eta=1\) remains excluded. The identity itself
+holds for \(T>2\pi\); \(T\geq2\pi e\) is the convenient threshold
+for the explicit estimate. No symmetry or reality of the test is needed.
+Swapping the two non-anchor indices exchanges the axis terms; horizontal
+reflection is still a reindexing of full zeros and kernel denominators.
+For varying tests, margins or smoothing, a limiting assertion requires
+the right side of \eqref{eq:triple-quadrant-limit} to tend to zero.
+
+This proves a nonzero one-sided weighted correlation limit. The following
+sections extend across signed frequency sectors to smooth Fourier tests
+surrounding the origin. Removing the native kernel and extracting
+horizontal information remain separate tasks.
+\section{Signed frequency sectors and reciprocal reflection}
+
+Task: proof and bookkeeping. The next lemma is \texttt{UNCONDITIONAL};
+the following theorem also records its explicit Fourier-support
+restriction. Both have ledger status \texttt{proved-draft}.
+Extend \(\ZS(x,t)\) to every \(x>0\) by the same full-zero series
+\eqref{eq:triple-S}, and define \(\CT(X,Y)\) by the same smoothed
+product for every \(X,Y>0\). No prime-side formula for \(x<1\)
+is being imported. For \(T>2\pi\), put
+\[
+ \widetilde{\mathcal C}_T(\xi,\eta)=\CT(B^\xi,B^\eta),\qquad
+ h(\xi,\eta)=\max\{|\xi|,|\eta|,|\xi+\eta|\},
+ \qquad B=T/(2\pi).
+\]
+Let \(R(u,v)=(v,-u-v)\), so \(R^3=I\).
+
+\begin{lemma}[\texttt{TRIPLE-SIGNED-SECTORS-001}]
+\label{lem:triple-signed-sectors}
+The extended zero series converges absolutely, locally uniformly in
+\(x>0,t\in\mathbb R\), and
+\begin{equation}\label{eq:triple-reciprocal-reflection}
+ \ZS(x^{-1},t)=\overline{\ZS(x,t)}.
+\end{equation}
+For all real frequencies,
+\begin{equation}\label{eq:triple-signed-symmetries}
+ \widetilde{\mathcal C}_T(R(\xi,\eta))=\widetilde{\mathcal C}_T(\xi,\eta),\quad
+ \widetilde{\mathcal C}_T(-\xi,-\eta)=\overline{\widetilde{\mathcal C}_T(\xi,\eta)},\quad
+ \widetilde{\mathcal C}_T(\eta,\xi)=\widetilde{\mathcal C}_T(\xi,\eta).
+\end{equation}
+The six closed cones \(\sigma R^kQ\), \(\sigma\in\{1,-1\}\),
+\(k=0,1,2\), cover the plane with disjoint interiors. Their overlaps
+are on \(\xi\eta(\xi+\eta)=0\), and for \((u,v)\in Q\),
+\[
+ \det(\sigma R^k)=1,\qquad h(\sigma R^k(u,v))=u+v.
+\]
+The master zero-side identity holds for every \(X,Y>0\). In particular,
+if an integrable \(\phi\) is supported in \(h\leq1-\kappa\), where
+\(0<\kappa<1\), its integrated absolute zero-series majorant is
+\begin{equation}\label{eq:triple-signed-majorant}
+ 8\sum_{i_1,i_2,i_3}\int_{\mathbb R^2}
+ |\phi(\xi,\eta)K_T(i_2,i_3,i_1)
+       e^{2\pi\ii(\xi z_{21}+\eta z_{31})}|\dd\xi\dd\eta
+ \ll\|\phi\|_1B^{1-\kappa}\log^3(2T+2).
+\end{equation}
+Here the complex zero arguments are still \eqref{eq:triple-test-arguments}.
+\end{lemma}
+\begin{proof}
+Since \(|\delta_j|<1/2\),
+\[
+ \left|\frac{2x^{\delta_j+\ii(\gamma_j-t)}}{D_j(t)}\right|
+ \leq\frac{8}{3}\max(x,x^{-1})^{1/2}
+                  (1+(t-\gamma_j)^2)^{-1}.
+\]
+On a compact set of \(x,t\), this is a constant times
+\((1+\gamma_j^2)^{-1}\), whose zero sum converges by the imported
+counting bound. This proves local uniform absolute convergence.
+Conjugate the series and reindex by the multiplicity-preserving map
+\((\delta,\gamma)\mapsto(-\delta,\gamma)\). Its denominator changes
+from \(\overline{D_j(t)}\) to the denominator of the reflected zero,
+and the numerator becomes \(2x^{-\delta_j-\ii(\gamma_j-t)}\).
+This proves \eqref{eq:triple-reciprocal-reflection} with no restriction
+on the horizontal locations of the zeros.
+
+The frequency integrand is now
+\[
+ \ZS(B^\xi,t)\ZS(B^\eta,t)\ZS(B^{-\xi-\eta},t).
+\]
+Cyclic permutation of its three frequencies gives \(R\); exchange
+of the first two factors gives the coordinate swap. Negating all three
+frequencies conjugates the product, and the smoothing is real. This
+proves \eqref{eq:triple-signed-symmetries}.
+
+The six maps and their images are recorded explicitly below. All
+inequalities in this table include equality; only the interiors are
+disjoint. A conjugation flag means conjugate \(\widetilde{\mathcal C}_T(u,v)\).
+\begin{center}\small
+\begin{tabular}{llll}
+\toprule
+Map & Image of \((u,v)\) & Cone & Conjugate?\\
+\midrule
+\(I\)&\((u,v)\)&\(\xi,\eta\geq0\)&no\\
+\(R\)&\((v,-u-v)\)&\(\xi\geq0,\ \xi+\eta\leq0\)&no\\
+\(R^2\)&\((-u-v,u)\)&\(\eta\geq0,\ \xi+\eta\leq0\)&no\\
+\(-I\)&\((-u,-v)\)&\(\xi,\eta\leq0\)&yes\\
+\(-R\)&\((-v,u+v)\)&\(\xi\leq0,\ \xi+\eta\geq0\)&yes\\
+\(-R^2\)&\((u+v,-u)\)&\(\eta\leq0,\ \xi+\eta\geq0\)&yes\\
+\bottomrule
+\end{tabular}
+\end{center}
+The mixed-sign quadrants split according to the sign of \(\xi+\eta\),
+proving coverage and disjointness of the six interiors. The three
+positive matrices are
+\[
+ I,\quad \begin{pmatrix}0&1\\-1&-1\end{pmatrix},\quad
+ \begin{pmatrix}-1&-1\\1&0\end{pmatrix}.
+\]
+Each matrix and its negative has determinant one. The absolute values
+of the three frequencies on each cone are \(u,v,u+v\), in some order.
+This proves the formula for \(h\), as well as the global identity
+\begin{equation}\label{eq:triple-hexagon-gauge}
+ h(\xi,\eta)=\frac{|\xi|+|\eta|+|\xi+\eta|}{2}.
+\end{equation}
+On a seam the three frequencies are \(r,0,-r\), in some order.
+The integrand is \(\ZS(1,t)|\ZS(B^r,t)|^2\), which is real because
+\eqref{eq:triple-reciprocal-reflection} makes \(\ZS(1,t)\) real.
+Thus the conjugated and unconjugated descriptions agree on all seams,
+including the origin.
+
+The product of the three absolutely convergent series has the same
+phase cancellation and factor eight as before, for arbitrary positive
+bases. For an individual summand its horizontal numerator is bounded by
+\[
+ \left|B^{\xi(\delta_{i_2}+\delta_{i_1})+
+                  \eta(\delta_{i_3}+\delta_{i_1})}\right|
+ \leq B^{(|\xi|+|\eta|+|\xi+\eta|)/2}=B^{h(\xi,\eta)}.
+\]
+It is essential here to collect the coefficient of the anchor delta
+before taking absolute values. The three denominator majorants and the
+zero-counting bound then give an integrated absolute sum
+\(O(B^h\log^3(2T+2))\). Integrating against \(|\phi|\) proves
+\eqref{eq:triple-signed-majorant} and the asserted master extension.
+All interchanges are at fixed parameters under these majorants.
+The symmetry identities concern the full occurrence sum; reindexing
+only some slots need not preserve an individual index-diagonal subseries.
+\end{proof}
+
+\section{Schwartz tests with hexagonal Fourier support}
+
+Let \(\mathcal H=\{h<1\}\) and
+\(\mathcal H_\kappa=\{h\leq1-\kappa\}\), \(0<\kappa<1\).
+Every compact subset of \(\mathcal H\) lies in some
+\(\mathcal H_\kappa\). The outer hexagon has vertices
+\((1,0),(0,1),(-1,1),(-1,0),(0,-1),(1,-1)\), all excluded.
+
+\begin{theorem}[\texttt{TRIPLE-SIGNED-TEST-FUNCTION-001}]
+\label{thm:triple-signed-test-function}
+Let \(\phi\in C_c^\infty(\mathcal H)\) be arbitrary and complex-valued,
+and let \(F\) be its entire inverse Fourier transform in the project
+convention. Then \(F|_{\mathbb R^2}\) is Schwartz and \(\widehat F=\phi\).
+For \(T>2\pi\), define
+\begin{align}
+ \mathcal A_T[\phi]&=\frac1q\int_{\mathbb R^2}
+             \phi(\xi,\eta)\widetilde{\mathcal C}_T(\xi,\eta)\dd\xi\dd\eta,
+             \qquad q=\log T,\notag\\
+ \mathcal A[\phi]&=\frac32\phi(0,0)+\frac32\int_{\mathbb R}|r|
+       \{\phi(r,0)+\phi(0,r)+\phi(r,-r)\}\dd r.
+       \label{eq:triple-signed-limit-functional}
+\end{align}
+There is the exact absolutely convergent identity
+\begin{equation}\label{eq:triple-signed-zero-identity}
+ \mathcal A_T[\phi]=\frac8q\sum_{i_1,i_2,i_3\in\mathcal I}
+       K_T(i_2,i_3,i_1)F(z_{21},z_{31}).
+\end{equation}
+If \(\operatorname{supp}\phi\subset\mathcal H_\kappa\), then, uniformly
+for \(T\geq2\pi e\),
+\begin{equation}\label{eq:triple-signed-limit-error}
+ |\mathcal A_T[\phi]-\mathcal A[\phi]|
+ \ll \|\phi\|_{C^1}(1+W_\infty+W_1)
+       \{b^{-1}+B^{-\kappa}\log^3(2T+2)\},\qquad b=\log B.
+\end{equation}
+Here \(\|\phi\|_{C^1}=\|\phi\|_\infty+
+\|\partial_\xi\phi\|_\infty+\|\partial_\eta\phi\|_\infty\).
+The constant is effective and absolute, including independence from
+\(\kappa\). For fixed \(\phi,\kappa,\omega\), the limit is
+\(\mathcal A[\phi]\).
+\end{theorem}
+\begin{proof}
+Compact smooth frequency support gives the entire extension by locally
+uniform differentiation and gives Schwartz decay on the real plane by
+repeated integration by parts. Fourier inversion has exactly the
+negative-forward, positive-inverse \(2\pi\) convention already fixed.
+Lemma~\ref{lem:triple-signed-sectors} and its absolute majorant permit
+Fubini with the zero sums and prove \eqref{eq:triple-signed-zero-identity}.
+
+For \(k=0,1,2\), put, on \(Q\),
+\[
+ \psi_{+,k}(u,v)=\phi(R^k(u,v)),\qquad
+ \psi_{-,k}(u,v)=\overline{\phi(-R^k(u,v))}.
+\]
+Each is the restriction of a compactly supported smooth function on
+the plane, with relative support in \(Q_\kappa\). The chain rule gives
+\(N_1(\psi_{\pm,k})\leq2\|\phi\|_{C^1}\), since the absolute
+row sums of every matrix are at most two. The planar seams have measure
+zero. Change variables by the six determinant-one maps to obtain
+the exact decomposition
+\begin{equation}\label{eq:triple-six-sector-decomposition}
+ \mathcal A_T[\phi]
+ =\sum_{k=0}^2\left\{\mathcal B_T[\psi_{+,k}]
+                   +\overline{\mathcal B_T[\psi_{-,k}]}\right\}.
+\end{equation}
+The conjugation of the test in the negative sectors is necessary for
+complex tests. Apply Theorem~\ref{thm:triple-quadrant-limit} to each
+term. Its real coefficients ensure that conjugating the negative-sector
+limit restores \(\phi(-R^k(u,v))\), with no conjugate on the resulting
+values of \(\phi\). The six errors sum to the bound
+\eqref{eq:triple-signed-limit-error}.
+
+Each sector contributes \(\phi(0,0)/4\), giving \(3\phi(0,0)/2\).
+The images of the two coordinate rays under all six maps are
+\[
+ (r,0),\ (0,r),\ (-r,r),\ (-r,0),\ (0,-r),\ (r,-r),
+ \qquad r\geq0,
+\]
+each occurring twice. One way to check the incidence is to list the
+columns of \(I,R,R^2,-I,-R,-R^2\); they are precisely those six
+directions with multiplicity two. Thus each ray carries
+\(2(3r/4)\dd r\). Pairing opposite rays gives
+\eqref{eq:triple-signed-limit-functional}. In particular the diagonal
+line is parameterized by \((r,-r)\) with measure \(\dd r\), not
+Euclidean arclength. There is no missing square-root-of-two factor.
+Both adjacent sectors contribute to a limiting ray even though the
+finite-\(T\) planar seam has measure zero. No extra half weights are
+introduced, and the origin term is counted once per sector.
+
+At fixed \(T,\phi,\omega\), remove independent zero cutoffs using
+\eqref{eq:triple-signed-majorant}. Only then take \(T\to\infty\),
+with the test, margin and smoothing fixed. The explicit bound remains
+valid for varying families, but a convergence claim requires its right
+side to tend to zero.
+\end{proof}
+
+A smooth nonzero bump supported in \((-1/4,1/4)^2\), nonzero at
+the origin, supplies a test crossing all three seams: its support has
+\(h\leq1/2\). Thus the class includes real Schwartz tests by choosing
+\(\phi(-\xi,-\eta)=\overline{\phi(\xi,\eta)}\); this symmetry is
+optional. All tests are allowed to be complex and need no permutation
+symmetry or positivity. A test supported strictly inside one sector has
+zero limiting functional, consistent with the quadrant interior result.
+
+The origin and all three internal lines are included. The outer boundary
+\(h=1\) is excluded; this proof does not extend it by a continuity
+argument. The normalization is still precisely \(8/q\) on the zero side,
+with \(1/T\) already in \(K_T\) and no extra mean-spacing Jacobian.
+Both ordinate signs, full multiplicities, all five index patterns, and
+the imaginary sums of horizontal displacements remain present. The
+result supplies a Schwartz test-function theorem for the native weighted
+full-zero observable. The later comparison lemma identifies its sine
+benchmark, and the final theorem assembles the result. Kernel removal and
+horizontal extraction require additional analysis; completion of Work
+Package B is not asserted here.
+\section{An explicit full-zero kernel profile}
+
+Task: proof and bookkeeping. Assumptions: \texttt{UNCONDITIONAL}.
+The correlation consequence also has the stated support restriction.
+The next three claims have ledger status \texttt{proved-draft}.
+
+The critical-line specialization restricts kernel parameters; it does not impose RH
+on the unconditional zero sums.
+
+For \(K_T(j,k,\ell)\) put
+\[
+ a=\gamma_j-\gamma_\ell,\quad b=\gamma_k-\gamma_\ell,\qquad
+ z_1=a-\ii\delta_j,\quad z_2=b-\ii\delta_k,\quad z_3=\ii\delta_\ell,
+ \quad d_{mn}=z_m-z_n.
+\]
+Here \(z_1,z_2,z_3\) are integration centers, distinct from the scaled
+test arguments \(z_{21},z_{31}\). Allow \(|\delta_j|,|\delta_k|,
+|\delta_\ell|\leq1/2\) in the analytic profile, including the closed
+parameter endpoints; actual nontrivial zeros lie in the open strip.
+
+\begin{lemma}[\texttt{TRIPLE-KERNEL-PROFILE-001}]
+\label{lem:triple-kernel-profile}
+For real \(a,b\) and the preceding horizontal parameters, the absolutely
+convergent integral
+\begin{equation}\label{eq:triple-kernel-profile-integral}
+ \mathcal J(a,b;\delta_j,\delta_k,\delta_\ell)
+ :=\int_{\mathbb R}\prod_{m=1}^3\frac1{1+(v-z_m)^2}\dd v
+\end{equation}
+has the closed form
+\begin{equation}\label{eq:triple-kernel-profile-rational}
+ \mathcal J=\pi\,
+ \frac{24+d_{12}^2+d_{13}^2+d_{23}^2}
+ {(4+d_{12}^2)(4+d_{13}^2)(4+d_{23}^2)}.
+\end{equation}
+The formula includes coincident centers. Its denominators never vanish
+on the stated domain. It is smooth in the real parameters, locally
+uniformly up to all horizontal endpoints, and satisfies
+\begin{align*}
+ \mathcal J(a,b;\delta_j,\delta_k,\delta_\ell)
+ &=\mathcal J(b,a;\delta_k,\delta_j,\delta_\ell),\\
+ \mathcal J(a,b;-\delta_j,-\delta_k,-\delta_\ell)
+ &=\overline{\mathcal J(a,b;\delta_j,\delta_k,\delta_\ell)}.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Each center has imaginary part at most \(1/2\) in absolute value.
+The real-axis denominator bound used for the master identity gives an
+integrable product majorant. On compact real-gap sets, this product is
+\(O((1+v^2)^{-3})\), uniformly in the closed horizontal cube.
+
+First suppose that the three centers are distinct. The upper poles
+are \(z_m+\ii\), separated from the real axis by at least \(1/2\);
+the lower poles are \(z_m-\ii\). Upper and lower poles cannot coincide,
+since \(|\operatorname{Im}d_{mn}|\leq1\). Closing a large semicircle
+in the upper half-plane gives no arc contribution: for fixed centers
+the integrand is \(O(|v|^{-6})\) there. The residue theorem yields
+\begin{equation}\label{eq:triple-profile-residue-sum}
+ \mathcal J=\pi\sum_{m=1}^3
+      \prod_{n\ne m}\frac1{d_{mn}(d_{mn}+2\ii)}.
+\end{equation}
+Here the factor \(\pi\) is \(2\pi\ii/(2\ii)\).
+
+For an explicit cancellation check write \(A=d_{13},B=d_{23}\),
+\(D=A-B=d_{12}\). Multiply the rational sum in
+\eqref{eq:triple-profile-residue-sum} by
+\(D^2A^2B^2(D^2+4)(A^2+4)(B^2+4)\). Its three terms are
+\begin{align*}
+ &D(D-2\ii)A(A-2\ii)B^2(B^2+4),\\
+ &D(D+2\ii)B(B-2\ii)A^2(A^2+4),\\
+ &A(A+2\ii)B(B+2\ii)D^2(D^2+4).
+\end{align*}
+Their sum is \(D^2A^2B^2(24+D^2+A^2+B^2)\). To verify this
+polynomial identity, expand the three lines: their imaginary parts,
+after removing \(2\ii ABD\), sum to
+\[
+ -(D+A)B(B^2+4)+(B-D)A(A^2+4)
+                       +(A+B)D(D^2+4)=0
+\]
+using \(D=A-B\). For the real parts the needed remaining identity is
+\[
+ -DA B^2(B^2+4)+DB A^2(A^2+4)-AB D^2(D^2+4)
+                         =3D^2A^2B^2;
+\]
+divide by \(ABD\) at generic parameters and substitute \(D=A-B\),
+or multiply out to cover zero parameters. These two identities give
+the stated sum and hence \eqref{eq:triple-kernel-profile-rational}.
+
+For \(d=x+\ii y\), \(|y|\leq1\),
+\(\operatorname{Re}(4+d^2)=4+x^2-y^2\geq3+x^2\).
+Thus the final denominators have no zeros, including at coincident
+centers. Dominated convergence under the compact-set majorant extends
+the formula to those centers; the residue expression with separate
+simple poles is not used there. The rational formula also proves the
+asserted smoothness and effective derivative bounds on compact gap sets.
+Exchange of the first two factors proves the first symmetry. Conjugation
+of the integral proves the second, with all three deltas negated.
+\end{proof}
+
+\section{Freezing the height weight with a summable error}
+
+Extend \(\omega\) by zero to \(\mathbb R\), as its compact smooth support
+already permits, and write
+\(W_\infty=\|\omega\|_\infty\),
+\(W'_{\infty}=\|\omega'\|_\infty\), \(L=\log(2T+2)\).
+The derivative norm here is a new explicit smoothing dependence,
+distinct from the earlier \(W_1=\|\omega'\|_1\).
+
+\begin{lemma}[\texttt{TRIPLE-KERNEL-LOCALIZATION-001}]
+\label{lem:triple-kernel-localization}
+For \(T\geq3\), all zero occurrences satisfy
+\begin{equation}\label{eq:triple-kernel-freeze}
+ K_T(j,k,\ell)=\frac{\omega(\gamma_\ell/T)}T
+       \mathcal J(a,b;\delta_j,\delta_k,\delta_\ell)
+       +E_{\rm kernel}(j,k,\ell),
+\end{equation}
+where, uniformly in all ordinates and horizontal parameters,
+\begin{equation}\label{eq:triple-kernel-point-error}
+ |E_{\rm kernel}(j,k,\ell)|
+ \leq\frac{64\pi W'_{\infty}}
+               {27T^2\{4+(a-b)^2\}}.
+\end{equation}
+More importantly, over the full occurrence multiset,
+\begin{equation}\label{eq:triple-kernel-sum-error}
+ \sum_{j,k,\ell}|E_{\rm kernel}(j,k,\ell)|
+ \ll\frac{W'_{\infty}L^4+W_\infty L^3}{T}.
+\end{equation}
+All constants are effective and absolute; all index patterns and both
+ordinate signs are included.
+
+For the tests of Theorem~\ref{thm:triple-signed-test-function}, define
+\begin{align}
+ \mathcal A_T^{\mathcal J}[\phi]
+ :=\frac8{Tq}\sum_{i_1,i_2,i_3\in\mathcal I}
+ &\omega(\gamma_{i_1}/T)
+ \mathcal J(\gamma_{i_2}-\gamma_{i_1},\gamma_{i_3}-\gamma_{i_1};
+                   \delta_{i_2},\delta_{i_3},\delta_{i_1})\notag\\[-2pt]
+ &\hspace{30mm}{}\times F(z_{21},z_{31}),\qquad q=\log T.
+ \label{eq:triple-profile-statistic}
+\end{align}
+This series is absolutely convergent. For support in \(h\leq1-\kappa\),
+\(0<\kappa<1\), and \(T\geq2\pi e\), the additional named error is
+\begin{equation}\label{eq:triple-profile-transfer-error}
+ |\mathcal A_T[\phi]-\mathcal A_T^{\mathcal J}[\phi]|
+ \ll\|\phi\|_1(W_\infty+W'_{\infty})B^{-\kappa}L^3.
+\end{equation}
+Consequently \(\mathcal A_T^{\mathcal J}\) has the same limit
+\(\mathcal A[\phi]\) as in \eqref{eq:triple-signed-limit-functional},
+with error bounded by the sum of
+\eqref{eq:triple-signed-limit-error} and
+\eqref{eq:triple-profile-transfer-error}.
+\end{lemma}
+\begin{proof}
+Substitute \(t=\gamma_\ell+v\) in the kernel. Its three denominators
+become exactly those of \eqref{eq:triple-kernel-profile-integral}.
+Subtract the constant \(\omega(\gamma_\ell/T)\) inside the integral.
+The Lipschitz bound on the difference of weights gives
+\[
+ |E_{\rm kernel}|\leq\frac{64W'_{\infty}}{27T^2}
+ \int_{\mathbb R}\frac{|v|\dd v}
+ {(1+v^2)(1+(v-a)^2)(1+(v-b)^2)}.
+\]
+Use \(|v|/(1+v^2)\leq1/2\) and
+\[
+ \int_{\mathbb R}\frac{\dd v}{(1+(v-a)^2)(1+(v-b)^2)}
+                         =\frac{2\pi}{4+(a-b)^2}.
+\]
+For completeness the latter identity follows by the same upper-pole
+calculation: with \(d=a-b\ne0\), its value is
+\(\pi\{[d(d+2\ii)]^{-1}+[d(d-2\ii)]^{-1}\}\).
+This simplifies to \(2\pi/(d^2+4)\), and dominated convergence
+includes \(d=0\). This proves \eqref{eq:triple-kernel-point-error}.
+That tuplewise estimate alone is not summed over all triples.
+
+For the summable bound put \(k(v)=(1+v^2)^{-1}\),
+\(Q(t)=\sum_j k(t-\gamma_j)\ll\log(|t|+2)\), and
+\(\Delta_\ell(t)=\omega(t/T)-\omega(\gamma_\ell/T)\).
+Tonelli applied to absolute values gives the upper bound
+\begin{equation}\label{eq:triple-kernel-sum-majorant}
+ \frac{64}{27T}\int_{\mathbb R}Q(t)^2
+       \sum_\ell k(t-\gamma_\ell)|\Delta_\ell(t)|\dd t.
+\end{equation}
+This is legitimate as a nonnegative integral before proving it finite.
+Split the error integrals into three disjoint pieces. The first has
+\(|t-\gamma_\ell|\leq T\). The second has
+\(|t-\gamma_\ell|>T\) and \(t\in[T,2T]\). The third has
+\(|t-\gamma_\ell|>T\), \(t\notin[T,2T]\), and
+\(\gamma_\ell\in[T,2T]\). Outside these pieces the weight difference
+is zero. Call them \(E_{\rm kernel,near}\),
+\(E_{\rm kernel,far\text{-}center}\), and
+\(E_{\rm kernel,far\text{-}anchor}\), respectively.
+
+On the near piece a nonzero difference forces \(0\leq t\leq3T\).
+The local counting bound, including multiplicities, gives
+\[
+ \sum_{|t-\gamma_\ell|\leq T}
+     |t-\gamma_\ell|k(t-\gamma_\ell)
+ \ll L\sum_{0\leq m\leq\lceil T\rceil}(1+m)^{-1}\ll L^2.
+\]
+Indeed each unit shell contains \(O(L)\) occurrences uniformly on
+this range, and its weight is \(O((1+m)^{-1})\).
+As \(|\Delta_\ell(t)|\leq W'_{\infty}|t-\gamma_\ell|/T\),
+the integral in \eqref{eq:triple-kernel-sum-majorant}, restricted to
+the near piece, is \(O(W'_{\infty}L^4/T)\).
+
+For \(t\in[T,2T]\), distant shells of radius \(2^mT\) contain
+\(O(2^mT(L+m))\) occurrences. Hence
+\[
+ \sum_{|t-\gamma_\ell|>T}k(t-\gamma_\ell)
+ \ll T^{-1}\sum_{m\geq0}2^{-m}(L+m)\ll L/T.
+\]
+The far-center piece uses \(|\Delta_\ell|\leq2W_\infty\),
+\(Q(t)^2\ll L^2\), and an interval of length \(T\), giving
+\(O(W_\infty L^3/T)\) after the outer factor \(1/T\).
+
+For the far-anchor piece, there are \(O(TL)\) possible anchor
+occurrences. At \(|v|=|t-\gamma_\ell|>T\) with
+\(\gamma_\ell\in[T,2T]\), \(|t|+2\leq3|v|+2\), so
+\[
+ \int_{|t-\gamma_\ell|>T}Q(t)^2k(t-\gamma_\ell)\dd t
+ \ll\int_{|v|>T}\frac{\log^2(3|v|+2)}{v^2}\dd v
+ \ll T^{-1}\sum_{m\geq0}2^{-m}(L+m)^2\ll L^2/T.
+\]
+Here \(|\Delta_\ell(t)|=|\omega(\gamma_\ell/T)|\leq W_\infty\).
+Multiplying by the anchor count and the outer \(1/T\) gives the same
+\(O(W_\infty L^3/T)\) bound. We have thus retained all sources:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Summed absolute error & Bound\\
+\midrule
+\(E_{\rm kernel,near}\) & \(O(W'_{\infty}L^4/T)\)\\
+\(E_{\rm kernel,far\text{-}center}\) & \(O(W_\infty L^3/T)\)\\
+\(E_{\rm kernel,far\text{-}anchor}\) & \(O(W_\infty L^3/T)\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+These arguments use only the reconstructed local counts and kernel
+bound \texttt{PAIR-COUNT-001}, \texttt{PAIR-COUNT-KERNEL-001}.
+They prove \eqref{eq:triple-kernel-sum-error}, including all far anchors
+and negative ordinates. All cutoff removals follow from the finite
+nonnegative majorants just established.
+
+The original master estimate gives \(\sum|K_T|\ll L^3\).
+The triangle inequality and \eqref{eq:triple-kernel-sum-error} therefore
+also give absolute summability of
+\(\omega(\gamma_\ell/T)\mathcal J/T\).
+For the complex test arguments the compact-frequency representation,
+with the anchor delta collected as in
+\eqref{eq:triple-signed-majorant}, gives uniformly in all zero triples
+\[
+ |F(z_{21},z_{31})|\leq\|\phi\|_1 B^{1-\kappa}.
+\]
+Multiplying the summable error by this bound and \(8/q\) proves
+\eqref{eq:triple-profile-transfer-error}, since
+\(B^{1-\kappa}/T=B^{-\kappa}/(2\pi)\) and \(L/q\ll1\).
+It proves absolute convergence of the profile statistic as well.
+The old and new errors have now been checked separately for smoothing
+uniformity, so their sum is a valid error for the inherited main term.
+Fix the test, margin and smoothing before the limit; varying families
+must make both displayed errors tend to zero.
+\end{proof}
+
+\section{Microscopic profile and critical-line specialization}
+
+\begin{corollary}[\texttt{TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001}]
+\label{cor:triple-kernel-critical}
+Put
+\[
+ h_{12}=\delta_j-\delta_k,\qquad
+ h_{13}=\delta_j+\delta_\ell,\qquad
+ h_{23}=\delta_k+\delta_\ell.
+\]
+The zero-gap horizontal profile is
+\begin{equation}\label{eq:triple-horizontal-profile}
+ \mathcal J(0,0;\boldsymbol\delta)
+ =\pi\frac{24-h_{12}^2-h_{13}^2-h_{23}^2}
+ {(4-h_{12}^2)(4-h_{13}^2)(4-h_{23}^2)}.
+\end{equation}
+For every fixed \(R>0\), uniformly for \(|u|,|v|\leq R\) and
+\(\boldsymbol\delta\in[-1/2,1/2]^3\), as \(T\to\infty\),
+\begin{equation}\label{eq:triple-micro-horizontal}
+ \mathcal J(u/L_T,v/L_T;\boldsymbol\delta)
+ =\mathcal J(0,0;\boldsymbol\delta)+O_R(L_T^{-1}).
+\end{equation}
+For kernel parameters \(\boldsymbol\delta=\mathbf0\), separately,
+\begin{equation}\label{eq:triple-critical-profile}
+ \mathcal J(a,b;\mathbf0)
+ =\pi\frac{24+a^2+b^2+(a-b)^2}
+ {(4+a^2)(4+b^2)(4+(a-b)^2)}.
+\end{equation}
+Its microscopic expansion is
+\begin{equation}\label{eq:triple-critical-micro}
+ \mathcal J(u/L_T,v/L_T;\mathbf0)
+ =\frac{3\pi}{8}-\frac{5\pi}{32L_T^2}(u^2+v^2-uv)
+                         +O_R(L_T^{-4}).
+\end{equation}
+The constants are effective and uniform in the horizontal cube for
+\eqref{eq:triple-micro-horizontal}. In particular a critical-line tuple
+with these bounded scaled gaps has
+\[
+ K_T(j,k,\ell)=\frac{3\pi}{8T}\omega(\gamma_\ell/T)
+       +O_R\left(\frac{W_\infty}{TL_T^2}
+                         +\frac{W'_{\infty}}{T^2}\right).
+\]
+This is a tuplewise assertion on critical-line parameters, not a
+replacement of every tuple in the unconditional correlation sum.
+\end{corollary}
+\begin{proof}
+At zero gaps, \(d_{mn}=-\ii h_{mn}\); substitute into
+\eqref{eq:triple-kernel-profile-rational} to get
+\eqref{eq:triple-horizontal-profile}. Uniform first derivatives on a
+compact real-gap set times the closed horizontal cube follow from the
+same rational formula and \(|4+d_{mn}^2|\geq3\).
+The mean value estimate proves \eqref{eq:triple-micro-horizontal}.
+It does not require convergence of the horizontal parameters as \(T\)
+varies. The corresponding tuplewise kernel error relative to the
+zero-gap horizontal profile is
+\(O_R(W_\infty/(TL_T)+W'_{\infty}/T^2)\).
+
+Set all three deltas to zero to obtain
+\eqref{eq:triple-critical-profile}. If
+\(s=a^2+b^2+(a-b)^2\), its denominator is
+\(64+16s+O((|a|+|b|)^4)\). Thus
+\[
+ \mathcal J(a,b;\mathbf0)/\pi
+ =\frac38-\frac5{64}s+O((|a|+|b|)^4).
+\]
+Since \(s=2(a^2+b^2-ab)\), this is
+\eqref{eq:triple-critical-micro}. Uniform Taylor remainder bounds on
+compact sets follow from nonvanishing denominators. Finally apply
+\eqref{eq:triple-kernel-point-error}, whose right side is at most
+\(16\pi W'_{\infty}/(27T^2)\), to obtain the tuplewise kernel formula.
+All microscopic limits fix \(R\) before \(T\to\infty\).
+\end{proof}
+
+The profile \eqref{eq:triple-horizontal-profile} still depends on the
+horizontal parameters. For example, at the algebraic parameters
+\(\delta_j=\delta_k=\delta_\ell=d\), it is
+\(\pi(3-d^2)/(8(1-d^2)^2)\), which at \(d=1/4\) is
+\(94\pi/225\), rather than \(3\pi/8\). This is a parameter calculation,
+not an assertion that an off-line zeta zero exists.
+
+The critical-line normalization comparison is the exact identity
+\begin{equation}\label{eq:triple-critical-normalization}
+ \frac8{T\log T}\frac{3\pi}{8}
+ =\frac{3\log(T/2\pi)}{2\log T}\,\frac1{TL_T}.
+\end{equation}
+Its coefficient relative to \((TL_T)^{-1}\) tends to \(3/2\).
+This explains that coefficient through the local critical-line kernel;
+the full main-term comparison is proved in the next section.
+
+\paragraph{Assumption separation.}
+All three claims above are unconditional. Evaluating a kernel at
+\(\boldsymbol\delta=\mathbf0\), or applying it to a tuple already known
+to lie on the line, needs no global hypothesis. The statement that this
+specialization applies to every zero tuple uses \texttt{RH}; that
+conditional interpretation is not used in any preceding proof.
+Even under that interpretation, the bounded-gap expansion alone does
+not justify replacing \(\mathcal J\) by \(3\pi/8\) in the infinite
+sum: an additional summed error and tail estimate is needed.
+Unconditionally, real-plane Schwartz decay cannot by itself localize
+the complex test arguments. The full-gap rational profile and the
+summable height-localization estimate have been proved for the actual
+full-zero sum; constant-kernel replacement and horizontal consequences
+remain separate tasks. The next section identifies its limiting functional.
+
+\section{Comparison with the all-ordered sine benchmark}
+
+This section is an unconditional deterministic Fourier calculation followed
+by an application of the already proved weighted correlation theorem.
+It uses the unit-density sine determinant as a benchmark. For provenance,
+Conrey--Snaith, \emph{In support of n-correlation}, author manuscript
+arXiv:1212.5537v2, Theorem 1, equation (2), p.~2, records the distinct-index
+unitary determinant with kernel
+\(S_N(\alpha)=\sin(N\alpha/2)/\sin(\alpha/2)\).
+The elementary scaling
+\(N^{-1}S_N(2\pi x/N)\to\sin(\pi x)/(\pi x)\)
+fixes our unit-density convention. We prove the benchmark identities
+below directly; no zeta correlation theorem from that source is imported.
+
+Put \(s(x)=\sin(\pi x)/(\pi x)\), with \(s(0)=1\), and define
+\begin{align}
+ R_2(r)&=1-s(r)^2,\notag\\
+ R_3(u,v)&=\det\begin{pmatrix}
+ 1&s(u)&s(v)\\ s(u)&1&s(u-v)\\s(v)&s(u-v)&1
+ \end{pmatrix}\notag\\
+ &=1-s(u)^2-s(v)^2-s(u-v)^2+2s(u)s(v)s(u-v).
+ \label{eq:triple-sine-determinant}
+\end{align}
+Define the all-ordered benchmark measure \(M_3\) by its pairing with a
+Schwartz function \(F\):
+\begin{equation}\label{eq:triple-sine-functional}
+ \begin{split}
+ \mathcal S_3[F]:=\langle M_3,F\rangle
+ &=\int_{\mathbb R^2}F(u,v)R_3(u,v)\dd u\dd v+F(0,0)\\
+ &\quad+\int_{\mathbb R}R_2(r)
+       \{F(0,r)+F(r,0)+F(r,r)\}\dd r.
+ \end{split}
+\end{equation}
+Every pairing here and below is bilinear, with no complex conjugation.
+All integrals converge absolutely since the densities are bounded and
+the restrictions of a Schwartz function to these lines are Schwartz.
+Line delta distributions mean integration in the displayed coordinate
+\(r\); in particular \(\delta(u-v)\) pairs as \(\int F(r,r)\dd r\),
+without an arclength factor. These measures represent the five partitions
+of three ordered occurrence indices. For zeta, unequal indices can still
+represent equal complex zeros or equal ordinates; nothing here changes
+that convention or asserts simplicity of zeta zeros.
+
+\begin{lemma}[\texttt{TRIPLE-SINE-MEASURE-001}]
+\label{lem:triple-sine-measure}
+With the project's negative-forward Fourier convention, put
+\[
+ \tau(r)=(1-|r|)_+,\quad m(r)=1-\tau(r),\quad
+ c(\xi,\eta)=(1-h(\xi,\eta))_+,
+ \qquad h=\max(|\xi|,|\eta|,|\xi+\eta|).
+\]
+As tempered distributions,
+\begin{equation}\label{eq:triple-sine-fourier}
+ \widehat M_3=\delta_{(0,0)}+m(\xi)\delta(\eta)
+ +m(\eta)\delta(\xi)+m(\xi)\delta(\xi+\eta)+g(\xi,\eta),
+\end{equation}
+where the final term is a planar density,
+\begin{equation}\label{eq:triple-sine-cumulant-density}
+ g(\xi,\eta)=1-\tau(\xi)-\tau(\eta)-\tau(\xi+\eta)+2c(\xi,\eta).
+\end{equation}
+It vanishes on \(h\leq1\). It is the Fourier transform of the reduced
+ordinary third cumulant distribution
+\begin{equation}\label{eq:triple-sine-ordinary-cumulant}
+ \begin{split}
+ C_3^{\rm ord}={}&\delta_{(0,0)}-\delta(u)s(v)^2
+ -\delta(v)s(u)^2-\delta(u-v)s(u)^2\\
+ &+2s(u)s(v)s(u-v).
+ \end{split}
+\end{equation}
+The factorial third cumulant is the last cycle term alone and has
+transform \(2c\); it does not vanish in this region.
+\end{lemma}
+\begin{proof}
+Write \(I=[-1/2,1/2]\). The integral representation
+\(s(x)=\int_I e^{2\pi\ii xt}\dd t\) gives
+\(\widehat{s^2}=\mathbf1_I*\mathbf1_I=\tau\), including the endpoints.
+For the cycle \(s(u)s(v)s(u-v)\), the interval parameters have frequency
+vector \((a+d,b-d)\). Consequently its transform is
+\[
+ \int\mathbf1_I(d)\mathbf1_I(\xi-d)\mathbf1_I(\eta+d)\dd d
+ =|I\cap(\xi+I)\cap(-\eta+I)|=c(\xi,\eta).
+\]
+Indeed, the span of the three centers \(0,\xi,-\eta\) is
+\(\max(|\xi|,|\eta|,|\xi+\eta|)\); the common interval has length
+\((1-h)_+\). This is a distributional Fourier calculation on Schwartz
+tests: the compact parameter integrations can be exchanged with the
+real-plane integral under the integrable majorant \(|F(u,v)|\).
+The two-factor calculation has the same justification. Lifting the
+one-dimensional transforms to the plane gives the following complete
+table. Here a scalar function without a delta is a planar density.
+\begin{center}
+\small
+\begin{tabular}{lll}
+\toprule
+Index partition & Physical measure & Fourier transform\\
+\midrule
+\(123\) & \(\delta_{(0,0)}\) & \(1\)\\
+\(12|3\) & \(\delta(u)R_2(v)\) & \(\delta(\eta)-\tau(\eta)\)\\
+\(13|2\) & \(\delta(v)R_2(u)\) & \(\delta(\xi)-\tau(\xi)\)\\
+\(23|1\) & \(\delta(u-v)R_2(u)\) & \(\delta(\xi+\eta)-\tau(\xi+\eta)\)\\
+\(1|2|3\) & \(R_3(u,v)\dd u\dd v\) & \(\widehat R_3\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The determinant expansion gives
+\[
+ \widehat R_3=\delta_{(0,0)}-\tau(\xi)\delta(\eta)
+ -\tau(\eta)\delta(\xi)-\tau(\xi)\delta(\xi+\eta)+2c.
+\]
+For the last line, use \(u=r+w,v=w\), a determinant-one change of
+variables. Thus no \(\sqrt2\) factor occurs on the frequency line
+\(\xi+\eta=0\) either. Summing the five rows proves
+\eqref{eq:triple-sine-fourier}. Notice that the frequency atom at the
+origin comes from the constant physical density in \(R_3\); the physical
+all-equal atom instead transforms to the constant frequency density.
+
+The elementary identity
+\(|\xi|+|\eta|+|\xi+\eta|=2h\) follows by separating equal and opposite
+signs of \(\xi,\eta\). Hence on \(h\leq1\),
+\(g=1-(3-2h)+2(1-h)=0\), also at the axes and vertices.
+For example \(g(3/4,3/4)=1/2\), so this cancellation is support dependent.
+Finally let \(c_2(x)=\delta_0(x)-s(x)^2\), the reduced ordinary covariance
+of the unit-density benchmark, and lift each one-variable distribution
+with constant density in the remaining coordinate. Direct subtraction
+from \eqref{eq:triple-sine-functional} yields
+\[
+ M_3=1+c_2(u)+c_2(v)+c_2(u-v)+C_3^{\rm ord}.
+\]
+This is the third moment--cumulant identity with mean density one;
+Fourier transformation gives \(\widehat{C_3^{\rm ord}}=g\).
+The determinant's connected factorial cycle has transform \(2c\),
+which equals two at the origin. All equalities are distributional;
+no infinite zero sum or asymptotic limit enters this lemma.
+\end{proof}
+
+\begin{lemma}[\texttt{TRIPLE-MAIN-TERM-COMPARISON-001}]
+\label{lem:triple-main-term-comparison}
+Let \(\phi\in C_c^\infty(\mathcal H)\), \(F=\mathcal F^{-1}\phi\),
+and \(\operatorname{supp}\phi\subset\{h\leq1-\kappa\}\),
+\(0<\kappa<1\). No reality or symmetry of \(\phi\) is required. Then
+\begin{equation}\label{eq:triple-main-term-comparison}
+ \begin{split}
+ \mathcal S_3[F]&=\phi(0,0)+\int_{\mathbb R}|r|
+       \{\phi(r,0)+\phi(0,r)+\phi(r,-r)\}\dd r,\\
+ \mathcal A[\phi]&=\tfrac32\mathcal S_3[F].
+ \end{split}
+\end{equation}
+With the previous notation \(B=T/(2\pi), b=\log B, q=\log T\),
+\(L=\log(2T+2)\), retain the two errors separately:
+\begin{align*}
+ \mathfrak E_{\rm signed}&=\|\phi\|_{C^1}(1+W_\infty+W_1)
+                    \{b^{-1}+B^{-\kappa}L^3\},\\
+ \mathfrak E_{\rm kernel}&=\|\phi\|_1(W_\infty+W'_\infty)
+                         B^{-\kappa}L^3.
+\end{align*}
+Under the existing smoothing hypotheses, uniformly for \(T\geq2\pi e\),
+\begin{align}
+ \mathcal A_T[\phi]&=\tfrac32\mathcal S_3[F]
+                         +O(\mathfrak E_{\rm signed}),\notag\\
+ \mathcal A_T^{\mathcal J}[\phi]&=\tfrac32\mathcal S_3[F]
+                 +O(\mathfrak E_{\rm signed}+\mathfrak E_{\rm kernel}).
+ \label{eq:triple-sine-comparison-errors}
+\end{align}
+Constants are effective and absolute as in the preceding bounds.
+\end{lemma}
+\begin{proof}
+For the stated Fourier convention and bilinear pairing,
+\(\langle M_3,F\rangle=\langle\widehat M_3,\phi(-\cdot)\rangle\).
+Every distribution in \eqref{eq:triple-sine-fourier} is centrally even,
+so this also equals \(\langle\widehat M_3,\phi\rangle\), without conjugating
+\(\phi\). The planar term vanishes on its support; on each line
+\(m(r)=|r|\) there. This proves the first identity, and comparison with
+\eqref{eq:triple-signed-limit-functional} proves the second.
+Theorem~\ref{thm:triple-signed-test-function} and
+Lemma~\ref{lem:triple-kernel-localization} now give
+\eqref{eq:triple-sine-comparison-errors}, with no new analytic error.
+Fix test, support margin and smoothing before taking \(T\to\infty\);
+varying families must make both displayed errors vanish.
+\end{proof}
+
+\paragraph{Normalization, support, and scope.}
+For \(F(x_2-x_1,x_3-x_1)\), the positive-inverse three-frequency vector is
+\((-\xi-\eta,\xi,\eta)\), of \(\ell^1\)-size \(2h\). In a
+negative-exponential representation its sign is reversed. Thus our
+margin corresponds to \(\sum|\lambda_j|\leq2-2\kappa\); this is a
+convention translation, not an import of a zeta theorem. The benchmark
+cancellation holds even on \(h=1\), but the zeta estimate still requires
+compact support in \(h<1\). No boundary extension is claimed.
+
+The finite-height local normalization factor in
+\eqref{eq:triple-critical-normalization} is \(3b/(2q)\), whose limit is
+\(3/2\). It is not set equal to \(3/2\) at finite height. Multiplying
+\(\mathcal A_T\) or \(\mathcal A_T^{\mathcal J}\) by \(2/3\) gives the
+benchmark as its limiting functional, while retaining every kernel and
+complex test argument of the original statistic. The result identifies
+the main term of that unconditional weighted full-zero statistic. It
+neither removes the kernel nor asserts an unweighted real-ordinate zeta
+correlation. Likewise the ordinary-cumulant cancellation proved above
+is a property of the benchmark; transferring it to a weighted zeta
+cumulant would require compatible lower-order weighted statistics.
+
+
+\section{An unconditional smoothed three-level theorem}
+
+Task: proof synthesis and exposition. The following self-contained
+statement collects the weighted correlation result in unit benchmark
+normalization. Its ledger status is \texttt{proved-draft}; its assumptions
+are \texttt{UNCONDITIONAL} and the stated Fourier-support restriction.
+
+\begin{theorem}[\texttt{TRIPLE-SMOOTHED-CORRELATION-001}]
+\label{thm:triple-smoothed-correlation}
+Let \(\mathcal I\) index all occurrences of nontrivial zeta zeros,
+with multiplicity and both signs of the ordinate, and write
+\(\rho_j=1/2+\delta_j+\ii\gamma_j\).
+Let \(\omega\in C_c^\infty((1,2))\) be real and nonnegative with
+\(\int\omega=1\), extended by zero to \(\mathbb R\).
+Fix \(0<\kappa<1\) and a complex-valued
+\(\phi\in C_c^\infty(\mathbb R^2)\) such that
+\[
+ \operatorname{supp}\phi\subset\{(\xi,\eta):h(\xi,\eta)\leq1-\kappa\},
+ \qquad h(\xi,\eta)=\max(|\xi|,|\eta|,|\xi+\eta|).
+\]
+Use the negative-forward \(2\pi\) Fourier convention and its entire
+positive-inverse extension
+\[
+ F(z_1,z_2)=\int_{\mathbb R^2}\phi(\xi,\eta)
+                  e^{2\pi\ii(\xi z_1+\eta z_2)}\dd\xi\dd\eta.
+\]
+Then \(F|_{\mathbb R^2}\) is Schwartz and \(\widehat F=\phi\).
+No reality or permutation symmetry of the test is required.
+
+For \(T\geq2\pi e\), put
+\[
+ B=T/(2\pi),\quad b=\log B,\quad q=\log T,\quad
+ L_T=b/(2\pi),\quad L=\log(2T+2).
+\]
+For a triple \((i_1,i_2,i_3)\), set
+\[
+ a_2=\gamma_{i_2}-\gamma_{i_1},\quad
+ a_3=\gamma_{i_3}-\gamma_{i_1},\qquad
+ z_{21}=L_T\{a_2-\ii(\delta_{i_2}+\delta_{i_1})\},\quad
+ z_{31}=L_T\{a_3-\ii(\delta_{i_3}+\delta_{i_1})\}.
+\]
+Define the profile \(\mathcal J(a_2,a_3;\epsilon_2,\epsilon_3,\epsilon_1)\)
+for real gaps and \(|\epsilon_j|\leq1/2\) as follows:
+\begin{align*}
+ c_1&=a_2-\ii\epsilon_2,\quad c_2=a_3-\ii\epsilon_3,
+ \quad c_3=\ii\epsilon_1,\quad d_{mn}=c_m-c_n,\\
+ \mathcal J(a_2,a_3;\epsilon_2,\epsilon_3,\epsilon_1)
+ &=\pi\frac{24+d_{12}^2+d_{13}^2+d_{23}^2}
+ {(4+d_{12}^2)(4+d_{13}^2)(4+d_{23}^2)}.
+\end{align*}
+The \(c_m\) are integration centers, not scaled test arguments; the
+positive sign in \(c_3\) records the conjugated anchor. The rational
+formula is defined also at coincident centers and horizontal endpoints.
+
+The following sum is absolutely convergent:
+\begin{equation}\label{eq:triple-assembled-observable}
+ \begin{split}
+ \mathcal R^{\mathcal J}_{3,T}[F;\omega]
+ :=\frac{16}{3Tq}\sum_{i_1,i_2,i_3\in\mathcal I}
+ &\omega(\gamma_{i_1}/T)
+ \mathcal J(a_2,a_3;\delta_{i_2},\delta_{i_3},\delta_{i_1})\\
+ &\hspace{15mm}{}\times F(z_{21},z_{31}).
+ \end{split}
+\end{equation}
+It includes all ordered occurrence triples and all five index partitions.
+Equality of indices, complex zeros, and ordinates are distinct conditions.
+Only the anchor is height localized; the other two slots range over all
+of \(\mathcal I\).
+
+Put \(s(r)=\sin(\pi r)/(\pi r)\), \(s(0)=1\), and
+\[
+ R_2(r)=1-s(r)^2,\qquad
+ R_3(u,v)=\det\begin{pmatrix}
+ 1&s(u)&s(v)\\s(u)&1&s(u-v)\\s(v)&s(u-v)&1
+ \end{pmatrix}.
+\]
+The all-ordered sine benchmark is
+\begin{equation}\label{eq:triple-assembled-main}
+ \begin{split}
+ \mathcal S_3[F]={}&\int_{\mathbb R^2}F(u,v)R_3(u,v)\dd u\dd v\\
+ &+\int_{\mathbb R}R_2(r)\{F(0,r)+F(r,0)+F(r,r)\}\dd r+F(0,0).
+ \end{split}
+\end{equation}
+Each line uses coordinate measure \(\dd r\), without an arclength
+factor. All pairings are bilinear, without complex conjugation.
+Define
+\[
+ W_\infty=\|\omega\|_\infty,\quad W_1=\|\omega'\|_1,\quad
+ W'_\infty=\|\omega'\|_\infty,\qquad
+ \|\phi\|_{C^1}=\|\phi\|_\infty+
+ \|\partial_\xi\phi\|_\infty+\|\partial_\eta\phi\|_\infty,
+\]
+and retain the named bounds
+\begin{align}
+ \mathfrak E_{\rm signed}
+ &=\|\phi\|_{C^1}(1+W_\infty+W_1)
+              \{b^{-1}+B^{-\kappa}L^3\},\notag\\
+ \mathfrak E_{\rm kernel}
+ &=\|\phi\|_1(W_\infty+W'_\infty)B^{-\kappa}L^3.
+ \label{eq:triple-assembled-errors}
+\end{align}
+There is an effective absolute constant \(C\), independent of
+\(T,\kappa,\phi,\omega\), such that
+\begin{equation}\label{eq:triple-assembled-theorem}
+ \left|\mathcal R^{\mathcal J}_{3,T}[F;\omega]-\mathcal S_3[F]\right|
+ \leq C(\mathfrak E_{\rm signed}+\mathfrak E_{\rm kernel}).
+\end{equation}
+In particular, for fixed test, margin and smoothing,
+\(\mathcal R^{\mathcal J}_{3,T}[F;\omega]=\mathcal S_3[F]+o(1)\).
+For varying families, the same conclusion about the difference holds
+whenever both displayed error bounds tend to zero.
+\end{theorem}
+\begin{proof}
+The profile is precisely that of Lemma~\ref{lem:triple-kernel-profile}.
+Compact smooth frequency support gives the entire extension by locally
+uniform differentiation and real-plane Schwartz decay by integration
+by parts. For the full complex zero arguments,
+\[
+ |F(z_{21},z_{31})|\leq\|\phi\|_1B^{1-\kappa},
+\]
+since \(|\delta_j|<1/2\) and
+\((|\xi|+|\eta|+|\xi+\eta|)/2=h\).
+Lemma~\ref{lem:triple-kernel-localization} proves absolute summability
+of the height-weighted profile and of its product with this test bound.
+Thus all five index subseries and any independent zero-cutoff limits
+are justified at fixed \(T,\phi,\omega\), before the height limit.
+
+By the definitions, including the anchor order, the exact normalization is
+\[
+ \mathcal R^{\mathcal J}_{3,T}[F;\omega]
+       =\tfrac23\mathcal A_T^{\mathcal J}[\phi].
+\]
+Lemma~\ref{lem:triple-main-term-comparison} therefore proves
+\eqref{eq:triple-assembled-theorem}, retaining the two inherited error
+bounds separately. Lemma~\ref{lem:triple-sine-measure} identifies the
+benchmark with \eqref{eq:triple-assembled-main}, whose integrals converge
+absolutely by Schwartz decay. No additional sum--limit interchange is
+needed. Fixing the parameters in the stated order makes both errors
+vanish, since \(b\to\infty\) and \(B^{-\kappa}L^3\to0\).
+\end{proof}
+
+\paragraph{Interpretation and remaining scope.}
+The theorem is an additive asymptotic for a weighted full-zero statistic.
+When \(\mathcal S_3[F]=0\), its assertion is still meaningful as \(o(1)\);
+no division by the main term is made. The test class includes the
+symmetric tests requested in the weighted three-level program.
+The origin and internal frequency axes are included, while the outer
+boundary \(h=1\) remains excluded by the positive margin.
+There is no sharp height cutoff or endpoint half weight.
+The rational profile and the complex arguments retain all horizontal
+displacements. The functional-equation reindexings used in the signed
+sector theorem are inherited unchanged by the exact scalar normalization.
+
+This synthesis neither assumes that the deltas vanish nor removes the
+kernel. An unweighted real-ordinate theorem, a weighted zeta cumulant
+identity, and horizontal consequences need their own additional arguments.
+The assembled theorem is available for the Work Package B audit and
+reproduction tasks; it does not declare that work package closed.
+
+\end{document}

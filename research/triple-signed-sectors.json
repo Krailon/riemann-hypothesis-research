@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "task": "exact sector bookkeeping",
+  "assumptions": ["UNCONDITIONAL"],
+  "source_claim": "TRIPLE-SIGNED-SECTORS-001",
+  "source_label": "lem:triple-signed-sectors",
+  "source_file": "proofs/triple_explicit_formula.tex",
+  "coordinate_order": ["xi", "eta"],
+  "input_domain": "u>=0, v>=0",
+  "gauge": {
+    "operation": "max_absolute_linear_forms",
+    "linear_forms": [[1, 0], [0, 1], [1, 1]],
+    "outer_radius": 1,
+    "outer_boundary_included": false,
+    "support_rule": "compact subset of h<1; use h<=1-kappa with 0<kappa<1"
+  },
+  "sectors": [
+    {"id": "positive_identity", "matrix": [[1, 0], [0, 1]], "conjugate": false},
+    {"id": "positive_rotation", "matrix": [[0, 1], [-1, -1]], "conjugate": false},
+    {"id": "positive_rotation_squared", "matrix": [[-1, -1], [1, 0]], "conjugate": false},
+    {"id": "negative_identity", "matrix": [[-1, 0], [0, -1]], "conjugate": true},
+    {"id": "negative_rotation", "matrix": [[0, -1], [1, 1]], "conjugate": true},
+    {"id": "negative_rotation_squared", "matrix": [[1, 1], [-1, 0]], "conjugate": true}
+  ],
+  "boundary_conventions": {
+    "closed_cones_overlap_only_on_seams": true,
+    "planar_seams_have_measure_zero": true,
+    "limiting_ray_counts_adjacent_sectors": true,
+    "extra_half_weights": false,
+    "line_parameter": "r with measure dr, including (r,-r); not arclength"
+  },
+  "limit": {
+    "source_claim": "TRIPLE-SIGNED-TEST-FUNCTION-001",
+    "normalization": "1/log T",
+    "quadrant_origin_coefficient": "1/4",
+    "quadrant_ray_coefficient": "3/4",
+    "origin_coefficient": "3/2",
+    "line_coefficient": "3/2",
+    "line_directions": [[1, 0], [0, 1], [1, -1]],
+    "line_density": "abs(r)"
+  }
+}

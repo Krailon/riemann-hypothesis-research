@@ -1182,3 +1182,1256 @@ claims:
       compilation_notes: "Combined draft built successfully on 2026-09-25 with pdfTeX 1.40.25 and BibTeX 0.99d (TeX Live 2023/Debian): 13 pages, no final-pass warnings or unresolved references."
       independent_verification: pending
       final_journal_text_comparison: pending
+
+  - id: TRIPLE-MASTER-001
+    title: Exact smoothed triple master identity with full zero coordinates
+    kind: lemma
+    statement: |
+      Fix real nonnegative omega in C_c^infinity((1,2)), integral omega=1.
+      For T>=3 and X,Y>=1, put Z=XY and I_T(f,g,h)=T^(-1)
+      integral_R omega(t/T) f(t)g(t)conj(h(t)) dt. Set C_{3,T}(X,Y)
+      =I_T(S(X,.),S(Y,.),S(Z,.)), with the full-zero S of
+      PAIR-EF-CONVERGENCE-001, both signs and multiplicities retained.
+      For rho_j=1/2+delta_j+i gamma_j let D_j(t)=1+((t-gamma_j)+i delta_j)^2
+      and K_T(j,k,l)=T^(-1) integral_R omega(t/T)/(D_j D_k conj(D_l)) dt.
+      Then C_{3,T}=8 sum_{j,k,l} X^(rho_j+conj(rho_l)-1)
+      Y^(rho_k+conj(rho_l)-1) K_T(j,k,l), absolutely convergently.
+      Its five disjoint index subseries have patterns 123,12|3,13|2,23|1,1|2|3;
+      distinct indices need not denote distinct complex zeros or ordinates.
+      C_{3,T}(X,Y)=C_{3,T}(Y,X), and |C_{3,T}| <= (8/3)^3 C_0^3 XY
+      log(2T+2)^3 ||omega||_1, with C_0 from PAIR-COUNT-KERNEL-001.
+      With P_x=P(x,.), A_x(t)=x^(-1)log(|t|+2), and exact
+      H_x=E_arch+E_DS+E_pole+E_trivial from PAIR-EF-001, C_{3,T}
+      equals sum_{w in {P,A,H}^3} (-1)^(number of P in w)
+      I_T(w_1 at X,w_2 at Y,w_3 at Z). All 27 ordered words are retained.
+      For a_x(n)=Lambda(n)n^(-1/2)min(n/x,x/n), the unsigned PPP term is
+      sum_{m,n,k>=1} a_X(m)a_Y(n)a_Z(k)
+      omega_hat(T log(mn/k)/(2pi)), absolutely convergently, where
+      omega_hat(xi)=integral_R omega(u)exp(-2pi i u xi) du.
+      Its exact resonance mn=k equals sum_{p prime} sum_{a,b>=1}
+      a_X(p^a)a_Y(p^b)a_Z(p^(a+b)); the PPP sign in C_{3,T} is negative.
+      |omega_hat(xi)|<=||omega||_1 and, for xi!=0 and integer N>=1,
+      |omega_hat(xi)|<=||omega^(N)||_1/(2pi|xi|)^N.
+      No asymptotic, compact Fourier support region, or negligible
+      off-resonance/remainder estimate is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-EF-CONVERGENCE-001, PAIR-EF-001, PAIR-COUNT-KERNEL-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-master
+      bookkeeping: research/triple-master-bookkeeping.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix T,X,Y,omega; remove the three zero cutoffs independently or jointly by the integrable kernel majorant; prime cutoffs by absolute convergence. No asymptotic or varying-smoothing limit is taken."
+    project_audit:
+      task_type: proof
+      proof_method: "Absolute-convergence trilinear expansion of the exact pair explicit formula, disjoint index partitions, Fourier substitution, and unique factorization."
+      horizontal_audit: "Full delta coordinates retained; simultaneous horizontal reflection reindexes every index subseries. No RH, simplicity or critical-line zero restriction."
+      endpoint_audit: "X=1,Y=1,T=3 included; smooth center window, no zero-height truncation. Cutoff endpoints carry full multiplicity."
+      verification_script: scripts/check_triple_master.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "Outside the existing Work Package A audit; that audit's original claim scope is unchanged."
+
+  - id: TRIPLE-UNIFORM-001
+    title: Uniform smoothed triple bounds and a named signed error budget
+    kind: lemma
+    statement: |
+      Under the weight and parameter hypotheses of TRIPLE-MASTER-001, set
+      Z=XY, dmu_T=T^(-1)omega(t/T)dt, q=log T, L=log(2T+2), ell_x=log(2x),
+      W_0=||omega||_1=1, W_inf=||omega||_inf, W_1=||omega'||_1.
+      Put C_B=1+2/(1-2^(-1/2))^2, C_1=1+2/(1-2^(-1/2)),
+      b_x=C_B sqrt(x)ell_x, alpha_x=L/x, C_M=sqrt(2 C_pair),
+      where integral_0^V |P_x|^2 <= C_pair V ell_x for 1<=x<=V, V>=3.
+      Let m_x=min(b_x,C_M sqrt(W_inf ell_x)) for 1<=x<=2T and m_x=b_x
+      for x>2T. Then ||P_x||_inf<=sum_n a_x(n)<=b_x,
+      sum_{n>=2}a_x(n)/log n<=C_1 sqrt(x), ||P_x||_{L2(mu_T)}<=m_x,
+      and ||A_x||_{Linf(T,2T)}<=alpha_x. On the same window each exact
+      E_nu has sup norm at most h_nu(x), where h_arch=C_arch/x,
+      h_DS=C_DS/x, h_pole=4 sqrt(x)/(1+T^2),
+      h_trivial=12 x^(-5/2)/(T+2); set h_x=sum_nu h_nu(x).
+      For r=1,2,3 let J_r=integral_1^2 omega(u)log(Tu+2)^r du.
+      Then q^r<=J_r<=L^r. Define D(a,b)=sum_n a_a(n)a_b(n);
+      0<=D(a,b)<=d_{a,b}=C_D sqrt(ell_a ell_b), where D(x,x)<=C_D ell_x.
+      For r=1,2, Omega_{r,1}=||(omega(u)log(Tu+2)^r)'||_1
+      <=V_r=W_1 L^r+r W_0 L^(r-1), using zero extension outside (1,2).
+      Let M_T=q^3/Z^2+J_1 D(X,Z)/Y+J_1 D(Y,Z)/X-R_res(X,Y).
+      Exactly C_{3,T}=M_T+E_archcube+E_PPA+E_PAA+E_APA+E_AAP
+      +E_PAP,off+E_APP,off+E_PPP,off+sum_{w containing H}E_w.
+      E_archcube=(J_3-q^3)/Z^2 is nonnegative and <=(L^3-q^3)/Z^2.
+      E_PPA=I_T(P_X,P_Y,A_Z) has absolute bound b_X b_Y V_1/(ZT log 4).
+      E_PAA=-I_T(P_X,A_Y,A_Z), E_APA=-I_T(A_X,P_Y,A_Z),
+      E_AAP=-I_T(A_X,A_Y,P_Z) have respective absolute bounds
+      C_1 sqrt(X)V_2/(TYZ), C_1 sqrt(Y)V_2/(TXZ), C_1 sqrt(Z)V_2/(TXY).
+      E_PAP,off=I_T(P_X,A_Y,P_Z)-J_1 D(X,Z)/Y has absolute bound
+      (L/Y)(m_X m_Z+d_{X,Z}); E_APP,off has the X,Y-swapped definition
+      and bound. E_PPP,off=-I_T(P_X,P_Y,P_Z)+R_res has absolute bound
+      U+R_res<=U+b_X b_Y b_Z, where
+      U=min(b_X m_Y m_Z,b_Y m_X m_Z,b_Z m_X m_Y).
+      Each V_r can be replaced by Omega_{r,1}.
+      For every word w containing H and ordered assignment kappa of
+      its H slots to arch,DS,pole,trivial, define E_{w;kappa} as the
+      exact trilinear integral with those substitutions and sign (-1)^(#P).
+      Its absolute value is bounded by the product of m_{x_i} at P slots,
+      alpha_{x_i} at A slots and h_{kappa(i)}(x_i) at H slots, with
+      (x_1,x_2,x_3)=(X,Y,Z). E_w=sum_kappa E_{w;kappa}, and its bound
+      replaces each h_{kappa(i)} by h_{x_i}. There are 208 refined terms
+      grouped into 19 words, not additional errors.
+      Bounds hold for T>=3,X,Y>=1; all prime slots admit the sharper
+      branch if XY<=2T, including equality. No asymptotic main term,
+      negligible off-diagonal error or Fourier-support region is claimed.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-MASTER-001, PAIR-EF-001, PAIR-PRIME-MEAN-001, PAIR-PRIME-DIAGONAL-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-uniform
+      bookkeeping: research/triple-error-budget.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed T,X,Y,omega before removing absolutely convergent cutoffs; integration by parts acts only on compact smooth weights. No asymptotic or shrinking-width limit."
+    project_audit:
+      task_type: proof
+      proof_method: "Elementary coefficient sums, imported mean square and diagonal bounds, weighted Cauchy-Schwarz, integration by parts, and exact signed finite expansion."
+      horizontal_audit: "Estimates the exact master identity retaining all horizontal coordinates and multiplicities; no new zero restriction or RH assumption."
+      endpoint_audit: "T=3,X=1,Y=1 and x=2T included. The sharper norm branch is never used for x>2T; integer n=x is counted once."
+      smoothing_audit: "W_inf,W_1 and W_0 retained explicitly; mass normalization alone does not bound the first two."
+      verification_script: scripts/check_triple_uniform.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "Outside the existing Work Package A audit; the append-only ledger extension does not expand its claim coverage."
+
+  - id: TRIPLE-LOG-GAP-001
+    title: Absolute logarithmic-gap bound for integer frequencies
+    kind: lemma
+    statement: |
+      For complex sequences c,d indexed by integers n>=2, define
+      B(c)=sum_n |c_n| and E(c)=sum_n n log(2n)|c_n|^2, and similarly
+      for d. If these four quantities are finite, then
+      sum_{m,n>=2,m!=n} |c_m d_n|/|log(m/n)|
+      <= B(c)B(d)/log 2 + 4 sqrt(2) sqrt(E(c)E(d)).
+      The sum is over ordered distinct integer frequencies and converges
+      absolutely. Repeated frequencies must first be combined.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-log-gap
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Prove the bound for finite independent sequence truncations, then use monotone convergence on all nonnegative sums."
+    project_audit:
+      task_type: proof
+      proof_method: "Comparable/far integer split, elementary logarithmic gap, weighted Cauchy-Schwarz, harmonic row and column sums."
+      endpoint_audit: "Ratios 1/2 and 2 belong to the comparable part; equal frequencies are excluded throughout."
+      verification_script: scripts/check_triple_offdiag.py
+      independent_verification: pending
+
+  - id: TRIPLE-OFFDIAG-001
+    title: Decaying mixed-prime and cubic off-diagonal bounds
+    kind: lemma
+    statement: |
+      Under the hypotheses and signed error definitions of TRIPLE-UNIFORM-001,
+      for all T>=3,X,Y>=1,Z=XY, ell_x=log(2x), W_1=||omega'||_1,
+      |E_PPP,off| << W_1 Z ell_Z^4/T,
+      |E_PAP,off| << (Omega_{1,1}/T)(X/sqrt(Y))(ell_X ell_Z)^(3/2),
+      |E_APP,off| << (Omega_{1,1}/T)(Y/sqrt(X))(ell_Y ell_Z)^(3/2).
+      Here Omega_{1,1}<=W_1 log(2T+2)+1. All implied constants are
+      absolute and effective; no restriction Z<=2T is needed.
+      In the proof, c_{X,Y}(r)=sum_{mn=r,m,n>=2} a_X(m)a_Y(n)
+      combines all ordered repeated product frequencies, with
+      B(c_{X,Y})=B(a_X)B(a_Y) and
+      c_{X,Y}(r)<=r^(-1/2)min(r/Z,Z/r)(log r)^2.
+      For K_k=1+2 sum_{j>=0}2^(-j)(j+2)^k,
+      E(a_x)<=K_3 x ell_x^3 and E(c_{X,Y})<=K_5 Z ell_Z^5.
+      The exact cubic diagonal remains sum_r c_{X,Y}(r)a_Z(r)=R_res;
+      its sign in the retained expression is negative.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-LOG-GAP-001, TRIPLE-UNIFORM-001, TRIPLE-MASTER-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-offdiag
+      bookkeeping: research/triple-error-budget.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed parameters; absolute coefficient sums justify convolution and integrals; finite reciprocal-log majorants justify removal of off-diagonal cutoffs. Only the smooth weights are differentiated."
+    project_audit:
+      task_type: proof
+      proof_method: "Multiplicative weight inequality, elementary divisor identity, dyadic coefficient energies, logarithmic-gap lemma, and integration by parts."
+      endpoint_audit: "T=3,X=1,Y=1 included; integer dyadic cutoffs count upper endpoints once; resonances excluded before dividing by logarithms."
+      horizontal_audit: "Bounds the exact full-zero master identity through its prime representation, without restricting beta or multiplicity."
+      verification_script: scripts/check_triple_offdiag.py
+      independent_verification: pending
+
+  - id: TRIPLE-SMOOTHED-ADDITIVE-001
+    title: Uniform additive smoothed triple formula on an interior growing range
+    kind: corollary
+    statement: |
+      Let 0<epsilon<1/3, T>=3, T^epsilon<=X,Y, and Z=XY<=T^(1-epsilon).
+      For every admissible nonnegative omega from TRIPLE-MASTER-001,
+      with W_inf=||omega||_inf, W_1=||omega'||_1, L=log(2T+2), and
+      M_T=(log T)^3/Z^2+J_1 D(X,Z)/Y+J_1 D(Y,Z)/X-R_res(X,Y),
+      |C_{3,T}(X,Y)-M_T| <= C(1+W_inf+W_1)T^(-epsilon)L^4,
+      for an absolute effective constant C independent of
+      epsilon,T,X,Y,omega. The sum of the nineteen remainder-containing
+      word errors is << (1+W_inf)T^(-epsilon)L^2.
+      For fixed epsilon and fixed omega, C_{3,T}=M_T+o(1) uniformly
+      on this parameter range, including its X,Y,Z boundaries.
+      This is an additive approximation, not a relative o(M_T) error.
+      J_1,D,R_res remain exact; no general test-function correlation,
+      Fourier-support region, GUE main term or horizontal consequence
+      is asserted. No epsilon=0 or varying-epsilon limit is claimed.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-UNIFORM-001, TRIPLE-OFFDIAG-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: cor:triple-smoothed-additive
+      bookkeeping: research/triple-error-budget.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Remove convergent cutoffs at fixed parameters first; then fix epsilon,omega and let T tend to infinity, uniformly for arbitrary X,Y in the stated range."
+    project_audit:
+      task_type: proof
+      proof_method: "Term-by-term combination of the named exact budget with the sharper off-diagonal bounds; all nineteen remainder words are counted once."
+      endpoint_audit: "T=3 and both lower X,Y and upper XY boundaries included; 0<epsilon<1/3 is fixed for the asymptotic assertion."
+      smoothing_audit: "Explicit estimate allows varying omega; o(1) for varying weights requires (1+W_inf+W_1)T^(-epsilon)L^4 to vanish."
+      horizontal_audit: "Full zero coordinates and multiplicity conventions inherited unchanged from the master identity."
+      verification_script: scripts/check_triple_offdiag.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-RETAINED-001
+    title: Evaluation and bounds for the retained triple terms
+    kind: lemma
+    statement: |
+      Under the normalized weight conventions of TRIPLE-UNIFORM-001,
+      mu_omega=integral_1^2 omega(u)log u du satisfies 0<=mu_omega<=log 2,
+      and 0<=J_1-log T-mu_omega<=2/T for T>=3.
+      Uniformly for 1<=a<=b,
+      D(a,b)=(a/(2b))(1+log(b/a))log(ab)
+      +O((a/b)(1+log(b/a))); use symmetry for reversed arguments.
+      Proper prime powers and integer endpoints are included.
+      For all X,Y>=1,Z=XY, 0<=R_res(X,Y)<<Z^(-1/2)log(2Z)^3.
+      Define G(X,Y)=(1+log Y)log(XZ)/(2Y^2)
+      +(1+log X)log(YZ)/(2X^2), and Delta(a,b) as D minus the displayed
+      leading expression with its arguments ordered.
+      Exactly M_T=q^3/Z^2+(q+mu_omega)G+E_D+E_J-R_res, where q=log T,
+      E_D=J_1(Delta(X,Z)/Y+Delta(Y,Z)/X), E_J=(J_1-q-mu_omega)G,
+      |E_D|<<log(2T+2)((1+log Y)/Y^2+(1+log X)/X^2),
+      and 0<=E_J<=2G/T. Constants are absolute and effective.
+      These are additive evaluations, not relative asymptotics.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-UNIFORM-001, TRIPLE-OFFDIAG-001, PRIME-PNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-retained
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fixed parameters before Stieltjes upper endpoints and nonnegative dyadic sums tend to infinity; explicit summable majorants and vanishing boundary terms."
+    project_audit:
+      task_type: proof
+      proof_method: "Effective PNT, elementary proper-power counting, continuous mixed weight, exact integration and dyadic resonance estimates."
+      endpoint_audit: "a=b,a=1,Z=1,T=3 included; all integer and dyadic endpoints counted once."
+      verification_script: scripts/check_triple_test_functions.py
+      independent_verification: pending
+
+  - id: TRIPLE-INTERIOR-VANISHING-001
+    title: Vanishing of the native triple observable on an interior growing range
+    kind: corollary
+    statement: |
+      For 0<epsilon<1/3,T>=3,T^epsilon<=X,Y,XY<=T^(1-epsilon),
+      |M_T|<<T^(-epsilon)log(2T+2)^3 and
+      |C_{3,T}(X,Y)|<<(1+||omega||_inf+||omega'||_1)
+      T^(-epsilon)log(2T+2)^4.
+      Effective absolute constants are independent of epsilon and all
+      displayed parameters. Consequently C_{3,T} tends uniformly to zero
+      for fixed epsilon and fixed admissible smoothing.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-RETAINED-001, TRIPLE-SMOOTHED-ADDITIVE-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: cor:triple-interior-vanishing
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Convergent sums are defined at fixed parameters; then fix epsilon and omega and let T tend to infinity uniformly in the stated X,Y range."
+    project_audit:
+      task_type: proof
+      proof_method: "Retained-term bounds and the previously proved additive error estimate."
+      endpoint_audit: "T=3 and all X,Y,XY range boundaries included; epsilon remains strictly between 0 and 1/3."
+      verification_script: scripts/check_triple_test_functions.py
+      independent_verification: pending
+
+  - id: TRIPLE-TEST-FUNCTION-001
+    title: Interior weighted full-zero test-function correlation with vanishing limit
+    kind: theorem
+    statement: |
+      Let Omega_plus={(xi,eta):xi>0,eta>0,xi+eta<1} and let
+      phi in C_c^infinity(Omega_plus) be complex-valued.
+      F(z_1,z_2)=integral_R2 phi(xi,eta)exp(2pi i(xi z_1+eta z_2)) dxi deta
+      is entire, Schwartz on R2, and has Fourier transform phi in the
+      project convention. For T>2pi set B=T/(2pi), L_T=log B/(2pi),
+      z_21=L_T((gamma_i2-gamma_i1)-i(delta_i2+delta_i1)),
+      z_31=L_T((gamma_i3-gamma_i1)-i(delta_i3+delta_i1)).
+      Then R^K_{3,T}[F;omega]=8 sum_{i1,i2,i3 in I}
+      K_T(i2,i3,i1)F(z_21,z_31)
+      =integral_R2 phi(xi,eta)C_{3,T}(B^xi,B^eta) dxi deta,
+      absolutely convergently. I includes every nontrivial zero occurrence,
+      both ordinate signs, full multiplicity and all partial diagonals.
+      K_T is exactly the master kernel; it already includes 1/T.
+      If supp phi is contained in Omega_epsilon={xi>=epsilon,eta>=epsilon,
+      xi+eta<=1-epsilon}, 0<epsilon<1/3, then
+      |R^K_{3,T}[F;omega]|<<||phi||_1(1+||omega||_inf+||omega'||_1)
+      B^(-epsilon)log(2T+2)^4 with an absolute effective constant.
+      The statistic tends to zero for fixed phi, support margin and omega.
+      Compact subsets of Omega_plus admit such a margin. No extension to
+      frequency axes, origin, xi+eta=1, or an unweighted real-ordinate
+      statistic is asserted. No positivity, GUE or horizontal conclusion.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"]
+    dependencies: [TRIPLE-INTERIOR-VANISHING-001, TRIPLE-MASTER-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: thm:triple-test-function
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix T,phi,omega and remove zero cutoffs under C||phi||_1 B^(1-epsilon)log(2T+2)^3; only then let T grow with phi,epsilon,omega fixed."
+    project_audit:
+      task_type: proof
+      proof_method: "Compact-frequency entire extension, Schwartz Fourier inversion, absolute zero-series Fubini, and exact local-spacing conversion."
+      horizontal_audit: "Imaginary shifts retain sums of deltas; the conjugated anchor kernel and full multiplicities are unchanged."
+      endpoint_audit: "T>2pi is strict. Omega_epsilon boundaries are included, but axes and the outer Omega_plus boundary are excluded."
+      scaling_audit: "theta_T=log(T/(2pi))/log T, epsilon_T=epsilon theta_T; use the margin-uniform pointwise bound and T^(-epsilon_T)=(T/(2pi))^(-epsilon). No extra Jacobian or L_T^2."
+      verification_script: scripts/check_triple_test_functions.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-BOUNDARY-ESTIMATES-001
+    title: Local boundary profiles and integrated positive-quadrant error budget
+    kind: lemma
+    statement: |
+      Let Q=[0,infinity)^2, 0<kappa<1, and let psi be a restriction of a
+      compactly supported smooth function on R2 with relative support in
+      Q_kappa={(xi,eta) in Q:xi+eta<=1-kappa}. Use the normalized nonnegative
+      smoothing of TRIPLE-UNIFORM-001. For T>=2pi e set B=T/(2pi), b=log B,
+      q=log T, L=log(2T+2), W=1+||omega||_inf+||omega'||_1, X=B^xi,Y=B^eta,
+      Z=XY, and R_T=C_{3,T}-q^3/Z^2-(q+mu_omega)G, with G and mu_omega
+      defined in TRIPLE-RETAINED-001. Then integral_Q |psi R_T| dxi deta
+      <<||psi||_{infinity,Q} W (1+B^(-kappa)L^4), with an effective absolute
+      constant independent of kappa. The budget counts all eight old
+      non-H errors, nineteen H words (208 component refinements), E_D,E_J
+      and -R_res once. For fixed smoothing, as T tends to infinity,
+      q^(-3)C_{3,T}(exp u,exp v) tends uniformly to exp(-2(u+v)) on compact
+      subsets of u,v>=0; q^(-2)C_{3,T}(B^r,exp s) tends uniformly to
+      r(1+s)exp(-2s) on compact subsets of 0<r<1,s>=0. Exchange X,Y for the
+      other axis. The local profiles themselves require no test function.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"]
+    dependencies: [TRIPLE-UNIFORM-001, TRIPLE-OFFDIAG-001, TRIPLE-RETAINED-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-boundary-estimates
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Convergent zero/prime expressions at fixed parameters first; then fix smoothing and compact profile ranges before T tends to infinity. Integrated estimate is uniform in kappa and the stated test class."
+    project_audit:
+      task_type: proof
+      proof_method: "Integrate the existing exact named budget with exponential decay vectors; keep pole, archimedean, Dirichlet-series and trivial components identifiable; derive local profiles directly."
+      endpoint_audit: "X=1,Y=1,axes,origin and inner support boundary included. T>=2pi e for the budget; local profiles use compact r-subsets strictly inside (0,1). Outer frequency boundary remains excluded."
+      smoothing_audit: "Explicit dependence W=1+W_inf+W_1 for the integrated estimate; fixed smoothing for the local-profile limits."
+      horizontal_audit: "Full-zero observable, kernel, multiplicity and index-diagonal conventions inherited unchanged."
+      verification_script: scripts/check_triple_boundary.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-QUADRANT-LIMIT-001
+    title: One-sided axis and origin limit for the native weighted triple correlation
+    kind: theorem
+    statement: |
+      Under TRIPLE-BOUNDARY-ESTIMATES-001 let N_1(psi)=||psi||_{infinity,Q}
+      +||partial_xi psi||_{infinity,Q}+||partial_eta psi||_{infinity,Q}.
+      Define B_T[psi]=q^(-1)integral_Q psi(xi,eta)C_{3,T}(B^xi,B^eta) dxi deta
+      and B_limit[psi]=psi(0,0)/4+(3/4)integral_0^infinity
+      r(psi(r,0)+psi(0,r)) dr. For T>=2pi e,
+      |B_T[psi]-B_limit[psi]|<<N_1(psi) W (1/b+B^(-kappa)L^3), with an
+      effective absolute constant. For fixed psi,kappa,omega the limit is
+      B_limit[psi]. The coefficients are full one-sided masses on the
+      closed quadrant; no extra half weights are applied.
+      F_plus(z1,z2)=integral_Q psi(xi,eta)exp(2pi i(xi z1+eta z2)) dxi deta
+      is entire; its Fourier transform on R2 is the zero extension of psi
+      as a tempered distribution. It is generally not Schwartz.
+      For T>2pi the exact absolutely convergent zero-side identity is
+      B_T[psi]=(8/q)sum_{i1,i2,i3 in I} K_T(i2,i3,i1)F_plus(z21,z31), where
+      z21=L_T((gamma_i2-gamma_i1)-i(delta_i2+delta_i1)),
+      z31=L_T((gamma_i3-gamma_i1)-i(delta_i3+delta_i1)), L_T=log B/(2pi).
+      I is the full zero-occurrence multiset, both ordinate signs,
+      multiplicities and all partial diagonals included. K_T already
+      contains 1/T. The majorant before division by q is
+      C||psi||_{L1(Q)} B^(1-kappa)log(2T+2)^3. No signed-sector extension,
+      kernel removal, real-ordinate-only correlation, positivity or new
+      horizontal consequence is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; 0<kappa<1)"]
+    dependencies: [TRIPLE-BOUNDARY-ESTIMATES-001, TRIPLE-MASTER-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: thm:triple-quadrant-limit
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T,psi,omega remove independent zero cutoffs under the explicit absolute majorant. Then fix psi,kappa,omega and let T tend to infinity. Varying families require the displayed bound to vanish."
+    project_audit:
+      task_type: proof
+      proof_method: "Exact exponential moments, first-moment trace estimates, integrated named remainder bounds, compact-frequency entire extension and absolute Fubini."
+      endpoint_audit: "Smooth restrictions have continuous boundary traces; axes,origin and Q_kappa boundary included. No half masses. Outer line xi+eta=1 excluded."
+      scaling_audit: "b=log(T/(2pi)),q=log T, origin Jacobian b^(-2), transverse axis Jacobian b^(-1); only the extra 1/q normalization is introduced."
+      horizontal_audit: "Imaginary sums of deltas and the native conjugated-anchor kernel remain; no substitution beta=1/2."
+      verification_script: scripts/check_triple_boundary.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-SIGNED-SECTORS-001
+    title: Reciprocal full-zero reflection and six signed frequency sectors
+    kind: lemma
+    statement: |
+      Extend S(x,t) to every x>0 by the full-zero series of TRIPLE-MASTER-001
+      and C_{3,T}(X,Y) to X,Y>0 by the same smoothed product. The series is
+      absolutely locally uniformly convergent in x>0,t real, and
+      S(x^(-1),t)=conjugate(S(x,t)) by multiplicity-preserving horizontal
+      reflection. For T>2pi set B=T/(2pi), Ctilde_T(xi,eta)=C_{3,T}(B^xi,B^eta),
+      R(xi,eta)=(eta,-xi-eta), and h=max(abs(xi),abs(eta),abs(xi+eta)).
+      Ctilde_T(R(xi,eta))=Ctilde_T(xi,eta),
+      Ctilde_T(-xi,-eta)=conjugate(Ctilde_T(xi,eta)), and coordinate swap
+      preserves Ctilde_T. The six closed cones sigma R^k Q, Q=[0,infinity)^2,
+      sigma in {1,-1}, k=0,1,2 cover R2 with disjoint interiors. Their only
+      overlaps are on xi eta (xi+eta)=0. All maps have determinant one;
+      h(sigma R^k(u,v))=u+v for u,v>=0, and globally
+      h=(abs(xi)+abs(eta)+abs(xi+eta))/2. On every seam the integrand is a
+      permutation of S(1,t)|S(B^r,t)|^2 and is real, so sector descriptions
+      agree. The master full-zero identity extends to all X,Y>0. For any
+      integrable phi supported in h<=1-kappa, 0<kappa<1, its integrated
+      absolute zero-series majorant is C||phi||_1 B^(1-kappa)log(2T+2)^3,
+      before division by log T. Sector identities concern full sums and
+      need not preserve individual index-diagonal subseries.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-MASTER-001, PAIR-COUNT-KERNEL-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-signed-sectors
+      bookkeeping: research/triple-signed-sectors.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "All series products, conjugations and reindexings are at fixed parameters under absolute majorants; convergence is locally uniform in x>0,t real. No asymptotic limit is used."
+    project_audit:
+      task_type: proof
+      proof_method: "Full-zero reciprocal reflection, permutation of three frequencies with sum zero, exact determinant-one cone maps and the collected anchor-delta bound."
+      endpoint_audit: "x=1 and all internal seams, including the origin, are included. T>2pi for the frequency base; the optional support majorant uses 0<kappa<1."
+      horizontal_audit: "Retains all deltas and denominators. Reflection is reindexing; no individual zero or index-diagonal invariance is assumed."
+      verification_script: scripts/check_triple_signed_sectors.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-SIGNED-TEST-FUNCTION-001
+    title: Native weighted full-zero Schwartz correlation with hexagonal Fourier support
+    kind: theorem
+    statement: |
+      Let H={(xi,eta):h(xi,eta)<1}, h=max(abs(xi),abs(eta),abs(xi+eta)),
+      and let phi in C_c^infinity(H) be arbitrary complex-valued. Its entire
+      inverse Fourier transform F is Schwartz on R2 with Fourier transform
+      phi in the negative-forward, positive-inverse 2pi convention. For
+      T>2pi set B=T/(2pi),q=log T,b=log B,L=log(2T+2), and
+      A_T[phi]=q^(-1)integral_R2 phi(xi,eta)C_{3,T}(B^xi,B^eta) dxi deta.
+      Exactly and absolutely convergently,
+      A_T[phi]=(8/q)sum_{i1,i2,i3 in I} K_T(i2,i3,i1)F(z21,z31), where
+      z21=L_T((gamma_i2-gamma_i1)-i(delta_i2+delta_i1)),
+      z31=L_T((gamma_i3-gamma_i1)-i(delta_i3+delta_i1)), L_T=log B/(2pi).
+      The full occurrence multiset, both ordinate signs, multiplicities,
+      conjugated anchor and all partial diagonals are included.
+      Define A[phi]=(3/2)phi(0,0)+(3/2)integral_R abs(r)
+      (phi(r,0)+phi(0,r)+phi(r,-r)) dr. For support in h<=1-kappa,
+      0<kappa<1, and T>=2pi e,
+      |A_T[phi]-A[phi]|<<||phi||_{C1}(1+||omega||_inf+||omega'||_1)
+      (1/b+B^(-kappa)L^3) with an effective absolute constant independent
+      of kappa. The C1 norm is the sum of the sup norms of phi and its two
+      first partial derivatives. Thus A_T tends to A for fixed phi,kappa,omega.
+      Every compact subset of H admits such a margin. Each of the six
+      sectors contributes an origin mass 1/4 and each ray has two incident
+      sectors with coefficient 3/4. No additional half weights are applied.
+      All line integrals use parameter r and measure dr, including (r,-r),
+      not Euclidean arclength. No RH, simplicity, test symmetry or positivity
+      is required. The outer boundary h=1, kernel removal, GUE identification
+      and horizontal extraction are not established by this theorem.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"]
+    dependencies: [TRIPLE-SIGNED-SECTORS-001, TRIPLE-QUADRANT-LIMIT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: thm:triple-signed-test-function
+      bookkeeping: research/triple-test-functions.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Remove independent zero cutoffs at fixed T,phi,omega under C||phi||_1 B^(1-kappa)L^3. Then fix phi,kappa,omega and let T grow; varying families require the displayed error to vanish."
+    project_audit:
+      task_type: proof
+      proof_method: "Six determinant-one quadrant pullbacks, conjugation of negative-sector tests, chain-rule seminorm bounds, incidence accounting and compact-frequency Fourier inversion."
+      endpoint_audit: "All internal axes, the diagonal xi+eta=0 and the origin included; h=1 excluded. Identity holds for T>2pi; estimate for T>=2pi e."
+      scaling_audit: "Only the extra factor 1/log T; 1/T remains inside K_T. Sector Jacobians are one and diagonal line measure is dr."
+      horizontal_audit: "Full complex test arguments and native kernel retained; sector identities do not assert separate preservation of index-diagonal subseries."
+      verification_script: scripts/check_triple_signed_sectors.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-KERNEL-PROFILE-001
+    title: Exact rational triple-kernel profile with full horizontal parameters
+    kind: lemma
+    statement: |
+      For real a,b and delta_j,delta_k,delta_l in [-1/2,1/2], put
+      z1=a-i delta_j,z2=b-i delta_k,z3=i delta_l,d_mn=z_m-z_n. The absolutely
+      convergent profile J(a,b;deltas)=integral_R product_{m=1}^3
+      (1+(v-z_m)^2)^(-1) dv equals
+      pi(24+d12^2+d13^2+d23^2)/((4+d12^2)(4+d13^2)(4+d23^2)).
+      The formula includes coincident centers and the closed horizontal
+      endpoints. Re(4+d^2)>=3+(Re d)^2 on this domain, so denominators do
+      not vanish. J is smooth with effective uniform derivative bounds
+      on compact real-gap sets times the closed horizontal cube.
+      Exchanging a,b and delta_j,delta_k preserves J. Negating all three
+      deltas conjugates J. For zero tuples a=gamma_j-gamma_l,
+      b=gamma_k-gamma_l; the third center reflects the conjugated anchor.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-MASTER-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-kernel-profile
+      bookkeeping: research/triple-kernel.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Residues for distinct centers at fixed parameters; then dominated convergence on compact gap sets extends to center collisions and horizontal endpoints."
+    project_audit:
+      task_type: proof
+      proof_method: "Upper-half-plane residues, explicit cleared-denominator polynomial cancellation and dominated convergence at collisions."
+      endpoint_audit: "All real gaps, coincident centers, and |delta_m|<=1/2 included; upper and lower poles stay separated."
+      horizontal_audit: "All deltas retained; anchor center is +i delta_l and the two other centers have -i delta."
+      verification_script: scripts/check_triple_kernel.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-KERNEL-LOCALIZATION-001
+    title: Summable height-localization error and explicit-profile correlation
+    kind: lemma
+    statement: |
+      For T>=3, all full zero occurrences satisfy
+      K_T(j,k,l)=omega(gamma_l/T)J(gamma_j-gamma_l,gamma_k-gamma_l;
+      delta_j,delta_k,delta_l)/T+E_kernel(j,k,l). With W_inf=||omega||_inf,
+      Wprime_inf=||omega'||_inf,L=log(2T+2), the uniform tuplewise bound is
+      |E_kernel|<=64pi Wprime_inf/(27T^2(4+(gamma_j-gamma_k)^2)).
+      Separately, sum_{j,k,l}|E_kernel|<<(Wprime_inf L^4+W_inf L^3)/T.
+      The near, far-center and far-anchor error integrals form a disjoint
+      decomposition; their summed bounds are Wprime_inf L^4/T,
+      W_inf L^3/T and W_inf L^3/T. Both ordinate signs, all multiplicities
+      and all index patterns are included. Constants are effective and
+      absolute. The tuplewise estimate alone is not used to sum errors.
+      For the tests of TRIPLE-SIGNED-TEST-FUNCTION-001 let phi=Fourier(F),
+      B=T/(2pi),q=log T and support phi in h<=1-kappa,0<kappa<1.
+      Define A_T^J[phi]=(8/(Tq))sum_{i1,i2,i3 in I}omega(gamma_i1/T)
+      J(gamma_i2-gamma_i1,gamma_i3-gamma_i1;delta_i2,delta_i3,delta_i1)
+      F(z21,z31), with the same complex test arguments and anchor as before.
+      The series is absolutely convergent. For T>=2pi e,
+      |A_T[phi]-A_T^J[phi]|<<||phi||_1(W_inf+Wprime_inf)B^(-kappa)L^3.
+      A_T^J therefore inherits the existing signed-test main term, with
+      error the sum of this new bound and that theorem's error. The kernel
+      estimates themselves require no Fourier-support assumption.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1; correlation consequence only)"]
+    dependencies: [TRIPLE-KERNEL-PROFILE-001, TRIPLE-MASTER-001, PAIR-COUNT-001, PAIR-COUNT-KERNEL-001, TRIPLE-SIGNED-SECTORS-001, TRIPLE-SIGNED-TEST-FUNCTION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-kernel-localization
+      bookkeeping: research/triple-kernel.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Tonelli for nonnegative error majorants at fixed T and smoothing; unit and dyadic shell bounds prove finiteness before zero cutoffs are removed. For the correlation limit fix test, support margin and smoothing; varying families must make both errors vanish."
+    project_audit:
+      task_type: proof
+      proof_method: "Freeze the smooth height weight at the anchor; prove a tuplewise convolution bound and an independent summable near/far decomposition using local zero counts. Transfer via the compact-frequency horizontal majorant."
+      endpoint_audit: "T=3 included for kernel estimates, T>=2pi e for transfer; near includes |t-gamma_l|=T, far is strict, and far-center has priority over far-anchor. All coincidences included."
+      smoothing_audit: "New Wprime_inf=||omega'||_inf is distinct from W_1=||omega'||_1. The two old/new correlation errors retain their stated norms separately."
+      horizontal_audit: "Full rational profile and full complex test arguments retained; no delta is set to zero."
+      verification_script: scripts/check_triple_kernel.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001
+    title: Microscopic horizontal profile and isolated critical-line specialization
+    kind: corollary
+    statement: |
+      Put h12=delta_j-delta_k,h13=delta_j+delta_l,h23=delta_k+delta_l.
+      J(0,0;deltas)=pi(24-h12^2-h13^2-h23^2)/
+      ((4-h12^2)(4-h13^2)(4-h23^2)). For each fixed R>0, uniformly for
+      |u|,|v|<=R and deltas in [-1/2,1/2]^3, as T tends to infinity,
+      J(u/L_T,v/L_T;deltas)=J(0,0;deltas)+O_R(1/L_T).
+      At the restricted kernel parameters deltas=0,
+      J(a,b;0)=pi(24+a^2+b^2+(a-b)^2)/
+      ((4+a^2)(4+b^2)(4+(a-b)^2)), and
+      J(u/L_T,v/L_T;0)=3pi/8-5pi(u^2+v^2-uv)/(32L_T^2)+O_R(L_T^(-4)).
+      Thus for a critical-line tuple with these bounded scaled gaps,
+      K_T=(3pi/(8T))omega(gamma_l/T)+
+      O_R(W_inf/(T L_T^2)+Wprime_inf/T^2).
+      Constants are effective, with horizontal uniformity in the general
+      expansion. Exactly (8/(T log T))(3pi/8)=
+      (3 log(T/(2pi))/(2 log T))/(T L_T), whose coefficient tends to 3/2.
+      This is an unconditional parameter specialization or a formula on
+      tuples already known to lie on the line. Applying the specialization
+      to every zero tuple would require RH and is not used in preceding
+      claims. No global constant-kernel replacement, GUE identification or
+      horizontal consequence follows from these local expansions alone.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [TRIPLE-KERNEL-PROFILE-001, TRIPLE-KERNEL-LOCALIZATION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: cor:triple-kernel-critical
+      bookkeeping: research/triple-kernel.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix the scaled-gap bound R before T tends to infinity; the horizontal parameters may vary arbitrarily within the closed cube. No microscopic limit is interchanged with an infinite zero sum."
+    project_audit:
+      task_type: proof
+      proof_method: "Substitution in the rational profile, compact-set derivative estimates, an explicit quadratic Taylor expansion and exact local-spacing normalization."
+      endpoint_audit: "Zero gaps, repeated occurrences and closed horizontal endpoints included; L_T=log(T/(2pi))/(2pi), T>2pi."
+      horizontal_audit: "General profile retains deltas; only a separately stated kernel parameter specialization sets them to zero."
+      assumption_separation: "The global all-zero critical-line interpretation is marked RH and is not an input. The localization lemma is used here only for its unrestricted tuplewise bound, not its support-restricted correlation consequence."
+      verification_script: scripts/check_triple_kernel.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-SINE-MEASURE-001
+    title: All-ordered sine measure and its third-cumulant Fourier cancellation
+    kind: lemma
+    statement: |
+      Put s(x)=sin(pi x)/(pi x),s(0)=1,R2(x)=1-s(x)^2 and
+      R3(u,v)=1-s(u)^2-s(v)^2-s(u-v)^2+2s(u)s(v)s(u-v).
+      For Schwartz F define S3[F]=integral F R3 du dv+F(0,0)+
+      integral R2(r)(F(0,r)+F(r,0)+F(r,r))dr. This absolutely convergent
+      bilinear pairing defines the all-ordered tempered benchmark measure M3.
+      Its five summands correspond to the five partitions of ordered
+      occurrence indices, not distinct complex zeros or distinct ordinates.
+      Set h=max(|xi|,|eta|,|xi+eta|),tau(r)=(1-|r|)_+,m=1-tau,c=(1-h)_+.
+      In the negative-forward 2pi convention,
+      Fourier(M3)=delta_00+m(xi)delta(eta)+m(eta)delta(xi)+
+      m(xi)delta(xi+eta)+g, where g=1-tau(xi)-tau(eta)-tau(xi+eta)+2c.
+      Line deltas use coordinate dr, without arclength factors.
+      The cycle transform is Fourier(s(u)s(v)s(u-v))=c.
+      The reduced ordinary third cumulant is
+      C3ord=delta_00-delta(u)s(v)^2-delta(v)s(u)^2-delta(u-v)s(u)^2+
+      2s(u)s(v)s(u-v); its transform g vanishes on h<=1.
+      The factorial third cumulant is the cycle alone, with transform 2c,
+      and does not vanish there. The density g is not globally zero:
+      g(3/4,3/4)=1/2. These are deterministic benchmark identities,
+      not assertions about zeta simplicity or weighted zeta cumulants.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-sine-measure
+      bookkeeping: research/triple-main-term-comparison.md
+      provenance: research/literature-notes/triple-sine-comparison.md
+      bibliography_key: ConreySnaith2014
+      imported_scope: "Theorem 1, equation (2), author manuscript v2 p. 2 fixes the distinct-index unitary determinant convention; all claimed identities are proved directly."
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "No asymptotic limit. Compact interval parameter integrals are exchanged against Schwartz tests under an integrable absolute majorant; all measure pairings converge absolutely."
+    project_audit:
+      task_type: proof
+      proof_method: "Determinant expansion, five occurrence-index partitions, compact interval convolution and explicit distributional moment-cumulant subtraction."
+      endpoint_audit: "s(0)=1; overlap lengths include all collisions and endpoints. Benchmark cancellation holds on h<=1, without extending any zeta support theorem."
+      fourier_audit: "Negative-forward 2pi convention; bilinear pairing; line deltas use coordinate dr. The physical all-equal atom transforms to planar density one, not a frequency atom."
+      verification_script: scripts/check_triple_main_term.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-MAIN-TERM-COMPARISON-001
+    title: Exact sine-benchmark identification of the weighted triple main term
+    kind: lemma
+    statement: |
+      For arbitrary complex phi in C_c^infinity({h<1}), with h as in
+      TRIPLE-SINE-MEASURE-001, let F be its positive-inverse Fourier transform
+      and choose 0<kappa<1 with support phi in h<=1-kappa. Then
+      S3[F]=phi(0,0)+integral |r|(phi(r,0)+phi(0,r)+phi(r,-r))dr
+      and A[phi]=(3/2)S3[F] exactly. With the smoothing hypotheses and
+      observables of TRIPLE-SIGNED-TEST-FUNCTION-001 and
+      TRIPLE-KERNEL-LOCALIZATION-001, for T>=2pi e put B=T/(2pi),
+      b=log B,q=log T,L=log(2T+2),W_inf=||omega||_inf,W_1=||omega'||_1,
+      Wprime_inf=||omega'||_inf. Let E_signed=||phi||_C1(1+W_inf+W_1)
+      (b^(-1)+B^(-kappa)L^3),E_kernel=||phi||_1(W_inf+Wprime_inf)B^(-kappa)L^3.
+      Uniformly A_T[phi]=(3/2)S3[F]+O(E_signed) and
+      A_T^J[phi]=(3/2)S3[F]+O(E_signed+E_kernel), with effective absolute
+      constants inherited unchanged. Pairings are bilinear, with central
+      inversion removed by evenness of the benchmark distribution, not by
+      a symmetry or reality assumption on phi. The finite-height local
+      critical normalization remains 3b/(2q), whose limit is 3/2.
+      Full complex zero arguments, kernel, horizontal displacements and all
+      occurrence-index patterns are retained. No unweighted real-ordinate
+      zeta correlation, kernel removal, boundary-support extension or
+      weighted zeta cumulant cancellation is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [TRIPLE-SINE-MEASURE-001, TRIPLE-SIGNED-TEST-FUNCTION-001, TRIPLE-KERNEL-LOCALIZATION-001, TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: lem:triple-main-term-comparison
+      bookkeeping: research/triple-main-term-comparison.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, support margin and smoothing before T tends to infinity. Varying families must make both retained errors vanish; no new zero-sum interchange is used."
+    project_audit:
+      task_type: proof
+      proof_method: "Pair the exact benchmark transform with the compact frequency test, then substitute into the two existing weighted asymptotic formulas."
+      endpoint_audit: "Internal axes and origin included; outer boundary h=1 remains excluded by a fixed positive margin for the zeta theorem."
+      horizontal_audit: "No critical-line substitution; the full weighted statistic and complex test arguments are unchanged."
+      verification_script: scripts/check_triple_main_term.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "These Work Package B claims are outside the existing Work Package A audit."
+
+  - id: TRIPLE-SMOOTHED-CORRELATION-001
+    title: Unconditional smoothed weighted three-level correlation in unit sine-benchmark normalization
+    kind: theorem
+    statement: |
+      Let I index all nontrivial zeta-zero occurrences, with multiplicity
+      and both ordinate signs, rho_j=1/2+delta_j+i gamma_j. Let omega be
+      real, nonnegative, smooth and compactly supported in (1,2), with
+      integral one and zero extension to R. Fix 0<kappa<1 and complex
+      phi in C_c^infinity(R^2), supported in h<=1-kappa, where
+      h(xi,eta)=max(|xi|,|eta|,|xi+eta|). Let F(z1,z2)=integral
+      phi(xi,eta)exp(2pi i(xi z1+eta z2))d xi d eta, so its real-plane
+      restriction is Schwartz and Fourier(F)=phi in the negative-forward
+      convention. For T>=2pi e set B=T/(2pi),b=log B,q=log T,
+      L_T=b/(2pi),L=log(2T+2). For each tuple put a2=gamma_i2-gamma_i1,
+      a3=gamma_i3-gamma_i1,z21=L_T(a2-i(delta_i2+delta_i1)),
+      z31=L_T(a3-i(delta_i3+delta_i1)). For real gaps and |epsilon_j|<=1/2,
+      define J(a2,a3;epsilon2,epsilon3,epsilon1) using
+      c1=a2-i epsilon2,c2=a3-i epsilon3,c3=i epsilon1,d_mn=c_m-c_n by
+      J=pi(24+d12^2+d13^2+d23^2)/((4+d12^2)(4+d13^2)(4+d23^2)).
+      The sum R^J_3,T[F;omega]=(16/(3Tq))sum_{i1,i2,i3 in I}
+      omega(gamma_i1/T)J(a2,a3;delta_i2,delta_i3,delta_i1)F(z21,z31)
+      is absolutely convergent and includes every ordered index pattern.
+      Only the anchor is height localized. Put s(r)=sin(pi r)/(pi r),
+      s(0)=1,R2(r)=1-s(r)^2 and
+      R3(u,v)=det[[1,s(u),s(v)],[s(u),1,s(u-v)],[s(v),s(u-v),1]].
+      Then S3[F]=integral F R3 du dv+integral R2(r)
+      (F(0,r)+F(r,0)+F(r,r))dr+F(0,0) is absolutely convergent, with
+      coordinate line measure dr and bilinear pairings. Set W_inf=||omega||_inf,
+      W_1=||omega'||_1,Wprime_inf=||omega'||_inf and
+      ||phi||_C1=||phi||_inf+||partial_xi phi||_inf+||partial_eta phi||_inf.
+      Define E_signed=||phi||_C1(1+W_inf+W_1)(b^(-1)+B^(-kappa)L^3)
+      and E_kernel=||phi||_1(W_inf+Wprime_inf)B^(-kappa)L^3.
+      Uniformly |R^J_3,T[F;omega]-S3[F]|<=C(E_signed+E_kernel), with an
+      effective absolute C independent of T,kappa,phi,omega. Thus for fixed
+      test, margin and smoothing, R^J_3,T=S3[F]+o(1). For varying families
+      the difference tends to zero whenever both named bounds do.
+      Exactly R^J_3,T=(2/3)A_T^J[phi]. The result is additive even if
+      S3[F]=0. No reality or permutation symmetry of phi is required.
+      Full horizontal dependence, both ordinate signs and multiplicities
+      are retained; unequal indices may have equal zeros or ordinates.
+      No kernel removal, outer-support-boundary extension, unweighted
+      real-ordinate correlation or horizontal consequence is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [TRIPLE-KERNEL-PROFILE-001, TRIPLE-KERNEL-LOCALIZATION-001, TRIPLE-SINE-MEASURE-001, TRIPLE-MAIN-TERM-COMPARISON-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_explicit_formula.tex
+      label: thm:triple-smoothed-correlation
+      bookkeeping: research/triple-theorem.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T,test,smoothing, absolute convergence permits arbitrary independent zero-cutoff limits. Then fix test, support margin and smoothing before T tends to infinity; varying families must make both named errors vanish."
+    project_audit:
+      task_type: proof_synthesis
+      proof_method: "Repeat the complete definitions, apply the proved absolute-convergence and profile lemmas, identify R^J=(2/3)A_T^J exactly, and use the main-term comparison. No new analytic estimate."
+      endpoint_audit: "T>=2pi e; internal frequency axes and origin included, outer boundary excluded by positive kappa. Smooth anchor cutoff has no endpoint half weights; coincident centers and closed horizontal parameter endpoints are allowed."
+      horizontal_audit: "Anchor center has +i delta_i1, other centers have -i delta; test shifts contain sums of horizontal displacements. No critical-line substitution."
+      verification_script: scripts/check_triple_main_term.py
+      independent_verification: pending
+      pair_rh_audit_coverage: "This Work Package B theorem is outside the existing Work Package A audit."
+  - id: ORDINATE-PAIR-INPUT-001
+    title: Close-pair upper bound with full ordinate multiplicity
+    kind: proposition
+    statement: |
+      For V sufficiently large, L_V=log(V)/(2pi), uniformly 1<=lambda<=sqrt(L_V),
+      the sum over all ordered zero occurrences 0<gamma,gamma_prime<=V with
+      |gamma-gamma_prime|L_V<=lambda of (1-|gamma-gamma_prime|L_V/lambda) is O(V
+      log(V) lambda). Equal ordinates are included. This is the weak upper-bound
+      corollary of GLSS arXiv:2503.15449v4 equation (6.1), derived there
+      unconditionally from Propositions 1 and 2. No PCC-dependent theorem or RH
+      refinement is used.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: prop:pair-input
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      source_version: "PREPRINT arXiv:2503.15449v4, equation (6.1); only its unconditional upper bound is imported."
+
+  - id: ORDINATE-DENSITY-INPUT-001
+    title: Uniform density input near the critical line
+    kind: proposition
+    statement: |
+      For V>=H0=3.0610046*10^10 and 0<=D<=0.331, N(1/2+D,2V)-N(1/2+D,V) <<
+      V^(1-D/4)log V+(log V)^2 uniformly with an effective absolute constant.
+      N(sigma,V) counts beta>sigma and 0<gamma<=V with multiplicity. This is a
+      corollary of Simonic Theorem 1 in the consulted arXiv:1910.08274v2
+      (published JMAA 491 (2020), 124303); its explicit constants and external
+      computational provenance are imported, not recomputed or locally certified.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: prop:density-input
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited external explicit-density inputs; not a new project computation, no local replay or archived certificate. The open target inherits this dependency only as a proposed proof route."
+
+  - id: ORDINATE-TRANSFER-001
+    title: Absolutely convergent signed ordinate transfer
+    kind: lemma
+    statement: |
+      With all definitions in proofs/triple_ordinate_reduction.tex, for T>=2pi e,
+      smooth nonnegative anchor weight omega of mass one supported in (1,2), and
+      phi smooth compactly supported in h<=1-kappa, set O_T=(T L_T)^(-1) sum omega
+      F(u,v). All ordered zero occurrences of both signs are included. Define
+      E_arguments=c_T sum omega J_delta(F(z)-F(u,v)), E_horizontal=c_T sum omega
+      (J_delta-J_0)F(u,v), E_gaps=c_T sum omega (J_0-3pi/8)F(u,v), with
+      c_T=16/(3Tq), q=log T, b=log(T/(2pi)). All sums converge absolutely at fixed
+      T. Exactly R_T^J=(b/q)O_T+E_arguments+E_horizontal+E_gaps, and
+      O_T-S3=(q/b)(R_T^J-S3-E_arguments-E_horizontal-E_gaps)+(q/b-1)S3.
+      Independent zero cutoffs are removed first at fixed T.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [PAIR-COUNT-001, TRIPLE-KERNEL-PROFILE-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:transfer
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-COUNT-001
+    title: Near and far cumulative triple counts
+    kind: lemma
+    statement: |
+      Let H_T(R) count all ordered zero occurrences with anchor ordinate in [T,2T]
+      and max(|L_T(gamma2-gamma1)|,|L_T(gamma3-gamma1)|)<=R. For T sufficiently
+      large, H_T(R)<<T q^2 R^2 uniformly 1<=R<=q^(1/4), and H_T(R)<<T q^3(1+R)^4
+      for all R>=1, q=log T. With A20(F)=sup (1+max(|u|,|v|))^20 |F(u,v)| and
+      W=||omega||infinity, the sums of omega |F| normalized by Tq are <<W A20 q on
+      r<=q^(1/4), and <<W A20 q^(-2) on the complementary tail.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ORDINATE-PAIR-INPUT-001, PAIR-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:counts
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-REAL-KERNEL-001
+    title: Vanishing kernel errors for real Schwartz arguments
+    kind: theorem
+    statement: |
+      For every Schwartz F on R^2 and fixed nonnegative smooth omega supported in
+      (1,2) of integral one, the signed errors defined in equations (horizontal)
+      and (gaps) of the ordinate reduction satisfy |E_gaps|<<W A20(F)/q and
+      |E_horizontal|<<W A20(F)(log q)^2/q, q=log T, for T sufficiently large.
+      Constants and lower threshold are independent of F and omega. Horizontal
+      reflection is performed on the entire ordered tuple sum before a
+      second-order Taylor bound; bad zeros at |delta|>64 log q/q are bounded by
+      the imported density theorem. All multiplicities and partial diagonals
+      remain. No support restriction is needed for these real-test estimates. This
+      does not bound E_arguments.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ORDINATE-TRANSFER-001, ORDINATE-COUNT-001, ORDINATE-DENSITY-INPUT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: thm:real-kernel
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited external explicit-density inputs; not a new project computation, no local replay or archived certificate. The open target inherits this dependency only as a proposed proof route."
+
+  - id: ORDINATE-ARGUMENT-BOUND-001
+    title: Reflected positive majorant for the complex-argument error
+    kind: lemma
+    statement: |
+      For the supported Fourier tests in the ordinate reduction, let s=1-kappa,
+      x=q max_j |delta_ij|, r=max(|u|,|v|), P22(phi)=sum_{|alpha|<=22}
+      ||partial^alpha phi||_1, and M_T(s)=(Tq)^(-1) sum omega (1+r)^(-20)
+      x^2(1+x)^22 exp(2s x). For T sufficiently large, |E_arguments|<=C P22(phi)
+      M_T(s) with an absolute C independent of T,phi,omega,kappa. M_T(s) is finite
+      at each fixed T. Simultaneous horizontal reflection cancels the first-order
+      term. Neither M_T(s)=o(1) nor E_arguments=o(1) is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-TRANSFER-001, PAIR-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:arguments
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-ARGUMENT-VANISHING-001
+    title: Open signed complex-argument estimate
+    kind: target
+    statement: |
+      Target, not proved: E_arguments=o(1) for each fixed smooth nonnegative
+      mass-one omega supported in (1,2) and each fixed phi in C_c^infinity
+      supported in h<=1-kappa, 0<kappa<1, with all definitions of the ordinate
+      reduction. The proved positive moment bound is only sufficient; no vanishing
+      estimate for that moment is known in this work.
+    status: idea
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-ARGUMENT-BOUND-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: target:arguments
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-TRIPLE-001
+    title: Open conventional all-ordered smoothed ordinate correlation
+    kind: target
+    statement: |
+      Target, not proved: O_T[F]=S3[F]+o(1), with O_T=(T L_T)^(-1) sum
+      omega(gamma1/T) F(L_T(gamma2-gamma1),L_T(gamma3-gamma1)), all ordered zero
+      occurrences with multiplicity and both ordinate signs, only the anchor
+      localized. Fix omega nonnegative smooth supported in (1,2) of mass one, and
+      phi in C_c^infinity supported in h<=1-kappa, 0<kappa<1, with F its inverse
+      Fourier transform in project units. S3 is the all-ordered sine benchmark
+      including the three partial diagonals and total diagonal. The transfer
+      identity and real-kernel estimates reduce this target exactly to the
+      unresolved signed estimate E_arguments=o(1).
+    status: idea
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [TRIPLE-SMOOTHED-CORRELATION-001, ORDINATE-TRANSFER-001, ORDINATE-REAL-KERNEL-001, ORDINATE-ARGUMENT-VANISHING-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: target:ordinate
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: null
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Fix test, smoothing and support margin; remove independent zero cutoffs by absolute convergence at fixed T, then let T tend to infinity."
+    project_audit:
+      task_type: proof_and_source_review
+      independent_verification: pending
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited external explicit-density inputs; not a new project computation, no local replay or archived certificate. The open target inherits this dependency only as a proposed proof route."
+  - id: ORDINATE-SIGN-AVERAGE-001
+    title: Eight-reflection identity and kernel coefficient bounds
+    kind: lemma
+    statement: |
+      In the ordinate reduction, write mathcalJ(delta)=J(a,d;delta2,delta3,delta1)
+      with anchor first, and J_S=(1/8)sum_epsilon prod_{j in S}epsilon_j
+      mathcalJ(epsilon delta). Set a1=b delta1(xi+eta), a2=b delta2 xi, a3=b
+      delta3 eta, Cj=cosh(aj), Sj=sinh(aj). Exactly (1/8)sum_epsilon
+      mathcalJ(epsilon delta)(exp(sum epsilon_j aj)-1)=J_empty(prod Cj-1)+sum_{S
+      nonempty}J_S prod_{j in S}Sj prod_{j not in S}Cj. Pairing these two parts
+      with c_T omega phi exp(2pi i(u xi+v eta)) and summing gives
+      E_arguments=E_even+E_kernel-mix, with absolute Fubini at fixed T.
+      Independent reflections preserve the full ordered Cartesian product with
+      multiplicity but need not preserve separate index diagonals. Uniformly for
+      all real gaps and |delta_j|<=1/2, conjugate(J_S)=(-1)^|S| J_S, J_empty>0,
+      |J_S|<=C prod_{j in S}|delta_j| for nonempty S, and odd-cardinality S gain
+      the additional factor min(|a|+|d|,1). J_empty is distinct from J_0.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-TRANSFER-001, TRIPLE-KERNEL-PROFILE-001, PAIR-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:sign-average
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T remove independent reflection-invariant ordinate cutoffs using the integral kernel majorant; fix smoothing, test and the stated support margin before T tends to infinity."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-QUADRATIC-001
+    title: Full quadratic term after independent horizontal reflections
+    kind: lemma
+    statement: |
+      Let D1=partial_u+partial_v, D2=partial_u, D3=partial_v, and
+      K_j=partial_delta_j mathcalJ(0), in anchor-first slot order. The eight-sign
+      average of mathcalJ(epsilon delta)[F((u,v)-i y(epsilon delta))-F(u,v)]
+      equals Q_delta[F]+R_delta[F], where Q_delta=-(J_0 ell^2/2)sum delta_j^2
+      D_j^2 F-i ell sum delta_j^2 K_j D_j F. For x=q max|delta_j|<=1, |R_delta|<=C
+      P24(phi)x^4(1+r)^(-20), uniformly for sufficiently large T and the original
+      supported test class. The K_j are imaginary and O(min(|a|+|d|,1)). All
+      real-plane derivatives are evaluated at (u,v). The remainder bound makes no
+      Taylor claim on x>1.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-SIGN-AVERAGE-001, ORDINATE-ARGUMENT-BOUND-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:quadratic
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T remove independent reflection-invariant ordinate cutoffs using the integral kernel majorant; fix smoothing, test and the stated support margin before T tends to infinity."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-CANCELLATION-BUDGET-001
+    title: Even and kernel-mixing signed error bounds
+    kind: theorem
+    statement: |
+      For 0<s=1-kappa<1 define P24=sum_{|alpha|<=24}||partial^alpha phi||_1 and
+      M24,T(s)=(Tq)^(-1)sum omega (1+r)^(-20)x^2(1+x)^24 exp(2s x). With the
+      definitions of ORDINATE-SIGN-AVERAGE-001, |E_even|<=C P24 M24,T and
+      |E_kernel-mix|<=C P24 M24,T/q^2, with absolute constants for sufficiently
+      large T. These bounds also hold for restriction to any
+      horizontal-reflection-invariant tuple set with its restricted moment. For
+      fixed m>0, on x<=m the errors are respectively O_m(W P24 q) and O_m(W
+      P24/q), W=||omega||infinity. On x<=epsilon<=1 the normalized summed
+      quadratic remainder is O(W P24 q epsilon^4). These are bounds, not an
+      assertion that E_even or the unrestricted kernel-mixing error vanishes in
+      the original support class.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [ORDINATE-SIGN-AVERAGE-001, ORDINATE-QUADRATIC-001, ORDINATE-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: thm:cancellation-budget
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: false
+    certificate_artifact_hash: null
+    limit_order: "At fixed T remove independent reflection-invariant ordinate cutoffs using the integral kernel majorant; fix smoothing, test and the stated support margin before T tends to infinity."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+
+  - id: ORDINATE-DENSITY-MIX-001
+    title: Vanishing kernel mixing on a smaller fixed support region
+    kind: theorem
+    statement: |
+      Set alpha=331/4000. For fixed 0<s<1/8, phi smooth compactly supported in
+      h<=s, omega nonnegative smooth supported in (1,2) of mass one, q=log T and
+      W=||omega||infinity, M24,T(s)<<_s W[q^(1+8s)(1+log q)^26+q^28
+      T^(s-alpha)+q^29 T^(s-1)]. Consequently |E_kernel-mix|<<_s W
+      P24[q^(-1+8s)(1+log q)^26+q^26 T^(s-alpha)+q^27 T^(s-1)]. In particular for
+      fixed data and 0<s<alpha the kernel-mixing error is o(1), and the
+      ordinate-only target is equivalent to E_even=o(1). The latter estimate is
+      not proved. The endpoint s=alpha is excluded, and this is not a claim of
+      vanishing kernel mixing for the original full support class. Density is
+      applied only to heights [T/2,5T/2]; all remote partners are bounded
+      separately by Schwartz decay and unit counts. Constants can depend on s; no
+      uniform endpoint limit is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=s, 0<s<1/8)"]
+    dependencies: [ORDINATE-CANCELLATION-BUDGET-001, ORDINATE-DENSITY-INPUT-001, ORDINATE-COUNT-001, ORDINATE-REAL-KERNEL-001, ORDINATE-TRANSFER-001, TRIPLE-SMOOTHED-CORRELATION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: thm:density-mix
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "At fixed T remove independent reflection-invariant ordinate cutoffs using the integral kernel majorant; fix smoothing, test and the stated support margin before T tends to infinity."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited explicit-density source inputs, not a new project numerical proof; no local replay or certificate. See ORDINATE-DENSITY-INPUT-001."
+  - id: ORDINATE-CONSTANT-KERNEL-001
+    title: Constant-kernel replacement in the even horizontal error
+    kind: lemma
+    statement: |
+      In the ordinate reduction let H_delta(u,v) be the Fourier integral of
+      phi(xi,eta) exp(2pi i(u xi+v eta)) (prod_j cosh(a_j)-1), with a1=b
+      delta1(xi+eta), a2=b delta2 xi, a3=b delta3 eta in anchor-first order.
+      Define E_constant=c_T J_* sum omega H_delta and E_replacement=c_T sum
+      omega (J_empty-J_*) H_delta, with c_T=16/(3Tq), J_*=3pi/8. Integrate
+      each tuple before summing. At fixed T>=2pi e these sums converge
+      absolutely, E_even=E_constant+E_replacement, and exactly
+      E_constant=(2pi/(Tq))sum omega [F(z21,z31)-F(u,v)]. All ordered
+      occurrences, both signs, multiplicities and diagonals are retained.
+      Uniformly over all real gaps and |delta_j|<=1/2,
+      |J_empty-J_*|<=C min(a^2+d^2+sum_j delta_j^2,1). In project scaling
+      this is <=C(r^2+x^2)/q^2 for sufficiently large T. For 0<s<1 and
+      support h<=s, |E_replacement|<=C P24(phi) M24,T(s)/q^2.
+      Consequently for fixed 0<s<1/8, |E_replacement|<<_s W P24(phi)
+      [q^(-1+8s)(1+log q)^26+q^26 T^(s-alpha)+q^27 T^(s-1)],
+      alpha=331/4000. It is o(1) for fixed test and smoothing when
+      0<s<alpha, excluding the endpoint. On that smaller support the
+      ordinate-only asymptotic is equivalent to E_constant=o(1), which
+      is not proved. No absolute interchange of the unweighted infinite
+      zero sum with the unevaluated Fourier integral is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=s, 0<s<1)"]
+    dependencies: [ORDINATE-SIGN-AVERAGE-001, ORDINATE-REAL-KERNEL-001, ORDINATE-CANCELLATION-BUDGET-001, ORDINATE-DENSITY-MIX-001, ORDINATE-TRANSFER-001, TRIPLE-SMOOTHED-CORRELATION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:constant-kernel
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Integrate the Fourier test for each tuple first; remove independent reflection-invariant ordinate cutoffs by absolute convergence at fixed T. Then fix test, smoothing and s<331/4000 before the height limit."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited explicit-density source inputs, not a new project numerical proof; no local replay or certificate. See ORDINATE-DENSITY-INPUT-001."
