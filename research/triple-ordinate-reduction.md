@@ -71,6 +71,7 @@ argument estimate without proving this stronger positive-moment condition.
 | `QUADRATIC` | Sign average and argument bound | Proved-draft full quadratic term including kernel derivatives; controlled remainder for `x<=1`. |
 | `CANCELLATION-BUDGET` | Sign average, quadratic term, counts | Proved-draft even and kernel-mixing moment bounds. |
 | `DENSITY-MIX` | Cancellation budget, density and counts; baseline and transfer for the concluding equivalence | Proved-draft vanishing kernel mixing on the smaller support `h<=s<331/4000`. |
+| `CONSTANT-KERNEL` | Sign average, real-kernel estimates, cancellation budget, density mixing and transfer | Proved-draft constant-kernel replacement with a vanishing error on `h<=s<331/4000`; kernel-free remaining criterion. |
 | `ARGUMENT-VANISHING` | Argument bound or a future signed method | **Idea: unresolved estimate.** |
 | `TRIPLE` | Weighted theorem, transfer, real-kernel bounds, argument vanishing | **Idea: unresolved ordinate-only theorem.** |
 
@@ -148,6 +149,56 @@ On this smaller fixed support the outstanding estimate is exactly
 For the original larger class, the outstanding estimate remains
 `E_even+E_kernel-mix=o(1)`. Neither statement is proved here.
 
+## Constant-kernel replacement
+
+The new lemma `ORDINATE-CONSTANT-KERNEL-001` removes the averaged kernel from
+the remaining even error on the same smaller support. For each tuple define
+
+`H_delta(u,v)=integral phi(xi,eta) exp(2pi i(u xi+v eta)) (prod_j cosh(a_j)-1) dxi deta`.
+
+Evaluate that integral first, then form the absolutely convergent sums
+
+`E_constant=c J* sum omega H_delta`,
+
+`E_replacement=c sum omega (J_empty-J*) H_delta`,
+
+where `c=16/(3Tq)` and `J*=3pi/8`. Exactly
+`E_even=E_constant+E_replacement`. The uniform kernel estimate is
+
+`|J_empty-J*| <= C min(a^2+d^2+sum delta_j^2,1) <= C(r^2+x^2)/q^2`
+
+for sufficiently large T. The first inequality is uniform in all real gaps
+and the closed horizontal cube, including coincident centers. The second
+uses the project scaling. After Fourier integration, the factor `r^2` is
+absorbed by two powers of real-plane decay, and `x^2` by the moment weight.
+
+| Term | Bound and status |
+| --- | --- |
+| `E_replacement` | `O(P24 M24,T(s)/q^2)` for the original support class; o(1) for fixed `0<s<331/4000`. |
+| `E_constant` | Exactly `(2pi/(Tq)) sum omega [F(z21,z31)-F(u,v)]`; vanishing remains **open**. |
+
+For fixed `0<s<1/8`, the explicit replacement bound is
+
+`|E_replacement| <<_s W P24 [q^(-1+8s)(1+log q)^26 + q^26 T^(s-331/4000) + q^27 T^(s-1)]`.
+
+No endpoint extension to `s=331/4000` is made. On the smaller fixed support,
+the ordinate-only asymptotic is equivalent to **`E_constant=o(1)`**.
+For the original larger class the exact remaining error is
+`E_constant+E_replacement+E_kernel-mix`.
+
+### Convergence convention after removing the kernel
+
+The constant-kernel sum is a sum of evaluated tuple integrals. Their bound
+`C P24 x^2(1+x)^22 exp(2s x) (1+r)^(-22)` and the unit zero counts prove
+absolute convergence at fixed T. The same holds for each reflected test
+difference in the finite cosh expansion. Independent reflection-invariant
+ordinate cutoffs may then be removed separately, giving the exact kernel-free
+zero-sum representation and retaining all multiplicities and diagonals.
+
+The kernel-free formula makes **no assertion of absolute interchange** of the
+infinite zero sum with the unevaluated Fourier integral. All cutoff limits
+precede the height limit; test, smoothing and support margin remain fixed.
+
 ## Source review and limits of coverage
 
 See the [primary-source note](literature-notes/ordinate-reduction-inputs.md).
@@ -172,7 +223,7 @@ pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -output-direct
 pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -output-directory=/tmp/ordinate-reduction-build proofs/triple_ordinate_reduction.tex
 ```
 
-The fourteen exact regression checks cover telescoping signs, normalization,
+The seventeen exact regression checks cover telescoping signs, normalization,
 reflection with multiplicities and index partitions, colliding centers,
 closed horizontal parameter endpoints, support-sector identities, finite
 count majorization and microscopic sensitivity. They do not verify analytic
@@ -184,6 +235,11 @@ eight-reflection expansion, coefficient parity and gap reflection, scalar
 positivity, the failure of independent reflection to preserve index diagonals,
 the full quadratic coefficient via exact series division, and the density
 exponents including the excluded support endpoint.
+The three constant-kernel checks cover the exact splitting and normalization
+at degenerate tuples, the kernel's quadratic expansion at the full origin,
+and the kernel-free reindexing identity with independent ordinate cutoffs and
+repeated occurrences. These remain finite algebra checks, not convergence
+or asymptotic certificates.
 
 Initial reduction validation on 2026-10-03 (Python 3.12.3): all 70 pair tests and 117 triple
 tests passed. The separate six-page reduction PDF compiled with no remaining
@@ -198,9 +254,17 @@ historical audit validators passed after the documented append-only ledger
 review. This remains development-worktree validation; no new clean-checkout
 archive or analytic proof certificate is claimed.
 
+Constant-kernel validation on 2026-10-05: all **70 pair tests and 126 triple
+tests** passed, including 17 ordinate-extension checks. The revised
+**11-page PDF** compiled without warnings or unresolved references. Both
+historical audit validators passed after verification that every prior claim
+block was unchanged. The weighted manuscript, dependency graph and archived
+baseline were untouched. This was a development-worktree run, not a new
+clean-checkout archive or an analytic proof certificate.
+
 ## Remaining research step
 
-Prove `E_even=o(1)` first on a fixed region `h<=s<331/4000`, or find an
+Prove `E_constant=o(1)` first on a fixed region `h<=s<331/4000`, or find an
 alternative ordinate-only argument. This would establish the target on a
 nonempty support region. The original larger class still requires the full
 signed sum to vanish. Density at unscaled horizontal distances is

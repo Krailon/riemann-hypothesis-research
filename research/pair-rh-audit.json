@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "830d25f85b064a239a697baa4911d139786bba71c3311bb7f71921627dbb4044",
+  "ledger_sha256": "af44a611736bd2d26f226b646ecc2ac09a8d1c2f5bb5b87d6890d207cb261935",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2453,5 +2453,14 @@
     ],
     "report": "research/triple-ordinate-reduction.md",
     "changes": "The previous ledger is an unchanged byte prefix; every previous indexed block, including both open ordinate targets, is identical. Only four new cancellation claims are appended. The ordinate-extension manuscript is updated outside the historical audits. No historical verdict, coverage, baseline proof or archive is changed."
+  },
+  "ledger_constant_kernel_extension_review": {
+    "reviewed_on": "2026-10-05",
+    "previous_ledger_sha256": "830d25f85b064a239a697baa4911d139786bba71c3311bb7f71921627dbb4044",
+    "added_claim_ids": [
+      "ORDINATE-CONSTANT-KERNEL-001"
+    ],
+    "report": "research/triple-ordinate-reduction.md",
+    "changes": "The previous ledger is an unchanged byte prefix and every previous indexed block is identical. Only the constant-kernel replacement lemma is appended. Existing open targets retain idea status. The changed ordinate-extension manuscript and checks remain outside both historical audits. No historical verdict, coverage, baseline proof or archive is changed."
   }
 }

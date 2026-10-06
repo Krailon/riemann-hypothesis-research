@@ -276,6 +276,72 @@ class OrdinateReductionChecks(unittest.TestCase):
             self.assertEqual(2-4*(Q(1, 4)-2*s), 1+8*s)
         self.assertEqual(alpha-alpha, 0)  # Endpoint has no power saving.
 
+    def test_constant_kernel_split_and_normalization_on_degenerate_tuples(self):
+        ell, p, b, q, height = Q(3, 2), Q(1), Q(3), Q(5), Q(101)
+        c = Q(16)/(3*height*q)
+        self.assertEqual(ell, b/(2*p))
+        self.assertEqual(c*(3*p/8), 2*p/(height*q))
+        for a, d, delta in [(0, 0, (Q(0),)*3),
+                            (0, 0, (Q(1, 2), Q(-1, 2), Q(0))),
+                            (Q(1, 3), Q(0), (Q(1, 4), Q(0), Q(-1, 2)))]:
+            js, coefficients = sign_coefficients(a, d, delta)
+            u, v = G(ell*a), G(ell*d)
+            differences = {}
+            for e in SIGNS:
+                z1 = u+G(0, -ell*(e[0]*delta[0]+e[1]*delta[1]))
+                z2 = v+G(0, -ell*(e[0]*delta[0]+e[2]*delta[2]))
+                differences[e] = polynomial(z1, z2)-polynomial(u, v)
+            h = sum(differences.values(), G())/8
+            even = c*p*coefficients[()]*h
+            constant = 2*p/(height*q)*h
+            replacement = c*p*(coefficients[()]-Q(3, 8))*h
+            mixing = c*p*sum(((js[e]-coefficients[()])*differences[e]
+                              for e in SIGNS), G())/8
+            self.assertEqual(even, constant+replacement)
+            direct = c*p*sum((js[e]*differences[e] for e in SIGNS), G())/8
+            self.assertEqual(direct, constant+replacement+mixing)
+            if not any(delta):
+                self.assertEqual(direct, G())
+            if a == d == 0 and any(delta):
+                self.assertNotEqual(coefficients[()], G(Q(3, 8)))
+
+    def test_averaged_kernel_origin_has_no_linear_term_and_exact_quadratic(self):
+        # Scale both real gaps and all horizontal parameters by formal t.
+        # J/pi = 3/8 - (5/64) sum d_mn^2 + O(t^4).
+        for a, d, delta in [(Q(0), Q(0), (Q(0),)*3),
+                            (Q(1), Q(-2), (Q(0),)*3),
+                            (Q(0), Q(0), (Q(1, 2), Q(-1, 2), Q(0))),
+                            (Q(1, 3), Q(2, 5), (Q(1, 7), Q(-1, 4), Q(1, 2)))]:
+            average = Jet()
+            for e in SIGNS:
+                z = (Jet(0, G(a, -e[1]*delta[1])),
+                     Jet(0, G(d, -e[2]*delta[2])), Jet(0, G(0, e[0]*delta[0])))
+                ds = (z[0]-z[1], z[0]-z[2], z[1]-z[2])
+                squares = [v*v for v in ds]
+                average += ((24+sum(squares, Jet()))/prod(4+v for v in squares))/8
+            self.assertEqual(average.c[0], G(Q(3, 8)))
+            self.assertEqual(average.c[1], G())
+            self.assertEqual(average.c[2], G(Q(5, 32)*
+                             (sum(v*v for v in delta)-a*a+a*d-d*d)))
+
+    def test_kernel_free_reindexing_with_independent_cutoffs_and_multiplicity(self):
+        zeros, ell = fixture(), Q(3, 2)
+        for anchor_cut, second_cut, third_cut in [(3, 3, 5), (5, 5, 3)]:
+            slot1 = [z for z in zeros if 0 < z[1] <= anchor_cut]
+            slot2 = [z for z in zeros if abs(z[1]) <= second_cut]
+            slot3 = [z for z in zeros if abs(z[1]) <= third_cut]
+            direct, averaged = G(), G()
+            for (e1, g1), (e2, g2), (e3, g3) in product(slot1, slot2, slot3):
+                u, v = G(ell*(g2-g1)), G(ell*(g3-g1))
+                w = Q(1) if g1 == 3 else Q(3, 2)
+                direct += w*(polynomial(u+G(0, -ell*(e1+e2)),
+                                        v+G(0, -ell*(e1+e3)))-polynomial(u, v))
+                for s1, s2, s3 in SIGNS:
+                    z1, z2 = u+G(0, -ell*(s1*e1+s2*e2)), v+G(0, -ell*(s1*e1+s3*e3))
+                    averaged += w*(polynomial(z1, z2)-polynomial(u, v))/8
+            self.assertEqual(direct, averaged)
+            self.assertNotEqual(direct, G())  # Symmetry does not prove vanishing.
+
 
 if __name__ == '__main__':
     unittest.main()

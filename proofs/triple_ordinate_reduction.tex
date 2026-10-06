@@ -11,7 +11,7 @@
 \newcommand{\Eg}{E_{\mathrm{gaps}}}
 \title{An ordinate-only reduction for the smoothed triple statistic}
 \author{Work Package B extension: proof draft}
-\date{October 3, 2026}
+\date{October 5, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -20,7 +20,9 @@ theorem, and prove that its two real-test kernel errors vanish.
 The remaining complex-argument error is isolated, with a sufficient
 positive-moment bound. Eight independent reflections isolate an even
 hyperbolic term; the remaining kernel-mixing error vanishes on a smaller
-fixed support region. The even term is still open: this draft does not prove
+fixed support region. On that region its even kernel can also be replaced
+by the constant $3\pi/8$ with a vanishing error. The resulting signed term
+is still open: this draft does not prove
 an ordinate-only correlation asymptotic.
 \end{abstract}
 
@@ -606,18 +608,128 @@ terms of \eqref{eq:density-mix} vanish. Constants may depend on $s$;
 no uniform limit at $s=1/8$ or $s=\alpha$ is asserted.
 \end{proof}
 
+\section{Constant-kernel replacement in the even error}
+Task: proof and bookkeeping. Assumptions: \texttt{UNCONDITIONAL} and
+\texttt{SUPPORT}\,$(h\leq s,\ 0<s<1)$ for the general bound; the
+vanishing conclusion requires the smaller fixed range stated below.
+Define the tuple integral
+\begin{equation}\label{eq:constant-tuple}
+ \mathcal H_\delta(u,v)=\int_{\R^2}\phi(\xi,\eta)
+ e^{2\pi i(u\xi+v\eta)}
+ \left(\prod_{j=1}^3\cosh a_j-1\right)\dd\xi\dd\eta,
+\end{equation}
+with $a_j$ as in the eight-reflection lemma. In the following definitions
+the Fourier integral is evaluated for each tuple before summation:
+\begin{align}
+ E_{\rm constant}&=c_TJ_*\sum_{I^3}w\mathcal H_\delta(u,v),\notag\\
+ E_{\rm replacement}&=c_T\sum_{I^3}w(J_\varnothing-J_*)
+                                      \mathcal H_\delta(u,v).
+                                      \label{eq:constant-errors}
+\end{align}
+
+\begin{lemma}[\texttt{ORDINATE-CONSTANT-KERNEL-001}]
+\label{lem:constant-kernel}
+For all real gaps and $|\delta_j|\leq1/2$, with an absolute constant,
+\begin{equation}\label{eq:constant-kernel-bound}
+ |J_\varnothing-J_*|
+ \leq C\min\left(a^2+d^2+\sum_{j=1}^3\delta_j^2,1\right)
+ \leq \frac{C(r^2+x^2)}{q^2}
+\end{equation}
+where the last inequality holds for sufficiently large $T$ in the project
+scaling. At fixed $T\geq2\pi e$, both sums in \eqref{eq:constant-errors}
+converge absolutely, and exactly
+\begin{align}
+ E_{\rm even}&=E_{\rm constant}+E_{\rm replacement},
+                                                   \label{eq:constant-split}\\
+ E_{\rm constant}&=\frac{2\pi}{Tq}\sum_{I^3}w
+                   \{F(z_{21},z_{31})-F(u,v)\}.\label{eq:constant-zero-sum}
+\end{align}
+For sufficiently large $T$ and $0<s<1$,
+\begin{equation}\label{eq:constant-moment-bound}
+ |E_{\rm replacement}|\leq \frac{CP_{24}(\phi)}{q^2}M_{24,T}(s).
+\end{equation}
+In particular, writing $\alpha=331/4000$, for each fixed $0<s<1/8$,
+\begin{equation}\label{eq:constant-density-bound}
+ |E_{\rm replacement}|\ll_s WP_{24}(\phi)
+ \left\{q^{-1+8s}(1+\log q)^{26}
+       +q^{26}T^{s-\alpha}+q^{27}T^{s-1}\right\}.
+\end{equation}
+It is $o(1)$ for fixed test and smoothing on $h\leq s<\alpha$,
+with $s>0$. The endpoint $s=\alpha$ is excluded.
+\end{lemma}
+\begin{proof}
+Independent sign averaging makes $J_\varnothing$ even in each horizontal
+coordinate. Uniform second horizontal derivatives, established in
+Lemma~\ref{lem:sign-average}, and Taylor's integral remainder along the
+segment from $0$ to $\delta$ give
+$|J_\varnothing-J_0|\leq C\sum_j\delta_j^2$, uniformly in the real gaps.
+The real-gap estimate in Theorem~\ref{thm:real-kernel} is
+$|J_0-J_*|\leq C\min(a^2+d^2,1)$.
+Combine these bounds with global boundedness of the kernels to obtain
+the first inequality in \eqref{eq:constant-kernel-bound}.
+For the second use $|a|,|d|\leq r/\ell$, $|\delta_j|\leq x/q$,
+and $\ell\asymp q$ for sufficiently large $T$. Coincident centers and
+the closed horizontal endpoints obey the same bounds.
+
+The integration-by-parts estimate from the proof of
+Theorem~\ref{thm:cancellation-budget}, before discarding two powers of
+real-plane decay, is
+\begin{equation}\label{eq:constant-tuple-decay}
+ |\mathcal H_\delta(u,v)|\leq
+ CP_{24}(\phi)x^2(1+x)^{22}e^{2sx}(1+r)^{-22}.
+\end{equation}
+This estimate is valid at fixed $T\geq2\pi e$ as well: it uses only
+$b/q<1$, the compact support and derivatives of the Fourier amplitude.
+At fixed $T$, $x\leq q/2$, and unit zero counts show that
+$\sum w(1+r)^{-22}<\infty$. Boundedness of $J_\varnothing$ proves
+absolute convergence of both integrated sums. Their summand identity
+proves \eqref{eq:constant-split}.
+
+For the estimate, multiply \eqref{eq:constant-tuple-decay} by the second
+bound in \eqref{eq:constant-kernel-bound} and use
+\[
+ (r^2+x^2)(1+x)^{22}(1+r)^{-22}
+ \leq (1+x)^{24}(1+r)^{-20}.
+\]
+The normalization $c_T=16/(3Tq)$ now gives
+\eqref{eq:constant-moment-bound}. Apply
+Theorem~\ref{thm:density-mix} to obtain \eqref{eq:constant-density-bound}
+and its strict-support vanishing conclusion.
+
+Finally the finite expansion of the product of coshes identifies
+$\mathcal H_\delta$ exactly with
+\[
+ \frac18\sum_{\varepsilon\in\{\pm1\}^3}
+ \{F((u,v)-iy(\varepsilon\delta))-F(u,v)\}.
+\]
+Each of these eight test differences is absolutely summable at fixed $T$
+by compact-Fourier integration by parts in the bounded imaginary strip.
+Reindex each slot of the full ordered sum by horizontal reflection,
+first with independent cutoffs $|\gamma_{i_j}|\leq U_j$ and then by
+absolute convergence. Since $c_TJ_*=2\pi/(Tq)$, this proves
+\eqref{eq:constant-zero-sum}. The reindexing retains all occurrences and
+all diagonal patterns collectively; it does not restrict them separately.
+No absolute interchange of the unweighted infinite zero sum with the
+unevaluated Fourier integral is asserted. Remove the cutoffs at fixed
+$T$, and only then take the height limit with all test data fixed.
+\end{proof}
+
 \paragraph{Remaining cancellation, stated precisely.}
 For the original support class $h\leq1-\kappa$, the open estimate is
-$E_{\rm even}+E_{\rm kernel\text{-}mix}=o(1)$.
-For the additional fixed support restriction $h\leq s<331/4000$, only
+$E_{\rm constant}+E_{\rm replacement}+E_{\rm kernel\text{-}mix}=o(1)$.
+For each fixed $0<s<331/4000$, the transfer identity, the two real-test
+kernel estimates and the two vanishing errors just proved give
 \[
- c_T\sum w\int_{\R^2}\phi(\xi,\eta)e^{2\pi i(u\xi+v\eta)}
- J_\varnothing\{\cosh a_1\cosh a_2\cosh a_3-1\}\dd\xi\dd\eta=o(1)
+ O_T[F]=S_3[F]+o(1)\quad\Longleftrightarrow\quad
+ E_{\rm constant}=\frac{2\pi}{Tq}\sum w
+       \{F(z_{21},z_{31})-F(u,v)\}=o(1).
 \]
-remains. The bound \eqref{eq:density-moment} does not make this expression
+This equivalence is a consequence of the transfer identity and
+Lemma~\ref{lem:constant-kernel}; the vanishing assertion on the right
+is not proved. The bound \eqref{eq:density-moment} does not make it
 vanish: even its first upper-bound term grows with $q$. Positivity of
-$J_\varnothing$ and of the cosh difference does not imply positivity
-of this oscillatory, test-paired expression. Reflection cancels neither
+the constant kernel and of the cosh difference does not imply positivity
+of the oscillatory, test-paired expression. Reflection cancels neither
 its quadratic part nor its full even part. A new signed weighted
 correlation estimate, or stronger microscopic horizontal information,
 is needed for this route. This is not an impossibility theorem.

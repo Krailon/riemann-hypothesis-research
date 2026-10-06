@@ -2392,3 +2392,46 @@ claims:
       verification_script: scripts/check_triple_ordinate_reduction.py
       baseline_audit_coverage: "Outside both historical pair and triple RH audits."
       computation_provenance: "Inherited explicit-density source inputs, not a new project numerical proof; no local replay or certificate. See ORDINATE-DENSITY-INPUT-001."
+  - id: ORDINATE-CONSTANT-KERNEL-001
+    title: Constant-kernel replacement in the even horizontal error
+    kind: lemma
+    statement: |
+      In the ordinate reduction let H_delta(u,v) be the Fourier integral of
+      phi(xi,eta) exp(2pi i(u xi+v eta)) (prod_j cosh(a_j)-1), with a1=b
+      delta1(xi+eta), a2=b delta2 xi, a3=b delta3 eta in anchor-first order.
+      Define E_constant=c_T J_* sum omega H_delta and E_replacement=c_T sum
+      omega (J_empty-J_*) H_delta, with c_T=16/(3Tq), J_*=3pi/8. Integrate
+      each tuple before summing. At fixed T>=2pi e these sums converge
+      absolutely, E_even=E_constant+E_replacement, and exactly
+      E_constant=(2pi/(Tq))sum omega [F(z21,z31)-F(u,v)]. All ordered
+      occurrences, both signs, multiplicities and diagonals are retained.
+      Uniformly over all real gaps and |delta_j|<=1/2,
+      |J_empty-J_*|<=C min(a^2+d^2+sum_j delta_j^2,1). In project scaling
+      this is <=C(r^2+x^2)/q^2 for sufficiently large T. For 0<s<1 and
+      support h<=s, |E_replacement|<=C P24(phi) M24,T(s)/q^2.
+      Consequently for fixed 0<s<1/8, |E_replacement|<<_s W P24(phi)
+      [q^(-1+8s)(1+log q)^26+q^26 T^(s-alpha)+q^27 T^(s-1)],
+      alpha=331/4000. It is o(1) for fixed test and smoothing when
+      0<s<alpha, excluding the endpoint. On that smaller support the
+      ordinate-only asymptotic is equivalent to E_constant=o(1), which
+      is not proved. No absolute interchange of the unweighted infinite
+      zero sum with the unevaluated Fourier integral is asserted.
+    status: proved-draft
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=s, 0<s<1)"]
+    dependencies: [ORDINATE-SIGN-AVERAGE-001, ORDINATE-REAL-KERNEL-001, ORDINATE-CANCELLATION-BUDGET-001, ORDINATE-DENSITY-MIX-001, ORDINATE-TRANSFER-001, TRIPLE-SMOOTHED-CORRELATION-001]
+    dependency_graph_complete: false
+    source:
+      file: proofs/triple_ordinate_reduction.tex
+      label: lem:constant-kernel
+      bookkeeping: research/triple-ordinate-reduction.md
+    constants_effective: null
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: null
+    limit_order: "Integrate the Fourier test for each tuple first; remove independent reflection-invariant ordinate cutoffs by absolute convergence at fixed T. Then fix test, smoothing and s<331/4000 before the height limit."
+    project_audit:
+      task_type: proof_and_bookkeeping
+      independent_verification: pending
+      verification_script: scripts/check_triple_ordinate_reduction.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      computation_provenance: "Inherited explicit-density source inputs, not a new project numerical proof; no local replay or certificate. See ORDINATE-DENSITY-INPUT-001."
