@@ -1,0 +1,32 @@
+{
+  "challenge_module": "VerificationChallenges.HorizontalSquare",
+  "solution_module": "HigherCorrelations.HorizontalSquareFoundation",
+  "theorem_names": [
+    "HigherCorrelations.cosh_quadratic_lower",
+    "HigherCorrelations.cosh_triple_quadratic_lower",
+    "HigherCorrelations.horizontal_cosh_square_lower",
+    "HigherCorrelations.horizontal_frequency_lower",
+    "HigherCorrelations.horizontal_frequency_nonneg",
+    "HigherCorrelations.horizontal_frequency_zero_iff",
+    "HigherCorrelations.horizontal_square_mass_nonneg",
+    "HigherCorrelations.horizontal_cube_square_sum",
+    "HigherCorrelations.same_ordinate_horizontal_square_lower",
+    "HigherCorrelations.same_ordinate_cosh_nonneg",
+    "HigherCorrelations.weighted_ordinate_fibers_lower",
+    "HigherCorrelations.square_example_mixed_signs",
+    "HigherCorrelations.square_example_empty",
+    "HigherCorrelations.square_example_singleton",
+    "HigherCorrelations.square_example_zero_scale",
+    "HigherCorrelations.square_example_frequency_origin",
+    "HigherCorrelations.square_example_frequency_axes",
+    "HigherCorrelations.square_example_repeated_occurrences",
+    "HigherCorrelations.square_example_fiber_multiplicities"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -1,5 +1,9 @@
 # Lean milestone 2: finite correlation foundations
 
+The subsequent [horizontal-square milestone](lean-horizontal-square.md)
+extends the runner with a separate inequality challenge. The archived run
+and declaration counts below describe milestone 2.
+
 Task: formal verification. Assumptions: `UNCONDITIONAL`; explicit point
 configurations in the example suite are `SYNTHETIC_MODEL`, not zeta data.
 

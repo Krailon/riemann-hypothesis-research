@@ -1,5 +1,6 @@
 import HigherCorrelations.HorizontalStrip
 import HigherCorrelations.FiniteFoundation
+import HigherCorrelations.HorizontalSquareFoundation
 
 #print axioms OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re
 #print axioms HigherCorrelations.zeta_ne_zero_right
@@ -42,3 +43,22 @@ import HigherCorrelations.FiniteFoundation
 #print axioms HigherCorrelations.example_distinct_complex_same_ordinate
 #print axioms HigherCorrelations.example_fixed_point
 #print axioms HigherCorrelations.example_exchanged_pair
+#print axioms HigherCorrelations.cosh_quadratic_lower
+#print axioms HigherCorrelations.cosh_triple_quadratic_lower
+#print axioms HigherCorrelations.horizontal_cosh_square_lower
+#print axioms HigherCorrelations.horizontal_frequency_lower
+#print axioms HigherCorrelations.horizontal_frequency_nonneg
+#print axioms HigherCorrelations.horizontal_frequency_zero_iff
+#print axioms HigherCorrelations.horizontal_square_mass_nonneg
+#print axioms HigherCorrelations.horizontal_cube_square_sum
+#print axioms HigherCorrelations.same_ordinate_horizontal_square_lower
+#print axioms HigherCorrelations.same_ordinate_cosh_nonneg
+#print axioms HigherCorrelations.weighted_ordinate_fibers_lower
+#print axioms HigherCorrelations.square_example_mixed_signs
+#print axioms HigherCorrelations.square_example_empty
+#print axioms HigherCorrelations.square_example_singleton
+#print axioms HigherCorrelations.square_example_zero_scale
+#print axioms HigherCorrelations.square_example_frequency_origin
+#print axioms HigherCorrelations.square_example_frequency_axes
+#print axioms HigherCorrelations.square_example_repeated_occurrences
+#print axioms HigherCorrelations.square_example_fiber_multiplicities

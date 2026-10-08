@@ -2680,3 +2680,119 @@ claims:
       verification_script: scripts/reproduce_lean.py
       verification_scope: "Lean kernel proofs, including ordinary decide and exact norm_num; no native_decide or floating point."
       baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: HORIZONTAL-COSH-LOWER-001
+    title: Formalized scalar and triple horizontal-square inequality
+    kind: theorem
+    statement: |
+      For every real x, 1+x^2/2<=cosh(x). For all real a0,a1,a2,
+      (a0^2+a1^2+a2^2)/2<=cosh(a0)cosh(a1)cosh(a2)-1. Thus, for arbitrary
+      real b,xi,eta,d0,d1,d2, the cosh excess with arguments b*d0*(xi+eta),
+      b*d1*xi,b*d2*eta is at least
+      (b^2/2)[d0^2*(xi+eta)^2+d1^2*xi^2+d2^2*eta^2]. No smallness, sign,
+      reflection, support, or zero-location hypothesis is imposed.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/HorizontalSquare.lean
+      label: HigherCorrelations.cosh_triple_quadratic_lower
+      companion_declarations: "cosh_quadratic_lower, horizontal_cosh_square_lower"
+      bookkeeping: research/lean-horizontal-square.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: a0d876dfc65c219ae378b452dc4e5a6302895c48f4d623f868e3f591cd7a1538
+    limit_order: "The scalar cosh series is justified by pinned mathlib Real.hasSum_cosh. Only a finite two-term lower bound is retained. No infinite zero sums or height limits."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No floating-point or native_decide certificate, no quasi-RH import. External mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are not enumerated individually in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: HORIZONTAL-FREQUENCY-001
+    title: Formalized horizontal frequency quadratic form
+    kind: theorem
+    statement: |
+      For all real xi,eta, P(xi,eta)=xi^2+xi*eta+eta^2 satisfies
+      P(xi,eta)>=(xi^2+eta^2)/2>=0, and P(xi,eta)=0 if and only if
+      xi=eta=0. Both coordinate axes and xi+eta=0 are included.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/HorizontalSquare.lean
+      label: HigherCorrelations.horizontal_frequency_lower
+      companion_declarations: "horizontal_frequency_nonneg, horizontal_frequency_zero_iff"
+      bookkeeping: research/lean-horizontal-square.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: a0d876dfc65c219ae378b452dc4e5a6302895c48f4d623f868e3f591cd7a1538
+    limit_order: "Finite real algebra only."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No floating-point or native_decide certificate, no quasi-RH import. External mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are not enumerated individually in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: SAME-ORDINATE-SQUARE-001
+    title: Formalized finite same-ordinate horizontal-square lower bound
+    kind: theorem
+    statement: |
+      For finite occurrence set D and real delta:I->R put m=card(D),
+      Q=sum_D delta(i)^2, and P=xi^2+xi*eta+eta^2. Q>=0. For all real
+      b,xi,eta, the sum over all (i,j,k) in D^3 of
+      delta(i)^2*(xi+eta)^2+delta(j)^2*xi^2+delta(k)^2*eta^2 equals
+      2*m^2*Q*P. Hence the sum B_D of
+      cosh(b*delta(i)*(xi+eta))*cosh(b*delta(j)*xi)*cosh(b*delta(k)*eta)-1
+      over D^3 satisfies B_D>=b^2*m^2*Q*P>=0. For a label map gamma:I->A
+      with decidable equality and D_g={i in D:gamma(i)=g}, if W(g)>=0
+      on gamma(D), sum_g W(g)B_{D_g} is at least
+      b^2*P*sum_g W(g)*card(D_g)^2*sum_{i in D_g}delta(i)^2.
+      Empty fibers, repeated values, and all index coincidences are retained.
+      This is a finite real cosh sum, not the full oscillatory zero error.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [HORIZONTAL-COSH-LOWER-001, HORIZONTAL-FREQUENCY-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/HorizontalSquare.lean
+      label: HigherCorrelations.same_ordinate_horizontal_square_lower
+      companion_declarations: "horizontal_square_mass_nonneg, horizontal_cube_square_sum, same_ordinate_cosh_nonneg, weighted_ordinate_fibers_lower"
+      bookkeeping: research/lean-horizontal-square.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: a0d876dfc65c219ae378b452dc4e5a6302895c48f4d623f868e3f591cd7a1538
+    limit_order: "Finite sets fixed throughout; no integration, infinite zero cutoff, or height asymptotic."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No floating-point or native_decide certificate, no quasi-RH import. External mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are not enumerated individually in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: HORIZONTAL-SQUARE-EXAMPLES-001
+    title: Formalized exact horizontal-square boundary and multiplicity examples
+    kind: verification
+    statement: |
+      Exact examples verify the triple bound at (-1,2,0) with lower bound
+      5/2; zero excess for an empty fiber, zero scale, or frequency origin;
+      the singleton lower bound 3*b^2*delta(i)^2 at (xi,eta)=(1,1);
+      P(xi,0)=xi^2, P(0,eta)=eta^2, P(xi,-xi)=xi^2; the coefficient
+      m^2*Q=27 for three occurrence displacements (1,1,-1); and fiber
+      cardinalities 2 and 1 for labels (0,0,1). These explicit displacement
+      fixtures are not asserted to be actual zeta zeros.
+    status: formalized
+    assumptions: [UNCONDITIONAL, SYNTHETIC_MODEL]
+    dependencies: [HORIZONTAL-COSH-LOWER-001, HORIZONTAL-FREQUENCY-001, SAME-ORDINATE-SQUARE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/HorizontalSquareExamples.lean
+      label: HigherCorrelations.square_example_mixed_signs
+      companion_declarations: "square_example_empty, square_example_singleton, square_example_zero_scale, square_example_frequency_origin, square_example_frequency_axes, square_example_repeated_occurrences, square_example_fiber_multiplicities"
+      bookkeeping: research/lean-horizontal-square.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: a0d876dfc65c219ae378b452dc4e5a6302895c48f4d623f868e3f591cd7a1538
+    limit_order: "Finite exact checks and symbolic real parameters only."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No floating-point or native_decide certificate, no quasi-RH import. External mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are not enumerated individually in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."

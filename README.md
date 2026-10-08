@@ -28,6 +28,16 @@ in the new challenge, retained the earlier proof checks, and passed all
 hypotheses and archived evidence. Infinite-sum convergence and the remaining
 ordinate-only `o(1)` estimate are separate proof obligations.
 
+## Horizontal-square inequality formalized
+
+The third Lean milestone proves the cosh quadratic lower bound and its
+finite same-ordinate consequence, preserving occurrence multiplicities
+and allowing nonnegative ordinate weights. The fresh run checked **19 new
+declarations**, **60 axiom reports** overall, and all **196 regression
+tests**. See the [horizontal-square record](research/lean-horizontal-square.md)
+for the exact inequality, proof scope, and archived evidence. The full
+ordinate-only `o(1)` estimate remains open.
+
 ## Reproduce the pair baseline
 
 Task: verification and exposition. Assumptions: `UNCONDITIONAL` for the exact

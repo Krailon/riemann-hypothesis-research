@@ -1,0 +1,2 @@
+import HigherCorrelations.HorizontalSquare
+import HigherCorrelations.HorizontalSquareExamples

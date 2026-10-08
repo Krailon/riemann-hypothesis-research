@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.HorizontalSquare",
+  "solution_module": "VerificationChallenges.HorizontalSquareUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.cosh_quadratic_lower"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

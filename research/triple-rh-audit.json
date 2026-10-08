@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "c11b53aa5a8a030d867ad1263a4cfaf19462d8e82edae45f49518a8e6f52e5f8",
+    "research/theorem-ledger.yaml": "baa3c4ad42a9e030efb6ba66bd81597f735a3fa13e4ff5ffdb52e734fad7733d",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "e4582f69700287aa513bfc3ed4cb3159d79923a71a143900239adcfe3d58b215"
+    "research/pair-rh-audit.json": "5ae3405f8abcde8f003d433a2798600c4302fa7a4f8385c0ce0cced746a1b6e9"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4359,5 +4359,17 @@
     ],
     "report": "research/lean-finite-foundation.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Six formalized finite-foundation and pointwise-reflection entries are appended. Historical pair/triple verdicts, claim snapshots, proof files and coverage are unchanged. Whole-ledger hash maintenance does not extend either historical audit. The old Lean reflected_zero declaration is relocated with its name and statement preserved and rechecked by the original Comparator challenge."
+  },
+  "ledger_horizontal_square_review": {
+    "reviewed_on": "2026-10-08",
+    "previous_ledger_sha256": "c11b53aa5a8a030d867ad1263a4cfaf19462d8e82edae45f49518a8e6f52e5f8",
+    "added_claim_ids": [
+      "HORIZONTAL-COSH-LOWER-001",
+      "HORIZONTAL-FREQUENCY-001",
+      "HORIZONTAL-SQUARE-EXAMPLES-001",
+      "SAME-ORDINATE-SQUARE-001"
+    ],
+    "report": "research/lean-horizontal-square.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Four formalized horizontal-square entries are appended. Historical pair/triple verdicts, claim snapshots, proof files, coverage and archives are unchanged. Whole-ledger hash maintenance does not extend either historical audit to the new finite inequalities."
   }
 }

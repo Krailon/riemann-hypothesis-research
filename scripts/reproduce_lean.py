@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce the quasi-RH import and finite foundation; archive successes or failures.
+"""Reproduce the Lean milestones; archive actual successes or failures.
 
 This command can download dependencies. No theorem status is edited by the runner.
 """
@@ -86,7 +86,7 @@ def main():
                   status='running', pins=PINS, commands=[], external_kernel=False,
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   assumptions=['UNCONDITIONAL'],
-                  verification_scope='Zeta import, strip corollaries, and finite foundation declarations')
+                  verification_scope='Zeta import, strip corollaries, finite foundation, and horizontal-square bounds')
 
     def command(name, argv, *, expected_failure=False):
         log = run_dir / (name + '.log')
@@ -126,6 +126,11 @@ def main():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
+        command('horizontal-square-build', ['lake', 'build', 'HigherCorrelations.HorizontalSquareFoundation'])
+        command('horizontal-square-comparator', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/horizontal-square.json'])
+        command('horizontal-square-unfinished-rejected', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/horizontal-square-unfinished.json'], expected_failure=True)
         command('finite-build', ['lake', 'build', 'HigherCorrelations.FiniteFoundation'])
         command('finite-comparator', ['lake', 'env', comparator,
                 'lean/VerificationChallenges/finite-foundation.json'])
@@ -144,6 +149,7 @@ def main():
         allowed = {'propext', 'Quot.sound', 'Classical.choice'}
         expected = set(json.loads((ROOT / 'lean/VerificationChallenges/horizontal-strip.json').read_text())['theorem_names'])
         expected.update(json.loads((ROOT / 'lean/VerificationChallenges/finite-foundation.json').read_text())['theorem_names'])
+        expected.update(json.loads((ROOT / 'lean/VerificationChallenges/horizontal-square.json').read_text())['theorem_names'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):
