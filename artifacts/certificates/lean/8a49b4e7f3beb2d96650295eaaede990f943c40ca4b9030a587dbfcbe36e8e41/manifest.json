@@ -1,0 +1,577 @@
+{
+  "assumptions": [
+    "UNCONDITIONAL"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "lean-version.log",
+      "name": "lean-version"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "python-version.log",
+      "name": "python-version"
+    },
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "git-version.log",
+      "name": "git-version"
+    },
+    {
+      "argv": [
+        "go",
+        "version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "go-version.log",
+      "name": "go-version"
+    },
+    {
+      "argv": [
+        "landrun",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "landrun-version.log",
+      "name": "landrun-version"
+    },
+    {
+      "argv": [
+        "lake",
+        "update",
+        "OAI"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "resolve.log",
+      "name": "resolve"
+    },
+    {
+      "argv": [
+        "lake",
+        "exe",
+        "cache",
+        "get"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "mathlib-cache.log",
+      "name": "mathlib-cache"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.FiniteFoundation"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "finite-build.log",
+      "name": "finite-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/finite-foundation.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "finite-comparator.log",
+      "name": "finite-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/finite-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "finite-unfinished-rejected.log",
+      "name": "finite-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/ComparatorChallenges/QuasiRiemannHypothesis.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "upstream-comparator.log",
+      "name": "upstream-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "project-build.log",
+      "name": "project-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/horizontal-strip.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "project-comparator.log",
+      "name": "project-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "unfinished-rejected.log",
+      "name": "unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "lean/HigherCorrelations/AxiomReport.lean"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "axioms.log",
+      "name": "axioms"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "check_pair_*.py"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-regressions.log",
+      "name": "pair-regressions"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "check_triple_*.py"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "triple-regressions.log",
+      "name": "triple-regressions"
+    }
+  ],
+  "dependency_checkouts": {
+    "AINTLIB": {
+      "rev": "160e446617a2168c34c95bbe7a76c4105b392434",
+      "tracked_diff": "dependency-AINTLIB.diff",
+      "tracked_diff_sha256": "b02b3c2b367ba7b3b52e432a80ad991100c5473db14d24dc9c06244d7080f2e3"
+    },
+    "AbsorptionCutoff": {
+      "rev": "41c45c6d72e979419e46224bb7b4be5cee31f2b5",
+      "tracked_diff": "dependency-AbsorptionCutoff.diff",
+      "tracked_diff_sha256": "8b35104dc12f807f594f7a61f7a183d967edcd0e601c7172e0e851e4c3adb3ba"
+    },
+    "BibtexQuery": {
+      "rev": "4d8616fd4870d0a3453d845770833eac7951fe1c",
+      "tracked_diff": "dependency-BibtexQuery.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ClassFieldTheory": {
+      "rev": "2eb22d6485af45f29c5219de6c49f196a61c4f49",
+      "tracked_diff": "dependency-ClassFieldTheory.diff",
+      "tracked_diff_sha256": "293b2c1578e9d0962d75be9fde02d6bd3865db924baf34f4e44dd692f4e575b7"
+    },
+    "Cli": {
+      "rev": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "tracked_diff": "dependency-Cli.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "LeanArchitect": {
+      "rev": "468e8f58fb4ad6e6ad672a08da6d0d0531e95a97",
+      "tracked_diff": "dependency-LeanArchitect.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "LeanSearchClient": {
+      "rev": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "tracked_diff": "dependency-LeanSearchClient.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "MD4Lean": {
+      "rev": "31907cc18f48a95384f99cee5582c00fb39e0f67",
+      "tracked_diff": "dependency-MD4Lean.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "PrimeCert": {
+      "rev": "0803c2f6bd289c09704c7d352bb8fcf770cbb9b2",
+      "tracked_diff": "dependency-PrimeCert.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "PrimeNumberTheoremAnd": {
+      "rev": "c39a751132c88b6e8080b74c74023fd95b3d8be0",
+      "tracked_diff": "dependency-PrimeNumberTheoremAnd.diff",
+      "tracked_diff_sha256": "45c98ef9fb852ee0201e3922c27216e47b5484fef7277300754db63e909c6bda"
+    },
+    "Qq": {
+      "rev": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "tracked_diff": "dependency-Qq.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "SphereEversion": {
+      "rev": "9c53f91e2a281199163ecea04dc4976cb79e2076",
+      "tracked_diff": "dependency-SphereEversion.diff",
+      "tracked_diff_sha256": "753b865c32d8d44bc61f61f6e0cd36402ab28911dd7308930a8effb34ed3d63f"
+    },
+    "StrongPNT": {
+      "rev": "2f5835c322314f55f1026ec2f139d704b7c45c69",
+      "tracked_diff": "dependency-StrongPNT.diff",
+      "tracked_diff_sha256": "e85a8e524100c6b7c836f2fdb1643cdce8dc5714c8e4d3ff25513fc46f71644a"
+    },
+    "TauCeti": {
+      "rev": "3bed7e37f3c504a99e8c07e9f309540812a7aa90",
+      "tracked_diff": "dependency-TauCeti.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "UnicodeBasic": {
+      "rev": "0e569d08b6443ce0908d356884c765397253e2f0",
+      "tracked_diff": "dependency-UnicodeBasic.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Zeta3Irrational": {
+      "rev": "e8785315a01c8fbcddaa0fc03b3c8b29a61bc1f1",
+      "tracked_diff": "dependency-Zeta3Irrational.diff",
+      "tracked_diff_sha256": "5da849f952320ccb5b02f5e174caab3c7e1efcb6a45e49f29e7dcc7941409d2a"
+    },
+    "aesop": {
+      "rev": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "tracked_diff": "dependency-aesop.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "batteries": {
+      "rev": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "tracked_diff": "dependency-batteries.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "belyi": {
+      "rev": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "tracked_diff": "dependency-belyi.diff",
+      "tracked_diff_sha256": "ce3a1178d2933469279b4ee3654e8d5201b13269dae0ab97ded57996a85f217e"
+    },
+    "carleson": {
+      "rev": "306ae5b29300771aece1aa39f0a939183cc59486",
+      "tracked_diff": "dependency-carleson.diff",
+      "tracked_diff_sha256": "8aa67adaeb6ef56967aa78c47a6c743f03ac72c125f503219a72dee5be23168c"
+    },
+    "checkdecls": {
+      "rev": "3d425859e73fcfbef85b9638c2a91708ef4a22d4",
+      "tracked_diff": "dependency-checkdecls.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "doc-gen4": {
+      "rev": "953c8992d174b4e56955e01e101d46668c68f2bb",
+      "tracked_diff": "dependency-doc-gen4.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "elliptic-curves": {
+      "rev": "bebec3fc9f2602e81c83e5236789572a541c85fb",
+      "tracked_diff": "dependency-elliptic-curves.diff",
+      "tracked_diff_sha256": "dc491936659ca9abfe53b18348287069c06272a4b3c8cef393e5dc7b276122ff"
+    },
+    "fixed-point-theorems": {
+      "rev": "770940ddf9878cf61952ed53d910b92bca841838",
+      "tracked_diff": "dependency-fixed-point-theorems.diff",
+      "tracked_diff_sha256": "d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5"
+    },
+    "formal-schemes": {
+      "rev": "51aa935079537bf4dc580751a6e70727fb23ca93",
+      "tracked_diff": "dependency-formal-schemes.diff",
+      "tracked_diff_sha256": "2b1798c53feb567b9c36a1d88ccf8ed67b3bbafd93cec667135f59aa6f85c76b"
+    },
+    "genl": {
+      "rev": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+      "tracked_diff": "dependency-genl.diff",
+      "tracked_diff_sha256": "2c5826a9c0b0d32b077fea86880c6fb4f17cf5c10e06f9649f95f77a88574c93"
+    },
+    "gromov": {
+      "rev": "8db79f13cf211b570e3116301d91379fbc01cf3e",
+      "tracked_diff": "dependency-gromov.diff",
+      "tracked_diff_sha256": "6e267d1ae3a4d93e860aadd388612a8eedef9c268bae3fc91450ff9cac131816"
+    },
+    "heights": {
+      "rev": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "tracked_diff": "dependency-heights.diff",
+      "tracked_diff_sha256": "bd3b58a301df273a199d9a0fe486b25d194df176afe32583289d42b64ab583a3"
+    },
+    "importGraph": {
+      "rev": "e928b72544873815af278d38681b31c0293588e3",
+      "tracked_diff": "dependency-importGraph.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "iut": {
+      "rev": "d9465c111ec4073709f67e9fccec7e3eb374a816",
+      "tracked_diff": "dependency-iut.diff",
+      "tracked_diff_sha256": "610ef069f7de5a5d500ead287287b60f193269ea4ddc0011101a9c7c98356dd4"
+    },
+    "leancert": {
+      "rev": "7f91b6eb3567437f6cfac03ed279706603ee22f4",
+      "tracked_diff": "dependency-leancert.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "leansqlite": {
+      "rev": "f9cdb9eacb5c8b8ecc02ee9fd9e568d7d28c1416",
+      "tracked_diff": "dependency-leansqlite.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mathlib": {
+      "rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "tracked_diff": "dependency-mathlib.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "oka": {
+      "rev": "75dcdc3faadd10b986afb9283e89902bcdddecd4",
+      "tracked_diff": "dependency-oka.diff",
+      "tracked_diff_sha256": "1c9ade85238dbda269202455527588c94726f468b729bb7237873f7d759f18fb"
+    },
+    "orbicurve-cores": {
+      "rev": "61616dcd77fbe45c083a8ebfa7cc80728f86e841",
+      "tracked_diff": "dependency-orbicurve-cores.diff",
+      "tracked_diff_sha256": "fdccdad695d33a3316f394db9adc1a2077d8f1a489b6fcd9d091fe9cf7de7a26"
+    },
+    "pi1": {
+      "rev": "ca7def953193f861a462aa0831eec8f0a31ff69f",
+      "tracked_diff": "dependency-pi1.diff",
+      "tracked_diff_sha256": "fd2c281ff741eb1529019a47ddc628dba0d6fe25dfb2e8a5b25bbf1acebc88cb"
+    },
+    "plausible": {
+      "rev": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "tracked_diff": "dependency-plausible.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "proofwidgets": {
+      "rev": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "tracked_diff": "dependency-proofwidgets.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "rellich-kondrachov": {
+      "rev": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23",
+      "tracked_diff": "dependency-rellich-kondrachov.diff",
+      "tracked_diff_sha256": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8"
+    },
+    "schoenflies-lean": {
+      "rev": "05a43d29cde026618777db3d4e4316204ccca237",
+      "tracked_diff": "dependency-schoenflies-lean.diff",
+      "tracked_diff_sha256": "f46339a5e1e7ff2291ef57925e0c50564a47281fdb388da944921b305fd0484f"
+    },
+    "tate-curves-theta": {
+      "rev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+      "tracked_diff": "dependency-tate-curves-theta.diff",
+      "tracked_diff_sha256": "79dddb71e19a657d800f49951fec4f4772697b51b1620c948fac325c0946304b"
+    },
+    "tempered-fundamental-groups": {
+      "rev": "2006651f52b70ea2fe3388238c7d9db14d21748f",
+      "tracked_diff": "dependency-tempered-fundamental-groups.diff",
+      "tracked_diff_sha256": "2e9f032eea25a1f458f2ab4e48f0a27e9f5e48d74b7b7553d821dfeeffc87e4e"
+    }
+  },
+  "external_kernel": false,
+  "finished_utc": "2026-10-08T04:48:13.971621+00:00",
+  "fresh_project_build": true,
+  "outputs": {
+    "axioms.log": "e6297d2722da1ff7514dcacdcca41e5949850becd22fdb6acc67ceff26b344c7",
+    "dependency-AINTLIB.diff": "b02b3c2b367ba7b3b52e432a80ad991100c5473db14d24dc9c06244d7080f2e3",
+    "dependency-AbsorptionCutoff.diff": "8b35104dc12f807f594f7a61f7a183d967edcd0e601c7172e0e851e4c3adb3ba",
+    "dependency-BibtexQuery.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-ClassFieldTheory.diff": "293b2c1578e9d0962d75be9fde02d6bd3865db924baf34f4e44dd692f4e575b7",
+    "dependency-Cli.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-LeanArchitect.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-LeanSearchClient.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-MD4Lean.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-PrimeCert.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-PrimeNumberTheoremAnd.diff": "45c98ef9fb852ee0201e3922c27216e47b5484fef7277300754db63e909c6bda",
+    "dependency-Qq.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-SphereEversion.diff": "753b865c32d8d44bc61f61f6e0cd36402ab28911dd7308930a8effb34ed3d63f",
+    "dependency-StrongPNT.diff": "e85a8e524100c6b7c836f2fdb1643cdce8dc5714c8e4d3ff25513fc46f71644a",
+    "dependency-TauCeti.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-UnicodeBasic.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-Zeta3Irrational.diff": "5da849f952320ccb5b02f5e174caab3c7e1efcb6a45e49f29e7dcc7941409d2a",
+    "dependency-aesop.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-batteries.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-belyi.diff": "ce3a1178d2933469279b4ee3654e8d5201b13269dae0ab97ded57996a85f217e",
+    "dependency-carleson.diff": "8aa67adaeb6ef56967aa78c47a6c743f03ac72c125f503219a72dee5be23168c",
+    "dependency-checkdecls.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-doc-gen4.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-elliptic-curves.diff": "dc491936659ca9abfe53b18348287069c06272a4b3c8cef393e5dc7b276122ff",
+    "dependency-fixed-point-theorems.diff": "d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5",
+    "dependency-formal-schemes.diff": "2b1798c53feb567b9c36a1d88ccf8ed67b3bbafd93cec667135f59aa6f85c76b",
+    "dependency-genl.diff": "2c5826a9c0b0d32b077fea86880c6fb4f17cf5c10e06f9649f95f77a88574c93",
+    "dependency-gromov.diff": "6e267d1ae3a4d93e860aadd388612a8eedef9c268bae3fc91450ff9cac131816",
+    "dependency-heights.diff": "bd3b58a301df273a199d9a0fe486b25d194df176afe32583289d42b64ab583a3",
+    "dependency-importGraph.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-iut.diff": "610ef069f7de5a5d500ead287287b60f193269ea4ddc0011101a9c7c98356dd4",
+    "dependency-leancert.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-leansqlite.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-mathlib.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-oka.diff": "1c9ade85238dbda269202455527588c94726f468b729bb7237873f7d759f18fb",
+    "dependency-orbicurve-cores.diff": "fdccdad695d33a3316f394db9adc1a2077d8f1a489b6fcd9d091fe9cf7de7a26",
+    "dependency-pi1.diff": "fd2c281ff741eb1529019a47ddc628dba0d6fe25dfb2e8a5b25bbf1acebc88cb",
+    "dependency-plausible.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-proofwidgets.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-rellich-kondrachov.diff": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+    "dependency-schoenflies-lean.diff": "f46339a5e1e7ff2291ef57925e0c50564a47281fdb388da944921b305fd0484f",
+    "dependency-tate-curves-theta.diff": "79dddb71e19a657d800f49951fec4f4772697b51b1620c948fac325c0946304b",
+    "dependency-tempered-fundamental-groups.diff": "2e9f032eea25a1f458f2ab4e48f0a27e9f5e48d74b7b7553d821dfeeffc87e4e",
+    "finite-build.log": "4a19eafb788a679637d06fc7b6f01963e68d4a428b7426576525b9a31914b00b",
+    "finite-comparator.log": "6d02ebb4bed99f67d9d5e66e0600e79f845ac11910f51bd5a559a98b1d72e22d",
+    "finite-unfinished-rejected.log": "5029e5c63277cd9ab2a082645903c1ed713396da8133776d9c8ec8571e54c35d",
+    "git-version.log": "25f3602b5caaf92437be1e76b53698e8d73f14a6c71c2e91c8d5875f923ab29f",
+    "go-version.log": "c31165db0158bfe9553d73ece6961660977ea9def4c751059ce87497f2d69b9f",
+    "landrun-version.log": "93e50f952378749324f7be61313e7d902c6a4c65e3d836de23acdc8aab4e46f0",
+    "lean-version.log": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680",
+    "mathlib-cache.log": "c91560991905421c62df42770dd6d12c6e7e9850eb4e36e4414ef0f560d2d861",
+    "pair-regressions.log": "abce90522a2057e807e91d84ad37f8df6bd327d3f8154683cfa19b44a3c17b56",
+    "project-build.log": "c8ebec5d2d70ad0eb4d98c1cf155251057f837712c7f9c5d3f7a6b50e6dbc595",
+    "project-comparator.log": "0a16eea2c9ae4e0bfcbde14e5e4f6683eee89e409bffc95a7475b0228f58ce0a",
+    "python-version.log": "5b3e43dc38ca01e3f5a7854ba50d4330864b0c1e0f646650b2c78cf072acc366",
+    "resolve.log": "e674108cc3167ceb478026d1bc0462addb4f0351807e5d5ec61b49bdfb91b61f",
+    "triple-regressions.log": "7e3bf2ea9dce2e537de1e5e686aa9a46de5ed9d377697d8fc2d82699b474dfcc",
+    "unfinished-rejected.log": "ec3eacb9e220a4057b9b3b5e05715985a65ced7734ef92bfe7105b065fdfa7b7",
+    "upstream-comparator.log": "c691495add05085fb22eefef22c7b9bceed8ce8e2e86137420cf08ab46c16c91"
+  },
+  "pins": {
+    "comparator": {
+      "build_toolchain_override": "leanprover/lean4:v4.34.1",
+      "external_kernel": false,
+      "lean4export_rev": "076e8e57707e813375e8f9da8bf989799ace9680",
+      "rev": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+      "url": "https://github.com/leanprover/comparator.git"
+    },
+    "elan": {
+      "sha256": "620db834935d0da55ac9cda207b2e370e8034061cbb0228af5eb6c14b02f0c0c",
+      "url": "https://github.com/leanprover/elan/releases/download/v4.2.0/elan-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    "go": {
+      "sha256": "031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a",
+      "url": "https://go.dev/dl/go1.26.1.linux-amd64.tar.gz"
+    },
+    "landrun": {
+      "rev": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+      "url": "https://github.com/Zouuup/landrun.git"
+    },
+    "lean": "leanprover/lean4:v4.34.1",
+    "schema_version": 1,
+    "upstream": {
+      "mathlib_rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "rev": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "subdir": "lean",
+      "url": "https://github.com/openai/math.git"
+    }
+  },
+  "schema_version": 1,
+  "source_commit": "4d92d8f0c373aae7d7292dde5f41325f90f0cafd",
+  "source_hashes": {
+    "lake-manifest.json": "6319890fd2ad87d0b41ae9e4c027b80feb86023c6d7cb27fd06837f52d93b9a2",
+    "lakefile.lean": "e5399fd5bd6096e915c43cd2d8d55080f0e3e6e7690acdcfff6fbdc638321d59",
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/HigherCorrelations.lean": "759c9653628f10cfcab6b5c3bb9ddf15533930a03396f0d2c76db47b7c7f6600",
+    "lean/HigherCorrelations/AxiomReport.lean": "98bf64f23f92c89f22c2f11eb9528c3dad828dfc02eb7601979bcdeb90e73577",
+    "lean/HigherCorrelations/Definitions.lean": "8615615bf0d51d82665bdc5ea028d07dd124dc57e85112135080cc38f932ce15",
+    "lean/HigherCorrelations/FiniteDefinitions.lean": "9909be30adad286b826d9e1903aa432118c394cc2393b24d557aff98eab7f7f7",
+    "lean/HigherCorrelations/FiniteExamples.lean": "79cc89c010cdddc192b086c775ed52156cef604c03eb76825bee5bb20216b918",
+    "lean/HigherCorrelations/FiniteFoundation.lean": "dc5555cedf3810b1a8ad1d924c8b530b30e8d88107f0a5467aaa9968ad9916dc",
+    "lean/HigherCorrelations/FinitePatterns.lean": "6610f00816970ccf89ee1d732dd00e669755c23649c01e635747bd0d6811df07",
+    "lean/HigherCorrelations/FiniteReflection.lean": "b1145463973042f9d861f610a6fac45846f663bfd112b49dcb840070bbb0d86e",
+    "lean/HigherCorrelations/FiniteSigns.lean": "a5c754bc27ec854b6cb6c00385492302d48b8c0fe4d4e82491a0cd175f1b20f0",
+    "lean/HigherCorrelations/HorizontalStrip.lean": "ec99a3b409dad4b5c4616354dadc2d1ad48c9af609be16c3a286e01ec9773a7b",
+    "lean/HigherCorrelations/ZeroReflection.lean": "b55e878afda00b42ab1d8f90d13b0885b6c92f05a8d9e2ecab8e2a43a84a11cb",
+    "lean/VerificationChallenges/FiniteFoundation.lean": "51164ee88d02b2b2f86209c639d82d68c06324fdb5f38c2290373022fa5deef6",
+    "lean/VerificationChallenges/FiniteUnfinished.lean": "36a836e37f01f8e61fdedabbcae945437f830d10ae0551dbb5fcb32c2c58fc6d",
+    "lean/VerificationChallenges/HorizontalStrip.lean": "f72b1a08b24c2e161621c73c7b0bea8e3a4474a8825a796b64e3133f4d149d47",
+    "lean/VerificationChallenges/Unfinished.lean": "23361486cba75ef2c869c2d380df45bcaf7a73482933183c7262418d88e7392e",
+    "lean/VerificationChallenges/finite-foundation.json": "c301cc05cc0af53b62278917e604f3aa9539708f72fa6982aefaa4a6a2922c36",
+    "lean/VerificationChallenges/finite-unfinished.json": "2b28fa09693fdabefb77497633b3f7e54d28055ee90dcbf8cf9da9469186cbda",
+    "lean/VerificationChallenges/horizontal-strip.json": "54dd2b15be0c6bee4cefb4b81d451c049e74fdfe60ef472fc244967ab31f7e11",
+    "lean/VerificationChallenges/unfinished.json": "8739dcea13a0cab47dda66d1967b40d938f4a6d7261df8f9c6a122d376be3289",
+    "research/lean-import-pins.json": "b9ea2f959e57adee74c18f3659819bc0342f6cf5ac0d5d453e267bfd0af4dadc",
+    "scripts/bootstrap_lean.py": "d9c4d5119f16f863b7ab6f4ec4f394d6bd8679aaaf764ccf926d66b3b8baeacf",
+    "scripts/reproduce_lean.py": "5ce134157c8c6eba27a2788b311e4a734a01aa0f954ff116323b566382d70b70"
+  },
+  "started_utc": "20261008T043022436779Z",
+  "status": "pass",
+  "task": "formal_verification",
+  "tool_binary_hashes": {
+    ".tools/bin/landrun": "790ffdfcd9894403a85f2d3ea915230720e296d31fd272478ad9fd8515e8a8bd",
+    ".tools/comparator/.lake/build/bin/comparator": "afa65e57a1770f5961efe7681626a9a1cd99705262421658abd30b705f66e4a2",
+    ".tools/comparator/.lake/packages/lean4export/.lake/build/bin/lean4export": "8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1"
+  },
+  "upstream_patch_hashes": {
+    "AINTLIB-lean4341.patch": "076bee4cee068ad938e611d266bb32f7f1798189336087e88c08c8b3ac58dff1",
+    "AbsorptionCutoff-lean4341.patch": "8b35104dc12f807f594f7a61f7a183d967edcd0e601c7172e0e851e4c3adb3ba",
+    "ClassFieldTheory-lean4341.patch": "0275686e2febd9c14523a94cbfae105e6cf30997ed0b2a1ea28c84d0d0c12ba5",
+    "PrimeNumberTheoremAnd-lean4341.patch": "0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82",
+    "SphereEversion-lean4341.patch": "5c7c8dba85e4636ed2fec14a5765e937f2b1c428eadb12168645b9d2c0046098",
+    "StrongPNT-lean4341.patch": "2cac5cbef22987314f9293bebcf243d0a3341caaf0227925d1f8d4c31be924d7",
+    "Zeta3Irrational-lean4341.patch": "169eb72e9d12740688467a0e6abf63923a60ec5f7ce8f49ca4b3684a22418901",
+    "belyi-lean4341.patch": "f54c2e211464c0f8194ce63a80a6562489f23f688b1c233efe3c2debfc1b9f66",
+    "carleson-lean4341.patch": "8aa67adaeb6ef56967aa78c47a6c743f03ac72c125f503219a72dee5be23168c",
+    "elliptic-curves-lean4341.patch": "69e6575dae5797d43242694dc737b400b3e1e8fcb854094fead2a204a1f58632",
+    "fixed-point-theorems-lean4341.patch": "d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5",
+    "formal-schemes-lean4341.patch": "5376716aa94fe0c6907570d650dd6604f170687c218cea7028d09b9f95877cea",
+    "genl-lean4341.patch": "3a9edd7dd539e98f81145a3b6cc980c9d62a821b7d41e2591f9aa5c557a7b6fa",
+    "gromov-lean4341.patch": "26a1924bef774183a2e0865f144b782dc1f78eb0246993a31a5d63193b7781bb",
+    "heights-lean4341.patch": "bd3b58a301df273a199d9a0fe486b25d194df176afe32583289d42b64ab583a3",
+    "iut-lean4341.patch": "610ef069f7de5a5d500ead287287b60f193269ea4ddc0011101a9c7c98356dd4",
+    "oka-lean4341.patch": "02995b860e7d566a10adc3488439d38abc06dcb317ae4576d504c71c921816e7",
+    "orbicurve-cores-lean4341.patch": "4376110b9b7c823057cda21479a45de688c5138c81e5d4f1c050b632f168b93d",
+    "pi1-lean4341.patch": "816e0d8123d5622c5b3415675638053ae31126a829e4f21d96f7af28db292f5f",
+    "rellich-kondrachov-lean4341.patch": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+    "schoenflies-lean-lean4341.patch": "4cbc255a2be785e6b617ecd61cdaf67e6d236d65a87f284380f2713670c8e350",
+    "tate-curves-theta-lean4341.patch": "885a19a0dc2d004aaece1987e2b7d2ff4745aef8881cbc53971a852cc5644c3f",
+    "tempered-fundamental-groups-lean4341.patch": "f2e51b5f38459f11515c21801c92c39de85a8feb5f2b490ebbe07a93511a8860"
+  },
+  "verification_scope": "Zeta import, strip corollaries, and finite foundation declarations",
+  "worktree_dirty": true
+}

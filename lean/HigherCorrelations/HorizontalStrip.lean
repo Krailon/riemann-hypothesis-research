@@ -1,4 +1,4 @@
-import HigherCorrelations.Definitions
+import HigherCorrelations.ZeroReflection
 import OAI.NumberTheory.DirichletL.Nonvanishing
 import Mathlib.Tactic
 
@@ -12,23 +12,6 @@ namespace HigherCorrelations
 theorem zeta_ne_zero_right {s : ℂ} (hs : (7 / 8 : ℝ) < s.re)
     (_hpole : s ≠ 1) : riemannZeta s ≠ 0 :=
   OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re hs
-
-theorem reflected_zero {ρ : ℂ} (hρ : IsCriticalStripZero ρ) :
-    IsCriticalStripZero (1 - ρ) := by
-  rcases hρ with ⟨hz, hpos, hlt⟩
-  have hn (n : ℕ) : ρ ≠ -(n : ℂ) := by
-    intro heq
-    have hre := congrArg Complex.re heq
-    simp only [Complex.neg_re, Complex.natCast_re] at hre
-    have : (0 : ℝ) ≤ n := Nat.cast_nonneg n
-    linarith
-  have hone : ρ ≠ 1 := by
-    intro heq
-    simpa [heq] using hlt
-  constructor
-  · rw [riemannZeta_one_sub hn hone, hz, mul_zero]
-  · simp only [Complex.sub_re, Complex.one_re]
-    constructor <;> linarith
 
 theorem zero_re_le_seven_eighths {ρ : ℂ} (hρ : IsCriticalStripZero ρ) :
     ρ.re ≤ (7 / 8 : ℝ) := by

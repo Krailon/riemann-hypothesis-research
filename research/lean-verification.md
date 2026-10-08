@@ -1,5 +1,10 @@
 # First Lean milestone: zeta nonvanishing and horizontal strip
 
+The subsequent [finite-foundation milestone](lean-finite-foundation.md)
+extends the runner and extracts the pointwise reflection proof into a
+mathlib-only module. The statements and archived results below describe
+the first milestone.
+
 Task: formal verification and source review. Assumptions: `UNCONDITIONAL`.
 Source publication status: **PREPRINT**. The checked scope is the zeta theorem
 and the six project declarations listed below, not every result in the release.
@@ -69,7 +74,7 @@ checks all six project statements, and requires an unfinished proof to fail
 specifically because of `sorryAx`. Challenge files intentionally contain `sorry`
 as specifications; no solution imports them.
 
-The final axiom report must name exactly the upstream theorem and six project
+For this milestone the axiom report named exactly the upstream theorem and six project
 theorems, with no axioms outside `propext`, `Quot.sound`, and `Classical.choice`.
 Comparator reports acceptance by Lean's default kernel. Its optional external
 kernel is disabled; no independent-kernel or independent-human-review claim is
@@ -89,9 +94,9 @@ dependency diffs; subsequent runs include them.
 The final [fresh-project run](../artifacts/certificates/lean/abeacafffc3ecb05c9cfbd592ad1dc1c33eaaaf7e4830cf76713765ce5aa6426/manifest.json)
 also passed every stage, including the repeatable bootstrap, both Comparator
 checks, the negative control, all seven axiom reports, and the 196 regression
-tests. It records the actual dependency diffs and matches the current Lean
-sources and harness. This is the evidence referenced by the new ledger entries.
-The build retains a harmless `unnecessarySimpa` linter warning in the reflection
+tests. It records the actual dependency diffs and matches the Lean sources
+and harness from that milestone. This is the evidence referenced by the QRH ledger entries.
+That build retained a harmless `unnecessarySimpa` linter warning in the reflection
 proof; warnings about patched dependency worktrees and intentional `sorry`
 specifications are also recorded in the logs.
 

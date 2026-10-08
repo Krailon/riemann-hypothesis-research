@@ -10,4 +10,6 @@ namespace HigherCorrelations
 def IsCriticalStripZero (ρ : ℂ) : Prop :=
   riemannZeta ρ = 0 ∧ 0 < ρ.re ∧ ρ.re < 1
 
+def horizontalReflection (ρ : ℂ) : ℂ := 1 - starRingEnd ℂ ρ
+
 end HigherCorrelations

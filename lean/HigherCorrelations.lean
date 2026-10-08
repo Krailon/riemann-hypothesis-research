@@ -1,1 +1,2 @@
 import HigherCorrelations.HorizontalStrip
+import HigherCorrelations.FiniteFoundation

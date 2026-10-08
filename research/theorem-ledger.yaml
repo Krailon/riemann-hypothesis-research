@@ -2498,3 +2498,185 @@ claims:
       verification_script: scripts/reproduce_lean.py
       baseline_audit_coverage: "Outside both historical pair and triple RH audits."
       verification_scope: "All five corollaries checked against challenge statements by Comparator; standard three axioms only. The unfinished negative control is rejected for sorryAx. No external-kernel or independent-human check claimed."
+  - id: FINITE-PATTERNS-001
+    title: Formalized five-way equality classification
+    kind: theorem
+    statement: |
+      For any type A with decidable equality and v:Fin 3 -> A, exactly one
+      TriplePattern holds: all three values equal, only slots 0 and 1 equal,
+      only slots 0 and 2 equal, only slots 1 and 2 equal, or all pairwise
+      distinct. classifyTriple v equals p if and only if HasPattern p v.
+      Distinct patterns cannot both hold. Applied to ordinates these are
+      ordinate-equality patterns, not index or complex-zero equalities.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/FinitePatterns.lean
+      label: HigherCorrelations.classifyTriple_iff
+      companion_declarations: "pattern_unique, pattern_disjoint"
+      bookkeeping: research/lean-finite-foundation.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8a49b4e7f3beb2d96650295eaaede990f943c40ca4b9030a587dbfcbe36e8e41
+    limit_order: "No limits or infinite sums."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; standard three axioms only. Mathlib dependencies are pinned, not enumerated in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: FINITE-REGROUP-001
+    title: Formalized finite regrouping with occurrence multiplicities
+    kind: theorem
+    statement: |
+      For finite D, label map q:I->A with decidable equality on A, and f
+      taking values in an additive commutative monoid, sum_D f equals the
+      sum over a in q(D) of the sum of f over {i in D:q(i)=a}. When f=g o q,
+      each inner sum is the fiber cardinality nsmul g(a). For arbitrary
+      finite slot sets S:Fin 3->Finset I and triple summand f, the sum over
+      their Cartesian product equals the sum over the five label-pattern
+      domains. The label map need not be injective; repeated occurrences,
+      equal indices, empty sets, and different slot sets are allowed.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [FINITE-PATTERNS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/FinitePatterns.lean
+      label: HigherCorrelations.sum_regroup_fibers
+      companion_declarations: "sum_regroup_multiplicity, sum_triple_patterns"
+      bookkeeping: research/lean-finite-foundation.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8a49b4e7f3beb2d96650295eaaede990f943c40ca4b9030a587dbfcbe36e8e41
+    limit_order: "Only finite regrouping; no convergence statement."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; standard three axioms only. No injectivity assumption or division by multiplicity."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: FINITE-REFLECTION-001
+    title: Formalized occurrence reflection and eight-fold finite averages
+    kind: theorem
+    statement: |
+      Let r:I->I be involutive, and let each finite slot set S(j) be closed
+      under r. Applying r independently to selected slots is an involution
+      and a bijection on triples and preserves the Cartesian product.
+      Finite sums of arbitrary additive-commutative-monoid-valued summands
+      are unchanged by this reindexing. If q(r(i))=q(i), each label tuple
+      and each of the five label-pattern domains is preserved, and the same
+      sum identity holds in each such domain. For complex-valued summands
+      the original sum equals 1/8 times the sum of its eight reflected sums.
+      Simultaneous reflection preserves index-equality patterns. Independent
+      reflection need not: Boolean negation in only slot 0 changes the
+      index triple (false,false,false) from allEqual to only12. An occurrence
+      involution and invariant cutoffs are explicit hypotheses, not results
+      about a global enumeration of zeta zeros or analytic multiplicities.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [FINITE-PATTERNS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/FiniteReflection.lean
+      label: HigherCorrelations.sum_eight_reflections_pattern
+      companion_declarations: "reflectSlots_involutive, reflectSlots_bijective, reflectSlots_labels, reflectSlots_domain, reflectSlots_pattern, sum_involution, sum_reflectSlots, sum_reflectSlots_pattern, sum_eight_reflections, simultaneous_index_pattern, independent_index_counterexample"
+      bookkeeping: research/lean-finite-foundation.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8a49b4e7f3beb2d96650295eaaede990f943c40ca4b9030a587dbfcbe36e8e41
+    limit_order: "Finite slot sets fixed throughout; no infinite-cutoff passage."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; standard three axioms only. Does not formalize the analytic ORD sign-average lemma."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: FINITE-SIGNS-001
+    title: Formalized weighted eight-sign product expansion
+    kind: theorem
+    statement: |
+      For arbitrary complex C_j, S_j (j in Fin 3), K on the eight sign masks,
+      and K_A=(1/8) sum_e (prod_{j in A}e_j)K(e), the identity
+      (1/8)sum_e K(e)[prod_j(C_j+e_j S_j)-1]
+      =K_empty[prod_j C_j-1]+sum_{A nonempty}K_A prod_{j in A}S_j
+      prod_{j notin A}C_j holds. Boolean true represents sign -1 and false
+      represents +1. The unsubtracted and unsplit identities also hold.
+      This is finite complex algebra; no positivity, hyperbolic-function
+      substitution, kernel bound, Fourier integral, or zero sum is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/FiniteSigns.lean
+      label: HigherCorrelations.weighted_sign_empty_split
+      companion_declarations: "sign_product_expansion, weighted_sign_product, weighted_sign_sub_one"
+      bookkeeping: research/lean-finite-foundation.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8a49b4e7f3beb2d96650295eaaede990f943c40ca4b9030a587dbfcbe36e8e41
+    limit_order: "Finite products and sums only."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; standard three axioms only. The quasi-RH import is absent from this solution's imports."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: ZERO-HORIZONTAL-REFLECTION-001
+    title: Formalized pointwise horizontal reflection of critical-strip zeros
+    kind: theorem
+    statement: |
+      On complex numbers h(rho)=1-conj(rho) is involutive, Im(h(rho))=Im(rho),
+      and Re(h(rho))-1/2=-(Re(rho)-1/2). If zeta(rho)=0 and 0<Re(rho)<1,
+      then h(rho) is also a zero in the open critical strip. The functional
+      equation likewise gives a critical-strip zero at 1-rho. This is
+      pointwise zero symmetry and does not construct an occurrence
+      involution or establish analytic zero multiplicity matching.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ZeroReflection.lean
+      label: HigherCorrelations.horizontalReflection_zero
+      companion_declarations: "reflected_zero, horizontalReflection_involutive, horizontalReflection_im, horizontalReflection_displacement"
+      external_dependency: "mathlib riemannZeta_one_sub and riemannZeta_conj at d13f23b723b8a846827a245b89c10fc7d3f11612"
+      bookkeeping: research/lean-finite-foundation.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8a49b4e7f3beb2d96650295eaaede990f943c40ca4b9030a587dbfcbe36e8e41
+    limit_order: "No limit or infinite-sum interchange introduced by these corollaries."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; standard three axioms only. The original reflected_zero declaration is relocated with unchanged statement and name. No quasi-RH dependency."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: FINITE-EXAMPLES-001
+    title: Exact finite boundary and multiplicity examples
+    kind: verification
+    statement: |
+      The named Lean examples verify all five patterns; an empty triple
+      domain of cardinality zero, a singleton domain of cardinality one,
+      and different slot sets of sizes 1,2,3 giving cardinality six; labels
+      (0,0,1) with occurrence weights (2,2,5) summing to 9 instead of the
+      unweighted distinct-label sum 7; the complex triple (1/4+3i,3/4+3i,
+      1/4+3i) having allEqual ordinate pattern and only02 complex pattern;
+      horizontal-reflection fixed points 1/2+iy for real y; and exchange of
+      1/4+3i with 3/4+3i. These synthetic points are not asserted to be zeros.
+    status: formalized
+    assumptions: [UNCONDITIONAL, SYNTHETIC_MODEL]
+    dependencies: [FINITE-PATTERNS-001, ZERO-HORIZONTAL-REFLECTION-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/FiniteExamples.lean
+      label: HigherCorrelations.example_five_patterns
+      companion_declarations: "example_empty_domain, example_singleton_domain, example_different_cutoffs, example_repeated_occurrences, example_distinct_complex_same_ordinate, example_fixed_point, example_exchanged_pair"
+      bookkeeping: research/lean-finite-foundation.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8a49b4e7f3beb2d96650295eaaede990f943c40ca4b9030a587dbfcbe36e8e41
+    limit_order: "Exact finite identities and a symbolic real parameter; no asymptotics."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean kernel proofs, including ordinary decide and exact norm_num; no native_decide or floating point."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."

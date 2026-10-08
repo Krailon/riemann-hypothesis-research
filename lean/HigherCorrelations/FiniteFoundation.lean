@@ -1,0 +1,5 @@
+import HigherCorrelations.FinitePatterns
+import HigherCorrelations.FiniteReflection
+import HigherCorrelations.FiniteSigns
+import HigherCorrelations.ZeroReflection
+import HigherCorrelations.FiniteExamples

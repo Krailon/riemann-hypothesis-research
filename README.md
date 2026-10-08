@@ -17,6 +17,17 @@ Run `python3 -B scripts/reproduce_lean.py --fresh-project` on Linux x86_64.
 See the [verification record](research/lean-verification.md) for pins, prerequisites,
 checked statements, proof-checking scope, and archived evidence.
 
+## Finite foundation formalized
+
+The second Lean milestone verifies the five ordinate-equality patterns,
+multiplicity-preserving finite regrouping, occurrence reflection, and the
+eight-sign algebraic expansion. The fresh run checked **35 declarations**
+in the new challenge, retained the earlier proof checks, and passed all
+**196 regression tests**. See the
+[finite-foundation record](research/lean-finite-foundation.md) for the exact
+hypotheses and archived evidence. Infinite-sum convergence and the remaining
+ordinate-only `o(1)` estimate are separate proof obligations.
+
 ## Reproduce the pair baseline
 
 Task: verification and exposition. Assumptions: `UNCONDITIONAL` for the exact

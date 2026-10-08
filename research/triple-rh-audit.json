@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "db92a1faaa6d6b8250102661a51511124cb217f505e4154a31476213290ee49f",
+    "research/theorem-ledger.yaml": "c11b53aa5a8a030d867ad1263a4cfaf19462d8e82edae45f49518a8e6f52e5f8",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "e8d198c3abe99affa64fc6906ae8f8ebe7ba8b61ed54274ace88696f9d487160"
+    "research/pair-rh-audit.json": "e4582f69700287aa513bfc3ed4cb3159d79923a71a143900239adcfe3d58b215"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4345,5 +4345,19 @@
     ],
     "report": "research/lean-verification.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Only the formalized QRH import and strip corollaries are appended. Historical verdicts, claim snapshots, proofs, coverage and archives are unchanged; the whole-ledger hash refresh does not extend either historical RH audit to these Lean claims."
+  },
+  "ledger_finite_foundation_review": {
+    "reviewed_on": "2026-10-08",
+    "previous_ledger_sha256": "db92a1faaa6d6b8250102661a51511124cb217f505e4154a31476213290ee49f",
+    "added_claim_ids": [
+      "FINITE-EXAMPLES-001",
+      "FINITE-PATTERNS-001",
+      "FINITE-REFLECTION-001",
+      "FINITE-REGROUP-001",
+      "FINITE-SIGNS-001",
+      "ZERO-HORIZONTAL-REFLECTION-001"
+    ],
+    "report": "research/lean-finite-foundation.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Six formalized finite-foundation and pointwise-reflection entries are appended. Historical pair/triple verdicts, claim snapshots, proof files and coverage are unchanged. Whole-ledger hash maintenance does not extend either historical audit. The old Lean reflected_zero declaration is relocated with its name and statement preserved and rechecked by the original Comparator challenge."
   }
 }

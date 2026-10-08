@@ -1,4 +1,5 @@
 import HigherCorrelations.HorizontalStrip
+import HigherCorrelations.FiniteFoundation
 
 #print axioms OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re
 #print axioms HigherCorrelations.zeta_ne_zero_right
@@ -7,3 +8,37 @@ import HigherCorrelations.HorizontalStrip
 #print axioms HigherCorrelations.zero_horizontal_strip
 #print axioms HigherCorrelations.zero_horizontal_displacement
 #print axioms HigherCorrelations.indexed_zero_horizontal_strip
+#print axioms HigherCorrelations.classifyTriple_iff
+#print axioms HigherCorrelations.pattern_unique
+#print axioms HigherCorrelations.pattern_disjoint
+#print axioms HigherCorrelations.sum_regroup_fibers
+#print axioms HigherCorrelations.sum_regroup_multiplicity
+#print axioms HigherCorrelations.sum_triple_patterns
+#print axioms HigherCorrelations.reflectSlots_involutive
+#print axioms HigherCorrelations.reflectSlots_bijective
+#print axioms HigherCorrelations.reflectSlots_labels
+#print axioms HigherCorrelations.reflectSlots_domain
+#print axioms HigherCorrelations.reflectSlots_pattern
+#print axioms HigherCorrelations.sum_involution
+#print axioms HigherCorrelations.sum_reflectSlots
+#print axioms HigherCorrelations.sum_reflectSlots_pattern
+#print axioms HigherCorrelations.sum_eight_reflections
+#print axioms HigherCorrelations.sum_eight_reflections_pattern
+#print axioms HigherCorrelations.simultaneous_index_pattern
+#print axioms HigherCorrelations.independent_index_counterexample
+#print axioms HigherCorrelations.sign_product_expansion
+#print axioms HigherCorrelations.weighted_sign_product
+#print axioms HigherCorrelations.weighted_sign_sub_one
+#print axioms HigherCorrelations.weighted_sign_empty_split
+#print axioms HigherCorrelations.horizontalReflection_involutive
+#print axioms HigherCorrelations.horizontalReflection_im
+#print axioms HigherCorrelations.horizontalReflection_displacement
+#print axioms HigherCorrelations.horizontalReflection_zero
+#print axioms HigherCorrelations.example_five_patterns
+#print axioms HigherCorrelations.example_empty_domain
+#print axioms HigherCorrelations.example_singleton_domain
+#print axioms HigherCorrelations.example_different_cutoffs
+#print axioms HigherCorrelations.example_repeated_occurrences
+#print axioms HigherCorrelations.example_distinct_complex_same_ordinate
+#print axioms HigherCorrelations.example_fixed_point
+#print axioms HigherCorrelations.example_exchanged_pair
