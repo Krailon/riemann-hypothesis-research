@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "af44a611736bd2d26f226b646ecc2ac09a8d1c2f5bb5b87d6890d207cb261935",
+  "ledger_sha256": "db92a1faaa6d6b8250102661a51511124cb217f505e4154a31476213290ee49f",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2462,5 +2462,15 @@
     ],
     "report": "research/triple-ordinate-reduction.md",
     "changes": "The previous ledger is an unchanged byte prefix and every previous indexed block is identical. Only the constant-kernel replacement lemma is appended. Existing open targets retain idea status. The changed ordinate-extension manuscript and checks remain outside both historical audits. No historical verdict, coverage, baseline proof or archive is changed."
+  },
+  "ledger_lean_import_review": {
+    "reviewed_on": "2026-10-07",
+    "previous_ledger_sha256": "af44a611736bd2d26f226b646ecc2ac09a8d1c2f5bb5b87d6890d207cb261935",
+    "added_claim_ids": [
+      "QRH-IMPORT-001",
+      "QRH-STRIP-001"
+    ],
+    "report": "research/lean-verification.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Only the formalized QRH import and strip corollaries are appended. Historical verdicts, claim snapshots, proofs, coverage and archives are unchanged; the whole-ledger hash refresh does not extend either historical RH audit to these Lean claims."
   }
 }

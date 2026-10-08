@@ -1,0 +1,15 @@
+{
+  "challenge_module": "VerificationChallenges.HorizontalStrip",
+  "solution_module": "HigherCorrelations.HorizontalStrip",
+  "theorem_names": [
+    "HigherCorrelations.zeta_ne_zero_right",
+    "HigherCorrelations.reflected_zero",
+    "HigherCorrelations.zero_re_le_seven_eighths",
+    "HigherCorrelations.zero_horizontal_strip",
+    "HigherCorrelations.zero_horizontal_displacement",
+    "HigherCorrelations.indexed_zero_horizontal_strip"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": false
+}

@@ -2435,3 +2435,66 @@ claims:
       verification_script: scripts/check_triple_ordinate_reduction.py
       baseline_audit_coverage: "Outside both historical pair and triple RH audits."
       computation_provenance: "Inherited explicit-density source inputs, not a new project numerical proof; no local replay or certificate. See ORDINATE-DENSITY-INPUT-001."
+  - id: QRH-IMPORT-001
+    title: Pinned formalized zeta seven-eighths nonvanishing input
+    kind: imported_theorem
+    statement: |
+      For every complex s with Re(s)>7/8 and s != 1, zeta(s) != 0.
+      This is the pole-excluding project wrapper of the upstream formal
+      theorem OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re, which uses
+      mathlib's total riemannZeta function and has no pole hypothesis.
+      No nonvanishing statement on the boundary Re(s)=7/8 is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/HorizontalStrip.lean
+      label: HigherCorrelations.zeta_ne_zero_right
+      bookkeeping: research/lean-verification.md
+      upstream_revision: adc7f1241b42e322a6451854ab7e4b4c146bf78a
+      upstream_file: lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean
+      upstream_declaration: OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re
+      publication_status: PREPRINT
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: abeacafffc3ecb05c9cfbd592ad1dc1c33eaaaf7e4830cf76713765ce5aa6426
+    limit_order: "None in this wrapper; the imported proof was checked through Comparator."
+    project_audit:
+      task_type: formal_verification
+      verification_script: scripts/reproduce_lean.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      verification_scope: "Pinned upstream zeta challenge and project wrapper accepted by Lean default kernel through Comparator. Only propext, Quot.sound and Classical.choice permitted; external kernel disabled."
+      dependency_scope: "External formal proof closure is pinned and checked, not enumerated claim by claim in this ledger."
+  - id: QRH-STRIP-001
+    title: Formalized reflection and closed horizontal-strip corollaries
+    kind: theorem
+    statement: |
+      Let rho be complex with zeta(rho)=0 and 0<Re(rho)<1. Then 1-rho is
+      another zero in the open critical strip, 1/8<=Re(rho)<=7/8, and
+      abs(Re(rho)-1/2)<=3/8. The same bounds hold for every member of any
+      indexed family of such zeros, with repeated values allowed. There is
+      no restriction on the sign of Im(rho), and no simplicity or RH
+      hypothesis. The strip endpoints are included. These bounds do not
+      assert vanishing of the signed ordinate-reduction error.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [QRH-IMPORT-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/HorizontalStrip.lean
+      label: HigherCorrelations.zero_horizontal_strip
+      bookkeeping: research/lean-verification.md
+      companion_declarations: "reflected_zero, zero_re_le_seven_eighths, zero_horizontal_displacement, indexed_zero_horizontal_strip"
+      external_dependency: "mathlib riemannZeta_one_sub at d13f23b723b8a846827a245b89c10fc7d3f11612"
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: abeacafffc3ecb05c9cfbd592ad1dc1c33eaaaf7e4830cf76713765ce5aa6426
+    limit_order: "No limits or infinite-sum interchanges occur in these corollaries."
+    project_audit:
+      task_type: formal_verification
+      verification_script: scripts/reproduce_lean.py
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+      verification_scope: "All five corollaries checked against challenge statements by Comparator; standard three axioms only. The unfinished negative control is rejected for sorryAx. No external-kernel or independent-human check claimed."

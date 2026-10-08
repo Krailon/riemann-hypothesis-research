@@ -5,6 +5,18 @@ horizontal locations of the full complex zeros. The current pair baseline is
 recorded as `PAIR-ASYMPTOTIC-001`, status **`proved-draft`**, in the
 [theorem ledger](research/theorem-ledger.yaml).
 
+## First formal verification milestone
+
+The pinned OpenAI quasi-RH zeta theorem and our horizontal-strip corollaries
+have passed local Lean/Comparator verification: every critical-strip zero
+satisfies `1/8 ≤ Re ρ ≤ 7/8` and `abs(Re ρ − 1/2) ≤ 3/8`.
+The upstream source is a **PREPRINT**. This does not settle the remaining
+ordinate-only triple-correlation error.
+
+Run `python3 -B scripts/reproduce_lean.py --fresh-project` on Linux x86_64.
+See the [verification record](research/lean-verification.md) for pins, prerequisites,
+checked statements, proof-checking scope, and archived evidence.
+
 ## Reproduce the pair baseline
 
 Task: verification and exposition. Assumptions: `UNCONDITIONAL` for the exact

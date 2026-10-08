@@ -1,0 +1,9 @@
++ lean --version
+Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
++ go version
+go version go1.26.1 linux/amd64
++ go build -o /home/stackcanary/riemann-hypothesis-research/.tools/bin/landrun ./cmd/landrun
++ lake build lean4export comparator
+Build completed successfully (20 jobs).
++ landrun --version
+landrun version 0.1.18

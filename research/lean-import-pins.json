@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "upstream": {
+    "url": "https://github.com/openai/math.git",
+    "rev": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "subdir": "lean",
+    "mathlib_rev": "d13f23b723b8a846827a245b89c10fc7d3f11612"
+  },
+  "lean": "leanprover/lean4:v4.34.1",
+  "elan": {
+    "url": "https://github.com/leanprover/elan/releases/download/v4.2.0/elan-x86_64-unknown-linux-gnu.tar.gz",
+    "sha256": "620db834935d0da55ac9cda207b2e370e8034061cbb0228af5eb6c14b02f0c0c"
+  },
+  "go": {
+    "url": "https://go.dev/dl/go1.26.1.linux-amd64.tar.gz",
+    "sha256": "031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a"
+  },
+  "landrun": {
+    "url": "https://github.com/Zouuup/landrun.git",
+    "rev": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
+  },
+  "comparator": {
+    "url": "https://github.com/leanprover/comparator.git",
+    "rev": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "lean4export_rev": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "build_toolchain_override": "leanprover/lean4:v4.34.1",
+    "external_kernel": false
+  }
+}

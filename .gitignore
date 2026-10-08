@@ -1,3 +1,6 @@
 codex-session.txt
 artifacts/reproduction/
 __pycache__/
+.tools/
+.lake/
+artifacts/lean-runs/

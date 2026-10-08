@@ -1,0 +1,8 @@
+{
+  "challenge_module": "VerificationChallenges.HorizontalStrip",
+  "solution_module": "VerificationChallenges.Unfinished",
+  "theorem_names": ["HigherCorrelations.zeta_ne_zero_right"],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": false
+}

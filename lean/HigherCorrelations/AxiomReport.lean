@@ -1,0 +1,9 @@
+import HigherCorrelations.HorizontalStrip
+
+#print axioms OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re
+#print axioms HigherCorrelations.zeta_ne_zero_right
+#print axioms HigherCorrelations.reflected_zero
+#print axioms HigherCorrelations.zero_re_le_seven_eighths
+#print axioms HigherCorrelations.zero_horizontal_strip
+#print axioms HigherCorrelations.zero_horizontal_displacement
+#print axioms HigherCorrelations.indexed_zero_horizontal_strip

@@ -1,0 +1,12 @@
++ elan toolchain install leanprover/lean4:v4.34.1
+error: 'leanprover/lean4:v4.34.1' is already installed
+Traceback (most recent call last):
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/bootstrap_lean.py", line 109, in <module>
+    bootstrap()
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/bootstrap_lean.py", line 87, in bootstrap
+    run(['elan', 'toolchain', 'install', PINS['lean']])
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/bootstrap_lean.py", line 37, in run
+    subprocess.run(list(map(str, argv)), cwd=cwd, env=environment(), check=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['elan', 'toolchain', 'install', 'leanprover/lean4:v4.34.1']' returned non-zero exit status 1.
