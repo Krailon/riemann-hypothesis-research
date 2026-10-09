@@ -26,7 +26,8 @@ def digest(path):
 def source_hashes():
     files = [ROOT / p for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json',
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
-             'scripts/reproduce_lean.py']]
+             'scripts/reproduce_lean.py', 'scripts/check_lean_analytic_coverage.py',
+             'research/lean-analytic-coverage.json']]
     files += sorted((ROOT / 'lean').rglob('*.lean'))
     files += sorted((ROOT / 'lean').rglob('*.json'))
     return {str(p.relative_to(ROOT)): digest(p) for p in files if p.is_file()}
@@ -86,7 +87,7 @@ def main():
                   status='running', pins=PINS, commands=[], external_kernel=False,
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   assumptions=['UNCONDITIONAL'],
-                  verification_scope='Zeta import, strip corollaries, finite foundation, and horizontal-square bounds')
+                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, and analytic summability foundations')
 
     def command(name, argv, *, expected_failure=False):
         log = run_dir / (name + '.log')
@@ -126,6 +127,12 @@ def main():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
+        command('summability-build', ['lake', 'build', 'HigherCorrelations.SummabilityFoundation'])
+        command('summability-comparator', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/summability.json'])
+        command('summability-unfinished-rejected', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/summability-unfinished.json'], expected_failure=True)
+        command('analytic-coverage', [sys.executable, '-B', 'scripts/check_lean_analytic_coverage.py'])
         command('horizontal-square-build', ['lake', 'build', 'HigherCorrelations.HorizontalSquareFoundation'])
         command('horizontal-square-comparator', ['lake', 'env', comparator,
                 'lean/VerificationChallenges/horizontal-square.json'])
@@ -150,6 +157,7 @@ def main():
         expected = set(json.loads((ROOT / 'lean/VerificationChallenges/horizontal-strip.json').read_text())['theorem_names'])
         expected.update(json.loads((ROOT / 'lean/VerificationChallenges/finite-foundation.json').read_text())['theorem_names'])
         expected.update(json.loads((ROOT / 'lean/VerificationChallenges/horizontal-square.json').read_text())['theorem_names'])
+        expected.update(json.loads((ROOT / 'lean/VerificationChallenges/summability.json').read_text())['theorem_names'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):

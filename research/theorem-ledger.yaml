@@ -2796,3 +2796,162 @@ claims:
       verification_script: scripts/reproduce_lean.py
       verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No floating-point or native_decide certificate, no quasi-RH import. External mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are not enumerated individually in this ledger."
       baseline_audit_coverage: "Outside both historical pair and triple RH audits."
+  - id: SUMMABILITY-SHELL-001
+    title: Formalized shell summability and geometric tail
+    kind: theorem
+    statement: |
+      For an arbitrary occurrence type I, finite shells D_n and a map s:I->N
+      with i in D_n iff s(i)=n, assume real A,C>=0, natural d<p,
+      card(D_n)<=C*(2^d)^n and norm(f(i))<=A/(2^p)^(s(i)), f:I->C.
+      Then sum_i norm(f(i)) and sum_i f(i) are summable. With theta=2^d/2^p,
+      0<=theta<1 and sum_{s(i)>=N} norm(f(i))<=A*C*theta^N/(1-theta).
+      A bound norm(f(i))<=A/(1+r(i))^p implies the required decay if
+      2^(s(i))<=1+r(i). The ratios at (d,p)=(4,20),(4,22) are exactly
+      1/65536 and 1/262144. Shell counts and decay are hypotheses, not
+      formalized zeta estimates.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/OccurrenceSummability.lean
+      label: HigherCorrelations.dyadic_tail_bound
+      companion_declarations: "dyadic_ratio_bounds, shell_sum_eq, summable_of_shell_bounds, dyadic_shell_sum_bound, dyadic_summable_norm, dyadic_summable, radius_decay_to_shell, shell_tsum_eq, geometric_tail_eq, project_dyadic_ratios"
+      bookkeeping: research/lean-summability.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 1dc056c83e0d8116fd8a7aaa08f74e75f4da7f1a9ed90932ac9ce009998ef457
+    limit_order: "Fix the shell family, constants and decay exponent before summing or removing tails. No uniformity in height is asserted."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No quasi-RH import in these solution modules. Mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are pinned but not individually enumerated in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits. Explicit analytic hypotheses remain to be instantiated for the zeta observable."
+  - id: SUMMABILITY-LIMITS-001
+    title: Formalized infinite occurrence bookkeeping and cutoff limits
+    kind: theorem
+    statement: |
+      A norm-summable function into a complete normed additive group has
+      finite-cutoff sums converging to its tsum whenever each occurrence is
+      eventually included. For complex triple functions this includes the net
+      of three finite sets and three independently exhausting cutoff sequences.
+      Norm-summable complex occurrence sums regroup by arbitrary label fibers,
+      with finite-fiber cardinalities retained for fiber-constant summands,
+      and split into the five ordinate-equality patterns. An explicit occurrence
+      involution preserves norm summability and gives the full eight-reflection
+      identity; preservation of ordinate labels gives the same identity within
+      each ordinate class. A summable eventual uniform norm majorant and
+      termwise convergence imply convergence of parameter-dependent sums.
+      No actual zero enumeration, zero count, or uniform height bound is proved.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [FINITE-PATTERNS-001, FINITE-REGROUP-001, FINITE-REFLECTION-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/OccurrenceLimits.lean
+      label: HigherCorrelations.independent_sequence_cutoff_limit
+      companion_declarations: "occurrence_cutoff_limit, triple_cutoff_limit, tsum_regroup_occurrences, tsum_regroup_finite_fibers, tsum_triple_patterns, summable_reflectSlots, tsum_reflectSlots, tsum_eight_reflections, tsum_reflectSlots_pattern, tsum_eight_reflections_pattern, dominated_occurrence_limit"
+      bookkeeping: research/lean-summability.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 1dc056c83e0d8116fd8a7aaa08f74e75f4da7f1a9ed90932ac9ce009998ef457
+    limit_order: "Remove independent cutoffs under absolute summability. A later parameter limit requires the separate eventual uniform summable majorant."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No quasi-RH import in these solution modules. Mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are pinned but not individually enumerated in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits. Explicit analytic hypotheses remain to be instantiated for the zeta observable."
+  - id: SUMMABILITY-INTEGRAL-001
+    title: Formalized evaluated-integral sums and absolute interchange
+    kind: theorem
+    statement: |
+      For integrable complex functions G_i on a measure space, a summable
+      real B_i with norm(integral G_i)<=B_i implies norm summability of the
+      evaluated integrals and convergence of their finite occurrence cutoffs.
+      Separately, for countable I, integrability of each G_i and summability
+      of integral norm(G_i) imply tsum_i integral G_i = integral tsum_i G_i,
+      and convergence of integrals of finite cutoff sums. Almost-everywhere
+      termwise convergence of a measurable sequence under a single integrable
+      norm majorant implies convergence of its integrals. No inference from
+      norm(integral G_i) control to integral norm(G_i) control is made.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [SUMMABILITY-LIMITS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/OccurrenceIntegration.lean
+      label: HigherCorrelations.integral_occurrence_sum
+      companion_declarations: "evaluated_integrals_summable, evaluated_integrals_cutoff_limit, integral_occurrence_cutoff_limit, dominated_integral_limit"
+      bookkeeping: research/lean-summability.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 1dc056c83e0d8116fd8a7aaa08f74e75f4da7f1a9ed90932ac9ce009998ef457
+    limit_order: "All sum/integral and parameter-limit interchanges carry their integrability, absolute summability or domination hypotheses explicitly."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No quasi-RH import in these solution modules. Mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are pinned but not individually enumerated in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits. Explicit analytic hypotheses remain to be instantiated for the zeta observable."
+  - id: HORIZONTAL-INTEGRAL-001
+    title: Formalized integrated horizontal-square inequality
+    kind: theorem
+    statement: |
+      For finite occurrence set D, arbitrary real delta_i,b and continuous
+      compactly supported real phi on R^2, phi*B_D and phi*P are Lebesgue
+      integrable, where B_D is the full ordered cosh excess and
+      P(xi,eta)=xi^2+xi*eta+eta^2. If phi>=0, integral(phi*B_D) is at least
+      b^2*card(D)^2*(sum_D delta_i^2)*integral(phi*P)>=0. For a countable
+      family of finite sets D_g with W_g>=0, summability of
+      E_g=W_g*integral(phi*B_{D_g}) implies summability of
+      L_g=W_g*b^2*card(D_g)^2*(sum_{D_g}delta_i^2)*integral(phi*P), and
+      sum_g L_g<=sum_g E_g. This does not identify the supplied sets with
+      actual zero fibers or claim integrability of their infinite pointwise sum.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [SAME-ORDINATE-SQUARE-001, HORIZONTAL-FREQUENCY-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/OccurrenceIntegration.lean
+      label: HigherCorrelations.integrated_horizontal_square_lower
+      companion_declarations: "continuous_cosh_excess, continuous_frequency_form, integrable_weighted_cosh, integrable_weighted_frequency, integrated_frequency_nonneg, integrated_cosh_nonneg, integrated_fibers_lower"
+      bookkeeping: research/lean-summability.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 1dc056c83e0d8116fd8a7aaa08f74e75f4da7f1a9ed90932ac9ce009998ef457
+    limit_order: "Integrate each finite sum at fixed parameters, then use nonnegative comparison for the summable evaluated fiber contributions. No height limit."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No quasi-RH import in these solution modules. Mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are pinned but not individually enumerated in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits. Explicit analytic hypotheses remain to be instantiated for the zeta observable."
+  - id: SUMMABILITY-EXAMPLES-001
+    title: Formalized analytic boundary and moving-mass examples
+    kind: theorem
+    statement: |
+      Exact examples check geometric tails, a summable singleton-shell family,
+      repeated labels, empty occurrence types, reflection fixed points,
+      independently growing triple cutoffs, and integrated empty fibers,
+      zero scale and zero test weight. The ratio at p=d equals one and a
+      nonzero constant series over N is not summable. For f_n(i)=1_{i=n},
+      each row is summable with sum one and every fixed coordinate tends
+      to zero, but the limiting zero family sums to zero. No common summable
+      norm majorant can dominate all rows. These are abstract exact examples,
+      not asserted zero configurations or numerical evidence about RH.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [SUMMABILITY-SHELL-001, SUMMABILITY-LIMITS-001, HORIZONTAL-INTEGRAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/SummabilityExamples.lean
+      label: HigherCorrelations.moving_singleton_no_majorant
+      companion_declarations: "geometric_tail_example, repeated_labels_tsum_example, empty_occurrence_tsum_example, reflection_fixed_point_tsum_example, independent_cutoff_example, integrated_empty_example, integrated_zero_scale_example, integrated_zero_weight_example, moving_singleton_summable, moving_singleton_sum, moving_singleton_pointwise, moving_singleton_limit_mismatch, singleton_shell_summable_example, dyadic_endpoint_example"
+      bookkeeping: research/lean-summability.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 1dc056c83e0d8116fd8a7aaa08f74e75f4da7f1a9ed90932ac9ce009998ef457
+    limit_order: "The moving-singleton example explicitly distinguishes the two orders of limits. Other checks are exact finite identities or convergent geometric series."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No quasi-RH import in these solution modules. Mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are pinned but not individually enumerated in this ledger."
+      baseline_audit_coverage: "Outside both historical pair and triple RH audits. Explicit analytic hypotheses remain to be instantiated for the zeta observable."

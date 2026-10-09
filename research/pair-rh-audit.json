@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "baa3c4ad42a9e030efb6ba66bd81597f735a3fa13e4ff5ffdb52e734fad7733d",
+  "ledger_sha256": "4db64e31a32eacbc0f7003bbaec3bf86b4cc547bb8f4b5888f677e750698ef46",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2498,5 +2498,18 @@
     ],
     "report": "research/lean-horizontal-square.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Four formalized horizontal-square entries are appended. Historical pair/triple verdicts, claim snapshots, proof files, coverage and archives are unchanged. Whole-ledger hash maintenance does not extend either historical audit to the new finite inequalities."
+  },
+  "ledger_summability_review": {
+    "reviewed_on": "2026-10-09",
+    "previous_ledger_sha256": "baa3c4ad42a9e030efb6ba66bd81597f735a3fa13e4ff5ffdb52e734fad7733d",
+    "added_claim_ids": [
+      "HORIZONTAL-INTEGRAL-001",
+      "SUMMABILITY-EXAMPLES-001",
+      "SUMMABILITY-INTEGRAL-001",
+      "SUMMABILITY-LIMITS-001",
+      "SUMMABILITY-SHELL-001"
+    ],
+    "report": "research/lean-summability.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Five formalized summability, limit, integration and example entries are appended. Their count, decay and domination hypotheses are explicit and remain to be instantiated for actual zero sums. Historical pair/triple verdicts, claim snapshots, proofs, coverage and archives are unchanged; whole-ledger hash maintenance does not extend the historical audits."
   }
 }

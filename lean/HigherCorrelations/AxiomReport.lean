@@ -1,3 +1,4 @@
+import HigherCorrelations.SummabilityFoundation
 import HigherCorrelations.HorizontalStrip
 import HigherCorrelations.FiniteFoundation
 import HigherCorrelations.HorizontalSquareFoundation
@@ -62,3 +63,54 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.square_example_frequency_axes
 #print axioms HigherCorrelations.square_example_repeated_occurrences
 #print axioms HigherCorrelations.square_example_fiber_multiplicities
+#print axioms HigherCorrelations.dyadic_ratio_bounds
+#print axioms HigherCorrelations.shell_sum_eq
+#print axioms HigherCorrelations.summable_of_shell_bounds
+#print axioms HigherCorrelations.dyadic_shell_sum_bound
+#print axioms HigherCorrelations.dyadic_summable_norm
+#print axioms HigherCorrelations.dyadic_summable
+#print axioms HigherCorrelations.radius_decay_to_shell
+#print axioms HigherCorrelations.shell_tsum_eq
+#print axioms HigherCorrelations.geometric_tail_eq
+#print axioms HigherCorrelations.dyadic_tail_bound
+#print axioms HigherCorrelations.project_dyadic_ratios
+#print axioms HigherCorrelations.occurrence_cutoff_limit
+#print axioms HigherCorrelations.triple_cutoff_limit
+#print axioms HigherCorrelations.independent_sequence_cutoff_limit
+#print axioms HigherCorrelations.tsum_regroup_occurrences
+#print axioms HigherCorrelations.tsum_regroup_finite_fibers
+#print axioms HigherCorrelations.tsum_triple_patterns
+#print axioms HigherCorrelations.summable_reflectSlots
+#print axioms HigherCorrelations.tsum_reflectSlots
+#print axioms HigherCorrelations.tsum_eight_reflections
+#print axioms HigherCorrelations.tsum_reflectSlots_pattern
+#print axioms HigherCorrelations.tsum_eight_reflections_pattern
+#print axioms HigherCorrelations.dominated_occurrence_limit
+#print axioms HigherCorrelations.evaluated_integrals_summable
+#print axioms HigherCorrelations.evaluated_integrals_cutoff_limit
+#print axioms HigherCorrelations.integral_occurrence_sum
+#print axioms HigherCorrelations.integral_occurrence_cutoff_limit
+#print axioms HigherCorrelations.dominated_integral_limit
+#print axioms HigherCorrelations.continuous_cosh_excess
+#print axioms HigherCorrelations.continuous_frequency_form
+#print axioms HigherCorrelations.integrable_weighted_cosh
+#print axioms HigherCorrelations.integrable_weighted_frequency
+#print axioms HigherCorrelations.integrated_frequency_nonneg
+#print axioms HigherCorrelations.integrated_cosh_nonneg
+#print axioms HigherCorrelations.integrated_horizontal_square_lower
+#print axioms HigherCorrelations.integrated_fibers_lower
+#print axioms HigherCorrelations.geometric_tail_example
+#print axioms HigherCorrelations.repeated_labels_tsum_example
+#print axioms HigherCorrelations.empty_occurrence_tsum_example
+#print axioms HigherCorrelations.reflection_fixed_point_tsum_example
+#print axioms HigherCorrelations.independent_cutoff_example
+#print axioms HigherCorrelations.integrated_empty_example
+#print axioms HigherCorrelations.integrated_zero_scale_example
+#print axioms HigherCorrelations.integrated_zero_weight_example
+#print axioms HigherCorrelations.moving_singleton_summable
+#print axioms HigherCorrelations.moving_singleton_sum
+#print axioms HigherCorrelations.moving_singleton_pointwise
+#print axioms HigherCorrelations.moving_singleton_no_majorant
+#print axioms HigherCorrelations.moving_singleton_limit_mismatch
+#print axioms HigherCorrelations.singleton_shell_summable_example
+#print axioms HigherCorrelations.dyadic_endpoint_example

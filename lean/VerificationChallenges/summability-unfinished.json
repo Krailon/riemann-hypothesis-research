@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.Summability",
+  "solution_module": "VerificationChallenges.SummabilityUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.dyadic_ratio_bounds"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

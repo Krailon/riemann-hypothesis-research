@@ -9,6 +9,10 @@ three unfinished-proof controls, checked 60 distinct axiom reports, and
 passed 70 pair plus 126 triple regression tests. The complete logs and
 source hashes are in the [verification archive](../artifacts/certificates/lean/a0d876dfc65c219ae378b452dc4e5a6302895c48f4d623f868e3f591cd7a1538/manifest.json).
 
+The subsequent [summability milestone](lean-summability.md) adds
+integration and infinite-sum implications. The archived counts below
+describe milestone 3.
+
 ## Exact statement and conventional proof
 
 For every real $x$,

@@ -38,6 +38,18 @@ tests**. See the [horizontal-square record](research/lean-horizontal-square.md)
 for the exact inequality, proof scope, and archived evidence. The full
 ordinate-only `o(1)` estimate remains open.
 
+## Summability and integral foundations formalized
+
+Lean milestone 4A proves explicit shell tails, independent cutoff limits,
+infinite occurrence regrouping and reflection, safe integral operations,
+and the integrated horizontal-square inequality. The fresh run checked
+**51 new declarations**, **111 axiom reports** overall, **196 regression
+tests**, and **8 coverage-map checks**. See the
+[summability record](research/lean-summability.md) and
+[analytic coverage map](research/lean-analytic-coverage.json). Count, decay,
+and domination hypotheses still need proofs for the actual zeta sums;
+the ordinate-only `o(1)` estimate remains open.
+
 ## Reproduce the pair baseline
 
 Task: verification and exposition. Assumptions: `UNCONDITIONAL` for the exact

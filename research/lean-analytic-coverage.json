@@ -1,0 +1,1578 @@
+{
+  "schema_version": 1,
+  "task": "formalization_coverage_bookkeeping",
+  "assumptions": [
+    "UNCONDITIONAL"
+  ],
+  "roots": [
+    "TRIPLE-SMOOTHED-CORRELATION-001",
+    "ORDINATE-CONSTANT-KERNEL-001",
+    "ORDINATE-TRIPLE-001"
+  ],
+  "analytic_proof_certificate": false,
+  "whole_graph_formalized": false,
+  "nodes": [
+    {
+      "id": "GAMMA-DIGAMMA-001",
+      "dependencies": [],
+      "ledger_status": "published",
+      "ledger_block_sha256": "bffd7d38928738ccc17a725f082cee5f28948b0f1824b636ca3c2b679c42339a",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "sec:analytic-inputs",
+        "bibliography_key": "MV2007",
+        "locator": "Appendix C, Theorem C.1, equation (C.17), p.523 and proof pp.523-524",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/20.3_pp_520_534_The_gamma_function.pdf"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "MV-PNT-PROOF",
+      "dependencies": [],
+      "ledger_status": null,
+      "ledger_block_sha256": "7c8a76bfa3889c47267d48214563a207c1418582e8e5996c4d18aaa3f31b4cb4",
+      "source": null,
+      "coverage": "provenance",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": []
+    },
+    {
+      "id": "MV-SIEVE-PROOF",
+      "dependencies": [],
+      "ledger_status": null,
+      "ledger_block_sha256": "5a65576c6c0cfdb757983fe7fb5be79f77f6cfef8d7b4c7a67017ad76c00d023",
+      "source": null,
+      "coverage": "provenance",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": []
+    },
+    {
+      "id": "ORDINATE-ARGUMENT-BOUND-001",
+      "dependencies": [
+        "ORDINATE-TRANSFER-001",
+        "PAIR-COUNT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "6cd0fceb48e767857f68a6552b2d26e5f4b8f943200ffd9b542ccd413a1cfda7",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "lem:arguments",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ORDINATE-ARGUMENT-VANISHING-001",
+      "dependencies": [
+        "ORDINATE-ARGUMENT-BOUND-001"
+      ],
+      "ledger_status": "idea",
+      "ledger_block_sha256": "e7a6cfd33b586a82cb02c7c527fb664a3bb7f0bd60f0ada6f3d1c1483fb9b543",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "target:arguments",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "open_research",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Open research: the needed signed complex-argument error estimate is not proved."
+      ]
+    },
+    {
+      "id": "ORDINATE-CANCELLATION-BUDGET-001",
+      "dependencies": [
+        "ORDINATE-SIGN-AVERAGE-001",
+        "ORDINATE-QUADRATIC-001",
+        "ORDINATE-COUNT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "34e5ca667fa39b4554ec4cf61b24299672be04148a4fa9532cde8ba74a142002",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "thm:cancellation-budget",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ORDINATE-CONSTANT-KERNEL-001",
+      "dependencies": [
+        "ORDINATE-SIGN-AVERAGE-001",
+        "ORDINATE-REAL-KERNEL-001",
+        "ORDINATE-CANCELLATION-BUDGET-001",
+        "ORDINATE-DENSITY-MIX-001",
+        "ORDINATE-TRANSFER-001",
+        "TRIPLE-SMOOTHED-CORRELATION-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "e2790e556fa1e4926f66420513d7a1eac78700f6e45e3d7675d2bfd81311b746",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "lem:constant-kernel",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.evaluated_integrals_summable",
+        "HigherCorrelations.evaluated_integrals_cutoff_limit",
+        "HigherCorrelations.tsum_eight_reflections"
+      ],
+      "remaining_obligations": [
+        "Identify each evaluated Fourier integral with the reflected complex-test difference.",
+        "Prove tuple decay, kernel replacement bounds and their support-dependent asymptotics.",
+        "No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied."
+      ]
+    },
+    {
+      "id": "ORDINATE-COUNT-001",
+      "dependencies": [
+        "ORDINATE-PAIR-INPUT-001",
+        "PAIR-COUNT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "90ba39192213fa09c34c733bcd9430f400139a2ce0c64aa171fc552994ee991e",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "lem:counts",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Prove the near and global weighted tuple counts from the recorded pair and unit counts; construct the unweighted shells needed for each application."
+      ]
+    },
+    {
+      "id": "ORDINATE-DENSITY-INPUT-001",
+      "dependencies": [],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "01fa36687b4f5a56f847fb3be6083f29bcfce6580e800dbf6628d727e8f21f58",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "prop:density-input",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ORDINATE-DENSITY-MIX-001",
+      "dependencies": [
+        "ORDINATE-CANCELLATION-BUDGET-001",
+        "ORDINATE-DENSITY-INPUT-001",
+        "ORDINATE-COUNT-001",
+        "ORDINATE-REAL-KERNEL-001",
+        "ORDINATE-TRANSFER-001",
+        "TRIPLE-SMOOTHED-CORRELATION-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "21ad9064df6ebcfa30fcf0096a4c2bef92613e9cb0e1655be5ff454b9e3deab6",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "thm:density-mix",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ORDINATE-PAIR-INPUT-001",
+      "dependencies": [],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "a123dbf815ba652064c859a80e634e077c40e6daa2742256755877dbb081bffa",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "prop:pair-input",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ORDINATE-QUADRATIC-001",
+      "dependencies": [
+        "ORDINATE-SIGN-AVERAGE-001",
+        "ORDINATE-ARGUMENT-BOUND-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "092df663c546f8ee03b086318bb8129da8e900a111a2295948f100f14eb45182",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "lem:quadratic",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ORDINATE-REAL-KERNEL-001",
+      "dependencies": [
+        "ORDINATE-TRANSFER-001",
+        "ORDINATE-COUNT-001",
+        "ORDINATE-DENSITY-INPUT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "8bb2d404e9f178ffd85abca480579782a61e0ab62ea39e6786a402f66b8dd3cd",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "thm:real-kernel",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ORDINATE-SIGN-AVERAGE-001",
+      "dependencies": [
+        "ORDINATE-TRANSFER-001",
+        "TRIPLE-KERNEL-PROFILE-001",
+        "PAIR-COUNT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "f9cea47cabe2a7eb42f8859965efff5b90f88897fadd06cdc2f10c12f7b02527",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "lem:sign-average",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.tsum_eight_reflections",
+        "HigherCorrelations.tsum_eight_reflections_pattern",
+        "HigherCorrelations.integral_occurrence_sum"
+      ],
+      "remaining_obligations": [
+        "Construct the multiplicity-preserving occurrence involution from zeta symmetry.",
+        "Prove the actual absolute Fourier-integral majorant and kernel coefficient bounds."
+      ]
+    },
+    {
+      "id": "ORDINATE-TRANSFER-001",
+      "dependencies": [
+        "PAIR-COUNT-001",
+        "TRIPLE-KERNEL-PROFILE-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "15be0a4179e4167fedee19f1ee49d263b11dd21a330da1af8514cdb958323165",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "lem:transfer",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.dyadic_summable_norm",
+        "HigherCorrelations.dyadic_tail_bound",
+        "HigherCorrelations.radius_decay_to_shell",
+        "HigherCorrelations.independent_sequence_cutoff_limit"
+      ],
+      "remaining_obligations": [
+        "Construct actual zero occurrences with multiplicities and finite height cutoffs.",
+        "Derive finite dyadic shells and their cardinality bounds from zero counts.",
+        "Prove bounded-imaginary-strip Fourier decay and the exact transfer normalization."
+      ]
+    },
+    {
+      "id": "ORDINATE-TRIPLE-001",
+      "dependencies": [
+        "TRIPLE-SMOOTHED-CORRELATION-001",
+        "ORDINATE-TRANSFER-001",
+        "ORDINATE-REAL-KERNEL-001",
+        "ORDINATE-ARGUMENT-VANISHING-001"
+      ],
+      "ledger_status": "idea",
+      "ledger_block_sha256": "06273c48a6ba05ac0d3bad6310ba0d08a0de6668ecb0e9669766fd3526ba54a0",
+      "source": {
+        "file": "proofs/triple_ordinate_reduction.tex",
+        "label": "target:ordinate",
+        "bookkeeping": "research/triple-ordinate-reduction.md"
+      },
+      "coverage": "open_research",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Open research: the conventional ordinate-only asymptotic still requires a vanishing signed error."
+      ]
+    },
+    {
+      "id": "PAIR-COUNT-001",
+      "dependencies": [
+        "ZETA-COUNT-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "b628a2539372f6345266d549a513e18465ed29e2591c536def14134e3a63998c",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-count",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, Lemma 2, equations (2.4)-(2.5)"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize inclusive endpoint counts, local unit-interval bounds and multiplicities; shell bounds are hypotheses only."
+      ]
+    },
+    {
+      "id": "PAIR-COUNT-KERNEL-001",
+      "dependencies": [
+        "PAIR-COUNT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "837ceb27d4d8d22f72d3611440e517bbe0303c4d2bdd8065bef79050fa7f2021",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:count-kernel",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, equations (2.14)-(2.15) and boundary estimates after (2.15)"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PAIR-EF-001",
+      "dependencies": [
+        "PAIR-EF-EXACT-001",
+        "ZETA-ANALYTIC-001",
+        "GAMMA-DIGAMMA-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "8b9910c89c60ac0d104777021db87693e5977d31613f43ae1ac8cf5eba032a3e",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-ef",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, Lemma 1, (2.2)"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PAIR-EF-CONVERGENCE-001",
+      "dependencies": [
+        "ZETA-ANALYTIC-001",
+        "PAIR-COUNT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "3fd06811cc473c5f3e2ab3ab29191bd6c3c05503937dcf9d60437163d596216b",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:ef-convergence"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PAIR-EF-EXACT-001",
+      "dependencies": [
+        "ZETA-ANALYTIC-001",
+        "ZETA-CONTOUR-001",
+        "PAIR-EF-CONVERGENCE-001",
+        "PAIR-EF-MELLIN-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "870ac3842f65bac21970ca85c604bf566f003b56918e40d668e4e3aacadc4182",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "prop:ef-exact"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PAIR-EF-MELLIN-001",
+      "dependencies": [],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "1cee155d7deb1ed46253870cf2bacf47155f814439e0e7f9c4cb9fabceef88e3",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:ef-mellin"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PAIR-MEANVALUE-001",
+      "dependencies": [],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "7e31a436b5087966367a8769270990a8a4167e2741b4c7109435b31b1d33e749",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-meanvalue"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PAIR-PRIME-COUNT-001",
+      "dependencies": [
+        "PRIME-SIEVE-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "62a8ff42d64b6895b3d619410aedc6886523edff52d0bb20effb5c60c8c5f4d0",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-count"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PAIR-PRIME-DIAGONAL-001",
+      "dependencies": [
+        "PRIME-PNT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "2b07ab65fb069c80ec587e5b990b1734a2f2bfccff6960b025857ef3ee4f2815",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-diagonal"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PAIR-PRIME-MEAN-001",
+      "dependencies": [
+        "PAIR-MEANVALUE-001",
+        "PAIR-PRIME-COUNT-001",
+        "PAIR-PRIME-DIAGONAL-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "d339b8995e0ac023cbbbaf2df6c1852f2e496f0088e7dcc64a6c24fe0877f049",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:prime-mean"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PRIME-PNT-001",
+      "dependencies": [
+        "MV-PNT-PROOF"
+      ],
+      "ledger_status": "published",
+      "ledger_block_sha256": "89b31f66fd34987303a0f6e0b178c94549a9fd637c16952f6f17c82aaf7ff191",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "inp:prime-pnt",
+        "bibliography_key": "MV2007",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/10.0_pp_168_198_The_Prime_Number_Theorem.pdf",
+        "locator": "Theorem 6.9, equations (6.12)-(6.13), p. 179; proof pp. 180-181",
+        "version_consulted": "author_hosted_publisher_chapter"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "PRIME-SIEVE-001",
+      "dependencies": [
+        "MV-SIEVE-PROOF"
+      ],
+      "ledger_status": "published",
+      "ledger_block_sha256": "7c7634db14fc79c5fc762fca389ede7057824ad05fca346f2d801df358db1989",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "inp:prime-sieve",
+        "bibliography_key": "MV2007",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/07.0_pp_76_107_Principles_and_first_examples_of_sieve_methods.pdf",
+        "locator": "Corollary 3.14, p. 97, specialized to x=0,y=U; fixed product and bounded error factor absorbed",
+        "version_consulted": "author_hosted_publisher_chapter"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "dependencies": [
+        "TRIPLE-UNIFORM-001",
+        "TRIPLE-OFFDIAG-001",
+        "TRIPLE-RETAINED-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "65c2dd5c9ddfce2742aaa096625640633ff39809e2015790556e502fbb966cd0",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-boundary-estimates",
+        "bookkeeping": "research/triple-test-functions.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+      "dependencies": [
+        "TRIPLE-KERNEL-PROFILE-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "4f7171141988ff04f2e0b963eddaac6de2a5a90a0910359a42cf9613e33f88de",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "cor:triple-kernel-critical",
+        "bookkeeping": "research/triple-kernel.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-KERNEL-LOCALIZATION-001",
+      "dependencies": [
+        "TRIPLE-KERNEL-PROFILE-001",
+        "TRIPLE-MASTER-001",
+        "PAIR-COUNT-001",
+        "PAIR-COUNT-KERNEL-001",
+        "TRIPLE-SIGNED-SECTORS-001",
+        "TRIPLE-SIGNED-TEST-FUNCTION-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "6113275e16c7012c7d78008d4c1c3d5ec099c4a5252739090f5ca66782fd8395",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-kernel-localization",
+        "bookkeeping": "research/triple-kernel.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-KERNEL-PROFILE-001",
+      "dependencies": [
+        "TRIPLE-MASTER-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "7ed4e2de3a54251bf0183e2833996c9202e3c76f1a195ec6e206a9315309b7b0",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-kernel-profile",
+        "bookkeeping": "research/triple-kernel.md"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.dominated_integral_limit"
+      ],
+      "remaining_obligations": [
+        "Formalize the rational kernel, residue evaluation and dominating function.",
+        "Prove collision and parameter-endpoint limits with that domination."
+      ]
+    },
+    {
+      "id": "TRIPLE-LOG-GAP-001",
+      "dependencies": [],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "17fdd5568a3189c47bc00db8880d7c91e9c458cf5eb4f6ccb328a452bb3a8d06",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-log-gap"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "dependencies": [
+        "TRIPLE-SINE-MEASURE-001",
+        "TRIPLE-SIGNED-TEST-FUNCTION-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "281585d4336dfcf6150ca639630e67bbdaf0962802e2e63b8a953e53080de8fd",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-main-term-comparison",
+        "bookkeeping": "research/triple-main-term-comparison.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-MASTER-001",
+      "dependencies": [
+        "PAIR-EF-CONVERGENCE-001",
+        "PAIR-EF-001",
+        "PAIR-COUNT-KERNEL-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "84d6bb1daf41a31def210cc8147cdc08729349aa96182d79121be3f6dffb753b",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-master",
+        "bookkeeping": "research/triple-master-bookkeeping.md"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.integral_occurrence_sum",
+        "HigherCorrelations.integral_occurrence_cutoff_limit"
+      ],
+      "remaining_obligations": [
+        "Prove the actual kernel integrability and summable integral-norm bound.",
+        "Formalize the explicit-formula expansion, prime-side sums and normalization."
+      ]
+    },
+    {
+      "id": "TRIPLE-OFFDIAG-001",
+      "dependencies": [
+        "TRIPLE-LOG-GAP-001",
+        "TRIPLE-UNIFORM-001",
+        "TRIPLE-MASTER-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "159192e43fe71eab2f3f8678b60dfaa996e4305f2ec5c6ec7c9432f49bc786bc",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-offdiag",
+        "bookkeeping": "research/triple-error-budget.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-QUADRANT-LIMIT-001",
+      "dependencies": [
+        "TRIPLE-BOUNDARY-ESTIMATES-001",
+        "TRIPLE-MASTER-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "efc79256b64818592b277927de138c907affa5233c77028a69f2480b137d6c0d",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "thm:triple-quadrant-limit",
+        "bookkeeping": "research/triple-test-functions.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-RETAINED-001",
+      "dependencies": [
+        "TRIPLE-UNIFORM-001",
+        "TRIPLE-OFFDIAG-001",
+        "PRIME-PNT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "fdf2fd15696b763fb794111b21cf30b37d0b4db02adc83d91233fd8943d436a5",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-retained",
+        "bookkeeping": "research/triple-test-functions.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-SIGNED-SECTORS-001",
+      "dependencies": [
+        "TRIPLE-MASTER-001",
+        "PAIR-COUNT-KERNEL-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "2faeb5a88141cde981e811f98d63344b7f77de42cd36311fc3a5a931752a588e",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-signed-sectors",
+        "bookkeeping": "research/triple-signed-sectors.json"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-SIGNED-TEST-FUNCTION-001",
+      "dependencies": [
+        "TRIPLE-SIGNED-SECTORS-001",
+        "TRIPLE-QUADRANT-LIMIT-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "2fb612f94e994e40b1d700a49f3faccd1ea26ec335a57b483c8fb55bad6ec68d",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "thm:triple-signed-test-function",
+        "bookkeeping": "research/triple-test-functions.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-SINE-MEASURE-001",
+      "dependencies": [],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "f70b8187841e2f0337efee1ba5d966127ad029cd1675b300ad6c9c60c29908fa",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-sine-measure",
+        "bookkeeping": "research/triple-main-term-comparison.md",
+        "provenance": "research/literature-notes/triple-sine-comparison.md",
+        "bibliography_key": "ConreySnaith2014",
+        "imported_scope": "Theorem 1, equation (2), author manuscript v2 p. 2 fixes the distinct-index unitary determinant convention; all claimed identities are proved directly."
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "TRIPLE-SMOOTHED-CORRELATION-001",
+      "dependencies": [
+        "TRIPLE-KERNEL-PROFILE-001",
+        "TRIPLE-KERNEL-LOCALIZATION-001",
+        "TRIPLE-SINE-MEASURE-001",
+        "TRIPLE-MAIN-TERM-COMPARISON-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "5458f41e6400d18bb8b49ac720c2605ebc5612b00deeca3e3493d00b1947b33c",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "thm:triple-smoothed-correlation",
+        "bookkeeping": "research/triple-theorem.md"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.triple_cutoff_limit",
+        "HigherCorrelations.dominated_occurrence_limit"
+      ],
+      "remaining_obligations": [
+        "Instantiate the occurrence model and all fixed-height absolute bounds.",
+        "Formalize the stated main term and named errors; no uniform height majorant is supplied."
+      ]
+    },
+    {
+      "id": "TRIPLE-UNIFORM-001",
+      "dependencies": [
+        "TRIPLE-MASTER-001",
+        "PAIR-EF-001",
+        "PAIR-PRIME-MEAN-001",
+        "PAIR-PRIME-DIAGONAL-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "3a85b5b74c984c057b47c9b30c665a26e9c171f7dd3b692f4acd4b41af031dcf",
+      "source": {
+        "file": "proofs/triple_explicit_formula.tex",
+        "label": "lem:triple-uniform",
+        "bookkeeping": "research/triple-error-budget.md"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ZETA-ANALYTIC-001",
+      "dependencies": [],
+      "ledger_status": "published",
+      "ledger_block_sha256": "47e06db1e4af51e5060110b2092d40603bf7f50e3f0b91621c58431af36aa9c2",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "sec:analytic-inputs",
+        "bibliography_key": "DLMF",
+        "locator": "Sections 25.2(i), 25.2(iv), 25.10(i); equation (25.4.2)",
+        "url": "https://dlmf.nist.gov/25.4#E2"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ZETA-CONTOUR-001",
+      "dependencies": [],
+      "ledger_status": "published",
+      "ledger_block_sha256": "539736699ea955c434f96e36f0736c2facfb5fba9bb8b13d2cfd07072a87226f",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "sec:analytic-inputs",
+        "bibliography_key": "MV2007",
+        "locator": "Chapter 12, Lemma 12.2 p.398 and Lemma 12.4 pp.399-400",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/16.0_pp_397_418_Explicit_formulae.pdf"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ZETA-COUNT-001",
+      "dependencies": [],
+      "ledger_status": "published",
+      "ledger_block_sha256": "bf9fe655a25e65c90d0a2979b39d8eb619fcc7f3e936244ca8af90379ea658d2",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "sec:analytic-inputs",
+        "bibliography_key": "MV2007",
+        "locator": "Chapter 14, definition p.452 and Corollary 14.3 p.454",
+        "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/18.0_pp_452_462_Zeros.pdf"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "ORDINATE-ARGUMENT-BOUND-001",
+      "ORDINATE-TRANSFER-001"
+    ],
+    [
+      "ORDINATE-ARGUMENT-BOUND-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "ORDINATE-ARGUMENT-VANISHING-001",
+      "ORDINATE-ARGUMENT-BOUND-001"
+    ],
+    [
+      "ORDINATE-CANCELLATION-BUDGET-001",
+      "ORDINATE-COUNT-001"
+    ],
+    [
+      "ORDINATE-CANCELLATION-BUDGET-001",
+      "ORDINATE-QUADRATIC-001"
+    ],
+    [
+      "ORDINATE-CANCELLATION-BUDGET-001",
+      "ORDINATE-SIGN-AVERAGE-001"
+    ],
+    [
+      "ORDINATE-CONSTANT-KERNEL-001",
+      "ORDINATE-CANCELLATION-BUDGET-001"
+    ],
+    [
+      "ORDINATE-CONSTANT-KERNEL-001",
+      "ORDINATE-DENSITY-MIX-001"
+    ],
+    [
+      "ORDINATE-CONSTANT-KERNEL-001",
+      "ORDINATE-REAL-KERNEL-001"
+    ],
+    [
+      "ORDINATE-CONSTANT-KERNEL-001",
+      "ORDINATE-SIGN-AVERAGE-001"
+    ],
+    [
+      "ORDINATE-CONSTANT-KERNEL-001",
+      "ORDINATE-TRANSFER-001"
+    ],
+    [
+      "ORDINATE-CONSTANT-KERNEL-001",
+      "TRIPLE-SMOOTHED-CORRELATION-001"
+    ],
+    [
+      "ORDINATE-COUNT-001",
+      "ORDINATE-PAIR-INPUT-001"
+    ],
+    [
+      "ORDINATE-COUNT-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "ORDINATE-DENSITY-MIX-001",
+      "ORDINATE-CANCELLATION-BUDGET-001"
+    ],
+    [
+      "ORDINATE-DENSITY-MIX-001",
+      "ORDINATE-COUNT-001"
+    ],
+    [
+      "ORDINATE-DENSITY-MIX-001",
+      "ORDINATE-DENSITY-INPUT-001"
+    ],
+    [
+      "ORDINATE-DENSITY-MIX-001",
+      "ORDINATE-REAL-KERNEL-001"
+    ],
+    [
+      "ORDINATE-DENSITY-MIX-001",
+      "ORDINATE-TRANSFER-001"
+    ],
+    [
+      "ORDINATE-DENSITY-MIX-001",
+      "TRIPLE-SMOOTHED-CORRELATION-001"
+    ],
+    [
+      "ORDINATE-QUADRATIC-001",
+      "ORDINATE-ARGUMENT-BOUND-001"
+    ],
+    [
+      "ORDINATE-QUADRATIC-001",
+      "ORDINATE-SIGN-AVERAGE-001"
+    ],
+    [
+      "ORDINATE-REAL-KERNEL-001",
+      "ORDINATE-COUNT-001"
+    ],
+    [
+      "ORDINATE-REAL-KERNEL-001",
+      "ORDINATE-DENSITY-INPUT-001"
+    ],
+    [
+      "ORDINATE-REAL-KERNEL-001",
+      "ORDINATE-TRANSFER-001"
+    ],
+    [
+      "ORDINATE-SIGN-AVERAGE-001",
+      "ORDINATE-TRANSFER-001"
+    ],
+    [
+      "ORDINATE-SIGN-AVERAGE-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "ORDINATE-SIGN-AVERAGE-001",
+      "TRIPLE-KERNEL-PROFILE-001"
+    ],
+    [
+      "ORDINATE-TRANSFER-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "ORDINATE-TRANSFER-001",
+      "TRIPLE-KERNEL-PROFILE-001"
+    ],
+    [
+      "ORDINATE-TRIPLE-001",
+      "ORDINATE-ARGUMENT-VANISHING-001"
+    ],
+    [
+      "ORDINATE-TRIPLE-001",
+      "ORDINATE-REAL-KERNEL-001"
+    ],
+    [
+      "ORDINATE-TRIPLE-001",
+      "ORDINATE-TRANSFER-001"
+    ],
+    [
+      "ORDINATE-TRIPLE-001",
+      "TRIPLE-SMOOTHED-CORRELATION-001"
+    ],
+    [
+      "PAIR-COUNT-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-COUNT-001",
+      "ZETA-COUNT-001"
+    ],
+    [
+      "PAIR-COUNT-KERNEL-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "PAIR-EF-001",
+      "GAMMA-DIGAMMA-001"
+    ],
+    [
+      "PAIR-EF-001",
+      "PAIR-EF-EXACT-001"
+    ],
+    [
+      "PAIR-EF-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-EF-CONVERGENCE-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "PAIR-EF-CONVERGENCE-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-EF-EXACT-001",
+      "PAIR-EF-CONVERGENCE-001"
+    ],
+    [
+      "PAIR-EF-EXACT-001",
+      "PAIR-EF-MELLIN-001"
+    ],
+    [
+      "PAIR-EF-EXACT-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-EF-EXACT-001",
+      "ZETA-CONTOUR-001"
+    ],
+    [
+      "PAIR-PRIME-COUNT-001",
+      "PRIME-SIEVE-001"
+    ],
+    [
+      "PAIR-PRIME-DIAGONAL-001",
+      "PRIME-PNT-001"
+    ],
+    [
+      "PAIR-PRIME-MEAN-001",
+      "PAIR-MEANVALUE-001"
+    ],
+    [
+      "PAIR-PRIME-MEAN-001",
+      "PAIR-PRIME-COUNT-001"
+    ],
+    [
+      "PAIR-PRIME-MEAN-001",
+      "PAIR-PRIME-DIAGONAL-001"
+    ],
+    [
+      "PRIME-PNT-001",
+      "MV-PNT-PROOF"
+    ],
+    [
+      "PRIME-SIEVE-001",
+      "MV-SIEVE-PROOF"
+    ],
+    [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-OFFDIAG-001"
+    ],
+    [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-RETAINED-001"
+    ],
+    [
+      "TRIPLE-BOUNDARY-ESTIMATES-001",
+      "TRIPLE-UNIFORM-001"
+    ],
+    [
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001"
+    ],
+    [
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+      "TRIPLE-KERNEL-PROFILE-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "PAIR-COUNT-KERNEL-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-KERNEL-PROFILE-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-SIGNED-SECTORS-001"
+    ],
+    [
+      "TRIPLE-KERNEL-LOCALIZATION-001",
+      "TRIPLE-SIGNED-TEST-FUNCTION-001"
+    ],
+    [
+      "TRIPLE-KERNEL-PROFILE-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001"
+    ],
+    [
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001"
+    ],
+    [
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-SIGNED-TEST-FUNCTION-001"
+    ],
+    [
+      "TRIPLE-MAIN-TERM-COMPARISON-001",
+      "TRIPLE-SINE-MEASURE-001"
+    ],
+    [
+      "TRIPLE-MASTER-001",
+      "PAIR-COUNT-KERNEL-001"
+    ],
+    [
+      "TRIPLE-MASTER-001",
+      "PAIR-EF-001"
+    ],
+    [
+      "TRIPLE-MASTER-001",
+      "PAIR-EF-CONVERGENCE-001"
+    ],
+    [
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-LOG-GAP-001"
+    ],
+    [
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-OFFDIAG-001",
+      "TRIPLE-UNIFORM-001"
+    ],
+    [
+      "TRIPLE-QUADRANT-LIMIT-001",
+      "TRIPLE-BOUNDARY-ESTIMATES-001"
+    ],
+    [
+      "TRIPLE-QUADRANT-LIMIT-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-RETAINED-001",
+      "PRIME-PNT-001"
+    ],
+    [
+      "TRIPLE-RETAINED-001",
+      "TRIPLE-OFFDIAG-001"
+    ],
+    [
+      "TRIPLE-RETAINED-001",
+      "TRIPLE-UNIFORM-001"
+    ],
+    [
+      "TRIPLE-SIGNED-SECTORS-001",
+      "PAIR-COUNT-KERNEL-001"
+    ],
+    [
+      "TRIPLE-SIGNED-SECTORS-001",
+      "TRIPLE-MASTER-001"
+    ],
+    [
+      "TRIPLE-SIGNED-TEST-FUNCTION-001",
+      "TRIPLE-QUADRANT-LIMIT-001"
+    ],
+    [
+      "TRIPLE-SIGNED-TEST-FUNCTION-001",
+      "TRIPLE-SIGNED-SECTORS-001"
+    ],
+    [
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-KERNEL-LOCALIZATION-001"
+    ],
+    [
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-KERNEL-PROFILE-001"
+    ],
+    [
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-MAIN-TERM-COMPARISON-001"
+    ],
+    [
+      "TRIPLE-SMOOTHED-CORRELATION-001",
+      "TRIPLE-SINE-MEASURE-001"
+    ],
+    [
+      "TRIPLE-UNIFORM-001",
+      "PAIR-EF-001"
+    ],
+    [
+      "TRIPLE-UNIFORM-001",
+      "PAIR-PRIME-DIAGONAL-001"
+    ],
+    [
+      "TRIPLE-UNIFORM-001",
+      "PAIR-PRIME-MEAN-001"
+    ],
+    [
+      "TRIPLE-UNIFORM-001",
+      "TRIPLE-MASTER-001"
+    ]
+  ],
+  "root_to_inputs_order": [
+    "ORDINATE-CONSTANT-KERNEL-001",
+    "ORDINATE-DENSITY-MIX-001",
+    "ORDINATE-CANCELLATION-BUDGET-001",
+    "ORDINATE-QUADRATIC-001",
+    "ORDINATE-SIGN-AVERAGE-001",
+    "ORDINATE-TRIPLE-001",
+    "ORDINATE-ARGUMENT-VANISHING-001",
+    "ORDINATE-ARGUMENT-BOUND-001",
+    "ORDINATE-REAL-KERNEL-001",
+    "ORDINATE-COUNT-001",
+    "ORDINATE-DENSITY-INPUT-001",
+    "ORDINATE-PAIR-INPUT-001",
+    "ORDINATE-TRANSFER-001",
+    "TRIPLE-SMOOTHED-CORRELATION-001",
+    "TRIPLE-MAIN-TERM-COMPARISON-001",
+    "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
+    "TRIPLE-KERNEL-LOCALIZATION-001",
+    "TRIPLE-KERNEL-PROFILE-001",
+    "TRIPLE-SIGNED-TEST-FUNCTION-001",
+    "TRIPLE-QUADRANT-LIMIT-001",
+    "TRIPLE-BOUNDARY-ESTIMATES-001",
+    "TRIPLE-RETAINED-001",
+    "TRIPLE-OFFDIAG-001",
+    "TRIPLE-LOG-GAP-001",
+    "TRIPLE-SIGNED-SECTORS-001",
+    "TRIPLE-SINE-MEASURE-001",
+    "TRIPLE-UNIFORM-001",
+    "PAIR-PRIME-MEAN-001",
+    "PAIR-MEANVALUE-001",
+    "PAIR-PRIME-COUNT-001",
+    "PAIR-PRIME-DIAGONAL-001",
+    "PRIME-PNT-001",
+    "MV-PNT-PROOF",
+    "PRIME-SIEVE-001",
+    "MV-SIEVE-PROOF",
+    "TRIPLE-MASTER-001",
+    "PAIR-COUNT-KERNEL-001",
+    "PAIR-EF-001",
+    "GAMMA-DIGAMMA-001",
+    "PAIR-EF-EXACT-001",
+    "PAIR-EF-CONVERGENCE-001",
+    "PAIR-COUNT-001",
+    "PAIR-EF-MELLIN-001",
+    "ZETA-ANALYTIC-001",
+    "ZETA-CONTOUR-001",
+    "ZETA-COUNT-001"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.dyadic_ratio_bounds",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.shell_sum_eq",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.summable_of_shell_bounds",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.dyadic_shell_sum_bound",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.dyadic_summable_norm",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.dyadic_summable",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.radius_decay_to_shell",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.shell_tsum_eq",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.geometric_tail_eq",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.dyadic_tail_bound",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.project_dyadic_ratios",
+      "source": "lean/HigherCorrelations/OccurrenceSummability.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_cutoff_limit",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.triple_cutoff_limit",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.independent_sequence_cutoff_limit",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.tsum_regroup_occurrences",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.tsum_regroup_finite_fibers",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.tsum_triple_patterns",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.summable_reflectSlots",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.tsum_reflectSlots",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.tsum_eight_reflections",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.tsum_reflectSlots_pattern",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.tsum_eight_reflections_pattern",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.dominated_occurrence_limit",
+      "source": "lean/HigherCorrelations/OccurrenceLimits.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.evaluated_integrals_summable",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.evaluated_integrals_cutoff_limit",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integral_occurrence_sum",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integral_occurrence_cutoff_limit",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.dominated_integral_limit",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.continuous_cosh_excess",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.continuous_frequency_form",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrable_weighted_cosh",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrable_weighted_frequency",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrated_frequency_nonneg",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrated_cosh_nonneg",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrated_horizontal_square_lower",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrated_fibers_lower",
+      "source": "lean/HigherCorrelations/OccurrenceIntegration.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.geometric_tail_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.repeated_labels_tsum_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.empty_occurrence_tsum_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.reflection_fixed_point_tsum_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.independent_cutoff_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrated_empty_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrated_zero_scale_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.integrated_zero_weight_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.moving_singleton_summable",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.moving_singleton_sum",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.moving_singleton_pointwise",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.moving_singleton_no_majorant",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.moving_singleton_limit_mismatch",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.singleton_shell_summable_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.dyadic_endpoint_example",
+      "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    }
+  ],
+  "next_step": "Construct the multiplicity-preserving zero-occurrence interface and finite height cutoffs, then discharge the counting and Fourier-decay hypotheses of ORDINATE-TRANSFER-001."
+}
