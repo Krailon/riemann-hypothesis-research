@@ -46,9 +46,21 @@ and the integrated horizontal-square inequality. The fresh run checked
 **51 new declarations**, **111 axiom reports** overall, **196 regression
 tests**, and **8 coverage-map checks**. See the
 [summability record](research/lean-summability.md) and
-[analytic coverage map](research/lean-analytic-coverage.json). Count, decay,
-and domination hypotheses still need proofs for the actual zeta sums;
-the ordinate-only `o(1)` estimate remains open.
+[analytic coverage map](research/lean-analytic-coverage.json). The subsequent
+actual-occurrence milestone below discharges fixed-height counting and Fourier
+decay; rational-kernel domination and the ordinate-only `o(1)` remain open.
+
+## Actual zero sums formalized
+
+The next Lean milestone constructs multiplicity-preserving zeta occurrences,
+inclusive cutoffs and polynomial shell counts, and proves rapid decay for
+complex Fourier arguments in bounded imaginary strips. The actual real and
+complex triple sums and their difference now have checked absolute convergence,
+independent cutoff limits, and reflection identities at fixed height.
+The fresh run passed **48 new Comparator specifications**, **172 axiom reports**
+overall, **196 regressions**, and **10 coverage checks**. See the
+[actual-occurrence record](research/lean-actual-occurrences.md). This does not
+supply the stronger uniform height bounds or the remaining signed `o(1)`.
 
 ## Reproduce the pair baseline
 

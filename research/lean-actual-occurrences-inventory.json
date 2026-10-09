@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "ZeroOccurrences",
+    "ZeroOccurrenceReflection",
+    "ZeroOccurrenceCounting",
+    "ZeroOccurrenceShells",
+    "CompactFourierFamily",
+    "ComplexFourierDecay",
+    "ActualCorrelationConvergence",
+    "ActualOccurrenceIdentities"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.stripZero_ne_one",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.stripZero_analytic",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.stripZero_order_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_order",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_pos",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_conjugate",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.stripZero_height_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_height_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_occurrenceCutoff",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_negative",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_exhausts",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_ordinate_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zero_occurrences_countable",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_one_sub",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_horizontalReflection",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceReflection_value",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceReflection_involutive",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceReflection_ordinate",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceReflection_displacement",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_card",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceCounting.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_le_mass",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceCounting.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_count_polynomial",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchor_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.dyadicIndex_bounds",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredRadius_nonneg",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_shell_radius_lower",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.actual_shell_count",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.actual_shell_cardinality",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.section_iteratedFDeriv_smooth",
+      "source": "lean/HigherCorrelations/CompactFourierFamily.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.compact_family_derivative_integral_bound",
+      "source": "lean/HigherCorrelations/CompactFourierFamily.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.compact_family_fourier_power_bound",
+      "source": "lean/HigherCorrelations/CompactFourierFamily.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.compact_family_fourier_decay",
+      "source": "lean/HigherCorrelations/CompactFourierFamily.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.planeCoords_apply",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexFourier_integrable",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexFourier_eq_inverse",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexFourier_real_eq_inverse",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexFourier_strip_decay",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_displacement_lt",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualShifts_bound",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.meanSpacing_pos",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchored_actual_summable_norm",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_anchored_tail",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_summable_norm",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_signed_difference_summable",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_independent_cutoff_limit",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_signed_cutoff_limit",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.project_actual_summable_norm",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zero_occurrence_fiber_card",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_ordinate_regroup",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_triple_patterns",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_eight_reflections",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_signed_eight_reflections",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_reflection_preserves_patterns",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_cutoff_endpoint",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_reflection_cutoff",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_zero_test",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexPair_zero_band",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [
+    "Backlund.zetaSurrogate_zeros_in_closedBall\u2080_count",
+    "Kadiri.riemannZeta_order_conj",
+    "Kadiri.riemannZeta_order_pos_nontrivialZero",
+    "Kadiri.riemannZeta_meromorphicOrderAt_ne_top_nontrivialZero"
+  ]
+}

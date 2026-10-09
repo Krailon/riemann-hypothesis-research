@@ -2955,3 +2955,200 @@ claims:
       verification_script: scripts/reproduce_lean.py
       verification_scope: "Lean default kernel through Comparator; only propext, Quot.sound and Classical.choice permitted. No quasi-RH import in these solution modules. Mathlib dependencies at d13f23b723b8a846827a245b89c10fc7d3f11612 are pinned but not individually enumerated in this ledger."
       baseline_audit_coverage: "Outside both historical pair and triple RH audits. Explicit analytic hypotheses remain to be instantiated for the zeta observable."
+  - id: ZERO-OCCURRENCE-001
+    title: Actual multiplicity-preserving zeta occurrences and inclusive cutoffs
+    kind: theorem
+    statement: |
+      StripZero is the subtype {rho:C | zeta(rho)=0 and 0<Re(rho)<1}.
+      For each StripZero the analytic order is finite and positive, and its
+      natural value m(rho) agrees with the pinned library's integer meromorphic
+      order. ZeroOccurrence is the dependent sum of Fin(m(rho)) over StripZero.
+      It is countable; every height cutoff |gamma|<=U and every ordinate fiber
+      is finite. Cutoffs are inclusive, empty for U<0, and integer cutoffs
+      exhaust every occurrence. Conjugation and rho->1-rho preserve m(rho).
+      The lift of rho->1-conj(rho) is an involution on occurrences preserving
+      gamma, negating delta=beta-1/2, and carrying the multiplicity index.
+      This uses no simplicity assumption and includes both ordinate signs.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ZeroOccurrences.lean
+      label: HigherCorrelations.zero_occurrences_countable
+      companion_file: lean/HigherCorrelations/ZeroOccurrenceReflection.lean
+      companion_label: HigherCorrelations.occurrenceReflection_involutive
+      bookkeeping: research/lean-actual-occurrences.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 4baad1a05cee7651be493818f37f1effaea8900b0b8ed21aa961bf84929bd28a
+    limit_order: "Integer cutoffs exhaust the fixed occurrence type; no height asymptotic is asserted."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Lean kernel and definition-only Comparator specifications; permitted axioms propext, Quot.sound, Classical.choice. The occurrence module imports no quasi-RH theorem."
+      imported_inputs: "PrimeNumberTheoremAnd c39a751132c88b6e8080b74c74023fd95b3d8be0, IEANTN/KadiriZeroCounting.lean: finite positive zero orders, finite height sets, and order conjugation. Local functional-equation order reflection uses mathlib d13f23b723b8a846827a245b89c10fc7d3f11612."
+      constants_scope: "No numerical constants or effective enumeration algorithm are claimed."
+      baseline_audit_coverage: "Outside the historical pair and triple RH audits."
+
+  - id: ZERO-POLYNOMIAL-COUNT-001
+    title: Inclusive all-sign polynomial count of actual zero occurrences
+    kind: theorem
+    statement: |
+      There exists a real C>0 such that for every U>=0 the inclusive cutoff
+      of actual zero occurrences with |gamma|<=U has cardinality <=C*(1+U)^2.
+      Cardinality equals the sum of full analytic multiplicities over the
+      distinct strip zeros in the cutoff. The count is bounded by the divisor
+      mass of the entire patched surrogate of (s-1)zeta(s) in the closed ball
+      of radius U+1. The source bound C'*(1+R)^(3/2), R>=1, implies the stated
+      quadratic estimate. Real-axis strip zeros are included if present;
+      the excluded origin of the source's divisor mass is not in the strip.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZERO-OCCURRENCE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ZeroOccurrenceCounting.lean
+      label: HigherCorrelations.occurrence_count_polynomial
+      bookkeeping: research/lean-actual-occurrences.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 4baad1a05cee7651be493818f37f1effaea8900b0b8ed21aa961bf84929bd28a
+    limit_order: "The bound holds for every real U>=0; endpoints retain full multiplicities."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Comparator checks the quadratic occurrence bound; supporting bridges have Lean kernel and axiom-report coverage."
+      imported_inputs: "Backlund.zetaSurrogate_zeros_in_closedBall₀_count at PrimeNumberTheoremAnd c39a751132c88b6e8080b74c74023fd95b3d8be0; explicit imported axiom report."
+      constants_scope: "The constant is existential; no numerical value or certified effective bound is supplied."
+      baseline_audit_coverage: "This weaker count does not formalize PAIR-COUNT-001 or extend the historical RH audits."
+
+  - id: ZERO-ANCHORED-SHELLS-001
+    title: Actual anchored occurrence shells with fourth-power dyadic counts
+    kind: theorem
+    statement: |
+      Fix real T and a>0. AnchoredTriple(T) consists of all ordered occurrence
+      triples whose first ordinate lies in [T,2T]. Set r=max(|a(gamma2-gamma1)|,
+      |a(gamma3-gamma1)|). The shell map partitions this type into finite D_n
+      with 2^n<=1+r<2^(n+1). A constant C(T,a)>=0 satisfies card(D_n)<=C(T,a)*
+      (2^4)^n for all n. One admissible expression is A_T*C_count^2*K^4,
+      where A_T counts inclusive anchor occurrences and K=1+2|T|+2/a.
+      These are actual zero counts, not hypotheses on an abstract occurrence type.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZERO-POLYNOMIAL-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ZeroOccurrenceShells.lean
+      label: HigherCorrelations.actual_shell_cardinality
+      bookkeeping: research/lean-actual-occurrences.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 4baad1a05cee7651be493818f37f1effaea8900b0b8ed21aa961bf84929bd28a
+    limit_order: "Fix T and a>0 before summing shells or taking their tails. No uniform height estimate is claimed."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Comparator checks the shell cardinality statement and shell endpoints; the constructed OccurrenceShells interface is kernel checked."
+      constants_scope: "Depends on the existential polynomial count and the finite anchor cardinality."
+      baseline_audit_coverage: "Does not replace the stronger uniform ORDINATE-COUNT-001 estimates."
+
+  - id: FOURIER-COMPLEX-DECAY-001
+    title: Exact complex Fourier extension and uniform bounded-strip rapid decay
+    kind: theorem
+    statement: |
+      For every phi:R^2->C that is smooth and compactly supported, define
+      F_phi(z)=integral phi(xi,eta)*exp(2*pi*i*(z1*xi+z2*eta)) dxi deta.
+      Each defining integral is integrable. For x,y in R^2, F_phi(x-i*y)
+      equals the inverse Fourier transform of phi(xi)*exp(2*pi*y dot xi)
+      evaluated at x, with product Lebesgue measure. For every B>=0 and
+      natural n there exists C>0 such that for all x,y with |y_j|<=B,
+      norm(F_phi(x-i*y))<=C/(1+max(|x1|,|x2|))^n. The bound includes axes,
+      origin, and B=0. No symmetry, positivity, tensor-product condition or
+      support-polytope restriction is required for this statement.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ComplexFourierDecay.lean
+      label: HigherCorrelations.complexFourier_strip_decay
+      companion_file: lean/HigherCorrelations/CompactFourierFamily.lean
+      bookkeeping: research/lean-actual-occurrences.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 4baad1a05cee7651be493818f37f1effaea8900b0b8ed21aa961bf84929bd28a
+    limit_order: "Fix phi, B and derivative order; constants are uniform in x and in the bounded imaginary box."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Comparator checks integrability, exact inverse-Fourier identification and strip decay. General compact-family derivative and Fourier lemmas have kernel and axiom-report coverage."
+      imported_inputs: "mathlib d13f23b723b8a846827a245b89c10fc7d3f11612, Schwartz/Fourier derivative estimates and WithLp product-volume preservation."
+      constants_scope: "Constants arise from compact derivative bounds and are existential."
+      baseline_audit_coverage: "Outside the historical pair and triple RH audits."
+
+  - id: ACTUAL-TRIPLE-SUMMABILITY-001
+    title: Actual real and complex triple sums with independent cutoff limits
+    kind: theorem
+    statement: |
+      Fix real T, a>0, any complex weight w on R vanishing outside [T,2T],
+      and a smooth compactly supported phi:R^2->C. Sum over all ordered
+      occurrence triples of both signs with all coincidences retained.
+      Let u=a(gamma2-gamma1), v=a(gamma3-gamma1), y1=a(delta2+delta1),
+      y2=a(delta3+delta1). Both w(gamma1)*F_phi(u,v) and
+      w(gamma1)*F_phi(u-i*y1,v-i*y2), and their difference, are norm summable.
+      Independent inclusive cutoffs |gamma_j|<=N_j, N:Fin(3)->N ordered
+      componentwise, converge to these sums. For anchored triples and every
+      natural p>4 a nonnegative constant K exists such that the norm tail
+      over shell>=N is <=K*theta^N/(1-theta), theta=2^4/2^p.
+      The mean-spacing specialization is a=log(T/(2*pi))/(2*pi) for T>2*pi.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZERO-ANCHORED-SHELLS-001, FOURIER-COMPLEX-DECAY-001, SUMMABILITY-SHELL-001, SUMMABILITY-LIMITS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ActualCorrelationConvergence.lean
+      label: HigherCorrelations.actual_summable_norm
+      companion_declarations: "actual_signed_difference_summable, actual_independent_cutoff_limit, actual_signed_cutoff_limit, actual_anchored_tail, project_actual_summable_norm"
+      bookkeeping: research/lean-actual-occurrences.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 4baad1a05cee7651be493818f37f1effaea8900b0b8ed21aa961bf84929bd28a
+    limit_order: "Fix height, scale, anchor weight and Fourier test; evaluate tuple integrals, sum absolutely, and remove cutoffs independently. No subsequent T limit or integral-tsum interchange is asserted."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator checks with actual occurrence, counting and decay inputs discharged."
+      constants_scope: "Constants depend on fixed height, scale, weight, test and derivative order."
+      baseline_audit_coverage: "The full transfer identity, rational-kernel bounds and remaining signed o(1) have separate obligations."
+
+  - id: ACTUAL-OCCURRENCE-IDENTITIES-001
+    title: Actual ordinate regrouping, five patterns and eight reflections
+    kind: theorem
+    statement: |
+      Each actual complex-zero fiber has cardinality its analytic multiplicity.
+      Absolutely summable functions of occurrences regroup by ordinate. Under
+      ACTUAL-TRIPLE-SUMMABILITY-001 the real and complex triple sums decompose
+      into the five ordinate-equality patterns and equal the average of the
+      eight independent horizontal occurrence reflections. The same averaging
+      identity holds for their signed difference. Reflection preserves all
+      ordinate-equality patterns and inclusive height cutoffs. Exact checks
+      include cutoff endpoint membership, the zero Fourier test, and zero
+      imaginary band. No signed cancellation rate follows from these identities.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ACTUAL-TRIPLE-SUMMABILITY-001, ZERO-OCCURRENCE-001, SUMMABILITY-LIMITS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ActualOccurrenceIdentities.lean
+      label: HigherCorrelations.actual_signed_eight_reflections
+      bookkeeping: research/lean-actual-occurrences.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 4baad1a05cee7651be493818f37f1effaea8900b0b8ed21aa961bf84929bd28a
+    limit_order: "Use fixed-height norm summability before regrouping or reflecting infinite sums."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator specifications and axiom reports."
+      baseline_audit_coverage: "No promotion of ORDINATE-ARGUMENT-VANISHING-001 or ORDINATE-TRIPLE-001."

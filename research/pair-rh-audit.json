@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "4db64e31a32eacbc0f7003bbaec3bf86b4cc547bb8f4b5888f677e750698ef46",
+  "ledger_sha256": "76bb596f6b0ed7cfe3b77a901332a63bafd0eca147f34cc1dd6bfe8584bff4d3",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2511,5 +2511,19 @@
     ],
     "report": "research/lean-summability.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Five formalized summability, limit, integration and example entries are appended. Their count, decay and domination hypotheses are explicit and remain to be instantiated for actual zero sums. Historical pair/triple verdicts, claim snapshots, proofs, coverage and archives are unchanged; whole-ledger hash maintenance does not extend the historical audits."
+  },
+  "ledger_actual_occurrences_review": {
+    "reviewed_on": "2026-10-09",
+    "previous_ledger_sha256": "4db64e31a32eacbc0f7003bbaec3bf86b4cc547bb8f4b5888f677e750698ef46",
+    "added_claim_ids": [
+      "ACTUAL-OCCURRENCE-IDENTITIES-001",
+      "ACTUAL-TRIPLE-SUMMABILITY-001",
+      "FOURIER-COMPLEX-DECAY-001",
+      "ZERO-ANCHORED-SHELLS-001",
+      "ZERO-OCCURRENCE-001",
+      "ZERO-POLYNOMIAL-COUNT-001"
+    ],
+    "report": "research/lean-actual-occurrences.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Six formalized actual-occurrence, counting, Fourier-decay, convergence and identity entries are appended. These discharge fixed-height count and decay hypotheses; sharp local counts, rational-kernel bounds, uniform height asymptotics and the signed o(1) remain separate obligations. Historical pair/triple verdicts, claim snapshots, proofs and archives are unchanged; whole-ledger hash maintenance does not extend those audits."
   }
 }

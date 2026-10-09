@@ -21,8 +21,8 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 PARTIAL = {
     'TRIPLE-SMOOTHED-CORRELATION-001': (
-        ['triple_cutoff_limit', 'dominated_occurrence_limit'],
-        ['Instantiate the occurrence model and all fixed-height absolute bounds.',
+        ['triple_cutoff_limit', 'dominated_occurrence_limit', 'project_actual_summable_norm'],
+        ['Formalize the actual rational-kernel bounds and weighted fixed-height convergence.',
          'Formalize the stated main term and named errors; no uniform height majorant is supplied.']),
     'TRIPLE-MASTER-001': (
         ['integral_occurrence_sum', 'integral_occurrence_cutoff_limit'],
@@ -33,26 +33,32 @@ PARTIAL = {
         ['Formalize the rational kernel, residue evaluation and dominating function.',
          'Prove collision and parameter-endpoint limits with that domination.']),
     'ORDINATE-TRANSFER-001': (
-        ['dyadic_summable_norm', 'dyadic_tail_bound', 'radius_decay_to_shell',
-         'independent_sequence_cutoff_limit'],
-        ['Construct actual zero occurrences with multiplicities and finite height cutoffs.',
-         'Derive finite dyadic shells and their cardinality bounds from zero counts.',
-         'Prove bounded-imaginary-strip Fourier decay and the exact transfer normalization.']),
+        ['occurrence_height_finite', 'mem_occurrenceCutoff', 'occurrenceCutoff_exhausts',
+         'zero_occurrences_countable', 'occurrence_count_polynomial', 'actual_shell_cardinality',
+         'complexFourier_eq_inverse', 'complexFourier_strip_decay', 'actual_summable_norm',
+         'actual_signed_difference_summable', 'actual_independent_cutoff_limit', 'actual_signed_cutoff_limit'],
+        ['Formalize actual rational-kernel bounds and the exact transfer normalization.',
+         'The new fixed-height constants do not provide uniform height asymptotics.']),
     'ORDINATE-SIGN-AVERAGE-001': (
-        ['tsum_eight_reflections', 'tsum_eight_reflections_pattern',
+        ['zeroMultiplicity_horizontalReflection', 'occurrenceReflection_involutive',
+         'occurrenceReflection_ordinate', 'occurrenceReflection_displacement',
+         'actual_eight_reflections', 'actual_signed_eight_reflections', 'actual_reflection_preserves_patterns',
          'integral_occurrence_sum'],
-        ['Construct the multiplicity-preserving occurrence involution from zeta symmetry.',
-         'Prove the actual absolute Fourier-integral majorant and kernel coefficient bounds.']),
+        ['Prove the actual absolute Fourier-integral majorant and kernel coefficient bounds.']),
     'ORDINATE-CONSTANT-KERNEL-001': (
         ['evaluated_integrals_summable', 'evaluated_integrals_cutoff_limit',
-         'tsum_eight_reflections'],
-        ['Identify each evaluated Fourier integral with the reflected complex-test difference.',
-         'Prove tuple decay, kernel replacement bounds and their support-dependent asymptotics.',
+         'complexFourier_eq_inverse', 'actual_anchored_tail', 'actual_signed_eight_reflections'],
+        ['Formalize the kernel replacement bounds and their support-dependent asymptotics.',
          'No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied.']),
+    'PAIR-COUNT-001': (
+        ['zeroMultiplicity_pos', 'occurrenceCutoff_card', 'occurrence_count_polynomial'],
+        ['The formalized all-sign inclusive polynomial bound is weaker than this ledger claim.',
+         'Formalize Riemann-von Mangoldt, the local logarithmic unit-interval bound, and exclusion of real strip zeros.']),
+    'ORDINATE-COUNT-001': (
+        ['actual_shell_cardinality', 'actual_anchored_tail'],
+        ['Prove the near and global weighted counts with the recorded uniform T dependence from the pair and unit counts.']),
 }
 SPECIAL_GAPS = {
-    'PAIR-COUNT-001': ['Formalize inclusive endpoint counts, local unit-interval bounds and multiplicities; shell bounds are hypotheses only.'],
-    'ORDINATE-COUNT-001': ['Prove the near and global weighted tuple counts from the recorded pair and unit counts; construct the unweighted shells needed for each application.'],
     'ORDINATE-ARGUMENT-VANISHING-001': ['Open research: the needed signed complex-argument error estimate is not proved.'],
     'ORDINATE-TRIPLE-001': ['Open research: the conventional ordinate-only asymptotic still requires a vanishing signed error.'],
 }
@@ -84,14 +90,34 @@ def derive():
                 'unfinished or unapproved solution declaration: ' + path)
         for name in re.findall(r'^theorem (\w+)\b', source, re.M):
             components.append(dict(declaration='HigherCorrelations.' + name, source=path))
-    names = [c['declaration'] for c in components]
+    generic_names = [c['declaration'] for c in components]
+    names = list(generic_names)
     config = json.loads(read('lean/VerificationChallenges/summability.json'))
     require(len(names) == len(set(names)), 'duplicate solution declaration')
-    require(config['theorem_names'] == names, 'challenge coverage differs from solution declarations')
+    require(config['theorem_names'] == generic_names, 'challenge coverage differs from solution declarations')
     require(config['permitted_axioms'] == ['propext', 'Quot.sound', 'Classical.choice']
             and config['enable_nanoda'] is False, 'changed verification scope')
+    actual = json.loads(read('research/lean-actual-occurrences-inventory.json'))
+    found = []
+    for module in actual['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished actual-occurrence solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in actual['components']],
+            'actual-occurrence inventory differs from source declarations')
+    actual_config = json.loads(read('lean/VerificationChallenges/actual-occurrences.json'))
+    require(actual_config['theorem_names'] == [c['declaration'] for c in actual['components'] if c['comparator_checked']],
+            'actual-occurrence Comparator coverage differs from inventory')
+    require(actual_config['permitted_axioms'] == config['permitted_axioms']
+            and actual_config['enable_nanoda'] is False, 'changed actual-occurrence verification scope')
+    components.extend(actual['components'])
+    names.extend(c['declaration'] for c in actual['components'])
+    require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -126,7 +152,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Construct the multiplicity-preserving zero-occurrence interface and finite height cutoffs, then discharge the counting and Fourier-decay hypotheses of ORDINATE-TRANSFER-001.')
+        next_step='Formalize the actual rational-kernel bounds and exact transfer normalization; separately prove the sharper local counts and the uniform height estimates needed by the analytic graph.')
 
 
 def validate(record):
@@ -165,6 +191,17 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual(node['coverage'], 'open_research')
         node['coverage'] = 'partial'
         with self.assertRaises(ValueError): validate(self.record)
+
+    def test_comparator_scope_drift(self):
+        component = next(c for c in self.record['components'] if 'comparator_checked' in c)
+        component['comparator_checked'] = not component['comparator_checked']
+        with self.assertRaises(ValueError): validate(self.record)
+
+    def test_stronger_count_remains_partial(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-COUNT-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertTrue(any('local logarithmic' in gap for gap in node['remaining_obligations']))
 
     def test_prerequisite_order(self):
         order = {k: i for i, k in enumerate(self.record['root_to_inputs_order'])}

@@ -1,3 +1,4 @@
+import HigherCorrelations.ActualOccurrencesFoundation
 import HigherCorrelations.SummabilityFoundation
 import HigherCorrelations.HorizontalStrip
 import HigherCorrelations.FiniteFoundation
@@ -114,3 +115,65 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.moving_singleton_limit_mismatch
 #print axioms HigherCorrelations.singleton_shell_summable_example
 #print axioms HigherCorrelations.dyadic_endpoint_example
+
+#print axioms HigherCorrelations.stripZero_ne_one
+#print axioms HigherCorrelations.stripZero_analytic
+#print axioms HigherCorrelations.stripZero_order_finite
+#print axioms HigherCorrelations.zeroMultiplicity_order
+#print axioms HigherCorrelations.zeroMultiplicity_pos
+#print axioms HigherCorrelations.zeroMultiplicity_conjugate
+#print axioms HigherCorrelations.stripZero_height_finite
+#print axioms HigherCorrelations.occurrence_height_finite
+#print axioms HigherCorrelations.mem_occurrenceCutoff
+#print axioms HigherCorrelations.occurrenceCutoff_negative
+#print axioms HigherCorrelations.occurrenceCutoff_exhausts
+#print axioms HigherCorrelations.occurrence_ordinate_finite
+#print axioms HigherCorrelations.zero_occurrences_countable
+#print axioms HigherCorrelations.zeroMultiplicity_one_sub
+#print axioms HigherCorrelations.zeroMultiplicity_horizontalReflection
+#print axioms HigherCorrelations.occurrenceReflection_value
+#print axioms HigherCorrelations.occurrenceReflection_involutive
+#print axioms HigherCorrelations.occurrenceReflection_ordinate
+#print axioms HigherCorrelations.occurrenceReflection_displacement
+#print axioms HigherCorrelations.occurrenceCutoff_card
+#print axioms HigherCorrelations.occurrenceCutoff_le_mass
+#print axioms HigherCorrelations.occurrence_count_polynomial
+#print axioms HigherCorrelations.anchor_finite
+#print axioms HigherCorrelations.dyadicIndex_bounds
+#print axioms HigherCorrelations.anchoredRadius_nonneg
+#print axioms HigherCorrelations.actual_shell_radius_lower
+#print axioms HigherCorrelations.actual_shell_count
+#print axioms HigherCorrelations.actual_shell_cardinality
+#print axioms HigherCorrelations.section_iteratedFDeriv_smooth
+#print axioms HigherCorrelations.compact_family_derivative_integral_bound
+#print axioms HigherCorrelations.compact_family_fourier_power_bound
+#print axioms HigherCorrelations.compact_family_fourier_decay
+#print axioms HigherCorrelations.planeCoords_apply
+#print axioms HigherCorrelations.complexFourier_integrable
+#print axioms HigherCorrelations.complexFourier_eq_inverse
+#print axioms HigherCorrelations.complexFourier_real_eq_inverse
+#print axioms HigherCorrelations.complexFourier_strip_decay
+#print axioms HigherCorrelations.occurrence_displacement_lt
+#print axioms HigherCorrelations.actualShifts_bound
+#print axioms HigherCorrelations.meanSpacing_pos
+#print axioms HigherCorrelations.anchored_actual_summable_norm
+#print axioms HigherCorrelations.actual_anchored_tail
+#print axioms HigherCorrelations.actual_summable_norm
+#print axioms HigherCorrelations.actual_signed_difference_summable
+#print axioms HigherCorrelations.actual_independent_cutoff_limit
+#print axioms HigherCorrelations.actual_signed_cutoff_limit
+#print axioms HigherCorrelations.project_actual_summable_norm
+#print axioms HigherCorrelations.zero_occurrence_fiber_card
+#print axioms HigherCorrelations.actual_ordinate_regroup
+#print axioms HigherCorrelations.actual_triple_patterns
+#print axioms HigherCorrelations.actual_eight_reflections
+#print axioms HigherCorrelations.actual_signed_eight_reflections
+#print axioms HigherCorrelations.actual_reflection_preserves_patterns
+#print axioms HigherCorrelations.actual_cutoff_endpoint
+#print axioms HigherCorrelations.actual_reflection_cutoff
+#print axioms HigherCorrelations.actual_zero_test
+#print axioms HigherCorrelations.complexPair_zero_band
+#print axioms Backlund.zetaSurrogate_zeros_in_closedBall₀_count
+#print axioms Kadiri.riemannZeta_order_conj
+#print axioms Kadiri.riemannZeta_order_pos_nontrivialZero
+#print axioms Kadiri.riemannZeta_meromorphicOrderAt_ne_top_nontrivialZero

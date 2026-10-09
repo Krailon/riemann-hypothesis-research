@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.ActualOccurrences",
+  "solution_module": "VerificationChallenges.ActualOccurrencesUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.stripZero_ne_one"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

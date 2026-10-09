@@ -27,7 +27,7 @@ def source_hashes():
     files = [ROOT / p for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json',
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
              'scripts/reproduce_lean.py', 'scripts/check_lean_analytic_coverage.py',
-             'research/lean-analytic-coverage.json']]
+             'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json']]
     files += sorted((ROOT / 'lean').rglob('*.lean'))
     files += sorted((ROOT / 'lean').rglob('*.json'))
     return {str(p.relative_to(ROOT)): digest(p) for p in files if p.is_file()}
@@ -87,7 +87,7 @@ def main():
                   status='running', pins=PINS, commands=[], external_kernel=False,
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   assumptions=['UNCONDITIONAL'],
-                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, and analytic summability foundations')
+                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, and actual zero-occurrence convergence')
 
     def command(name, argv, *, expected_failure=False):
         log = run_dir / (name + '.log')
@@ -127,6 +127,11 @@ def main():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
+        command('actual-occurrences-build', ['lake', 'build', 'HigherCorrelations.ActualOccurrencesFoundation'])
+        command('actual-occurrences-comparator', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/actual-occurrences.json'])
+        command('actual-occurrences-unfinished-rejected', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/actual-occurrences-unfinished.json'], expected_failure=True)
         command('summability-build', ['lake', 'build', 'HigherCorrelations.SummabilityFoundation'])
         command('summability-comparator', ['lake', 'env', comparator,
                 'lean/VerificationChallenges/summability.json'])
@@ -158,6 +163,9 @@ def main():
         expected.update(json.loads((ROOT / 'lean/VerificationChallenges/finite-foundation.json').read_text())['theorem_names'])
         expected.update(json.loads((ROOT / 'lean/VerificationChallenges/horizontal-square.json').read_text())['theorem_names'])
         expected.update(json.loads((ROOT / 'lean/VerificationChallenges/summability.json').read_text())['theorem_names'])
+        actual_inventory = json.loads((ROOT / 'research/lean-actual-occurrences-inventory.json').read_text())
+        expected.update(c['declaration'] for c in actual_inventory['components'])
+        expected.update(actual_inventory['imported_axioms'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):

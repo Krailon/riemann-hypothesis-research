@@ -135,11 +135,12 @@
       "components": [
         "HigherCorrelations.evaluated_integrals_summable",
         "HigherCorrelations.evaluated_integrals_cutoff_limit",
-        "HigherCorrelations.tsum_eight_reflections"
+        "HigherCorrelations.complexFourier_eq_inverse",
+        "HigherCorrelations.actual_anchored_tail",
+        "HigherCorrelations.actual_signed_eight_reflections"
       ],
       "remaining_obligations": [
-        "Identify each evaluated Fourier integral with the reflected complex-test difference.",
-        "Prove tuple decay, kernel replacement bounds and their support-dependent asymptotics.",
+        "Formalize the kernel replacement bounds and their support-dependent asymptotics.",
         "No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied."
       ]
     },
@@ -156,11 +157,14 @@
         "label": "lem:counts",
         "bookkeeping": "research/triple-ordinate-reduction.md"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.actual_shell_cardinality",
+        "HigherCorrelations.actual_anchored_tail"
+      ],
       "remaining_obligations": [
-        "Prove the near and global weighted tuple counts from the recorded pair and unit counts; construct the unweighted shells needed for each application."
+        "Prove the near and global weighted counts with the recorded uniform T dependence from the pair and unit counts."
       ]
     },
     {
@@ -279,12 +283,16 @@
       "coverage": "partial",
       "whole_claim_formalized": false,
       "components": [
-        "HigherCorrelations.tsum_eight_reflections",
-        "HigherCorrelations.tsum_eight_reflections_pattern",
+        "HigherCorrelations.zeroMultiplicity_horizontalReflection",
+        "HigherCorrelations.occurrenceReflection_involutive",
+        "HigherCorrelations.occurrenceReflection_ordinate",
+        "HigherCorrelations.occurrenceReflection_displacement",
+        "HigherCorrelations.actual_eight_reflections",
+        "HigherCorrelations.actual_signed_eight_reflections",
+        "HigherCorrelations.actual_reflection_preserves_patterns",
         "HigherCorrelations.integral_occurrence_sum"
       ],
       "remaining_obligations": [
-        "Construct the multiplicity-preserving occurrence involution from zeta symmetry.",
         "Prove the actual absolute Fourier-integral majorant and kernel coefficient bounds."
       ]
     },
@@ -304,15 +312,22 @@
       "coverage": "partial",
       "whole_claim_formalized": false,
       "components": [
-        "HigherCorrelations.dyadic_summable_norm",
-        "HigherCorrelations.dyadic_tail_bound",
-        "HigherCorrelations.radius_decay_to_shell",
-        "HigherCorrelations.independent_sequence_cutoff_limit"
+        "HigherCorrelations.occurrence_height_finite",
+        "HigherCorrelations.mem_occurrenceCutoff",
+        "HigherCorrelations.occurrenceCutoff_exhausts",
+        "HigherCorrelations.zero_occurrences_countable",
+        "HigherCorrelations.occurrence_count_polynomial",
+        "HigherCorrelations.actual_shell_cardinality",
+        "HigherCorrelations.complexFourier_eq_inverse",
+        "HigherCorrelations.complexFourier_strip_decay",
+        "HigherCorrelations.actual_summable_norm",
+        "HigherCorrelations.actual_signed_difference_summable",
+        "HigherCorrelations.actual_independent_cutoff_limit",
+        "HigherCorrelations.actual_signed_cutoff_limit"
       ],
       "remaining_obligations": [
-        "Construct actual zero occurrences with multiplicities and finite height cutoffs.",
-        "Derive finite dyadic shells and their cardinality bounds from zero counts.",
-        "Prove bounded-imaginary-strip Fourier decay and the exact transfer normalization."
+        "Formalize actual rational-kernel bounds and the exact transfer normalization.",
+        "The new fixed-height constants do not provide uniform height asymptotics."
       ]
     },
     {
@@ -351,11 +366,16 @@
         "comparison_bibliography_key": "BGSTB2024",
         "comparison_locator": "arXiv:2306.04799v1, Lemma 2, equations (2.4)-(2.5)"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.zeroMultiplicity_pos",
+        "HigherCorrelations.occurrenceCutoff_card",
+        "HigherCorrelations.occurrence_count_polynomial"
+      ],
       "remaining_obligations": [
-        "Formalize inclusive endpoint counts, local unit-interval bounds and multiplicities; shell bounds are hypotheses only."
+        "The formalized all-sign inclusive polynomial bound is weaker than this ledger claim.",
+        "Formalize Riemann-von Mangoldt, the local logarithmic unit-interval bound, and exclusion of real strip zeros."
       ]
     },
     {
@@ -863,10 +883,11 @@
       "whole_claim_formalized": false,
       "components": [
         "HigherCorrelations.triple_cutoff_limit",
-        "HigherCorrelations.dominated_occurrence_limit"
+        "HigherCorrelations.dominated_occurrence_limit",
+        "HigherCorrelations.project_actual_summable_norm"
       ],
       "remaining_obligations": [
-        "Instantiate the occurrence model and all fixed-height absolute bounds.",
+        "Formalize the actual rational-kernel bounds and weighted fixed-height convergence.",
         "Formalize the stated main term and named errors; no uniform height majorant is supplied."
       ]
     },
@@ -1572,7 +1593,292 @@
     {
       "declaration": "HigherCorrelations.dyadic_endpoint_example",
       "source": "lean/HigherCorrelations/SummabilityExamples.lean"
+    },
+    {
+      "declaration": "HigherCorrelations.stripZero_ne_one",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.stripZero_analytic",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.stripZero_order_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_order",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_pos",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_conjugate",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.stripZero_height_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_height_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_occurrenceCutoff",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_negative",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_exhausts",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_ordinate_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zero_occurrences_countable",
+      "source": "lean/HigherCorrelations/ZeroOccurrences.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_one_sub",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroMultiplicity_horizontalReflection",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceReflection_value",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceReflection_involutive",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceReflection_ordinate",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceReflection_displacement",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_card",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceCounting.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_le_mass",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceCounting.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_count_polynomial",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchor_finite",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.dyadicIndex_bounds",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredRadius_nonneg",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_shell_radius_lower",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.actual_shell_count",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.actual_shell_cardinality",
+      "source": "lean/HigherCorrelations/ZeroOccurrenceShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.section_iteratedFDeriv_smooth",
+      "source": "lean/HigherCorrelations/CompactFourierFamily.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.compact_family_derivative_integral_bound",
+      "source": "lean/HigherCorrelations/CompactFourierFamily.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.compact_family_fourier_power_bound",
+      "source": "lean/HigherCorrelations/CompactFourierFamily.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.compact_family_fourier_decay",
+      "source": "lean/HigherCorrelations/CompactFourierFamily.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.planeCoords_apply",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexFourier_integrable",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexFourier_eq_inverse",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexFourier_real_eq_inverse",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexFourier_strip_decay",
+      "source": "lean/HigherCorrelations/ComplexFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_displacement_lt",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualShifts_bound",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.meanSpacing_pos",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchored_actual_summable_norm",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_anchored_tail",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_summable_norm",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_signed_difference_summable",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_independent_cutoff_limit",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_signed_cutoff_limit",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.project_actual_summable_norm",
+      "source": "lean/HigherCorrelations/ActualCorrelationConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zero_occurrence_fiber_card",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_ordinate_regroup",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_triple_patterns",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_eight_reflections",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_signed_eight_reflections",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_reflection_preserves_patterns",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_cutoff_endpoint",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_reflection_cutoff",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_zero_test",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.complexPair_zero_band",
+      "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Construct the multiplicity-preserving zero-occurrence interface and finite height cutoffs, then discharge the counting and Fourier-decay hypotheses of ORDINATE-TRANSFER-001."
+  "next_step": "Formalize the actual rational-kernel bounds and exact transfer normalization; separately prove the sharper local counts and the uniform height estimates needed by the analytic graph."
 }

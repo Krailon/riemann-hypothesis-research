@@ -12,6 +12,12 @@ unfinished-proof negative controls, **111 distinct axiom reports**,
 The [complete verification archive](../artifacts/certificates/lean/1dc056c83e0d8116fd8a7aaa08f74e75f4da7f1a9ed90932ac9ce009998ef457/manifest.json)
 records exact source hashes, tool pins, logs and dependency changes.
 
+The subsequent [actual-occurrence milestone](lean-actual-occurrences.md)
+constructs actual zeta occurrences and discharges the fixed-height counting
+and complex Fourier-decay hypotheses. The archived counts and outstanding
+application work described below record the state at milestone 4A; consult
+the current coverage map for the remaining obligations.
+
 ## Shell summability and a quantitative tail
 
 `OccurrenceShells I` supplies a map $s:I\to\mathbb N$, finite sets $D_n$,

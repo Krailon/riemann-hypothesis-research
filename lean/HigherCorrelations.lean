@@ -2,3 +2,4 @@ import HigherCorrelations.HorizontalStrip
 import HigherCorrelations.FiniteFoundation
 import HigherCorrelations.HorizontalSquareFoundation
 import HigherCorrelations.SummabilityFoundation
+import HigherCorrelations.ActualOccurrencesFoundation
