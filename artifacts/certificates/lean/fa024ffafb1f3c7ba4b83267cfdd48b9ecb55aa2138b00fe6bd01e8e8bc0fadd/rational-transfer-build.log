@@ -1,0 +1,47 @@
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+✔ [8504/8737] Built HigherCorrelations.Definitions (1.8s)
+✔ [8975/8996] Built HigherCorrelations.ZeroReflection (2.1s)
+✔ [8976/8996] Built HigherCorrelations.CompactFourierFamily (2.5s)
+✔ [8977/8996] Built HigherCorrelations.FiniteDefinitions (3.3s)
+✔ [8978/8996] Built HigherCorrelations.ZeroOccurrenceDefinitions (1.9s)
+✔ [8979/8996] Built HigherCorrelations.ComplexFourierDefinitions (2.1s)
+✔ [8980/8996] Built HigherCorrelations.ZeroOccurrences (2.7s)
+✔ [8981/8996] Built HigherCorrelations.HorizontalSquareDefinitions (3.2s)
+✔ [8982/8996] Built HigherCorrelations.FinitePatterns (3.7s)
+✔ [8983/8996] Built HigherCorrelations.ComplexFourierDecay (2.4s)
+✔ [8984/8996] Built HigherCorrelations.ZeroOccurrenceReflection (2.7s)
+✔ [8985/8996] Built HigherCorrelations.ZeroOccurrenceCounting (2.8s)
+✔ [8986/8996] Built HigherCorrelations.SummabilityDefinitions (3.4s)
+✔ [8987/8996] Built HigherCorrelations.FiniteReflection (3.6s)
+✔ [8988/8996] Built HigherCorrelations.ActualCorrelationDefinitions (3.3s)
+✔ [8989/8996] Built HigherCorrelations.OccurrenceSummability (3.6s)
+✔ [8990/8996] Built HigherCorrelations.OccurrenceLimits (3.6s)
+✔ [8991/8996] Built HigherCorrelations.RationalTransferDefinitions (3.5s)
+✔ [8992/8996] Built HigherCorrelations.ZeroOccurrenceShells (4.5s)
+✔ [8993/8996] Built HigherCorrelations.ActualCorrelationConvergence (3.9s)
+✔ [8994/8996] Built HigherCorrelations.RationalKernelBounds (4.5s)
+✔ [8995/8996] Built HigherCorrelations.RationalTransferConvergence (3.8s)
+✔ [8996/8996] Built HigherCorrelations.RationalTransfer (3.8s)
+Build completed successfully (8996 jobs).

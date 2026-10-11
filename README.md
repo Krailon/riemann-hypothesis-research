@@ -48,7 +48,8 @@ tests**, and **8 coverage-map checks**. See the
 [summability record](research/lean-summability.md) and
 [analytic coverage map](research/lean-analytic-coverage.json). The subsequent
 actual-occurrence milestone below discharges fixed-height counting and Fourier
-decay; rational-kernel domination and the ordinate-only `o(1)` remain open.
+decay. The rational-transfer milestone below also proves bounded-kernel
+summability; the ordinate-only `o(1)` remains open.
 
 ## Actual zero sums formalized
 
@@ -61,6 +62,17 @@ The fresh run passed **48 new Comparator specifications**, **172 axiom reports**
 overall, **196 regressions**, and **10 coverage checks**. See the
 [actual-occurrence record](research/lean-actual-occurrences.md). This does not
 supply the stronger uniform height bounds or the remaining signed `o(1)`.
+
+## Rational-kernel transfer formalized
+
+Lean now proves the global rational-profile bound `|J| ≤ 7π/9`, absolute
+convergence of the weighted statistic and all three signed transfer errors,
+independent cutoff limits, and the exact `b/q` normalization. The fresh run
+passed **30 new Comparator specifications**, **202 axiom reports** overall,
+**196 regressions**, and **12 coverage checks**. See the
+[rational-transfer record](research/lean-rational-transfer.md). The profile
+is defined rationally; its integral evaluation, derivative bounds, uniform
+height estimates, and signed `o(1)` remain separate obligations.
 
 ## Reproduce the pair baseline
 

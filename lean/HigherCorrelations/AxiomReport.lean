@@ -1,3 +1,4 @@
+import HigherCorrelations.RationalTransfer
 import HigherCorrelations.ActualOccurrencesFoundation
 import HigherCorrelations.SummabilityFoundation
 import HigherCorrelations.HorizontalStrip
@@ -177,3 +178,34 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms Kadiri.riemannZeta_order_conj
 #print axioms Kadiri.riemannZeta_order_pos_nontrivialZero
 #print axioms Kadiri.riemannZeta_meromorphicOrderAt_ne_top_nontrivialZero
+
+#print axioms HigherCorrelations.rational_denominator_lower
+#print axioms HigherCorrelations.rational_denominator_ne_zero
+#print axioms HigherCorrelations.rationalKernel_reciprocal
+#print axioms HigherCorrelations.rationalKernel_bound
+#print axioms HigherCorrelations.rationalProfile_bound
+#print axioms HigherCorrelations.rationalProfile_swap
+#print axioms HigherCorrelations.rationalProfile_conj
+#print axioms HigherCorrelations.rationalProfile_origin
+#print axioms HigherCorrelations.rationalProfile_coincident
+#print axioms HigherCorrelations.rationalProfile_real
+#print axioms HigherCorrelations.rational_denominator_endpoint
+#print axioms HigherCorrelations.actualRationalKernel_bound
+#print axioms HigherCorrelations.actualRealKernel_bound
+#print axioms HigherCorrelations.bounded_kernel_summable_norm
+#print axioms HigherCorrelations.rationalTransferTerm_summable
+#print axioms HigherCorrelations.rationalTransferTerm_cutoff_limit
+#print axioms HigherCorrelations.rationalTransferSum_cutoff_limit
+#print axioms HigherCorrelations.rationalTransferTerm_telescope
+#print axioms HigherCorrelations.rationalTransfer_finite_telescope
+#print axioms HigherCorrelations.rationalTransfer_tsum_telescope
+#print axioms HigherCorrelations.scaledAnchorWeight_support
+#print axioms HigherCorrelations.scaledAnchorWeight_endpoints
+#print axioms HigherCorrelations.transfer_log_pos
+#print axioms HigherCorrelations.transferRatio_ne_zero
+#print axioms HigherCorrelations.transfer_normalization
+#print axioms HigherCorrelations.actual_rational_transfer
+#print axioms HigherCorrelations.actual_rational_transfer_benchmark
+#print axioms HigherCorrelations.actual_rational_transfer_scaled_anchor
+#print axioms HigherCorrelations.rationalTransferTerm_zero_test
+#print axioms HigherCorrelations.rationalTransferSum_zero_test

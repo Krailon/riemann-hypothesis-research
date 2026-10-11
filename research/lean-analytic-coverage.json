@@ -323,11 +323,19 @@
         "HigherCorrelations.actual_summable_norm",
         "HigherCorrelations.actual_signed_difference_summable",
         "HigherCorrelations.actual_independent_cutoff_limit",
-        "HigherCorrelations.actual_signed_cutoff_limit"
+        "HigherCorrelations.actual_signed_cutoff_limit",
+        "HigherCorrelations.rationalTransferTerm_summable",
+        "HigherCorrelations.rationalTransferSum_cutoff_limit",
+        "HigherCorrelations.rationalTransfer_finite_telescope",
+        "HigherCorrelations.rationalTransfer_tsum_telescope",
+        "HigherCorrelations.transfer_normalization",
+        "HigherCorrelations.actual_rational_transfer",
+        "HigherCorrelations.actual_rational_transfer_benchmark",
+        "HigherCorrelations.actual_rational_transfer_scaled_anchor"
       ],
       "remaining_obligations": [
-        "Formalize actual rational-kernel bounds and the exact transfer normalization.",
-        "The new fixed-height constants do not provide uniform height asymptotics."
+        "The rationally defined transfer is formalized; identification with the integral profile remains in TRIPLE-KERNEL-PROFILE-001.",
+        "No uniform height asymptotics or vanishing error estimate follows from this fixed-height identity."
       ]
     },
     {
@@ -672,11 +680,19 @@
       "coverage": "partial",
       "whole_claim_formalized": false,
       "components": [
-        "HigherCorrelations.dominated_integral_limit"
+        "HigherCorrelations.dominated_integral_limit",
+        "HigherCorrelations.rational_denominator_lower",
+        "HigherCorrelations.rational_denominator_ne_zero",
+        "HigherCorrelations.rationalKernel_reciprocal",
+        "HigherCorrelations.rationalProfile_bound",
+        "HigherCorrelations.rationalProfile_swap",
+        "HigherCorrelations.rationalProfile_conj",
+        "HigherCorrelations.rationalProfile_coincident",
+        "HigherCorrelations.rationalProfile_real"
       ],
       "remaining_obligations": [
-        "Formalize the rational kernel, residue evaluation and dominating function.",
-        "Prove collision and parameter-endpoint limits with that domination."
+        "Formalize the integral representation, residue evaluation and dominating function.",
+        "Prove integral collision and parameter-endpoint limits, smoothness and derivative bounds."
       ]
     },
     {
@@ -884,10 +900,13 @@
       "components": [
         "HigherCorrelations.triple_cutoff_limit",
         "HigherCorrelations.dominated_occurrence_limit",
-        "HigherCorrelations.project_actual_summable_norm"
+        "HigherCorrelations.project_actual_summable_norm",
+        "HigherCorrelations.actualRationalKernel_bound",
+        "HigherCorrelations.rationalTransferTerm_summable",
+        "HigherCorrelations.rationalTransferSum_cutoff_limit"
       ],
       "remaining_obligations": [
-        "Formalize the actual rational-kernel bounds and weighted fixed-height convergence.",
+        "Formalize the identification of the rational profile with its integral.",
         "Formalize the stated main term and named errors; no uniform height majorant is supplied."
       ]
     },
@@ -1878,7 +1897,157 @@
       "declaration": "HigherCorrelations.complexPair_zero_band",
       "source": "lean/HigherCorrelations/ActualOccurrenceIdentities.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rational_denominator_lower",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rational_denominator_ne_zero",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalKernel_reciprocal",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalKernel_bound",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_bound",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_swap",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_conj",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_origin",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_coincident",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_real",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rational_denominator_endpoint",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualRationalKernel_bound",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualRealKernel_bound",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.bounded_kernel_summable_norm",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferTerm_summable",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferTerm_cutoff_limit",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferSum_cutoff_limit",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferTerm_telescope",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransfer_finite_telescope",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransfer_tsum_telescope",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scaledAnchorWeight_support",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scaledAnchorWeight_endpoints",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.transfer_log_pos",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.transferRatio_ne_zero",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.transfer_normalization",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_rational_transfer",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_rational_transfer_benchmark",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_rational_transfer_scaled_anchor",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferTerm_zero_test",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferSum_zero_test",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Formalize the actual rational-kernel bounds and exact transfer normalization; separately prove the sharper local counts and the uniform height estimates needed by the analytic graph."
+  "next_step": "Identify the rational profile with its integral and formalize horizontal derivative bounds; separately prove the sharper local counts and uniform height estimates. The signed o(1) remains open."
 }

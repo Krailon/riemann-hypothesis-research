@@ -21,24 +21,31 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 PARTIAL = {
     'TRIPLE-SMOOTHED-CORRELATION-001': (
-        ['triple_cutoff_limit', 'dominated_occurrence_limit', 'project_actual_summable_norm'],
-        ['Formalize the actual rational-kernel bounds and weighted fixed-height convergence.',
+        ['triple_cutoff_limit', 'dominated_occurrence_limit', 'project_actual_summable_norm',
+         'actualRationalKernel_bound', 'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit'],
+        ['Formalize the identification of the rational profile with its integral.',
          'Formalize the stated main term and named errors; no uniform height majorant is supplied.']),
     'TRIPLE-MASTER-001': (
         ['integral_occurrence_sum', 'integral_occurrence_cutoff_limit'],
         ['Prove the actual kernel integrability and summable integral-norm bound.',
          'Formalize the explicit-formula expansion, prime-side sums and normalization.']),
     'TRIPLE-KERNEL-PROFILE-001': (
-        ['dominated_integral_limit'],
-        ['Formalize the rational kernel, residue evaluation and dominating function.',
-         'Prove collision and parameter-endpoint limits with that domination.']),
+        ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
+         'rationalKernel_reciprocal', 'rationalProfile_bound', 'rationalProfile_swap',
+         'rationalProfile_conj', 'rationalProfile_coincident', 'rationalProfile_real'],
+        ['Formalize the integral representation, residue evaluation and dominating function.',
+         'Prove integral collision and parameter-endpoint limits, smoothness and derivative bounds.']),
     'ORDINATE-TRANSFER-001': (
         ['occurrence_height_finite', 'mem_occurrenceCutoff', 'occurrenceCutoff_exhausts',
          'zero_occurrences_countable', 'occurrence_count_polynomial', 'actual_shell_cardinality',
          'complexFourier_eq_inverse', 'complexFourier_strip_decay', 'actual_summable_norm',
-         'actual_signed_difference_summable', 'actual_independent_cutoff_limit', 'actual_signed_cutoff_limit'],
-        ['Formalize actual rational-kernel bounds and the exact transfer normalization.',
-         'The new fixed-height constants do not provide uniform height asymptotics.']),
+         'actual_signed_difference_summable', 'actual_independent_cutoff_limit', 'actual_signed_cutoff_limit',
+         'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit',
+         'rationalTransfer_finite_telescope', 'rationalTransfer_tsum_telescope',
+         'transfer_normalization', 'actual_rational_transfer', 'actual_rational_transfer_benchmark',
+         'actual_rational_transfer_scaled_anchor'],
+        ['The rationally defined transfer is formalized; identification with the integral profile remains in TRIPLE-KERNEL-PROFILE-001.',
+         'No uniform height asymptotics or vanishing error estimate follows from this fixed-height identity.']),
     'ORDINATE-SIGN-AVERAGE-001': (
         ['zeroMultiplicity_horizontalReflection', 'occurrenceReflection_involutive',
          'occurrenceReflection_ordinate', 'occurrenceReflection_displacement',
@@ -115,6 +122,24 @@ def derive():
             and actual_config['enable_nanoda'] is False, 'changed actual-occurrence verification scope')
     components.extend(actual['components'])
     names.extend(c['declaration'] for c in actual['components'])
+    rational = json.loads(read('research/lean-rational-transfer-inventory.json'))
+    found = []
+    for module in rational['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished rational-transfer solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in rational['components']],
+            'rational-transfer inventory differs from source declarations')
+    rational_config = json.loads(read('lean/VerificationChallenges/rational-transfer.json'))
+    require(rational_config['theorem_names'] == [c['declaration'] for c in rational['components'] if c['comparator_checked']],
+            'rational-transfer Comparator coverage differs from inventory')
+    require(rational_config['permitted_axioms'] == config['permitted_axioms']
+            and rational_config['enable_nanoda'] is False, 'changed rational-transfer verification scope')
+    components.extend(rational['components'])
+    names.extend(c['declaration'] for c in rational['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
     require(set(names + actual['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
@@ -152,7 +177,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Formalize the actual rational-kernel bounds and exact transfer normalization; separately prove the sharper local counts and the uniform height estimates needed by the analytic graph.')
+        next_step='Identify the rational profile with its integral and formalize horizontal derivative bounds; separately prove the sharper local counts and uniform height estimates. The signed o(1) remains open.')
 
 
 def validate(record):
@@ -202,6 +227,21 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual(node['coverage'], 'partial')
         self.assertFalse(node['whole_claim_formalized'])
         self.assertTrue(any('local logarithmic' in gap for gap in node['remaining_obligations']))
+
+    def test_rational_transfer_does_not_promote_integral_profile(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'ORDINATE-TRANSFER-001')
+        self.assertIn('HigherCorrelations.actual_rational_transfer', node['components'])
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertTrue(any('integral profile' in gap for gap in node['remaining_obligations']))
+        profile = next(n for n in self.record['nodes'] if n['id'] == 'TRIPLE-KERNEL-PROFILE-001')
+        self.assertFalse(profile['whole_claim_formalized'])
+        self.assertTrue(any('integral representation' in gap for gap in profile['remaining_obligations']))
+
+    def test_rational_comparator_scope_drift(self):
+        component = next(c for c in self.record['components']
+                         if c['declaration'] == 'HigherCorrelations.actual_rational_transfer')
+        component['comparator_checked'] = False
+        with self.assertRaises(ValueError): validate(self.record)
 
     def test_prerequisite_order(self):
         order = {k: i for i, k in enumerate(self.record['root_to_inputs_order'])}

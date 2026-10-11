@@ -3152,3 +3152,110 @@ claims:
       verification_script: scripts/reproduce_lean.py
       verification_scope: "Definition-only Comparator specifications and axiom reports."
       baseline_audit_coverage: "No promotion of ORDINATE-ARGUMENT-VANISHING-001 or ORDINATE-TRIPLE-001."
+  - id: RATIONAL-KERNEL-BOUNDS-001
+    title: Global bounds for the rational triple profile on the closed horizontal cube
+    kind: theorem
+    statement: |
+      Define J(a,b;e,f,g) rationally using centers c1=a-i*e, c2=b-i*f,
+      c3=i*g and differences d_mn=c_m-c_n, as pi*(24+sum d_mn^2)
+      divided by the product of (4+d_mn^2) over 12,13,23. For real gaps
+      and |e|,|f|,|g|<=1/2, every denominator has norm at least
+      3+(Re d_mn)^2 and is nonzero. Writing A,B,C for the denominators,
+      J=pi*(1/(A*B)+1/(A*C)+1/(B*C)+12/(A*B*C)), hence |J|<=7*pi/9.
+      Partner exchange preserves J, simultaneous horizontal sign reversal
+      conjugates J, and the real specialization equals the corresponding
+      real rational expression. J(0,0;e,e,-e)=3*pi/8 for every real e.
+      The bounds include coincident centers and all closed horizontal endpoints.
+      This statement defines J rationally and asserts no integral evaluation.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/RationalKernelBounds.lean
+      label: HigherCorrelations.rationalProfile_bound
+      bookkeeping: research/lean-rational-transfer.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: fa024ffafb1f3c7ba4b83267cfdd48b9ecb55aa2138b00fe6bd01e8e8bc0fadd
+    limit_order: "Pointwise algebra and inequalities on the closed parameter domain; no limit or integral interchange."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator specifications and axiom reports; permitted axioms propext, Quot.sound, Classical.choice."
+      constants_scope: "The explicit uniform bound is 7*pi/9."
+      baseline_audit_coverage: "Outside historical pair/triple RH audits. The integral representation, smoothness and horizontal derivatives of TRIPLE-KERNEL-PROFILE-001 remain separate obligations."
+
+  - id: RATIONAL-WEIGHTED-CONVERGENCE-001
+    title: Absolute convergence and independent cutoffs for actual rationally weighted triple sums
+    kind: theorem
+    statement: |
+      Fix real T, scale a>0, any complex weight w vanishing outside [T,2T],
+      and a smooth compactly supported complex Fourier amplitude phi on R^2.
+      For all ordered actual zero-occurrence triples, with both ordinate
+      signs and all multiplicities and coincidences retained, put
+      u=a*(gamma2-gamma1), v=a*(gamma3-gamma1),
+      z=(u-i*a*(delta2+delta1),v-i*a*(delta3+delta1)),
+      J_delta=J(gamma2-gamma1,gamma3-gamma1;delta2,delta3,delta1),
+      J_0=J(gamma2-gamma1,gamma3-gamma1;0,0,0), J_star=3*pi/8.
+      The five terms w*F(u,v), w*J_delta*F(z),
+      w*J_delta*(F(z)-F(u,v)), w*(J_delta-J_0)*F(u,v), and
+      w*(J_0-J_star)*F(u,v) are norm summable. Their sums are limits of
+      independent inclusive cutoffs |gamma_j|<=N_j, N:Fin(3)->N ordered
+      componentwise. The normalized sums at a=meanSpacing(T), T>2*pi,
+      have the same cutoff property.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [RATIONAL-KERNEL-BOUNDS-001, ACTUAL-TRIPLE-SUMMABILITY-001, SUMMABILITY-LIMITS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/RationalTransferConvergence.lean
+      label: HigherCorrelations.rationalTransferTerm_summable
+      companion_declarations: "bounded_kernel_summable_norm, rationalTransferTerm_cutoff_limit, rationalTransferSum_cutoff_limit"
+      bookkeeping: research/lean-rational-transfer.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: fa024ffafb1f3c7ba4b83267cfdd48b9ecb55aa2138b00fe6bd01e8e8bc0fadd
+    limit_order: "Fix height, scale, weight and Fourier test; evaluate tuple integrals, sum absolutely, and remove three cutoffs independently. No height limit or sum-integral interchange."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Actual occurrences, kernel bounds, counting and Fourier-decay hypotheses discharged; definition-only Comparator checks and axiom reports."
+      constants_scope: "Kernel constants are explicit; inherited fixed-height summability majorants have existential constants."
+      baseline_audit_coverage: "Outside historical pair/triple RH audits; no uniform height estimate or signed o(1) is asserted."
+
+  - id: RATIONAL-ORDINATE-TRANSFER-001
+    title: Exact normalization and signed transfer for the rationally defined actual statistic
+    kind: theorem
+    statement: |
+      Under RATIONAL-WEIGHTED-CONVERGENCE-001 with T>2*pi, use
+      q=log T, b=log(T/(2*pi)), ell=b/(2*pi), a=ell, c=16/(3*T*q).
+      Normalize the ordinate term by 1/(T*ell) to define O, and each
+      other term by c to define R,E_arguments,E_horizontal,E_gaps.
+      Both logarithms and ell are positive and c*J_star=(b/q)/(T*ell).
+      Finite tuple sums telescope, and the absolutely convergent sums obey
+      R=(b/q)*O+E_arguments+E_horizontal+E_gaps. For every complex S,
+      O-S=(q/b)*(R-S-E_arguments-E_horizontal-E_gaps)+(q/b-1)*S.
+      If omega vanishes outside (1,2), w(gamma)=omega(gamma/T) satisfies
+      the anchor-support condition, including zero endpoint values at T,2*T.
+      Every term and normalized sum vanishes for the zero Fourier amplitude.
+      No Fourier support polytope restriction or benchmark asymptotic is used.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [RATIONAL-WEIGHTED-CONVERGENCE-001, RATIONAL-KERNEL-BOUNDS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/RationalTransfer.lean
+      label: HigherCorrelations.actual_rational_transfer
+      companion_declarations: "transfer_normalization, actual_rational_transfer_benchmark, actual_rational_transfer_scaled_anchor"
+      bookkeeping: research/lean-rational-transfer.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: fa024ffafb1f3c7ba4b83267cfdd48b9ecb55aa2138b00fe6bd01e8e8bc0fadd
+    limit_order: "Prove finite telescoping and use fixed-height absolute convergence for infinite sums. Independent cutoffs are removed before any proposed height limit."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator specifications for actual rational terms and exact coefficients; all new public declarations have axiom reports."
+      constants_scope: "Exact normalization; S is an arbitrary complex scalar, not an assumed sine asymptotic."
+      baseline_audit_coverage: "The rational transfer is formalized. Historical ORDINATE-TRANSFER-001 remains partially covered because its integral-profile identification is separate. No promotion of the signed-error or ordinate-asymptotic targets."

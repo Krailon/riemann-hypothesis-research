@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "RationalKernelBounds",
+    "RationalTransferConvergence",
+    "RationalTransfer"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.rational_denominator_lower",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rational_denominator_ne_zero",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalKernel_reciprocal",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalKernel_bound",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_bound",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_swap",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_conj",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_origin",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_coincident",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_real",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rational_denominator_endpoint",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualRationalKernel_bound",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualRealKernel_bound",
+      "source": "lean/HigherCorrelations/RationalKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.bounded_kernel_summable_norm",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferTerm_summable",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferTerm_cutoff_limit",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferSum_cutoff_limit",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferTerm_telescope",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransfer_finite_telescope",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransfer_tsum_telescope",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scaledAnchorWeight_support",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scaledAnchorWeight_endpoints",
+      "source": "lean/HigherCorrelations/RationalTransferConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.transfer_log_pos",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.transferRatio_ne_zero",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.transfer_normalization",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_rational_transfer",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_rational_transfer_benchmark",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_rational_transfer_scaled_anchor",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferTerm_zero_test",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalTransferSum_zero_test",
+      "source": "lean/HigherCorrelations/RationalTransfer.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

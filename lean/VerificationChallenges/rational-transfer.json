@@ -1,0 +1,43 @@
+{
+  "challenge_module": "VerificationChallenges.RationalTransfer",
+  "solution_module": "HigherCorrelations.RationalTransfer",
+  "theorem_names": [
+    "HigherCorrelations.rational_denominator_lower",
+    "HigherCorrelations.rational_denominator_ne_zero",
+    "HigherCorrelations.rationalKernel_reciprocal",
+    "HigherCorrelations.rationalKernel_bound",
+    "HigherCorrelations.rationalProfile_bound",
+    "HigherCorrelations.rationalProfile_swap",
+    "HigherCorrelations.rationalProfile_conj",
+    "HigherCorrelations.rationalProfile_origin",
+    "HigherCorrelations.rationalProfile_coincident",
+    "HigherCorrelations.rationalProfile_real",
+    "HigherCorrelations.rational_denominator_endpoint",
+    "HigherCorrelations.actualRationalKernel_bound",
+    "HigherCorrelations.actualRealKernel_bound",
+    "HigherCorrelations.bounded_kernel_summable_norm",
+    "HigherCorrelations.rationalTransferTerm_summable",
+    "HigherCorrelations.rationalTransferTerm_cutoff_limit",
+    "HigherCorrelations.rationalTransferSum_cutoff_limit",
+    "HigherCorrelations.rationalTransferTerm_telescope",
+    "HigherCorrelations.rationalTransfer_finite_telescope",
+    "HigherCorrelations.rationalTransfer_tsum_telescope",
+    "HigherCorrelations.scaledAnchorWeight_support",
+    "HigherCorrelations.scaledAnchorWeight_endpoints",
+    "HigherCorrelations.transfer_log_pos",
+    "HigherCorrelations.transferRatio_ne_zero",
+    "HigherCorrelations.transfer_normalization",
+    "HigherCorrelations.actual_rational_transfer",
+    "HigherCorrelations.actual_rational_transfer_benchmark",
+    "HigherCorrelations.actual_rational_transfer_scaled_anchor",
+    "HigherCorrelations.rationalTransferTerm_zero_test",
+    "HigherCorrelations.rationalTransferSum_zero_test"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

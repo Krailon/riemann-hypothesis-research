@@ -14,6 +14,11 @@ regressions**, and **10 coverage-map checks**. The
 [complete verification archive](../artifacts/certificates/lean/4baad1a05cee7651be493818f37f1effaea8900b0b8ed21aa961bf84929bd28a/manifest.json)
 records source hashes, tool pins, logs, and dependency compatibility patches.
 
+The subsequent [rational-transfer milestone](lean-rational-transfer.md)
+adds the actual rational-kernel bounds, weighted convergence, and exact
+transfer normalization. The counts and future-work list below record this
+earlier milestone; the current coverage map tracks the remaining obligations.
+
 ## Occurrences, multiplicity, and endpoints
 
 `StripZero` is the subtype of complex numbers satisfying

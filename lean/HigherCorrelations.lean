@@ -3,3 +3,4 @@ import HigherCorrelations.FiniteFoundation
 import HigherCorrelations.HorizontalSquareFoundation
 import HigherCorrelations.SummabilityFoundation
 import HigherCorrelations.ActualOccurrencesFoundation
+import HigherCorrelations.RationalTransfer
