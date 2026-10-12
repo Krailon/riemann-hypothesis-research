@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairSeriesTopology",
+    "PairZeroConvergence",
+    "PairPrimeConvergence",
+    "PairSeriesConvergence"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairSeriesRectangle_nhds",
+      "source": "lean/HigherCorrelations/PairSeriesTopology.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairSeries_locallyUniform",
+      "source": "lean/HigherCorrelations/PairSeriesTopology.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_occurrence_displacement",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_denominator_lower",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_bound",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_summable",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTail_bound",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_kernel_rectangle",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_rectangle_majorant",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_uniform_rectangle",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_continuous",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_locallyUniform",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroSeries_continuous",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_occurrenceCutoff_tendsto",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_cutoff_uniform",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_cutoff_locallyUniform",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_cutoff_remainder",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_summable",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrime_uniform_rectangle",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrime_locallyUniform",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_continuous",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeSeries_continuous",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_one",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairSeries_convergence",
+      "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_cutoff_error",
+      "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_at_knot",
+      "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_at_one",
+      "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [
+    "ArithmeticFunction.LSeriesSummable_vonMangoldt"
+  ]
+}

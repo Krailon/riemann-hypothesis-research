@@ -1,0 +1,40 @@
+{
+  "challenge_module": "VerificationChallenges.PairSeries",
+  "solution_module": "HigherCorrelations.PairSeriesConvergence",
+  "theorem_names": [
+    "HigherCorrelations.pairSeriesRectangle_nhds",
+    "HigherCorrelations.pairSeries_locallyUniform",
+    "HigherCorrelations.pair_occurrence_displacement",
+    "HigherCorrelations.pair_denominator_lower",
+    "HigherCorrelations.pairZeroTerm_bound",
+    "HigherCorrelations.pairZeroTerm_summable",
+    "HigherCorrelations.pairZeroTail_bound",
+    "HigherCorrelations.pair_kernel_rectangle",
+    "HigherCorrelations.pairZero_rectangle_majorant",
+    "HigherCorrelations.pairZero_uniform_rectangle",
+    "HigherCorrelations.pairZeroTerm_continuous",
+    "HigherCorrelations.pairZero_locallyUniform",
+    "HigherCorrelations.pairZeroSeries_continuous",
+    "HigherCorrelations.pair_occurrenceCutoff_tendsto",
+    "HigherCorrelations.pairZero_cutoff_uniform",
+    "HigherCorrelations.pairZero_cutoff_locallyUniform",
+    "HigherCorrelations.pairZero_cutoff_remainder",
+    "HigherCorrelations.pairPrimeTerm_summable",
+    "HigherCorrelations.pairPrime_uniform_rectangle",
+    "HigherCorrelations.pairPrime_locallyUniform",
+    "HigherCorrelations.pairPrimeTerm_continuous",
+    "HigherCorrelations.pairPrimeSeries_continuous",
+    "HigherCorrelations.pairPrimeTerm_one",
+    "HigherCorrelations.pairSeries_convergence",
+    "HigherCorrelations.pairZero_cutoff_error",
+    "HigherCorrelations.pairPrimeTerm_at_knot",
+    "HigherCorrelations.pairZeroTerm_at_one"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

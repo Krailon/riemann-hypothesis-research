@@ -20,6 +20,13 @@ ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 PARTIAL = {
+    'PAIR-EF-CONVERGENCE-001': (
+        ['pairZeroTerm_summable', 'pairPrimeTerm_summable', 'pairZero_locallyUniform',
+         'pairPrime_locallyUniform', 'pairZeroSeries_continuous', 'pairPrimeSeries_continuous',
+         'pairZero_cutoff_uniform', 'pairZero_cutoff_locallyUniform', 'pairZeroTail_bound',
+         'pairZero_cutoff_error', 'pairSeries_convergence', 'pairPrimeTerm_at_knot', 'pairZeroTerm_at_one'],
+        ['Convergence, continuity, endpoint conventions and the quantitative tail are checked with an existential absolute constant.',
+         'The historical effective-constant assertion is not supplied by the unevaluated low-height count.']),
     'TRIPLE-SMOOTHED-CORRELATION-001': (
         ['triple_cutoff_limit', 'dominated_occurrence_limit', 'project_actual_summable_norm',
          'actualRationalKernel_bound', 'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit',
@@ -190,9 +197,27 @@ def derive():
             and uniform_config['enable_nanoda'] is False, 'changed uniform-height verification scope')
     components.extend(uniform['components'])
     names.extend(c['declaration'] for c in uniform['components'])
+    pair = json.loads(read('research/lean-pair-series-inventory.json'))
+    found = []
+    for module in pair['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair-series solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in pair['components']],
+            'pair-series inventory differs from source declarations')
+    pair_config = json.loads(read('lean/VerificationChallenges/pair-series.json'))
+    require(pair_config['theorem_names'] == [c['declaration'] for c in pair['components'] if c['comparator_checked']],
+            'pair-series Comparator coverage differs from inventory')
+    require(pair_config['permitted_axioms'] == config['permitted_axioms']
+            and pair_config['enable_nanoda'] is False, 'changed pair-series verification scope')
+    components.extend(pair['components'])
+    names.extend(c['declaration'] for c in pair['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -227,7 +252,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Formalize the pair explicit-formula and prime-side inputs needed for the sharper near-diagonal count. Local logarithmic counts and global uniform real-test height majorants are checked; the pair-dependent near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Formalize the paired Mellin kernel and exact pair explicit formula next. Pair zero/prime series convergence and the tail with an existential constant are checked; effective constants, prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -240,6 +265,13 @@ class CoverageTests(unittest.TestCase):
 
     def test_current(self):
         validate(self.record)
+
+    def test_pair_convergence_effectiveness_remains_partial(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-EF-CONVERGENCE-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertIn('HigherCorrelations.pairZero_cutoff_error', node['components'])
+        self.assertTrue(any('effective-constant' in gap for gap in node['remaining_obligations']))
 
     def test_missing_node(self):
         self.record['nodes'].pop()

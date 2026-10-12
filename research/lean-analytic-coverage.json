@@ -458,11 +458,26 @@
         "file": "proofs/pair_baseline.tex",
         "label": "lem:ef-convergence"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.pairZeroTerm_summable",
+        "HigherCorrelations.pairPrimeTerm_summable",
+        "HigherCorrelations.pairZero_locallyUniform",
+        "HigherCorrelations.pairPrime_locallyUniform",
+        "HigherCorrelations.pairZeroSeries_continuous",
+        "HigherCorrelations.pairPrimeSeries_continuous",
+        "HigherCorrelations.pairZero_cutoff_uniform",
+        "HigherCorrelations.pairZero_cutoff_locallyUniform",
+        "HigherCorrelations.pairZeroTail_bound",
+        "HigherCorrelations.pairZero_cutoff_error",
+        "HigherCorrelations.pairSeries_convergence",
+        "HigherCorrelations.pairPrimeTerm_at_knot",
+        "HigherCorrelations.pairZeroTerm_at_one"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "Convergence, continuity, endpoint conventions and the quantitative tail are checked with an existential absolute constant.",
+        "The historical effective-constant assertion is not supplied by the unevaluated low-height count."
       ]
     },
     {
@@ -2853,7 +2868,142 @@
       "declaration": "HigherCorrelations.ordinateCoefficient_mass_bound",
       "source": "lean/HigherCorrelations/UniformHeightApplications.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairSeriesRectangle_nhds",
+      "source": "lean/HigherCorrelations/PairSeriesTopology.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairSeries_locallyUniform",
+      "source": "lean/HigherCorrelations/PairSeriesTopology.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_occurrence_displacement",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_denominator_lower",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_bound",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_summable",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTail_bound",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_kernel_rectangle",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_rectangle_majorant",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_uniform_rectangle",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_continuous",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_locallyUniform",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroSeries_continuous",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_occurrenceCutoff_tendsto",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_cutoff_uniform",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_cutoff_locallyUniform",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_cutoff_remainder",
+      "source": "lean/HigherCorrelations/PairZeroConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_summable",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrime_uniform_rectangle",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrime_locallyUniform",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_continuous",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeSeries_continuous",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_one",
+      "source": "lean/HigherCorrelations/PairPrimeConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairSeries_convergence",
+      "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_cutoff_error",
+      "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_at_knot",
+      "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_at_one",
+      "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Formalize the pair explicit-formula and prime-side inputs needed for the sharper near-diagonal count. Local logarithmic counts and global uniform real-test height majorants are checked; the pair-dependent near count, full Riemann-von Mangoldt and signed o(1) remain open."
+  "next_step": "Formalize the paired Mellin kernel and exact pair explicit formula next. Pair zero/prime series convergence and the tail with an existential constant are checked; effective constants, prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
 }

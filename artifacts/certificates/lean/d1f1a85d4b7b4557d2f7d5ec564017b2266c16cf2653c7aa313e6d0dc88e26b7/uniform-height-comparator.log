@@ -1,0 +1,166 @@
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.UniformHeight
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8936/8936] Built VerificationChallenges.UniformHeight (4.1s)
+warning: lean/VerificationChallenges/UniformHeight.lean:12:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:15:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:17:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:23:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:26:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:29:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:32:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:35:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:40:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:43:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:47:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:50:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:54:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:57:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:61:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:65:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:69:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:76:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:85:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:88:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:92:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:96:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:99:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:102:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:106:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:109:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:112:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:116:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:119:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:124:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:129:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:134:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:139:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:145:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:149:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:154:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:160:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:163:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:166:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:169:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:172:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:176:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:180:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:183:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:186:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:190:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:193:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:199:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:207:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:213:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:219:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:224:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:234:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:246:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:252:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:261:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:269:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:279:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:282:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/UniformHeight.lean:286:8: declaration uses `sorry`
+Build completed successfully (8936 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.zeta_norm_le_quarter_strip, HigherCorrelations.zeta_line_two_lower, HigherCorrelations.stripZero_interval_finite, HigherCorrelations.mem_stripZeroInterval, HigherCorrelations.mem_occurrenceInterval, HigherCorrelations.occurrenceInterval_card, HigherCorrelations.occurrenceInterval_subset_cutoff, HigherCorrelations.occurrenceInterval_mono, HigherCorrelations.occurrenceInterval_empty, HigherCorrelations.rightStripZeroInterval_mem, HigherCorrelations.occurrenceInterval_card_le_twice_right, HigherCorrelations.jensen_disk_geometry, HigherCorrelations.jensen_disk_analytic, HigherCorrelations.jensen_disk_norm_bound, HigherCorrelations.localJensenMass_bound, HigherCorrelations.right_interval_in_jensen_disk, HigherCorrelations.right_interval_mass_le_jensen, HigherCorrelations.occurrence_unit_count_high, HigherCorrelations.occurrence_unit_count_low, HigherCorrelations.occurrence_count_local, HigherCorrelations.occurrence_interval_unit_cover, HigherCorrelations.occurrence_count_interval, HigherCorrelations.occurrenceCutoff_eq_interval, HigherCorrelations.occurrence_count_logarithmic, HigherCorrelations.occurrence_count_centered, HigherCorrelations.kernelTailRadius_nonneg, HigherCorrelations.kernelTailRadius_identity, HigherCorrelations.kernelTail_shell_upper, HigherCorrelations.kernelTail_shell_finite, HigherCorrelations.kernelTail_shell_log, HigherCorrelations.ordinateKernel_nonneg, HigherCorrelations.ordinateKernel_quadratic, HigherCorrelations.kernel_geometric_hasSum, HigherCorrelations.zeroKernelTail_summable_bound, HigherCorrelations.zeroKernel_summable_bound, HigherCorrelations.kernel_restricted_le_tail, HigherCorrelations.zeroKernel_distant_bound, HigherCorrelations.zeroKernel_exterior_bound, HigherCorrelations.heightIntervalDistance_geometry, HigherCorrelations.zeroKernel_interior_finite, HigherCorrelations.zeroKernel_interior_bound, HigherCorrelations.uniformHeightThreshold_bounds, HigherCorrelations.height_radius_log_bound, HigherCorrelations.anchoredBall_finite, HigherCorrelations.mem_anchoredBall, HigherCorrelations.anchored_count_uniform, HigherCorrelations.project_anchored_count_uniform, HigherCorrelations.anchoredTailRadius_nonneg, HigherCorrelations.anchoredTailRadius_identity, HigherCorrelations.anchoredTail_shell_upper, HigherCorrelations.anchoredTail_shell_finite, HigherCorrelations.dyadic_total_bound, HigherCorrelations.anchored_decay_tail_uniform, HigherCorrelations.anchored_decay_mass_uniform, HigherCorrelations.anchored_decay_strict_tail_uniform, HigherCorrelations.bounded_factor_decay, HigherCorrelations.weighted_real_test_decay, HigherCorrelations.project_weighted_mass_tail, HigherCorrelations.anchored_decay_twentieth_tail, HigherCorrelations.bounded_multiplier_mass_tail, HigherCorrelations.actual_kernel_uniform_bounds, HigherCorrelations.actual_horizontal_uniform_bounds, HigherCorrelations.meanSpacing_log_comparison, HigherCorrelations.transferCoefficient_mass_bound, HigherCorrelations.ordinateCoefficient_mass_bound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.UniformHeight
+Building HigherCorrelations.UniformHeight
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8997/9024] Replayed HigherCorrelations.KernelTailShells
+warning: lean/HigherCorrelations/KernelTailShells.lean:17:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8998/9024] Replayed HigherCorrelations.KernelTailBounds
+info: lean/HigherCorrelations/KernelTailBounds.lean:11:45: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/KernelTailBounds.lean:11:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9000/9024] Replayed HigherCorrelations.UniformHeightCounting
+warning: lean/HigherCorrelations/UniformHeightCounting.lean:122:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9001/9024] Replayed HigherCorrelations.UniformHeightTails
+warning: lean/HigherCorrelations/UniformHeightTails.lean:15:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (9024 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.zeta_norm_le_quarter_strip, HigherCorrelations.zeta_line_two_lower, HigherCorrelations.stripZero_interval_finite, HigherCorrelations.mem_stripZeroInterval, HigherCorrelations.mem_occurrenceInterval, HigherCorrelations.occurrenceInterval_card, HigherCorrelations.occurrenceInterval_subset_cutoff, HigherCorrelations.occurrenceInterval_mono, HigherCorrelations.occurrenceInterval_empty, HigherCorrelations.rightStripZeroInterval_mem, HigherCorrelations.occurrenceInterval_card_le_twice_right, HigherCorrelations.jensen_disk_geometry, HigherCorrelations.jensen_disk_analytic, HigherCorrelations.jensen_disk_norm_bound, HigherCorrelations.localJensenMass_bound, HigherCorrelations.right_interval_in_jensen_disk, HigherCorrelations.right_interval_mass_le_jensen, HigherCorrelations.occurrence_unit_count_high, HigherCorrelations.occurrence_unit_count_low, HigherCorrelations.occurrence_count_local, HigherCorrelations.occurrence_interval_unit_cover, HigherCorrelations.occurrence_count_interval, HigherCorrelations.occurrenceCutoff_eq_interval, HigherCorrelations.occurrence_count_logarithmic, HigherCorrelations.occurrence_count_centered, HigherCorrelations.kernelTailRadius_nonneg, HigherCorrelations.kernelTailRadius_identity, HigherCorrelations.kernelTail_shell_upper, HigherCorrelations.kernelTail_shell_finite, HigherCorrelations.kernelTail_shell_log, HigherCorrelations.ordinateKernel_nonneg, HigherCorrelations.ordinateKernel_quadratic, HigherCorrelations.kernel_geometric_hasSum, HigherCorrelations.zeroKernelTail_summable_bound, HigherCorrelations.zeroKernel_summable_bound, HigherCorrelations.kernel_restricted_le_tail, HigherCorrelations.zeroKernel_distant_bound, HigherCorrelations.zeroKernel_exterior_bound, HigherCorrelations.heightIntervalDistance_geometry, HigherCorrelations.zeroKernel_interior_finite, HigherCorrelations.zeroKernel_interior_bound, HigherCorrelations.uniformHeightThreshold_bounds, HigherCorrelations.height_radius_log_bound, HigherCorrelations.anchoredBall_finite, HigherCorrelations.mem_anchoredBall, HigherCorrelations.anchored_count_uniform, HigherCorrelations.project_anchored_count_uniform, HigherCorrelations.anchoredTailRadius_nonneg, HigherCorrelations.anchoredTailRadius_identity, HigherCorrelations.anchoredTail_shell_upper, HigherCorrelations.anchoredTail_shell_finite, HigherCorrelations.dyadic_total_bound, HigherCorrelations.anchored_decay_tail_uniform, HigherCorrelations.anchored_decay_mass_uniform, HigherCorrelations.anchored_decay_strict_tail_uniform, HigherCorrelations.bounded_factor_decay, HigherCorrelations.weighted_real_test_decay, HigherCorrelations.project_weighted_mass_tail, HigherCorrelations.anchored_decay_twentieth_tail, HigherCorrelations.bounded_multiplier_mass_tail, HigherCorrelations.actual_kernel_uniform_bounds, HigherCorrelations.actual_horizontal_uniform_bounds, HigherCorrelations.meanSpacing_log_comparison, HigherCorrelations.transferCoefficient_mass_bound, HigherCorrelations.ordinateCoefficient_mass_bound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from HigherCorrelations.UniformHeight
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

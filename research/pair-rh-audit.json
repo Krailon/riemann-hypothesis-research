@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "cd53a0d0d0c2c9a44447f1804744a7c23877fb3b1b03b239f6fde0ee6ec88557",
+  "ledger_sha256": "f3798ff17b54e0338717694975e7a625b708621ba52b09655ea04fa27d5f278c",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2561,5 +2561,14 @@
     ],
     "report": "research/lean-uniform-height.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every previous indexed block is identical. Five formalized entries add logarithmic local and cumulative upper counts, uniform rational ordinate-kernel sums, global anchored triple counts, normalized real-test mass and tails, and actual kernel/derivative transfer majorants. Historical proof files, statuses, contexts and archived audits retain their scope. Constants are existential; the full Riemann-von Mangoldt claim, pair-dependent near count, stronger normalized O(log T) mass and signed complex-argument o(1) remain separate obligations."
+  },
+  "ledger_pair_series_review": {
+    "reviewed_on": "2026-10-12",
+    "previous_ledger_sha256": "cd53a0d0d0c2c9a44447f1804744a7c23877fb3b1b03b239f6fde0ee6ec88557",
+    "added_claim_ids": [
+      "PAIR-SERIES-CONVERGENCE-001"
+    ],
+    "report": "research/lean-pair-series.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. One separate formalized claim records zero/prime series convergence, endpoint continuity and an existential absolute zero-tail bound. The historical effective-constant assertion and all other historical statuses, proof files, audit verdicts and archives retain their scope. This whole-ledger hash refresh does not extend either historical audit."
   }
 }

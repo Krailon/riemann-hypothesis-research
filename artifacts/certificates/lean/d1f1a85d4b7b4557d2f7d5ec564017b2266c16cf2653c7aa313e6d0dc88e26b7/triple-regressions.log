@@ -1,0 +1,61 @@
+....................................................................................F..F.E..F..F..............................
+======================================================================
+ERROR: test_authored_review_coverage_and_freshness (check_triple_rh_audit.TripleRHAuditChecks.test_authored_review_coverage_and_freshness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/check_triple_rh_audit.py", line 195, in test_authored_review_coverage_and_freshness
+    result = validate(load_json(RECORD))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/check_triple_rh_audit.py", line 111, in validate
+    require(digest(read(path)) == sha, 'stale input: '+path)
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/check_pair_rh_audit.py", line 27, in require
+    raise ValueError(message)
+ValueError: stale input: research/pair-rh-audit.json
+
+======================================================================
+FAIL: test_partial_manifest_and_output_hashes (check_triple_reproduction.TripleReproductionChecks.test_partial_manifest_and_output_hashes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/check_triple_reproduction.py", line 196, in test_partial_manifest_and_output_hashes
+    self.assertEqual(m['status'],'partial')
+AssertionError: 'fail' != 'partial'
+- fail
++ partial
+
+
+======================================================================
+FAIL: test_source_changes_reject_success (check_triple_reproduction.TripleReproductionChecks.test_source_changes_reject_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/check_triple_reproduction.py", line 223, in test_source_changes_reject_success
+    self.assertIn('changed during reproduction',m['error'])
+AssertionError: 'changed during reproduction' not found in 'stale input: research/pair-rh-audit.json'
+
+======================================================================
+FAIL: test_reject_lost_support_and_conditional_misclassification (check_triple_rh_audit.TripleRHAuditChecks.test_reject_lost_support_and_conditional_misclassification)
+----------------------------------------------------------------------
+ValueError: stale input: research/pair-rh-audit.json
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/check_triple_rh_audit.py", line 225, in test_reject_lost_support_and_conditional_misclassification
+    with self.assertRaisesRegex(ValueError, 'assumptions or support'): validate(r)
+AssertionError: "assumptions or support" does not match "stale input: research/pair-rh-audit.json"
+
+======================================================================
+FAIL: test_unresolved_records_are_preserved_but_cannot_pass_clean_check (check_triple_rh_audit.TripleRHAuditChecks.test_unresolved_records_are_preserved_but_cannot_pass_clean_check)
+----------------------------------------------------------------------
+ValueError: stale input: research/pair-rh-audit.json
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/stackcanary/riemann-hypothesis-research/scripts/check_triple_rh_audit.py", line 234, in test_unresolved_records_are_preserved_but_cannot_pass_clean_check
+    with self.assertRaisesRegex(ValueError, 'clean outcome'): validate(r, require_clean=False)
+AssertionError: "clean outcome" does not match "stale input: research/pair-rh-audit.json"
+
+----------------------------------------------------------------------
+Ran 126 tests in 2.126s
+
+FAILED (failures=4, errors=1)

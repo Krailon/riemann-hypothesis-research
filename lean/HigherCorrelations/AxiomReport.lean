@@ -1,3 +1,4 @@
+import HigherCorrelations.PairSeriesConvergence
 import HigherCorrelations.UniformHeight
 import HigherCorrelations.IntegralProfile
 import HigherCorrelations.RationalTransfer
@@ -375,3 +376,32 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms Zeta0EqZeta
 #print axioms zeta_eq_tsum_one_div_nat_add_one_cpow
 #print axioms hasSum_zeta_two
+
+#print axioms HigherCorrelations.pairSeriesRectangle_nhds
+#print axioms HigherCorrelations.pairSeries_locallyUniform
+#print axioms HigherCorrelations.pair_occurrence_displacement
+#print axioms HigherCorrelations.pair_denominator_lower
+#print axioms HigherCorrelations.pairZeroTerm_bound
+#print axioms HigherCorrelations.pairZeroTerm_summable
+#print axioms HigherCorrelations.pairZeroTail_bound
+#print axioms HigherCorrelations.pair_kernel_rectangle
+#print axioms HigherCorrelations.pairZero_rectangle_majorant
+#print axioms HigherCorrelations.pairZero_uniform_rectangle
+#print axioms HigherCorrelations.pairZeroTerm_continuous
+#print axioms HigherCorrelations.pairZero_locallyUniform
+#print axioms HigherCorrelations.pairZeroSeries_continuous
+#print axioms HigherCorrelations.pair_occurrenceCutoff_tendsto
+#print axioms HigherCorrelations.pairZero_cutoff_uniform
+#print axioms HigherCorrelations.pairZero_cutoff_locallyUniform
+#print axioms HigherCorrelations.pairZero_cutoff_remainder
+#print axioms HigherCorrelations.pairPrimeTerm_summable
+#print axioms HigherCorrelations.pairPrime_uniform_rectangle
+#print axioms HigherCorrelations.pairPrime_locallyUniform
+#print axioms HigherCorrelations.pairPrimeTerm_continuous
+#print axioms HigherCorrelations.pairPrimeSeries_continuous
+#print axioms HigherCorrelations.pairPrimeTerm_one
+#print axioms HigherCorrelations.pairSeries_convergence
+#print axioms HigherCorrelations.pairZero_cutoff_error
+#print axioms HigherCorrelations.pairPrimeTerm_at_knot
+#print axioms HigherCorrelations.pairZeroTerm_at_one
+#print axioms ArithmeticFunction.LSeriesSummable_vonMangoldt

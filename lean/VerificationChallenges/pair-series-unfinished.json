@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairSeries",
+  "solution_module": "VerificationChallenges.PairSeriesUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairSeries_convergence"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

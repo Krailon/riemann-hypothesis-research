@@ -3561,3 +3561,42 @@ claims:
       verification_scope: "Definition-only Comparator checks, actual rational/integral profile and derivative bounds, and axiom reports."
       constants_scope: "Derivative constants and coefficient factors are explicit; global height constants inherit the unevaluated low-height bucket."
       baseline_audit_coverage: "Uniform majorants do not supply the missing signed cancellation or the conventional ordinate-only asymptotic."
+  - id: PAIR-SERIES-CONVERGENCE-001
+    title: Pair explicit-formula series convergence with an existential tail constant
+    kind: theorem
+    statement: |
+      For X>=1 and all real t, the actual zero-occurrence series
+      S(X,t)=sum_rho 2 exp(log(X)*(delta+i*(gamma-t))) /
+      (1+((t-gamma)+i*delta)^2), delta=Re(rho)-1/2, and the prime series
+      P(X,t)=sum_{n>=1} Lambda(n) exp(log(n)*(-1/2-i*t)) min(n/X,X/n)
+      are absolutely summable. Zeros have their analytic multiplicities
+      and both ordinate signs. Finite-subset zero sums and inclusive
+      absolute-height cutoffs converge uniformly on every rectangle
+      1<=X<=B, |t|<=H and locally uniformly on [1,infinity) x R;
+      the positive-integer prime partial sums do likewise. Both sums are
+      continuous on this closed domain, including X=1 and prime knots X=n.
+      There exists an absolute C>0 such that for X>=1 and U>=2*(|t|+2),
+      sum_{|gamma|>U}|zero term| <= C*sqrt(X)*log(U)/U.
+      The same bound controls the norm of S minus its inclusive |gamma|<=U
+      cutoff. No principal-value ordering or RH assumption is used.
+      The constant is existential, not numerically evaluated or certified.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZERO-OCCURRENCE-001, ZERO-KERNEL-UNIFORM-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairSeriesConvergence.lean
+      label: HigherCorrelations.pairSeries_convergence
+      companion_declarations: "pairZero_cutoff_error, pairZero_locallyUniform, pairZero_cutoff_locallyUniform, pairPrime_locallyUniform, pairPrimeTerm_at_knot, pairZeroTerm_at_one"
+      bookkeeping: research/lean-pair-series.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: c216f17ccdadb2dc9ec50f1a5d14230a7150793a7451f0d2d83b3d02b53800d7
+    limit_order: "Finite-subset zero sums, real inclusive height cutoffs U -> infinity, and prime partial sums N -> infinity converge uniformly on each fixed parameter rectangle; no simultaneous unbounded X or t limit is asserted."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator, all public axiom reports, and unfinished-proof rejection."
+      imported_input: "Pinned mathlib ArithmeticFunction.LSeriesSummable_vonMangoldt at s=3/2, proved by comparison with log(n)/n^(3/2)."
+      constants_scope: "Inherits the existential absolute constant from ZERO-KERNEL-UNIFORM-001."
+      baseline_audit_coverage: "The historical PAIR-EF-CONVERGENCE-001 effectiveness assertion, Mellin kernel, and exact explicit-formula equality are not promoted."

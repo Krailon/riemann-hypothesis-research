@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "cd53a0d0d0c2c9a44447f1804744a7c23877fb3b1b03b239f6fde0ee6ec88557",
+    "research/theorem-ledger.yaml": "f3798ff17b54e0338717694975e7a625b708621ba52b09655ea04fa27d5f278c",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "c6807bd40f0e95c76ca40c2aa63cd5131dc69ca8d2ea0f4d0d82619178ea1466"
+    "research/pair-rh-audit.json": "67df6ba365191fbf4b9643494a3cc4e5975678f5a90777b67f7a476fc54de268"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4434,5 +4434,14 @@
     ],
     "report": "research/lean-uniform-height.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every previous indexed block is identical. Five formalized entries add logarithmic local and cumulative upper counts, uniform rational ordinate-kernel sums, global anchored triple counts, normalized real-test mass and tails, and actual kernel/derivative transfer majorants. Historical proof files, statuses, contexts and archived audits retain their scope. Constants are existential; the full Riemann-von Mangoldt claim, pair-dependent near count, stronger normalized O(log T) mass and signed complex-argument o(1) remain separate obligations."
+  },
+  "ledger_pair_series_review": {
+    "reviewed_on": "2026-10-12",
+    "previous_ledger_sha256": "cd53a0d0d0c2c9a44447f1804744a7c23877fb3b1b03b239f6fde0ee6ec88557",
+    "added_claim_ids": [
+      "PAIR-SERIES-CONVERGENCE-001"
+    ],
+    "report": "research/lean-pair-series.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. One separate formalized claim records zero/prime series convergence, endpoint continuity and an existential absolute zero-tail bound. The historical effective-constant assertion and all other historical statuses, proof files, audit verdicts and archives retain their scope. This whole-ledger hash refresh does not extend either historical audit."
   }
 }

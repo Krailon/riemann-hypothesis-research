@@ -99,6 +99,15 @@ reports**, **196 regressions**, and **16 coverage checks**. See the
 existential. Full Riemann--von Mangoldt, the stronger pair-dependent near
 count, and the signed complex-argument `o(1)` remain separate obligations.
 
+## Pair series convergence formalized
+
+Lean proves absolute and local uniform convergence of the pair zero and prime
+series, continuity including X=1 and X=n, and the quantitative zero-tail and
+inclusive-cutoff remainder bounds. All multiplicities and both ordinate signs
+are retained. The tail constant is existential; the historical effectiveness
+claim remains separate. See the [proof and verification record](research/lean-pair-series.md).
+The next input is the paired Mellin kernel, followed by the exact explicit formula.
+
 ## Reproduce the pair baseline
 
 Task: verification and exposition. Assumptions: `UNCONDITIONAL` for the exact
