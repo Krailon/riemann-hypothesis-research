@@ -3259,3 +3259,141 @@ claims:
       verification_scope: "Definition-only Comparator specifications for actual rational terms and exact coefficients; all new public declarations have axiom reports."
       constants_scope: "Exact normalization; S is an arbitrary complex scalar, not an assumed sine asymptotic."
       baseline_audit_coverage: "The rational transfer is formalized. Historical ORDINATE-TRANSFER-001 remains partially covered because its integral-profile identification is separate. No promotion of the signed-error or ordinate-asymptotic targets."
+  - id: INTEGRAL-PROFILE-IDENTIFICATION-001
+    title: Absolutely convergent integral identification on the enlarged horizontal cube
+    kind: theorem
+    statement: |
+      For real a,b,e,f,g with |e|,|f|,|g|<=3/4, define k(x,e)=1/(1+(x+i*e)^2).
+      The product k(t-a,e)*k(t-b,f)*k(t,-g) is absolutely Bochner integrable
+      on the real line, with norm at most 64/(1+t^2), uniformly in all gaps
+      and horizontal parameters. Its integral equals the rational profile
+      J(a,b;e,f,g) of RATIONAL-KERNEL-BOUNDS-001, with centers a-i*e,b-i*f,i*g.
+      The identity includes all coincident centers and closed endpoints.
+      The integral is continuous in the two real gaps on the enlarged cube
+      and smooth in all five real parameters near every point of the closed
+      half cube. Evaluation uses finite partial fractions, symmetric finite
+      interval limits and dominated continuity; no individual simple pole
+      is assigned a whole-line Lebesgue integral.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [RATIONAL-KERNEL-BOUNDS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ProfileIntegral.lean
+      label: HigherCorrelations.integralProfile_eq
+      companion_declarations: "profileIntegrand_bound, profileIntegrand_integrable, integralProfile_continuous_gaps, rationalProfile_contDiffAt, integralProfile_contDiffAt"
+      bookkeeping: research/lean-integral-profile.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: f2907d4ab8fcb06157fdfcf2daa35276de87bfa7005ee93758aecb5a3d3003f7
+    limit_order: "Fix parameters; integrate the finite partial-fraction identity on [-R,R]; take R to infinity for the integrable product; then extend to collisions by dominated continuity. No zero sum, Fourier integral or height limit is interchanged."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator specifications for all public declarations and explicit axiom reports, including the imported finite-interval formula."
+      imported_inputs: "integral_const_div_self_add_im in PrimeNumberTheoremAnd/ResidueCalcOnRectangles.lean at c39a751132c88b6e8080b74c74023fd95b3d8be0. Later residue scaffolding is not used."
+      constants_scope: "Explicit majorant 64/(1+t^2), uniform in both real gaps and the enlarged closed cube."
+      baseline_audit_coverage: "Standalone formal reproof of the profile identity. Historical ledger blocks and contour-residue proof route are unchanged; the master explicit formula and full analytic graph remain separate obligations."
+
+  - id: PROFILE-HORIZONTAL-DERIVATIVES-001
+    title: Every ordered horizontal partial and uniform directional derivative bound
+    kind: theorem
+    statement: |
+      For the integral profile identified in INTEGRAL-PROFILE-IDENTIFICATION-001,
+      let js be any finite ordered list of coordinates in Fin(3), of length n.
+      On the open enlarged horizontal cube, its iterated Frechet coordinate
+      derivative equals the integral of k_r(t-a,e)*k_s(t-b,f)*(-1)^u*k_u(t,-g),
+      where r,s,u count the coordinates in js and
+      k_m(x,e)=(-i)^m*m!/(2*i)*((x+i*e-i)^(-m-1)-(x+i*e+i)^(-m-1)).
+      On the closed enlarged cube the scalar jets have norm at most
+      4^(m+1)*m!/(1+x^2), and the mixed integrands have norm at most
+      4^(n+3)*n!/(1+t^2). On the closed half cube every such derivative
+      has norm at most C_n=4^(n+3)*n!*pi, independently of a,b.
+      If delta=(e,f,g) lies in the closed half cube, S=sum |delta_j| and
+      G(s)=J(a,b;s*delta), then |G^(n)(s)|<=C_n*S^n for every natural n
+      and every real |s|<=1. In particular all orders through four are covered.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [INTEGRAL-PROFILE-IDENTIFICATION-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ProfileJetDerivatives.lean
+      label: HigherCorrelations.horizontalPartial_bound
+      companion_declarations: "scalarKernelJet_hasDerivAt, scalarKernelJet_bound, profileJetIntegrand_bound, profileJet_hasFDerivAt, horizontalPartial_eq_profileJet, profileRay_derivative_bound"
+      bookkeeping: research/lean-integral-profile.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: f2907d4ab8fcb06157fdfcf2daa35276de87bfa7005ee93758aecb5a3d3003f7
+    limit_order: "Fix real gaps and derivative order. Differentiate under an absolutely convergent integral using the open enlarged cube and the explicit integrable derivative majorant; then restrict to the closed half cube. No infinite-order limit or height limit."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator checks and axiom reports for scalar jets, mixed partials, differentiation under the integral, and directional derivatives."
+      constants_scope: "C_0 through C_4 are respectively 64*pi,256*pi,2048*pi,24576*pi,393216*pi. Constants are not claimed optimal."
+      baseline_audit_coverage: "No uniform height asymptotic or vanishing complex-test error is inferred from these pointwise kernel bounds."
+
+  - id: PROFILE-SYMMETRIC-REMAINDERS-001
+    title: Explicit quadratic and quartic symmetric horizontal remainders
+    kind: theorem
+    statement: |
+      Fix a,b real and delta in the closed half cube; put S=sum |delta_j|
+      and G(s)=J(a,b;s*delta). Then
+      |(G(1)+G(-1))/2-G(0)|<=C_2*S^2/2=1024*pi*S^2 and
+      |(G(1)+G(-1))/2-G(0)-G''(0)/2|<=C_4*S^4/24=16384*pi*S^4.
+      These are complex norm inequalities. More generally the order-n
+      Taylor polynomial at zero evaluated at one has remainder norm at most
+      C_(n+1)*S^(n+1)/(n+1)!. The initial directional jet under delta -> -delta
+      changes by (-1)^n, so odd terms cancel in the symmetric average.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PROFILE-HORIZONTAL-DERIVATIVES-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ProfileTaylor.lean
+      label: HigherCorrelations.profile_symmetric_fourth_bound
+      companion_declarations: "profile_taylor_remainder_bound, profileDirectionalJet_neg_at_zero, profile_symmetric_second_bound"
+      bookkeeping: research/lean-integral-profile.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: f2907d4ab8fcb06157fdfcf2daa35276de87bfa7005ee93758aecb5a3d3003f7
+    limit_order: "Fix gaps and horizontal vector; apply Taylor's integral remainder on [0,1] to delta and -delta. No zero sum or height limit."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator specifications for the Taylor integral bound and both symmetric remainders, with explicit axiom reports."
+      constants_scope: "Exact factorial factors 1/2 and 1/24; complex norm bounds with no positivity assumption."
+      baseline_audit_coverage: "A local simultaneous sign average of the kernel does not prove cancellation of the full signed complex-argument statistic."
+
+  - id: ACTUAL-INTEGRAL-PROFILE-001
+    title: Integral profile and horizontal remainders for actual zero-occurrence triples
+    kind: theorem
+    statement: |
+      For every ordered t:Fin(3)->ZeroOccurrence with anchor slot 0,
+      use a=gamma(t1)-gamma(t0), b=gamma(t2)-gamma(t0),
+      delta=(displacement(t1),displacement(t2),displacement(t0)).
+      The proved occurrence displacement bounds discharge the half-cube
+      hypotheses. actualRationalKernel(t) equals the absolutely convergent
+      integral of k(v-a,delta0)*k(v-b,delta1)*k(v,-delta2).
+      Every ordered horizontal partial obeys C_n, and both symmetric
+      second- and fourth-order remainder inequalities hold at this tuple.
+      All ordinate signs, multiplicities, repeated occurrences, equal ordinates
+      and coincident complex zeros are allowed. No zero-sum interchange is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZERO-OCCURRENCE-001, INTEGRAL-PROFILE-IDENTIFICATION-001, PROFILE-HORIZONTAL-DERIVATIVES-001, PROFILE-SYMMETRIC-REMAINDERS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/IntegralProfile.lean
+      label: HigherCorrelations.actualRationalKernel_integral
+      companion_declarations: "actualProfileParameters_bound, actualProfile_integrable, actualProfile_horizontal_bound, actualProfile_symmetric_second, actualProfile_symmetric_fourth"
+      bookkeeping: research/lean-integral-profile.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: f2907d4ab8fcb06157fdfcf2daa35276de87bfa7005ee93758aecb5a3d3003f7
+    limit_order: "Pointwise specialization to actual tuples, using their proved displacement bounds. No new infinite sum, cutoff removal or height limit."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Actual occurrence hypotheses discharged; definition-only Comparator and axiom reports."
+      constants_scope: "The same explicit constants hold independently of all ordinates."
+      baseline_audit_coverage: "The actual rational kernel is now identified with its integral. Historical correlation claims and the open signed o(1) retain their statuses."

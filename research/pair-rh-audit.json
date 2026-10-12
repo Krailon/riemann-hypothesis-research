@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "e2fb2ff03b89cfe0790de553e6d9b764073dd4be923b4dd6c5c450e0e8ad5e2a",
+  "ledger_sha256": "deac124d241b614ab5d846a6202788c906a594a565afc1a06bc7de160ae452be",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2536,5 +2536,17 @@
     ],
     "report": "research/lean-rational-transfer.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Three formalized rational-kernel, weighted-convergence and exact-transfer entries are appended. Integral-profile identification, derivative bounds, uniform height asymptotics and the signed o(1) remain separate obligations. Historical pair/triple verdicts, claim snapshots, proofs and archives are unchanged; whole-ledger hash maintenance does not extend those audits."
+  },
+  "ledger_integral_profile_review": {
+    "reviewed_on": "2026-10-11",
+    "previous_ledger_sha256": "e2fb2ff03b89cfe0790de553e6d9b764073dd4be923b4dd6c5c450e0e8ad5e2a",
+    "added_claim_ids": [
+      "ACTUAL-INTEGRAL-PROFILE-001",
+      "INTEGRAL-PROFILE-IDENTIFICATION-001",
+      "PROFILE-HORIZONTAL-DERIVATIVES-001",
+      "PROFILE-SYMMETRIC-REMAINDERS-001"
+    ],
+    "report": "research/lean-integral-profile.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. Four formalized entries add integral-profile identification, horizontal derivatives, symmetric Taylor remainders and actual-occurrence specialization. Historical pair/triple verdicts, snapshots, proof files and archives retain their original scope; whole-ledger hash maintenance does not extend those audits. The profile analytic identity is now checked via finite-interval partial fractions. The historical contour-residue proof, master formula, uniform height estimates and signed o(1) are not claimed formalized."
   }
 }

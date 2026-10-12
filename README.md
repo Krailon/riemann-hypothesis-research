@@ -71,8 +71,20 @@ independent cutoff limits, and the exact `b/q` normalization. The fresh run
 passed **30 new Comparator specifications**, **202 axiom reports** overall,
 **196 regressions**, and **12 coverage checks**. See the
 [rational-transfer record](research/lean-rational-transfer.md). The profile
-is defined rationally; its integral evaluation, derivative bounds, uniform
-height estimates, and signed `o(1)` remain separate obligations.
+was defined rationally at that milestone. The subsequent integral-profile
+milestone below identifies its integral and proves horizontal derivatives.
+
+## Integral profile and horizontal derivatives formalized
+
+Lean now identifies the rational profile with its absolutely convergent
+integral, including coincident centers and closed horizontal endpoints.
+It proves smoothness in all five parameters, uniform mixed and directional
+derivative bounds of every natural order, and explicit symmetric second-
+and fourth-order remainders, also for actual zero-occurrence triples.
+The fresh run passed **82 new Comparator specifications**, **285 axiom
+reports**, **196 regressions**, and **13 coverage checks**. See the
+[integral-profile record](research/lean-integral-profile.md). Sharper local
+counts, uniform height estimates, and the signed `o(1)` remain outstanding.
 
 ## Reproduce the pair baseline
 

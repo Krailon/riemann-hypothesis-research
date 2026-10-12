@@ -13,6 +13,13 @@ unfinished-proof negative controls**, **202 distinct axiom reports**,
 [complete verification archive](../artifacts/certificates/lean/fa024ffafb1f3c7ba4b83267cfdd48b9ecb55aa2138b00fe6bd01e8e8bc0fadd/manifest.json)
 records source hashes, tool pins, logs, and dependency compatibility patches.
 
+The subsequent [integral-profile milestone](lean-integral-profile.md)
+identifies this rational profile with its integral and proves horizontal
+derivatives and Taylor remainders. Statements below about those remaining
+obligations describe the earlier milestone; the current coverage map records
+their new checked components. Uniform height estimates and signed `o(1)`
+remain outstanding.
+
 ## Rational profile and closed parameter domain
 
 For real gaps a,b and real e,f,g with |e|,|f|,|g| ≤ 1/2, define

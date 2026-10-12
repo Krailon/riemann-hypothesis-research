@@ -137,7 +137,9 @@
         "HigherCorrelations.evaluated_integrals_cutoff_limit",
         "HigherCorrelations.complexFourier_eq_inverse",
         "HigherCorrelations.actual_anchored_tail",
-        "HigherCorrelations.actual_signed_eight_reflections"
+        "HigherCorrelations.actual_signed_eight_reflections",
+        "HigherCorrelations.actualProfile_symmetric_second",
+        "HigherCorrelations.actualProfile_symmetric_fourth"
       ],
       "remaining_obligations": [
         "Formalize the kernel replacement bounds and their support-dependent asymptotics.",
@@ -331,10 +333,11 @@
         "HigherCorrelations.transfer_normalization",
         "HigherCorrelations.actual_rational_transfer",
         "HigherCorrelations.actual_rational_transfer_benchmark",
-        "HigherCorrelations.actual_rational_transfer_scaled_anchor"
+        "HigherCorrelations.actual_rational_transfer_scaled_anchor",
+        "HigherCorrelations.actualRationalKernel_integral"
       ],
       "remaining_obligations": [
-        "The rationally defined transfer is formalized; identification with the integral profile remains in TRIPLE-KERNEL-PROFILE-001.",
+        "The fixed-height rational transfer and its integral-profile identification are checked as separate components.",
         "No uniform height asymptotics or vanishing error estimate follows from this fixed-height identity."
       ]
     },
@@ -688,11 +691,21 @@
         "HigherCorrelations.rationalProfile_swap",
         "HigherCorrelations.rationalProfile_conj",
         "HigherCorrelations.rationalProfile_coincident",
-        "HigherCorrelations.rationalProfile_real"
+        "HigherCorrelations.rationalProfile_real",
+        "HigherCorrelations.profileIntegrand_bound",
+        "HigherCorrelations.profileIntegrand_integrable",
+        "HigherCorrelations.integralProfile_eq",
+        "HigherCorrelations.integralProfile_continuous_gaps",
+        "HigherCorrelations.integralProfile_contDiffAt",
+        "HigherCorrelations.horizontalPartial_eq_profileJet",
+        "HigherCorrelations.horizontalPartial_bound",
+        "HigherCorrelations.profileRay_derivative_bound",
+        "HigherCorrelations.profile_symmetric_second_bound",
+        "HigherCorrelations.profile_symmetric_fourth_bound"
       ],
       "remaining_obligations": [
-        "Formalize the integral representation, residue evaluation and dominating function.",
-        "Prove integral collision and parameter-endpoint limits, smoothness and derivative bounds."
+        "The profile identity, collisions, endpoints, smoothness and horizontal derivatives are checked by the listed components.",
+        "The historical contour-residue proof route and its TRIPLE-MASTER-001 dependency are not formalized; the checked identity uses finite-interval partial fractions."
       ]
     },
     {
@@ -751,10 +764,11 @@
       "whole_claim_formalized": false,
       "components": [
         "HigherCorrelations.integral_occurrence_sum",
-        "HigherCorrelations.integral_occurrence_cutoff_limit"
+        "HigherCorrelations.integral_occurrence_cutoff_limit",
+        "HigherCorrelations.actualProfile_integrable"
       ],
       "remaining_obligations": [
-        "Prove the actual kernel integrability and summable integral-norm bound.",
+        "Prove the uniform master-kernel summable integral-norm bound.",
         "Formalize the explicit-formula expansion, prime-side sums and normalization."
       ]
     },
@@ -903,10 +917,11 @@
         "HigherCorrelations.project_actual_summable_norm",
         "HigherCorrelations.actualRationalKernel_bound",
         "HigherCorrelations.rationalTransferTerm_summable",
-        "HigherCorrelations.rationalTransferSum_cutoff_limit"
+        "HigherCorrelations.rationalTransferSum_cutoff_limit",
+        "HigherCorrelations.actualRationalKernel_integral",
+        "HigherCorrelations.actualProfile_integrable"
       ],
       "remaining_obligations": [
-        "Formalize the identification of the rational profile with its integral.",
         "Formalize the stated main term and named errors; no uniform height majorant is supplied."
       ]
     },
@@ -2047,7 +2062,417 @@
       "declaration": "HigherCorrelations.rationalTransferSum_zero_test",
       "source": "lean/HigherCorrelations/RationalTransfer.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalar_denominator_lower",
+      "source": "lean/HigherCorrelations/ScalarKernel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalar_denominator_ne_zero",
+      "source": "lean/HigherCorrelations/ScalarKernel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernel_bound",
+      "source": "lean/HigherCorrelations/ScalarKernel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernel_continuous",
+      "source": "lean/HigherCorrelations/ScalarKernel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernel_integrable",
+      "source": "lean/HigherCorrelations/ScalarKernel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileIntegrand_bound",
+      "source": "lean/HigherCorrelations/ScalarKernel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileIntegrand_integrable",
+      "source": "lean/HigherCorrelations/ScalarKernel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalar_poles_ne_zero",
+      "source": "lean/HigherCorrelations/ScalarKernelDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernelJet_zero",
+      "source": "lean/HigherCorrelations/ScalarKernelDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernelJet_hasDerivAt",
+      "source": "lean/HigherCorrelations/ScalarKernelDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.shifted_inverse_bounds",
+      "source": "lean/HigherCorrelations/ScalarKernelDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.shifted_inverse_power_bound",
+      "source": "lean/HigherCorrelations/ScalarKernelDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernelJet_bound",
+      "source": "lean/HigherCorrelations/ScalarKernelDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.simple_pole_partial_fractions",
+      "source": "lean/HigherCorrelations/ProfilePartialFractions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.simple_pole_interval",
+      "source": "lean/HigherCorrelations/ProfilePartialFractions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.quadratic_ratio_limit",
+      "source": "lean/HigherCorrelations/ProfilePoleLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.quadratic_log_difference_limit",
+      "source": "lean/HigherCorrelations/ProfilePoleLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.arctan_difference_limit_pos",
+      "source": "lean/HigherCorrelations/ProfilePoleLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.arctan_difference_limit_neg",
+      "source": "lean/HigherCorrelations/ProfilePoleLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.simple_pole_truncation_upper",
+      "source": "lean/HigherCorrelations/ProfilePoleLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.simple_pole_truncation_lower",
+      "source": "lean/HigherCorrelations/ProfilePoleLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.finite_poles_truncation",
+      "source": "lean/HigherCorrelations/ProfilePoleLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profilePole_upper",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profilePole_lower",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profilePole_injective",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profilePole_product",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileCenters_bound",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileCenters_injective",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileIntegrand_eq_poles",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profilePole_coefficient_upper",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profilePole_coefficient_lower",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.quadratic_factor",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.three_upper_fraction_identity",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.center_difference_shifts_ne",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.center_quadratic_ne",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.upper_center_sum",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.lower_center_sum",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profile_pole_sum",
+      "source": "lean/HigherCorrelations/ProfilePoleAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.integralProfile_eq_of_distinct",
+      "source": "lean/HigherCorrelations/ProfileIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.integralProfile_continuous_gaps",
+      "source": "lean/HigherCorrelations/ProfileIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_continuous_gaps",
+      "source": "lean/HigherCorrelations/ProfileIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.integralProfile_eq",
+      "source": "lean/HigherCorrelations/ProfileIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profile_counts_sum",
+      "source": "lean/HigherCorrelations/ProfileJetBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profile_counts_factorial",
+      "source": "lean/HigherCorrelations/ProfileJetBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJetIntegrand_bound",
+      "source": "lean/HigherCorrelations/ProfileJetBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernelJet_continuous_x",
+      "source": "lean/HigherCorrelations/ProfileJetBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJetIntegrand_continuous",
+      "source": "lean/HigherCorrelations/ProfileJetBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJetIntegrand_integrable",
+      "source": "lean/HigherCorrelations/ProfileJetBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJet_bound",
+      "source": "lean/HigherCorrelations/ProfileJetBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernelJet_hasFDerivAt_coordinate",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJetIntegrand_hasFDerivAt",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJetDifferential_continuous",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJetDifferential_bound",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJetDifferential_integrable",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontal_cube_mem_nhds",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJet_hasFDerivAt",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJet_fderiv_coordinate",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalPartial_eq_profileJet",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalPartial_bound",
+      "source": "lean/HigherCorrelations/ProfileJetDerivatives.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_contDiffAt",
+      "source": "lean/HigherCorrelations/ProfileSmoothness.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileRay_contDiffAt",
+      "source": "lean/HigherCorrelations/ProfileSmoothness.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.integralProfile_contDiffAt",
+      "source": "lean/HigherCorrelations/ProfileSmoothness.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileJet_fderiv_apply",
+      "source": "lean/HigherCorrelations/ProfileDirectional.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileDirectionalJet_hasDerivAt",
+      "source": "lean/HigherCorrelations/ProfileDirectional.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileDirectionalJet_bound",
+      "source": "lean/HigherCorrelations/ProfileDirectional.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profile_ray_cube_mem_nhds",
+      "source": "lean/HigherCorrelations/ProfileDirectional.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileRay_iteratedDeriv",
+      "source": "lean/HigherCorrelations/ProfileDirectional.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileRay_derivative_bound",
+      "source": "lean/HigherCorrelations/ProfileDirectional.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileRay_contDiffOn",
+      "source": "lean/HigherCorrelations/ProfileTaylor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileRay_iteratedDerivWithin",
+      "source": "lean/HigherCorrelations/ProfileTaylor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profile_taylor_remainder_bound",
+      "source": "lean/HigherCorrelations/ProfileTaylor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileDirectionalJet_neg_at_zero",
+      "source": "lean/HigherCorrelations/ProfileTaylor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileTaylor_one",
+      "source": "lean/HigherCorrelations/ProfileTaylor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileTaylor_three",
+      "source": "lean/HigherCorrelations/ProfileTaylor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profile_symmetric_second_bound",
+      "source": "lean/HigherCorrelations/ProfileTaylor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profile_symmetric_fourth_bound",
+      "source": "lean/HigherCorrelations/ProfileTaylor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualProfileParameters_bound",
+      "source": "lean/HigherCorrelations/IntegralProfile.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualRationalKernel_integral",
+      "source": "lean/HigherCorrelations/IntegralProfile.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualProfile_integrable",
+      "source": "lean/HigherCorrelations/IntegralProfile.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualProfile_horizontal_bound",
+      "source": "lean/HigherCorrelations/IntegralProfile.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualProfile_symmetric_second",
+      "source": "lean/HigherCorrelations/IntegralProfile.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actualProfile_symmetric_fourth",
+      "source": "lean/HigherCorrelations/IntegralProfile.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Identify the rational profile with its integral and formalize horizontal derivative bounds; separately prove the sharper local counts and uniform height estimates. The signed o(1) remains open."
+  "next_step": "Prove the sharper local counts and uniform height estimates, then work through the explicit-formula dependency graph. The integral profile and horizontal derivatives are checked; the signed o(1) remains open."
 }

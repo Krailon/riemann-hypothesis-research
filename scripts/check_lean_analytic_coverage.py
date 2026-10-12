@@ -22,19 +22,24 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
 PARTIAL = {
     'TRIPLE-SMOOTHED-CORRELATION-001': (
         ['triple_cutoff_limit', 'dominated_occurrence_limit', 'project_actual_summable_norm',
-         'actualRationalKernel_bound', 'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit'],
-        ['Formalize the identification of the rational profile with its integral.',
+         'actualRationalKernel_bound', 'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit',
+         'actualRationalKernel_integral', 'actualProfile_integrable'],
+        [
          'Formalize the stated main term and named errors; no uniform height majorant is supplied.']),
     'TRIPLE-MASTER-001': (
-        ['integral_occurrence_sum', 'integral_occurrence_cutoff_limit'],
-        ['Prove the actual kernel integrability and summable integral-norm bound.',
+        ['integral_occurrence_sum', 'integral_occurrence_cutoff_limit', 'actualProfile_integrable'],
+        ['Prove the uniform master-kernel summable integral-norm bound.',
          'Formalize the explicit-formula expansion, prime-side sums and normalization.']),
     'TRIPLE-KERNEL-PROFILE-001': (
         ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
          'rationalKernel_reciprocal', 'rationalProfile_bound', 'rationalProfile_swap',
-         'rationalProfile_conj', 'rationalProfile_coincident', 'rationalProfile_real'],
-        ['Formalize the integral representation, residue evaluation and dominating function.',
-         'Prove integral collision and parameter-endpoint limits, smoothness and derivative bounds.']),
+         'rationalProfile_conj', 'rationalProfile_coincident', 'rationalProfile_real',
+         'profileIntegrand_bound', 'profileIntegrand_integrable', 'integralProfile_eq',
+         'integralProfile_continuous_gaps', 'integralProfile_contDiffAt',
+         'horizontalPartial_eq_profileJet', 'horizontalPartial_bound', 'profileRay_derivative_bound',
+         'profile_symmetric_second_bound', 'profile_symmetric_fourth_bound'],
+        ['The profile identity, collisions, endpoints, smoothness and horizontal derivatives are checked by the listed components.',
+         'The historical contour-residue proof route and its TRIPLE-MASTER-001 dependency are not formalized; the checked identity uses finite-interval partial fractions.']),
     'ORDINATE-TRANSFER-001': (
         ['occurrence_height_finite', 'mem_occurrenceCutoff', 'occurrenceCutoff_exhausts',
          'zero_occurrences_countable', 'occurrence_count_polynomial', 'actual_shell_cardinality',
@@ -43,8 +48,8 @@ PARTIAL = {
          'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit',
          'rationalTransfer_finite_telescope', 'rationalTransfer_tsum_telescope',
          'transfer_normalization', 'actual_rational_transfer', 'actual_rational_transfer_benchmark',
-         'actual_rational_transfer_scaled_anchor'],
-        ['The rationally defined transfer is formalized; identification with the integral profile remains in TRIPLE-KERNEL-PROFILE-001.',
+         'actual_rational_transfer_scaled_anchor', 'actualRationalKernel_integral'],
+        ['The fixed-height rational transfer and its integral-profile identification are checked as separate components.',
          'No uniform height asymptotics or vanishing error estimate follows from this fixed-height identity.']),
     'ORDINATE-SIGN-AVERAGE-001': (
         ['zeroMultiplicity_horizontalReflection', 'occurrenceReflection_involutive',
@@ -54,7 +59,8 @@ PARTIAL = {
         ['Prove the actual absolute Fourier-integral majorant and kernel coefficient bounds.']),
     'ORDINATE-CONSTANT-KERNEL-001': (
         ['evaluated_integrals_summable', 'evaluated_integrals_cutoff_limit',
-         'complexFourier_eq_inverse', 'actual_anchored_tail', 'actual_signed_eight_reflections'],
+         'complexFourier_eq_inverse', 'actual_anchored_tail', 'actual_signed_eight_reflections',
+         'actualProfile_symmetric_second', 'actualProfile_symmetric_fourth'],
         ['Formalize the kernel replacement bounds and their support-dependent asymptotics.',
          'No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied.']),
     'PAIR-COUNT-001': (
@@ -140,9 +146,27 @@ def derive():
             and rational_config['enable_nanoda'] is False, 'changed rational-transfer verification scope')
     components.extend(rational['components'])
     names.extend(c['declaration'] for c in rational['components'])
+    profile = json.loads(read('research/lean-integral-profile-inventory.json'))
+    found = []
+    for module in profile['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished integral-profile solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in profile['components']],
+            'integral-profile inventory differs from source declarations')
+    profile_config = json.loads(read('lean/VerificationChallenges/integral-profile.json'))
+    require(profile_config['theorem_names'] == [c['declaration'] for c in profile['components'] if c['comparator_checked']],
+            'integral-profile Comparator coverage differs from inventory')
+    require(profile_config['permitted_axioms'] == config['permitted_axioms']
+            and profile_config['enable_nanoda'] is False, 'changed integral-profile verification scope')
+    components.extend(profile['components'])
+    names.extend(c['declaration'] for c in profile['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -177,7 +201,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Identify the rational profile with its integral and formalize horizontal derivative bounds; separately prove the sharper local counts and uniform height estimates. The signed o(1) remains open.')
+        next_step='Prove the sharper local counts and uniform height estimates, then work through the explicit-formula dependency graph. The integral profile and horizontal derivatives are checked; the signed o(1) remains open.')
 
 
 def validate(record):
@@ -228,18 +252,26 @@ class CoverageTests(unittest.TestCase):
         self.assertFalse(node['whole_claim_formalized'])
         self.assertTrue(any('local logarithmic' in gap for gap in node['remaining_obligations']))
 
-    def test_rational_transfer_does_not_promote_integral_profile(self):
+    def test_profile_components_do_not_promote_historical_graph(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'ORDINATE-TRANSFER-001')
         self.assertIn('HigherCorrelations.actual_rational_transfer', node['components'])
         self.assertFalse(node['whole_claim_formalized'])
-        self.assertTrue(any('integral profile' in gap for gap in node['remaining_obligations']))
+        self.assertIn('HigherCorrelations.actualRationalKernel_integral', node['components'])
         profile = next(n for n in self.record['nodes'] if n['id'] == 'TRIPLE-KERNEL-PROFILE-001')
         self.assertFalse(profile['whole_claim_formalized'])
-        self.assertTrue(any('integral representation' in gap for gap in profile['remaining_obligations']))
+        self.assertIn('HigherCorrelations.integralProfile_eq', profile['components'])
+        self.assertIn('HigherCorrelations.horizontalPartial_bound', profile['components'])
+        self.assertTrue(any('TRIPLE-MASTER-001' in gap for gap in profile['remaining_obligations']))
 
     def test_rational_comparator_scope_drift(self):
         component = next(c for c in self.record['components']
                          if c['declaration'] == 'HigherCorrelations.actual_rational_transfer')
+        component['comparator_checked'] = False
+        with self.assertRaises(ValueError): validate(self.record)
+
+    def test_profile_comparator_scope_drift(self):
+        component = next(c for c in self.record['components']
+                         if c['declaration'] == 'HigherCorrelations.integralProfile_eq')
         component['comparator_checked'] = False
         with self.assertRaises(ValueError): validate(self.record)
 

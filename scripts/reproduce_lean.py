@@ -28,7 +28,7 @@ def source_hashes():
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
              'scripts/reproduce_lean.py', 'scripts/check_lean_analytic_coverage.py',
              'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json',
-             'research/lean-rational-transfer-inventory.json']]
+             'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json']]
     files += sorted((ROOT / 'lean').rglob('*.lean'))
     files += sorted((ROOT / 'lean').rglob('*.json'))
     return {str(p.relative_to(ROOT)): digest(p) for p in files if p.is_file()}
@@ -88,7 +88,7 @@ def main():
                   status='running', pins=PINS, commands=[], external_kernel=False,
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   assumptions=['UNCONDITIONAL'],
-                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, and rational-kernel transfer')
+                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, and horizontal derivatives')
 
     def command(name, argv, *, expected_failure=False):
         log = run_dir / (name + '.log')
@@ -128,6 +128,11 @@ def main():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
+        command('integral-profile-build', ['lake', 'build', 'HigherCorrelations.IntegralProfile'])
+        command('integral-profile-comparator', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/integral-profile.json'])
+        command('integral-profile-unfinished-rejected', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/integral-profile-unfinished.json'], expected_failure=True)
         command('rational-transfer-build', ['lake', 'build', 'HigherCorrelations.RationalTransfer'])
         command('rational-transfer-comparator', ['lake', 'env', comparator,
                 'lean/VerificationChallenges/rational-transfer.json'])
@@ -174,6 +179,9 @@ def main():
         expected.update(actual_inventory['imported_axioms'])
         rational_inventory = json.loads((ROOT / 'research/lean-rational-transfer-inventory.json').read_text())
         expected.update(c['declaration'] for c in rational_inventory['components'])
+        profile_inventory = json.loads((ROOT / 'research/lean-integral-profile-inventory.json').read_text())
+        expected.update(c['declaration'] for c in profile_inventory['components'])
+        expected.update(profile_inventory['imported_axioms'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):
