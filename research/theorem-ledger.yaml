@@ -3397,3 +3397,167 @@ claims:
       verification_scope: "Actual occurrence hypotheses discharged; definition-only Comparator and axiom reports."
       constants_scope: "The same explicit constants hold independently of all ordinates."
       baseline_audit_coverage: "The actual rational kernel is now identified with its integral. Historical correlation claims and the open signed o(1) retain their statuses."
+  - id: LOCAL-ZERO-COUNT-001
+    title: Full-multiplicity logarithmic local and cumulative zero upper counts
+    kind: theorem
+    statement: |
+      For actual nontrivial zeta zero occurrences with analytic multiplicities,
+      there exists C>0 such that for every real v the closed interval [v,v+1]
+      contains at most C log(|v|+2) occurrences. There is also an absolute C>0
+      such that every v<=w has closed count at most
+      C(w-v+1)log(max(|v|,|w|)+2), and every U>=0 has inclusive |gamma|<=U
+      count at most C(U+1)log(U+2). Both ordinate signs, possible ordinate zero,
+      and all endpoint multiplicities are retained. The proof uses a direct
+      translated Jensen disk, reflection and a finite height-5 bucket.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZERO-OCCURRENCE-001, ZERO-HORIZONTAL-REFLECTION-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/LocalZeroCounting.lean
+      label: HigherCorrelations.occurrence_count_local
+      companion_declarations: "occurrence_count_interval, occurrence_count_logarithmic, occurrence_count_centered, localJensenMass_bound"
+      bookkeeping: research/lean-uniform-height.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 440c7011ea2b1baa1b2f526b6d50b089d800dd460772ed22e4c34298af72ee9e
+    limit_order: "Every interval and Jensen disk is finite. Analytic growth and the line-two bound use separately justified convergent integrals and Dirichlet series. No height limit is taken."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator, public-theorem and imported-input axiom reports; no counting assumption remains in the conclusion."
+      constants_scope: "Absolute existential constants; the finite low-height bucket is not evaluated numerically."
+      baseline_audit_coverage: "This upper-count theorem does not formalize the full Riemann-von Mangoldt or real-zero-exclusion claim PAIR-COUNT-001."
+
+  - id: ZERO-KERNEL-UNIFORM-001
+    title: Uniform rational ordinate-kernel sums and height-boundary estimates
+    kind: theorem
+    statement: |
+      Put kappa(x)=1/(1+x^2), summing actual zero occurrences with multiplicity.
+      All restricted sums converge absolutely. There are absolute C>0 for:
+      sum kappa(t-gamma)<=C log(|t|+2), all real t;
+      sum_{|gamma|>Z} kappa(t-gamma)<=C log Z/Z, T>=3,Z>=2T,0<=t<=T;
+      sum_{gamma<=0 or gamma>T} kappa(t-gamma)<=
+      C log(T+2)(1/(1+t)+1/(1+T-t)), T>=0,0<=t<=T;
+      sum_{0<gamma<=T} kappa(t-gamma)<=C log(T+2)/(1+dist(t,[0,T])),
+      T>=3 and t<=0 or t>=T. In addition, for all real t and a>=0 the
+      closed tail |t-gamma|>=a is at most C log(|t|+a+2)/(1+a).
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [LOCAL-ZERO-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairKernelEstimates.lean
+      label: HigherCorrelations.zeroKernel_interior_bound
+      companion_declarations: "zeroKernel_summable_bound, zeroKernelTail_summable_bound, zeroKernel_distant_bound, zeroKernel_exterior_bound"
+      bookkeeping: research/lean-uniform-height.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 440c7011ea2b1baa1b2f526b6d50b089d800dd460772ed22e4c34298af72ee9e
+    limit_order: "Fix t and the displayed cutoffs; prove an explicit summable dyadic majorant before regrouping the positive series. Constants are uniform over the displayed parameter domains."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All four inequalities have definition-only Comparator checks and actual-occurrence hypotheses discharged."
+      constants_scope: "Absolute existential constants inherited from LOCAL-ZERO-COUNT-001."
+      baseline_audit_coverage: "Does not promote the effectiveness assertion in the broader historical PAIR-COUNT-KERNEL-001 record."
+
+  - id: GLOBAL-TRIPLE-COUNT-001
+    title: Uniform global count of ordered anchored occurrence triples
+    kind: theorem
+    statement: |
+      Let T0=2*pi*exp(2*pi), q=log T, ell=log(T/(2*pi))/(2*pi).
+      There exists an absolute C>0 such that for every T>=T0 and R>=0,
+      the count of ordered occurrence triples with gamma1 in [T,2T] and
+      max(|ell(gamma2-gamma1)|,|ell(gamma3-gamma1)|)<=R is at most
+      C*T*q^3*(1+R)^4. All multiplicities and diagonals are included,
+      and partner ordinates can lie outside the anchor window. The same
+      constant works with ell replaced by any real a>=1.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [LOCAL-ZERO-COUNT-001, ZERO-ANCHORED-SHELLS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/UniformHeightCounting.lean
+      label: HigherCorrelations.project_anchored_count_uniform
+      companion_declarations: "anchored_count_uniform, uniformHeightThreshold_bounds, anchoredBall_finite"
+      bookkeeping: research/lean-uniform-height.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 440c7011ea2b1baa1b2f526b6d50b089d800dd460772ed22e4c34298af72ee9e
+    limit_order: "Finite anchor and partner counts at fixed T,a,R; constants proved uniform simultaneously for T>=T0,a>=1,R>=0."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator for the global theorem, finite-shell helper builds and axiom reports."
+      constants_scope: "Absolute existential C; explicit height threshold."
+      baseline_audit_coverage: "No pair-dependent near O(T*q^2*R^2) count is asserted; ORDINATE-COUNT-001 remains partial."
+
+  - id: GLOBAL-TRIPLE-TAIL-001
+    title: Uniform normalized real-test mass and tails from global counting
+    kind: theorem
+    statement: |
+      For every natural p>4 there exists C_p>0 such that for T>=T0,
+      W,A_p>=0, |w(x)|<=W on [T,2T], and
+      |F(u,v)|<=A_p/(1+max(|u|,|v|))^p, the anchored function
+      f=w(gamma1)*F(ell(gamma2-gamma1),ell(gamma3-gamma1)) is absolutely
+      summable, sum|f|/(T*log T)<=C_p*W*A_p*(log T)^2, and for R>=1
+      sum_{r>R}|f|/(T*log T)<=C_p*W*A_p*(log T)^2/R^(p-4).
+      Generic decay-envelope theorems hold for a>=1 and R>=0 with
+      denominator (1+R)^(p-4), including closed tails r>=R.
+      At p=20 and R=(log T)^(1/4), the strict tail is at most
+      C*W*A_20/(log T)^2. No Fourier-support or complex-argument decay
+      assertion is part of these real-test envelope bounds.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [GLOBAL-TRIPLE-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/UniformHeightMass.lean
+      label: HigherCorrelations.project_weighted_mass_tail
+      companion_declarations: "anchored_decay_tail_uniform, anchored_decay_strict_tail_uniform, anchored_decay_mass_uniform, anchored_decay_twentieth_tail"
+      bookkeeping: research/lean-uniform-height.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 440c7011ea2b1baa1b2f526b6d50b089d800dd460772ed22e4c34298af72ee9e
+    limit_order: "Fix natural p>4; use rescaled finite dyadic shells and a summable geometric ratio 2^(4-p) before regrouping. Bounds are simultaneous in T>=T0,a>=1,R>=0 and the displayed envelope constants."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator, all public axiom reports, strict and inclusive tail conventions."
+      constants_scope: "C_p depends only on p and the absolute count constant, not T,a,R,w,F,W,A_p."
+      baseline_audit_coverage: "The stronger near-based normalized O(log T) total mass and signed complex-argument o(1) are not proved."
+
+  - id: KERNEL-HEIGHT-TRANSFER-001
+    title: Uniform kernel and horizontal-derivative majorants with transfer normalization
+    kind: theorem
+    statement: |
+      Under the generic natural-p>4 anchored real-decay envelope of
+      GLOBAL-TRIPLE-TAIL-001, multiplication by a kernel factor of norm
+      at most B replaces A_p by B*A_p in the normalized mass and strict tail.
+      For actual occurrence tuples, the rational kernel has B=7*pi/9;
+      every horizontal partial of order n has B=4^(n+3)*n!*pi.
+      Both bounds are discharged by checked actual-occurrence theorems.
+      For any norm-summable anchored f and T>=T0, the norms of the sums
+      multiplied by transferCoefficient(T)=16/(3*T*log T) and
+      ordinateCoefficient(T)=1/(T*ell) are bounded respectively by
+      (16/3)*sum|f|/(T*log T) and (4*pi)*sum|f|/(T*log T).
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [GLOBAL-TRIPLE-TAIL-001, RATIONAL-KERNEL-BOUNDS-001, ACTUAL-INTEGRAL-PROFILE-001, RATIONAL-ORDINATE-TRANSFER-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/UniformHeightApplications.lean
+      label: HigherCorrelations.actual_kernel_uniform_bounds
+      companion_declarations: "actual_horizontal_uniform_bounds, bounded_multiplier_mass_tail, meanSpacing_log_comparison, transferCoefficient_mass_bound, ordinateCoefficient_mass_bound"
+      bookkeeping: research/lean-uniform-height.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 440c7011ea2b1baa1b2f526b6d50b089d800dd460772ed22e4c34298af72ee9e
+    limit_order: "Fix decay exponent and derivative word; multiply the established summable envelope by the uniform pointwise bound. No exchange with an unevaluated Fourier integral or height limit is used."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator checks, actual rational/integral profile and derivative bounds, and axiom reports."
+      constants_scope: "Derivative constants and coefficient factors are explicit; global height constants inherit the unevaluated low-height bucket."
+      baseline_audit_coverage: "Uniform majorants do not supply the missing signed cancellation or the conventional ordinate-only asymptotic."

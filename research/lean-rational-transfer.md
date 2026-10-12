@@ -17,8 +17,8 @@ The subsequent [integral-profile milestone](lean-integral-profile.md)
 identifies this rational profile with its integral and proves horizontal
 derivatives and Taylor remainders. Statements below about those remaining
 obligations describe the earlier milestone; the current coverage map records
-their new checked components. Uniform height estimates and signed `o(1)`
-remain outstanding.
+their new checked components. The later [uniform-height milestone](lean-uniform-height.md)
+adds global real-test majorants; the signed `o(1)` remains outstanding.
 
 ## Rational profile and closed parameter domain
 

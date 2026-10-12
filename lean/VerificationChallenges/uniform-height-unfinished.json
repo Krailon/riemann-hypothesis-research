@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.UniformHeight",
+  "solution_module": "VerificationChallenges.UniformHeightUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.occurrence_count_local"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

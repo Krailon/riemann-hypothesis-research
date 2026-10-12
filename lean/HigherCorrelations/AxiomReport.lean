@@ -1,3 +1,4 @@
+import HigherCorrelations.UniformHeight
 import HigherCorrelations.IntegralProfile
 import HigherCorrelations.RationalTransfer
 import HigherCorrelations.ActualOccurrencesFoundation
@@ -295,3 +296,82 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.actualProfile_symmetric_second
 #print axioms HigherCorrelations.actualProfile_symmetric_fourth
 #print axioms integral_const_div_self_add_im
+
+-- Local logarithmic counts and uniform height bounds, with primary analytic inputs.
+#print axioms HigherCorrelations.zeta_norm_le_quarter_strip
+#print axioms HigherCorrelations.zeta_line_two_lower
+#print axioms HigherCorrelations.stripZero_interval_finite
+#print axioms HigherCorrelations.mem_stripZeroInterval
+#print axioms HigherCorrelations.mem_occurrenceInterval
+#print axioms HigherCorrelations.occurrenceInterval_card
+#print axioms HigherCorrelations.occurrenceInterval_subset_cutoff
+#print axioms HigherCorrelations.occurrenceInterval_mono
+#print axioms HigherCorrelations.occurrenceInterval_empty
+#print axioms HigherCorrelations.rightStripZeroInterval_mem
+#print axioms HigherCorrelations.occurrenceInterval_card_le_twice_right
+#print axioms HigherCorrelations.jensen_disk_geometry
+#print axioms HigherCorrelations.jensen_disk_analytic
+#print axioms HigherCorrelations.jensen_disk_norm_bound
+#print axioms HigherCorrelations.localJensenMass_bound
+#print axioms HigherCorrelations.right_interval_in_jensen_disk
+#print axioms HigherCorrelations.right_interval_mass_le_jensen
+#print axioms HigherCorrelations.occurrence_unit_count_high
+#print axioms HigherCorrelations.occurrence_unit_count_low
+#print axioms HigherCorrelations.occurrence_count_local
+#print axioms HigherCorrelations.occurrence_interval_unit_cover
+#print axioms HigherCorrelations.occurrence_count_interval
+#print axioms HigherCorrelations.occurrenceCutoff_eq_interval
+#print axioms HigherCorrelations.occurrence_count_logarithmic
+#print axioms HigherCorrelations.occurrence_count_centered
+#print axioms HigherCorrelations.kernelTailRadius_nonneg
+#print axioms HigherCorrelations.kernelTailRadius_identity
+#print axioms HigherCorrelations.kernelTail_shell_upper
+#print axioms HigherCorrelations.kernelTail_shell_finite
+#print axioms HigherCorrelations.kernelTail_shell_card
+#print axioms HigherCorrelations.kernelTail_shell_log
+#print axioms HigherCorrelations.kernelTail_shell_count
+#print axioms HigherCorrelations.ordinateKernel_nonneg
+#print axioms HigherCorrelations.ordinateKernel_quadratic
+#print axioms HigherCorrelations.kernelTail_shell_decay
+#print axioms HigherCorrelations.kernel_geometric_hasSum
+#print axioms HigherCorrelations.kernelTail_shell_sum
+#print axioms HigherCorrelations.zeroKernelTail_summable_bound
+#print axioms HigherCorrelations.zeroKernel_summable_bound
+#print axioms HigherCorrelations.kernel_restricted_le_tail
+#print axioms HigherCorrelations.zeroKernel_distant_bound
+#print axioms HigherCorrelations.zeroKernel_exterior_bound
+#print axioms HigherCorrelations.heightIntervalDistance_geometry
+#print axioms HigherCorrelations.zeroKernel_interior_finite
+#print axioms HigherCorrelations.zeroKernel_interior_bound
+#print axioms HigherCorrelations.uniformHeightThreshold_bounds
+#print axioms HigherCorrelations.height_radius_log_bound
+#print axioms HigherCorrelations.anchor_card_eq_interval
+#print axioms HigherCorrelations.anchoredBall_finite
+#print axioms HigherCorrelations.mem_anchoredBall
+#print axioms HigherCorrelations.anchoredBall_cover
+#print axioms HigherCorrelations.anchored_count_uniform
+#print axioms HigherCorrelations.project_anchored_count_uniform
+#print axioms HigherCorrelations.anchoredTailRadius_nonneg
+#print axioms HigherCorrelations.anchoredTailRadius_identity
+#print axioms HigherCorrelations.anchoredTail_shell_upper
+#print axioms HigherCorrelations.anchoredTail_shell_finite
+#print axioms HigherCorrelations.anchoredTail_shell_count
+#print axioms HigherCorrelations.anchoredTail_shell_decay
+#print axioms HigherCorrelations.dyadic_total_bound
+#print axioms HigherCorrelations.anchored_decay_tail_uniform
+#print axioms HigherCorrelations.anchored_decay_mass_uniform
+#print axioms HigherCorrelations.anchored_decay_strict_tail_uniform
+#print axioms HigherCorrelations.bounded_factor_decay
+#print axioms HigherCorrelations.weighted_real_test_decay
+#print axioms HigherCorrelations.project_weighted_mass_tail
+#print axioms HigherCorrelations.anchored_decay_twentieth_tail
+#print axioms HigherCorrelations.bounded_multiplier_mass_tail
+#print axioms HigherCorrelations.actual_kernel_uniform_bounds
+#print axioms HigherCorrelations.actual_horizontal_uniform_bounds
+#print axioms HigherCorrelations.meanSpacing_log_comparison
+#print axioms HigherCorrelations.transferCoefficient_mass_bound
+#print axioms HigherCorrelations.ordinateCoefficient_mass_bound
+#print axioms AnalyticOnNhd.sum_divisor_le
+#print axioms Zeta0EqZeta
+#print axioms zeta_eq_tsum_one_div_nat_add_one_cpow
+#print axioms hasSum_zeta_two

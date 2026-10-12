@@ -23,9 +23,9 @@ PARTIAL = {
     'TRIPLE-SMOOTHED-CORRELATION-001': (
         ['triple_cutoff_limit', 'dominated_occurrence_limit', 'project_actual_summable_norm',
          'actualRationalKernel_bound', 'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit',
-         'actualRationalKernel_integral', 'actualProfile_integrable'],
+         'actualRationalKernel_integral', 'actualProfile_integrable', 'actual_kernel_uniform_bounds'],
         [
-         'Formalize the stated main term and named errors; no uniform height majorant is supplied.']),
+         'Formalize the stated main term and named errors; the new real-test global majorants do not evaluate the complex-test errors.']),
     'TRIPLE-MASTER-001': (
         ['integral_occurrence_sum', 'integral_occurrence_cutoff_limit', 'actualProfile_integrable'],
         ['Prove the uniform master-kernel summable integral-norm bound.',
@@ -48,9 +48,10 @@ PARTIAL = {
          'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit',
          'rationalTransfer_finite_telescope', 'rationalTransfer_tsum_telescope',
          'transfer_normalization', 'actual_rational_transfer', 'actual_rational_transfer_benchmark',
-         'actual_rational_transfer_scaled_anchor', 'actualRationalKernel_integral'],
+         'actual_rational_transfer_scaled_anchor', 'actualRationalKernel_integral',
+         'transferCoefficient_mass_bound', 'ordinateCoefficient_mass_bound'],
         ['The fixed-height rational transfer and its integral-profile identification are checked as separate components.',
-         'No uniform height asymptotics or vanishing error estimate follows from this fixed-height identity.']),
+         'Uniform real-test majorants and transfer coefficient bounds are now checked separately; a vanishing signed error remains open.']),
     'ORDINATE-SIGN-AVERAGE-001': (
         ['zeroMultiplicity_horizontalReflection', 'occurrenceReflection_involutive',
          'occurrenceReflection_ordinate', 'occurrenceReflection_displacement',
@@ -60,16 +61,23 @@ PARTIAL = {
     'ORDINATE-CONSTANT-KERNEL-001': (
         ['evaluated_integrals_summable', 'evaluated_integrals_cutoff_limit',
          'complexFourier_eq_inverse', 'actual_anchored_tail', 'actual_signed_eight_reflections',
-         'actualProfile_symmetric_second', 'actualProfile_symmetric_fourth'],
+         'actualProfile_symmetric_second', 'actualProfile_symmetric_fourth',
+         'actual_horizontal_uniform_bounds', 'anchored_decay_twentieth_tail'],
         ['Formalize the kernel replacement bounds and their support-dependent asymptotics.',
          'No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied.']),
     'PAIR-COUNT-001': (
-        ['zeroMultiplicity_pos', 'occurrenceCutoff_card', 'occurrence_count_polynomial'],
-        ['The formalized all-sign inclusive polynomial bound is weaker than this ledger claim.',
-         'Formalize Riemann-von Mangoldt, the local logarithmic unit-interval bound, and exclusion of real strip zeros.']),
+        ['zeroMultiplicity_pos', 'occurrenceCutoff_card', 'occurrence_count_local', 'occurrence_count_interval', 'occurrence_count_logarithmic'],
+        ['The local logarithmic and inclusive cumulative upper counts are checked with existential constants.',
+         'Formalize Riemann-von Mangoldt, its main term, and exclusion of real strip zeros; numerical effectiveness is not supplied.']),
+    'PAIR-COUNT-KERNEL-001': (
+        ['zeroKernel_summable_bound', 'zeroKernelTail_summable_bound', 'zeroKernel_distant_bound',
+         'zeroKernel_exterior_bound', 'zeroKernel_interior_bound'],
+        ['All four rational ordinate-kernel inequalities are checked with absolute existential constants.',
+         'The historical numerical-effectiveness claim is not supplied by the bounded-height bucket.']),
     'ORDINATE-COUNT-001': (
-        ['actual_shell_cardinality', 'actual_anchored_tail'],
-        ['Prove the near and global weighted counts with the recorded uniform T dependence from the pair and unit counts.']),
+        ['project_anchored_count_uniform', 'project_weighted_mass_tail', 'anchored_decay_twentieth_tail'],
+        ['The global T(log T)^3(1+R)^4 count, normalized O((log T)^2) mass and twentieth-order tail are checked.',
+         'Formalize the pair-dependent near O(T(log T)^2 R^2) count and stronger normalized O(log T) mass.']),
 }
 SPECIAL_GAPS = {
     'ORDINATE-ARGUMENT-VANISHING-001': ['Open research: the needed signed complex-argument error estimate is not proved.'],
@@ -164,9 +172,27 @@ def derive():
             and profile_config['enable_nanoda'] is False, 'changed integral-profile verification scope')
     components.extend(profile['components'])
     names.extend(c['declaration'] for c in profile['components'])
+    uniform = json.loads(read('research/lean-uniform-height-inventory.json'))
+    found = []
+    for module in uniform['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished uniform-height solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in uniform['components']],
+            'uniform-height inventory differs from source declarations')
+    uniform_config = json.loads(read('lean/VerificationChallenges/uniform-height.json'))
+    require(uniform_config['theorem_names'] == [c['declaration'] for c in uniform['components'] if c['comparator_checked']],
+            'uniform-height Comparator coverage differs from inventory')
+    require(uniform_config['permitted_axioms'] == config['permitted_axioms']
+            and uniform_config['enable_nanoda'] is False, 'changed uniform-height verification scope')
+    components.extend(uniform['components'])
+    names.extend(c['declaration'] for c in uniform['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -201,7 +227,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Prove the sharper local counts and uniform height estimates, then work through the explicit-formula dependency graph. The integral profile and horizontal derivatives are checked; the signed o(1) remains open.')
+        next_step='Formalize the pair explicit-formula and prime-side inputs needed for the sharper near-diagonal count. Local logarithmic counts and global uniform real-test height majorants are checked; the pair-dependent near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -250,7 +276,7 @@ class CoverageTests(unittest.TestCase):
         node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-COUNT-001')
         self.assertEqual(node['coverage'], 'partial')
         self.assertFalse(node['whole_claim_formalized'])
-        self.assertTrue(any('local logarithmic' in gap for gap in node['remaining_obligations']))
+        self.assertTrue(any('Riemann-von Mangoldt' in gap for gap in node['remaining_obligations']))
 
     def test_profile_components_do_not_promote_historical_graph(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'ORDINATE-TRANSFER-001')
@@ -272,6 +298,25 @@ class CoverageTests(unittest.TestCase):
     def test_profile_comparator_scope_drift(self):
         component = next(c for c in self.record['components']
                          if c['declaration'] == 'HigherCorrelations.integralProfile_eq')
+        component['comparator_checked'] = False
+        with self.assertRaises(ValueError): validate(self.record)
+
+    def test_uniform_components_recorded(self):
+        count = next(n for n in self.record['nodes'] if n['id'] == 'ORDINATE-COUNT-001')
+        self.assertIn('HigherCorrelations.project_anchored_count_uniform', count['components'])
+        self.assertIn('HigherCorrelations.anchored_decay_twentieth_tail', count['components'])
+        self.assertFalse(count['whole_claim_formalized'])
+        self.assertTrue(any('pair-dependent' in gap for gap in count['remaining_obligations']))
+
+    def test_kernel_constants_scope(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-COUNT-KERNEL-001')
+        self.assertIn('HigherCorrelations.zeroKernel_interior_bound', node['components'])
+        self.assertTrue(any('existential constants' in gap for gap in node['remaining_obligations']))
+        self.assertFalse(node['whole_claim_formalized'])
+
+    def test_uniform_comparator_scope_drift(self):
+        component = next(c for c in self.record['components']
+                         if c['declaration'] == 'HigherCorrelations.occurrence_count_local')
         component['comparator_checked'] = False
         with self.assertRaises(ValueError): validate(self.record)
 

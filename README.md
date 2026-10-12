@@ -60,8 +60,9 @@ complex triple sums and their difference now have checked absolute convergence,
 independent cutoff limits, and reflection identities at fixed height.
 The fresh run passed **48 new Comparator specifications**, **172 axiom reports**
 overall, **196 regressions**, and **10 coverage checks**. See the
-[actual-occurrence record](research/lean-actual-occurrences.md). This does not
-supply the stronger uniform height bounds or the remaining signed `o(1)`.
+[actual-occurrence record](research/lean-actual-occurrences.md). That milestone
+provided fixed-height convergence; the later uniform-height milestone below
+supplies global real-test majorants. The signed `o(1)` remains open.
 
 ## Rational-kernel transfer formalized
 
@@ -83,8 +84,20 @@ derivative bounds of every natural order, and explicit symmetric second-
 and fourth-order remainders, also for actual zero-occurrence triples.
 The fresh run passed **82 new Comparator specifications**, **285 axiom
 reports**, **196 regressions**, and **13 coverage checks**. See the
-[integral-profile record](research/lean-integral-profile.md). Sharper local
-counts, uniform height estimates, and the signed `o(1)` remain outstanding.
+[integral-profile record](research/lean-integral-profile.md). The next milestone
+below adds logarithmic local counts and global uniform height majorants.
+
+## Local counts and uniform height estimates formalized
+
+Lean now proves full-multiplicity logarithmic local zero counts, all four
+rational ordinate-kernel bounds, the global anchored triple count, and
+normalized real-test mass and tail estimates uniform in height. The bounds
+also apply to the actual rational kernel and every fixed horizontal partial.
+The fresh run passed **65 new Comparator specifications**, **362 axiom
+reports**, **196 regressions**, and **16 coverage checks**. See the
+[uniform-height record](research/lean-uniform-height.md). Constants are
+existential. Full Riemann--von Mangoldt, the stronger pair-dependent near
+count, and the signed complex-argument `o(1)` remain separate obligations.
 
 ## Reproduce the pair baseline
 

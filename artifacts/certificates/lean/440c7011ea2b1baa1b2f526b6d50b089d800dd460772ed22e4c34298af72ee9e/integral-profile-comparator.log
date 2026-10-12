@@ -1,0 +1,161 @@
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.IntegralProfile
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8934/8934] Built VerificationChallenges.IntegralProfile (4.6s)
+warning: lean/VerificationChallenges/IntegralProfile.lean:11:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:14:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:17:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:22:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:24:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:28:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:32:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:36:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:39:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:42:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:49:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:56:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:61:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:64:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:76:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:84:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:89:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:92:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:95:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:98:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:102:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:106:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:110:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:118:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:122:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:124:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:134:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:140:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:145:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:150:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:156:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:161:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:165:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:169:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:173:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:176:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:179:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:183:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:186:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:189:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:192:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:195:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:200:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:205:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:209:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:214:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:218:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:221:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:225:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:229:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:233:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:237:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:241:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:244:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:248:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:252:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:257:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:262:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:265:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:269:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:273:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:276:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:281:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:286:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:290:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:294:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:299:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:304:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:310:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:313:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:318:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:322:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:326:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/IntegralProfile.lean:331:8: declaration uses `sorry`
+Build completed successfully (8934 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.scalar_denominator_lower, HigherCorrelations.scalar_denominator_ne_zero, HigherCorrelations.scalarKernel_bound, HigherCorrelations.scalarKernel_continuous, HigherCorrelations.scalarKernel_integrable, HigherCorrelations.profileIntegrand_bound, HigherCorrelations.profileIntegrand_integrable, HigherCorrelations.scalar_poles_ne_zero, HigherCorrelations.scalarKernelJet_zero, HigherCorrelations.scalarKernelJet_hasDerivAt, HigherCorrelations.shifted_inverse_bounds, HigherCorrelations.shifted_inverse_power_bound, HigherCorrelations.scalarKernelJet_bound, HigherCorrelations.simple_pole_partial_fractions, HigherCorrelations.simple_pole_interval, HigherCorrelations.quadratic_ratio_limit, HigherCorrelations.quadratic_log_difference_limit, HigherCorrelations.arctan_difference_limit_pos, HigherCorrelations.arctan_difference_limit_neg, HigherCorrelations.simple_pole_truncation_upper, HigherCorrelations.simple_pole_truncation_lower, HigherCorrelations.finite_poles_truncation, HigherCorrelations.profilePole_upper, HigherCorrelations.profilePole_lower, HigherCorrelations.profilePole_injective, HigherCorrelations.profilePole_product, HigherCorrelations.profileCenters_bound, HigherCorrelations.profileCenters_injective, HigherCorrelations.profileIntegrand_eq_poles, HigherCorrelations.profilePole_coefficient_upper, HigherCorrelations.profilePole_coefficient_lower, HigherCorrelations.quadratic_factor, HigherCorrelations.three_upper_fraction_identity, HigherCorrelations.center_difference_shifts_ne, HigherCorrelations.center_quadratic_ne, HigherCorrelations.upper_center_sum, HigherCorrelations.lower_center_sum, HigherCorrelations.profile_pole_sum, HigherCorrelations.integralProfile_eq_of_distinct, HigherCorrelations.integralProfile_continuous_gaps, HigherCorrelations.rationalProfile_continuous_gaps, HigherCorrelations.integralProfile_eq, HigherCorrelations.profile_counts_sum, HigherCorrelations.profile_counts_factorial, HigherCorrelations.profileJetIntegrand_bound, HigherCorrelations.scalarKernelJet_continuous_x, HigherCorrelations.profileJetIntegrand_continuous, HigherCorrelations.profileJetIntegrand_integrable, HigherCorrelations.profileJet_bound, HigherCorrelations.scalarKernelJet_hasFDerivAt_coordinate, HigherCorrelations.profileJetIntegrand_hasFDerivAt, HigherCorrelations.profileJetDifferential_continuous, HigherCorrelations.profileJetDifferential_bound, HigherCorrelations.profileJetDifferential_integrable, HigherCorrelations.horizontal_cube_mem_nhds, HigherCorrelations.profileJet_hasFDerivAt, HigherCorrelations.profileJet_fderiv_coordinate, HigherCorrelations.horizontalPartial_eq_profileJet, HigherCorrelations.horizontalPartial_bound, HigherCorrelations.rationalProfile_contDiffAt, HigherCorrelations.profileRay_contDiffAt, HigherCorrelations.integralProfile_contDiffAt, HigherCorrelations.profileJet_fderiv_apply, HigherCorrelations.profileDirectionalJet_hasDerivAt, HigherCorrelations.profileDirectionalJet_bound, HigherCorrelations.profile_ray_cube_mem_nhds, HigherCorrelations.profileRay_iteratedDeriv, HigherCorrelations.profileRay_derivative_bound, HigherCorrelations.profileRay_contDiffOn, HigherCorrelations.profileRay_iteratedDerivWithin, HigherCorrelations.profile_taylor_remainder_bound, HigherCorrelations.profileDirectionalJet_neg_at_zero, HigherCorrelations.profileTaylor_one, HigherCorrelations.profileTaylor_three, HigherCorrelations.profile_symmetric_second_bound, HigherCorrelations.profile_symmetric_fourth_bound, HigherCorrelations.actualProfileParameters_bound, HigherCorrelations.actualRationalKernel_integral, HigherCorrelations.actualProfile_integrable, HigherCorrelations.actualProfile_horizontal_bound, HigherCorrelations.actualProfile_symmetric_second, HigherCorrelations.actualProfile_symmetric_fourth, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.IntegralProfile
+Building HigherCorrelations.IntegralProfile
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Build completed successfully (9007 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.scalar_denominator_lower, HigherCorrelations.scalar_denominator_ne_zero, HigherCorrelations.scalarKernel_bound, HigherCorrelations.scalarKernel_continuous, HigherCorrelations.scalarKernel_integrable, HigherCorrelations.profileIntegrand_bound, HigherCorrelations.profileIntegrand_integrable, HigherCorrelations.scalar_poles_ne_zero, HigherCorrelations.scalarKernelJet_zero, HigherCorrelations.scalarKernelJet_hasDerivAt, HigherCorrelations.shifted_inverse_bounds, HigherCorrelations.shifted_inverse_power_bound, HigherCorrelations.scalarKernelJet_bound, HigherCorrelations.simple_pole_partial_fractions, HigherCorrelations.simple_pole_interval, HigherCorrelations.quadratic_ratio_limit, HigherCorrelations.quadratic_log_difference_limit, HigherCorrelations.arctan_difference_limit_pos, HigherCorrelations.arctan_difference_limit_neg, HigherCorrelations.simple_pole_truncation_upper, HigherCorrelations.simple_pole_truncation_lower, HigherCorrelations.finite_poles_truncation, HigherCorrelations.profilePole_upper, HigherCorrelations.profilePole_lower, HigherCorrelations.profilePole_injective, HigherCorrelations.profilePole_product, HigherCorrelations.profileCenters_bound, HigherCorrelations.profileCenters_injective, HigherCorrelations.profileIntegrand_eq_poles, HigherCorrelations.profilePole_coefficient_upper, HigherCorrelations.profilePole_coefficient_lower, HigherCorrelations.quadratic_factor, HigherCorrelations.three_upper_fraction_identity, HigherCorrelations.center_difference_shifts_ne, HigherCorrelations.center_quadratic_ne, HigherCorrelations.upper_center_sum, HigherCorrelations.lower_center_sum, HigherCorrelations.profile_pole_sum, HigherCorrelations.integralProfile_eq_of_distinct, HigherCorrelations.integralProfile_continuous_gaps, HigherCorrelations.rationalProfile_continuous_gaps, HigherCorrelations.integralProfile_eq, HigherCorrelations.profile_counts_sum, HigherCorrelations.profile_counts_factorial, HigherCorrelations.profileJetIntegrand_bound, HigherCorrelations.scalarKernelJet_continuous_x, HigherCorrelations.profileJetIntegrand_continuous, HigherCorrelations.profileJetIntegrand_integrable, HigherCorrelations.profileJet_bound, HigherCorrelations.scalarKernelJet_hasFDerivAt_coordinate, HigherCorrelations.profileJetIntegrand_hasFDerivAt, HigherCorrelations.profileJetDifferential_continuous, HigherCorrelations.profileJetDifferential_bound, HigherCorrelations.profileJetDifferential_integrable, HigherCorrelations.horizontal_cube_mem_nhds, HigherCorrelations.profileJet_hasFDerivAt, HigherCorrelations.profileJet_fderiv_coordinate, HigherCorrelations.horizontalPartial_eq_profileJet, HigherCorrelations.horizontalPartial_bound, HigherCorrelations.rationalProfile_contDiffAt, HigherCorrelations.profileRay_contDiffAt, HigherCorrelations.integralProfile_contDiffAt, HigherCorrelations.profileJet_fderiv_apply, HigherCorrelations.profileDirectionalJet_hasDerivAt, HigherCorrelations.profileDirectionalJet_bound, HigherCorrelations.profile_ray_cube_mem_nhds, HigherCorrelations.profileRay_iteratedDeriv, HigherCorrelations.profileRay_derivative_bound, HigherCorrelations.profileRay_contDiffOn, HigherCorrelations.profileRay_iteratedDerivWithin, HigherCorrelations.profile_taylor_remainder_bound, HigherCorrelations.profileDirectionalJet_neg_at_zero, HigherCorrelations.profileTaylor_one, HigherCorrelations.profileTaylor_three, HigherCorrelations.profile_symmetric_second_bound, HigherCorrelations.profile_symmetric_fourth_bound, HigherCorrelations.actualProfileParameters_bound, HigherCorrelations.actualRationalKernel_integral, HigherCorrelations.actualProfile_integrable, HigherCorrelations.actualProfile_horizontal_bound, HigherCorrelations.actualProfile_symmetric_second, HigherCorrelations.actualProfile_symmetric_fourth, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from HigherCorrelations.IntegralProfile
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

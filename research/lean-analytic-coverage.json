@@ -139,7 +139,9 @@
         "HigherCorrelations.actual_anchored_tail",
         "HigherCorrelations.actual_signed_eight_reflections",
         "HigherCorrelations.actualProfile_symmetric_second",
-        "HigherCorrelations.actualProfile_symmetric_fourth"
+        "HigherCorrelations.actualProfile_symmetric_fourth",
+        "HigherCorrelations.actual_horizontal_uniform_bounds",
+        "HigherCorrelations.anchored_decay_twentieth_tail"
       ],
       "remaining_obligations": [
         "Formalize the kernel replacement bounds and their support-dependent asymptotics.",
@@ -162,11 +164,13 @@
       "coverage": "partial",
       "whole_claim_formalized": false,
       "components": [
-        "HigherCorrelations.actual_shell_cardinality",
-        "HigherCorrelations.actual_anchored_tail"
+        "HigherCorrelations.project_anchored_count_uniform",
+        "HigherCorrelations.project_weighted_mass_tail",
+        "HigherCorrelations.anchored_decay_twentieth_tail"
       ],
       "remaining_obligations": [
-        "Prove the near and global weighted counts with the recorded uniform T dependence from the pair and unit counts."
+        "The global T(log T)^3(1+R)^4 count, normalized O((log T)^2) mass and twentieth-order tail are checked.",
+        "Formalize the pair-dependent near O(T(log T)^2 R^2) count and stronger normalized O(log T) mass."
       ]
     },
     {
@@ -334,11 +338,13 @@
         "HigherCorrelations.actual_rational_transfer",
         "HigherCorrelations.actual_rational_transfer_benchmark",
         "HigherCorrelations.actual_rational_transfer_scaled_anchor",
-        "HigherCorrelations.actualRationalKernel_integral"
+        "HigherCorrelations.actualRationalKernel_integral",
+        "HigherCorrelations.transferCoefficient_mass_bound",
+        "HigherCorrelations.ordinateCoefficient_mass_bound"
       ],
       "remaining_obligations": [
         "The fixed-height rational transfer and its integral-profile identification are checked as separate components.",
-        "No uniform height asymptotics or vanishing error estimate follows from this fixed-height identity."
+        "Uniform real-test majorants and transfer coefficient bounds are now checked separately; a vanishing signed error remains open."
       ]
     },
     {
@@ -382,11 +388,13 @@
       "components": [
         "HigherCorrelations.zeroMultiplicity_pos",
         "HigherCorrelations.occurrenceCutoff_card",
-        "HigherCorrelations.occurrence_count_polynomial"
+        "HigherCorrelations.occurrence_count_local",
+        "HigherCorrelations.occurrence_count_interval",
+        "HigherCorrelations.occurrence_count_logarithmic"
       ],
       "remaining_obligations": [
-        "The formalized all-sign inclusive polynomial bound is weaker than this ledger claim.",
-        "Formalize Riemann-von Mangoldt, the local logarithmic unit-interval bound, and exclusion of real strip zeros."
+        "The local logarithmic and inclusive cumulative upper counts are checked with existential constants.",
+        "Formalize Riemann-von Mangoldt, its main term, and exclusion of real strip zeros; numerical effectiveness is not supplied."
       ]
     },
     {
@@ -402,11 +410,18 @@
         "comparison_bibliography_key": "BGSTB2024",
         "comparison_locator": "arXiv:2306.04799v1, equations (2.14)-(2.15) and boundary estimates after (2.15)"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.zeroKernel_summable_bound",
+        "HigherCorrelations.zeroKernelTail_summable_bound",
+        "HigherCorrelations.zeroKernel_distant_bound",
+        "HigherCorrelations.zeroKernel_exterior_bound",
+        "HigherCorrelations.zeroKernel_interior_bound"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "All four rational ordinate-kernel inequalities are checked with absolute existential constants.",
+        "The historical numerical-effectiveness claim is not supplied by the bounded-height bucket."
       ]
     },
     {
@@ -919,10 +934,11 @@
         "HigherCorrelations.rationalTransferTerm_summable",
         "HigherCorrelations.rationalTransferSum_cutoff_limit",
         "HigherCorrelations.actualRationalKernel_integral",
-        "HigherCorrelations.actualProfile_integrable"
+        "HigherCorrelations.actualProfile_integrable",
+        "HigherCorrelations.actual_kernel_uniform_bounds"
       ],
       "remaining_obligations": [
-        "Formalize the stated main term and named errors; no uniform height majorant is supplied."
+        "Formalize the stated main term and named errors; the new real-test global majorants do not evaluate the complex-test errors."
       ]
     },
     {
@@ -2472,7 +2488,372 @@
       "declaration": "HigherCorrelations.actualProfile_symmetric_fourth",
       "source": "lean/HigherCorrelations/IntegralProfile.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta_norm_le_quarter_strip",
+      "source": "lean/HigherCorrelations/LocalZetaGrowth.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta_line_two_lower",
+      "source": "lean/HigherCorrelations/LocalZetaGrowth.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.stripZero_interval_finite",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_stripZeroInterval",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_occurrenceInterval",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceInterval_card",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceInterval_subset_cutoff",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceInterval_mono",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceInterval_empty",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightStripZeroInterval_mem",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceInterval_card_le_twice_right",
+      "source": "lean/HigherCorrelations/LocalOccurrenceIntervals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.jensen_disk_geometry",
+      "source": "lean/HigherCorrelations/LocalJensenBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.jensen_disk_analytic",
+      "source": "lean/HigherCorrelations/LocalJensenBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.jensen_disk_norm_bound",
+      "source": "lean/HigherCorrelations/LocalJensenBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localJensenMass_bound",
+      "source": "lean/HigherCorrelations/LocalJensenBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.right_interval_in_jensen_disk",
+      "source": "lean/HigherCorrelations/LocalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.right_interval_mass_le_jensen",
+      "source": "lean/HigherCorrelations/LocalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_unit_count_high",
+      "source": "lean/HigherCorrelations/LocalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_unit_count_low",
+      "source": "lean/HigherCorrelations/LocalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_count_local",
+      "source": "lean/HigherCorrelations/LocalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_interval_unit_cover",
+      "source": "lean/HigherCorrelations/IntervalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_count_interval",
+      "source": "lean/HigherCorrelations/IntervalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceCutoff_eq_interval",
+      "source": "lean/HigherCorrelations/IntervalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_count_logarithmic",
+      "source": "lean/HigherCorrelations/IntervalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrence_count_centered",
+      "source": "lean/HigherCorrelations/IntervalZeroCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTailRadius_nonneg",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTailRadius_identity",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTail_shell_upper",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTail_shell_finite",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTail_shell_card",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTail_shell_log",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTail_shell_count",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.ordinateKernel_nonneg",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.ordinateKernel_quadratic",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTail_shell_decay",
+      "source": "lean/HigherCorrelations/KernelTailShells.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.kernel_geometric_hasSum",
+      "source": "lean/HigherCorrelations/KernelTailBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernelTail_shell_sum",
+      "source": "lean/HigherCorrelations/KernelTailBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.zeroKernelTail_summable_bound",
+      "source": "lean/HigherCorrelations/KernelTailBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroKernel_summable_bound",
+      "source": "lean/HigherCorrelations/KernelTailBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.kernel_restricted_le_tail",
+      "source": "lean/HigherCorrelations/PairKernelEstimates.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroKernel_distant_bound",
+      "source": "lean/HigherCorrelations/PairKernelEstimates.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroKernel_exterior_bound",
+      "source": "lean/HigherCorrelations/PairKernelEstimates.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.heightIntervalDistance_geometry",
+      "source": "lean/HigherCorrelations/PairKernelEstimates.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroKernel_interior_finite",
+      "source": "lean/HigherCorrelations/PairKernelEstimates.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroKernel_interior_bound",
+      "source": "lean/HigherCorrelations/PairKernelEstimates.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.uniformHeightThreshold_bounds",
+      "source": "lean/HigherCorrelations/UniformHeightCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.height_radius_log_bound",
+      "source": "lean/HigherCorrelations/UniformHeightCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchor_card_eq_interval",
+      "source": "lean/HigherCorrelations/UniformHeightCounting.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredBall_finite",
+      "source": "lean/HigherCorrelations/UniformHeightCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_anchoredBall",
+      "source": "lean/HigherCorrelations/UniformHeightCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredBall_cover",
+      "source": "lean/HigherCorrelations/UniformHeightCounting.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.anchored_count_uniform",
+      "source": "lean/HigherCorrelations/UniformHeightCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.project_anchored_count_uniform",
+      "source": "lean/HigherCorrelations/UniformHeightCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredTailRadius_nonneg",
+      "source": "lean/HigherCorrelations/UniformHeightTails.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredTailRadius_identity",
+      "source": "lean/HigherCorrelations/UniformHeightTails.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredTail_shell_upper",
+      "source": "lean/HigherCorrelations/UniformHeightTails.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredTail_shell_finite",
+      "source": "lean/HigherCorrelations/UniformHeightTails.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredTail_shell_count",
+      "source": "lean/HigherCorrelations/UniformHeightTails.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.anchoredTail_shell_decay",
+      "source": "lean/HigherCorrelations/UniformHeightTails.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.dyadic_total_bound",
+      "source": "lean/HigherCorrelations/UniformHeightTails.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchored_decay_tail_uniform",
+      "source": "lean/HigherCorrelations/UniformHeightTails.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchored_decay_mass_uniform",
+      "source": "lean/HigherCorrelations/UniformHeightMass.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchored_decay_strict_tail_uniform",
+      "source": "lean/HigherCorrelations/UniformHeightMass.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.bounded_factor_decay",
+      "source": "lean/HigherCorrelations/UniformHeightMass.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.weighted_real_test_decay",
+      "source": "lean/HigherCorrelations/UniformHeightMass.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.project_weighted_mass_tail",
+      "source": "lean/HigherCorrelations/UniformHeightMass.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.anchored_decay_twentieth_tail",
+      "source": "lean/HigherCorrelations/UniformHeightApplications.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.bounded_multiplier_mass_tail",
+      "source": "lean/HigherCorrelations/UniformHeightApplications.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_kernel_uniform_bounds",
+      "source": "lean/HigherCorrelations/UniformHeightApplications.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.actual_horizontal_uniform_bounds",
+      "source": "lean/HigherCorrelations/UniformHeightApplications.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.meanSpacing_log_comparison",
+      "source": "lean/HigherCorrelations/UniformHeightApplications.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.transferCoefficient_mass_bound",
+      "source": "lean/HigherCorrelations/UniformHeightApplications.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.ordinateCoefficient_mass_bound",
+      "source": "lean/HigherCorrelations/UniformHeightApplications.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Prove the sharper local counts and uniform height estimates, then work through the explicit-formula dependency graph. The integral profile and horizontal derivatives are checked; the signed o(1) remains open."
+  "next_step": "Formalize the pair explicit-formula and prime-side inputs needed for the sharper near-diagonal count. Local logarithmic counts and global uniform real-test height majorants are checked; the pair-dependent near count, full Riemann-von Mangoldt and signed o(1) remain open."
 }

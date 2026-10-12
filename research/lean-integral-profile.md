@@ -10,6 +10,12 @@ unfinished-proof negative controls**, **285 distinct axiom reports**,
 [complete verification archive](../artifacts/certificates/lean/f2907d4ab8fcb06157fdfcf2daa35276de87bfa7005ee93758aecb5a3d3003f7/manifest.json)
 records source hashes, tool pins, logs, and dependency compatibility patches.
 
+The subsequent [uniform-height milestone](lean-uniform-height.md) proves
+logarithmic local counts, uniform rational ordinate-kernel sums, global
+anchored triple counts and normalized real-test tails. References below
+to those remaining tasks describe this earlier milestone. The stronger
+pair-dependent near count and signed `o(1)` remain open.
+
 ## Exact statement and conventions
 
 For real a,b,e,f,g set
