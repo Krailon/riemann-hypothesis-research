@@ -1,0 +1,32 @@
+{
+  "challenge_module": "VerificationChallenges.PairedMellin",
+  "solution_module": "HigherCorrelations.PairedMellin",
+  "theorem_names": [
+    "HigherCorrelations.pairedMellinSeed_transform",
+    "HigherCorrelations.pairedMellinSeed_positive",
+    "HigherCorrelations.pairedMellinSeed_continuous",
+    "HigherCorrelations.pairedMellinSeed_at_one",
+    "HigherCorrelations.pairedMellin_denominator_lower",
+    "HigherCorrelations.pairedMellin_denominator_ne_zero",
+    "HigherCorrelations.pairedMellinIntegrand_bound",
+    "HigherCorrelations.pairedMellinIntegrand_continuous",
+    "HigherCorrelations.pairedMellinIntegrand_integrable",
+    "HigherCorrelations.pairedMellin_upward_integrable",
+    "HigherCorrelations.pairedMellinSymbol_vertical",
+    "HigherCorrelations.pairedMellin_upward_normalization",
+    "HigherCorrelations.pairedMellin_truncation_limit",
+    "HigherCorrelations.pairedMellin_inverse_bridge",
+    "HigherCorrelations.pairedMellin_inversion",
+    "HigherCorrelations.pairedMellinKernel_gt_one",
+    "HigherCorrelations.pairedMellinKernel_le_one",
+    "HigherCorrelations.pairedMellinKernel_at_one",
+    "HigherCorrelations.pairedMellin_kernel"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -28,7 +28,7 @@ def source_hashes():
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
              'scripts/reproduce_lean.py', 'scripts/check_lean_analytic_coverage.py',
              'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json',
-             'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json']]
+             'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json']]
     files += sorted((ROOT / 'lean').rglob('*.lean'))
     files += sorted((ROOT / 'lean').rglob('*.json'))
     return {str(p.relative_to(ROOT)): digest(p) for p in files if p.is_file()}
@@ -88,7 +88,7 @@ def main():
                   status='running', pins=PINS, commands=[], external_kernel=False,
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   assumptions=['UNCONDITIONAL'],
-                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, horizontal derivatives, logarithmic local zero counts, uniform height bounds, and pair explicit-formula series convergence')
+                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, horizontal derivatives, logarithmic local zero counts, uniform height bounds, pair explicit-formula series convergence, and the paired Mellin kernel including its endpoint')
 
     def command(name, argv, *, expected_failure=False):
         log = run_dir / (name + '.log')
@@ -128,6 +128,11 @@ def main():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
+        command('paired-mellin-build', ['lake', 'build', 'HigherCorrelations.PairedMellin'])
+        command('paired-mellin-comparator', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/paired-mellin.json'])
+        command('paired-mellin-unfinished-rejected', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/paired-mellin-unfinished.json'], expected_failure=True)
         command('pair-series-build', ['lake', 'build', 'HigherCorrelations.PairSeriesConvergence'])
         command('pair-series-comparator', ['lake', 'env', comparator,
                 'lean/VerificationChallenges/pair-series.json'])
@@ -198,6 +203,9 @@ def main():
         pair_inventory = json.loads((ROOT / 'research/lean-pair-series-inventory.json').read_text())
         expected.update(c['declaration'] for c in pair_inventory['components'])
         expected.update(pair_inventory['imported_axioms'])
+        mellin_inventory = json.loads((ROOT / 'research/lean-paired-mellin-inventory.json').read_text())
+        expected.update(c['declaration'] for c in mellin_inventory['components'])
+        expected.update(mellin_inventory['imported_axioms'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):

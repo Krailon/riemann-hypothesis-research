@@ -3600,3 +3600,39 @@ claims:
       imported_input: "Pinned mathlib ArithmeticFunction.LSeriesSummable_vonMangoldt at s=3/2, proved by comparison with log(n)/n^(3/2)."
       constants_scope: "Inherits the existential absolute constant from ZERO-KERNEL-UNIFORM-001."
       baseline_audit_coverage: "The historical PAIR-EF-CONVERGENCE-001 effectiveness assertion, Mellin kernel, and exact explicit-formula equality are not promoted."
+  - id: PAIR-MELLIN-KERNEL-001
+    title: Exact upward paired Mellin kernel by Mellin inversion, including the endpoint
+    kind: lemma
+    statement: |
+      For every real y>0, put G_y(t)=2 exp((2+i*t)log y)/((2+i*t)^2-1).
+      The norm satisfies |G_y(t)|<=2*y^2/(1+t^2), so both G_y and i*G_y
+      are absolutely integrable over real t. The upward-line integral
+      (1/(2*pi*i)) integral_R G_y(t)*i dt equals
+      (1/(2*pi)) integral_R G_y(t) dt, and its value is y-y^(-1) for
+      y>1 and zero for 0<y<=1. In particular the value at y=1 is exactly
+      zero, with no endpoint half-weight convention. The symmetric
+      finite-height normalized integrals over [-V,V] converge to this
+      value as real V tends to infinity. Positive powers use exp(w log y).
+      The proof computes the Mellin transform of the function x^(-1)-x
+      on 0<x<=1, zero elsewhere, as 2/(s^2-1) when Re(s)>1, and applies
+      Mellin inversion at x=1/y on Re(s)=2. Continuity at x=1 is proved.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairedMellin.lean
+      label: HigherCorrelations.pairedMellin_kernel
+      companion_declarations: "pairedMellinSeed_transform, pairedMellinIntegrand_bound, pairedMellin_upward_integrable, pairedMellin_upward_normalization, pairedMellin_truncation_limit, pairedMellinKernel_at_one"
+      bookkeeping: research/lean-paired-mellin.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 13c3955a3fe1b1df357984c779e493744ecb2f77030153f7b80a97a27f97e256
+    limit_order: "Fix y>0; real symmetric height cutoff V -> infinity by absolute integrability. Mellin inversion uses verified transform convergence, vertical integrability and pointwise continuity. No contour-shift or second limit is used."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator, public and imported axiom reports, and unfinished-proof rejection."
+      imported_inputs: "Pinned mathlib hasMellin_cpow_Ioc and mellinInv_mellin_eq; the latter is proved from Fourier inversion."
+      constants_scope: "The explicit absolute majorant is 2*y^2/(1+t^2); no numerical approximation enters the proof."
+      baseline_audit_coverage: "The historical PAIR-EF-MELLIN-001 statement is recovered by a different proof. Its contour-shift proof and historical audit are unchanged. The exact pair explicit formula remains a separate obligation."

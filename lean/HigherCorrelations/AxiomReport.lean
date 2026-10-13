@@ -1,3 +1,4 @@
+import HigherCorrelations.PairedMellin
 import HigherCorrelations.PairSeriesConvergence
 import HigherCorrelations.UniformHeight
 import HigherCorrelations.IntegralProfile
@@ -405,3 +406,25 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.pairPrimeTerm_at_knot
 #print axioms HigherCorrelations.pairZeroTerm_at_one
 #print axioms ArithmeticFunction.LSeriesSummable_vonMangoldt
+
+#print axioms HigherCorrelations.pairedMellinSeed_transform
+#print axioms HigherCorrelations.pairedMellinSeed_positive
+#print axioms HigherCorrelations.pairedMellinSeed_continuous
+#print axioms HigherCorrelations.pairedMellinSeed_at_one
+#print axioms HigherCorrelations.pairedMellin_denominator_lower
+#print axioms HigherCorrelations.pairedMellin_denominator_ne_zero
+#print axioms HigherCorrelations.pairedMellinIntegrand_bound
+#print axioms HigherCorrelations.pairedMellinIntegrand_continuous
+#print axioms HigherCorrelations.pairedMellinIntegrand_integrable
+#print axioms HigherCorrelations.pairedMellin_upward_integrable
+#print axioms HigherCorrelations.pairedMellinSymbol_vertical
+#print axioms HigherCorrelations.pairedMellin_upward_normalization
+#print axioms HigherCorrelations.pairedMellin_truncation_limit
+#print axioms HigherCorrelations.pairedMellin_inverse_bridge
+#print axioms HigherCorrelations.pairedMellin_inversion
+#print axioms HigherCorrelations.pairedMellinKernel_gt_one
+#print axioms HigherCorrelations.pairedMellinKernel_le_one
+#print axioms HigherCorrelations.pairedMellinKernel_at_one
+#print axioms HigherCorrelations.pairedMellin_kernel
+#print axioms hasMellin_cpow_Ioc
+#print axioms mellinInv_mellin_eq

@@ -106,7 +106,15 @@ series, continuity including X=1 and X=n, and the quantitative zero-tail and
 inclusive-cutoff remainder bounds. All multiplicities and both ordinate signs
 are retained. The tail constant is existential; the historical effectiveness
 claim remains separate. See the [proof and verification record](research/lean-pair-series.md).
-The next input is the paired Mellin kernel, followed by the exact explicit formula.
+The paired Mellin kernel is now formalized below; the exact explicit formula is next.
+
+## Paired Mellin kernel formalized
+
+Lean proves the exact upward-line Mellin kernel: y-y^(-1) for y>1 and zero
+for 0<y<=1, including the exact value zero at y=1. Absolute convergence,
+orientation, and finite-height convergence are checked using an explicit
+majorant. The proof uses Mellin inversion. See the
+[proof and verification record](research/lean-paired-mellin.md).
 
 ## Reproduce the pair baseline
 

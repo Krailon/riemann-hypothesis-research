@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "f3798ff17b54e0338717694975e7a625b708621ba52b09655ea04fa27d5f278c",
+  "ledger_sha256": "f221c6258d83ae7853286c7d10575366923e6fba7b4316ecb2cc7b419efa8559",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2570,5 +2570,14 @@
     ],
     "report": "research/lean-pair-series.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. One separate formalized claim records zero/prime series convergence, endpoint continuity and an existential absolute zero-tail bound. The historical effective-constant assertion and all other historical statuses, proof files, audit verdicts and archives retain their scope. This whole-ledger hash refresh does not extend either historical audit."
+  },
+  "ledger_paired_mellin_review": {
+    "reviewed_on": "2026-10-12",
+    "previous_ledger_sha256": "f3798ff17b54e0338717694975e7a625b708621ba52b09655ea04fa27d5f278c",
+    "added_claim_ids": [
+      "PAIR-MELLIN-KERNEL-001"
+    ],
+    "report": "research/lean-paired-mellin.md",
+    "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. A separate formalized entry recovers the full paired Mellin kernel identity, absolute convergence, upward orientation and exact endpoint by Mellin inversion, with an explicit majorant. The historical contour-shift proof, limit order, statuses and audit scope are unchanged; no full explicit-formula claim is promoted."
   }
 }

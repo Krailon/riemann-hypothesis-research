@@ -510,11 +510,22 @@
         "file": "proofs/pair_baseline.tex",
         "label": "lem:ef-mellin"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.pairedMellinSeed_transform",
+        "HigherCorrelations.pairedMellinIntegrand_bound",
+        "HigherCorrelations.pairedMellin_upward_integrable",
+        "HigherCorrelations.pairedMellin_upward_normalization",
+        "HigherCorrelations.pairedMellin_truncation_limit",
+        "HigherCorrelations.pairedMellinKernel_gt_one",
+        "HigherCorrelations.pairedMellinKernel_le_one",
+        "HigherCorrelations.pairedMellinKernel_at_one",
+        "HigherCorrelations.pairedMellin_kernel"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "The full kernel identity, absolute convergence, normalization and endpoint are checked by Mellin inversion.",
+        "The historical contour-shift proof and its two-parameter limit order are not formalized; the exact statement has a separate formalized entry."
       ]
     },
     {
@@ -3003,7 +3014,102 @@
       "declaration": "HigherCorrelations.pairZeroTerm_at_one",
       "source": "lean/HigherCorrelations/PairSeriesConvergence.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSeed_transform",
+      "source": "lean/HigherCorrelations/PairedMellinTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSeed_positive",
+      "source": "lean/HigherCorrelations/PairedMellinTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSeed_continuous",
+      "source": "lean/HigherCorrelations/PairedMellinTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSeed_at_one",
+      "source": "lean/HigherCorrelations/PairedMellinTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_denominator_lower",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_denominator_ne_zero",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinIntegrand_bound",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinIntegrand_continuous",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinIntegrand_integrable",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_upward_integrable",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSymbol_vertical",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_upward_normalization",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_truncation_limit",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_inverse_bridge",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_inversion",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinKernel_gt_one",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinKernel_le_one",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinKernel_at_one",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_kernel",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Formalize the paired Mellin kernel and exact pair explicit formula next. Pair zero/prime series convergence and the tail with an existential constant are checked; effective constants, prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
+  "next_step": "Formalize the exact pair explicit formula next. Pair series convergence and the exact paired Mellin kernel including its endpoint are checked; contour inputs, prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
 }

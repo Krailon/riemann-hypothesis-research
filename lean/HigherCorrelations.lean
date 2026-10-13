@@ -7,3 +7,4 @@ import HigherCorrelations.RationalTransfer
 import HigherCorrelations.IntegralProfile
 import HigherCorrelations.UniformHeight
 import HigherCorrelations.PairSeriesConvergence
+import HigherCorrelations.PairedMellin

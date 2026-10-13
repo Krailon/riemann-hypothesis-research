@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairedMellinTransform",
+    "PairedMellinBounds",
+    "PairedMellin"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairedMellinSeed_transform",
+      "source": "lean/HigherCorrelations/PairedMellinTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSeed_positive",
+      "source": "lean/HigherCorrelations/PairedMellinTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSeed_continuous",
+      "source": "lean/HigherCorrelations/PairedMellinTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSeed_at_one",
+      "source": "lean/HigherCorrelations/PairedMellinTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_denominator_lower",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_denominator_ne_zero",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinIntegrand_bound",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinIntegrand_continuous",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinIntegrand_integrable",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_upward_integrable",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinSymbol_vertical",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_upward_normalization",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_truncation_limit",
+      "source": "lean/HigherCorrelations/PairedMellinBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_inverse_bridge",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_inversion",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinKernel_gt_one",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinKernel_le_one",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellinKernel_at_one",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairedMellin_kernel",
+      "source": "lean/HigherCorrelations/PairedMellin.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [
+    "hasMellin_cpow_Ioc",
+    "mellinInv_mellin_eq"
+  ]
+}

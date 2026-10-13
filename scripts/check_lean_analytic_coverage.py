@@ -20,6 +20,13 @@ ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 PARTIAL = {
+    'PAIR-EF-MELLIN-001': (
+        ['pairedMellinSeed_transform', 'pairedMellinIntegrand_bound',
+         'pairedMellin_upward_integrable', 'pairedMellin_upward_normalization',
+         'pairedMellin_truncation_limit', 'pairedMellinKernel_gt_one',
+         'pairedMellinKernel_le_one', 'pairedMellinKernel_at_one', 'pairedMellin_kernel'],
+        ['The full kernel identity, absolute convergence, normalization and endpoint are checked by Mellin inversion.',
+         'The historical contour-shift proof and its two-parameter limit order are not formalized; the exact statement has a separate formalized entry.']),
     'PAIR-EF-CONVERGENCE-001': (
         ['pairZeroTerm_summable', 'pairPrimeTerm_summable', 'pairZero_locallyUniform',
          'pairPrime_locallyUniform', 'pairZeroSeries_continuous', 'pairPrimeSeries_continuous',
@@ -215,9 +222,27 @@ def derive():
             and pair_config['enable_nanoda'] is False, 'changed pair-series verification scope')
     components.extend(pair['components'])
     names.extend(c['declaration'] for c in pair['components'])
+    mellin = json.loads(read('research/lean-paired-mellin-inventory.json'))
+    found = []
+    for module in mellin['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished paired-mellin solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in mellin['components']],
+            'paired-mellin inventory differs from source declarations')
+    mellin_config = json.loads(read('lean/VerificationChallenges/paired-mellin.json'))
+    require(mellin_config['theorem_names'] == [c['declaration'] for c in mellin['components'] if c['comparator_checked']],
+            'paired-mellin Comparator coverage differs from inventory')
+    require(mellin_config['permitted_axioms'] == config['permitted_axioms']
+            and mellin_config['enable_nanoda'] is False, 'changed paired-mellin verification scope')
+    components.extend(mellin['components'])
+    names.extend(c['declaration'] for c in mellin['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -252,7 +277,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Formalize the paired Mellin kernel and exact pair explicit formula next. Pair zero/prime series convergence and the tail with an existential constant are checked; effective constants, prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Formalize the exact pair explicit formula next. Pair series convergence and the exact paired Mellin kernel including its endpoint are checked; contour inputs, prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -272,6 +297,13 @@ class CoverageTests(unittest.TestCase):
         self.assertFalse(node['whole_claim_formalized'])
         self.assertIn('HigherCorrelations.pairZero_cutoff_error', node['components'])
         self.assertTrue(any('effective-constant' in gap for gap in node['remaining_obligations']))
+
+    def test_mellin_statement_and_proof_route(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-EF-MELLIN-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertIn('HigherCorrelations.pairedMellinKernel_at_one', node['components'])
+        self.assertIn('HigherCorrelations.pairedMellin_kernel', node['components'])
+        self.assertTrue(any('contour-shift' in gap for gap in node['remaining_obligations']))
 
     def test_missing_node(self):
         self.record['nodes'].pop()
