@@ -28,7 +28,7 @@ def source_hashes():
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
              'scripts/reproduce_lean.py', 'scripts/check_lean_analytic_coverage.py',
              'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json',
-             'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json']]
+             'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json', 'research/lean-pair-exact-inventory.json']]
     files += sorted((ROOT / 'lean').rglob('*.lean'))
     files += sorted((ROOT / 'lean').rglob('*.json'))
     return {str(p.relative_to(ROOT)): digest(p) for p in files if p.is_file()}
@@ -128,6 +128,11 @@ def main():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
+        command('pair-exact-build', ['lake', 'build', 'HigherCorrelations.PairExactFormula'])
+        command('pair-exact-comparator', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/pair-exact.json'])
+        command('pair-exact-unfinished-rejected', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/pair-exact-unfinished.json'], expected_failure=True)
         command('paired-mellin-build', ['lake', 'build', 'HigherCorrelations.PairedMellin'])
         command('paired-mellin-comparator', ['lake', 'env', comparator,
                 'lean/VerificationChallenges/paired-mellin.json'])
@@ -183,7 +188,7 @@ def main():
                 'lean/VerificationChallenges/unfinished.json'], expected_failure=True)
         axioms = command('axioms', ['lake', 'env', 'lean',
                                    'lean/HigherCorrelations/AxiomReport.lean'])
-        entries = re.findall(r"'([^']+)' (?:depends on axioms:\s*\[([^]]*)\]|does not depend on any axioms)", axioms)
+        entries = re.findall(r"'(\S+)' (?:depends on axioms:\s*\[([^]]*)\]|does not depend on any axioms)", axioms)
         allowed = {'propext', 'Quot.sound', 'Classical.choice'}
         expected = set(json.loads((ROOT / 'lean/VerificationChallenges/horizontal-strip.json').read_text())['theorem_names'])
         expected.update(json.loads((ROOT / 'lean/VerificationChallenges/finite-foundation.json').read_text())['theorem_names'])
@@ -206,6 +211,9 @@ def main():
         mellin_inventory = json.loads((ROOT / 'research/lean-paired-mellin-inventory.json').read_text())
         expected.update(c['declaration'] for c in mellin_inventory['components'])
         expected.update(mellin_inventory['imported_axioms'])
+        exact_inventory = json.loads((ROOT / 'research/lean-pair-exact-inventory.json').read_text())
+        expected.update(c['declaration'] for c in exact_inventory['components'])
+        expected.update(exact_inventory['imported_axioms'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):

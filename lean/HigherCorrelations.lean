@@ -8,3 +8,4 @@ import HigherCorrelations.IntegralProfile
 import HigherCorrelations.UniformHeight
 import HigherCorrelations.PairSeriesConvergence
 import HigherCorrelations.PairedMellin
+import HigherCorrelations.PairExactFormula

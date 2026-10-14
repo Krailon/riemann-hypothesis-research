@@ -117,3 +117,5 @@ order: ledger, pair audit, then the triple audit's reference to the pair audit.
 Formalize the exact pair explicit-formula identity, with its logarithmic
 zeta derivative, pole term and trivial-zero series. The paired Mellin
 identity now supplies the right-line kernel evaluation, including X=n.
+
+This next input was completed in the [exact pair formula milestone](lean-pair-exact.md).

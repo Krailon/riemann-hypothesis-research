@@ -54,3 +54,26 @@ the full zeta sum cannot cancel across ordinates or frequencies.
 `E_even`, or horizontal concentration strong enough to make its sufficient
 moment small. The current density bound does neither. No finite synthetic
 configuration is presented as a counterexample to a normalized zeta limit.
+
+## Importing the upstream contour bridge directly
+
+Date: 2026-10-13. Task: formal proof implementation. Assumptions: `UNCONDITIONAL`.
+
+**Attempt.** Import the pinned PNT `IEANTN.HadamardLogDerivative` and full
+`IEANTN.Kadiri` modules to obtain the xi/zeta logarithmic-derivative bridge
+and contour estimates for the exact pair formula.
+
+**Obstruction (technical).** The first module fails against the pinned
+mathlib API at the finite-product and binary-product `logDeriv` rewrites.
+The broader import also reaches missing helper declarations in
+`KadiriEq15`. Some upstream contour conclusions are unfinished and cannot
+be used as proof inputs. This is not a counterexample to the mathematics.
+
+**Resolution.** Import only the buildable, transitively audited Hadamard,
+residue, and digamma foundations. Prove the xi/zeta bridge, derivative
+functional equation, good-height selection and contour limits locally.
+A coarser O(H^(7/4)) logarithmic-derivative envelope suffices for the
+quadratic kernel. The resulting exact identity and endpoint compile;
+the sharper historical O(log² H) contour bound remains a separate task.
+See `research/lean-pair-exact.md`. No upstream sources were edited for
+this milestone.

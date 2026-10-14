@@ -494,11 +494,22 @@
         "file": "proofs/pair_baseline.tex",
         "label": "prop:ef-exact"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.pairExact_formula",
+        "HigherCorrelations.pairExact_endpoint",
+        "HigherCorrelations.pairExact_interior",
+        "HigherCorrelations.pairContour_finite_rectangle",
+        "HigherCorrelations.pairContour_candidate_residue_sum",
+        "HigherCorrelations.pairRectangle_height_tendsto",
+        "HigherCorrelations.pairContour_left_tendsto",
+        "HigherCorrelations.pairRightIntegral_prime_identity",
+        "HigherCorrelations.pairTrivialCorrection_continuous"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "The exact identity and X=1 endpoint are checked in a separate formalized entry.",
+        "The historical sharper contour bounds and effective-constant claims are not supplied by this alternative Hadamard bound."
       ]
     },
     {
@@ -1020,11 +1031,16 @@
         "locator": "Chapter 12, Lemma 12.2 p.398 and Lemma 12.4 pp.399-400",
         "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/16.0_pp_397_418_Explicit_formulae.pdf"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.pairGoodHeight_sequence",
+        "HigherCorrelations.pairZeta_goodHeight_power",
+        "HigherCorrelations.pairContour_horizontal_tendsto"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "Good heights and horizontal vanishing are checked using the coarser O(H^(7/4)) logarithmic-derivative envelope.",
+        "The historical O(log^2 H) logarithmic-derivative bound remains unformalized."
       ]
     },
     {
@@ -3109,7 +3125,537 @@
       "declaration": "HigherCorrelations.pairedMellin_kernel",
       "source": "lean/HigherCorrelations/PairedMellin.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_right_integrable",
+      "source": "lean/HigherCorrelations/PairBoundaryLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairLeftIntegral_tendsto",
+      "source": "lean/HigherCorrelations/PairBoundaryLimits.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairRectangle_height_tendsto",
+      "source": "lean/HigherCorrelations/PairBoundaryLimits.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairSpectralPoint_re",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairSpectralPoint_im",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_denominator_factor",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_continuousAt",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_zero",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_pole",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_trivial",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_right",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_right_bound",
+      "source": "lean/HigherCorrelations/PairContourAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_meromorphic",
+      "source": "lean/HigherCorrelations/PairContourMeromorphic.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourIntegrand_meromorphic",
+      "source": "lean/HigherCorrelations/PairContourMeromorphic.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourIntegrand_analyticAt",
+      "source": "lean/HigherCorrelations/PairContourMeromorphic.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_simple_poles",
+      "source": "lean/HigherCorrelations/PairContourMeromorphic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_pairZeroPoints",
+      "source": "lean/HigherCorrelations/PairContourPoleSets.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.mem_pairTrivialPoints",
+      "source": "lean/HigherCorrelations/PairContourPoleSets.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.mem_pairContourPoleCandidates",
+      "source": "lean/HigherCorrelations/PairContourPoleSets.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourPoleCandidates_bounds",
+      "source": "lean/HigherCorrelations/PairContourPoleSets.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_residue_of_order",
+      "source": "lean/HigherCorrelations/PairContourResidues.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_residue_zero",
+      "source": "lean/HigherCorrelations/PairContourResidues.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_residue_pole",
+      "source": "lean/HigherCorrelations/PairContourResidues.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_plus_limit",
+      "source": "lean/HigherCorrelations/PairContourResidues.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_minus_limit",
+      "source": "lean/HigherCorrelations/PairContourResidues.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairShift_zeta_ne_zero",
+      "source": "lean/HigherCorrelations/PairContourResidues.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_residue_plus",
+      "source": "lean/HigherCorrelations/PairContourResidues.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_residue_minus",
+      "source": "lean/HigherCorrelations/PairContourResidues.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_shift_bound",
+      "source": "lean/HigherCorrelations/PairDigammaBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_horizontal_bound",
+      "source": "lean/HigherCorrelations/PairDigammaBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEuler_mul_kernel",
+      "source": "lean/HigherCorrelations/PairEulerContour.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerContour_integrable",
+      "source": "lean/HigherCorrelations/PairEulerContour.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerContour_bound",
+      "source": "lean/HigherCorrelations/PairEulerContour.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerContour_hasSum",
+      "source": "lean/HigherCorrelations/PairEulerContour.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerContour_integral_hasSum",
+      "source": "lean/HigherCorrelations/PairEulerContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerContour_integral",
+      "source": "lean/HigherCorrelations/PairEulerContour.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairRightIntegral_hasSum",
+      "source": "lean/HigherCorrelations/PairEulerContour.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerTerm_eq_LSeries",
+      "source": "lean/HigherCorrelations/PairEulerSeries.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerTerm_summable",
+      "source": "lean/HigherCorrelations/PairEulerSeries.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerSeries",
+      "source": "lean/HigherCorrelations/PairEulerSeries.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerTerm_norm",
+      "source": "lean/HigherCorrelations/PairEulerSeries.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerTerm_norm_vertical",
+      "source": "lean/HigherCorrelations/PairEulerSeries.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairExact_endpoint",
+      "source": "lean/HigherCorrelations/PairExactFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairExact_formula",
+      "source": "lean/HigherCorrelations/PairExactFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairExact_fixedLeft",
+      "source": "lean/HigherCorrelations/PairExactInterior.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairExact_interior",
+      "source": "lean/HigherCorrelations/PairExactInterior.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRectangle_mem",
+      "source": "lean/HigherCorrelations/PairFiniteRectangle.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_analytic_outside_candidates",
+      "source": "lean/HigherCorrelations/PairFiniteRectangle.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_finite_rectangle",
+      "source": "lean/HigherCorrelations/PairFiniteRectangle.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.finite_ordinate_gap",
+      "source": "lean/HigherCorrelations/PairGoodHeightSelection.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairGoodHeight_exists",
+      "source": "lean/HigherCorrelations/PairGoodHeightSelection.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairGoodHeight_gap_neg",
+      "source": "lean/HigherCorrelations/PairGoodHeightSelection.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairGoodHeight_sequence",
+      "source": "lean/HigherCorrelations/PairGoodHeightSelection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairHadamard_far_bound",
+      "source": "lean/HigherCorrelations/PairHadamardBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairHadamard_gap_bound",
+      "source": "lean/HigherCorrelations/PairHadamardBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_radius_lower",
+      "source": "lean/HigherCorrelations/PairHadamardBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_count_bound",
+      "source": "lean/HigherCorrelations/PairHadamardBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_zeroSum_bound",
+      "source": "lean/HigherCorrelations/PairHadamardBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_logDeriv_bound",
+      "source": "lean/HigherCorrelations/PairHadamardBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeta_horizontal_majorant",
+      "source": "lean/HigherCorrelations/PairHorizontalBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_horizontal_bound",
+      "source": "lean/HigherCorrelations/PairHorizontalBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeta_goodHeight_power",
+      "source": "lean/HigherCorrelations/PairHorizontalDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourIntegrand_goodHeight_bound",
+      "source": "lean/HigherCorrelations/PairHorizontalDecay.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_horizontal_tendsto",
+      "source": "lean/HigherCorrelations/PairHorizontalDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeta_logDeriv_right_bound",
+      "source": "lean/HigherCorrelations/PairLeftBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeta_left_majorant",
+      "source": "lean/HigherCorrelations/PairLeftBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_left_integrable",
+      "source": "lean/HigherCorrelations/PairLeftDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_left_tendsto",
+      "source": "lean/HigherCorrelations/PairLeftDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_left_uniform",
+      "source": "lean/HigherCorrelations/PairLeftGammaBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourKernel_left_bound",
+      "source": "lean/HigherCorrelations/PairLeftKernel.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContourIntegrand_measurable",
+      "source": "lean/HigherCorrelations/PairLeftKernel.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairLogWeight_bound",
+      "source": "lean/HigherCorrelations/PairLogWeight.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairLogWeight_integrable",
+      "source": "lean/HigherCorrelations/PairLogWeight.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairEulerTerm_add_one",
+      "source": "lean/HigherCorrelations/PairPrimeIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_eq_euler",
+      "source": "lean/HigherCorrelations/PairPrimeIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMellin_weight",
+      "source": "lean/HigherCorrelations/PairPrimeIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeTerm_contour_identity",
+      "source": "lean/HigherCorrelations/PairPrimeIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairRightIntegral_prime_identity",
+      "source": "lean/HigherCorrelations/PairPrimeIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pair_occurrenceCutoff_sigma",
+      "source": "lean/HigherCorrelations/PairResidueRegrouping.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroPoints_residue_sum",
+      "source": "lean/HigherCorrelations/PairResidueRegrouping.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialPoints_residue_sum",
+      "source": "lean/HigherCorrelations/PairResidueRegrouping.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_candidate_residue_sum",
+      "source": "lean/HigherCorrelations/PairResidueRegrouping.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivial_denominator_lower",
+      "source": "lean/HigherCorrelations/PairTrivialCorrection.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivial_denominator_ne_zero",
+      "source": "lean/HigherCorrelations/PairTrivialCorrection.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialTerm_bound",
+      "source": "lean/HigherCorrelations/PairTrivialCorrection.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialTerm_summable",
+      "source": "lean/HigherCorrelations/PairTrivialCorrection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivial_uniform",
+      "source": "lean/HigherCorrelations/PairTrivialCorrection.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialTerm_continuous",
+      "source": "lean/HigherCorrelations/PairTrivialCorrection.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialCorrection_continuous",
+      "source": "lean/HigherCorrelations/PairTrivialCorrection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialZero_deriv_ne_zero",
+      "source": "lean/HigherCorrelations/PairTrivialZeros.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialZero_order",
+      "source": "lean/HigherCorrelations/PairTrivialZeros.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairContour_residue_trivial",
+      "source": "lean/HigherCorrelations/PairTrivialZeros.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_ne_zero_right",
+      "source": "lean/HigherCorrelations/PairXiZeros.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_zero_isStripZero",
+      "source": "lean/HigherCorrelations/PairXiZeros.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairGoodHeight_zeta_ne_zero",
+      "source": "lean/HigherCorrelations/PairXiZeros.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_index_zero",
+      "source": "lean/HigherCorrelations/PairXiZeros.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_index_gap",
+      "source": "lean/HigherCorrelations/PairXiZeros.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_nonpos_classification",
+      "source": "lean/HigherCorrelations/PairZeroClassification.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_classification",
+      "source": "lean/HigherCorrelations/PairZeroClassification.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeta_oddLeft_ne_zero",
+      "source": "lean/HigherCorrelations/PairZeroClassification.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairGamma_half_avoid",
+      "source": "lean/HigherCorrelations/PairZetaLogDerivative.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairCompleted_eq_xi",
+      "source": "lean/HigherCorrelations/PairZetaLogDerivative.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairCompleted_logDeriv",
+      "source": "lean/HigherCorrelations/PairZetaLogDerivative.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeta_logDeriv_xi",
+      "source": "lean/HigherCorrelations/PairZetaLogDerivative.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairXi_logDeriv_one_sub",
+      "source": "lean/HigherCorrelations/PairZetaLogDerivative.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeta_logDeriv_functional_eq",
+      "source": "lean/HigherCorrelations/PairZetaLogDerivative.lean",
+      "comparator_checked": false
     }
   ],
-  "next_step": "Formalize the exact pair explicit formula next. Pair series convergence and the exact paired Mellin kernel including its endpoint are checked; contour inputs, prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
+  "next_step": "Formalize the uniform named remainders in PAIR-EF-001 next, starting with the shifted logarithmic derivative. The exact pair identity including X=1 is checked by an alternative contour envelope; prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
 }

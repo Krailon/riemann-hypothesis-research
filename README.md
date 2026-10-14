@@ -106,7 +106,7 @@ series, continuity including X=1 and X=n, and the quantitative zero-tail and
 inclusive-cutoff remainder bounds. All multiplicities and both ordinate signs
 are retained. The tail constant is existential; the historical effectiveness
 claim remains separate. See the [proof and verification record](research/lean-pair-series.md).
-The paired Mellin kernel is now formalized below; the exact explicit formula is next.
+The paired Mellin kernel and exact pair explicit formula, including their endpoints, are formalized below.
 
 ## Paired Mellin kernel formalized
 
@@ -115,6 +115,15 @@ for 0<y<=1, including the exact value zero at y=1. Absolute convergence,
 orientation, and finite-height convergence are checked using an explicit
 majorant. The proof uses Mellin inversion. See the
 [proof and verification record](research/lean-paired-mellin.md).
+
+## Exact pair explicit formula formalized
+
+The **exact pair explicit formula** is now proved in Lean for every X≥1
+and real t, with full complex zeros, analytic multiplicities, and the X=1
+endpoint. The contour proof uses a sufficient coarser Hadamard bound;
+the historical sharper contour estimates and the uniform named remainders
+are separate obligations. See the
+[proof and verification record](research/lean-pair-exact.md).
 
 ## Reproduce the pair baseline
 

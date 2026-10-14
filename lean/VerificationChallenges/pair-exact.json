@@ -1,0 +1,36 @@
+{
+  "challenge_module": "VerificationChallenges.PairExact",
+  "solution_module": "HigherCorrelations.PairExactFormula",
+  "theorem_names": [
+    "HigherCorrelations.pairContour_right_integrable",
+    "HigherCorrelations.pairContour_simple_poles",
+    "HigherCorrelations.pairContour_residue_zero",
+    "HigherCorrelations.pairContour_residue_pole",
+    "HigherCorrelations.pairContour_residue_plus",
+    "HigherCorrelations.pairContour_residue_minus",
+    "HigherCorrelations.pairEulerContour_integral_hasSum",
+    "HigherCorrelations.pairEulerSeries",
+    "HigherCorrelations.pairExact_endpoint",
+    "HigherCorrelations.pairExact_formula",
+    "HigherCorrelations.pairExact_interior",
+    "HigherCorrelations.pairGoodHeight_sequence",
+    "HigherCorrelations.pairZeta_goodHeight_power",
+    "HigherCorrelations.pairContour_horizontal_tendsto",
+    "HigherCorrelations.pairContour_left_integrable",
+    "HigherCorrelations.pairContour_left_tendsto",
+    "HigherCorrelations.pairLogWeight_integrable",
+    "HigherCorrelations.pairRightIntegral_prime_identity",
+    "HigherCorrelations.pairTrivialTerm_summable",
+    "HigherCorrelations.pairTrivialCorrection_continuous",
+    "HigherCorrelations.pairTrivialZero_order",
+    "HigherCorrelations.pairContour_residue_trivial",
+    "HigherCorrelations.pairZero_classification"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

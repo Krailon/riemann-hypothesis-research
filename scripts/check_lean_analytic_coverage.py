@@ -20,6 +20,17 @@ ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 PARTIAL = {
+    'PAIR-EF-EXACT-001': (
+        ['pairExact_formula', 'pairExact_endpoint', 'pairExact_interior',
+         'pairContour_finite_rectangle', 'pairContour_candidate_residue_sum',
+         'pairRectangle_height_tendsto', 'pairContour_left_tendsto',
+         'pairRightIntegral_prime_identity', 'pairTrivialCorrection_continuous'],
+        ['The exact identity and X=1 endpoint are checked in a separate formalized entry.',
+         'The historical sharper contour bounds and effective-constant claims are not supplied by this alternative Hadamard bound.']),
+    'ZETA-CONTOUR-001': (
+        ['pairGoodHeight_sequence', 'pairZeta_goodHeight_power', 'pairContour_horizontal_tendsto'],
+        ['Good heights and horizontal vanishing are checked using the coarser O(H^(7/4)) logarithmic-derivative envelope.',
+         'The historical O(log^2 H) logarithmic-derivative bound remains unformalized.']),
     'PAIR-EF-MELLIN-001': (
         ['pairedMellinSeed_transform', 'pairedMellinIntegrand_bound',
          'pairedMellin_upward_integrable', 'pairedMellin_upward_normalization',
@@ -240,9 +251,27 @@ def derive():
             and mellin_config['enable_nanoda'] is False, 'changed paired-mellin verification scope')
     components.extend(mellin['components'])
     names.extend(c['declaration'] for c in mellin['components'])
+    exact = json.loads(read('research/lean-pair-exact-inventory.json'))
+    found = []
+    for module in exact['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair-exact solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in exact['components']],
+            'pair-exact inventory differs from source declarations')
+    exact_config = json.loads(read('lean/VerificationChallenges/pair-exact.json'))
+    require(exact_config['theorem_names'] == [c['declaration'] for c in exact['components'] if c['comparator_checked']],
+            'pair-exact Comparator coverage differs from inventory')
+    require(exact_config['permitted_axioms'] == config['permitted_axioms']
+            and exact_config['enable_nanoda'] is False, 'changed pair-exact verification scope')
+    components.extend(exact['components'])
+    names.extend(c['declaration'] for c in exact['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -277,7 +306,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Formalize the exact pair explicit formula next. Pair series convergence and the exact paired Mellin kernel including its endpoint are checked; contour inputs, prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Formalize the uniform named remainders in PAIR-EF-001 next, starting with the shifted logarithmic derivative. The exact pair identity including X=1 is checked by an alternative contour envelope; prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -304,6 +333,16 @@ class CoverageTests(unittest.TestCase):
         self.assertIn('HigherCorrelations.pairedMellinKernel_at_one', node['components'])
         self.assertIn('HigherCorrelations.pairedMellin_kernel', node['components'])
         self.assertTrue(any('contour-shift' in gap for gap in node['remaining_obligations']))
+
+    def test_exact_identity_preserves_historical_contour_scope(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-EF-EXACT-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertIn('HigherCorrelations.pairExact_formula', node['components'])
+        self.assertIn('HigherCorrelations.pairExact_endpoint', node['components'])
+        self.assertTrue(any('sharper contour' in gap for gap in node['remaining_obligations']))
+        contour = next(n for n in self.record['nodes'] if n['id'] == 'ZETA-CONTOUR-001')
+        self.assertFalse(contour['whole_claim_formalized'])
+        self.assertTrue(any('O(log^2 H)' in gap for gap in contour['remaining_obligations']))
 
     def test_missing_node(self):
         self.record['nodes'].pop()

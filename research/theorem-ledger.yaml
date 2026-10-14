@@ -3636,3 +3636,42 @@ claims:
       imported_inputs: "Pinned mathlib hasMellin_cpow_Ioc and mellinInv_mellin_eq; the latter is proved from Fourier inversion."
       constants_scope: "The explicit absolute majorant is 2*y^2/(1+t^2); no numerical approximation enters the proof."
       baseline_audit_coverage: "The historical PAIR-EF-MELLIN-001 statement is recovered by a different proof. Its contour-shift proof and historical audit are unchanged. The exact pair explicit formula remains a separate obligation."
+  - id: PAIR-EXACT-FORMAL-001
+    title: Lean exact full-zero pair explicit formula with its continuous endpoint
+    kind: proposition
+    statement: |
+      For every real X>=1 and real t, put s=1/2+it. With the actual
+      multiplicity-indexed full-zero series S and prime series P of
+      PAIR-SERIES-CONVERGENCE-001, Lean proves
+      S(X,t) = -P(X,t) - X^(-1) zeta'(s-1)/zeta(s-1)
+               + 2 X^(1-s)/(s(2-s))
+               + 2 sum_{m>=1} X^(-2m-s)/((2m+s-1)(2m+s+1)).
+      The identity includes X=1 and t=0. The trivial-zero series has
+      the uniform absolute majorant 2/m^2 on X>=1, t in R. The existing
+      prime-knot convention gives weight one to n=X; no half-weights
+      or principal-value zero sums enter the identity. Both signs of
+      zero ordinates and all analytic multiplicities are retained.
+      The proof uses a sufficient O_M(H^(7/4)) good-height logarithmic-
+      derivative envelope and an O_{X,t,M}(H^(-1/4)) horizontal bound.
+      It does not establish the historical sharper contour estimates
+      or the subsequent named uniform remainders in PAIR-EF-001.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-SERIES-CONVERGENCE-001, PAIR-MELLIN-KERNEL-001, ZERO-OCCURRENCE-001, ZERO-KERNEL-UNIFORM-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairExactFormula.lean
+      label: HigherCorrelations.pairExact_formula
+      companion_declarations: "pairExact_endpoint, pairExact_interior, pairContour_finite_rectangle, pairContour_candidate_residue_sum, pairRectangle_height_tendsto, pairContour_left_tendsto, pairRightIntegral_prime_identity"
+      bookkeeping: research/lean-pair-exact.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 06f33fbfed84434b4c45b57e9da81ba193e4ce58f0665e6fc87a57a42ab6f89e
+    limit_order: "Fix X>1,t,M; take a separated height sequence U_n -> infinity; then M -> infinity; finally X down to 1 by continuity. No simultaneous unbounded X,t limit is asserted."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator for selected statements, all public and selected imported axiom reports, and unfinished-proof rejection."
+      imported_inputs: "Pinned mathlib Euler-series and Mellin inversion; audited PNT xi Hadamard factorization and rectangle residue theorem. Xi/zeta bridges, pole classification, multiplicity regrouping and contour limits are proved locally."
+      constants_scope: "Existential contour constants suffice for the identity; no numerical evaluation is claimed."
+      baseline_audit_coverage: "The historical PAIR-EF-EXACT-001 statement is recovered with coarser contour bounds. Historical statuses, sharper estimates and audit scope are preserved."
