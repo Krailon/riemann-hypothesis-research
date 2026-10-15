@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "e1c7e130073398ae432f93d2282db61f9bc3ed8dbd3962347ddeae00df9891a7",
+    "research/theorem-ledger.yaml": "27b123c0fc40cf6e6ee066a2cc7d5fc7dcc2c6c2b6e0a1c1fbe91558436f6981",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "b0a346668eb53206103e30f6fc0b013ac54d456938c53c177f361384e6b57533"
+    "research/pair-rh-audit.json": "efb21d3df56a485950a73c2fcf47dd18b02ddcca9ba415dcdc8a603cf6277223"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4461,5 +4461,14 @@
     ],
     "report": "research/lean-pair-exact.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. A separate formalized entry recovers the exact pair explicit formula, all real t and the X=1 endpoint. Its proof uses coarser sufficient Hadamard contour bounds; the historical sharper estimates, statuses and audit scope are unchanged."
+  },
+  "ledger_pair_uniform_review": {
+    "reviewed_on": "2026-10-14",
+    "previous_ledger_sha256": "e1c7e130073398ae432f93d2282db61f9bc3ed8dbd3962347ddeae00df9891a7",
+    "added_claim_ids": [
+      "PAIR-UNIFORM-FORMAL-001"
+    ],
+    "report": "research/lean-pair-uniform.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry recovers all four PAIR-EF-001 named errors with explicit uniform constants, including X=1 and t=0. The fixed-sector digamma assertion, sharper contour bounds, historical statuses and previous audit scope are unchanged."
   }
 }

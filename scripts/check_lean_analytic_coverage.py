@@ -19,7 +19,14 @@ ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
          'ORDINATE-TRIPLE-001']
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
+COMPLETE_STATEMENTS = {'PAIR-EF-001'}
 PARTIAL = {
+    'PAIR-EF-001': (
+        ['pairUniform_formula', 'pairUniform_named_bounds', 'pairUniform_remainder_bound',
+         'pairUniform_endpoint', 'pairUniform_zero_height', 'pairDSConstant_approximation'], []),
+    'GAMMA-DIGAMMA-001': (
+        ['pairDigamma_remainder_bound'],
+        ['The effective bound 2/|z| on Re(z)>0 is checked; the full historical fixed-sector assertion remains unformalized.']),
     'PAIR-EF-EXACT-001': (
         ['pairExact_formula', 'pairExact_endpoint', 'pairExact_interior',
          'pairContour_finite_rectangle', 'pairContour_candidate_residue_sum',
@@ -269,9 +276,27 @@ def derive():
             and exact_config['enable_nanoda'] is False, 'changed pair-exact verification scope')
     components.extend(exact['components'])
     names.extend(c['declaration'] for c in exact['components'])
+    pair_uniform = json.loads(read('research/lean-pair-uniform-inventory.json'))
+    found = []
+    for module in pair_uniform['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair-uniform solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in pair_uniform['components']],
+            'pair-uniform inventory differs from source declarations')
+    pair_uniform_config = json.loads(read('lean/VerificationChallenges/pair-uniform.json'))
+    require(pair_uniform_config['theorem_names'] == [c['declaration'] for c in pair_uniform['components'] if c['comparator_checked']],
+            'pair-uniform Comparator coverage differs from inventory')
+    require(pair_uniform_config['permitted_axioms'] == config['permitted_axioms']
+            and pair_uniform_config['enable_nanoda'] is False, 'changed pair-uniform verification scope')
+    components.extend(pair_uniform['components'])
+    names.extend(c['declaration'] for c in pair_uniform['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -282,11 +307,11 @@ def derive():
         checked = ['HigherCorrelations.' + n for n in short]
         require(set(checked) <= set(names), 'unknown Lean component')
         scope = ('provenance' if provenance else 'open_research' if status == 'idea'
-                 else 'partial' if checked else 'not_formalized')
+                 else 'formalized' if key in COMPLETE_STATEMENTS else 'partial' if checked else 'not_formalized')
         nodes.append(dict(id=key, dependencies=deps[key], ledger_status=status,
             ledger_block_sha256=hashlib.sha256(block.encode()).hexdigest(),
             source=None if provenance else flat_section(subsection(block, 'source')),
-            coverage=scope, whole_claim_formalized=False, components=checked,
+            coverage=scope, whole_claim_formalized=key in COMPLETE_STATEMENTS, components=checked,
             remaining_obligations=[] if provenance else gaps))
     # A uses B: visit dependents before prerequisites, with deterministic tie-breaking.
     incoming = {k: 0 for k in deps}
@@ -306,7 +331,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Formalize the uniform named remainders in PAIR-EF-001 next, starting with the shifted logarithmic derivative. The exact pair identity including X=1 is checked by an alternative contour envelope; prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Formalize the prime-side mean-square input next. The exact pair identity and all four uniform named errors are checked for X>=1 and every real t. Prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -351,6 +376,17 @@ class CoverageTests(unittest.TestCase):
     def test_missing_edge(self):
         self.record['edges'].pop()
         with self.assertRaises(ValueError): validate(self.record)
+
+    def test_uniform_pair_statement_and_gamma_scope(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-EF-001')
+        self.assertEqual(node['coverage'], 'formalized')
+        self.assertTrue(node['whole_claim_formalized'])
+        self.assertEqual(node['remaining_obligations'], [])
+        self.assertIn('HigherCorrelations.pairUniform_named_bounds', node['components'])
+        gamma = next(n for n in self.record['nodes'] if n['id'] == 'GAMMA-DIGAMMA-001')
+        self.assertEqual(gamma['coverage'], 'partial')
+        self.assertFalse(gamma['whole_claim_formalized'])
+        self.assertTrue(any('fixed-sector' in gap for gap in gamma['remaining_obligations']))
 
     def test_false_promotion(self):
         self.record['nodes'][0]['whole_claim_formalized'] = True

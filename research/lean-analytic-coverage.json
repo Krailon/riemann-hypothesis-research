@@ -24,11 +24,13 @@
         "locator": "Appendix C, Theorem C.1, equation (C.17), p.523 and proof pp.523-524",
         "url": "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/20.3_pp_520_534_The_gamma_function.pdf"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.pairDigamma_remainder_bound"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "The effective bound 2/|z| on Re(z)>0 is checked; the full historical fixed-sector assertion remains unformalized."
       ]
     },
     {
@@ -439,12 +441,17 @@
         "comparison_bibliography_key": "BGSTB2024",
         "comparison_locator": "arXiv:2306.04799v1, Lemma 1, (2.2)"
       },
-      "coverage": "not_formalized",
-      "whole_claim_formalized": false,
-      "components": [],
-      "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
-      ]
+      "coverage": "formalized",
+      "whole_claim_formalized": true,
+      "components": [
+        "HigherCorrelations.pairUniform_formula",
+        "HigherCorrelations.pairUniform_named_bounds",
+        "HigherCorrelations.pairUniform_remainder_bound",
+        "HigherCorrelations.pairUniform_endpoint",
+        "HigherCorrelations.pairUniform_zero_height",
+        "HigherCorrelations.pairDSConstant_approximation"
+      ],
+      "remaining_obligations": []
     },
     {
       "id": "PAIR-EF-CONVERGENCE-001",
@@ -3655,7 +3662,192 @@
       "declaration": "HigherCorrelations.pairZeta_logDeriv_functional_eq",
       "source": "lean/HigherCorrelations/PairZetaLogDerivative.lean",
       "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairReflected_norm_lower",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairReflected_norm_comparison",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairReflected_log_bound",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairArch_logDeriv_bound",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairArchError_bound",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_gamma_avoid",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_functional_eq",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_sin_cos_norm",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_sin_ne_zero",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_cot_norm",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_ne_zero",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_differentiable",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_logDeriv",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairShift_logDeriv_split",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDS_term_majorant",
+      "source": "lean/HigherCorrelations/PairDSConstantTail.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDS_tail_bound",
+      "source": "lean/HigherCorrelations/PairDSConstantTail.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDSConstant_approximation",
+      "source": "lean/HigherCorrelations/PairDSConstantTail.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_unit_comparison",
+      "source": "lean/HigherCorrelations/PairDigammaRemainder.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_finite_comparison",
+      "source": "lean/HigherCorrelations/PairDigammaRemainder.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_remainder_bound",
+      "source": "lean/HigherCorrelations/PairDigammaRemainder.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDSConstant_summable",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDSConstant_nonneg",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDSError_bound",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPole_denominator_lower",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairPoleCorrection_bound",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairReciprocalSq_sum_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairReciprocalSq_tsum_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairCauchy_sum_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairCauchy_tsum_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialTerm_height_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialCorrection_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_shift_split",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_formula",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_named_bounds",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_remainder_bound",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_endpoint",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_zero_height",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Formalize the uniform named remainders in PAIR-EF-001 next, starting with the shifted logarithmic derivative. The exact pair identity including X=1 is checked by an alternative contour envelope; prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
+  "next_step": "Formalize the prime-side mean-square input next. The exact pair identity and all four uniform named errors are checked for X>=1 and every real t. Prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
 }

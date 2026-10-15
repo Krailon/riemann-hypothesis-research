@@ -121,9 +121,12 @@ majorant. The proof uses Mellin inversion. See the
 The **exact pair explicit formula** is now proved in Lean for every X≥1
 and real t, with full complex zeros, analytic multiplicities, and the X=1
 endpoint. The contour proof uses a sufficient coarser Hadamard bound;
-the historical sharper contour estimates and the uniform named remainders
-are separate obligations. See the
+the historical sharper contour estimates remain separate obligations. See the
 [proof and verification record](research/lean-pair-exact.md).
+
+The **uniform named pair errors** are also proved in Lean for every X≥1
+and real t, with explicit archimedean, Dirichlet-series, pole and trivial-zero
+bounds. See the [proof and verification record](research/lean-pair-uniform.md).
 
 ## Reproduce the pair baseline
 

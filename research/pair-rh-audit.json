@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "e1c7e130073398ae432f93d2282db61f9bc3ed8dbd3962347ddeae00df9891a7",
+  "ledger_sha256": "27b123c0fc40cf6e6ee066a2cc7d5fc7dcc2c6c2b6e0a1c1fbe91558436f6981",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2588,5 +2588,14 @@
     ],
     "report": "research/lean-pair-exact.md",
     "changes": "The previous ledger remains an unchanged byte prefix and every prior indexed block is identical. A separate formalized entry recovers the exact pair explicit formula, all real t and the X=1 endpoint. Its proof uses coarser sufficient Hadamard contour bounds; the historical sharper estimates, statuses and audit scope are unchanged."
+  },
+  "ledger_pair_uniform_review": {
+    "reviewed_on": "2026-10-14",
+    "previous_ledger_sha256": "e1c7e130073398ae432f93d2282db61f9bc3ed8dbd3962347ddeae00df9891a7",
+    "added_claim_ids": [
+      "PAIR-UNIFORM-FORMAL-001"
+    ],
+    "report": "research/lean-pair-uniform.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry recovers all four PAIR-EF-001 named errors with explicit uniform constants, including X=1 and t=0. The fixed-sector digamma assertion, sharper contour bounds, historical statuses and previous audit scope are unchanged."
   }
 }

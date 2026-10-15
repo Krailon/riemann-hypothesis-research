@@ -1,0 +1,28 @@
+{
+  "challenge_module": "VerificationChallenges.PairUniform",
+  "solution_module": "HigherCorrelations.PairUniformFormula",
+  "theorem_names": [
+    "HigherCorrelations.pairArchError_bound",
+    "HigherCorrelations.pairChi_functional_eq",
+    "HigherCorrelations.pairChi_logDeriv",
+    "HigherCorrelations.pairShift_logDeriv_split",
+    "HigherCorrelations.pairDSConstant_approximation",
+    "HigherCorrelations.pairDigamma_remainder_bound",
+    "HigherCorrelations.pairDSConstant_summable",
+    "HigherCorrelations.pairDSError_bound",
+    "HigherCorrelations.pairPoleCorrection_bound",
+    "HigherCorrelations.pairTrivialCorrection_bound",
+    "HigherCorrelations.pairUniform_formula",
+    "HigherCorrelations.pairUniform_named_bounds",
+    "HigherCorrelations.pairUniform_remainder_bound",
+    "HigherCorrelations.pairUniform_endpoint",
+    "HigherCorrelations.pairUniform_zero_height"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

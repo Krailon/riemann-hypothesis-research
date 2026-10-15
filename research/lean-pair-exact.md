@@ -118,3 +118,5 @@ a fresh checkout or external-kernel verification.
 Formalize the uniform named remainders in `PAIR-EF-001`, beginning with
 the shifted logarithmic derivative and its archimedean/Dirichlet-series
 split. The exact identity is now the available input for that task.
+
+This next input was completed in the [uniform named-error milestone](lean-pair-uniform.md).

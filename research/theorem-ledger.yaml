@@ -3675,3 +3675,41 @@ claims:
       imported_inputs: "Pinned mathlib Euler-series and Mellin inversion; audited PNT xi Hadamard factorization and rectangle residue theorem. Xi/zeta bridges, pole classification, multiplicity regrouping and contour limits are proved locally."
       constants_scope: "Existential contour constants suffice for the identity; no numerical evaluation is claimed."
       baseline_audit_coverage: "The historical PAIR-EF-EXACT-001 statement is recovered with coarser contour bounds. Historical statuses, sharper estimates and audit scope are preserved."
+  - id: PAIR-UNIFORM-FORMAL-001
+    title: Lean pair explicit formula with four effective uniform named remainders
+    kind: proposition
+    statement: |
+      For every real X>=1 and real t, with S,P the actual multiplicity-indexed
+      series of PAIR-SERIES-CONVERGENCE-001 and errors exactly as in PAIR-EF-001,
+      S=-P+X^(-1)log(|t|+2)+E_arch+E_DS+E_pole+E_trivial.
+      Uniformly, |E_arch|<=C_arch/X, |E_DS|<=C_DS/X,
+      |E_pole|<=4 X^(1/2)/(1+t^2), and
+      |E_trivial|<=12 X^(-5/2)/(|t|+2).
+      Here C_arch=log(2 pi)+pi+log(2)+4/3 and
+      C_DS=sum_{n>=2} Lambda(n)n^(-3/2), independent of X,t.
+      The proof supplies |psi(z)-log z|<=2/|z| for Re(z)>0,
+      with the principal logarithm. For N>=1 the C_DS tail beyond N
+      is nonnegative and at most 16 N^(-1/4).
+      Endpoint X=1, t=0, negative t, prime-power knots and zero ordinates
+      are included. All actual complex zeros and analytic multiplicities
+      are retained. No RH or simplicity hypothesis enters the theorem.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-EXACT-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairUniformFormula.lean
+      label: HigherCorrelations.pairUniform_formula
+      companion_declarations: "pairUniform_named_bounds, pairUniform_remainder_bound, pairUniform_endpoint, pairUniform_zero_height, pairDigamma_remainder_bound, pairDSConstant_approximation"
+      bookkeeping: research/lean-pair-uniform.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: d20c9ee6c70dd65db04e8e9d11f3f80ef0c6115c9045fa3a5b46700e5c41a4e6
+    limit_order: "Fix Re(z)>0 for the finite digamma sum-integral comparison, then N tends to infinity using the harmonic-number and complex-log limits. Trivial-zero bounds pass from finite sums to absolutely convergent series. The final inequalities are uniform over X>=1 and all real t."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator for 15 specifications, all 37 public and the imported digamma-series axiom reports, and unfinished-proof rejection."
+      imported_inputs: "Pinned audited PNT digamma series; mathlib harmonic-number limit, gamma/zeta functional equation and differentiation, Euler series, and sum-integral comparisons."
+      constants_scope: "C_psi=2 is proved on the open right half-plane; C_DS has an explicit tail. No floating-point computation is used."
+      baseline_audit_coverage: "The full PAIR-EF-001 named-error statement is recovered. The historical fixed-sector digamma theorem, sharper contour bounds, prime-side mean-square asymptotics and triple theorem are not promoted."

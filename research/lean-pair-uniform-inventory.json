@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairArchErrorBound",
+    "PairChiIdentity",
+    "PairDSConstantTail",
+    "PairDigammaRemainder",
+    "PairElementaryErrorBounds",
+    "PairErrorDefinitions",
+    "PairTrivialErrorBound",
+    "PairUniformFormula"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairReflected_norm_lower",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairReflected_norm_comparison",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairReflected_log_bound",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairArch_logDeriv_bound",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairArchError_bound",
+      "source": "lean/HigherCorrelations/PairArchErrorBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_gamma_avoid",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_functional_eq",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_sin_cos_norm",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_sin_ne_zero",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_cot_norm",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_ne_zero",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_differentiable",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairChi_logDeriv",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairShift_logDeriv_split",
+      "source": "lean/HigherCorrelations/PairChiIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDS_term_majorant",
+      "source": "lean/HigherCorrelations/PairDSConstantTail.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDS_tail_bound",
+      "source": "lean/HigherCorrelations/PairDSConstantTail.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDSConstant_approximation",
+      "source": "lean/HigherCorrelations/PairDSConstantTail.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_unit_comparison",
+      "source": "lean/HigherCorrelations/PairDigammaRemainder.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_finite_comparison",
+      "source": "lean/HigherCorrelations/PairDigammaRemainder.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDigamma_remainder_bound",
+      "source": "lean/HigherCorrelations/PairDigammaRemainder.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDSConstant_summable",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDSConstant_nonneg",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDSError_bound",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPole_denominator_lower",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairPoleCorrection_bound",
+      "source": "lean/HigherCorrelations/PairElementaryErrorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairReciprocalSq_sum_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairReciprocalSq_tsum_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairCauchy_sum_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairCauchy_tsum_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialTerm_height_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairTrivialCorrection_bound",
+      "source": "lean/HigherCorrelations/PairTrivialErrorBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_shift_split",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_formula",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_named_bounds",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_remainder_bound",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_endpoint",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairUniform_zero_height",
+      "source": "lean/HigherCorrelations/PairUniformFormula.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [
+    "Complex.hasSum_digamma_of_re_pos"
+  ]
+}

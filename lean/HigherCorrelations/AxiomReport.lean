@@ -1,3 +1,4 @@
+import HigherCorrelations.PairUniformFormula
 import HigherCorrelations.PairExactFormula
 import HigherCorrelations.PairedMellin
 import HigherCorrelations.PairSeriesConvergence
@@ -539,3 +540,43 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms RectangleIntegral'_eq_sumResiduesIn
 #print axioms residue_neg_zeta_logDeriv_mul
 #print axioms ArithmeticFunction.LSeries_vonMangoldt_eq_deriv_riemannZeta_div
+
+/-! Uniform named pair errors. -/
+#print axioms HigherCorrelations.pairReflected_norm_lower
+#print axioms HigherCorrelations.pairReflected_norm_comparison
+#print axioms HigherCorrelations.pairReflected_log_bound
+#print axioms HigherCorrelations.pairArch_logDeriv_bound
+#print axioms HigherCorrelations.pairArchError_bound
+#print axioms HigherCorrelations.pairChi_gamma_avoid
+#print axioms HigherCorrelations.pairChi_functional_eq
+#print axioms HigherCorrelations.pairChi_sin_cos_norm
+#print axioms HigherCorrelations.pairChi_sin_ne_zero
+#print axioms HigherCorrelations.pairChi_cot_norm
+#print axioms HigherCorrelations.pairChi_ne_zero
+#print axioms HigherCorrelations.pairChi_differentiable
+#print axioms HigherCorrelations.pairChi_logDeriv
+#print axioms HigherCorrelations.pairShift_logDeriv_split
+#print axioms HigherCorrelations.pairDS_term_majorant
+#print axioms HigherCorrelations.pairDS_tail_bound
+#print axioms HigherCorrelations.pairDSConstant_approximation
+#print axioms HigherCorrelations.pairDigamma_unit_comparison
+#print axioms HigherCorrelations.pairDigamma_finite_comparison
+#print axioms HigherCorrelations.pairDigamma_remainder_bound
+#print axioms HigherCorrelations.pairDSConstant_summable
+#print axioms HigherCorrelations.pairDSConstant_nonneg
+#print axioms HigherCorrelations.pairDSError_bound
+#print axioms HigherCorrelations.pairPole_denominator_lower
+#print axioms HigherCorrelations.pairPoleCorrection_bound
+#print axioms HigherCorrelations.pairReciprocalSq_sum_bound
+#print axioms HigherCorrelations.pairReciprocalSq_tsum_bound
+#print axioms HigherCorrelations.pairCauchy_sum_bound
+#print axioms HigherCorrelations.pairCauchy_tsum_bound
+#print axioms HigherCorrelations.pairTrivialTerm_height_bound
+#print axioms HigherCorrelations.pairTrivialCorrection_bound
+#print axioms HigherCorrelations.pairUniform_shift_split
+#print axioms HigherCorrelations.pairUniform_formula
+#print axioms HigherCorrelations.pairUniform_named_bounds
+#print axioms HigherCorrelations.pairUniform_remainder_bound
+#print axioms HigherCorrelations.pairUniform_endpoint
+#print axioms HigherCorrelations.pairUniform_zero_height
+#print axioms Complex.hasSum_digamma_of_re_pos
