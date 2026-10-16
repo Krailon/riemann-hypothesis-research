@@ -94,6 +94,6 @@ it is not a claim of fresh-checkout or external-kernel verification.
 
 ## Next step
 
-Formalize the prime-side mean-square input used after the pair explicit
-formula. The exact identity and its four named uniform errors are now
-available as proved Lean inputs.
+The [Fourier mean-value input](lean-pair-meanvalue.md) is now checked and
+specialized to the actual prime series. Next formalize the weighted
+nearby-prime sieve bound and prime diagonal asymptotic.

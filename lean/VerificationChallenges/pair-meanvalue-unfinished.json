@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairMeanValue",
+  "solution_module": "VerificationChallenges.PairMeanValueUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairMeanValue_explicit"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

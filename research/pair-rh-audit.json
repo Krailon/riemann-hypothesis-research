@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "27b123c0fc40cf6e6ee066a2cc7d5fc7dcc2c6c2b6e0a1c1fbe91558436f6981",
+  "ledger_sha256": "e59291f9e2dfb496126569d18510dd2a5969f070b98ea107528effcc4bbd471e",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2597,5 +2597,14 @@
     ],
     "report": "research/lean-pair-uniform.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry recovers all four PAIR-EF-001 named errors with explicit uniform constants, including X=1 and t=0. The fixed-sector digamma assertion, sharper contour bounds, historical statuses and previous audit scope are unchanged."
+  },
+  "ledger_pair_meanvalue_review": {
+    "reviewed_on": "2026-10-15",
+    "previous_ledger_sha256": "27b123c0fc40cf6e6ee066a2cc7d5fc7dcc2c6c2b6e0a1c1fbe91558436f6981",
+    "added_claim_ids": [
+      "PAIR-MEANVALUE-FORMAL-001"
+    ],
+    "report": "research/lean-pair-meanvalue.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry recovers PAIR-MEANVALUE-001 with explicit constants and the actual prime-series specialization. Strict ordered-pair cutoff and endpoint conventions are checked. Weighted sieve estimates, the prime diagonal asymptotic, optimized prime mean square, historical statuses and prior audit scope are preserved."
   }
 }

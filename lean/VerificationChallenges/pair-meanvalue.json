@@ -1,0 +1,40 @@
+{
+  "challenge_module": "VerificationChallenges.PairMeanValue",
+  "solution_module": "HigherCorrelations.PairMeanEndpoints",
+  "theorem_names": [
+    "HigherCorrelations.pairMeanB_lower",
+    "HigherCorrelations.pairMeanValue_unit",
+    "HigherCorrelations.pairMeanValue_empty",
+    "HigherCorrelations.pairMeanValue_minimal_height",
+    "HigherCorrelations.pairMeanPrime_endpoint",
+    "HigherCorrelations.pairMeanEnvelope_mass",
+    "HigherCorrelations.pairMeanEnvelope_norm_bound",
+    "HigherCorrelations.pairMeanEnvelope_fourier_zero",
+    "HigherCorrelations.pairMeanBox_fourier",
+    "HigherCorrelations.pairMeanWeighted_square_identity",
+    "HigherCorrelations.pairMeanK_fourier_zero",
+    "HigherCorrelations.pairMeanB_fourier_zero",
+    "HigherCorrelations.pairMeanK_mass",
+    "HigherCorrelations.pairMeanB_mass",
+    "HigherCorrelations.pairMeanTail_boundary",
+    "HigherCorrelations.pairMeanSinc_fourth_fourier",
+    "HigherCorrelations.pairMeanK_fourier",
+    "HigherCorrelations.pairMeanB_fourier",
+    "HigherCorrelations.pairMeanWeighted_offdiag_bound",
+    "HigherCorrelations.pairMeanPrimeCoefficient_sqrt",
+    "HigherCorrelations.pairMeanPrimeFrequency_injective",
+    "HigherCorrelations.pairMeanPrimeTerm_frequency",
+    "HigherCorrelations.pairMeanPrimeFrequency_cutoff",
+    "HigherCorrelations.pairMeanPrime_meanvalue",
+    "HigherCorrelations.pairMeanEnvelope_sandwich",
+    "HigherCorrelations.pairMeanSinc_sq_fourier",
+    "HigherCorrelations.pairMeanValue_explicit"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

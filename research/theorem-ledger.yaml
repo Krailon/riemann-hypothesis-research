@@ -3713,3 +3713,44 @@ claims:
       imported_inputs: "Pinned audited PNT digamma series; mathlib harmonic-number limit, gamma/zeta functional equation and differentiation, Euler series, and sum-integral comparisons."
       constants_scope: "C_psi=2 is proved on the open right half-plane; C_DS has an explicit tail. No floating-point computation is used."
       baseline_audit_coverage: "The full PAIR-EF-001 named-error statement is recovered. The historical fixed-sector digamma theorem, sharper contour bounds, prime-side mean-square asymptotics and triple theorem are not promoted."
+  - id: PAIR-MEANVALUE-FORMAL-001
+    title: Lean Fourier mean-value input with effective constants and actual prime-series specialization
+    kind: proposition
+    statement: |
+      Let I be countable, mu:I->R injective, and c:I->C with sum_i |c_i| finite.
+      Set F(t)=sum_i c_i exp(2 pi i mu_i t), D=sum_i |c_i|^2, and
+      Q_delta=sum_{(i,j):0<|mu_i-mu_j|<delta} |c_i||c_j| over ordered pairs.
+      For T>=1 and 1/(2T)<=delta<=1/2,
+      |integral_0^T |F(t)|^2 dt-T D| <= 512 D/delta+1025 T Q_delta.
+      The proof uses explicit sinc kernels with masses 1 and 4, a pointwise
+      interval sandwich of masses T +/- 512/delta, and Fourier transforms
+      vanishing at and beyond |xi|=delta. All weighted double sums are
+      absolutely integrable. Empty and singleton frequency sets are covered.
+      For the actual prime series P(X,t), X>=1, mu_n=-log(n+1)/(2 pi)
+      and a_X(n+1)=Lambda(n+1)/sqrt(n+1) min((n+1)/X,X/(n+1)), the identical
+      bound holds with D(X)=sum_n a_X(n+1)^2 and Q_delta(X) the ordered
+      n!=m sum with |log((n+1)/(m+1))|<2 pi delta. The exact coefficient
+      identity, absolute summability, frequency injectivity and cutoff
+      translation are checked. X=1 and both delta endpoints are included.
+      This does not establish the nearby-prime sieve bound, the diagonal
+      asymptotic D(X)=log X+O(1), or the optimized prime-side mean square.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-SERIES-CONVERGENCE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairMeanValue.lean
+      label: HigherCorrelations.pairMeanValue_explicit
+      companion_declarations: "pairMeanPrime_meanvalue, pairMeanWeighted_square_identity, pairMeanWeighted_offdiag_bound, pairMeanEnvelope_sandwich, pairMeanEnvelope_fourier_zero, pairMeanPrimeFrequency_cutoff, pairMeanValue_minimal_height, pairMeanPrime_endpoint"
+      bookkeeping: research/lean-pair-meanvalue.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 3c88062a80f8a70e58f738feb8289eab62898fb987238eca527b13b67b874c68
+    limit_order: "Fix the coefficient family, T and delta; all frequency-series and Fourier-integral interchanges use explicit absolute majorants. The bound is uniform for T>=1 and 1/(2T)<=delta<=1/2; no asymptotic or simultaneous parameter limit is required."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator for 27 selected statements, all 106 public declarations and three central imported Fourier/integration axiom reports, and unfinished-proof rejection."
+      imported_inputs: "Pinned mathlib Fourier inversion, convolution and Bochner integration; the previously checked actual prime-series absolute convergence. No zeta-zero location or simplicity hypothesis is used."
+      constants_scope: "The absolute constants 512 and 1025 are explicit. All computations inside the proof are exact Lean deductions."
+      baseline_audit_coverage: "The full PAIR-MEANVALUE-001 statement is recovered. The prime arithmetic estimates, optimized mean square, historical statuses and prior audit scope are preserved."

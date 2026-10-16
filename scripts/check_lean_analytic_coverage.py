@@ -19,8 +19,17 @@ ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
          'ORDINATE-TRIPLE-001']
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
-COMPLETE_STATEMENTS = {'PAIR-EF-001'}
+COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001'}
 PARTIAL = {
+    'PAIR-MEANVALUE-001': (
+        ['pairMeanValue_explicit', 'pairMeanEnvelope_sandwich', 'pairMeanEnvelope_mass',
+         'pairMeanEnvelope_fourier_zero', 'pairMeanWeighted_square_identity',
+         'pairMeanWeighted_offdiag_bound', 'pairMeanPrime_meanvalue'], []),
+    'PAIR-PRIME-MEAN-001': (
+        ['pairMeanPrime_meanvalue', 'pairMeanPrimeCoefficient_summable',
+         'pairMeanPrimeCoefficient_sqrt', 'pairMeanPrimeFrequency_cutoff'],
+        ['The Fourier mean-value input and actual prime-series specialization are checked.',
+         'The weighted nearby-prime sieve bound, diagonal asymptotic and optimized mean-square error remain unformalized.']),
     'PAIR-EF-001': (
         ['pairUniform_formula', 'pairUniform_named_bounds', 'pairUniform_remainder_bound',
          'pairUniform_endpoint', 'pairUniform_zero_height', 'pairDSConstant_approximation'], []),
@@ -294,9 +303,27 @@ def derive():
             and pair_uniform_config['enable_nanoda'] is False, 'changed pair-uniform verification scope')
     components.extend(pair_uniform['components'])
     names.extend(c['declaration'] for c in pair_uniform['components'])
+    meanvalue = json.loads(read('research/lean-pair-meanvalue-inventory.json'))
+    found = []
+    for module in meanvalue['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair-meanvalue solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in meanvalue['components']],
+            'pair-meanvalue inventory differs from source declarations')
+    meanvalue_config = json.loads(read('lean/VerificationChallenges/pair-meanvalue.json'))
+    require(meanvalue_config['theorem_names'] == [c['declaration'] for c in meanvalue['components'] if c['comparator_checked']],
+            'pair-meanvalue Comparator coverage differs from inventory')
+    require(meanvalue_config['permitted_axioms'] == config['permitted_axioms']
+            and meanvalue_config['enable_nanoda'] is False, 'changed pair-meanvalue verification scope')
+    components.extend(meanvalue['components'])
+    names.extend(c['declaration'] for c in meanvalue['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -331,7 +358,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Formalize the prime-side mean-square input next. The exact pair identity and all four uniform named errors are checked for X>=1 and every real t. Prime-side asymptotics, the sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Formalize the weighted nearby-prime sieve bound, then the prime diagonal asymptotic and optimized mean square. The Fourier mean-value input and actual prime-series specialization are checked with explicit constants. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -344,6 +371,21 @@ class CoverageTests(unittest.TestCase):
 
     def test_current(self):
         validate(self.record)
+
+    def test_meanvalue_complete_arithmetic_partial(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-MEANVALUE-001')
+        self.assertTrue(node['whole_claim_formalized'])
+        self.assertEqual(node['remaining_obligations'], [])
+        prime = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-PRIME-MEAN-001')
+        self.assertFalse(prime['whole_claim_formalized'])
+        self.assertIn('HigherCorrelations.pairMeanPrime_meanvalue', prime['components'])
+        self.assertTrue(any('sieve' in gap for gap in prime['remaining_obligations']))
+
+    def test_meanvalue_comparator_scope_drift(self):
+        component = next(c for c in self.record['components']
+                         if c['declaration'] == 'HigherCorrelations.pairMeanValue_explicit')
+        component['comparator_checked'] = False
+        with self.assertRaises(ValueError): validate(self.record)
 
     def test_pair_convergence_effectiveness_remains_partial(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-EF-CONVERGENCE-001')

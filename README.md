@@ -128,6 +128,11 @@ The **uniform named pair errors** are also proved in Lean for every X≥1
 and real t, with explicit archimedean, Dirichlet-series, pole and trivial-zero
 bounds. See the [proof and verification record](research/lean-pair-uniform.md).
 
+The **Fourier mean-value input** is proved with explicit constants, strict
+frequency endpoints, and a specialization to the actual prime series.
+The weighted prime sieve and diagonal asymptotic remain to be formalized.
+See the [mean-value record](research/lean-pair-meanvalue.md).
+
 ## Reproduce the pair baseline
 
 Task: verification and exposition. Assumptions: `UNCONDITIONAL` for the exact

@@ -28,7 +28,7 @@ def source_hashes():
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
              'scripts/reproduce_lean.py', 'scripts/check_lean_analytic_coverage.py',
              'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json',
-             'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json', 'research/lean-pair-exact-inventory.json', 'research/lean-pair-uniform-inventory.json']]
+             'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json', 'research/lean-pair-exact-inventory.json', 'research/lean-pair-uniform-inventory.json', 'research/lean-pair-meanvalue-inventory.json']]
     files += sorted((ROOT / 'lean').rglob('*.lean'))
     files += sorted((ROOT / 'lean').rglob('*.json'))
     return {str(p.relative_to(ROOT)): digest(p) for p in files if p.is_file()}
@@ -88,7 +88,7 @@ def main():
                   status='running', pins=PINS, commands=[], external_kernel=False,
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   assumptions=['UNCONDITIONAL'],
-                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, horizontal derivatives, logarithmic local zero counts, uniform height bounds, pair explicit-formula series convergence, the paired Mellin kernel including its endpoint, the exact pair explicit formula, and its uniform named errors')
+                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, horizontal derivatives, logarithmic local zero counts, uniform height bounds, pair explicit-formula series convergence, the paired Mellin kernel including its endpoint, the exact pair explicit formula, its uniform named errors, and the Fourier mean-value input with actual prime-series specialization')
 
     def command(name, argv, *, expected_failure=False):
         log = run_dir / (name + '.log')
@@ -128,6 +128,11 @@ def main():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
+        command('pair-meanvalue-build', ['lake', 'build', 'HigherCorrelations.PairMeanEndpoints'])
+        command('pair-meanvalue-comparator', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/pair-meanvalue.json'])
+        command('pair-meanvalue-unfinished-rejected', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/pair-meanvalue-unfinished.json'], expected_failure=True)
         command('pair-uniform-build', ['lake', 'build', 'HigherCorrelations.PairUniformFormula'])
         command('pair-uniform-comparator', ['lake', 'env', comparator,
                 'lean/VerificationChallenges/pair-uniform.json'])
@@ -222,6 +227,9 @@ def main():
         pair_uniform_inventory = json.loads((ROOT / 'research/lean-pair-uniform-inventory.json').read_text())
         expected.update(c['declaration'] for c in pair_uniform_inventory['components'])
         expected.update(pair_uniform_inventory['imported_axioms'])
+        mean_inventory = json.loads((ROOT / 'research/lean-pair-meanvalue-inventory.json').read_text())
+        expected.update(c['declaration'] for c in mean_inventory['components'])
+        expected.update(mean_inventory['imported_axioms'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):
