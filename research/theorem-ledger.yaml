@@ -3754,3 +3754,41 @@ claims:
       imported_inputs: "Pinned mathlib Fourier inversion, convolution and Bochner integration; the previously checked actual prime-series absolute convergence. No zeta-zero location or simplicity hypothesis is used."
       constants_scope: "The absolute constants 512 and 1025 are explicit. All computations inside the proof are exact Lean deductions."
       baseline_audit_coverage: "The full PAIR-MEANVALUE-001 statement is recovered. The prime arithmetic estimates, optimized mean square, historical statuses and prior audit scope are preserved."
+  - id: PAIR-PRIME-COUNT-FORMAL-001
+    title: Lean effective weighted nearby-prime sieve bound
+    kind: proposition
+    statement: |
+      For all real U,V>=0, the ordered sum of Lambda(m)Lambda(n) over
+      positive integers m,n<=U with 0<|m-n|<=V is at most C_count U V.
+      For all real X>=1 and 0<=delta<=1/2, with the actual coefficients
+      a_X(n)=Lambda(n)/sqrt(n) min(n/X,X/n), the ordered sum of
+      a_X(m)a_X(n) over m!=n and |log(m/n)|<2 pi delta is at most
+      C_nearby delta X. Here C_prime=256(1+81*16^6+512),
+      C_power=128+1024/log(2), C_count=2(C_prime exp(3)+4+2 C_power),
+      and C_nearby=32 pi exp(pi)^3 C_count are explicit positive constants.
+      Proper prime powers are included. The linear cutoffs are inclusive;
+      the logarithmic cutoff is strict. X=1, delta=0 and delta=1/2 are covered.
+      The proof establishes a uniform even-shift sieve bound using
+      G(h)=product_{p|h}(p/(p-1))^2 and sum_{1<=h<=V} G(h)<=exp(3)V.
+      This is an alternative sufficient sieve proof; it does not assert
+      formalization of the historical precise singular factor g(h).
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-SERIES-CONVERGENCE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairSieveWeighted.lean
+      label: HigherCorrelations.pairMeanPrimeNearby_bound
+      companion_declarations: "pairSieveNearby_bound, pairSieve_prime_bound, pairSieve_denominator_lower, pairSieveBadFactor_sum_le, pairSieveProperPowers_weighted, pairSieveBall_double_summable, pairMeanPrimeNearby_uniform, pairMeanPrimeNearby_zero, pairMeanPrimeNearby_endpoint, pairMeanPrimeNearby_unit, pairMeanPrimeNearby_boundary_term"
+      bookkeeping: research/lean-pair-sieve.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8f024b266587602508d6e2b9a2533b094b9e667983712d82986c294fcddadbc9
+    limit_order: "Fix X and delta. The finite sieve and divisor-factor averaging precede a countable dyadic covering; its geometric majorant proves absolute double summability before reversing the sums. The final bound is uniform on X>=1 and 0<=delta<=1/2."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator for 17 specifications, all 80 public and four central imported axiom reports, and unfinished-proof rejection."
+      imported_inputs: "Pinned OAI optimized finite Selberg inequality and residue progression counting; pinned PNT harmonic sieve lower bound and proper-power enumeration; mathlib real logarithms, finite combinatorics and summability. Shifted sieve, denominator, averaged factor and weighted specialization are proved locally."
+      constants_scope: "All constants are explicit; no floating-point computation or ineffective threshold enters the proof."
+      baseline_audit_coverage: "Both assertions of PAIR-PRIME-COUNT-001 are recovered. Historical PRIME-SIEVE-001 with its precise singular factor, the diagonal asymptotic, optimized mean square and prior audit scope retain their existing status."

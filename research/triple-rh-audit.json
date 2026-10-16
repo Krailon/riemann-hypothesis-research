@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "e59291f9e2dfb496126569d18510dd2a5969f070b98ea107528effcc4bbd471e",
+    "research/theorem-ledger.yaml": "2b4a912a0da4523609cc97bc54fc1291e30d0d9277b6fdee490933fa19ebdca2",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "27e843d8de841b33d54469bdd92a105bc7f30362aef8955fe74fa459786be37d"
+    "research/pair-rh-audit.json": "fa780b8213dcb7a4f65a7dd05d1b1fae8ff02114f193c5a8c7fcfddec0728b55"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4470,5 +4470,14 @@
     ],
     "report": "research/lean-pair-uniform.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry recovers all four PAIR-EF-001 named errors with explicit uniform constants, including X=1 and t=0. The fixed-sector digamma assertion, sharper contour bounds, historical statuses and previous audit scope are unchanged."
+  },
+  "ledger_pair_sieve_review": {
+    "reviewed_on": "2026-10-16",
+    "previous_ledger_sha256": "e59291f9e2dfb496126569d18510dd2a5969f070b98ea107528effcc4bbd471e",
+    "added_claim_ids": [
+      "PAIR-PRIME-COUNT-FORMAL-001"
+    ],
+    "report": "research/lean-pair-sieve.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry recovers both PAIR-PRIME-COUNT-001 bounds with explicit constants and checked endpoints. The proof uses an alternative averaged divisor factor. The historical precise singular factor, prime diagonal asymptotic, optimized mean square, statuses and prior audit scope are preserved."
   }
 }

@@ -84,8 +84,8 @@ fresh-checkout or independent external-kernel verification.
 
 ## Remaining arithmetic
 
-The next milestone is `PAIR-PRIME-COUNT-001`: the weighted nearby-prime
-bound from a shift-uniform sieve. Then formalize `PAIR-PRIME-DIAGONAL-001`,
+The [weighted nearby-prime bound](lean-pair-sieve.md) is now checked.
+Next formalize `PAIR-PRIME-DIAGONAL-001`,
 including proper prime powers, and optimize δ to recover
 `PAIR-PRIME-MEAN-001`. The RHS mean square, pair asymptotic, and triple theorem
 are not promoted by this Fourier foundation. Historical ledger blocks and

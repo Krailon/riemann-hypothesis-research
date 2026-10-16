@@ -1,0 +1,30 @@
+{
+  "challenge_module": "VerificationChallenges.PairSieve",
+  "solution_module": "HigherCorrelations.PairSieveEndpoints",
+  "theorem_names": [
+    "HigherCorrelations.pairSieveBadFactor_sum_le",
+    "HigherCorrelations.pairSieveNearbyNat_sum",
+    "HigherCorrelations.pairSieveNearby_bound",
+    "HigherCorrelations.pairSieveNearby_empty",
+    "HigherCorrelations.pairSieve_prime_bound",
+    "HigherCorrelations.pairSieve_denominator_lower",
+    "HigherCorrelations.pairMeanPrimeNearby_zero",
+    "HigherCorrelations.pairMeanPrimeNearby_endpoint",
+    "HigherCorrelations.pairMeanPrimeNearby_unit",
+    "HigherCorrelations.pairMeanPrimeNearby_boundary_term",
+    "HigherCorrelations.pairSieve_log_comparable",
+    "HigherCorrelations.pairSieve_coefficients_head",
+    "HigherCorrelations.pairSieve_coefficients_tail",
+    "HigherCorrelations.pairSieveProperPowers_weighted",
+    "HigherCorrelations.pairSieveBall_double_summable",
+    "HigherCorrelations.pairMeanPrimeNearby_bound",
+    "HigherCorrelations.pairMeanPrimeNearby_uniform"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

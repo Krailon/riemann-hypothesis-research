@@ -130,8 +130,12 @@ bounds. See the [proof and verification record](research/lean-pair-uniform.md).
 
 The **Fourier mean-value input** is proved with explicit constants, strict
 frequency endpoints, and a specialization to the actual prime series.
-The weighted prime sieve and diagonal asymptotic remain to be formalized.
 See the [mean-value record](research/lean-pair-meanvalue.md).
+
+The **weighted nearby-prime sieve bound** is proved with an explicit uniform
+constant, proper prime powers, and all cutoff endpoints. See the
+[sieve proof and verification record](research/lean-pair-sieve.md).
+Next: the prime diagonal asymptotic, then the optimized prime mean square.
 
 ## Reproduce the pair baseline
 

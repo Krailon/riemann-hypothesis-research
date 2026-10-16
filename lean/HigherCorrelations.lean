@@ -11,3 +11,4 @@ import HigherCorrelations.PairedMellin
 import HigherCorrelations.PairExactFormula
 import HigherCorrelations.PairUniformFormula
 import HigherCorrelations.PairMeanEndpoints
+import HigherCorrelations.PairSieveEndpoints

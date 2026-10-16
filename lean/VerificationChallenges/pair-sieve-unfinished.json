@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairSieve",
+  "solution_module": "VerificationChallenges.PairSieveUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairMeanPrimeNearby_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
