@@ -3830,3 +3830,43 @@ claims:
       imported_inputs: "Pinned proved unconditional StrongPNT and namespaced smoothing input, Chebyshev bound, mathlib finite Abel summation and integration, previously checked proper-power enumeration and actual prime-series convergence. No RH or simplicity premise."
       constants_scope: "Existential absolute constants, per the chosen scope. Numerical effectivity remains unformalized."
       baseline_audit_coverage: "The mathematical bounds and endpoints of PAIR-PRIME-DIAGONAL-001 are recovered. Its historical effective-constant assertion, the full PRIME-PNT-001 statement, optimized prime mean square, historical statuses and prior audit scope are preserved."
+  - id: PAIR-PRIME-MEAN-FORMAL-001
+    title: Lean optimized prime mean square with existential uniform constants
+    kind: proposition
+    statement: |
+      For the actual prime series P(X,t) with coefficients
+      a_X(n)=Lambda(n)/sqrt(n) min(n/X,X/n), put D(X)=sum_n a_X(n)^2,
+      M(X,T)=integral_0^T |P(X,t)|^2 dt,
+      E_offdiag=M-T D, E_diagonal=T D-T log X, and L2=sqrt(M).
+      There exists C>0 such that for all real T>=3 and 1<=X<=T,
+      |E_offdiag|<=C sqrt(T X log(2X)), |E_diagonal|<=C T,
+      and L2<=C sqrt(T log(2X)). The exact decomposition is
+      M=T log X+E_diagonal+E_offdiag. A further uniform bound is
+      |M-T log X|<=C' (T+sqrt(T X log(2X))) with C'>0.
+      The integrand is interval integrable and M is nonnegative.
+      The bandwidth delta=(1/2)sqrt(log(2X)/(T X)) lies in [1/(2T),1/2].
+      Given D<=A log(2X) and Q<=B delta X, the off-diagonal coefficient
+      is explicitly 1024 A+1025 B/2; both premises are discharged locally.
+      Proper prime powers, the strict ordered nearby-frequency cutoff,
+      X=1, X=T and T=3 are included. Constants are existential.
+      No relative asymptotic at X=1 or effective numerical constant is claimed.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-MEANVALUE-FORMAL-001, PAIR-PRIME-COUNT-FORMAL-001, PAIR-PRIME-DIAGONAL-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairPrimeMean.lean
+      label: HigherCorrelations.pairPrimeMean_uniform
+      companion_declarations: "pairPrimeMeanBandwidth_admissible, pairPrimeMeanBandwidth_balance, pairPrimeMeanSquare_integrable, pairPrimeMean_decomposition, pairPrimeMeanOffdiag_of_bounds, pairPrimeMeanOffdiag_bound, pairPrimeMeanDiagonalError_bound, pairPrimeMeanL2Norm_bound, pairPrimeMean_combined_bound, pairPrimeMean_unit, pairPrimeMean_top, pairPrimeMean_minimal_height"
+      bookkeeping: research/lean-pair-prime-mean.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 7bd9063b975aef107776d962d935306e46da3d06e3e53d937d2ce8b5720b3a46
+    limit_order: "Use the already justified actual prime-series mean-value theorem at fixed X,T and admissible delta, then substitute the explicit bandwidth. No new interchange or simultaneous limit is required. Final bounds hold uniformly for T>=3 and 1<=X<=T."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator for all 18 public declarations, all public and three imported logarithm-bound axiom reports, and unfinished-proof rejection."
+      imported_inputs: "Previously formalized actual prime mean-value theorem, weighted nearby-prime bound and diagonal asymptotic; checked mathlib logarithm bounds, integration and square roots."
+      constants_scope: "The coefficient relative to input constants is explicit. The final constants are existential because the diagonal constants are existential; numerical effectivity remains unformalized."
+      baseline_audit_coverage: "The bounds and endpoints of PAIR-PRIME-MEAN-001 are recovered; its historical effective-constant assertion remains separate. The full RHS mean square, pair/triple asymptotics, historical ledger statuses and prior audit scope are unchanged."

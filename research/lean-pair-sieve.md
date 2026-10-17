@@ -109,6 +109,7 @@ external-kernel verification claim.
 ## Remaining work
 
 The subsequent [diagonal milestone](lean-pair-diagonal.md) supplies the
-diagonal asymptotic with existential constants. Next, optimize delta to
-assemble `PAIR-PRIME-MEAN-001`; effective diagonal constants remain separate.
+diagonal asymptotic with existential constants, and the
+[optimized mean-square milestone](lean-pair-prime-mean.md) assembles
+`PAIR-PRIME-MEAN-001` with the same effectivity gap.
 The sieve milestone itself supplies no mean-square or correlation asymptotic.

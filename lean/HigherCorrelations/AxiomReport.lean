@@ -1,3 +1,4 @@
+import HigherCorrelations.PairPrimeMean
 import HigherCorrelations.PairDiagonalEndpoints
 import HigherCorrelations.PairSieveEndpoints
 import HigherCorrelations.PairMeanEndpoints
@@ -836,3 +837,24 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms Erdos970.SmoothExistence
 #print axioms sum_mul_eq_sub_sub_integral_mul
 #print axioms Chebyshev.psi_le_const_mul_self
+#print axioms HigherCorrelations.pairPrimeMean_combined_bound
+#print axioms HigherCorrelations.pairPrimeMean_uniform
+#print axioms HigherCorrelations.pairPrimeMean_unit
+#print axioms HigherCorrelations.pairPrimeMean_top
+#print axioms HigherCorrelations.pairPrimeMean_minimal_height
+#print axioms HigherCorrelations.pairPrimeMean_log_bounds
+#print axioms HigherCorrelations.pairPrimeMeanBandwidth_pos
+#print axioms HigherCorrelations.pairPrimeMeanBandwidth_admissible
+#print axioms HigherCorrelations.pairPrimeMeanBandwidth_balance
+#print axioms HigherCorrelations.pairPrimeMeanSquare_integrable
+#print axioms HigherCorrelations.pairPrimeMeanSquare_nonneg
+#print axioms HigherCorrelations.pairPrimeMean_decomposition
+#print axioms HigherCorrelations.pairPrimeMeanOffdiag_of_bounds
+#print axioms HigherCorrelations.pairPrimeMeanOffdiag_bound
+#print axioms HigherCorrelations.pairPrimeMeanDiagonalError_bound
+#print axioms HigherCorrelations.pairPrimeMean_error_scale
+#print axioms HigherCorrelations.pairPrimeMeanSquare_upper
+#print axioms HigherCorrelations.pairPrimeMeanL2Norm_bound
+#print axioms Real.log_two_gt_d9
+#print axioms Real.log_two_lt_d9
+#print axioms Real.log_three_gt_d9

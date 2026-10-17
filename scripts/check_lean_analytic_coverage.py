@@ -41,9 +41,11 @@ PARTIAL = {
     'PAIR-PRIME-MEAN-001': (
         ['pairMeanPrime_meanvalue', 'pairMeanPrimeCoefficient_summable',
          'pairMeanPrimeCoefficient_sqrt', 'pairMeanPrimeFrequency_cutoff', 'pairMeanPrimeNearby_bound',
-         'pairMeanPrimeDiagonal_asymptotic', 'pairMeanPrimeDiagonal_upper'],
+         'pairMeanPrimeDiagonal_asymptotic', 'pairMeanPrimeDiagonal_upper',
+         'pairPrimeMean_uniform', 'pairPrimeMean_decomposition', 'pairPrimeMean_combined_bound',
+         'pairPrimeMeanBandwidth_admissible', 'pairPrimeMeanL2Norm_bound'],
         ['The Fourier mean-value input and actual prime-series specialization are checked.',
-         'The weighted nearby-prime sieve bound and diagonal asymptotic are checked. The optimized mean-square error and effective diagonal constants remain unformalized.']),
+         'The optimized mean-square error, diagonal error and L2 bound are checked with existential constants. The historical effective-constant assertion remains unformalized.']),
     'PAIR-EF-001': (
         ['pairUniform_formula', 'pairUniform_named_bounds', 'pairUniform_remainder_bound',
          'pairUniform_endpoint', 'pairUniform_zero_height', 'pairDSConstant_approximation'], []),
@@ -371,9 +373,27 @@ def derive():
             and diagonal_config['enable_nanoda'] is False, 'changed pair-diagonal verification scope')
     components.extend(diagonal['components'])
     names.extend(c['declaration'] for c in diagonal['components'])
+    prime_mean = json.loads(read('research/lean-pair-prime-mean-inventory.json'))
+    found = []
+    for module in prime_mean['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair-prime-mean solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in prime_mean['components']],
+            'pair-prime-mean inventory differs from source declarations')
+    prime_mean_config = json.loads(read('lean/VerificationChallenges/pair-prime-mean.json'))
+    require(prime_mean_config['theorem_names'] == [c['declaration'] for c in prime_mean['components'] if c['comparator_checked']],
+            'pair-prime-mean Comparator coverage differs from inventory')
+    require(prime_mean_config['permitted_axioms'] == config['permitted_axioms']
+            and prime_mean_config['enable_nanoda'] is False, 'changed pair-prime-mean verification scope')
+    components.extend(prime_mean['components'])
+    names.extend(c['declaration'] for c in prime_mean['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -408,7 +428,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Optimize the prime mean-square error using the checked Fourier mean-value input, weighted nearby-prime sieve bound and diagonal asymptotic. The diagonal constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Formalize the full prime-side squared norm, combining the checked optimized prime mean square with the archimedean and explicit-formula remainders. The diagonal and optimized mean-square constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -430,7 +450,24 @@ class CoverageTests(unittest.TestCase):
         self.assertFalse(prime['whole_claim_formalized'])
         self.assertIn('HigherCorrelations.pairMeanPrime_meanvalue', prime['components'])
         self.assertIn('HigherCorrelations.pairMeanPrimeDiagonal_asymptotic', prime['components'])
-        self.assertTrue(any('optimized mean-square' in gap for gap in prime['remaining_obligations']))
+        self.assertIn('HigherCorrelations.pairPrimeMean_uniform', prime['components'])
+        self.assertTrue(any('effective-constant' in gap for gap in prime['remaining_obligations']))
+
+    def test_prime_mean_effectivity_and_rhs_scope(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-PRIME-MEAN-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertIn('HigherCorrelations.pairPrimeMeanL2Norm_bound', node['components'])
+        self.assertIn('HigherCorrelations.pairPrimeMeanBandwidth_admissible', node['components'])
+        self.assertNotIn('PAIR-RHS-MEAN-001', COMPLETE_STATEMENTS)
+        rhs = indexed_blocks(read('research/theorem-ledger.yaml'))['PAIR-RHS-MEAN-001']
+        self.assertEqual(field(rhs, 'status'), 'proved-draft')
+
+    def test_prime_mean_comparator_scope_drift(self):
+        component = next(c for c in self.record['components']
+                         if c['declaration'] == 'HigherCorrelations.pairPrimeMean_uniform')
+        component['comparator_checked'] = False
+        with self.assertRaises(ValueError): validate(self.record)
 
     def test_diagonal_effectivity_remains_partial(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-PRIME-DIAGONAL-001')

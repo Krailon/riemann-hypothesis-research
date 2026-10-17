@@ -1,0 +1,1352 @@
+{
+  "assumptions": [
+    "UNCONDITIONAL"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "lean-version.log",
+      "name": "lean-version"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "python-version.log",
+      "name": "python-version"
+    },
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "git-version.log",
+      "name": "git-version"
+    },
+    {
+      "argv": [
+        "go",
+        "version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "go-version.log",
+      "name": "go-version"
+    },
+    {
+      "argv": [
+        "landrun",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "landrun-version.log",
+      "name": "landrun-version"
+    },
+    {
+      "argv": [
+        "lake",
+        "update",
+        "OAI"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "resolve.log",
+      "name": "resolve"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "scripts/prepare_lean_diagonal.py"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "prepare-diagonal.log",
+      "name": "prepare-diagonal"
+    },
+    {
+      "argv": [
+        "lake",
+        "exe",
+        "cache",
+        "get"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "mathlib-cache.log",
+      "name": "mathlib-cache"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.PairPrimeMean"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-prime-mean-build.log",
+      "name": "pair-prime-mean-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-prime-mean.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-prime-mean-comparator.log",
+      "name": "pair-prime-mean-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-prime-mean-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "pair-prime-mean-unfinished-rejected.log",
+      "name": "pair-prime-mean-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.PairDiagonalEndpoints"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-diagonal-build.log",
+      "name": "pair-diagonal-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-diagonal.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-diagonal-comparator.log",
+      "name": "pair-diagonal-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-diagonal-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "pair-diagonal-unfinished-rejected.log",
+      "name": "pair-diagonal-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.PairSieveEndpoints"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-sieve-build.log",
+      "name": "pair-sieve-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-sieve.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-sieve-comparator.log",
+      "name": "pair-sieve-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-sieve-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "pair-sieve-unfinished-rejected.log",
+      "name": "pair-sieve-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.PairMeanEndpoints"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-meanvalue-build.log",
+      "name": "pair-meanvalue-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-meanvalue.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-meanvalue-comparator.log",
+      "name": "pair-meanvalue-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-meanvalue-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "pair-meanvalue-unfinished-rejected.log",
+      "name": "pair-meanvalue-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.PairUniformFormula"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-uniform-build.log",
+      "name": "pair-uniform-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-uniform.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-uniform-comparator.log",
+      "name": "pair-uniform-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-uniform-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "pair-uniform-unfinished-rejected.log",
+      "name": "pair-uniform-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.PairExactFormula"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-exact-build.log",
+      "name": "pair-exact-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-exact.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-exact-comparator.log",
+      "name": "pair-exact-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-exact-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "pair-exact-unfinished-rejected.log",
+      "name": "pair-exact-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.PairedMellin"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "paired-mellin-build.log",
+      "name": "paired-mellin-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/paired-mellin.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "paired-mellin-comparator.log",
+      "name": "paired-mellin-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/paired-mellin-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "paired-mellin-unfinished-rejected.log",
+      "name": "paired-mellin-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.PairSeriesConvergence"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-series-build.log",
+      "name": "pair-series-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-series.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-series-comparator.log",
+      "name": "pair-series-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/pair-series-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "pair-series-unfinished-rejected.log",
+      "name": "pair-series-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.UniformHeight"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "uniform-height-build.log",
+      "name": "uniform-height-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/uniform-height.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "uniform-height-comparator.log",
+      "name": "uniform-height-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/uniform-height-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "uniform-height-unfinished-rejected.log",
+      "name": "uniform-height-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.IntegralProfile"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "integral-profile-build.log",
+      "name": "integral-profile-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/integral-profile.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "integral-profile-comparator.log",
+      "name": "integral-profile-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/integral-profile-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "integral-profile-unfinished-rejected.log",
+      "name": "integral-profile-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.RationalTransfer"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "rational-transfer-build.log",
+      "name": "rational-transfer-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/rational-transfer.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "rational-transfer-comparator.log",
+      "name": "rational-transfer-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/rational-transfer-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "rational-transfer-unfinished-rejected.log",
+      "name": "rational-transfer-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.ActualOccurrencesFoundation"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "actual-occurrences-build.log",
+      "name": "actual-occurrences-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/actual-occurrences.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "actual-occurrences-comparator.log",
+      "name": "actual-occurrences-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/actual-occurrences-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "actual-occurrences-unfinished-rejected.log",
+      "name": "actual-occurrences-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.SummabilityFoundation"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "summability-build.log",
+      "name": "summability-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/summability.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "summability-comparator.log",
+      "name": "summability-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/summability-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "summability-unfinished-rejected.log",
+      "name": "summability-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "scripts/check_lean_analytic_coverage.py"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "analytic-coverage.log",
+      "name": "analytic-coverage"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.HorizontalSquareFoundation"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "horizontal-square-build.log",
+      "name": "horizontal-square-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/horizontal-square.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "horizontal-square-comparator.log",
+      "name": "horizontal-square-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/horizontal-square-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "horizontal-square-unfinished-rejected.log",
+      "name": "horizontal-square-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations.FiniteFoundation"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "finite-build.log",
+      "name": "finite-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/finite-foundation.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "finite-comparator.log",
+      "name": "finite-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/finite-unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "finite-unfinished-rejected.log",
+      "name": "finite-unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/ComparatorChallenges/QuasiRiemannHypothesis.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "upstream-comparator.log",
+      "name": "upstream-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "build",
+        "HigherCorrelations"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "project-build.log",
+      "name": "project-build"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/horizontal-strip.json"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "project-comparator.log",
+      "name": "project-comparator"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "/home/stackcanary/riemann-hypothesis-research/.tools/comparator/.lake/build/bin/comparator",
+        "lean/VerificationChallenges/unfinished.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "log": "unfinished-rejected.log",
+      "name": "unfinished-rejected"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "lean/HigherCorrelations/AxiomReport.lean"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "axioms.log",
+      "name": "axioms"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "check_pair_*.py"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "pair-regressions.log",
+      "name": "pair-regressions"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "check_triple_*.py"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "log": "triple-regressions.log",
+      "name": "triple-regressions"
+    }
+  ],
+  "dependency_checkouts": {
+    "AINTLIB": {
+      "rev": "160e446617a2168c34c95bbe7a76c4105b392434",
+      "tracked_diff": "dependency-AINTLIB.diff",
+      "tracked_diff_sha256": "b02b3c2b367ba7b3b52e432a80ad991100c5473db14d24dc9c06244d7080f2e3"
+    },
+    "AbsorptionCutoff": {
+      "rev": "41c45c6d72e979419e46224bb7b4be5cee31f2b5",
+      "tracked_diff": "dependency-AbsorptionCutoff.diff",
+      "tracked_diff_sha256": "8b35104dc12f807f594f7a61f7a183d967edcd0e601c7172e0e851e4c3adb3ba"
+    },
+    "BibtexQuery": {
+      "rev": "4d8616fd4870d0a3453d845770833eac7951fe1c",
+      "tracked_diff": "dependency-BibtexQuery.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ClassFieldTheory": {
+      "rev": "2eb22d6485af45f29c5219de6c49f196a61c4f49",
+      "tracked_diff": "dependency-ClassFieldTheory.diff",
+      "tracked_diff_sha256": "293b2c1578e9d0962d75be9fde02d6bd3865db924baf34f4e44dd692f4e575b7"
+    },
+    "Cli": {
+      "rev": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "tracked_diff": "dependency-Cli.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "LeanArchitect": {
+      "rev": "468e8f58fb4ad6e6ad672a08da6d0d0531e95a97",
+      "tracked_diff": "dependency-LeanArchitect.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "LeanSearchClient": {
+      "rev": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "tracked_diff": "dependency-LeanSearchClient.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "MD4Lean": {
+      "rev": "31907cc18f48a95384f99cee5582c00fb39e0f67",
+      "tracked_diff": "dependency-MD4Lean.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "PrimeCert": {
+      "rev": "0803c2f6bd289c09704c7d352bb8fcf770cbb9b2",
+      "tracked_diff": "dependency-PrimeCert.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "PrimeNumberTheoremAnd": {
+      "rev": "c39a751132c88b6e8080b74c74023fd95b3d8be0",
+      "tracked_diff": "dependency-PrimeNumberTheoremAnd.diff",
+      "tracked_diff_sha256": "df8dd1054a79d6537a41a824f233425a7b887891dc471bfdb5ccb93ae5135a10"
+    },
+    "Qq": {
+      "rev": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "tracked_diff": "dependency-Qq.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "SphereEversion": {
+      "rev": "9c53f91e2a281199163ecea04dc4976cb79e2076",
+      "tracked_diff": "dependency-SphereEversion.diff",
+      "tracked_diff_sha256": "753b865c32d8d44bc61f61f6e0cd36402ab28911dd7308930a8effb34ed3d63f"
+    },
+    "StrongPNT": {
+      "rev": "2f5835c322314f55f1026ec2f139d704b7c45c69",
+      "tracked_diff": "dependency-StrongPNT.diff",
+      "tracked_diff_sha256": "e85a8e524100c6b7c836f2fdb1643cdce8dc5714c8e4d3ff25513fc46f71644a"
+    },
+    "TauCeti": {
+      "rev": "3bed7e37f3c504a99e8c07e9f309540812a7aa90",
+      "tracked_diff": "dependency-TauCeti.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "UnicodeBasic": {
+      "rev": "0e569d08b6443ce0908d356884c765397253e2f0",
+      "tracked_diff": "dependency-UnicodeBasic.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Zeta3Irrational": {
+      "rev": "e8785315a01c8fbcddaa0fc03b3c8b29a61bc1f1",
+      "tracked_diff": "dependency-Zeta3Irrational.diff",
+      "tracked_diff_sha256": "5da849f952320ccb5b02f5e174caab3c7e1efcb6a45e49f29e7dcc7941409d2a"
+    },
+    "aesop": {
+      "rev": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "tracked_diff": "dependency-aesop.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "batteries": {
+      "rev": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "tracked_diff": "dependency-batteries.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "belyi": {
+      "rev": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "tracked_diff": "dependency-belyi.diff",
+      "tracked_diff_sha256": "ce3a1178d2933469279b4ee3654e8d5201b13269dae0ab97ded57996a85f217e"
+    },
+    "carleson": {
+      "rev": "306ae5b29300771aece1aa39f0a939183cc59486",
+      "tracked_diff": "dependency-carleson.diff",
+      "tracked_diff_sha256": "8aa67adaeb6ef56967aa78c47a6c743f03ac72c125f503219a72dee5be23168c"
+    },
+    "checkdecls": {
+      "rev": "3d425859e73fcfbef85b9638c2a91708ef4a22d4",
+      "tracked_diff": "dependency-checkdecls.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "doc-gen4": {
+      "rev": "953c8992d174b4e56955e01e101d46668c68f2bb",
+      "tracked_diff": "dependency-doc-gen4.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "elliptic-curves": {
+      "rev": "bebec3fc9f2602e81c83e5236789572a541c85fb",
+      "tracked_diff": "dependency-elliptic-curves.diff",
+      "tracked_diff_sha256": "dc491936659ca9abfe53b18348287069c06272a4b3c8cef393e5dc7b276122ff"
+    },
+    "fixed-point-theorems": {
+      "rev": "770940ddf9878cf61952ed53d910b92bca841838",
+      "tracked_diff": "dependency-fixed-point-theorems.diff",
+      "tracked_diff_sha256": "d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5"
+    },
+    "formal-schemes": {
+      "rev": "51aa935079537bf4dc580751a6e70727fb23ca93",
+      "tracked_diff": "dependency-formal-schemes.diff",
+      "tracked_diff_sha256": "2b1798c53feb567b9c36a1d88ccf8ed67b3bbafd93cec667135f59aa6f85c76b"
+    },
+    "genl": {
+      "rev": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+      "tracked_diff": "dependency-genl.diff",
+      "tracked_diff_sha256": "2c5826a9c0b0d32b077fea86880c6fb4f17cf5c10e06f9649f95f77a88574c93"
+    },
+    "gromov": {
+      "rev": "8db79f13cf211b570e3116301d91379fbc01cf3e",
+      "tracked_diff": "dependency-gromov.diff",
+      "tracked_diff_sha256": "6e267d1ae3a4d93e860aadd388612a8eedef9c268bae3fc91450ff9cac131816"
+    },
+    "heights": {
+      "rev": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "tracked_diff": "dependency-heights.diff",
+      "tracked_diff_sha256": "bd3b58a301df273a199d9a0fe486b25d194df176afe32583289d42b64ab583a3"
+    },
+    "importGraph": {
+      "rev": "e928b72544873815af278d38681b31c0293588e3",
+      "tracked_diff": "dependency-importGraph.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "iut": {
+      "rev": "d9465c111ec4073709f67e9fccec7e3eb374a816",
+      "tracked_diff": "dependency-iut.diff",
+      "tracked_diff_sha256": "610ef069f7de5a5d500ead287287b60f193269ea4ddc0011101a9c7c98356dd4"
+    },
+    "leancert": {
+      "rev": "7f91b6eb3567437f6cfac03ed279706603ee22f4",
+      "tracked_diff": "dependency-leancert.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "leansqlite": {
+      "rev": "f9cdb9eacb5c8b8ecc02ee9fd9e568d7d28c1416",
+      "tracked_diff": "dependency-leansqlite.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mathlib": {
+      "rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "tracked_diff": "dependency-mathlib.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "oka": {
+      "rev": "75dcdc3faadd10b986afb9283e89902bcdddecd4",
+      "tracked_diff": "dependency-oka.diff",
+      "tracked_diff_sha256": "1c9ade85238dbda269202455527588c94726f468b729bb7237873f7d759f18fb"
+    },
+    "orbicurve-cores": {
+      "rev": "61616dcd77fbe45c083a8ebfa7cc80728f86e841",
+      "tracked_diff": "dependency-orbicurve-cores.diff",
+      "tracked_diff_sha256": "fdccdad695d33a3316f394db9adc1a2077d8f1a489b6fcd9d091fe9cf7de7a26"
+    },
+    "pi1": {
+      "rev": "ca7def953193f861a462aa0831eec8f0a31ff69f",
+      "tracked_diff": "dependency-pi1.diff",
+      "tracked_diff_sha256": "fd2c281ff741eb1529019a47ddc628dba0d6fe25dfb2e8a5b25bbf1acebc88cb"
+    },
+    "plausible": {
+      "rev": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "tracked_diff": "dependency-plausible.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "proofwidgets": {
+      "rev": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "tracked_diff": "dependency-proofwidgets.diff",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "rellich-kondrachov": {
+      "rev": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23",
+      "tracked_diff": "dependency-rellich-kondrachov.diff",
+      "tracked_diff_sha256": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8"
+    },
+    "schoenflies-lean": {
+      "rev": "05a43d29cde026618777db3d4e4316204ccca237",
+      "tracked_diff": "dependency-schoenflies-lean.diff",
+      "tracked_diff_sha256": "f46339a5e1e7ff2291ef57925e0c50564a47281fdb388da944921b305fd0484f"
+    },
+    "tate-curves-theta": {
+      "rev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+      "tracked_diff": "dependency-tate-curves-theta.diff",
+      "tracked_diff_sha256": "79dddb71e19a657d800f49951fec4f4772697b51b1620c948fac325c0946304b"
+    },
+    "tempered-fundamental-groups": {
+      "rev": "2006651f52b70ea2fe3388238c7d9db14d21748f",
+      "tracked_diff": "dependency-tempered-fundamental-groups.diff",
+      "tracked_diff_sha256": "2e9f032eea25a1f458f2ab4e48f0a27e9f5e48d74b7b7553d821dfeeffc87e4e"
+    }
+  },
+  "external_kernel": false,
+  "finished_utc": "2026-10-17T18:39:41.051649+00:00",
+  "fresh_project_build": false,
+  "outputs": {
+    "actual-occurrences-build.log": "09a42bed23e6acfca6d70d0ab25ba67994c2c5a0775cc75f5243976d42f98e26",
+    "actual-occurrences-comparator.log": "3cb96e29113514b2ae7e0d2d9448f47473f9a1f06d741d77db5b1cf01ac70740",
+    "actual-occurrences-unfinished-rejected.log": "ae11cc073708702ea50740e6463044a7b57efca16f3e5a8fdf953acac93c3c48",
+    "analytic-coverage.log": "a34265e48efe5502e30c57f4402d5b4ec7cad220cfe4440abbb48bd43c3a63da",
+    "axioms.log": "a4771348719462511921d8b7341c2ec2ede79cd1dac6119def5a4caf814f9b10",
+    "dependency-AINTLIB.diff": "b02b3c2b367ba7b3b52e432a80ad991100c5473db14d24dc9c06244d7080f2e3",
+    "dependency-AbsorptionCutoff.diff": "8b35104dc12f807f594f7a61f7a183d967edcd0e601c7172e0e851e4c3adb3ba",
+    "dependency-BibtexQuery.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-ClassFieldTheory.diff": "293b2c1578e9d0962d75be9fde02d6bd3865db924baf34f4e44dd692f4e575b7",
+    "dependency-Cli.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-LeanArchitect.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-LeanSearchClient.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-MD4Lean.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-PrimeCert.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-PrimeNumberTheoremAnd.diff": "df8dd1054a79d6537a41a824f233425a7b887891dc471bfdb5ccb93ae5135a10",
+    "dependency-Qq.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-SphereEversion.diff": "753b865c32d8d44bc61f61f6e0cd36402ab28911dd7308930a8effb34ed3d63f",
+    "dependency-StrongPNT.diff": "e85a8e524100c6b7c836f2fdb1643cdce8dc5714c8e4d3ff25513fc46f71644a",
+    "dependency-TauCeti.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-UnicodeBasic.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-Zeta3Irrational.diff": "5da849f952320ccb5b02f5e174caab3c7e1efcb6a45e49f29e7dcc7941409d2a",
+    "dependency-aesop.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-batteries.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-belyi.diff": "ce3a1178d2933469279b4ee3654e8d5201b13269dae0ab97ded57996a85f217e",
+    "dependency-carleson.diff": "8aa67adaeb6ef56967aa78c47a6c743f03ac72c125f503219a72dee5be23168c",
+    "dependency-checkdecls.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-doc-gen4.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-elliptic-curves.diff": "dc491936659ca9abfe53b18348287069c06272a4b3c8cef393e5dc7b276122ff",
+    "dependency-fixed-point-theorems.diff": "d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5",
+    "dependency-formal-schemes.diff": "2b1798c53feb567b9c36a1d88ccf8ed67b3bbafd93cec667135f59aa6f85c76b",
+    "dependency-genl.diff": "2c5826a9c0b0d32b077fea86880c6fb4f17cf5c10e06f9649f95f77a88574c93",
+    "dependency-gromov.diff": "6e267d1ae3a4d93e860aadd388612a8eedef9c268bae3fc91450ff9cac131816",
+    "dependency-heights.diff": "bd3b58a301df273a199d9a0fe486b25d194df176afe32583289d42b64ab583a3",
+    "dependency-importGraph.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-iut.diff": "610ef069f7de5a5d500ead287287b60f193269ea4ddc0011101a9c7c98356dd4",
+    "dependency-leancert.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-leansqlite.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-mathlib.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-oka.diff": "1c9ade85238dbda269202455527588c94726f468b729bb7237873f7d759f18fb",
+    "dependency-orbicurve-cores.diff": "fdccdad695d33a3316f394db9adc1a2077d8f1a489b6fcd9d091fe9cf7de7a26",
+    "dependency-pi1.diff": "fd2c281ff741eb1529019a47ddc628dba0d6fe25dfb2e8a5b25bbf1acebc88cb",
+    "dependency-plausible.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-proofwidgets.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dependency-rellich-kondrachov.diff": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+    "dependency-schoenflies-lean.diff": "f46339a5e1e7ff2291ef57925e0c50564a47281fdb388da944921b305fd0484f",
+    "dependency-tate-curves-theta.diff": "79dddb71e19a657d800f49951fec4f4772697b51b1620c948fac325c0946304b",
+    "dependency-tempered-fundamental-groups.diff": "2e9f032eea25a1f458f2ab4e48f0a27e9f5e48d74b7b7553d821dfeeffc87e4e",
+    "finite-build.log": "00ced90f5ca6e6d1c70a305a3c66d6f470db5aa19b6038fd2f292c106ad3f9ff",
+    "finite-comparator.log": "eb466522f10f58749a817eb854aa5feecb0886f9527cd7dd79efa15d21a58e10",
+    "finite-unfinished-rejected.log": "b6575d1f4309572ab59c5dab1867b3ec3217019f41b3fa36a5ea7d16f031f13c",
+    "git-version.log": "25f3602b5caaf92437be1e76b53698e8d73f14a6c71c2e91c8d5875f923ab29f",
+    "go-version.log": "c31165db0158bfe9553d73ece6961660977ea9def4c751059ce87497f2d69b9f",
+    "horizontal-square-build.log": "45e89fa6c8ade574429eb54b7201c3e30ebc659b166d348f2ebbe70033006ad6",
+    "horizontal-square-comparator.log": "f452a3a730e5667021da94c4ce3532a5b425c1af52bef130fa520cd14d7a0e34",
+    "horizontal-square-unfinished-rejected.log": "0e864cd87d38803fd8407c8fa987bd50a5e17c50456fbddd70ef3af6e343fdf7",
+    "integral-profile-build.log": "d03c6bb60b19231f754eb0aa404121ad71dbbea726ce79d2f60dbe9828cab5f3",
+    "integral-profile-comparator.log": "5471ae8f9c61f15b89d3a40fdccf7191ef5312da2ff291ae056ae5fa9fd04d74",
+    "integral-profile-unfinished-rejected.log": "3ffbf25b82f9055e231660fdd0c0477f9690338379ed2b74fb4c8af386fe1922",
+    "landrun-version.log": "93e50f952378749324f7be61313e7d902c6a4c65e3d836de23acdc8aab4e46f0",
+    "lean-version.log": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680",
+    "mathlib-cache.log": "c91560991905421c62df42770dd6d12c6e7e9850eb4e36e4414ef0f560d2d861",
+    "pair-diagonal-build.log": "7f71fb077679fa37f18d7d988ca374ef8f66c02f13e2cadf24cb9ad0effa2a47",
+    "pair-diagonal-comparator.log": "f61bb56ee13c1cfb82ebc5ffc7d514e8ce0391a2adaaeebd429017c0c48560eb",
+    "pair-diagonal-unfinished-rejected.log": "a478728e679f32a67aa7cadb959703cc8c144742c810b8e344b49d14593e0faf",
+    "pair-exact-build.log": "d4dd06c57f3b05b2bb20cac3f3ced849be388a7c867fafa869331456bdef8667",
+    "pair-exact-comparator.log": "4c3af7ae22e6e2545616e453b91ea3168c8d91d7c402c637ccad597c9342c4e8",
+    "pair-exact-unfinished-rejected.log": "9e97ccd37c569e6d4548946f59ed344ecf26a2b45fee5f2ce94ae639d59fd288",
+    "pair-meanvalue-build.log": "c5f2c2e46f54dbb822cfac82ab2dadd6cc5dfbc2579fdc99ec9f80b14f75954c",
+    "pair-meanvalue-comparator.log": "f98da49868ca5b0d93820100b6c514f92d408f6162097ca54132fb5fc0bf9702",
+    "pair-meanvalue-unfinished-rejected.log": "32e4e0dc4c42cf7bb01f0cc76545bc613e8d26522b9b5f4ff8574d0bc00da219",
+    "pair-prime-mean-build.log": "6f58527e9f93d48b06af4a0b82c7b617a3dd6ccd3eed5b47933dc07d977c9194",
+    "pair-prime-mean-comparator.log": "ec4b3233c770b651df0232c01ef7e37decf8e2fc0b3ef33f36cd9d6e0f125558",
+    "pair-prime-mean-unfinished-rejected.log": "a9ada2609760f27356f63b1a75f421434f3658c7763dc9510bc40c5d1a8bdc03",
+    "pair-regressions.log": "9b4b07d6a47ddb5ded8345566d606ccb55b71f60479dc1cd7a35c6141cf1ae33",
+    "pair-series-build.log": "2ae1d91194835f667e65ecfa83267b7e07d7f1a8352d96e3ca2c4832edf373b7",
+    "pair-series-comparator.log": "e50b9e9e5b4164508ca33863edca1420ead35e935c01417443da32b7b98e68bc",
+    "pair-series-unfinished-rejected.log": "33352d7216c2c9d8073b3ba258aa7c23f4d7ba4b92b79f8d4d865566e3b61c61",
+    "pair-sieve-build.log": "cec3ba7ab115079ba91cab4bb2e18e0fff5a4a15baff954a040096eaa4f3a3a1",
+    "pair-sieve-comparator.log": "3a7b2d0b0b600f35104d0c4db3e985dc2d0f13df80ce924d9d84c1abc07c2add",
+    "pair-sieve-unfinished-rejected.log": "0c81b1249f6d7a549d92b363208dd43a0d5f85f237f0d5f126f649fcb1781c76",
+    "pair-uniform-build.log": "098f4a6623b5f258fdb4df7d9e6767ce11653c726d39e296f3608fcfdd01b574",
+    "pair-uniform-comparator.log": "af55f554fd55f6c8b0ea0fd595e28d63f219390f0c870e8aec94ae3eaebf327e",
+    "pair-uniform-unfinished-rejected.log": "3ec13c085c4d3c2de63d888d8f00d2e37a23462fbbe361d022b81533e7e8fb99",
+    "paired-mellin-build.log": "153efc6415fa4e130ff68edd6adc70211b137b92dd2b7f9c15789715bb2e0118",
+    "paired-mellin-comparator.log": "05712c7ac21702c12a3f9fe2ff6603877427c65982fa235e458349ed299c0bf3",
+    "paired-mellin-unfinished-rejected.log": "e98935a0c4c1b3e049b300bb12d0c83b1dbea507440d46a8ecee11facedc4b74",
+    "prepare-diagonal.log": "d0b34fb5e27245406755e1f5f768ffea3d6248f688a445e1d7bf6c329fca1c7b",
+    "project-build.log": "33604415beda3c0c073bbc5160923509f62f9b1c6fe48c64cc477208577911f2",
+    "project-comparator.log": "dd3c91ae0aa4d72724441acd8e17724ec702ec10a9b1ae8b998cbe4adbc2b780",
+    "python-version.log": "5b3e43dc38ca01e3f5a7854ba50d4330864b0c1e0f646650b2c78cf072acc366",
+    "rational-transfer-build.log": "afd086916e15379829fe80f53730a9ccc3ed766e04a06bf05d21b6dbc3468ec8",
+    "rational-transfer-comparator.log": "a64fac04321f1ab59c279c90846ffe42f64a7ab708baa2ae18a1b44076fb4ac8",
+    "rational-transfer-unfinished-rejected.log": "68c47206868ea543e052a7412c5dd3d0631f9c9a64283670d64f66c2cd82044f",
+    "resolve.log": "e674108cc3167ceb478026d1bc0462addb4f0351807e5d5ec61b49bdfb91b61f",
+    "summability-build.log": "a5849ea5770bc4ffb4f9c49679f205d3fffb22632993d70a933995c7e615a7f9",
+    "summability-comparator.log": "9bedc40fe796b350eef2fccd3f2d04283502cdb13c929dbff0d5360edec7f8c7",
+    "summability-unfinished-rejected.log": "fc71f38066b5f041b8b92345f4f6a167775656b4fa02f2304225edbd2fec0d3c",
+    "triple-regressions.log": "5bc239a34c6b1baeddcd54b101ead4c058611c5e4f77c214c3493955361cd120",
+    "unfinished-rejected.log": "ed1544a78d81b0e5e2fe3542ac211d90c67afb454bf56384c9b068c0f6617ccb",
+    "uniform-height-build.log": "06110ffd60f0bb99a2ea0881c99374dde3e762f82f1378842b82f9e7bc712a6b",
+    "uniform-height-comparator.log": "dd67090a7b499210a73a2f2153b65d1f1a8435fa3b3f4427979c8aa2194641cd",
+    "uniform-height-unfinished-rejected.log": "318fbf7ffd551e6d77280cdbb54b3f20bd67e62914de9c7240e3b5bfe9d6d483",
+    "upstream-comparator.log": "c691495add05085fb22eefef22c7b9bceed8ce8e2e86137420cf08ab46c16c91"
+  },
+  "pins": {
+    "comparator": {
+      "build_toolchain_override": "leanprover/lean4:v4.34.1",
+      "external_kernel": false,
+      "lean4export_rev": "076e8e57707e813375e8f9da8bf989799ace9680",
+      "rev": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+      "url": "https://github.com/leanprover/comparator.git"
+    },
+    "elan": {
+      "sha256": "620db834935d0da55ac9cda207b2e370e8034061cbb0228af5eb6c14b02f0c0c",
+      "url": "https://github.com/leanprover/elan/releases/download/v4.2.0/elan-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    "go": {
+      "sha256": "031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a",
+      "url": "https://go.dev/dl/go1.26.1.linux-amd64.tar.gz"
+    },
+    "landrun": {
+      "rev": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+      "url": "https://github.com/Zouuup/landrun.git"
+    },
+    "lean": "leanprover/lean4:v4.34.1",
+    "schema_version": 1,
+    "upstream": {
+      "mathlib_rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "rev": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "subdir": "lean",
+      "url": "https://github.com/openai/math.git"
+    }
+  },
+  "schema_version": 1,
+  "source_commit": "8a5df376bcc44366bbb4b99c9f80c3921319b6e2",
+  "source_hashes": {
+    "lake-manifest.json": "6319890fd2ad87d0b41ae9e4c027b80feb86023c6d7cb27fd06837f52d93b9a2",
+    "lakefile.lean": "e5399fd5bd6096e915c43cd2d8d55080f0e3e6e7690acdcfff6fbdc638321d59",
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/HigherCorrelations.lean": "12f56d0fa52cec3774ecea724312f332cb858bbb50986df9b5c5072fd2549f00",
+    "lean/HigherCorrelations/ActualCorrelationConvergence.lean": "a8d47ed201f0765cb7be4be857677366ef0a3c0164126393eae0201938b1d284",
+    "lean/HigherCorrelations/ActualCorrelationDefinitions.lean": "ecd05757e7430f5fdf95e3f3b8e53ccfd34fd86e20bdf66f8fa143c492ce52c6",
+    "lean/HigherCorrelations/ActualOccurrenceIdentities.lean": "fdecb4adf67c44b788df83b7377493be33f748c8b70ae804db88ab3a7b3d2025",
+    "lean/HigherCorrelations/ActualOccurrencesFoundation.lean": "8d2d444f186caa413e3d5474c790058a60eff1f31e2d9c832f8a123f85b35e07",
+    "lean/HigherCorrelations/AxiomReport.lean": "6faffd801c11bc7109b6f6db9904ab057c8818bc8b17e4c837865ddaec81a447",
+    "lean/HigherCorrelations/CompactFourierFamily.lean": "06dda804203cff4582aa934e6883027a5fe0977d2dd0039337b07979a3d2d6a3",
+    "lean/HigherCorrelations/ComplexFourierDecay.lean": "9d74b16e9ba94a630fd1caa688e1e37388965b7a8a7f5868f014447f5b642f74",
+    "lean/HigherCorrelations/ComplexFourierDefinitions.lean": "ee16e5cbea97351fb1e64b376e34afce41fedf191470215bb5a8ff1483384ebe",
+    "lean/HigherCorrelations/Definitions.lean": "8615615bf0d51d82665bdc5ea028d07dd124dc57e85112135080cc38f932ce15",
+    "lean/HigherCorrelations/FiniteDefinitions.lean": "9909be30adad286b826d9e1903aa432118c394cc2393b24d557aff98eab7f7f7",
+    "lean/HigherCorrelations/FiniteExamples.lean": "79cc89c010cdddc192b086c775ed52156cef604c03eb76825bee5bb20216b918",
+    "lean/HigherCorrelations/FiniteFoundation.lean": "dc5555cedf3810b1a8ad1d924c8b530b30e8d88107f0a5467aaa9968ad9916dc",
+    "lean/HigherCorrelations/FinitePatterns.lean": "6610f00816970ccf89ee1d732dd00e669755c23649c01e635747bd0d6811df07",
+    "lean/HigherCorrelations/FiniteReflection.lean": "b1145463973042f9d861f610a6fac45846f663bfd112b49dcb840070bbb0d86e",
+    "lean/HigherCorrelations/FiniteSigns.lean": "a5c754bc27ec854b6cb6c00385492302d48b8c0fe4d4e82491a0cd175f1b20f0",
+    "lean/HigherCorrelations/HorizontalSquare.lean": "4ad9502fb05a635cc6c41e4aff69c85ad3cd7f0dcca21265f29aa80ca88e6280",
+    "lean/HigherCorrelations/HorizontalSquareDefinitions.lean": "83785fd4470e1cf8ce7bf2845aa5710c581f0bf8b6f98d6b76178e01bebdae5c",
+    "lean/HigherCorrelations/HorizontalSquareExamples.lean": "8b685355605547c69dc3e0e4053900f59efddc30bfb22c9bf05ca1582b2818af",
+    "lean/HigherCorrelations/HorizontalSquareFoundation.lean": "2f0242bb6ff0b37705a0cb967f381cbcd73c4a2528f7e1b6e860473474bc2781",
+    "lean/HigherCorrelations/HorizontalStrip.lean": "ec99a3b409dad4b5c4616354dadc2d1ad48c9af609be16c3a286e01ec9773a7b",
+    "lean/HigherCorrelations/IntegralProfile.lean": "7faa496f315e19de8a7e21c00e7320af713298bc283c848b65b301ea454e1ebf",
+    "lean/HigherCorrelations/IntegralProfileDefinitions.lean": "e67c206077a01cc4cca8244b690758c65ef00b99d9906010402837f85d1b2a2c",
+    "lean/HigherCorrelations/IntervalZeroCounting.lean": "d16a0e02968b5c67abf2f5fbd5cecb04cfe9efe47a4d3f70fbced170e8a04ea4",
+    "lean/HigherCorrelations/KernelTailBounds.lean": "7508265a20a6f5b4509188cf98b05b8c12cb868652d220baf45c712d471821d5",
+    "lean/HigherCorrelations/KernelTailShells.lean": "9d5dd5545e5ed410550633c8cf91f0e1e06f5399d8866a02c035d5e36561d5ea",
+    "lean/HigherCorrelations/LocalJensenBound.lean": "44d6234b12982cae790f32fcbe3d8073618b9aca1c6125e4449f06ff52557928",
+    "lean/HigherCorrelations/LocalOccurrenceIntervals.lean": "e08c7b383140f8609593deeccd831448232ebee8537417436c14d0fe65f18a8b",
+    "lean/HigherCorrelations/LocalZeroCountDefinitions.lean": "625739bbc351ec3f8208d5a07b85709f19f2507b2ed2d7d8354ce133c7f1ad84",
+    "lean/HigherCorrelations/LocalZeroCounting.lean": "0cf4756d572b7b9f97db8a382d653d57ded21ca6586efdf46fadb6ef6a53fa44",
+    "lean/HigherCorrelations/LocalZetaGrowth.lean": "da317fe176a4fa8a4dcefd376f05dbe60af5c5afbfbc781c713b06cb1f116591",
+    "lean/HigherCorrelations/OccurrenceIntegration.lean": "dae927652dd6741bbd8ee22f0e056da9b90f4820e092787e7939687066230566",
+    "lean/HigherCorrelations/OccurrenceLimits.lean": "66ea8c46cafe67ed1bb91e7f198e68a9d5afec987da1430e6b460989362767fc",
+    "lean/HigherCorrelations/OccurrenceSummability.lean": "8f2e4e78447d500ec6b4c3c824bd971363beb4d1c0761980fbbdc437da9f7a32",
+    "lean/HigherCorrelations/PairArchErrorBound.lean": "a3419c8b0a637b49832a8ef9b6a817801332e756012198180fdb283b54fc8a9d",
+    "lean/HigherCorrelations/PairBoundaryLimits.lean": "d8d0b5ff876e09121db64e12c96ef5e3c0dbf1d14434895e07f833e970753bcf",
+    "lean/HigherCorrelations/PairChiIdentity.lean": "e5ff0fbab48f3dc75037a6071e0ac07ec10d5e33f5c21f8d7b3fb6d7ea5683dc",
+    "lean/HigherCorrelations/PairContourAlgebra.lean": "6f81635198224a3142a88a3e144d60d32f0ff2cbd11ddc514a849c8e2e1f2821",
+    "lean/HigherCorrelations/PairContourMeromorphic.lean": "617bda08029ce4d350a17f28fd6fe4f39db8e57de495f1e44878a55b60f5e0a3",
+    "lean/HigherCorrelations/PairContourPoleSets.lean": "22b136057e2671404b08979f6794cfbaf35d81f1f13e300d3fa733692c834c46",
+    "lean/HigherCorrelations/PairContourResidues.lean": "6c559c1915bee2504411f51295474ebea299eff73ee5ecef0f275a26d979855f",
+    "lean/HigherCorrelations/PairDSConstantTail.lean": "c81aff94b0314bcc7bcab5ffa9ea8084432ef7949e5b60a45f322d6fa81bb19f",
+    "lean/HigherCorrelations/PairDiagonalAbel.lean": "e7fabf147ea532ab6df2b6f09d1ef90533ee88ecfb2f3a389a2adfbf4516caa3",
+    "lean/HigherCorrelations/PairDiagonalAlgebra.lean": "09b57a2cf636a1e46048f72a51da942c8525f50ad80438a99f6b62f72292e1f2",
+    "lean/HigherCorrelations/PairDiagonalAsymptotic.lean": "bab80f367915efbb2e47eb76d54ef3d7e28bdf12874c18747d1332ccb62b92e1",
+    "lean/HigherCorrelations/PairDiagonalCumulative.lean": "19554788ac4667de675f733873520470961c71625b7e51ddd09a894febeab6e3",
+    "lean/HigherCorrelations/PairDiagonalDefinitions.lean": "8036257e0570fa88180f9584c07602f1d9cb43bbbd14cce175567775da6c99e0",
+    "lean/HigherCorrelations/PairDiagonalEndpoints.lean": "889af64c45bb6fd76e0d9f61a0517b850149c9501662757510d91e6fe9ab5801",
+    "lean/HigherCorrelations/PairDiagonalFinite.lean": "e10f58bfd5a8fdf1641417e0eec7997b6afc8d6e27c97c71d0011a2a4b0f9fd0",
+    "lean/HigherCorrelations/PairDiagonalIntegrals.lean": "5223fbbe1a578e274167b95828f42bbae57d5e78c41599e4d439075685006c6c",
+    "lean/HigherCorrelations/PairDiagonalPNT.lean": "40645571fd9974480436a0f7f5003dcf54679e1dfe60723dd8534cf70916b651",
+    "lean/HigherCorrelations/PairDiagonalPowerBall.lean": "6c07a9056a07a5b88792fb83c5f599929f590ea42c739fe41a62ac5fe0254eea",
+    "lean/HigherCorrelations/PairDiagonalPowerBound.lean": "3ee2307dd922158ea4ebb5580e5904116f3a8047303aa213c5f27502730df63a",
+    "lean/HigherCorrelations/PairDiagonalPowerCount.lean": "ca90af87a5418e6d47f76f233876fe7da6a860f231f6fc3199114b06a8c7cbde",
+    "lean/HigherCorrelations/PairDigammaBounds.lean": "fad1a44c612132650e4eee723aeb6b304e28b1cebb4901959b6e2996801ddfa6",
+    "lean/HigherCorrelations/PairDigammaRemainder.lean": "ac9f1e5cfe381ba121df5e5120baa8f39798fd7139e033e35407401959be6846",
+    "lean/HigherCorrelations/PairElementaryErrorBounds.lean": "1d482447979df913a198ead509a051bae5534158250effcd6b280b6cae863b67",
+    "lean/HigherCorrelations/PairErrorDefinitions.lean": "edde00112c8605beb8f9cd4bc7fdf250c131b807af8f2ffd7fbd735456c4555d",
+    "lean/HigherCorrelations/PairEulerContour.lean": "78bc05e950fad53f48d74d89e1475b9babe54edc34059443ae637f9bfacce463",
+    "lean/HigherCorrelations/PairEulerSeries.lean": "c1429b418b4ed6aee56630fe68c6756226e5a5a46c64c1283e92ab34ce3627da",
+    "lean/HigherCorrelations/PairExactDefinitions.lean": "05bb3387e11e4ea1683dbdb61e7bc6fbed0b41fedb3ea92f8c531abc2c0abf39",
+    "lean/HigherCorrelations/PairExactFormula.lean": "aa5cb83bfa86b092267c6edb098841465397f67e83280a2f129235a4592739ef",
+    "lean/HigherCorrelations/PairExactInterior.lean": "3a8f21915126a196506e84125757656c414a5c1411faad628cda0b5e85334585",
+    "lean/HigherCorrelations/PairFiniteRectangle.lean": "2f8d777e3326ddac9b9ae6803daad66fc8f2908bfe00a275b1f0c2ebfb06f945",
+    "lean/HigherCorrelations/PairGoodHeightSelection.lean": "6dbf4bd5bad0df696edf123274a9ff5affa842c1754c769722abeb2162a30ab2",
+    "lean/HigherCorrelations/PairHadamardBounds.lean": "27b591d9cca875f23f91ff6701bfb4c8256066756c2f080b4ff5bb36499bb442",
+    "lean/HigherCorrelations/PairHorizontalBounds.lean": "cce02229143da1ab926612dd3f0805295f0820f07266bebe108864f3d516e268",
+    "lean/HigherCorrelations/PairHorizontalDecay.lean": "39e8934002502ce5cc4a76ef0ea2e845b604ce5bfba92a993e64b057eb673782",
+    "lean/HigherCorrelations/PairKernelEstimates.lean": "b98c6b0a5a350625521ef5beebd2682ba2ddb968ee3fb75c31ed32666a5f1dcd",
+    "lean/HigherCorrelations/PairLeftBounds.lean": "c7f03c23301d73cc243c30022531f3e3aa9f5fd404c773345f3e68699cd673a2",
+    "lean/HigherCorrelations/PairLeftDecay.lean": "7491d40a766fee84c2cd6a7aa4d69875ea39d97b6fbd06492488c84fab36f54f",
+    "lean/HigherCorrelations/PairLeftGammaBounds.lean": "264ebeba6a83334a9dcf463fbb961339ac12437a3e7095fa1f0e9eb35186bc4f",
+    "lean/HigherCorrelations/PairLeftKernel.lean": "48c6de999efa512a7980b36403e4472181293ba6c4b8fa5c154c95697a08b28e",
+    "lean/HigherCorrelations/PairLogWeight.lean": "81700a80a75cbe5f8101812413848971c6bff77e87fbcf7fa9b970bfe055c52c",
+    "lean/HigherCorrelations/PairMeanBoundaryLower.lean": "9c8b3d8c6d5b72d667c3ab79e2a5069fd56b2eae1e55e9a6e9f68fee2bb54d1d",
+    "lean/HigherCorrelations/PairMeanDefinitions.lean": "fc2e517ff598e3dd9fd418b1ab72a99b206c7e9c640018b65020cb51fdd3f452",
+    "lean/HigherCorrelations/PairMeanEndpoints.lean": "c477251daf13573e2c89b846681e92e542870bd9c963a51d4a4a8b8c866baa87",
+    "lean/HigherCorrelations/PairMeanEnvelope.lean": "4e344ebf3a25f0b0ea07c8dee73c5bc3913490a172c26a167ff6caeb67096d06",
+    "lean/HigherCorrelations/PairMeanFourier.lean": "6c7c6464690bfa156dea9ccee3a86dad876c53ef586eacc9a58117f5e7bbbf1f",
+    "lean/HigherCorrelations/PairMeanFourierRules.lean": "24e2184a0ac368fa799fa2ab5605f5571e7837ebc7fcc29ea370654c1e99f5a0",
+    "lean/HigherCorrelations/PairMeanIntegration.lean": "8e3d5f645843181334aebefef89441ca899a69ad89dd68fd4fe1797156b33ba7",
+    "lean/HigherCorrelations/PairMeanKernelBounds.lean": "fe2aea02e69df6fb9af0ff43f31abd6e8748049bb488af6e9f44228d43a77755",
+    "lean/HigherCorrelations/PairMeanKernelMass.lean": "fab11414bb1e5ffb74bbb7b835dc875f7f5b493d3d3ec9b94b6e895be2f31fd1",
+    "lean/HigherCorrelations/PairMeanKernelTail.lean": "93c521c4519f2e28e28350579236833f120529bb3287106eda8e2768bb695f1d",
+    "lean/HigherCorrelations/PairMeanKernelTransforms.lean": "3a8dc225568a96b9fb4bfc77336d277f55d573b7e9aec36a8296edf124bc7bfe",
+    "lean/HigherCorrelations/PairMeanOffDiagonal.lean": "6e868280a5332188299b8c99a79a5fb465603becf9208f225ac068247719de69",
+    "lean/HigherCorrelations/PairMeanPrimeBridge.lean": "7baf525e33b7320ca82202aa3b6c2eb5be984e873d70ed8df4c82c500f5bc969",
+    "lean/HigherCorrelations/PairMeanPrimeDefinitions.lean": "e8dab5d77b7f18ca370ad82ff3874c24e72c1684c5f05f1e70871f19dbd8877a",
+    "lean/HigherCorrelations/PairMeanSandwich.lean": "f10bc72618571d362af29f3838c89d85e3d68ae9f25d5cc0d682b28ba3b0c2c9",
+    "lean/HigherCorrelations/PairMeanSeries.lean": "2fdd9a5b5cad4126039a15f31412d92dfd9445ed7318095e04c8fd81929f8128",
+    "lean/HigherCorrelations/PairMeanTriangle.lean": "1f5e28554775f1022640d0be0acbb3992cf6f6e08ecdfa2f415c4a289dd48e51",
+    "lean/HigherCorrelations/PairMeanValue.lean": "fdc3cf309ef23994f31c09fc94387dc7f7e8369e79295d8c1a2234a02a2974c5",
+    "lean/HigherCorrelations/PairPrimeConvergence.lean": "75a52dcb447bb1c87b182182fa54eb308f357b6d0529fbc2c0f12b2878d3cb70",
+    "lean/HigherCorrelations/PairPrimeIdentity.lean": "c8b074c686fd2c1ef356bba9f46f044691c19cb7f8e0a44fdaa9c61a410aebdf",
+    "lean/HigherCorrelations/PairPrimeMean.lean": "dfaf69d0ee61e07468c2ad7a8cbe9cbdcfc725e19373ff5791dd7e91a4fc09f0",
+    "lean/HigherCorrelations/PairPrimeMeanBandwidth.lean": "961597df295d5614ed88624af1e6c2a8c9508cbcd0342abef50a17675d15e40a",
+    "lean/HigherCorrelations/PairPrimeMeanDefinitions.lean": "c2982c96800d81fe4c1872291c9cc3c3d3b1717a9ec044f935774cdaff6763b7",
+    "lean/HigherCorrelations/PairPrimeMeanEstimate.lean": "d74faa4f9b0528cc1190b8f21a709bc0d30d79d674dd83a219f61868919d9f79",
+    "lean/HigherCorrelations/PairResidueRegrouping.lean": "8590b730eedac153ad3c81ec2fe72e3fc9b4bf1a20af0aeae3e2d610957030ff",
+    "lean/HigherCorrelations/PairSeriesConvergence.lean": "df48ef27df9f9a91c623ef8656feccf72bd7107829c89e039214ab5b74962f1f",
+    "lean/HigherCorrelations/PairSeriesDefinitions.lean": "a483e2c675437809180fd9fec12d2c9bc673b2bd72c789192a8e2fc223cacaba",
+    "lean/HigherCorrelations/PairSeriesTopology.lean": "1d84fa1f36a0969653bc67ac6c9eee89c443d4bce3a564c1adf0781245332e8e",
+    "lean/HigherCorrelations/PairSieveAverage.lean": "fb2925d6390b999318fe30ff5b16f7affb5e6dd6d7593bcc3c8ac1196e2d38b2",
+    "lean/HigherCorrelations/PairSieveBall.lean": "9c2c6b38329bacd9fd99464890aa9552663636e848a666c54b0c25d2e435e561",
+    "lean/HigherCorrelations/PairSieveCount.lean": "82abd0f373f95c2904fd2fec44617983207c14ed4644b9d190296b8d3a2d045a",
+    "lean/HigherCorrelations/PairSieveCover.lean": "2d78deda856671f0083c79401fbb400965573f0c07adc6969e036c186d23abda",
+    "lean/HigherCorrelations/PairSieveCutoff.lean": "81ee49cd09d3ed505e612a576627782710d5ef4a3bbf6c4416a8a5543ba38d09",
+    "lean/HigherCorrelations/PairSieveDefinitions.lean": "b167fca58f8c9d0b4290396801cf06ff983adf23b84d163e3e94b157d0e7b1b0",
+    "lean/HigherCorrelations/PairSieveDenominator.lean": "37f1796ffa0a0a178bda0fd8d4a85ffd6f74af32c5bd5a6d2b23035d01ca5925",
+    "lean/HigherCorrelations/PairSieveEndpoints.lean": "5b1e71d2cafdb1fae1c872d7061bcbf126a957ba5dd97da02741d8b6ccda90eb",
+    "lean/HigherCorrelations/PairSieveGeometry.lean": "f1f10e76557ab3f94c8571db9ce09bdf254c74804b5568928ff8edb690e929b3",
+    "lean/HigherCorrelations/PairSieveLinear.lean": "8345e275e3b81a5e0fd8e08faa7c9f5db0ca72bf35b07e9cbeb8b05e020aaeeb",
+    "lean/HigherCorrelations/PairSieveLocal.lean": "120c7356daf1a41c23ba618f1b9873065fc2f42af25f57354157bd03d85d72bd",
+    "lean/HigherCorrelations/PairSievePrimePowers.lean": "658cfa5b9fa3fdda1a0f3c567bc4b0b16915a89b39f30c725083f5ce24c642c9",
+    "lean/HigherCorrelations/PairSieveShiftCount.lean": "cd08d9f2af46918ecee6432abe2c369cd7cc49e3a984d60099a285515be180c0",
+    "lean/HigherCorrelations/PairSieveSubset.lean": "3c41e1d9d2a360216749e2f765748b521ca5f283c682c884b2706af35c90cda7",
+    "lean/HigherCorrelations/PairSieveWeighted.lean": "285ea710103df5106d5d701e2f8df65704464b957efd49b82879a61275c2a40e",
+    "lean/HigherCorrelations/PairTrivialCorrection.lean": "77c450ddf931718734422a4d1347b5a9806813b1f53cbf1cac28c23973d39ccc",
+    "lean/HigherCorrelations/PairTrivialErrorBound.lean": "7970549ddc0d5d892c7519dbce7ab69037183a039b89ea45d53bf8d54dba61d4",
+    "lean/HigherCorrelations/PairTrivialZeros.lean": "d7b82bd25e22b9e1a9808e69eaa8c377cf3b6eb68f82769fcfa14cde7b198d20",
+    "lean/HigherCorrelations/PairUniformFormula.lean": "eb331917340859587d9e7964d78665fc64c01dd4b2a0a82bc84ee13f5c32b088",
+    "lean/HigherCorrelations/PairXiZeros.lean": "98e864f3b80ba44cf3c23f4bb5830280dc4eee6dc295c1de2355d9c9fd833a1a",
+    "lean/HigherCorrelations/PairZeroClassification.lean": "b806ce0a0cc91162d3429e79f6ab1702d4d2ea9a10e7ba88a3972a56f5646304",
+    "lean/HigherCorrelations/PairZeroConvergence.lean": "e4572c3402bc2f28ae3628c8d2f07ed3b5015b3c16209a71e4ac77398a0cdaea",
+    "lean/HigherCorrelations/PairZetaLogDerivative.lean": "bf15a0b74a2a9d98bdef217fb0e97f19c1a84ab334c743dcb6c334f466a3edd3",
+    "lean/HigherCorrelations/PairedMellin.lean": "2643d5884f715f925a7da6d9341aca82dd13498a4b21ef5a36c523fb55500d77",
+    "lean/HigherCorrelations/PairedMellinBounds.lean": "dbe61ac893cb562317fc6993ae8ae9df308f049dbe74a9d76dd6bb908c107909",
+    "lean/HigherCorrelations/PairedMellinDefinitions.lean": "0a39cb058ffd46645cb0bfdf17c5e8a33b2e5c9386e795a59a8f3f8ddab68eda",
+    "lean/HigherCorrelations/PairedMellinTransform.lean": "11f73257b11b42210ab5053602a77012ebb1dc9d8ea3839f22baa2fba4deb63f",
+    "lean/HigherCorrelations/ProfileDirectional.lean": "51aee310c3a3fcb44d0443ff36df868763f220f00026e5e6497919d6ee0261c1",
+    "lean/HigherCorrelations/ProfileIntegral.lean": "6389c50e4a750f8e2af360d18ad03093fe0dae0128a588e71825b962e8a7dadc",
+    "lean/HigherCorrelations/ProfileJetBounds.lean": "b3986fefa593d83e3627f619e63ff996719373e15d9ac8d399d96615a7012fea",
+    "lean/HigherCorrelations/ProfileJetDerivatives.lean": "476987a36b1fb720bb00b04ec87afa7a1524a5ce8a4bc45d0c6a52c1c4bdfb2d",
+    "lean/HigherCorrelations/ProfilePartialFractions.lean": "e6f8a7ec61dcfad4490d4c2909676dad05f6920035c25576b7e583ef18c8c3fd",
+    "lean/HigherCorrelations/ProfilePoleAlgebra.lean": "b874cfa16452d0399026ef6523155a44cbf05b357cae50df8099d3dc3784e938",
+    "lean/HigherCorrelations/ProfilePoleLimits.lean": "3158c83bbc516c8bd54ff46dbc5401f50932ebbecd69acd01973916900c092a3",
+    "lean/HigherCorrelations/ProfileSmoothness.lean": "c75fd24f86fe703608ac0a219e3527143981bb1af13a3c24dc8064b0cb291809",
+    "lean/HigherCorrelations/ProfileTaylor.lean": "1b9a7e70a6a4be57666be77e1e72844035445771f05909980b6f0c8909947700",
+    "lean/HigherCorrelations/RationalKernelBounds.lean": "b142f821fb1de0fae421f735037cfadc19b5ab5592cba13ed23f51313c3fbabc",
+    "lean/HigherCorrelations/RationalTransfer.lean": "55b2cb7b107f3466d92fff6998479366887f39cb55bf74431f7749a0e280f943",
+    "lean/HigherCorrelations/RationalTransferConvergence.lean": "c8019d4264ad10780066b9c20a7ea6ac02abddf659f6118a26d1a18d1cc4b72e",
+    "lean/HigherCorrelations/RationalTransferDefinitions.lean": "768653477827798ab28b6df8995b36964bb0452a7c9a366f6bb819cbd408cc4e",
+    "lean/HigherCorrelations/ScalarKernel.lean": "2085eb976d3fc2dd501db1a0711949e217220bb2061696822d474029d479e87b",
+    "lean/HigherCorrelations/ScalarKernelDerivatives.lean": "cb483f95ef0ca5d0a8c19f84a2f064dac14d559f5969850b3d37046556ad414d",
+    "lean/HigherCorrelations/SummabilityDefinitions.lean": "87a2aa752dd60043a4b411f4d4655f03a49337e09dc641d73306a1ace7b1ea3b",
+    "lean/HigherCorrelations/SummabilityExamples.lean": "0ed8949793ed39124230dab69e4150ba36a43c68dce09c0549e5193320052033",
+    "lean/HigherCorrelations/SummabilityFoundation.lean": "00775541cff8c1b6bca5e1f9d289caafcc9b9e17647b2e370cffe6805e17c312",
+    "lean/HigherCorrelations/UniformHeight.lean": "f1d4dcd538c2f9c3e1935ad6ae0f4af310e72edd44fdb0f9be47182bb7599719",
+    "lean/HigherCorrelations/UniformHeightApplications.lean": "77cc0d9d68ceb11130782640caeb3505d37417608f4e45492d5fc792b4ce9eb2",
+    "lean/HigherCorrelations/UniformHeightCounting.lean": "04cbe0b8024b001875d415f78b549dcde95dc0bd532fdb4a85fdb4ba8e50aa09",
+    "lean/HigherCorrelations/UniformHeightDefinitions.lean": "cbcef4fcaee82ec45f87d94bd0a5998bae071576d5337c0bbd1bb136e9656175",
+    "lean/HigherCorrelations/UniformHeightMass.lean": "3f39880477da2da1c537b75b4c847eb81fe58f06a78c8350a086cea260ab7d2d",
+    "lean/HigherCorrelations/UniformHeightTails.lean": "dbc3d2ae9f83d340f7363a77320680999ac84c266a4116cec5b73eddb62f911e",
+    "lean/HigherCorrelations/ZeroOccurrenceCounting.lean": "267a896cad1d05139f92e37b81b8913e99f97e5ab19e3f650dc6f031a0ba27d1",
+    "lean/HigherCorrelations/ZeroOccurrenceDefinitions.lean": "591ac4646cb51ecec103235d43df6ada7cf8e8c77d9c40e06d8cc5a9e9d0af80",
+    "lean/HigherCorrelations/ZeroOccurrenceReflection.lean": "a1bbad952dcd7d40d73e1f8cf88907584d7b7928c11c401a40b78f673b13417e",
+    "lean/HigherCorrelations/ZeroOccurrenceShells.lean": "670a8d803ea73cc4e452044a9b93481bfac80599891492df51b4df99b7bf369f",
+    "lean/HigherCorrelations/ZeroOccurrences.lean": "c9f821594488a2fc17432c489c66af7675da42da2c2b4f8e0e0b71ff8c60abf9",
+    "lean/HigherCorrelations/ZeroReflection.lean": "b55e878afda00b42ab1d8f90d13b0885b6c92f05a8d9e2ecab8e2a43a84a11cb",
+    "lean/VerificationChallenges/ActualOccurrences.lean": "01fc87ed7f555eb1695426b28c3fadb08aee2ee092a73b240852bb5269017b73",
+    "lean/VerificationChallenges/ActualOccurrencesUnfinished.lean": "d92cec625c0c54525340c76f7b94430b0a50b3c2e6ef00104eecd272db91dfb2",
+    "lean/VerificationChallenges/FiniteFoundation.lean": "51164ee88d02b2b2f86209c639d82d68c06324fdb5f38c2290373022fa5deef6",
+    "lean/VerificationChallenges/FiniteUnfinished.lean": "36a836e37f01f8e61fdedabbcae945437f830d10ae0551dbb5fcb32c2c58fc6d",
+    "lean/VerificationChallenges/HorizontalSquare.lean": "5514938b4c71167da2e185e6d3ef5eb476904ec29a7063f6b0eb34e83ef8538d",
+    "lean/VerificationChallenges/HorizontalSquareUnfinished.lean": "235bdccbea355c9fff2af282e99945f3969874abfd517acb5674278fc638c67e",
+    "lean/VerificationChallenges/HorizontalStrip.lean": "f72b1a08b24c2e161621c73c7b0bea8e3a4474a8825a796b64e3133f4d149d47",
+    "lean/VerificationChallenges/IntegralProfile.lean": "294fed22060ccbad2046ef377ca05a76450d24ba23b71ac0550349f4926181a3",
+    "lean/VerificationChallenges/IntegralProfileUnfinished.lean": "9d09fbde60f5f873e3c8da1f12a7f33841c6457041f4ad6c86cb5e9f0f2e320f",
+    "lean/VerificationChallenges/PairDiagonal.lean": "318e574404daf77ef84f42a2d3331b192df41edb36efa6a462681e7225fd2f35",
+    "lean/VerificationChallenges/PairDiagonalUnfinished.lean": "a6426a92b01a6f4832c1074e6ce2d97d0e83c1ec8181e477baf2c33a78a2ae1a",
+    "lean/VerificationChallenges/PairExact.lean": "63569ccde70725207238594c759cf047cc306eef97fe08b5e9f1278279cfb109",
+    "lean/VerificationChallenges/PairExactUnfinished.lean": "34963fd48f9085077fa8e3e9d093ef30d39acf1e3bde5615caf78384dbcc7d9b",
+    "lean/VerificationChallenges/PairMeanValue.lean": "854fb1d6c479f8be3d7a4fef507d127c3312cac73d49e70f52314359fe814f4d",
+    "lean/VerificationChallenges/PairMeanValueUnfinished.lean": "18687d6616b16b09d1617333878bba45131dccf274c3883432bdf0a78a322cc6",
+    "lean/VerificationChallenges/PairPrimeMean.lean": "c8b1c26029b62c78eb7a26d6522808fa7be119a06ef1a1523e71f96aeb6b8229",
+    "lean/VerificationChallenges/PairPrimeMeanUnfinished.lean": "68fbceffcc8d7a99573f41d2e09a1341c03271328b526592dec78a04c930fcee",
+    "lean/VerificationChallenges/PairSeries.lean": "91fe8f11b2a97030b95415bd631bae3ffb1b19afcac71b6cc2a0f2f7d7e44cc5",
+    "lean/VerificationChallenges/PairSeriesUnfinished.lean": "3318432da34d6a3d466564ff1cee4874cffbbecbb4c76b7be07a3a0e96988409",
+    "lean/VerificationChallenges/PairSieve.lean": "410edba7ff9cefa1d8fdbd1dcc20dfc43e9e3b91bc5ed1a04d1e1a169ba643f9",
+    "lean/VerificationChallenges/PairSieveUnfinished.lean": "15931c2d1448211751df855e92ce8c7e2ea052b30d4c13fe480bde254667ae41",
+    "lean/VerificationChallenges/PairUniform.lean": "61459b9ceb0256bf3eff4cf8503bfaed1f2e250bafa95a85c14194750e160bb7",
+    "lean/VerificationChallenges/PairUniformUnfinished.lean": "5cfe0a684edce99dc0f5696a7c5480823110ed44455874f51bf13c5213e0c55b",
+    "lean/VerificationChallenges/PairedMellin.lean": "fdf9459f5febce3d63ed886c1a365c0d59870bab01b04697a889a21b75257aa1",
+    "lean/VerificationChallenges/PairedMellinUnfinished.lean": "e44fa411f541cb076c60fab4a89964313ac106523d1a554a2cea0c72aafd7d62",
+    "lean/VerificationChallenges/RationalTransfer.lean": "fd713f47cce386c2c1fc89cb9e81cac4d96fb312c66cc45b1cff0e809db1a3e6",
+    "lean/VerificationChallenges/RationalTransferUnfinished.lean": "346270c7f120132f5a2d4ab7e8e76190615ff95e0d8e8a4802740d010efc9f49",
+    "lean/VerificationChallenges/Summability.lean": "9ba1ae868868955fa073a2c4cab136ee6731455afb2f01b637eef2d4904dcae0",
+    "lean/VerificationChallenges/SummabilityUnfinished.lean": "12ed073e525471c196c0aff83850e5751335003d4162124f00bfe24f5123c7de",
+    "lean/VerificationChallenges/Unfinished.lean": "23361486cba75ef2c869c2d380df45bcaf7a73482933183c7262418d88e7392e",
+    "lean/VerificationChallenges/UniformHeight.lean": "4298ee0f19d5149bc14bae5843b71e46152d7080637b3ada2463729b973a549f",
+    "lean/VerificationChallenges/UniformHeightUnfinished.lean": "1714790a217af78200e3f0ebba77819439816eba5efa5c6637e2d239bd1b81eb",
+    "lean/VerificationChallenges/actual-occurrences-unfinished.json": "b29ddc7fc6d0006b9362dd911acc42708fee03480257a7df4fe3eb5f996c6900",
+    "lean/VerificationChallenges/actual-occurrences.json": "cd8677cb8521fcbdf1f243e6bae64a26ae45e402dc03193c9a9c6ec526990ba1",
+    "lean/VerificationChallenges/finite-foundation.json": "c301cc05cc0af53b62278917e604f3aa9539708f72fa6982aefaa4a6a2922c36",
+    "lean/VerificationChallenges/finite-unfinished.json": "2b28fa09693fdabefb77497633b3f7e54d28055ee90dcbf8cf9da9469186cbda",
+    "lean/VerificationChallenges/horizontal-square-unfinished.json": "9361565006a3f2eee1765c267b7e24084492862201955ba833a4f46c6fa6363a",
+    "lean/VerificationChallenges/horizontal-square.json": "65c0559a1b3210ccf7cb1f675d74d3819f5e522da35808451ac752806017dc85",
+    "lean/VerificationChallenges/horizontal-strip.json": "54dd2b15be0c6bee4cefb4b81d451c049e74fdfe60ef472fc244967ab31f7e11",
+    "lean/VerificationChallenges/integral-profile-unfinished.json": "f9b29dabedd6b00c89da4ba6c1b2cb258883ced0c8eddec5e06866f49cbc1868",
+    "lean/VerificationChallenges/integral-profile.json": "5892a3dc61df24a0ed80e969d63c6322e51ec4028ca229879fd9ecb52a6409f0",
+    "lean/VerificationChallenges/pair-diagonal-unfinished.json": "4fae6a0538cf7a7cedc9feeb4d9296652734c8f6cb9cf2fd2d9baaab5224a18b",
+    "lean/VerificationChallenges/pair-diagonal.json": "247bf271c09afb441108668e3a8d0421ce78469b1f6216d62570e8c7ae7e7fa3",
+    "lean/VerificationChallenges/pair-exact-unfinished.json": "d7259118a9088e1faffb1241cfbf8d80395eadbe0d4d8d32e684453f28637ba9",
+    "lean/VerificationChallenges/pair-exact.json": "fb0ac46d0d2177f208d43f7aeb6381410bfc8475d16cde4f44203ce63be90296",
+    "lean/VerificationChallenges/pair-meanvalue-unfinished.json": "95ca22a57840aed12da032995e1177b4923e1bf069b5864c7ca941040c7542a8",
+    "lean/VerificationChallenges/pair-meanvalue.json": "68cbad80f03e402c300671b46742ba3d9da6aa665f0edaf30d4df3ce0fa2e298",
+    "lean/VerificationChallenges/pair-prime-mean-unfinished.json": "cbce1ef4754414e93d6991ff973be707e2c77f1315cd7b904e1db5e15d2e9619",
+    "lean/VerificationChallenges/pair-prime-mean.json": "914c9d8cd53e66a76f705ca81b7a15d99c73b166d746c802a8b28f82d56f1e3d",
+    "lean/VerificationChallenges/pair-series-unfinished.json": "b3face97c5efb58e4e7c081e5c1634e96104bb62b8d6b4fe2239a3f1d78e3ca2",
+    "lean/VerificationChallenges/pair-series.json": "777d61124db048c53d10a680c154e53da4c54fb24714cfe6ef1849202db4c7db",
+    "lean/VerificationChallenges/pair-sieve-unfinished.json": "640975703bd772746e93c3f8f6f5e2c09ea6d77eb61634250716b3594178d314",
+    "lean/VerificationChallenges/pair-sieve.json": "e385a98fa344a45c4bfcaa6b00992830eea83fc706bb5d779d8dd8776c5cba66",
+    "lean/VerificationChallenges/pair-uniform-unfinished.json": "bc7691dbc3eaeed8b5c1ec6c6eaef57189c7fb60da390034314cf5d92598161b",
+    "lean/VerificationChallenges/pair-uniform.json": "9b1d83bf9fa17cbaf86c115a5be6df46b67f6b1d24901a15d4471d26b88ea602",
+    "lean/VerificationChallenges/paired-mellin-unfinished.json": "8b2374fad187d954a8910ce8a332d1b6ad4ff6f2693d17e33d7319a38f82a999",
+    "lean/VerificationChallenges/paired-mellin.json": "09c9d6224e5850104bddf7cc534048def65ab90c5b58324aace38811e2232813",
+    "lean/VerificationChallenges/rational-transfer-unfinished.json": "86d3d95c4d314aae98524a58bc91e488ad2556417c93ab29071b20c2db3d3a1f",
+    "lean/VerificationChallenges/rational-transfer.json": "0eb63dc4f8b6b166db183b73aa450db967e2978af2ab2c1298b32e7f4680c7c9",
+    "lean/VerificationChallenges/summability-unfinished.json": "c484adfd05cb3adbe66d9054a0c182def4005df7693219b4f6c3e748a637fc71",
+    "lean/VerificationChallenges/summability.json": "1354debe41020a56f042d6e5d7d93015cfc8daedd88fb6fd2e8f5f85fa262a51",
+    "lean/VerificationChallenges/unfinished.json": "8739dcea13a0cab47dda66d1967b40d938f4a6d7261df8f9c6a122d376be3289",
+    "lean/VerificationChallenges/uniform-height-unfinished.json": "539ce122841b1a915627e44d52f941e4aafd75de0d186d73cbcfb959c1adf21f",
+    "lean/VerificationChallenges/uniform-height.json": "3f25a44ada42216595b8583e816df45d506f210d35626e5b8f96711775ef207a",
+    "research/lean-actual-occurrences-inventory.json": "45ef1c807540371bda9c9e431f24bc0be71017e3aa6aba73f43089f53d3c742f",
+    "research/lean-analytic-coverage.json": "8d6a514d2dfe6c9e1828b944aab3418e487c9ff93580d15f382d3211b0657778",
+    "research/lean-import-pins.json": "b9ea2f959e57adee74c18f3659819bc0342f6cf5ac0d5d453e267bfd0af4dadc",
+    "research/lean-integral-profile-inventory.json": "43d42b447677220fa0493a0d64cd3ba88a5c7561289582b3f3e44df5efddd000",
+    "research/lean-pair-diagonal-inventory.json": "5979737055a4f6f0af9bdee074831784e19d20825abba4e83f9d489d5f3097b7",
+    "research/lean-pair-exact-inventory.json": "bcf4563af8a66621c568e0cc1ce88c95dc6b1a08dd87d840a524d1ae228e0369",
+    "research/lean-pair-meanvalue-inventory.json": "065abfc9cfc43f3e4e102694596d3d6831a1f50eaa4b2b33a0af3a3be794f02b",
+    "research/lean-pair-prime-mean-inventory.json": "123714ef8af14b12924ddc4a7c9972157ae7769f594c4e1b9d4253d1b6d907a2",
+    "research/lean-pair-series-inventory.json": "1d2b6302b44cde12b4199f5e935dbe97a5fc00e8afdcae3fea2f5fb59af39e6d",
+    "research/lean-pair-sieve-inventory.json": "a3fb986a56f8f7a71f2fdbd9e7a73fc3ba7629acf24ec191a5f541a6dc220380",
+    "research/lean-pair-uniform-inventory.json": "6f23ae55262386abf8b36b55e83128ec19858c5280d5f26fa4c412c7ed60dd87",
+    "research/lean-paired-mellin-inventory.json": "869254a839c31a798831603c001b7e5d7b40776bf0b0d5acf0f16f6e666f80e4",
+    "research/lean-rational-transfer-inventory.json": "29498013dcb87740cfecfdf6109307e91f3d3814a51dc1b06142673cfad34bd9",
+    "research/lean-uniform-height-inventory.json": "6538ecc11cca9d1f23d54edf333808302f9595c260d2ef30b99ceba6ce07c4c0",
+    "scripts/bootstrap_lean.py": "d9c4d5119f16f863b7ab6f4ec4f394d6bd8679aaaf764ccf926d66b3b8baeacf",
+    "scripts/check_lean_analytic_coverage.py": "2dc82c00a5129f1b0ac45bb018aab6fa2bd86e7d4b968f99c455c2adc9d296a9",
+    "scripts/prepare_lean_diagonal.py": "89683dcdedbb044066042421b5cc6db7508dcc985af62e52830c59b1a6bc4c67",
+    "scripts/reproduce_lean.py": "3ba5feb9da5c5876914fe30161ca3eb8abed7be03371a44c749d9693186691be"
+  },
+  "started_utc": "20261017T175204921409Z",
+  "status": "pass",
+  "task": "formal_verification",
+  "tool_binary_hashes": {
+    ".tools/bin/landrun": "790ffdfcd9894403a85f2d3ea915230720e296d31fd272478ad9fd8515e8a8bd",
+    ".tools/comparator/.lake/build/bin/comparator": "afa65e57a1770f5961efe7681626a9a1cd99705262421658abd30b705f66e4a2",
+    ".tools/comparator/.lake/packages/lean4export/.lake/build/bin/lean4export": "8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1"
+  },
+  "upstream_patch_hashes": {
+    "AINTLIB-lean4341.patch": "076bee4cee068ad938e611d266bb32f7f1798189336087e88c08c8b3ac58dff1",
+    "AbsorptionCutoff-lean4341.patch": "8b35104dc12f807f594f7a61f7a183d967edcd0e601c7172e0e851e4c3adb3ba",
+    "ClassFieldTheory-lean4341.patch": "0275686e2febd9c14523a94cbfae105e6cf30997ed0b2a1ea28c84d0d0c12ba5",
+    "PrimeNumberTheoremAnd-lean4341.patch": "0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82",
+    "SphereEversion-lean4341.patch": "5c7c8dba85e4636ed2fec14a5765e937f2b1c428eadb12168645b9d2c0046098",
+    "StrongPNT-lean4341.patch": "2cac5cbef22987314f9293bebcf243d0a3341caaf0227925d1f8d4c31be924d7",
+    "Zeta3Irrational-lean4341.patch": "169eb72e9d12740688467a0e6abf63923a60ec5f7ce8f49ca4b3684a22418901",
+    "belyi-lean4341.patch": "f54c2e211464c0f8194ce63a80a6562489f23f688b1c233efe3c2debfc1b9f66",
+    "carleson-lean4341.patch": "8aa67adaeb6ef56967aa78c47a6c743f03ac72c125f503219a72dee5be23168c",
+    "elliptic-curves-lean4341.patch": "69e6575dae5797d43242694dc737b400b3e1e8fcb854094fead2a204a1f58632",
+    "fixed-point-theorems-lean4341.patch": "d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5",
+    "formal-schemes-lean4341.patch": "5376716aa94fe0c6907570d650dd6604f170687c218cea7028d09b9f95877cea",
+    "genl-lean4341.patch": "3a9edd7dd539e98f81145a3b6cc980c9d62a821b7d41e2591f9aa5c557a7b6fa",
+    "gromov-lean4341.patch": "26a1924bef774183a2e0865f144b782dc1f78eb0246993a31a5d63193b7781bb",
+    "heights-lean4341.patch": "bd3b58a301df273a199d9a0fe486b25d194df176afe32583289d42b64ab583a3",
+    "iut-lean4341.patch": "610ef069f7de5a5d500ead287287b60f193269ea4ddc0011101a9c7c98356dd4",
+    "oka-lean4341.patch": "02995b860e7d566a10adc3488439d38abc06dcb317ae4576d504c71c921816e7",
+    "orbicurve-cores-lean4341.patch": "4376110b9b7c823057cda21479a45de688c5138c81e5d4f1c050b632f168b93d",
+    "pi1-lean4341.patch": "816e0d8123d5622c5b3415675638053ae31126a829e4f21d96f7af28db292f5f",
+    "rellich-kondrachov-lean4341.patch": "0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8",
+    "schoenflies-lean-lean4341.patch": "4cbc255a2be785e6b617ecd61cdaf67e6d236d65a87f284380f2713670c8e350",
+    "tate-curves-theta-lean4341.patch": "885a19a0dc2d004aaece1987e2b7d2ff4745aef8881cbc53971a852cc5644c3f",
+    "tempered-fundamental-groups-lean4341.patch": "f2e51b5f38459f11515c21801c92c39de85a8feb5f2b490ebbe07a93511a8860"
+  },
+  "verification_scope": "Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, horizontal derivatives, logarithmic local zero counts, uniform height bounds, pair explicit-formula series convergence, the paired Mellin kernel including its endpoint, the exact pair explicit formula, its uniform named errors, the Fourier mean-value input with actual prime-series specialization, the effective weighted nearby-prime sieve bound, the prime diagonal asymptotic, and the optimized prime mean square with existential constants",
+  "worktree_dirty": true
+}

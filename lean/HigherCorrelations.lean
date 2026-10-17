@@ -13,3 +13,4 @@ import HigherCorrelations.PairUniformFormula
 import HigherCorrelations.PairMeanEndpoints
 import HigherCorrelations.PairSieveEndpoints
 import HigherCorrelations.PairDiagonalEndpoints
+import HigherCorrelations.PairPrimeMean

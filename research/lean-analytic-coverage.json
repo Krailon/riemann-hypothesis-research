@@ -635,11 +635,16 @@
         "HigherCorrelations.pairMeanPrimeFrequency_cutoff",
         "HigherCorrelations.pairMeanPrimeNearby_bound",
         "HigherCorrelations.pairMeanPrimeDiagonal_asymptotic",
-        "HigherCorrelations.pairMeanPrimeDiagonal_upper"
+        "HigherCorrelations.pairMeanPrimeDiagonal_upper",
+        "HigherCorrelations.pairPrimeMean_uniform",
+        "HigherCorrelations.pairPrimeMean_decomposition",
+        "HigherCorrelations.pairPrimeMean_combined_bound",
+        "HigherCorrelations.pairPrimeMeanBandwidth_admissible",
+        "HigherCorrelations.pairPrimeMeanL2Norm_bound"
       ],
       "remaining_obligations": [
         "The Fourier mean-value input and actual prime-series specialization are checked.",
-        "The weighted nearby-prime sieve bound and diagonal asymptotic are checked. The optimized mean-square error and effective diagonal constants remain unformalized."
+        "The optimized mean-square error, diagonal error and L2 bound are checked with existential constants. The historical effective-constant assertion remains unformalized."
       ]
     },
     {
@@ -5077,7 +5082,97 @@
       "declaration": "HigherCorrelations.pairDiagonalPowerCumulative_bound",
       "source": "lean/HigherCorrelations/PairDiagonalPowerCount.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMean_combined_bound",
+      "source": "lean/HigherCorrelations/PairPrimeMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMean_uniform",
+      "source": "lean/HigherCorrelations/PairPrimeMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMean_unit",
+      "source": "lean/HigherCorrelations/PairPrimeMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMean_top",
+      "source": "lean/HigherCorrelations/PairPrimeMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMean_minimal_height",
+      "source": "lean/HigherCorrelations/PairPrimeMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMean_log_bounds",
+      "source": "lean/HigherCorrelations/PairPrimeMeanBandwidth.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanBandwidth_pos",
+      "source": "lean/HigherCorrelations/PairPrimeMeanBandwidth.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanBandwidth_admissible",
+      "source": "lean/HigherCorrelations/PairPrimeMeanBandwidth.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanBandwidth_balance",
+      "source": "lean/HigherCorrelations/PairPrimeMeanBandwidth.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanSquare_integrable",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanSquare_nonneg",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMean_decomposition",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanOffdiag_of_bounds",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanOffdiag_bound",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanDiagonalError_bound",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMean_error_scale",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanSquare_upper",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairPrimeMeanL2Norm_bound",
+      "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Optimize the prime mean-square error using the checked Fourier mean-value input, weighted nearby-prime sieve bound and diagonal asymptotic. The diagonal constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
+  "next_step": "Formalize the full prime-side squared norm, combining the checked optimized prime mean square with the archimedean and explicit-formula remainders. The diagonal and optimized mean-square constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
 }

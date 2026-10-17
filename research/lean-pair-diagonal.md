@@ -105,8 +105,8 @@ fresh-checkout or independent external-kernel verification.
 
 ## Remaining work
 
-Optimize the prime mean-square error using the three checked inputs:
-Fourier mean value, weighted nearby-prime sieve bound, and the diagonal
-asymptotic. Effective diagonal constants remain a separate strengthening.
-The full pair mean-square theorem and the triple theorem are not promoted
-by this milestone.
+The [optimized prime mean square](lean-pair-prime-mean.md) now combines the
+three checked inputs. Next formalize the full prime-side squared norm with
+the archimedean main term and explicit-formula remainders. Effective diagonal
+and mean-square constants remain separate. The pair and triple correlation
+theorems are not promoted by these milestones.

@@ -1,0 +1,31 @@
+{
+  "challenge_module": "VerificationChallenges.PairPrimeMean",
+  "solution_module": "HigherCorrelations.PairPrimeMean",
+  "theorem_names": [
+    "HigherCorrelations.pairPrimeMean_combined_bound",
+    "HigherCorrelations.pairPrimeMean_uniform",
+    "HigherCorrelations.pairPrimeMean_unit",
+    "HigherCorrelations.pairPrimeMean_top",
+    "HigherCorrelations.pairPrimeMean_minimal_height",
+    "HigherCorrelations.pairPrimeMean_log_bounds",
+    "HigherCorrelations.pairPrimeMeanBandwidth_pos",
+    "HigherCorrelations.pairPrimeMeanBandwidth_admissible",
+    "HigherCorrelations.pairPrimeMeanBandwidth_balance",
+    "HigherCorrelations.pairPrimeMeanSquare_integrable",
+    "HigherCorrelations.pairPrimeMeanSquare_nonneg",
+    "HigherCorrelations.pairPrimeMean_decomposition",
+    "HigherCorrelations.pairPrimeMeanOffdiag_of_bounds",
+    "HigherCorrelations.pairPrimeMeanOffdiag_bound",
+    "HigherCorrelations.pairPrimeMeanDiagonalError_bound",
+    "HigherCorrelations.pairPrimeMean_error_scale",
+    "HigherCorrelations.pairPrimeMeanSquare_upper",
+    "HigherCorrelations.pairPrimeMeanL2Norm_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

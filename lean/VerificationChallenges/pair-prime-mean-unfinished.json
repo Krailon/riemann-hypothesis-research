@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairPrimeMean",
+  "solution_module": "VerificationChallenges.PairPrimeMeanUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairPrimeMean_uniform"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

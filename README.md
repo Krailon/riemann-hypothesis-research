@@ -139,7 +139,10 @@ The **prime diagonal asymptotic** is proved uniformly for X≥1, with the
 proper-prime-power bound and exact cutoff conventions. Its constants are
 existential; numerical effectivity remains separate. See the
 [diagonal proof and verification record](research/lean-pair-diagonal.md).
-Next: the optimized prime mean square.
+The **optimized prime mean square** now has uniform named error bounds and
+an integral L2 bound, including X=1, X=T and T=3. Constants remain existential.
+See the [prime mean-square record](research/lean-pair-prime-mean.md).
+Next: the full prime-side squared norm with the explicit-formula remainders.
 
 ## Reproduce the pair baseline
 

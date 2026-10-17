@@ -86,7 +86,8 @@ fresh-checkout or independent external-kernel verification.
 
 The [weighted nearby-prime bound](lean-pair-sieve.md) is now checked.
 The [prime diagonal asymptotic](lean-pair-diagonal.md), including proper
-prime powers, is also checked with existential constants. Next optimize δ
-to recover `PAIR-PRIME-MEAN-001`; effective diagonal constants remain separate. The RHS mean square, pair asymptotic, and triple theorem
+prime powers, is also checked with existential constants. The subsequent
+[optimized mean square](lean-pair-prime-mean.md) recovers the bounds and
+endpoints of `PAIR-PRIME-MEAN-001`; numerical effectivity remains separate. The RHS mean square, pair asymptotic, and triple theorem
 are not promoted by this Fourier foundation. Historical ledger blocks and
 baseline audit scope are preserved.
