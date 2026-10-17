@@ -1,0 +1,30 @@
+{
+  "challenge_module": "VerificationChallenges.PairDiagonal",
+  "solution_module": "HigherCorrelations.PairDiagonalEndpoints",
+  "theorem_names": [
+    "HigherCorrelations.pairMeanPrimeCoefficient_sq_weight",
+    "HigherCorrelations.pairMeanPrimeDiagonal_summable",
+    "HigherCorrelations.pairMeanPrimeDiagonal_split",
+    "HigherCorrelations.pairDiagonal_partial_tendsto",
+    "HigherCorrelations.pairMeanPrimeDiagonal_asymptotic",
+    "HigherCorrelations.pairMeanPrimeDiagonal_upper",
+    "HigherCorrelations.pairDiagonalCumulative_bound",
+    "HigherCorrelations.pairMeanPrimeDiagonal_uniform",
+    "HigherCorrelations.pairMeanPrimeDiagonal_unit",
+    "HigherCorrelations.pairDiagonal_cutoff_term",
+    "HigherCorrelations.pairDiagonalPowerScale_rpow",
+    "HigherCorrelations.pairDiagonal_finite_error_bound",
+    "HigherCorrelations.pairDiagonalPNT_log_error",
+    "HigherCorrelations.pairDiagonalPowerBall_double_summable",
+    "HigherCorrelations.pairMeanPrimePowerDiagonal_sharp",
+    "HigherCorrelations.pairMeanPrimePowerDiagonal_bounded",
+    "HigherCorrelations.pairDiagonalPowerCumulative_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

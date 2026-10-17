@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairDiagonalAbel",
+    "PairDiagonalAlgebra",
+    "PairDiagonalAsymptotic",
+    "PairDiagonalCumulative",
+    "PairDiagonalDefinitions",
+    "PairDiagonalEndpoints",
+    "PairDiagonalFinite",
+    "PairDiagonalIntegrals",
+    "PairDiagonalPNT",
+    "PairDiagonalPowerBall",
+    "PairDiagonalPowerBound",
+    "PairDiagonalPowerCount"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairDiagonalCumulative_integrable",
+      "source": "lean/HigherCorrelations/PairDiagonalAbel.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_head_abel",
+      "source": "lean/HigherCorrelations/PairDiagonalAbel.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_tail_derivative",
+      "source": "lean/HigherCorrelations/PairDiagonalAbel.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_tail_abel",
+      "source": "lean/HigherCorrelations/PairDiagonalAbel.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalWeight_nonneg",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalWeight_knot",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeCoefficient_sq_weight",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_summable",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimePowerDiagonal_summable",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_nonneg",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimePowerDiagonal_nonneg",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalWeight_summable",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_weight",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_split",
+      "source": "lean/HigherCorrelations/PairDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_boundary_tendsto",
+      "source": "lean/HigherCorrelations/PairDiagonalAsymptotic.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_partial_tendsto",
+      "source": "lean/HigherCorrelations/PairDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_model_bound",
+      "source": "lean/HigherCorrelations/PairDiagonalAsymptotic.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_asymptotic",
+      "source": "lean/HigherCorrelations/PairDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_upper",
+      "source": "lean/HigherCorrelations/PairDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalCumulative_power_loss",
+      "source": "lean/HigherCorrelations/PairDiagonalCumulative.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_log_moment",
+      "source": "lean/HigherCorrelations/PairDiagonalCumulative.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalCumulative_bound",
+      "source": "lean/HigherCorrelations/PairDiagonalCumulative.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_uniform",
+      "source": "lean/HigherCorrelations/PairDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeDiagonal_unit",
+      "source": "lean/HigherCorrelations/PairDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_cutoff_term",
+      "source": "lean/HigherCorrelations/PairDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerScale_rpow",
+      "source": "lean/HigherCorrelations/PairDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_finite_split",
+      "source": "lean/HigherCorrelations/PairDiagonalFinite.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_finite_abel",
+      "source": "lean/HigherCorrelations/PairDiagonalFinite.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_error_integrals",
+      "source": "lean/HigherCorrelations/PairDiagonalFinite.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_finite_error_identity",
+      "source": "lean/HigherCorrelations/PairDiagonalFinite.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_finite_error_bound",
+      "source": "lean/HigherCorrelations/PairDiagonalFinite.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_head_primitive",
+      "source": "lean/HigherCorrelations/PairDiagonalIntegrals.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_tail_primitive",
+      "source": "lean/HigherCorrelations/PairDiagonalIntegrals.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_head_integral",
+      "source": "lean/HigherCorrelations/PairDiagonalIntegrals.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_tail_integral",
+      "source": "lean/HigherCorrelations/PairDiagonalIntegrals.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonal_inverse_cube_integral",
+      "source": "lean/HigherCorrelations/PairDiagonalIntegrals.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPNT_damping",
+      "source": "lean/HigherCorrelations/PairDiagonalPNT.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPNT_log_error",
+      "source": "lean/HigherCorrelations/PairDiagonalPNT.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerBall_nonneg",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBall.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerBall_support",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBall.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerBall_summable",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBall.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerBall_sum",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBall.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerBall_dyadic_bound",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBall.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerBall_cover",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBall.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPower_geometric_summable",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerBall_double_summable",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerWeight_summable",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimePowerDiagonal_weight",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimePowerDiagonal_sharp",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerScale_bound",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBound.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimePowerDiagonal_bounded",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerCumulative_eq",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerCount.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerCumulative_nonneg",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerCount.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.pairDiagonalPowerCumulative_bound",
+      "source": "lean/HigherCorrelations/PairDiagonalPowerCount.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [
+    "StrongPNT",
+    "Erdos970.SmoothExistence",
+    "sum_mul_eq_sub_sub_integral_mul",
+    "Chebyshev.psi_le_const_mul_self"
+  ]
+}

@@ -135,7 +135,11 @@ See the [mean-value record](research/lean-pair-meanvalue.md).
 The **weighted nearby-prime sieve bound** is proved with an explicit uniform
 constant, proper prime powers, and all cutoff endpoints. See the
 [sieve proof and verification record](research/lean-pair-sieve.md).
-Next: the prime diagonal asymptotic, then the optimized prime mean square.
+The **prime diagonal asymptotic** is proved uniformly for X≥1, with the
+proper-prime-power bound and exact cutoff conventions. Its constants are
+existential; numerical effectivity remains separate. See the
+[diagonal proof and verification record](research/lean-pair-diagonal.md).
+Next: the optimized prime mean square.
 
 ## Reproduce the pair baseline
 

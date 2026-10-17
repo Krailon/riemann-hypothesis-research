@@ -97,4 +97,5 @@ it is not a claim of fresh-checkout or external-kernel verification.
 The [Fourier mean-value input](lean-pair-meanvalue.md) is now checked and
 specialized to the actual prime series, and the
 [weighted nearby-prime sieve bound](lean-pair-sieve.md) is checked.
-Next formalize the prime diagonal asymptotic.
+The [prime diagonal asymptotic](lean-pair-diagonal.md) is now checked with
+existential constants. Next formalize the optimized prime mean square.

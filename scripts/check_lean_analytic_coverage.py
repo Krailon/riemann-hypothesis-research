@@ -21,6 +21,14 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001'}
 PARTIAL = {
+    'PAIR-PRIME-DIAGONAL-001': (
+        ['pairMeanPrimeDiagonal_uniform', 'pairMeanPrimeDiagonal_split',
+         'pairMeanPrimePowerDiagonal_sharp', 'pairMeanPrimePowerDiagonal_bounded',
+         'pairDiagonal_cutoff_term', 'pairMeanPrimeDiagonal_unit'],
+        ['The asymptotic, proper-power bound and endpoints are checked with existential constants; the historical effective-constant assertion remains unformalized.']),
+    'PRIME-PNT-001': (
+        ['pairDiagonalPNT_log_error', 'pairDiagonalCumulative_bound'],
+        ['A sufficient global psi remainder follows from the pinned unconditional StrongPNT proof. The historical theta statement and effective constants remain separate obligations.']),
     'PAIR-PRIME-COUNT-001': (
         ['pairSieveNearby_bound', 'pairMeanPrimeNearby_bound', 'pairMeanPrimeNearby_uniform'], []),
     'PRIME-SIEVE-001': (
@@ -32,9 +40,10 @@ PARTIAL = {
          'pairMeanWeighted_offdiag_bound', 'pairMeanPrime_meanvalue'], []),
     'PAIR-PRIME-MEAN-001': (
         ['pairMeanPrime_meanvalue', 'pairMeanPrimeCoefficient_summable',
-         'pairMeanPrimeCoefficient_sqrt', 'pairMeanPrimeFrequency_cutoff', 'pairMeanPrimeNearby_bound'],
+         'pairMeanPrimeCoefficient_sqrt', 'pairMeanPrimeFrequency_cutoff', 'pairMeanPrimeNearby_bound',
+         'pairMeanPrimeDiagonal_asymptotic', 'pairMeanPrimeDiagonal_upper'],
         ['The Fourier mean-value input and actual prime-series specialization are checked.',
-         'The weighted nearby-prime sieve bound is checked. The diagonal asymptotic and optimized mean-square error remain unformalized.']),
+         'The weighted nearby-prime sieve bound and diagonal asymptotic are checked. The optimized mean-square error and effective diagonal constants remain unformalized.']),
     'PAIR-EF-001': (
         ['pairUniform_formula', 'pairUniform_named_bounds', 'pairUniform_remainder_bound',
          'pairUniform_endpoint', 'pairUniform_zero_height', 'pairDSConstant_approximation'], []),
@@ -344,9 +353,27 @@ def derive():
             and sieve_config['enable_nanoda'] is False, 'changed pair-sieve verification scope')
     components.extend(sieve['components'])
     names.extend(c['declaration'] for c in sieve['components'])
+    diagonal = json.loads(read('research/lean-pair-diagonal-inventory.json'))
+    found = []
+    for module in diagonal['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair-diagonal solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in diagonal['components']],
+            'pair-diagonal inventory differs from source declarations')
+    diagonal_config = json.loads(read('lean/VerificationChallenges/pair-diagonal.json'))
+    require(diagonal_config['theorem_names'] == [c['declaration'] for c in diagonal['components'] if c['comparator_checked']],
+            'pair-diagonal Comparator coverage differs from inventory')
+    require(diagonal_config['permitted_axioms'] == config['permitted_axioms']
+            and diagonal_config['enable_nanoda'] is False, 'changed pair-diagonal verification scope')
+    components.extend(diagonal['components'])
+    names.extend(c['declaration'] for c in diagonal['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -381,7 +408,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Formalize the prime diagonal asymptotic, then optimize the mean-square error. The Fourier mean-value input, actual prime-series specialization and weighted nearby-prime sieve bound are checked with explicit constants. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Optimize the prime mean-square error using the checked Fourier mean-value input, weighted nearby-prime sieve bound and diagonal asymptotic. The diagonal constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -402,7 +429,24 @@ class CoverageTests(unittest.TestCase):
         prime = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-PRIME-MEAN-001')
         self.assertFalse(prime['whole_claim_formalized'])
         self.assertIn('HigherCorrelations.pairMeanPrime_meanvalue', prime['components'])
-        self.assertTrue(any('diagonal asymptotic' in gap for gap in prime['remaining_obligations']))
+        self.assertIn('HigherCorrelations.pairMeanPrimeDiagonal_asymptotic', prime['components'])
+        self.assertTrue(any('optimized mean-square' in gap for gap in prime['remaining_obligations']))
+
+    def test_diagonal_effectivity_remains_partial(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-PRIME-DIAGONAL-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertIn('HigherCorrelations.pairMeanPrimeDiagonal_uniform', node['components'])
+        self.assertTrue(any('effective-constant' in gap for gap in node['remaining_obligations']))
+        pnt = next(n for n in self.record['nodes'] if n['id'] == 'PRIME-PNT-001')
+        self.assertFalse(pnt['whole_claim_formalized'])
+        self.assertTrue(any('theta' in gap for gap in pnt['remaining_obligations']))
+
+    def test_diagonal_comparator_scope_drift(self):
+        component = next(c for c in self.record['components']
+                         if c['declaration'] == 'HigherCorrelations.pairMeanPrimeDiagonal_uniform')
+        component['comparator_checked'] = False
+        with self.assertRaises(ValueError): validate(self.record)
 
     def test_sieve_complete_precise_singular_factor_partial(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-PRIME-COUNT-001')

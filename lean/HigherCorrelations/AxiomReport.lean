@@ -1,3 +1,4 @@
+import HigherCorrelations.PairDiagonalEndpoints
 import HigherCorrelations.PairSieveEndpoints
 import HigherCorrelations.PairMeanEndpoints
 import HigherCorrelations.PairUniformFormula
@@ -777,3 +778,61 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms Sieve.boundingSum_ge_log
 #print axioms BrunTitchmarsh.pows_small_primes_le
 #print axioms OAI.Problem337.zmod_predicate_Ico_discrepancy
+#print axioms HigherCorrelations.pairDiagonalCumulative_integrable
+#print axioms HigherCorrelations.pairDiagonal_head_abel
+#print axioms HigherCorrelations.pairDiagonal_tail_derivative
+#print axioms HigherCorrelations.pairDiagonal_tail_abel
+#print axioms HigherCorrelations.pairDiagonalWeight_nonneg
+#print axioms HigherCorrelations.pairDiagonalWeight_knot
+#print axioms HigherCorrelations.pairMeanPrimeCoefficient_sq_weight
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_summable
+#print axioms HigherCorrelations.pairMeanPrimePowerDiagonal_summable
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_nonneg
+#print axioms HigherCorrelations.pairMeanPrimePowerDiagonal_nonneg
+#print axioms HigherCorrelations.pairDiagonalWeight_summable
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_weight
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_split
+#print axioms HigherCorrelations.pairDiagonal_boundary_tendsto
+#print axioms HigherCorrelations.pairDiagonal_partial_tendsto
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_model_bound
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_asymptotic
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_upper
+#print axioms HigherCorrelations.pairDiagonalCumulative_power_loss
+#print axioms HigherCorrelations.pairDiagonal_log_moment
+#print axioms HigherCorrelations.pairDiagonalCumulative_bound
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_uniform
+#print axioms HigherCorrelations.pairMeanPrimeDiagonal_unit
+#print axioms HigherCorrelations.pairDiagonal_cutoff_term
+#print axioms HigherCorrelations.pairDiagonalPowerScale_rpow
+#print axioms HigherCorrelations.pairDiagonal_finite_split
+#print axioms HigherCorrelations.pairDiagonal_finite_abel
+#print axioms HigherCorrelations.pairDiagonal_error_integrals
+#print axioms HigherCorrelations.pairDiagonal_finite_error_identity
+#print axioms HigherCorrelations.pairDiagonal_finite_error_bound
+#print axioms HigherCorrelations.pairDiagonal_head_primitive
+#print axioms HigherCorrelations.pairDiagonal_tail_primitive
+#print axioms HigherCorrelations.pairDiagonal_head_integral
+#print axioms HigherCorrelations.pairDiagonal_tail_integral
+#print axioms HigherCorrelations.pairDiagonal_inverse_cube_integral
+#print axioms HigherCorrelations.pairDiagonalPNT_damping
+#print axioms HigherCorrelations.pairDiagonalPNT_log_error
+#print axioms HigherCorrelations.pairDiagonalPowerBall_nonneg
+#print axioms HigherCorrelations.pairDiagonalPowerBall_support
+#print axioms HigherCorrelations.pairDiagonalPowerBall_summable
+#print axioms HigherCorrelations.pairDiagonalPowerBall_sum
+#print axioms HigherCorrelations.pairDiagonalPowerBall_dyadic_bound
+#print axioms HigherCorrelations.pairDiagonalPowerBall_cover
+#print axioms HigherCorrelations.pairDiagonalPower_geometric_summable
+#print axioms HigherCorrelations.pairDiagonalPowerBall_double_summable
+#print axioms HigherCorrelations.pairDiagonalPowerWeight_summable
+#print axioms HigherCorrelations.pairMeanPrimePowerDiagonal_weight
+#print axioms HigherCorrelations.pairMeanPrimePowerDiagonal_sharp
+#print axioms HigherCorrelations.pairDiagonalPowerScale_bound
+#print axioms HigherCorrelations.pairMeanPrimePowerDiagonal_bounded
+#print axioms HigherCorrelations.pairDiagonalPowerCumulative_eq
+#print axioms HigherCorrelations.pairDiagonalPowerCumulative_nonneg
+#print axioms HigherCorrelations.pairDiagonalPowerCumulative_bound
+#print axioms StrongPNT
+#print axioms Erdos970.SmoothExistence
+#print axioms sum_mul_eq_sub_sub_integral_mul
+#print axioms Chebyshev.psi_le_const_mul_self

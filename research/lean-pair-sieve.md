@@ -108,6 +108,7 @@ external-kernel verification claim.
 
 ## Remaining work
 
-Formalize `PAIR-PRIME-DIAGONAL-001`, then optimize delta to assemble
-`PAIR-PRIME-MEAN-001`. This milestone supplies no new diagonal asymptotic,
-optimized mean-square theorem, pair asymptotic, or triple correlation theorem.
+The subsequent [diagonal milestone](lean-pair-diagonal.md) supplies the
+diagonal asymptotic with existential constants. Next, optimize delta to
+assemble `PAIR-PRIME-MEAN-001`; effective diagonal constants remain separate.
+The sieve milestone itself supplies no mean-square or correlation asymptotic.

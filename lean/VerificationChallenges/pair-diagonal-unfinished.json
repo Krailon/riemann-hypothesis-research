@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairDiagonal",
+  "solution_module": "VerificationChallenges.PairDiagonalUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairMeanPrimeDiagonal_asymptotic"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
