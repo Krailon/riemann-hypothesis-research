@@ -3870,3 +3870,46 @@ claims:
       imported_inputs: "Previously formalized actual prime mean-value theorem, weighted nearby-prime bound and diagonal asymptotic; checked mathlib logarithm bounds, integration and square roots."
       constants_scope: "The coefficient relative to input constants is explicit. The final constants are existential because the diagonal constants are existential; numerical effectivity remains unformalized."
       baseline_audit_coverage: "The bounds and endpoints of PAIR-PRIME-MEAN-001 are recovered; its historical effective-constant assertion remains separate. The full RHS mean square, pair/triple asymptotics, historical ledger statuses and prior audit scope are unchanged."
+
+  - id: PAIR-RHS-MEAN-FORMAL-001
+    title: Lean full explicit-formula mean square with separate uniform error scales
+    kind: proposition
+    statement: |
+      With the actual prime series and four PAIR-EF-001 remainders, define
+      A(X,t)=log(t+2)/X, H=E_arch+E_DS+E_pole+E_trivial, r=-P+A+H,
+      and R(X,T)=integral_0^T |r(X,t)|^2 dt. For X>=1 and t>=0,
+      r equals the existing full zero series. Both squared integrands are
+      interval integrable and R equals its zero-side counterpart without
+      changing the normalization. There exist absolute constants C1,C2>0,
+      independent of real T>=3 and 1<=X<=T, such that
+      R=T log(T)^2/X^2+T log X+E_small+E_large,
+      |E_small|<=C1 T log(T)/X^2, |E_large|<=C2 T sqrt(log T).
+      The exact named errors retain all signed cross terms separately:
+      E_small=E_archsquare+E_A,arch+E_A,DS; E_large=E_diagonal+
+      E_offdiag+E_primearch+sum_j E_P,j+E_A,pole+E_A,trivial+E_remsquare.
+      In particular |E_primearch|<=20 log(T+2)/sqrt X, by integration
+      by parts and sum_n a_X(n)/log(n)<=5 sqrt X. The n=1 term is zero.
+      All proper prime powers, full zero occurrences with multiplicity,
+      X=1, X=T, T=3 and t=0 are included. Final constants are existential;
+      no effective numerical constant or normalized correlation theorem
+      is asserted by this entry.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-UNIFORM-FORMAL-001, PAIR-PRIME-MEAN-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairRHSMean.lean
+      label: HigherCorrelations.pairRHSMean_uniform
+      companion_declarations: "pairRHS_decomposition, pairRHSSquare_eq_zeroMeanSquare, pairRHSSquare_integrable, pairZeroMeanSquare_integrable, pairRHSArchSquareError_bound, pairRHS_archError_L2, pairRHS_dsError_L2, pairRHS_pole_L2, pairRHS_trivial_L2, pairRHS_log_oscillation, pairRHS_coefficient_div_log_sum, pairRHS_primeArch_interchange, pairRHSPrimeArchError_bound, pairRHSSmallError_bound, pairRHSLargeError_bound, pairRHSMean_zero_bound, pairRHSMean_unit, pairRHSMean_top, pairRHSMean_minimal_height"
+      bookkeeping: research/lean-pair-rhs-mean.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 438877da8b2056172edeedb183645785111c2ecfffb065ecd27231cd08423c49
+    limit_order: "Fixed X,T for each absolute series/integral interchange, with the explicit T log(T+2) a_X(n)/X integral-norm majorant. Integration by parts is applied to each frequency after establishing absolute convergence. Final estimates are uniform for T>=3 and 1<=X<=T."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator for all 55 public declarations, all public and four additional imported analytic axiom reports, and unfinished-proof rejection."
+      imported_inputs: "Previously checked optimized prime mean square and four explicit-formula remainders; checked mathlib integration by parts, absolute integral/series interchange, Holder inequality and finite square inequality."
+      constants_scope: "The archimedean, oscillatory and individual remainder bounds have explicit constants. Final constants are existential through the preceding prime mean square."
+      baseline_audit_coverage: "The complete estimate, sharp mixed term, unchanged zero-series normalization and endpoints of PAIR-RHS-MEAN-001 are recovered. Its historical effective-constant assertion remains separate. Historical ledger entries, normalized pair/triple theorem statuses and prior RH-audit scope remain unchanged."

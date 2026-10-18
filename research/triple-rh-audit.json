@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "e9628c0902ba9fa69dcf0a22d52d4b3abe43d889fefe29a9cc96c6ed16ead3e2",
+    "research/theorem-ledger.yaml": "29c101376e0b549def9a4ae258999a30e7945ee91c1d8dd75b210e3e20eb4f09",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "5eee3a4d5663cd1b5a81b51031682e87df005ccf9967a901d2e7b06e22bfa06b"
+    "research/pair-rh-audit.json": "b38131fd902a9a838cdaf4c70be7f5791a3fae083a7ffeaba758d23c7e45688e"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4497,5 +4497,14 @@
     ],
     "report": "research/lean-pair-prime-mean.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate entry records the optimized prime mean square, both named errors, L2 bound and endpoints with existential constants. The historical effective-constant assertion, full RHS mean square, prior statuses and audit scope are preserved. This hash refresh does not extend either historical RH audit."
+  },
+  "ledger_pair_rhs_mean_review": {
+    "reviewed_on": "2026-10-17",
+    "previous_ledger_sha256": "e9628c0902ba9fa69dcf0a22d52d4b3abe43d889fefe29a9cc96c6ed16ead3e2",
+    "added_claim_ids": [
+      "PAIR-RHS-MEAN-FORMAL-001"
+    ],
+    "report": "research/lean-pair-rhs-mean.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate entry records the full explicit-formula mean square, its two named errors, sharp mixed term, unchanged zero-series normalization and closed endpoints with existential constants. The historical effective-constant assertion, normalized pair/triple theorem statuses and prior audit scope are preserved. This hash refresh does not extend either historical RH audit."
   }
 }

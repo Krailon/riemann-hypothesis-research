@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairRHSMean",
+  "solution_module": "VerificationChallenges.PairRHSMeanUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairRHSMean_uniform"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

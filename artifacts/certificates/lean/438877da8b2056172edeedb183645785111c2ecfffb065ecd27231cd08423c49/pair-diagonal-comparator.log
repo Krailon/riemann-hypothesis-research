@@ -1,0 +1,274 @@
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.PairDiagonal
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [2824/2824] Replayed VerificationChallenges.PairDiagonal
+warning: lean/VerificationChallenges/PairDiagonal.lean:12:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:15:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:23:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:27:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:33:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:36:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:43:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:45:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:49:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:57:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:60:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:63:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:66:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairDiagonal.lean:69:8: declaration uses `sorry`
+Build completed successfully (2824 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.pairMeanPrimeCoefficient_sq_weight, HigherCorrelations.pairMeanPrimeDiagonal_summable, HigherCorrelations.pairMeanPrimeDiagonal_split, HigherCorrelations.pairDiagonal_partial_tendsto, HigherCorrelations.pairMeanPrimeDiagonal_asymptotic, HigherCorrelations.pairMeanPrimeDiagonal_upper, HigherCorrelations.pairDiagonalCumulative_bound, HigherCorrelations.pairMeanPrimeDiagonal_uniform, HigherCorrelations.pairMeanPrimeDiagonal_unit, HigherCorrelations.pairDiagonal_cutoff_term, HigherCorrelations.pairDiagonalPowerScale_rpow, HigherCorrelations.pairDiagonal_finite_error_bound, HigherCorrelations.pairDiagonalPNT_log_error, HigherCorrelations.pairDiagonalPowerBall_double_summable, HigherCorrelations.pairMeanPrimePowerDiagonal_sharp, HigherCorrelations.pairMeanPrimePowerDiagonal_bounded, HigherCorrelations.pairDiagonalPowerCumulative_bound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.PairDiagonal
+Building HigherCorrelations.PairDiagonalEndpoints
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [2748/2974] Replayed HigherCorrelations.PairMeanSeries
+warning: lean/HigherCorrelations/PairMeanSeries.lean:34:27: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanSeries.lean:34:52: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanSeries.lean:72:10: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairMeanCharacter_norm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3194/3295] Replayed HigherCorrelations.PairMeanTriangle
+warning: lean/HigherCorrelations/PairMeanTriangle.lean:47:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairMeanTriangle.lean:52:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3195/3295] Replayed HigherCorrelations.PairMeanFourierRules
+warning: lean/HigherCorrelations/PairMeanFourierRules.lean:40:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairMeanFourierRules.lean:40:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [3197/3295] Replayed HigherCorrelations.PairMeanKernelMass
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:69:110: This simp argument is unused:
+  Pi.neg_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [id_eq, Pi.pow_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:69:124: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:75:130: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3199/3295] Replayed HigherCorrelations.PairMeanKernelTail
+warning: lean/HigherCorrelations/PairMeanKernelTail.lean:30:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3201/3295] Replayed HigherCorrelations.PairMeanSandwich
+warning: lean/HigherCorrelations/PairMeanSandwich.lean:62:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/PairMeanSandwich.lean:62:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3203/3295] Replayed HigherCorrelations.PairMeanOffDiagonal
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:65:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:69:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:12:13: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:44:19: This simp argument is unused:
+  Prod.fst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [B, Prod.snd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:44:28: This simp argument is unused:
+  Prod.snd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [B, Prod.fst]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3824/3908] Replayed HigherCorrelations.PairDiagonalAlgebra
+warning: lean/HigherCorrelations/PairDiagonalAlgebra.lean:34:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairDiagonalAlgebra.lean:34:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/PairDiagonalAlgebra.lean:50:18: Variable name `n` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _n
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairDiagonalAlgebra.lean:116:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3825/3908] Replayed HigherCorrelations.PairDiagonalIntegrals
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:13:81: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:13:96: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:20:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:20:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:44:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:56:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:56:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:59:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3826/3908] Replayed HigherCorrelations.PairDiagonalAbel
+warning: lean/HigherCorrelations/PairDiagonalAbel.lean:21:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: lean/HigherCorrelations/PairDiagonalAbel.lean:27:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalAbel.lean:27:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [3904/3908] Replayed PrimeNumberTheoremAnd.MediumPNT
+info: PrimeNumberTheoremAnd/MediumPNT.lean:4142:0: 'MediumPNT' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3905/3908] Replayed PrimeNumberTheoremAnd.StrongPNT
+info: PrimeNumberTheoremAnd/StrongPNT.lean:2898:0: 'StrongPNT' depends on axioms: [propext, choice, Quot.sound]
+⚠ [8989/8997] Replayed HigherCorrelations.PairSieveLinear
+warning: lean/HigherCorrelations/PairSieveLinear.lean:60:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairSieveLinear.lean:60:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8990/8997] Replayed HigherCorrelations.PairSievePrimePowers
+warning: lean/HigherCorrelations/PairSievePrimePowers.lean:82:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8991/8997] Replayed HigherCorrelations.PairDiagonalCumulative
+warning: lean/HigherCorrelations/PairDiagonalCumulative.lean:41:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [8992/8997] Replayed HigherCorrelations.PairDiagonalFinite
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:42:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:116:26: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:116:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:120:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:134:41: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:134:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ℹ [8993/8997] Replayed HigherCorrelations.PairDiagonalAsymptotic
+info: lean/HigherCorrelations/PairDiagonalAsymptotic.lean:19:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8995/8997] Replayed HigherCorrelations.PairDiagonalPowerBall
+warning: lean/HigherCorrelations/PairDiagonalPowerBall.lean:92:65: This simp argument is unused:
+  ite_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairDiagonalPowerBall, Nat.le_floor hR, hn, true_and, pairDiagonalWeight, h, ite_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Build completed successfully (8997 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.pairMeanPrimeCoefficient_sq_weight, HigherCorrelations.pairMeanPrimeDiagonal_summable, HigherCorrelations.pairMeanPrimeDiagonal_split, HigherCorrelations.pairDiagonal_partial_tendsto, HigherCorrelations.pairMeanPrimeDiagonal_asymptotic, HigherCorrelations.pairMeanPrimeDiagonal_upper, HigherCorrelations.pairDiagonalCumulative_bound, HigherCorrelations.pairMeanPrimeDiagonal_uniform, HigherCorrelations.pairMeanPrimeDiagonal_unit, HigherCorrelations.pairDiagonal_cutoff_term, HigherCorrelations.pairDiagonalPowerScale_rpow, HigherCorrelations.pairDiagonal_finite_error_bound, HigherCorrelations.pairDiagonalPNT_log_error, HigherCorrelations.pairDiagonalPowerBall_double_summable, HigherCorrelations.pairMeanPrimePowerDiagonal_sharp, HigherCorrelations.pairMeanPrimePowerDiagonal_bounded, HigherCorrelations.pairDiagonalPowerCumulative_bound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from HigherCorrelations.PairDiagonalEndpoints
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

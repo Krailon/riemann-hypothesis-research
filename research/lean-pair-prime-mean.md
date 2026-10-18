@@ -91,7 +91,7 @@ verification.
 
 ## Next step
 
-Formalize the full prime-side squared norm, combining this prime mean square
-with the archimedean main term and the named explicit-formula remainders.
-Numerical effectivity of the diagonal and mean-square constants remains
-separate work.
+The [full explicit-formula mean square](lean-pair-rhs-mean.md) now combines
+these inputs with the archimedean main term and all four remainders.
+Next assemble the normalized pair-correlation asymptotic. Numerical effectivity
+of the diagonal and mean-square constants remains separate work.

@@ -16,11 +16,20 @@ from check_triple_dependencies import closure, flat_section, subsection
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / 'research/lean-analytic-coverage.json'
 ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
-         'ORDINATE-TRIPLE-001']
+         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001']
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001'}
 PARTIAL = {
+    'PAIR-RHS-MEAN-001': (
+        ['pairRHSMean_uniform', 'pairRHS_decomposition', 'pairRHSSquare_eq_zeroMeanSquare',
+         'pairRHSSquare_integrable', 'pairZeroMeanSquare_integrable', 'pairRHSPrimeArchError_bound',
+         'pairRHS_primeArch_interchange', 'pairRHS_coefficient_div_log_sum',
+         'pairRHS_archError_L2', 'pairRHS_dsError_L2', 'pairRHS_pole_L2', 'pairRHS_trivial_L2',
+         'pairRHSSmallError_bound', 'pairRHSLargeError_bound', 'pairRHSMean_zero_bound',
+         'pairRHSMean_unit', 'pairRHSMean_top', 'pairRHSMean_minimal_height'],
+        ['The full mean square, sharp mixed term, exact zero-series normalization and endpoints are checked with existential constants; the historical effective-constant assertion remains unformalized.']),
+
     'PAIR-PRIME-DIAGONAL-001': (
         ['pairMeanPrimeDiagonal_uniform', 'pairMeanPrimeDiagonal_split',
          'pairMeanPrimePowerDiagonal_sharp', 'pairMeanPrimePowerDiagonal_bounded',
@@ -391,9 +400,27 @@ def derive():
             and prime_mean_config['enable_nanoda'] is False, 'changed pair-prime-mean verification scope')
     components.extend(prime_mean['components'])
     names.extend(c['declaration'] for c in prime_mean['components'])
+    rhs_mean = json.loads(read('research/lean-pair-rhs-mean-inventory.json'))
+    found = []
+    for module in rhs_mean['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair-rhs-mean solution: ' + path)
+        for name in re.findall(r'^(?:@\[[^\n]*\]\s+)?theorem (\w+)\b', source, re.M):
+            found.append(dict(declaration='HigherCorrelations.' + name, source=path))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in rhs_mean['components']],
+            'pair-rhs-mean inventory differs from source declarations')
+    rhs_mean_config = json.loads(read('lean/VerificationChallenges/pair-rhs-mean.json'))
+    require(rhs_mean_config['theorem_names'] == [c['declaration'] for c in rhs_mean['components'] if c['comparator_checked']],
+            'pair-rhs-mean Comparator coverage differs from inventory')
+    require(rhs_mean_config['permitted_axioms'] == config['permitted_axioms']
+            and rhs_mean_config['enable_nanoda'] is False, 'changed pair-rhs-mean verification scope')
+    components.extend(rhs_mean['components'])
+    names.extend(c['declaration'] for c in rhs_mean['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -428,7 +455,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Formalize the full prime-side squared norm, combining the checked optimized prime mean square with the archimedean and explicit-formula remainders. The diagonal and optimized mean-square constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Assemble the normalized pair-correlation asymptotic from the checked RHS mean square and the zero-side comparison. The diagonal, prime mean-square and full RHS constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
 
 
 def validate(record):
@@ -462,6 +489,33 @@ class CoverageTests(unittest.TestCase):
         self.assertNotIn('PAIR-RHS-MEAN-001', COMPLETE_STATEMENTS)
         rhs = indexed_blocks(read('research/theorem-ledger.yaml'))['PAIR-RHS-MEAN-001']
         self.assertEqual(field(rhs, 'status'), 'proved-draft')
+
+    def test_rhs_effectivity_and_normalization(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-RHS-MEAN-001')
+        self.assertIn('PAIR-RHS-MEAN-001', self.record['roots'])
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertTrue(any('effective-constant' in gap for gap in node['remaining_obligations']))
+        for name in ['pairRHSMean_uniform', 'pairRHSSquare_eq_zeroMeanSquare',
+                     'pairRHSPrimeArchError_bound', 'pairRHS_primeArch_interchange',
+                     'pairRHSSmallError_bound', 'pairRHSLargeError_bound']:
+            self.assertIn('HigherCorrelations.' + name, node['components'])
+        claim = indexed_blocks(read('research/theorem-ledger.yaml'))['PAIR-RHS-MEAN-FORMAL-001']
+        self.assertEqual(field(claim, 'status'), 'formalized')
+        self.assertEqual(field(claim, 'constants_effective'), 'false')
+
+    def test_rhs_remainders_and_endpoints(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-RHS-MEAN-001')
+        for name in ['pairRHS_archError_L2', 'pairRHS_dsError_L2', 'pairRHS_pole_L2',
+                     'pairRHS_trivial_L2', 'pairRHSMean_unit', 'pairRHSMean_top',
+                     'pairRHSMean_minimal_height']:
+            self.assertIn('HigherCorrelations.' + name, node['components'])
+
+    def test_rhs_comparator_scope_drift(self):
+        component = next(c for c in self.record['components']
+                         if c['declaration'] == 'HigherCorrelations.pairRHSMean_uniform')
+        component['comparator_checked'] = False
+        with self.assertRaises(ValueError): validate(self.record)
 
     def test_prime_mean_comparator_scope_drift(self):
         component = next(c for c in self.record['components']

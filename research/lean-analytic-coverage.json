@@ -7,7 +7,8 @@
   "roots": [
     "TRIPLE-SMOOTHED-CORRELATION-001",
     "ORDINATE-CONSTANT-KERNEL-001",
-    "ORDINATE-TRIPLE-001"
+    "ORDINATE-TRIPLE-001",
+    "PAIR-RHS-MEAN-001"
   ],
   "analytic_proof_certificate": false,
   "whole_graph_formalized": false,
@@ -645,6 +646,46 @@
       "remaining_obligations": [
         "The Fourier mean-value input and actual prime-series specialization are checked.",
         "The optimized mean-square error, diagonal error and L2 bound are checked with existential constants. The historical effective-constant assertion remains unformalized."
+      ]
+    },
+    {
+      "id": "PAIR-RHS-MEAN-001",
+      "dependencies": [
+        "PAIR-EF-001",
+        "PAIR-PRIME-MEAN-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "2e540e9c5ea98ed9b902af7d37f30f0ad1882ab012ed367e47b1a5006cc75759",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:rhs-mean",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, equations (2.17),(2.19) and remark"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.pairRHSMean_uniform",
+        "HigherCorrelations.pairRHS_decomposition",
+        "HigherCorrelations.pairRHSSquare_eq_zeroMeanSquare",
+        "HigherCorrelations.pairRHSSquare_integrable",
+        "HigherCorrelations.pairZeroMeanSquare_integrable",
+        "HigherCorrelations.pairRHSPrimeArchError_bound",
+        "HigherCorrelations.pairRHS_primeArch_interchange",
+        "HigherCorrelations.pairRHS_coefficient_div_log_sum",
+        "HigherCorrelations.pairRHS_archError_L2",
+        "HigherCorrelations.pairRHS_dsError_L2",
+        "HigherCorrelations.pairRHS_pole_L2",
+        "HigherCorrelations.pairRHS_trivial_L2",
+        "HigherCorrelations.pairRHSSmallError_bound",
+        "HigherCorrelations.pairRHSLargeError_bound",
+        "HigherCorrelations.pairRHSMean_zero_bound",
+        "HigherCorrelations.pairRHSMean_unit",
+        "HigherCorrelations.pairRHSMean_top",
+        "HigherCorrelations.pairRHSMean_minimal_height"
+      ],
+      "remaining_obligations": [
+        "The full mean square, sharp mixed term, exact zero-series normalization and endpoints are checked with existential constants; the historical effective-constant assertion remains unformalized."
       ]
     },
     {
@@ -1311,6 +1352,14 @@
       "PAIR-PRIME-DIAGONAL-001"
     ],
     [
+      "PAIR-RHS-MEAN-001",
+      "PAIR-EF-001"
+    ],
+    [
+      "PAIR-RHS-MEAN-001",
+      "PAIR-PRIME-MEAN-001"
+    ],
+    [
       "PRIME-PNT-001",
       "MV-PNT-PROOF"
     ],
@@ -1489,6 +1538,7 @@
     "ORDINATE-DENSITY-INPUT-001",
     "ORDINATE-PAIR-INPUT-001",
     "ORDINATE-TRANSFER-001",
+    "PAIR-RHS-MEAN-001",
     "TRIPLE-SMOOTHED-CORRELATION-001",
     "TRIPLE-MAIN-TERM-COMPARISON-001",
     "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
@@ -5172,7 +5222,282 @@
       "declaration": "HigherCorrelations.pairPrimeMeanL2Norm_bound",
       "source": "lean/HigherCorrelations/PairPrimeMeanEstimate.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_log_comparison",
+      "source": "lean/HigherCorrelations/PairRHSArchIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_log_square_derivative",
+      "source": "lean/HigherCorrelations/PairRHSArchIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_log_square_integral",
+      "source": "lean/HigherCorrelations/PairRHSArchIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSArch_continuous",
+      "source": "lean/HigherCorrelations/PairRHSArchIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSArch_square_integral",
+      "source": "lean/HigherCorrelations/PairRHSArchIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSArchSquareError_bound",
+      "source": "lean/HigherCorrelations/PairRHSArchIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_prime_continuous",
+      "source": "lean/HigherCorrelations/PairRHSContinuity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_remainder_continuous",
+      "source": "lean/HigherCorrelations/PairRHSContinuity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_remainder_sum",
+      "source": "lean/HigherCorrelations/PairRHSContinuity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_eq_zeroSeries",
+      "source": "lean/HigherCorrelations/PairRHSContinuity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSSquare_integrable",
+      "source": "lean/HigherCorrelations/PairRHSContinuity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroMeanSquare_integrable",
+      "source": "lean/HigherCorrelations/PairRHSContinuity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSSquare_eq_zeroMeanSquare",
+      "source": "lean/HigherCorrelations/PairRHSContinuity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSPrimeError_cauchy",
+      "source": "lean/HigherCorrelations/PairRHSCrossTerms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSArchError_cauchy",
+      "source": "lean/HigherCorrelations/PairRHSCrossTerms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSRemainderSquare_bound",
+      "source": "lean/HigherCorrelations/PairRHSCrossTerms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSPrimeError_scale",
+      "source": "lean/HigherCorrelations/PairRHSCrossTerms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSArchError_small",
+      "source": "lean/HigherCorrelations/PairRHSCrossTerms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSArchError_large",
+      "source": "lean/HigherCorrelations/PairRHSCrossTerms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_square_algebra",
+      "source": "lean/HigherCorrelations/PairRHSExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_integral_re",
+      "source": "lean/HigherCorrelations/PairRHSExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_square_integral",
+      "source": "lean/HigherCorrelations/PairRHSExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_cross_sum",
+      "source": "lean/HigherCorrelations/PairRHSExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_decomposition",
+      "source": "lean/HigherCorrelations/PairRHSExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSL2_memLp",
+      "source": "lean/HigherCorrelations/PairRHSL2.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSL2_cauchy",
+      "source": "lean/HigherCorrelations/PairRHSL2.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSL2_square_bound",
+      "source": "lean/HigherCorrelations/PairRHSL2.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSSmallError_bound",
+      "source": "lean/HigherCorrelations/PairRHSMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSLargeError_bound",
+      "source": "lean/HigherCorrelations/PairRHSMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSMean_uniform",
+      "source": "lean/HigherCorrelations/PairRHSMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSMean_zero_bound",
+      "source": "lean/HigherCorrelations/PairRHSMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSMean_unit",
+      "source": "lean/HigherCorrelations/PairRHSMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSMean_top",
+      "source": "lean/HigherCorrelations/PairRHSMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSMean_minimal_height",
+      "source": "lean/HigherCorrelations/PairRHSMean.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_log_integrals",
+      "source": "lean/HigherCorrelations/PairRHSOscillation.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_log_oscillation",
+      "source": "lean/HigherCorrelations/PairRHSOscillation.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_integral_tsum",
+      "source": "lean/HigherCorrelations/PairRHSPrimeArch.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_primeTerm_phase",
+      "source": "lean/HigherCorrelations/PairRHSPrimeArch.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_primeArch_term",
+      "source": "lean/HigherCorrelations/PairRHSPrimeArch.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_primeArch_interchange",
+      "source": "lean/HigherCorrelations/PairRHSPrimeArch.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSPrimeArchError_bound",
+      "source": "lean/HigherCorrelations/PairRHSPrimeArch.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_coefficient_div_log_nonneg",
+      "source": "lean/HigherCorrelations/PairRHSPrimeWeight.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_coefficient_div_log_bounds",
+      "source": "lean/HigherCorrelations/PairRHSPrimeWeight.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_coefficient_div_log_summable",
+      "source": "lean/HigherCorrelations/PairRHSPrimeWeight.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_rpow_tail",
+      "source": "lean/HigherCorrelations/PairRHSPrimeWeight.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_coefficient_div_log_sum",
+      "source": "lean/HigherCorrelations/PairRHSPrimeWeight.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSL2_constant_bound",
+      "source": "lean/HigherCorrelations/PairRHSRemainderNorms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHSL2_decay_bound",
+      "source": "lean/HigherCorrelations/PairRHSRemainderNorms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_arch_L2",
+      "source": "lean/HigherCorrelations/PairRHSRemainderNorms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_archError_L2",
+      "source": "lean/HigherCorrelations/PairRHSRemainderNorms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_dsError_L2",
+      "source": "lean/HigherCorrelations/PairRHSRemainderNorms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_pole_L2",
+      "source": "lean/HigherCorrelations/PairRHSRemainderNorms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_trivial_L2",
+      "source": "lean/HigherCorrelations/PairRHSRemainderNorms.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_height_scales",
+      "source": "lean/HigherCorrelations/PairRHSScales.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairRHS_remainder_uniform",
+      "source": "lean/HigherCorrelations/PairRHSScales.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Formalize the full prime-side squared norm, combining the checked optimized prime mean square with the archimedean and explicit-formula remainders. The diagonal and optimized mean-square constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
+  "next_step": "Assemble the normalized pair-correlation asymptotic from the checked RHS mean square and the zero-side comparison. The diagonal, prime mean-square and full RHS constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
 }

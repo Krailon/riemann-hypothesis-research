@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "e9628c0902ba9fa69dcf0a22d52d4b3abe43d889fefe29a9cc96c6ed16ead3e2",
+  "ledger_sha256": "29c101376e0b549def9a4ae258999a30e7945ee91c1d8dd75b210e3e20eb4f09",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2633,5 +2633,14 @@
     ],
     "report": "research/lean-pair-prime-mean.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate entry records the optimized prime mean square, both named errors, L2 bound and endpoints with existential constants. The historical effective-constant assertion, full RHS mean square, prior statuses and audit scope are preserved. This hash refresh does not extend either historical RH audit."
+  },
+  "ledger_pair_rhs_mean_review": {
+    "reviewed_on": "2026-10-17",
+    "previous_ledger_sha256": "e9628c0902ba9fa69dcf0a22d52d4b3abe43d889fefe29a9cc96c6ed16ead3e2",
+    "added_claim_ids": [
+      "PAIR-RHS-MEAN-FORMAL-001"
+    ],
+    "report": "research/lean-pair-rhs-mean.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate entry records the full explicit-formula mean square, its two named errors, sharp mixed term, unchanged zero-series normalization and closed endpoints with existential constants. The historical effective-constant assertion, normalized pair/triple theorem statuses and prior audit scope are preserved. This hash refresh does not extend either historical RH audit."
   }
 }

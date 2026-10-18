@@ -1,0 +1,134 @@
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.PairRHSMean
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3806/3806] Replayed VerificationChallenges.PairRHSMean
+warning: lean/VerificationChallenges/PairRHSMean.lean:11:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:16:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:25:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:28:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:33:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:36:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:39:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:42:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:49:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:55:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:62:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:66:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:70:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:76:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:81:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:102:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:107:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:111:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:118:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:121:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:124:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:127:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:135:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:140:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:143:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:147:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:151:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:156:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:160:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:166:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:170:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:174:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:178:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:181:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:184:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:188:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:191:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:194:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:197:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:201:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:206:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:209:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:212:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:215:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:218:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:221:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairRHSMean.lean:228:8: declaration uses `sorry`
+Build completed successfully (3806 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.pairRHSMean_uniform, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.PairRHSMean
+Building VerificationChallenges.PairRHSMeanUnfinished
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3806/3806] Built VerificationChallenges.PairRHSMeanUnfinished (2.0s)
+warning: lean/VerificationChallenges/PairRHSMeanUnfinished.lean:11:8: declaration uses `sorry`
+Build completed successfully (3806 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.pairRHSMean_uniform, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.PairRHSMeanUnfinished
+uncaught exception: Illegal axiom detected: 'sorryAx'

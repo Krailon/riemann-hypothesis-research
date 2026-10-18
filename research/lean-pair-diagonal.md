@@ -106,7 +106,8 @@ fresh-checkout or independent external-kernel verification.
 ## Remaining work
 
 The [optimized prime mean square](lean-pair-prime-mean.md) now combines the
-three checked inputs. Next formalize the full prime-side squared norm with
-the archimedean main term and explicit-formula remainders. Effective diagonal
+three checked inputs. The [full RHS mean square](lean-pair-rhs-mean.md) now
+includes the archimedean main term and explicit-formula remainders. Next
+assemble the normalized pair-correlation asymptotic. Effective diagonal
 and mean-square constants remain separate. The pair and triple correlation
 theorems are not promoted by these milestones.

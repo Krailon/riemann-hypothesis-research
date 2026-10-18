@@ -1,3 +1,4 @@
+import HigherCorrelations.PairRHSMean
 import HigherCorrelations.PairPrimeMean
 import HigherCorrelations.PairDiagonalEndpoints
 import HigherCorrelations.PairSieveEndpoints
@@ -858,3 +859,64 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms Real.log_two_gt_d9
 #print axioms Real.log_two_lt_d9
 #print axioms Real.log_three_gt_d9
+
+-- Full explicit-formula mean square, actual remainders and sharp mixed term.
+#print axioms HigherCorrelations.pairRHS_log_comparison
+#print axioms HigherCorrelations.pairRHS_log_square_derivative
+#print axioms HigherCorrelations.pairRHS_log_square_integral
+#print axioms HigherCorrelations.pairRHSArch_continuous
+#print axioms HigherCorrelations.pairRHSArch_square_integral
+#print axioms HigherCorrelations.pairRHSArchSquareError_bound
+#print axioms HigherCorrelations.pairRHS_prime_continuous
+#print axioms HigherCorrelations.pairRHS_remainder_continuous
+#print axioms HigherCorrelations.pairRHS_remainder_sum
+#print axioms HigherCorrelations.pairRHS_eq_zeroSeries
+#print axioms HigherCorrelations.pairRHSSquare_integrable
+#print axioms HigherCorrelations.pairZeroMeanSquare_integrable
+#print axioms HigherCorrelations.pairRHSSquare_eq_zeroMeanSquare
+#print axioms HigherCorrelations.pairRHSPrimeError_cauchy
+#print axioms HigherCorrelations.pairRHSArchError_cauchy
+#print axioms HigherCorrelations.pairRHSRemainderSquare_bound
+#print axioms HigherCorrelations.pairRHSPrimeError_scale
+#print axioms HigherCorrelations.pairRHSArchError_small
+#print axioms HigherCorrelations.pairRHSArchError_large
+#print axioms HigherCorrelations.pairRHS_square_algebra
+#print axioms HigherCorrelations.pairRHS_integral_re
+#print axioms HigherCorrelations.pairRHS_square_integral
+#print axioms HigherCorrelations.pairRHS_cross_sum
+#print axioms HigherCorrelations.pairRHS_decomposition
+#print axioms HigherCorrelations.pairRHSL2_memLp
+#print axioms HigherCorrelations.pairRHSL2_cauchy
+#print axioms HigherCorrelations.pairRHSL2_square_bound
+#print axioms HigherCorrelations.pairRHSSmallError_bound
+#print axioms HigherCorrelations.pairRHSLargeError_bound
+#print axioms HigherCorrelations.pairRHSMean_uniform
+#print axioms HigherCorrelations.pairRHSMean_zero_bound
+#print axioms HigherCorrelations.pairRHSMean_unit
+#print axioms HigherCorrelations.pairRHSMean_top
+#print axioms HigherCorrelations.pairRHSMean_minimal_height
+#print axioms HigherCorrelations.pairRHS_log_integrals
+#print axioms HigherCorrelations.pairRHS_log_oscillation
+#print axioms HigherCorrelations.pairRHS_integral_tsum
+#print axioms HigherCorrelations.pairRHS_primeTerm_phase
+#print axioms HigherCorrelations.pairRHS_primeArch_term
+#print axioms HigherCorrelations.pairRHS_primeArch_interchange
+#print axioms HigherCorrelations.pairRHSPrimeArchError_bound
+#print axioms HigherCorrelations.pairRHS_coefficient_div_log_nonneg
+#print axioms HigherCorrelations.pairRHS_coefficient_div_log_bounds
+#print axioms HigherCorrelations.pairRHS_coefficient_div_log_summable
+#print axioms HigherCorrelations.pairRHS_rpow_tail
+#print axioms HigherCorrelations.pairRHS_coefficient_div_log_sum
+#print axioms HigherCorrelations.pairRHSL2_constant_bound
+#print axioms HigherCorrelations.pairRHSL2_decay_bound
+#print axioms HigherCorrelations.pairRHS_arch_L2
+#print axioms HigherCorrelations.pairRHS_archError_L2
+#print axioms HigherCorrelations.pairRHS_dsError_L2
+#print axioms HigherCorrelations.pairRHS_pole_L2
+#print axioms HigherCorrelations.pairRHS_trivial_L2
+#print axioms HigherCorrelations.pairRHS_height_scales
+#print axioms HigherCorrelations.pairRHS_remainder_uniform
+#print axioms MeasureTheory.integral_mul_norm_le_Lp_mul_Lq
+#print axioms intervalIntegral.integral_mul_deriv_eq_deriv_mul_of_hasDerivAt
+#print axioms integral_univ_inv_one_add_sq
+#print axioms sq_sum_le_card_mul_sum_sq

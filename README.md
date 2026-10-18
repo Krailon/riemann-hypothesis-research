@@ -142,7 +142,11 @@ existential; numerical effectivity remains separate. See the
 The **optimized prime mean square** now has uniform named error bounds and
 an integral L2 bound, including X=1, X=T and T=3. Constants remain existential.
 See the [prime mean-square record](research/lean-pair-prime-mean.md).
-Next: the full prime-side squared norm with the explicit-formula remainders.
+The **full explicit-formula mean square** now combines these inputs with all
+four remainders, retaining separate errors O(T log(T)/X²) and O(T sqrt(log T)),
+the sharp prime–archimedean bound and exact zero-series normalization.
+Constants remain existential. See the [RHS mean-square record](research/lean-pair-rhs-mean.md).
+Next: assemble the normalized pair-correlation asymptotic.
 
 ## Reproduce the pair baseline
 
