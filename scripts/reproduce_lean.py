@@ -26,9 +26,10 @@ def digest(path):
 def source_hashes():
     files = [ROOT / p for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json',
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
-             'scripts/reproduce_lean.py', 'scripts/prepare_lean_diagonal.py', 'scripts/check_lean_analytic_coverage.py',
+             'scripts/reproduce_lean.py', 'scripts/check_zeta23_import.py', 'research/lean-zeta23-inventory.json', 'research/lean-zeta23.md', 'scripts/prepare_lean_diagonal.py', 'scripts/check_lean_analytic_coverage.py',
              'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json',
              'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json', 'research/lean-pair-exact-inventory.json', 'research/lean-pair-uniform-inventory.json', 'research/lean-pair-meanvalue-inventory.json', 'research/lean-pair-sieve-inventory.json', 'research/lean-pair-diagonal-inventory.json', 'research/lean-pair-prime-mean-inventory.json', 'research/lean-pair-rhs-mean-inventory.json']]
+    files += sorted(p for p in (ROOT / 'vendor/zeta23').rglob('*') if p.is_file())
     files += sorted((ROOT / 'lean').rglob('*.lean'))
     files += sorted((ROOT / 'lean').rglob('*.json'))
     return {str(p.relative_to(ROOT)): digest(p) for p in files if p.is_file()}
@@ -80,6 +81,8 @@ def main():
     parser.add_argument('--skip-bootstrap', action='store_true')
     parser.add_argument('--fresh-project', action='store_true',
                         help='Move aside only the project build directory before verification.')
+    parser.add_argument('--zeta23-only', action='store_true',
+                        help='Use prepared dependencies; check Zeta23, combined build, all axioms and regressions.')
     args = parser.parse_args()
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     run_dir = ROOT / 'artifacts/lean-runs' / stamp
@@ -89,6 +92,10 @@ def main():
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   assumptions=['UNCONDITIONAL'],
                   verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, horizontal derivatives, logarithmic local zero counts, uniform height bounds, pair explicit-formula series convergence, the paired Mellin kernel including its endpoint, the exact pair explicit formula, its uniform named errors, the Fourier mean-value input with actual prime-series specialization, the effective weighted nearby-prime sieve bound, the prime diagonal asymptotic, the optimized prime mean square, and the complete explicit-formula RHS mean square with existential constants')
+
+    if args.zeta23_only:
+        report['verification_scope'] = ('Zeta23 rank-trace and dyadic counting imports; combined project build, '
+            'complete axiom report and Python regressions. Earlier Comparator suites are not rerun.')
 
     def command(name, argv, *, expected_failure=False):
         log = run_dir / (name + '.log')
@@ -118,105 +125,116 @@ def main():
         command('landrun-version', ['landrun', '--version'])
         upstream_checkout()
         # Runs upstream's required patch hooks; check every resolved Git pin afterward.
-        command('resolve', ['lake', 'update', 'OAI'])
-        command('prepare-diagonal', [sys.executable, '-B', 'scripts/prepare_lean_diagonal.py'])
+        if not args.zeta23_only:
+            command('resolve', ['lake', 'update', 'OAI'])
+            command('prepare-diagonal', [sys.executable, '-B', 'scripts/prepare_lean_diagonal.py'])
         verify_dependency_pins()
         report['dependency_checkouts'] = dependency_evidence(run_dir)
-        command('mathlib-cache', ['lake', 'exe', 'cache', 'get'])
+        if not args.zeta23_only:
+            command('mathlib-cache', ['lake', 'exe', 'cache', 'get'])
         if args.fresh_project:
             build = ROOT / '.lake/build'
             if build.exists():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
-        command('pair-rhs-mean-build', ['lake', 'build', 'HigherCorrelations.PairRHSMean'])
-        command('pair-rhs-mean-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-rhs-mean.json'])
-        command('pair-rhs-mean-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-rhs-mean-unfinished.json'], expected_failure=True)
-        command('pair-prime-mean-build', ['lake', 'build', 'HigherCorrelations.PairPrimeMean'])
-        command('pair-prime-mean-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-prime-mean.json'])
-        command('pair-prime-mean-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-prime-mean-unfinished.json'], expected_failure=True)
-        command('pair-diagonal-build', ['lake', 'build', 'HigherCorrelations.PairDiagonalEndpoints'])
-        command('pair-diagonal-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-diagonal.json'])
-        command('pair-diagonal-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-diagonal-unfinished.json'], expected_failure=True)
-        command('pair-sieve-build', ['lake', 'build', 'HigherCorrelations.PairSieveEndpoints'])
-        command('pair-sieve-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-sieve.json'])
-        command('pair-sieve-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-sieve-unfinished.json'], expected_failure=True)
-        command('pair-meanvalue-build', ['lake', 'build', 'HigherCorrelations.PairMeanEndpoints'])
-        command('pair-meanvalue-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-meanvalue.json'])
-        command('pair-meanvalue-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-meanvalue-unfinished.json'], expected_failure=True)
-        command('pair-uniform-build', ['lake', 'build', 'HigherCorrelations.PairUniformFormula'])
-        command('pair-uniform-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-uniform.json'])
-        command('pair-uniform-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-uniform-unfinished.json'], expected_failure=True)
-        command('pair-exact-build', ['lake', 'build', 'HigherCorrelations.PairExactFormula'])
-        command('pair-exact-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-exact.json'])
-        command('pair-exact-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-exact-unfinished.json'], expected_failure=True)
-        command('paired-mellin-build', ['lake', 'build', 'HigherCorrelations.PairedMellin'])
-        command('paired-mellin-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/paired-mellin.json'])
-        command('paired-mellin-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/paired-mellin-unfinished.json'], expected_failure=True)
-        command('pair-series-build', ['lake', 'build', 'HigherCorrelations.PairSeriesConvergence'])
-        command('pair-series-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-series.json'])
-        command('pair-series-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/pair-series-unfinished.json'], expected_failure=True)
-        command('uniform-height-build', ['lake', 'build', 'HigherCorrelations.UniformHeight'])
-        command('uniform-height-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/uniform-height.json'])
-        command('uniform-height-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/uniform-height-unfinished.json'], expected_failure=True)
-        command('integral-profile-build', ['lake', 'build', 'HigherCorrelations.IntegralProfile'])
-        command('integral-profile-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/integral-profile.json'])
-        command('integral-profile-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/integral-profile-unfinished.json'], expected_failure=True)
-        command('rational-transfer-build', ['lake', 'build', 'HigherCorrelations.RationalTransfer'])
-        command('rational-transfer-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/rational-transfer.json'])
-        command('rational-transfer-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/rational-transfer-unfinished.json'], expected_failure=True)
-        command('actual-occurrences-build', ['lake', 'build', 'HigherCorrelations.ActualOccurrencesFoundation'])
-        command('actual-occurrences-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/actual-occurrences.json'])
-        command('actual-occurrences-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/actual-occurrences-unfinished.json'], expected_failure=True)
-        command('summability-build', ['lake', 'build', 'HigherCorrelations.SummabilityFoundation'])
-        command('summability-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/summability.json'])
-        command('summability-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/summability-unfinished.json'], expected_failure=True)
-        command('analytic-coverage', [sys.executable, '-B', 'scripts/check_lean_analytic_coverage.py'])
-        command('horizontal-square-build', ['lake', 'build', 'HigherCorrelations.HorizontalSquareFoundation'])
-        command('horizontal-square-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/horizontal-square.json'])
-        command('horizontal-square-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/horizontal-square-unfinished.json'], expected_failure=True)
-        command('finite-build', ['lake', 'build', 'HigherCorrelations.FiniteFoundation'])
-        command('finite-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/finite-foundation.json'])
-        command('finite-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/finite-unfinished.json'], expected_failure=True)
-        command('upstream-comparator', ['lake', 'env', comparator,
-                upstream / 'ComparatorChallenges/QuasiRiemannHypothesis.json'])
+        command('zeta23-provenance', [sys.executable, '-B', 'scripts/check_zeta23_import.py'])
+        command('zeta23-build', ['lake', 'build', 'HigherCorrelations.Zeta23RankTrace',
+                                'HigherCorrelations.Zeta23Counting'])
+        for suite in ['zeta23-ranktrace', 'zeta23-counting']:
+            command(suite + '-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/' + suite + '.json'])
+        command('zeta23-unfinished-rejected', ['lake', 'env', comparator,
+                'lean/VerificationChallenges/zeta23-unfinished.json'], expected_failure=True)
         command('project-build', ['lake', 'build', 'HigherCorrelations'])
-        command('project-comparator', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/horizontal-strip.json'])
-        command('unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/unfinished.json'], expected_failure=True)
+        command('analytic-coverage', [sys.executable, '-B', 'scripts/check_lean_analytic_coverage.py'])
+        if not args.zeta23_only:
+            command('pair-rhs-mean-build', ['lake', 'build', 'HigherCorrelations.PairRHSMean'])
+            command('pair-rhs-mean-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-rhs-mean.json'])
+            command('pair-rhs-mean-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-rhs-mean-unfinished.json'], expected_failure=True)
+            command('pair-prime-mean-build', ['lake', 'build', 'HigherCorrelations.PairPrimeMean'])
+            command('pair-prime-mean-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-prime-mean.json'])
+            command('pair-prime-mean-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-prime-mean-unfinished.json'], expected_failure=True)
+            command('pair-diagonal-build', ['lake', 'build', 'HigherCorrelations.PairDiagonalEndpoints'])
+            command('pair-diagonal-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-diagonal.json'])
+            command('pair-diagonal-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-diagonal-unfinished.json'], expected_failure=True)
+            command('pair-sieve-build', ['lake', 'build', 'HigherCorrelations.PairSieveEndpoints'])
+            command('pair-sieve-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-sieve.json'])
+            command('pair-sieve-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-sieve-unfinished.json'], expected_failure=True)
+            command('pair-meanvalue-build', ['lake', 'build', 'HigherCorrelations.PairMeanEndpoints'])
+            command('pair-meanvalue-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-meanvalue.json'])
+            command('pair-meanvalue-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-meanvalue-unfinished.json'], expected_failure=True)
+            command('pair-uniform-build', ['lake', 'build', 'HigherCorrelations.PairUniformFormula'])
+            command('pair-uniform-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-uniform.json'])
+            command('pair-uniform-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-uniform-unfinished.json'], expected_failure=True)
+            command('pair-exact-build', ['lake', 'build', 'HigherCorrelations.PairExactFormula'])
+            command('pair-exact-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-exact.json'])
+            command('pair-exact-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-exact-unfinished.json'], expected_failure=True)
+            command('paired-mellin-build', ['lake', 'build', 'HigherCorrelations.PairedMellin'])
+            command('paired-mellin-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/paired-mellin.json'])
+            command('paired-mellin-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/paired-mellin-unfinished.json'], expected_failure=True)
+            command('pair-series-build', ['lake', 'build', 'HigherCorrelations.PairSeriesConvergence'])
+            command('pair-series-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-series.json'])
+            command('pair-series-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-series-unfinished.json'], expected_failure=True)
+            command('uniform-height-build', ['lake', 'build', 'HigherCorrelations.UniformHeight'])
+            command('uniform-height-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/uniform-height.json'])
+            command('uniform-height-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/uniform-height-unfinished.json'], expected_failure=True)
+            command('integral-profile-build', ['lake', 'build', 'HigherCorrelations.IntegralProfile'])
+            command('integral-profile-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/integral-profile.json'])
+            command('integral-profile-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/integral-profile-unfinished.json'], expected_failure=True)
+            command('rational-transfer-build', ['lake', 'build', 'HigherCorrelations.RationalTransfer'])
+            command('rational-transfer-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/rational-transfer.json'])
+            command('rational-transfer-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/rational-transfer-unfinished.json'], expected_failure=True)
+            command('actual-occurrences-build', ['lake', 'build', 'HigherCorrelations.ActualOccurrencesFoundation'])
+            command('actual-occurrences-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/actual-occurrences.json'])
+            command('actual-occurrences-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/actual-occurrences-unfinished.json'], expected_failure=True)
+            command('summability-build', ['lake', 'build', 'HigherCorrelations.SummabilityFoundation'])
+            command('summability-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/summability.json'])
+            command('summability-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/summability-unfinished.json'], expected_failure=True)
+            command('horizontal-square-build', ['lake', 'build', 'HigherCorrelations.HorizontalSquareFoundation'])
+            command('horizontal-square-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/horizontal-square.json'])
+            command('horizontal-square-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/horizontal-square-unfinished.json'], expected_failure=True)
+            command('finite-build', ['lake', 'build', 'HigherCorrelations.FiniteFoundation'])
+            command('finite-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/finite-foundation.json'])
+            command('finite-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/finite-unfinished.json'], expected_failure=True)
+            command('upstream-comparator', ['lake', 'env', comparator,
+                    upstream / 'ComparatorChallenges/QuasiRiemannHypothesis.json'])
+            command('project-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/horizontal-strip.json'])
+            command('unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/unfinished.json'], expected_failure=True)
         axioms = command('axioms', ['lake', 'env', 'lean',
                                    'lean/HigherCorrelations/AxiomReport.lean'])
         entries = re.findall(r"'(\S+)' (?:depends on axioms:\s*\[([^]]*)\]|does not depend on any axioms)", axioms)
@@ -263,6 +281,9 @@ def main():
         rhs_mean_inventory = json.loads((ROOT / 'research/lean-pair-rhs-mean-inventory.json').read_text())
         expected.update(c['declaration'] for c in rhs_mean_inventory['components'])
         expected.update(rhs_mean_inventory['imported_axioms'])
+        zeta23_inventory = json.loads((ROOT / 'research/lean-zeta23-inventory.json').read_text())
+        expected.update(c['declaration'] for c in zeta23_inventory['components'])
+        expected.update(zeta23_inventory['imported_axioms'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):

@@ -1,3 +1,5 @@
+import HigherCorrelations.Zeta23RankTrace
+import HigherCorrelations.Zeta23Counting
 import HigherCorrelations.PairRHSMean
 import HigherCorrelations.PairPrimeMean
 import HigherCorrelations.PairDiagonalEndpoints
@@ -920,3 +922,17 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms intervalIntegral.integral_mul_deriv_eq_deriv_mul_of_hasDerivAt
 #print axioms integral_univ_inv_one_add_sq
 #print axioms sq_sum_le_card_mul_sum_sq
+
+#print axioms HigherCorrelations.zeta23_rank_trace
+#print axioms HigherCorrelations.zeta23_rank_trace_two
+#print axioms HigherCorrelations.zeta23_rank_trace_empty
+#print axioms HigherCorrelations.mem_occurrenceWindow
+#print axioms HigherCorrelations.occurrenceWindow_empty
+#print axioms HigherCorrelations.occurrenceInterval_card_split
+#print axioms HigherCorrelations.occurrenceWindow_card_eq_zeta23
+#print axioms HigherCorrelations.zeta23_dyadic_occurrences
+#print axioms HigherCorrelations.zeta23_dyadic_closed_occurrences
+#print axioms RHLinalg.rank_trace_ineq
+#print axioms RHLinalg.rank_trace_ineq_two
+#print axioms Zeta23.gammaFacts
+#print axioms Zeta23.RvM.riemannVonMangoldt

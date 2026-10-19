@@ -132,9 +132,10 @@ PARTIAL = {
         ['Formalize the kernel replacement bounds and their support-dependent asymptotics.',
          'No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied.']),
     'PAIR-COUNT-001': (
-        ['zeroMultiplicity_pos', 'occurrenceCutoff_card', 'occurrence_count_local', 'occurrence_count_interval', 'occurrence_count_logarithmic'],
+        ['zeroMultiplicity_pos', 'occurrenceCutoff_card', 'occurrence_count_local', 'occurrence_count_interval', 'occurrence_count_logarithmic',
+         'zeta23_dyadic_occurrences', 'zeta23_dyadic_closed_occurrences'],
         ['The local logarithmic and inclusive cumulative upper counts are checked with existential constants.',
-         'Formalize Riemann-von Mangoldt, its main term, and exclusion of real strip zeros; numerical effectiveness is not supplied.']),
+         'Dyadic Riemann-von Mangoldt with its main term and arbitrary endpoints is checked. Sharp cumulative Riemann-von Mangoldt, exclusion of real strip zeros and numerical effectiveness remain separate.']),
     'PAIR-COUNT-KERNEL-001': (
         ['zeroKernel_summable_bound', 'zeroKernelTail_summable_bound', 'zeroKernel_distant_bound',
          'zeroKernel_exterior_bound', 'zeroKernel_interior_bound'],
@@ -418,9 +419,30 @@ def derive():
             and rhs_mean_config['enable_nanoda'] is False, 'changed pair-rhs-mean verification scope')
     components.extend(rhs_mean['components'])
     names.extend(c['declaration'] for c in rhs_mean['components'])
+    zeta23 = json.loads(read('research/lean-zeta23-inventory.json'))
+    found = []
+    for module in zeta23['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished Zeta23 adapter: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in zeta23['components']],
+            'Zeta23 inventory differs from source declarations')
+    checked = []
+    for suite in ['zeta23-ranktrace', 'zeta23-counting']:
+        cfg = json.loads(read('lean/VerificationChallenges/' + suite + '.json'))
+        require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+                'changed Zeta23 verification scope')
+        checked.extend(cfg['theorem_names'])
+    require(checked == [c['declaration'] for c in zeta23['components'] if c['comparator_checked']],
+            'Zeta23 Comparator coverage differs from inventory')
+    components.extend(zeta23['components'])
+    names.extend(c['declaration'] for c in zeta23['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -455,7 +477,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Assemble the normalized pair-correlation asymptotic from the checked RHS mean square and the zero-side comparison. The diagonal, prime mean-square and full RHS constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open.')
+        next_step='Assemble the normalized pair-correlation asymptotic from the checked RHS mean square and the zero-side comparison. The diagonal, prime mean-square and full RHS constants are existential; their effectivity remains separate. The sharper near count, sharp cumulative Riemann-von Mangoldt and signed o(1) remain open; dyadic Riemann-von Mangoldt is checked.')
 
 
 def validate(record):

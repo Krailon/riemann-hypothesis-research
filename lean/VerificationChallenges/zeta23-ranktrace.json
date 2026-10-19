@@ -1,0 +1,16 @@
+{
+  "challenge_module": "VerificationChallenges.Zeta23RankTrace",
+  "solution_module": "HigherCorrelations.Zeta23RankTrace",
+  "theorem_names": [
+    "HigherCorrelations.zeta23_rank_trace",
+    "HigherCorrelations.zeta23_rank_trace_two",
+    "HigherCorrelations.zeta23_rank_trace_empty"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -3913,3 +3913,71 @@ claims:
       imported_inputs: "Previously checked optimized prime mean square and four explicit-formula remainders; checked mathlib integration by parts, absolute integral/series interchange, Holder inequality and finite square inequality."
       constants_scope: "The archimedean, oscillatory and individual remainder bounds have explicit constants. Final constants are existential through the preceding prime mean square."
       baseline_audit_coverage: "The complete estimate, sharp mixed term, unchanged zero-series normalization and endpoints of PAIR-RHS-MEAN-001 are recovered. Its historical effective-constant assertion remains separate. Historical ledger entries, normalized pair/triple theorem statuses and prior RH-audit scope remain unchanged."
+
+  - id: ZETA23-RANK-TRACE-FORMAL-001
+    title: Imported finite rank-trace inequality with explicit hypotheses
+    kind: theorem
+    statement: |
+      For finite complex matrices P,Q, P positive semidefinite, Q Hermitian,
+      rank(P)<=r and the number of positive eigenvalues of Q (with multiplicity)
+      at most b, every real c>0 satisfies
+      c Re tr(P)-c^2 r/4+2c Re tr(Q)-c^2 b<=Re tr((P+Q)^*(P+Q)).
+      The c=2 consequence gives 2 Re tr(P)+4 Re tr(Q)-4b-||P+Q||_F^2<=r.
+      The empty-dimension equality is included. No zeta or Weil positivity
+      hypothesis occurs; no application to zeta matrices is asserted here.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/Zeta23RankTrace.lean
+      label: HigherCorrelations.zeta23_rank_trace
+      companion_declarations: "zeta23_rank_trace_two, zeta23_rank_trace_empty"
+      bookkeeping: research/lean-zeta23.md
+      bibliography_key: Zeta23FormalMath2026
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: c64b47306726aa3100a8521e8cd93ffc8ffc4ff663210fb024ff6de4dcb5462b
+    limit_order: "Finite matrices only; no limiting argument."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Three definition-only Comparator endpoints, all public and imported rank-trace axiom reports, and combined project build."
+      imported_inputs: "RHLinalg.rank_trace_ineq and rank_trace_ineq_two from the selected Zeta23 closure at e1a4e6508154ea59f030480661590a9fe3018011; exact originals, licenses and compatibility diff in vendor/zeta23."
+      baseline_audit_coverage: "Reusable finite input for Work Packages D/E. No horizontal extraction theorem or critical-line proportion has been imported or upgraded."
+
+  - id: ZETA23-DYADIC-COUNT-FORMAL-001
+    title: Imported dyadic Riemann-von Mangoldt with multiplicity and endpoint adapters
+    kind: theorem
+    statement: |
+      Let M(T)=T/(2 pi)(log(T/(2 pi))+2 log 2-1). For actual zeta zero
+      occurrences with analytic multiplicity, there exist C>0 and T0>=3
+      such that every real T>=T0 satisfies |#(T,2T]-M(T)|<=C log T.
+      The same assertion holds for the inclusive interval [T,2T], with
+      possibly different C. No endpoint is required to be zero-free.
+      For every real a<=b, #[a,b]=#(a,b]+#[a,a] exactly; (a,b] is empty
+      if b<=a. The half-open occurrence count equals upstream Ncount(a,b)
+      for all real a,b. Lower-endpoint atoms retain distinct complex zeros
+      at one ordinate and every multiplicity index. Constants and threshold
+      are existential. No sharp cumulative N(0,T] remainder is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZERO-OCCURRENCE-001, LOCAL-ZERO-COUNT-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/Zeta23Counting.lean
+      label: HigherCorrelations.zeta23_dyadic_occurrences
+      companion_declarations: "mem_occurrenceWindow, occurrenceWindow_empty, occurrenceInterval_card_split, occurrenceWindow_card_eq_zeta23, zeta23_dyadic_closed_occurrences"
+      bookkeeping: research/lean-zeta23.md
+      bibliography_key: Zeta23FormalMath2026
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: c64b47306726aa3100a8521e8cd93ffc8ffc4ff663210fb024ff6de4dcb5462b
+    limit_order: "Finite-window identification at fixed real endpoints. The imported contour argument and Gamma proofs supply a uniform dyadic bound for every real T above one threshold. Closed-window conversion uses the previously checked local logarithmic bound."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Five definition-only Comparator endpoints, all six public adapter axiom reports, both imported Gamma/RvM axiom reports, and rejection of an unfinished dyadic proof for sorryAx."
+      imported_inputs: "Zeta23.RvM.riemannVonMangoldt takes GammaFacts explicitly and is applied to the proved Zeta23.gammaFacts. Selected source and all port changes are pinned and hashed in vendor/zeta23/manifest.json."
+      constants_scope: "Existential absolute constants and threshold; no numerical effectivity claim."
+      baseline_audit_coverage: "Adds the dyadic main term to PAIR-COUNT-001 coverage. Its sharp cumulative and real-zero-exclusion assertions remain separate. The signed complex-argument error, historical pair/triple statuses and prior RH-audit scope are unchanged."

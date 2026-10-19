@@ -1,0 +1,18 @@
+{
+  "challenge_module": "VerificationChallenges.Zeta23Counting",
+  "solution_module": "HigherCorrelations.Zeta23Counting",
+  "theorem_names": [
+    "HigherCorrelations.mem_occurrenceWindow",
+    "HigherCorrelations.occurrenceWindow_empty",
+    "HigherCorrelations.occurrenceInterval_card_split",
+    "HigherCorrelations.zeta23_dyadic_occurrences",
+    "HigherCorrelations.zeta23_dyadic_closed_occurrences"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

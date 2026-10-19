@@ -25,5 +25,13 @@
     "lean4export_rev": "076e8e57707e813375e8f9da8bf989799ace9680",
     "build_toolchain_override": "leanprover/lean4:v4.34.1",
     "external_kernel": false
+  },
+  "zeta23": {
+    "url": "https://github.com/anthropics/formal-math",
+    "rev": "e1a4e6508154ea59f030480661590a9fe3018011",
+    "subdir": "zeta23",
+    "source_manifest": "vendor/zeta23/manifest.json",
+    "original_lean": "leanprover/lean4:v4.33.0-rc2",
+    "original_mathlib_rev": "51e6992efd06126df61a496bebf8f49482a4e129"
   }
 }

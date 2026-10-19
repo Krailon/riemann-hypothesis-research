@@ -15,3 +15,8 @@ require OAI from ".lake/packages/OAI/lean"
 
 lean_lib VerificationChallenges where
   srcDir := "lean"
+
+-- Selected, provenance-recorded Zeta23 sources, ported to our existing pins.
+lean_lib Zeta23 where
+  srcDir := "lean"
+  leanOptions := #[⟨`autoImplicit, true⟩]

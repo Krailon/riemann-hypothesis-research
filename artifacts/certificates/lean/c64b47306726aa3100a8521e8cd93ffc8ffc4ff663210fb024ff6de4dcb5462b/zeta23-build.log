@@ -1,0 +1,90 @@
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+ℹ [4004/4048] Replayed PrimeNumberTheoremAnd.MediumPNT
+info: PrimeNumberTheoremAnd/MediumPNT.lean:4142:0: 'MediumPNT' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4005/4048] Replayed PrimeNumberTheoremAnd.StrongPNT
+info: PrimeNumberTheoremAnd/StrongPNT.lean:2898:0: 'StrongPNT' depends on axioms: [propext, choice, Quot.sound]
+✔ [4012/4048] Built Zeta23.Prelude.InstancePriorities (5.7s)
+✔ [4013/4048] Built Zeta23.LinAlg.PosIndex (7.2s)
+✔ [4014/4048] Built Zeta23.Defs (7.2s)
+✔ [4015/4048] Built Zeta23.RvM.BacklundDefs (2.2s)
+✔ [4016/4048] Built Zeta23.Analytic.RectangleLogDeriv (7.0s)
+✔ [4017/4048] Built HigherCorrelations.Zeta23Definitions (8.6s)
+✔ [4018/4048] Built Zeta23.Hypotheses (2.3s)
+✔ [4019/4048] Built Zeta23.Defs.Counting (2.3s)
+✔ [4020/4048] Built Zeta23.LinAlg.HermitianPosPart (2.5s)
+✔ [4021/4048] Built Zeta23.RvM.ZetaGrowth (9.5s)
+✔ [4022/4048] Built Zeta23.GammaFacts (2.4s)
+✔ [4023/4048] Built Zeta23.LinAlg.VonNeumann (2.6s)
+⚠ [4024/4048] Built Zeta23.Statement (2.2s)
+warning: lean/Zeta23/Statement.lean:151:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [4025/4048] Built Zeta23.RvM.Halving (2.2s)
+warning: lean/Zeta23/RvM/Halving.lean:55:55: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: lean/Zeta23/RvM/Halving.lean:65:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: lean/Zeta23/RvM/Halving.lean:73:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [4026/4048] Built Zeta23.LinAlg.RankTrace (2.9s)
+warning: lean/Zeta23/LinAlg/RankTrace.lean:76:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/Zeta23/LinAlg/RankTrace.lean:79:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/Zeta23/LinAlg/RankTrace.lean:100:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/Zeta23/LinAlg/RankTrace.lean:102:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+✔ [4027/4048] Built Zeta23.GammaFacts.Series (2.9s)
+⚠ [4028/4048] Built Zeta23.Statement.Seam (2.3s)
+warning: lean/Zeta23/Statement/Seam.lean:62:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+✔ [4029/4048] Built Zeta23.WeilEF.XiLogDeriv (2.3s)
+⚠ [4030/4048] Built Zeta23.ZetaReflect (2.5s)
+warning: lean/Zeta23/ZetaReflect.lean:94:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [4031/4048] Built HigherCorrelations.Zeta23RankTrace (2.3s)
+✔ [4032/4048] Built Zeta23.Analytic.Stirling (3.7s)
+✔ [4033/4048] Built Zeta23.Statement.SeamClosed (2.1s)
+⚠ [4034/4048] Built Zeta23.RvM.NcountWindow (2.3s)
+warning: lean/Zeta23/RvM/NcountWindow.lean:26:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [4035/4048] Built Zeta23.RvM.Defs (2.3s)
+✔ [4036/4048] Built Zeta23.RvM.CountByIntegral (3.0s)
+ℹ [4037/4048] Built Zeta23.GammaFacts.Mu (4.7s)
+info: lean/Zeta23/GammaFacts/Mu.lean:140:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [4038/4048] Built Zeta23.RvM.Fold (3.1s)
+✔ [4039/4048] Built Zeta23.RvM.GammaSide (4.1s)
+ℹ [4040/4048] Built Zeta23.GammaFacts.StirlingVert (4.1s)
+info: lean/Zeta23/GammaFacts/StirlingVert.lean:455:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [4041/4048] Built Zeta23.RvM.LocalCount (8.9s)
+⚠ [4042/4048] Built Zeta23.RvM.ReZeroCount (13s)
+warning: lean/Zeta23/RvM/ReZeroCount.lean:275:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [4043/4048] Built Zeta23.RvM.Backlund (3.7s)
+warning: lean/Zeta23/RvM/Backlund.lean:126:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [4044/4048] Built Zeta23.RvM.MainTerm (10s)
+✔ [4045/4048] Built Zeta23.RvM.Statement (2.5s)
+✔ [4046/4048] Built Zeta23.GammaFacts.IntMu (35s)
+✔ [4047/4048] Built Zeta23.GammaFacts.Complete (1.8s)
+✔ [4048/4048] Built HigherCorrelations.Zeta23Counting (3.1s)
+Build completed successfully (4048 jobs).

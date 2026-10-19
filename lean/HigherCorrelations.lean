@@ -1,3 +1,5 @@
+import HigherCorrelations.Zeta23RankTrace
+import HigherCorrelations.Zeta23Counting
 import HigherCorrelations.HorizontalStrip
 import HigherCorrelations.FiniteFoundation
 import HigherCorrelations.HorizontalSquareFoundation

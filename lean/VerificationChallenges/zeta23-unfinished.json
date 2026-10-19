@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.Zeta23Counting",
+  "solution_module": "VerificationChallenges.Zeta23Unfinished",
+  "theorem_names": [
+    "HigherCorrelations.zeta23_dyadic_occurrences"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

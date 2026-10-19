@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "Zeta23Definitions",
+    "Zeta23RankTrace",
+    "Zeta23Counting"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.zeta23_rank_trace",
+      "source": "lean/HigherCorrelations/Zeta23RankTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_rank_trace_two",
+      "source": "lean/HigherCorrelations/Zeta23RankTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_rank_trace_empty",
+      "source": "lean/HigherCorrelations/Zeta23RankTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_occurrenceWindow",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceWindow_empty",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceInterval_card_split",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceWindow_card_eq_zeta23",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_dyadic_occurrences",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_dyadic_closed_occurrences",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [
+    "RHLinalg.rank_trace_ineq",
+    "RHLinalg.rank_trace_ineq_two",
+    "Zeta23.gammaFacts",
+    "Zeta23.RvM.riemannVonMangoldt"
+  ]
+}

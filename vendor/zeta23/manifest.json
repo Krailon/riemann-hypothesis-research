@@ -1,0 +1,294 @@
+{
+  "upstream": "https://github.com/anthropics/formal-math",
+  "rev": "e1a4e6508154ea59f030480661590a9fe3018011",
+  "roots": [
+    "Zeta23.LinAlg.RankTrace",
+    "Zeta23.RvM.Statement",
+    "Zeta23.GammaFacts.Complete"
+  ],
+  "modules": {
+    "Zeta23.Analytic.RectangleLogDeriv": {
+      "upstream_sha256": "6606f32e30fe5f7a5c0660e2c9ecb8bb041144e52b090fe880d2c0e4734f5755",
+      "source": "lean/Zeta23/Analytic/RectangleLogDeriv.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Analytic/RectangleLogDeriv.lean",
+      "ported_sha256": "fc4f97574ccc83049903602be5e1ca22bec3a3c367a45ab77af4ece845a7c567"
+    },
+    "Zeta23.Analytic.Stirling": {
+      "upstream_sha256": "db1638101a09faf22aac70ae379c3f37df5b7767e123bf4f6b6f2892d75d999d",
+      "source": "lean/Zeta23/Analytic/Stirling.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Analytic/Stirling.lean",
+      "ported_sha256": "fe1624b4403358c211c8da090f0cd06997e9fbde95edb9913407709177929e0f"
+    },
+    "Zeta23.Defs": {
+      "upstream_sha256": "216b34de76394522aea610c57d342f3dfe8aa1c3d9d6b2ec11509de92f1c6bb0",
+      "source": "lean/Zeta23/Defs.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Defs.lean",
+      "ported_sha256": "58180da3e72f11b361cea2d5c4513d7199421d304cdb837c870ceb7bff6c7f7d"
+    },
+    "Zeta23.Defs.Counting": {
+      "upstream_sha256": "0d403d6d4d3f4cdfa370b374376dede2d56fa79e1b0146d48ce8c4321496ee0d",
+      "source": "lean/Zeta23/Defs/Counting.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Defs/Counting.lean",
+      "ported_sha256": "266486b95f2f598bfb686e4f3d0ffeb65fcb748cfe158b09881552d661027d82"
+    },
+    "Zeta23.FromPNTPlus.Auxiliary": {
+      "upstream_sha256": "8852b7ebc572ae4eda1f3c3e94f4cc072b1c744c2b71ae297bec3ebb74b00069",
+      "source": "lean/Zeta23/FromPNTPlus/Auxiliary.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/Auxiliary.lean",
+      "ported_sha256": "10734745e0f699fde8d5db1f8bc4c1ac4e319b44af9a5d123e48f8384eee9706"
+    },
+    "Zeta23.FromPNTPlus.EulerMaclaurin": {
+      "upstream_sha256": "0e2b201e2a99db8650c565f14c2d4c65ff54a59a29f81137a63a00f2d1776ab6",
+      "source": "lean/Zeta23/FromPNTPlus/EulerMaclaurin.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/EulerMaclaurin.lean",
+      "ported_sha256": "442ab8794b9ac533ffef6255f68a548424fb3caacc0e7fc3909fa40c121d00a3"
+    },
+    "Zeta23.FromPNTPlus.Fourier": {
+      "upstream_sha256": "8d53e47135861fd5afaa2ff273737e09353dc9ae0ba8b6875baa16f3a167b1bc",
+      "source": "lean/Zeta23/FromPNTPlus/Fourier.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/Fourier.lean",
+      "ported_sha256": "13ec52d0f69e3c598df32cec1c471f73f5215882ffd5348b6e420e1511e9b05a"
+    },
+    "Zeta23.FromPNTPlus.Mathlib.Analysis.SpecialFunctions.Log.Basic": {
+      "upstream_sha256": "b345f59bff825700221040fb575823d6902383ff1ab340b2ff849d8382460954",
+      "source": "lean/Zeta23/FromPNTPlus/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean",
+      "ported_sha256": "c094b229872f9bb62a86951c2715cd5f22e9be8b4f64943abd365fe7f14f5b85"
+    },
+    "Zeta23.FromPNTPlus.Rectangle": {
+      "upstream_sha256": "6cf1dfca9dd3bbe3db9c58acf135a5ea20669808418ad994ed27f67931ea53d9",
+      "source": "lean/Zeta23/FromPNTPlus/Rectangle.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/Rectangle.lean",
+      "ported_sha256": "297429183941f0b3407c54c5cfd7589ff256ec279d9ec60cd19f4c581902ab05"
+    },
+    "Zeta23.FromPNTPlus.ResidueCalcOnRectangles": {
+      "upstream_sha256": "081d38aa0c5eec725a1582eea3bdf4e51d604f6c2ebb3c9729d91df3aa092956",
+      "source": "lean/Zeta23/FromPNTPlus/ResidueCalcOnRectangles.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/ResidueCalcOnRectangles.lean",
+      "ported_sha256": "79ce086736cc487db781f1eb2f5043e3715fcc7133567bbee171380c65a47099"
+    },
+    "Zeta23.FromPNTPlus.Sobolev": {
+      "upstream_sha256": "e3f254f6e772ebf941f67b4ad978858b6355b00433a943a4e318c22425959062",
+      "source": "lean/Zeta23/FromPNTPlus/Sobolev.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/Sobolev.lean",
+      "ported_sha256": "13f1d8a8c5e89a8853e8d9ae5da3f5087858b155573b1291169f93794dcf6747"
+    },
+    "Zeta23.FromPNTPlus.StrongPNTPrefix": {
+      "upstream_sha256": "ce842f7e65f1764273f3ff331f4218a0ed94688f36e28c7e4b5bf1f05c5af180",
+      "source": "lean/Zeta23/FromPNTPlus/StrongPNTPrefix.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/StrongPNTPrefix.lean",
+      "ported_sha256": "aa7db13268920224b6631277a7b40776fa0860bf4d676ae7ef97ad08ad0a27ee"
+    },
+    "Zeta23.FromPNTPlus.Tactic.AdditiveCombination": {
+      "upstream_sha256": "0c59de0160092cc7eb521c09de7b9a35719d5a33b4fee0795bd312a5c9c3d200",
+      "source": "lean/Zeta23/FromPNTPlus/Tactic/AdditiveCombination.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/Tactic/AdditiveCombination.lean",
+      "ported_sha256": "3fbf4e47b6ac4b7b4ae38b9cfdbecd9ba591f008522f5057cc2509ea6acf34b8"
+    },
+    "Zeta23.FromPNTPlus.ZetaBounds": {
+      "upstream_sha256": "62ab370e278be47e7fbd03ab74b1442010da1fc17b9dec96ea952e9259bfcd06",
+      "source": "lean/Zeta23/FromPNTPlus/ZetaBounds.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/ZetaBounds.lean",
+      "ported_sha256": "762a91bcf545064fa629734a735cef383bd48025f21c4eaf1b3b0c0a2bcc9952"
+    },
+    "Zeta23.FromPNTPlus.ZetaConj": {
+      "upstream_sha256": "6160b5a4e5cbcc346a67f973a4ed7d68f535eb79d803c10882eef74a6c2b8fb5",
+      "source": "lean/Zeta23/FromPNTPlus/ZetaConj.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/FromPNTPlus/ZetaConj.lean",
+      "ported_sha256": "dc7cd6031b774076e09c5d6cadaafae63e054f0355daa736500fb5e03e26d2ad"
+    },
+    "Zeta23.GammaFacts": {
+      "upstream_sha256": "a93c29cf24e253f6f3b7af0fadf18cbc5fe9fe1a67c6e060322f425d2d677674",
+      "source": "lean/Zeta23/GammaFacts.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/GammaFacts.lean",
+      "ported_sha256": "0d625b1a1916331d2aace03fdfb6b8af90c63587c5aa93f704fe0c72cffbfb41"
+    },
+    "Zeta23.GammaFacts.Complete": {
+      "upstream_sha256": "d43b2d4f3fa0c1d22210e1f671b875a88b09747247e67becbbc38f85f34f2fb0",
+      "source": "lean/Zeta23/GammaFacts/Complete.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/GammaFacts/Complete.lean",
+      "ported_sha256": "e0c6ebe3f5795624f21681e8f37f9e71644c3500ecf4c352edd5c23de57e16eb"
+    },
+    "Zeta23.GammaFacts.IntMu": {
+      "upstream_sha256": "1a5e17a5e2482f5119a8e0b0f00b738fe4eece35edba818094c4f92c35d0c5a7",
+      "source": "lean/Zeta23/GammaFacts/IntMu.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/GammaFacts/IntMu.lean",
+      "ported_sha256": "6000c4b1f53c690d1b30687d8b5ee213a0f9327e397a942ea07c202527be743a"
+    },
+    "Zeta23.GammaFacts.Mu": {
+      "upstream_sha256": "71e4d99a73604b9e09009d897a0bbbaf5d3a950a470758f07738ccc67a171c97",
+      "source": "lean/Zeta23/GammaFacts/Mu.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/GammaFacts/Mu.lean",
+      "ported_sha256": "6df64e006c934646fb39c22c8ebffb3de4bffc603b7a25852d69be41658a87dd"
+    },
+    "Zeta23.GammaFacts.Series": {
+      "upstream_sha256": "15a7ed9d63288e9630300898f9a1ed78fee3bf32c889f81cb5081d17d76a4f59",
+      "source": "lean/Zeta23/GammaFacts/Series.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/GammaFacts/Series.lean",
+      "ported_sha256": "33eab8a0ae8a522e01b4ef6c1815b2ac738c9e4868cc92a679f8a21c06805691"
+    },
+    "Zeta23.GammaFacts.StirlingVert": {
+      "upstream_sha256": "c982dc94e4193d2b3c69fd1f939b9055b6368332fd24d38bdf5bad37c487b661",
+      "source": "lean/Zeta23/GammaFacts/StirlingVert.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/GammaFacts/StirlingVert.lean",
+      "ported_sha256": "145764015cad5694b9b7c8cb9414d06ffb36c37e672b3898dbcebe64bf35c438"
+    },
+    "Zeta23.Hypotheses": {
+      "upstream_sha256": "b64911caaf69328e0ca4fced1fd1f80fdca02d57bce390db34843b9849ccb4e2",
+      "source": "lean/Zeta23/Hypotheses.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Hypotheses.lean",
+      "ported_sha256": "d96adf9bf0203386f051f48d5103cad9b104c269b12cfa34dc699822b2a22360"
+    },
+    "Zeta23.LinAlg.HermitianPosPart": {
+      "upstream_sha256": "f3d73476b80f31a8c2b680ef25b7471d20f2df86ed27b7f74045e56086a6a6b3",
+      "source": "lean/Zeta23/LinAlg/HermitianPosPart.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/LinAlg/HermitianPosPart.lean",
+      "ported_sha256": "22032cf3d2a068a6259e8492e6fc8cb55950dfd21699f14f028445bc4dd4d4f6"
+    },
+    "Zeta23.LinAlg.PosIndex": {
+      "upstream_sha256": "e07fdb5ba552308fd859248133464a2a3610d55521ff56716515a050ddd6e167",
+      "source": "lean/Zeta23/LinAlg/PosIndex.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/LinAlg/PosIndex.lean",
+      "ported_sha256": "a4b3c05f799819a3e5ccad6495f74bc186f1d7a32dcde3d609e131a354e60010"
+    },
+    "Zeta23.LinAlg.RankTrace": {
+      "upstream_sha256": "960a7b4e4f1091bf7fce2efe1135e52aa4e16c9d1c389aca382a1f1795c8a9c5",
+      "source": "lean/Zeta23/LinAlg/RankTrace.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/LinAlg/RankTrace.lean",
+      "ported_sha256": "fb772fb330977d659f2af42f5842b63fe82c3906dac7c6fa5e82302491f0391e"
+    },
+    "Zeta23.LinAlg.VonNeumann": {
+      "upstream_sha256": "854d6b95c53a25476fa352f138a46b9d83937e3df28b87739309e03f1fcdc89a",
+      "source": "lean/Zeta23/LinAlg/VonNeumann.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/LinAlg/VonNeumann.lean",
+      "ported_sha256": "7b065c9dba5a284729ce43e8d1360b0368f02ba458e3f486091ceac4efff6821"
+    },
+    "Zeta23.Prelude.InstancePriorities": {
+      "upstream_sha256": "2c9d2ee602987da89bbbe621149fad2b4a2476699f60535706a12b2fe9833f8e",
+      "source": "lean/Zeta23/Prelude/InstancePriorities.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Prelude/InstancePriorities.lean",
+      "ported_sha256": "a93d23dc3a6d644d1c3ba0778053b5a7c5c73fbaccc3111947a800b2301a1827"
+    },
+    "Zeta23.RvM.Backlund": {
+      "upstream_sha256": "64a52ae59879ba2bf46aabfad96d8e591f2e4cbc01b755a5d9d024d4229685ba",
+      "source": "lean/Zeta23/RvM/Backlund.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/Backlund.lean",
+      "ported_sha256": "ce763bf789eff3dadaafeaf5b834288089f9a497c14c83baf8b65428fa675927"
+    },
+    "Zeta23.RvM.BacklundDefs": {
+      "upstream_sha256": "83b7dcab714041eb8146a9b80f143ee7e6be7c742891074a638d7c2eaa4e1e95",
+      "source": "lean/Zeta23/RvM/BacklundDefs.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/BacklundDefs.lean",
+      "ported_sha256": "79412a6565a9728ee1169d134c7f09e8cfc636058ffd6f040195e58e80b17982"
+    },
+    "Zeta23.RvM.CountByIntegral": {
+      "upstream_sha256": "2a3bb9d814f6e3edc26015f6a6363439b827080c0d62aa348af7cf9bf4af665e",
+      "source": "lean/Zeta23/RvM/CountByIntegral.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/CountByIntegral.lean",
+      "ported_sha256": "85c8b546ba80baa3e48244a5077eb54f0151187d0151230c5d09e301ec6d2074"
+    },
+    "Zeta23.RvM.Defs": {
+      "upstream_sha256": "32662cdfc84f70be58210feaf6a7f8db3588565c74d52e030d1edb9ef32d8671",
+      "source": "lean/Zeta23/RvM/Defs.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/Defs.lean",
+      "ported_sha256": "0330aeae52ee2aea69a1efbca959db2070e5d514c9f28116fe7c19a0e7c0621d"
+    },
+    "Zeta23.RvM.Fold": {
+      "upstream_sha256": "2f1ba3640d30c967327bb0aff86832bdb1d327fe9ee810ae40bd96c55e12131a",
+      "source": "lean/Zeta23/RvM/Fold.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/Fold.lean",
+      "ported_sha256": "ecf9ea915cd12f4e888038a6c3a6ee968df880e7ee673142817c17ed3659bcca"
+    },
+    "Zeta23.RvM.GammaSide": {
+      "upstream_sha256": "1c1b862f6645e0f9d16872bc25c8e4e986258777ce3b3a67d4da9f2aa3149573",
+      "source": "lean/Zeta23/RvM/GammaSide.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/GammaSide.lean",
+      "ported_sha256": "474e16d04457d8b837bb2ec27db2ab78bcfe0c709d89906c309f600a42019463"
+    },
+    "Zeta23.RvM.Halving": {
+      "upstream_sha256": "de1713457eee0763fdb1e02634939664d9ce000bb8e736f2c18b85425b7c5d30",
+      "source": "lean/Zeta23/RvM/Halving.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/Halving.lean",
+      "ported_sha256": "3529ab2cfa51eb8a8f451eaa7751d34418282b7fc40ccf99f46e010fc11c07f4"
+    },
+    "Zeta23.RvM.LocalCount": {
+      "upstream_sha256": "f23b7b226a62a7622e09bd867136faf00567e2c14a1fc697cf83b5aa5f065b45",
+      "source": "lean/Zeta23/RvM/LocalCount.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/LocalCount.lean",
+      "ported_sha256": "313146638661e15196d9f3deb217d83a2c651352e6d17898a8eef28a6e209814"
+    },
+    "Zeta23.RvM.MainTerm": {
+      "upstream_sha256": "e1e5eb11901595177457869b70d6d7dbb0a5c2c27ede33955efafec5f93c301f",
+      "source": "lean/Zeta23/RvM/MainTerm.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/MainTerm.lean",
+      "ported_sha256": "e2440cb4183c1ce0baa0647bd5b6a9a5bd7fdd0f118b57fe8499b7c75ad212ec"
+    },
+    "Zeta23.RvM.NcountWindow": {
+      "upstream_sha256": "f8b4ff9a1577af9064de082d250a4433392578a96e235209214bdaaeffaf2482",
+      "source": "lean/Zeta23/RvM/NcountWindow.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/NcountWindow.lean",
+      "ported_sha256": "890597ff946f75b6da85f708f1aefaec1b3f0fdd5cf67f5fc3ddba1879374c47"
+    },
+    "Zeta23.RvM.ReZeroCount": {
+      "upstream_sha256": "7e37c415190d1dc2a30ed85d23ede62243aaaa164cb3930cb9c11632bc33bb05",
+      "source": "lean/Zeta23/RvM/ReZeroCount.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/ReZeroCount.lean",
+      "ported_sha256": "207b54fa409c3f080357955cd0a288179d16a3fe7906cd85e66157ac15c75fb5"
+    },
+    "Zeta23.RvM.Statement": {
+      "upstream_sha256": "3226fbc3de1b223a067d1d454c1e7400ac81c652dbbb58f494e42a6a583061f6",
+      "source": "lean/Zeta23/RvM/Statement.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/Statement.lean",
+      "ported_sha256": "9d4c06bba5cfacd1dc40add374750f9c14f360ecdc9093bb3230cf3fa52a0637"
+    },
+    "Zeta23.RvM.ZetaGrowth": {
+      "upstream_sha256": "91a33dcf908921bfaa05ec64f4c20f40d83593228f956d945cd71c272a98ef44",
+      "source": "lean/Zeta23/RvM/ZetaGrowth.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/RvM/ZetaGrowth.lean",
+      "ported_sha256": "0a05b7f223ebb9657ac2c8e6fe74d77e8c911152dc7c97e6dbc228448d3aa06f"
+    },
+    "Zeta23.Statement": {
+      "upstream_sha256": "3458af8531decf948319517543f731dcdc2c5a7de47e9339f9a443530e60d205",
+      "source": "lean/Zeta23/Statement.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Statement.lean",
+      "ported_sha256": "184f1af50dcb9d4f0ed5e4db062fc14b7b1ad9556a31f46be43cba0472b56def"
+    },
+    "Zeta23.Statement.Seam": {
+      "upstream_sha256": "d16cbfbbfff2cfe3d4df0425957ae20fd1828d8faf39e70f11a2acd85b45c7e3",
+      "source": "lean/Zeta23/Statement/Seam.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Statement/Seam.lean",
+      "ported_sha256": "eb7d906cefcd34788196ba36c764f47d3de17ff06c47c6eb9b9b3b9e2b6b7388"
+    },
+    "Zeta23.Statement.SeamClosed": {
+      "upstream_sha256": "b2b03190fb3cf4520d273f8bdb9fc7a89939381c8aaff360e5845108b4d8b88d",
+      "source": "lean/Zeta23/Statement/SeamClosed.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/Statement/SeamClosed.lean",
+      "ported_sha256": "0003f6b1af9ff70ea429aa9f60cd8a91e66af9602b26bb5063d04bc89066d4f8"
+    },
+    "Zeta23.WeilEF.XiLogDeriv": {
+      "upstream_sha256": "ff98bfa205ba351b510a68fdae02a695a4671091b5e3c33509e37412a4b1bd9f",
+      "source": "lean/Zeta23/WeilEF/XiLogDeriv.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/WeilEF/XiLogDeriv.lean",
+      "ported_sha256": "3842e862fd80cea857157c186a7dce6c1daf9725cfa9566cfa4b045e8b6787b9"
+    },
+    "Zeta23.ZetaReflect": {
+      "upstream_sha256": "ffd9ae4718636d898462b0d31625122f0064256b5910250a3e45f7298d75db63",
+      "source": "lean/Zeta23/ZetaReflect.lean",
+      "upstream": "vendor/zeta23/upstream/Zeta23/ZetaReflect.lean",
+      "ported_sha256": "6272544f491fe3dea8476e7dfb06d2c78808697b8f63978ba7c43803431b2f10"
+    }
+  },
+  "metadata_sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "NOTICE": "ed2ce108e56fea7a6abccdd81329e489116d759096ea7d0d51098edbaf72a3f3",
+    "lean-toolchain": "0d3c76ccd8772d8bcbe207241421a760312b71a6aa82f84194391fdf5cb026d6",
+    "lakefile.toml": "4942f994b9250b1efacea071fd997b0395960d61f30f5f79e21f4d2870265288",
+    "lake-manifest.json": "1847b362e15efd927e75aa8b5442e491f998e4a3f730f9dcaca9841f2957c448"
+  },
+  "compatibility": [
+    "Lean v4.34.1 with existing project mathlib and OAI pins",
+    "autoImplicit true for original modules",
+    "11 FromPNTPlus modules forwarded to existing PrimeNumberTheoremAnd modules",
+    "Three function-product log derivatives use logDeriv_fun_mul"
+  ]
+}

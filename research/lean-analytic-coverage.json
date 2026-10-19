@@ -393,11 +393,13 @@
         "HigherCorrelations.occurrenceCutoff_card",
         "HigherCorrelations.occurrence_count_local",
         "HigherCorrelations.occurrence_count_interval",
-        "HigherCorrelations.occurrence_count_logarithmic"
+        "HigherCorrelations.occurrence_count_logarithmic",
+        "HigherCorrelations.zeta23_dyadic_occurrences",
+        "HigherCorrelations.zeta23_dyadic_closed_occurrences"
       ],
       "remaining_obligations": [
         "The local logarithmic and inclusive cumulative upper counts are checked with existential constants.",
-        "Formalize Riemann-von Mangoldt, its main term, and exclusion of real strip zeros; numerical effectiveness is not supplied."
+        "Dyadic Riemann-von Mangoldt with its main term and arbitrary endpoints is checked. Sharp cumulative Riemann-von Mangoldt, exclusion of real strip zeros and numerical effectiveness remain separate."
       ]
     },
     {
@@ -5497,7 +5499,52 @@
       "declaration": "HigherCorrelations.pairRHS_remainder_uniform",
       "source": "lean/HigherCorrelations/PairRHSScales.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_rank_trace",
+      "source": "lean/HigherCorrelations/Zeta23RankTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_rank_trace_two",
+      "source": "lean/HigherCorrelations/Zeta23RankTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_rank_trace_empty",
+      "source": "lean/HigherCorrelations/Zeta23RankTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_occurrenceWindow",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceWindow_empty",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceInterval_card_split",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.occurrenceWindow_card_eq_zeta23",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": false
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_dyadic_occurrences",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeta23_dyadic_closed_occurrences",
+      "source": "lean/HigherCorrelations/Zeta23Counting.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Assemble the normalized pair-correlation asymptotic from the checked RHS mean square and the zero-side comparison. The diagonal, prime mean-square and full RHS constants are existential; their effectivity remains separate. The sharper near count, full Riemann-von Mangoldt and signed o(1) remain open."
+  "next_step": "Assemble the normalized pair-correlation asymptotic from the checked RHS mean square and the zero-side comparison. The diagonal, prime mean-square and full RHS constants are existential; their effectivity remains separate. The sharper near count, sharp cumulative Riemann-von Mangoldt and signed o(1) remain open; dyadic Riemann-von Mangoldt is checked."
 }

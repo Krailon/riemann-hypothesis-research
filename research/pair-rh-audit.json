@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "29c101376e0b549def9a4ae258999a30e7945ee91c1d8dd75b210e3e20eb4f09",
+  "ledger_sha256": "5afb4ed6035c7efc0219eee6a008105e37dffb5f7d9b4b3ab59a5aa2af829b2c",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2642,5 +2642,15 @@
     ],
     "report": "research/lean-pair-rhs-mean.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate entry records the full explicit-formula mean square, its two named errors, sharp mixed term, unchanged zero-series normalization and closed endpoints with existential constants. The historical effective-constant assertion, normalized pair/triple theorem statuses and prior audit scope are preserved. This hash refresh does not extend either historical RH audit."
+  },
+  "ledger_zeta23_review": {
+    "reviewed_on": "2026-10-18",
+    "previous_ledger_sha256": "29c101376e0b549def9a4ae258999a30e7945ee91c1d8dd75b210e3e20eb4f09",
+    "added_claim_ids": [
+      "ZETA23-RANK-TRACE-FORMAL-001",
+      "ZETA23-DYADIC-COUNT-FORMAL-001"
+    ],
+    "report": "research/lean-zeta23.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. Separate entries record the selected rank-trace import and dyadic Riemann-von Mangoldt adapters with multiplicities and arbitrary endpoints. No historical status or audit scope is expanded; sharp cumulative counting and signed-error cancellation remain separate."
   }
 }
