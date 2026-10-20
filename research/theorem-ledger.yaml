@@ -3981,3 +3981,49 @@ claims:
       imported_inputs: "Zeta23.RvM.riemannVonMangoldt takes GammaFacts explicitly and is applied to the proved Zeta23.gammaFacts. Selected source and all port changes are pinned and hashed in vendor/zeta23/manifest.json."
       constants_scope: "Existential absolute constants and threshold; no numerical effectivity claim."
       baseline_audit_coverage: "Adds the dyadic main term to PAIR-COUNT-001 coverage. Its sharp cumulative and real-zero-exclusion assertions remain separate. The signed complex-argument error, historical pair/triple statuses and prior RH-audit scope are unchanged."
+
+  - id: PAIR-ZERO-DECOMPOSITION-FORMAL-001
+    title: Exact pair zero-side decomposition and finite squared-norm identity
+    kind: theorem
+    statement: |
+      Let v_i(t)=exp(log(X)(delta_i+i gamma_i))/(1+((t-gamma_i)+i delta_i)^2)
+      for actual nontrivial zero occurrences with analytic multiplicities.
+      Set U=sum_i v_i, U_Z=sum_{|gamma_i|<=Z}v_i, V=sum_{0<gamma_i<=T}v_i,
+      and Phi=sum_{i,j in (0,T]} exp(log(X)(rho_i-rho_j))*4/(4-(rho_i-rho_j)^2).
+      Every ordered pair is included. For all X>0 and real T, |V|^2 is
+      integrable on R and Phi=(2/pi) integral_R |V|^2 as a complex identity;
+      in particular Im(Phi)=0 and Re(Phi)>=0. Coincident centers, repeated
+      occurrences and distinct same-ordinate complex zeros are included.
+      For X>=1 the full vector series is absolutely summable and
+      S(X,t)=2 exp(-i t log X) U(t). Thus the existing pairZeroMeanSquare
+      L(X,T)=integral_0^T |S|^2 equals 4 integral_0^T |U|^2.
+      For real X>=1,T>=0,Z>=0 one has exactly
+      L=2 pi Re(Phi)+E_trunc+E_height+E_extension,
+      where E_trunc=4 integral_0^T (|U|^2-|U_Z|^2),
+      E_height=4 integral_0^T (|U_Z|^2-|V|^2), and
+      E_extension=-4 integral_{R outside [0,T]} |V|^2<=0.
+      Every named error integral is integrable. The manuscript range
+      T>=3,Z>=2T, X=1, zero-height and empty-window endpoints are included.
+      All cutoffs retain full endpoint multiplicities. No quantitative
+      error bounds, explicit norm-tail constant or height asymptotic is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-SERIES-CONVERGENCE-001, ZERO-OCCURRENCE-001, INTEGRAL-PROFILE-IDENTIFICATION-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairZeroDecomposition.lean
+      label: HigherCorrelations.pairZero_decomposition
+      companion_file: lean/HigherCorrelations/PairZeroNorm.lean
+      companion_declarations: "pairCorrelationSum_norm, pairCorrelationSum_im, pairCorrelationSum_re_nonneg, pairZeroVector_product_integral, pairKernelIntegral_eq, pairKernelIntegral_coincident, pairZeroFullVector_phase, pairZeroMeanSquare_eq_full, pairZero_errors_integrable, pairZeroExtensionError_nonpos, pairZero_decomposition_manuscript, pairZero_decomposition_unit, pairZero_empty_window, pairZero_height_zero"
+      bookkeeping: research/lean-pair-zero.md
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8b6cff954be11820036ecb4400fafaefff3f008b9bd5db402c8f2afd64472be0
+    limit_order: "X,T,Z are fixed. The rational integral is evaluated by a finite-interval pole-radius limit and extended to coincident centers by dominated continuity with majorant 16/(1+t^2). Zero-pair integration is a finite sum only. The full U series is absolutely convergent before removing its phase; its squared integral uses continuity, not an infinite double-sum expansion."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 43 public declarations have definition-only Comparator challenges and axiom reports; the measure-splitting input has an additional axiom report. An unfinished decomposition is rejected for sorryAx. Combined project build, coverage and pair/triple regressions pass."
+      imported_inputs: "Existing pair-series convergence and occurrence reflection, existing finite simple-pole integration, and mathlib Lebesgue translation, dominated continuity, finite integral linearity and measurable-set splitting."
+      constants_scope: "Exact identities and explicit kernel majorants only; no effective asymptotic constant is claimed."
+      baseline_audit_coverage: "Formalizes the exact identity portion of PAIR-TRUNC-001 and finite norm portion of PAIR-NORM-001. Their quantitative error and tail bounds remain separate. The historical complex-integral strip and semicircle bound are not promoted. Historical pair/triple statuses and RH-audit scopes are preserved; the signed triple error remains open."

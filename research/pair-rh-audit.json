@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "5afb4ed6035c7efc0219eee6a008105e37dffb5f7d9b4b3ab59a5aa2af829b2c",
+  "ledger_sha256": "caa340ec4d377dbcbea190cc08d485690392894c178c12f25dcae28962872d6d",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2652,5 +2652,14 @@
     ],
     "report": "research/lean-zeta23.md",
     "changes": "The previous ledger remains an unchanged byte prefix. Separate entries record the selected rank-trace import and dyadic Riemann-von Mangoldt adapters with multiplicities and arbitrary endpoints. No historical status or audit scope is expanded; sharp cumulative counting and signed-error cancellation remain separate."
+  },
+  "ledger_pair_zero_review": {
+    "reviewed_on": "2026-10-20",
+    "previous_ledger_sha256": "5afb4ed6035c7efc0219eee6a008105e37dffb5f7d9b4b3ab59a5aa2af829b2c",
+    "added_claim_ids": [
+      "PAIR-ZERO-DECOMPOSITION-FORMAL-001"
+    ],
+    "report": "research/lean-pair-zero.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records the exact zero-side decomposition, finite squared-norm identity, phase bridge, integrability and endpoint conventions. Quantitative errors and explicit norm-tail bounds remain separate. No historical claim status or RH-audit scope is expanded."
   }
 }

@@ -16,11 +16,24 @@ from check_triple_dependencies import closure, flat_section, subsection
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / 'research/lean-analytic-coverage.json'
 ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
-         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001']
+         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001', 'PAIR-TRUNC-001']
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001'}
 PARTIAL = {
+    'PAIR-NORM-INTEGRAL-001': (
+        ['pairKernelProduct_integrable', 'pairKernelIntegral_eq', 'pairKernelIntegral_coincident'],
+        ['The two-factor profile needed for actual zero pairs is checked on |e|,|f|<=3/4, including coincident poles. The full historical complex-parameter strip and explicit semicircle bound remain separate.']),
+    'PAIR-NORM-001': (
+        ['pairZeroVector_product_integral', 'pairZeroWindow_square_integrable', 'pairZeroWindow_reflection',
+         'pairCorrelationSum_norm', 'pairCorrelationSum_im', 'pairCorrelationSum_re_nonneg'],
+        ['The exact finite norm identity and integrability are checked for every X>0 and all real T. The explicit 512/27 tail bound remains unformalized.']),
+    'PAIR-TRUNC-001': (
+        ['pairZeroVector_summable', 'pairZeroFullVector_phase', 'pairZeroMeanSquare_eq_full',
+         'pairZero_errors_integrable', 'pairZero_window_integral_split', 'pairZero_decomposition',
+         'pairZero_decomposition_manuscript', 'pairZeroExtensionError_nonpos',
+         'pairZero_decomposition_unit', 'pairZero_empty_window', 'pairZero_height_zero'],
+        ['The exact decomposition and extension-error sign are checked for X>=1,T,Z>=0. Quantitative bounds for all three named errors, the finite-height envelope and optimized cutoff remain unformalized.']),
     'PAIR-RHS-MEAN-001': (
         ['pairRHSMean_uniform', 'pairRHS_decomposition', 'pairRHSSquare_eq_zeroMeanSquare',
          'pairRHSSquare_integrable', 'pairZeroMeanSquare_integrable', 'pairRHSPrimeArchError_bound',
@@ -440,9 +453,27 @@ def derive():
             'Zeta23 Comparator coverage differs from inventory')
     components.extend(zeta23['components'])
     names.extend(c['declaration'] for c in zeta23['components'])
+    pair_zero = json.loads(read('research/lean-pair-zero-inventory.json'))
+    found = []
+    for module in pair_zero['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair zero-side solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in pair_zero['components']],
+            'pair zero-side inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/pair-zero.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in pair_zero['components'] if c['comparator_checked']],
+            'pair zero-side Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed pair zero-side verification scope')
+    components.extend(pair_zero['components'])
+    names.extend(c['declaration'] for c in pair_zero['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -477,7 +508,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Assemble the normalized pair-correlation asymptotic from the checked RHS mean square and the zero-side comparison. The diagonal, prime mean-square and full RHS constants are existential; their effectivity remains separate. The sharper near count, sharp cumulative Riemann-von Mangoldt and signed o(1) remain open; dyadic Riemann-von Mangoldt is checked.')
+        next_step='Bound the three named zero-side errors, then derive the uniform pair comparison and assemble the normalized asymptotic. The exact decomposition and finite norm identity are checked; the explicit norm tail, constant effectivity and signed triple o(1) remain separate.')
 
 
 def validate(record):
@@ -487,6 +518,17 @@ def validate(record):
 class CoverageTests(unittest.TestCase):
     def setUp(self):
         self.record = json.loads(RECORD.read_text())
+
+    def test_exact_decomposition_does_not_promote_bounds(self):
+        for key in ['PAIR-NORM-INTEGRAL-001', 'PAIR-NORM-001', 'PAIR-TRUNC-001']:
+            node = next(n for n in self.record['nodes'] if n['id'] == key)
+            self.assertEqual(node['coverage'], 'partial')
+            self.assertFalse(node['whole_claim_formalized'])
+            self.assertTrue(node['remaining_obligations'])
+        trunc = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-TRUNC-001')
+        self.assertIn('HigherCorrelations.pairZero_decomposition', trunc['components'])
+        self.assertIn('HigherCorrelations.pairZeroExtensionError_nonpos', trunc['components'])
+        self.assertTrue(any('Quantitative bounds' in gap for gap in trunc['remaining_obligations']))
 
     def test_current(self):
         validate(self.record)

@@ -8,7 +8,8 @@
     "TRIPLE-SMOOTHED-CORRELATION-001",
     "ORDINATE-CONSTANT-KERNEL-001",
     "ORDINATE-TRIPLE-001",
-    "PAIR-RHS-MEAN-001"
+    "PAIR-RHS-MEAN-001",
+    "PAIR-TRUNC-001"
   ],
   "analytic_proof_certificate": false,
   "whole_graph_formalized": false,
@@ -572,6 +573,56 @@
       "remaining_obligations": []
     },
     {
+      "id": "PAIR-NORM-001",
+      "dependencies": [
+        "PAIR-NORM-INTEGRAL-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "0b4e268f7a738daccabff268d8e501e2bcd879db0c3d7d86ea953df33cef7015",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-norm",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, Lemma 3, equations (2.6)-(2.8)"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.pairZeroVector_product_integral",
+        "HigherCorrelations.pairZeroWindow_square_integrable",
+        "HigherCorrelations.pairZeroWindow_reflection",
+        "HigherCorrelations.pairCorrelationSum_norm",
+        "HigherCorrelations.pairCorrelationSum_im",
+        "HigherCorrelations.pairCorrelationSum_re_nonneg"
+      ],
+      "remaining_obligations": [
+        "The exact finite norm identity and integrability are checked for every X>0 and all real T. The explicit 512/27 tail bound remains unformalized."
+      ]
+    },
+    {
+      "id": "PAIR-NORM-INTEGRAL-001",
+      "dependencies": [],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "5e5f18a3e8fcd06abe15bebe8101c463c27f89c961603e3e3c3f63741ebec454",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:norm-integral",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, equation (2.7)"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.pairKernelProduct_integrable",
+        "HigherCorrelations.pairKernelIntegral_eq",
+        "HigherCorrelations.pairKernelIntegral_coincident"
+      ],
+      "remaining_obligations": [
+        "The two-factor profile needed for actual zero pairs is checked on |e|,|f|<=3/4, including coincident poles. The full historical complex-parameter strip and explicit semicircle bound remain separate."
+      ]
+    },
+    {
       "id": "PAIR-PRIME-COUNT-001",
       "dependencies": [
         "PRIME-SIEVE-001"
@@ -688,6 +739,40 @@
       ],
       "remaining_obligations": [
         "The full mean square, sharp mixed term, exact zero-series normalization and endpoints are checked with existential constants; the historical effective-constant assertion remains unformalized."
+      ]
+    },
+    {
+      "id": "PAIR-TRUNC-001",
+      "dependencies": [
+        "PAIR-COUNT-KERNEL-001",
+        "PAIR-EF-CONVERGENCE-001",
+        "PAIR-NORM-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "cc9426ea8b687f8b500a470f4bd2dadad9ed5755eededd6e93b682b34b95090a",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-trunc",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, Lemma 4, equations (2.12)-(2.16)"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.pairZeroVector_summable",
+        "HigherCorrelations.pairZeroFullVector_phase",
+        "HigherCorrelations.pairZeroMeanSquare_eq_full",
+        "HigherCorrelations.pairZero_errors_integrable",
+        "HigherCorrelations.pairZero_window_integral_split",
+        "HigherCorrelations.pairZero_decomposition",
+        "HigherCorrelations.pairZero_decomposition_manuscript",
+        "HigherCorrelations.pairZeroExtensionError_nonpos",
+        "HigherCorrelations.pairZero_decomposition_unit",
+        "HigherCorrelations.pairZero_empty_window",
+        "HigherCorrelations.pairZero_height_zero"
+      ],
+      "remaining_obligations": [
+        "The exact decomposition and extension-error sign are checked for X>=1,T,Z>=0. Quantitative bounds for all three named errors, the finite-height envelope and optimized cutoff remain unformalized."
       ]
     },
     {
@@ -1334,6 +1419,14 @@
       "ZETA-CONTOUR-001"
     ],
     [
+      "PAIR-NORM-001",
+      "PAIR-NORM-INTEGRAL-001"
+    ],
+    [
+      "PAIR-NORM-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
       "PAIR-PRIME-COUNT-001",
       "PRIME-SIEVE-001"
     ],
@@ -1360,6 +1453,18 @@
     [
       "PAIR-RHS-MEAN-001",
       "PAIR-PRIME-MEAN-001"
+    ],
+    [
+      "PAIR-TRUNC-001",
+      "PAIR-COUNT-KERNEL-001"
+    ],
+    [
+      "PAIR-TRUNC-001",
+      "PAIR-EF-CONVERGENCE-001"
+    ],
+    [
+      "PAIR-TRUNC-001",
+      "PAIR-NORM-001"
     ],
     [
       "PRIME-PNT-001",
@@ -1541,6 +1646,9 @@
     "ORDINATE-PAIR-INPUT-001",
     "ORDINATE-TRANSFER-001",
     "PAIR-RHS-MEAN-001",
+    "PAIR-TRUNC-001",
+    "PAIR-NORM-001",
+    "PAIR-NORM-INTEGRAL-001",
     "TRIPLE-SMOOTHED-CORRELATION-001",
     "TRIPLE-MAIN-TERM-COMPARISON-001",
     "TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001",
@@ -5544,7 +5652,222 @@
       "declaration": "HigherCorrelations.zeta23_dyadic_closed_occurrences",
       "source": "lean/HigherCorrelations/Zeta23Counting.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_upper",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_lower",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_injective",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_product",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_coefficient_upper",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_coefficient_lower",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_upper_sum",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_lower_sum",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_pole_sum",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelProduct_bound",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelProduct_integrable",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelCenters_bound",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelIntegral_distinct",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelIntegral_eq",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelIntegral_coincident",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_phase",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_phase_norm",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_summable",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFullVector_phase",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFullVector_eq",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_continuous",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFullVector_continuous",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoffVector_continuous",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindowVector_continuous",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroMeanSquare_eq_full",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_product",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_product_integrable",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_product_integral",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_finite_square",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindow_square_integrable",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindow_reflection",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairCorrelationSum_norm",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairCorrelationSum_im",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairCorrelationSum_re_nonneg",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_errors_integrable",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_norm_normalization",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_window_integral_split",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroExtensionError_nonpos",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_decomposition",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_decomposition_manuscript",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_decomposition_unit",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_empty_window",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_height_zero",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Assemble the normalized pair-correlation asymptotic from the checked RHS mean square and the zero-side comparison. The diagonal, prime mean-square and full RHS constants are existential; their effectivity remains separate. The sharper near count, sharp cumulative Riemann-von Mangoldt and signed o(1) remain open; dyadic Riemann-von Mangoldt is checked."
+  "next_step": "Bound the three named zero-side errors, then derive the uniform pair comparison and assemble the normalized asymptotic. The exact decomposition and finite norm identity are checked; the explicit norm tail, constant effectivity and signed triple o(1) remain separate."
 }

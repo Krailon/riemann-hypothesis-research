@@ -1,3 +1,4 @@
+import HigherCorrelations.PairZeroDecomposition
 import HigherCorrelations.Zeta23RankTrace
 import HigherCorrelations.Zeta23Counting
 import HigherCorrelations.PairRHSMean
@@ -936,3 +937,48 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms RHLinalg.rank_trace_ineq_two
 #print axioms Zeta23.gammaFacts
 #print axioms Zeta23.RvM.riemannVonMangoldt
+
+#print axioms HigherCorrelations.pairKernelPole_upper
+#print axioms HigherCorrelations.pairKernelPole_lower
+#print axioms HigherCorrelations.pairKernelPole_injective
+#print axioms HigherCorrelations.pairKernelPole_product
+#print axioms HigherCorrelations.pairKernelPole_coefficient_upper
+#print axioms HigherCorrelations.pairKernelPole_coefficient_lower
+#print axioms HigherCorrelations.pairKernel_upper_sum
+#print axioms HigherCorrelations.pairKernel_lower_sum
+#print axioms HigherCorrelations.pairKernel_pole_sum
+#print axioms HigherCorrelations.pairKernelProduct_bound
+#print axioms HigherCorrelations.pairKernelProduct_integrable
+#print axioms HigherCorrelations.pairKernelCenters_bound
+#print axioms HigherCorrelations.pairKernelIntegral_distinct
+#print axioms HigherCorrelations.pairKernelIntegral_eq
+#print axioms HigherCorrelations.pairKernelIntegral_coincident
+#print axioms HigherCorrelations.pairZeroVector_phase
+#print axioms HigherCorrelations.pairZero_phase_norm
+#print axioms HigherCorrelations.pairZeroVector_summable
+#print axioms HigherCorrelations.pairZeroFullVector_phase
+#print axioms HigherCorrelations.pairZeroFullVector_eq
+#print axioms HigherCorrelations.pairZeroVector_continuous
+#print axioms HigherCorrelations.pairZeroFullVector_continuous
+#print axioms HigherCorrelations.pairZeroCutoffVector_continuous
+#print axioms HigherCorrelations.pairZeroWindowVector_continuous
+#print axioms HigherCorrelations.pairZeroMeanSquare_eq_full
+#print axioms HigherCorrelations.pairZeroVector_product
+#print axioms HigherCorrelations.pairZeroVector_product_integrable
+#print axioms HigherCorrelations.pairZeroVector_product_integral
+#print axioms HigherCorrelations.pairZero_finite_square
+#print axioms HigherCorrelations.pairZeroWindow_square_integrable
+#print axioms HigherCorrelations.pairZeroWindow_reflection
+#print axioms HigherCorrelations.pairCorrelationSum_norm
+#print axioms HigherCorrelations.pairCorrelationSum_im
+#print axioms HigherCorrelations.pairCorrelationSum_re_nonneg
+#print axioms HigherCorrelations.pairZero_errors_integrable
+#print axioms HigherCorrelations.pairZero_norm_normalization
+#print axioms HigherCorrelations.pairZero_window_integral_split
+#print axioms HigherCorrelations.pairZeroExtensionError_nonpos
+#print axioms HigherCorrelations.pairZero_decomposition
+#print axioms HigherCorrelations.pairZero_decomposition_manuscript
+#print axioms HigherCorrelations.pairZero_decomposition_unit
+#print axioms HigherCorrelations.pairZero_empty_window
+#print axioms HigherCorrelations.pairZero_height_zero
+#print axioms MeasureTheory.integral_add_compl

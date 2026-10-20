@@ -26,7 +26,7 @@ def digest(path):
 def source_hashes():
     files = [ROOT / p for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json',
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
-             'scripts/reproduce_lean.py', 'scripts/check_zeta23_import.py', 'research/lean-zeta23-inventory.json', 'research/lean-zeta23.md', 'scripts/prepare_lean_diagonal.py', 'scripts/check_lean_analytic_coverage.py',
+             'scripts/reproduce_lean.py', 'scripts/check_zeta23_import.py', 'research/lean-zeta23-inventory.json', 'research/lean-zeta23.md', 'research/lean-pair-zero-inventory.json', 'research/lean-pair-zero.md', 'scripts/prepare_lean_diagonal.py', 'scripts/check_lean_analytic_coverage.py',
              'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json',
              'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json', 'research/lean-pair-exact-inventory.json', 'research/lean-pair-uniform-inventory.json', 'research/lean-pair-meanvalue-inventory.json', 'research/lean-pair-sieve-inventory.json', 'research/lean-pair-diagonal-inventory.json', 'research/lean-pair-prime-mean-inventory.json', 'research/lean-pair-rhs-mean-inventory.json']]
     files += sorted(p for p in (ROOT / 'vendor/zeta23').rglob('*') if p.is_file())
@@ -83,7 +83,11 @@ def main():
                         help='Move aside only the project build directory before verification.')
     parser.add_argument('--zeta23-only', action='store_true',
                         help='Use prepared dependencies; check Zeta23, combined build, all axioms and regressions.')
+    parser.add_argument('--pair-zero-only', action='store_true',
+                        help='Use prepared dependencies; check the exact zero-side decomposition, combined build, all axioms and regressions.')
     args = parser.parse_args()
+    if args.pair_zero_only and args.zeta23_only:
+        parser.error('Choose at most one focused verification mode')
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     run_dir = ROOT / 'artifacts/lean-runs' / stamp
     run_dir.mkdir(parents=True)
@@ -91,11 +95,15 @@ def main():
                   status='running', pins=PINS, commands=[], external_kernel=False,
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   assumptions=['UNCONDITIONAL'],
-                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, horizontal derivatives, logarithmic local zero counts, uniform height bounds, pair explicit-formula series convergence, the paired Mellin kernel including its endpoint, the exact pair explicit formula, its uniform named errors, the Fourier mean-value input with actual prime-series specialization, the effective weighted nearby-prime sieve bound, the prime diagonal asymptotic, the optimized prime mean square, and the complete explicit-formula RHS mean square with existential constants')
+                  verification_scope='Zeta import, strip corollaries, finite foundation, horizontal-square bounds, analytic summability foundations, actual zero-occurrence convergence, rational-kernel transfer, integral-profile identification, horizontal derivatives, logarithmic local zero counts, uniform height bounds, pair explicit-formula series convergence, the paired Mellin kernel including its endpoint, the exact pair explicit formula, its uniform named errors, the Fourier mean-value input with actual prime-series specialization, the effective weighted nearby-prime sieve bound, the prime diagonal asymptotic, the optimized prime mean square, the complete explicit-formula RHS mean square with existential constants, the Zeta23 imports, and the exact zero-side decomposition')
 
     if args.zeta23_only:
         report['verification_scope'] = ('Zeta23 rank-trace and dyadic counting imports; combined project build, '
             'complete axiom report and Python regressions. Earlier Comparator suites are not rerun.')
+
+    if args.pair_zero_only:
+        report['verification_scope'] = ('Exact pair zero-side decomposition and finite norm identity; '
+            'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun.')
 
     def command(name, argv, *, expected_failure=False):
         log = run_dir / (name + '.log')
@@ -125,12 +133,12 @@ def main():
         command('landrun-version', ['landrun', '--version'])
         upstream_checkout()
         # Runs upstream's required patch hooks; check every resolved Git pin afterward.
-        if not args.zeta23_only:
+        if not (args.zeta23_only or args.pair_zero_only):
             command('resolve', ['lake', 'update', 'OAI'])
             command('prepare-diagonal', [sys.executable, '-B', 'scripts/prepare_lean_diagonal.py'])
         verify_dependency_pins()
         report['dependency_checkouts'] = dependency_evidence(run_dir)
-        if not args.zeta23_only:
+        if not (args.zeta23_only or args.pair_zero_only):
             command('mathlib-cache', ['lake', 'exe', 'cache', 'get'])
         if args.fresh_project:
             build = ROOT / '.lake/build'
@@ -138,17 +146,24 @@ def main():
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
-        command('zeta23-provenance', [sys.executable, '-B', 'scripts/check_zeta23_import.py'])
-        command('zeta23-build', ['lake', 'build', 'HigherCorrelations.Zeta23RankTrace',
-                                'HigherCorrelations.Zeta23Counting'])
-        for suite in ['zeta23-ranktrace', 'zeta23-counting']:
-            command(suite + '-comparator', ['lake', 'env', comparator,
-                    'lean/VerificationChallenges/' + suite + '.json'])
-        command('zeta23-unfinished-rejected', ['lake', 'env', comparator,
-                'lean/VerificationChallenges/zeta23-unfinished.json'], expected_failure=True)
+        if not args.zeta23_only:
+            command('pair-zero-build', ['lake', 'build', 'HigherCorrelations.PairZeroDecomposition'])
+            command('pair-zero-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-zero.json'])
+            command('pair-zero-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/pair-zero-unfinished.json'], expected_failure=True)
+        if not args.pair_zero_only:
+            command('zeta23-provenance', [sys.executable, '-B', 'scripts/check_zeta23_import.py'])
+            command('zeta23-build', ['lake', 'build', 'HigherCorrelations.Zeta23RankTrace',
+                                    'HigherCorrelations.Zeta23Counting'])
+            for suite in ['zeta23-ranktrace', 'zeta23-counting']:
+                command(suite + '-comparator', ['lake', 'env', comparator,
+                        'lean/VerificationChallenges/' + suite + '.json'])
+            command('zeta23-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/zeta23-unfinished.json'], expected_failure=True)
         command('project-build', ['lake', 'build', 'HigherCorrelations'])
         command('analytic-coverage', [sys.executable, '-B', 'scripts/check_lean_analytic_coverage.py'])
-        if not args.zeta23_only:
+        if not (args.zeta23_only or args.pair_zero_only):
             command('pair-rhs-mean-build', ['lake', 'build', 'HigherCorrelations.PairRHSMean'])
             command('pair-rhs-mean-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-rhs-mean.json'])
@@ -284,6 +299,9 @@ def main():
         zeta23_inventory = json.loads((ROOT / 'research/lean-zeta23-inventory.json').read_text())
         expected.update(c['declaration'] for c in zeta23_inventory['components'])
         expected.update(zeta23_inventory['imported_axioms'])
+        zero_inventory = json.loads((ROOT / 'research/lean-pair-zero-inventory.json').read_text())
+        expected.update(c['declaration'] for c in zero_inventory['components'])
+        expected.update(zero_inventory['imported_axioms'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):

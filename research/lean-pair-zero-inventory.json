@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairZeroDefinitions",
+    "PairKernelAlgebra",
+    "PairKernelIntegral",
+    "PairZeroVectors",
+    "PairZeroNorm",
+    "PairZeroDecomposition"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_upper",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_lower",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_injective",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_product",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_coefficient_upper",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelPole_coefficient_lower",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_upper_sum",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_lower_sum",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_pole_sum",
+      "source": "lean/HigherCorrelations/PairKernelAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelProduct_bound",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelProduct_integrable",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelCenters_bound",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelIntegral_distinct",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelIntegral_eq",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernelIntegral_coincident",
+      "source": "lean/HigherCorrelations/PairKernelIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_phase",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_phase_norm",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_summable",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFullVector_phase",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFullVector_eq",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_continuous",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFullVector_continuous",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoffVector_continuous",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindowVector_continuous",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroMeanSquare_eq_full",
+      "source": "lean/HigherCorrelations/PairZeroVectors.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_product",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_product_integrable",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_product_integral",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_finite_square",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindow_square_integrable",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindow_reflection",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairCorrelationSum_norm",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairCorrelationSum_im",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairCorrelationSum_re_nonneg",
+      "source": "lean/HigherCorrelations/PairZeroNorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_errors_integrable",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_norm_normalization",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_window_integral_split",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroExtensionError_nonpos",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_decomposition",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_decomposition_manuscript",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_decomposition_unit",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_empty_window",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_height_zero",
+      "source": "lean/HigherCorrelations/PairZeroDecomposition.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [
+    "MeasureTheory.integral_add_compl"
+  ]
+}

@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "5afb4ed6035c7efc0219eee6a008105e37dffb5f7d9b4b3ab59a5aa2af829b2c",
+    "research/theorem-ledger.yaml": "caa340ec4d377dbcbea190cc08d485690392894c178c12f25dcae28962872d6d",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "2f23c5893f8dbd9fc5ae2ee87fcae9be8a2fd6e0fafdbab460421ced8b306553"
+    "research/pair-rh-audit.json": "4277f1136ab2254e855e11679588ffe53beada228f6eac1a55bb22787b51521b"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4516,5 +4516,14 @@
     ],
     "report": "research/lean-zeta23.md",
     "changes": "The previous ledger remains an unchanged byte prefix. Separate entries record the selected rank-trace import and dyadic Riemann-von Mangoldt adapters with multiplicities and arbitrary endpoints. No historical status or audit scope is expanded; sharp cumulative counting and signed-error cancellation remain separate."
+  },
+  "ledger_pair_zero_review": {
+    "reviewed_on": "2026-10-20",
+    "previous_ledger_sha256": "5afb4ed6035c7efc0219eee6a008105e37dffb5f7d9b4b3ab59a5aa2af829b2c",
+    "added_claim_ids": [
+      "PAIR-ZERO-DECOMPOSITION-FORMAL-001"
+    ],
+    "report": "research/lean-pair-zero.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records the exact zero-side decomposition, finite squared-norm identity, phase bridge, integrability and endpoint conventions. Quantitative errors and explicit norm-tail bounds remain separate. No historical claim status or RH-audit scope is expanded."
   }
 }

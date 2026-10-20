@@ -1,0 +1,212 @@
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.PairZero
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8944/8944] Built VerificationChallenges.PairZero (31s)
+warning: lean/VerificationChallenges/PairZero.lean:9:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:12:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:15:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:22:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:26:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:35:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:40:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:49:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:55:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:61:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:64:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:67:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:69:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:75:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:78:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:81:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:84:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:87:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:93:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:99:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:102:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:107:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:111:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:117:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:120:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:122:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:125:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:130:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:133:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:138:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:140:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:144:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:148:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:152:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/PairZero.lean:155:8: declaration uses `sorry`
+Build completed successfully (8944 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.pairKernelPole_upper, HigherCorrelations.pairKernelPole_lower, HigherCorrelations.pairKernelPole_injective, HigherCorrelations.pairKernelPole_product, HigherCorrelations.pairKernelPole_coefficient_upper, HigherCorrelations.pairKernelPole_coefficient_lower, HigherCorrelations.pairKernel_upper_sum, HigherCorrelations.pairKernel_lower_sum, HigherCorrelations.pairKernel_pole_sum, HigherCorrelations.pairKernelProduct_bound, HigherCorrelations.pairKernelProduct_integrable, HigherCorrelations.pairKernelCenters_bound, HigherCorrelations.pairKernelIntegral_distinct, HigherCorrelations.pairKernelIntegral_eq, HigherCorrelations.pairKernelIntegral_coincident, HigherCorrelations.pairZeroVector_phase, HigherCorrelations.pairZero_phase_norm, HigherCorrelations.pairZeroVector_summable, HigherCorrelations.pairZeroFullVector_phase, HigherCorrelations.pairZeroFullVector_eq, HigherCorrelations.pairZeroVector_continuous, HigherCorrelations.pairZeroFullVector_continuous, HigherCorrelations.pairZeroCutoffVector_continuous, HigherCorrelations.pairZeroWindowVector_continuous, HigherCorrelations.pairZeroMeanSquare_eq_full, HigherCorrelations.pairZeroVector_product, HigherCorrelations.pairZeroVector_product_integrable, HigherCorrelations.pairZeroVector_product_integral, HigherCorrelations.pairZero_finite_square, HigherCorrelations.pairZeroWindow_square_integrable, HigherCorrelations.pairZeroWindow_reflection, HigherCorrelations.pairCorrelationSum_norm, HigherCorrelations.pairCorrelationSum_im, HigherCorrelations.pairCorrelationSum_re_nonneg, HigherCorrelations.pairZero_errors_integrable, HigherCorrelations.pairZero_norm_normalization, HigherCorrelations.pairZero_window_integral_split, HigherCorrelations.pairZeroExtensionError_nonpos, HigherCorrelations.pairZero_decomposition, HigherCorrelations.pairZero_decomposition_manuscript, HigherCorrelations.pairZero_decomposition_unit, HigherCorrelations.pairZero_empty_window, HigherCorrelations.pairZero_height_zero, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.PairZero
+Building HigherCorrelations.PairZeroDecomposition
+warning: PrimeNumberTheoremAnd: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/stackcanary/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [9000/9066] Replayed Zeta23.Statement
+warning: lean/Zeta23/Statement.lean:151:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9001/9066] Replayed Zeta23.Statement.Seam
+warning: lean/Zeta23/Statement/Seam.lean:62:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [9002/9066] Replayed Zeta23.ZetaReflect
+warning: lean/Zeta23/ZetaReflect.lean:94:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [9010/9066] Replayed PrimeNumberTheoremAnd.MediumPNT
+info: PrimeNumberTheoremAnd/MediumPNT.lean:4142:0: 'MediumPNT' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9011/9066] Replayed PrimeNumberTheoremAnd.StrongPNT
+info: PrimeNumberTheoremAnd/StrongPNT.lean:2898:0: 'StrongPNT' depends on axioms: [propext, choice, Quot.sound]
+⚠ [9015/9066] Replayed Zeta23.RvM.Halving
+warning: lean/Zeta23/RvM/Halving.lean:55:55: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: lean/Zeta23/RvM/Halving.lean:65:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: lean/Zeta23/RvM/Halving.lean:73:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9022/9066] Replayed Zeta23.RvM.ReZeroCount
+warning: lean/Zeta23/RvM/ReZeroCount.lean:275:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [9023/9066] Replayed Zeta23.RvM.Backlund
+warning: lean/Zeta23/RvM/Backlund.lean:126:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [9027/9066] Replayed Zeta23.RvM.NcountWindow
+warning: lean/Zeta23/RvM/NcountWindow.lean:26:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [9033/9066] Replayed Zeta23.GammaFacts.Mu
+info: lean/Zeta23/GammaFacts/Mu.lean:140:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9035/9066] Replayed Zeta23.GammaFacts.StirlingVert
+info: lean/Zeta23/GammaFacts/StirlingVert.lean:455:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9057/9066] Replayed HigherCorrelations.KernelTailShells
+warning: lean/HigherCorrelations/KernelTailShells.lean:17:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9058/9066] Replayed HigherCorrelations.KernelTailBounds
+info: lean/HigherCorrelations/KernelTailBounds.lean:11:45: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/KernelTailBounds.lean:11:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9061/9066] Replayed HigherCorrelations.PairZeroVectors
+warning: lean/HigherCorrelations/PairZeroVectors.lean:17:76: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairZeroVectors.lean:31:44: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9063/9066] Replayed HigherCorrelations.PairKernelAlgebra
+warning: lean/HigherCorrelations/PairKernelAlgebra.lean:84:22: This simp argument is unused:
+  Complex.I_pow_four
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.I_sq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9064/9066] Replayed HigherCorrelations.PairKernelIntegral
+warning: lean/HigherCorrelations/PairKernelIntegral.lean:71:2: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairKernelIntegral.lean:92:58: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairKernelIntegral.lean:92:54: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairKernelIntegral.lean:92:68: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9065/9066] Replayed HigherCorrelations.PairZeroNorm
+warning: lean/HigherCorrelations/PairZeroNorm.lean:29:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairZeroNorm.lean:151:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9066/9066] Replayed HigherCorrelations.PairZeroDecomposition
+warning: lean/HigherCorrelations/PairZeroDecomposition.lean:24:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (9066 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.pairKernelPole_upper, HigherCorrelations.pairKernelPole_lower, HigherCorrelations.pairKernelPole_injective, HigherCorrelations.pairKernelPole_product, HigherCorrelations.pairKernelPole_coefficient_upper, HigherCorrelations.pairKernelPole_coefficient_lower, HigherCorrelations.pairKernel_upper_sum, HigherCorrelations.pairKernel_lower_sum, HigherCorrelations.pairKernel_pole_sum, HigherCorrelations.pairKernelProduct_bound, HigherCorrelations.pairKernelProduct_integrable, HigherCorrelations.pairKernelCenters_bound, HigherCorrelations.pairKernelIntegral_distinct, HigherCorrelations.pairKernelIntegral_eq, HigherCorrelations.pairKernelIntegral_coincident, HigherCorrelations.pairZeroVector_phase, HigherCorrelations.pairZero_phase_norm, HigherCorrelations.pairZeroVector_summable, HigherCorrelations.pairZeroFullVector_phase, HigherCorrelations.pairZeroFullVector_eq, HigherCorrelations.pairZeroVector_continuous, HigherCorrelations.pairZeroFullVector_continuous, HigherCorrelations.pairZeroCutoffVector_continuous, HigherCorrelations.pairZeroWindowVector_continuous, HigherCorrelations.pairZeroMeanSquare_eq_full, HigherCorrelations.pairZeroVector_product, HigherCorrelations.pairZeroVector_product_integrable, HigherCorrelations.pairZeroVector_product_integral, HigherCorrelations.pairZero_finite_square, HigherCorrelations.pairZeroWindow_square_integrable, HigherCorrelations.pairZeroWindow_reflection, HigherCorrelations.pairCorrelationSum_norm, HigherCorrelations.pairCorrelationSum_im, HigherCorrelations.pairCorrelationSum_re_nonneg, HigherCorrelations.pairZero_errors_integrable, HigherCorrelations.pairZero_norm_normalization, HigherCorrelations.pairZero_window_integral_split, HigherCorrelations.pairZeroExtensionError_nonpos, HigherCorrelations.pairZero_decomposition, HigherCorrelations.pairZero_decomposition_manuscript, HigherCorrelations.pairZero_decomposition_unit, HigherCorrelations.pairZero_empty_window, HigherCorrelations.pairZero_height_zero, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from HigherCorrelations.PairZeroDecomposition
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

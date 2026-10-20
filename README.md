@@ -17,6 +17,13 @@ Run `python3 -B scripts/reproduce_lean.py --fresh-project` on Linux x86_64.
 See the [verification record](research/lean-verification.md) for pins, prerequisites,
 checked statements, proof-checking scope, and archived evidence.
 
+## Exact pair zero-side decomposition formalized
+
+The finite squared-norm identity and exact decomposition into truncation,
+height-window and extension errors are formalized, with full multiplicities,
+endpoint weights and the extension error's nonpositive sign. The three quantitative
+error bounds are next. See the [proof and verification record](research/lean-pair-zero.md).
+
 ## Zeta23 inputs imported
 
 The selected Zeta23 port supplies finite rank–trace inequalities and dyadic

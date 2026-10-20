@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairZero",
+  "solution_module": "VerificationChallenges.PairZeroUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairZero_decomposition"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
