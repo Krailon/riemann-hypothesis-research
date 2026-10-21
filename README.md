@@ -14,6 +14,10 @@ The upstream source is a **PREPRINT**. This does not settle the remaining
 ordinate-only triple-correlation error.
 
 Run `python3 -B scripts/reproduce_lean.py --fresh-project` on Linux x86_64.
+For an already prepared or migrated working directory, use
+`python3 -B scripts/reproduce_lean.py --reuse-dependencies` to keep the full
+verification scope while skipping dependency setup and cache downloads.
+Each stage prints a log-following command and reports its elapsed time.
 See the [verification record](research/lean-verification.md) for pins, prerequisites,
 checked statements, proof-checking scope, and archived evidence.
 

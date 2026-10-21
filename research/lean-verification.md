@@ -59,6 +59,44 @@ shell configuration. `--skip-bootstrap` reuses an existing installation.
 dependency build caches are reused. This is a fresh **project** build, not a
 claim to have rebuilt every dependency from an empty machine or clean Git commit.
 
+### Reuse an installed or migrated environment
+
+After copying the complete working directory, including `.tools/` and `.lake/`, use:
+
+```bash
+python3 -B scripts/reproduce_lean.py --reuse-dependencies
+```
+
+This runs the full verification suite. It skips bootstrap, `lake update OAI`,
+the PNT preparation rewrite and mathlib cache downloads. A read-only preflight
+checks the upstream checkout, every locked dependency revision, all compatibility
+patches from the pinned upstream tree, the prepared PNT smoothing adapter, the
+tool executables and the installed pinned Lean toolchain. Missing or mismatched
+inputs stop the run with a repair diagnostic; reuse mode does not fetch or patch
+them. Dependency diffs are still archived. Build tools may rebuild missing or
+stale compiled artifacts, so reuse mode is not a guarantee of a short or wholly
+offline run.
+
+`--skip-bootstrap` alone skips only tool installation; it still performs dependency
+resolution and cache fetching. It is redundant with `--reuse-dependencies` but may
+be supplied with it. `--fresh-project` remains independent: combine it with reuse
+to rebuild project artifacts while keeping prepared dependencies. The existing
+focused modes retain their narrower Comparator scope and also preflight their
+prepared dependencies.
+
+The `resolve` stage runs `lake update OAI`, whose hooks can download thousands of
+mathlib cache files. Full verification can take hours even with prepared
+dependencies. Each stage prints its command, log path and a `tail -f` command for
+following progress in another terminal; output stays in that log. Completed
+stages report elapsed seconds. Ctrl-C stops the stage's process group, archives
+an `interrupted` manifest with the interrupted command and returns exit code 130.
+This does not cover uncatchable termination such as SIGKILL or power loss.
+
+Run `python3 -B scripts/check_lean_reproduction.py` for the runner's fast regression
+tests. These mock proof-suite execution to check full/focused stage selection and
+manifest outcomes, and separately test patch checks and subprocess handling;
+they are not substitutes for Lean proof checking.
+
 The exact Lean, mathlib, OpenAI, Comparator, exporter, Landrun and Go pins are
 in [lean-import-pins.json](lean-import-pins.json). The root Lake lockfile pins
 the dependency graph. OpenAI is a local-path Lake requirement backed by a
