@@ -1,3 +1,4 @@
+import HigherCorrelations.PairZeroComparison
 import HigherCorrelations.PairZeroUniformBounds
 import HigherCorrelations.PairZeroDecomposition
 import HigherCorrelations.Zeta23RankTrace

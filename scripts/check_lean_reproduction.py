@@ -81,7 +81,8 @@ class LeanReproductionTests(unittest.TestCase):
     def test_focused_modes_remain_focused(self):
         for flag, suite in [('--zeta23-only', 'zeta23-counting-comparator'),
                             ('--pair-zero-only', 'pair-zero-comparator'),
-                            ('--pair-zero-bounds-only', 'pair-zero-bounds-comparator')]:
+                            ('--pair-zero-bounds-only', 'pair-zero-bounds-comparator'),
+                            ('--pair-zero-comparison-only', 'pair-zero-comparison-comparator')]:
             with self.subTest(flag=flag):
                 code, calls, report, checked = self.run_workflow(['--reuse-dependencies', flag])
                 self.assertEqual(code, 0)
@@ -89,6 +90,10 @@ class LeanReproductionTests(unittest.TestCase):
                 self.assertIn(suite, calls)
                 self.assertNotIn('resolve', calls)
                 self.assertNotIn('upstream-comparator', calls)
+                if flag == '--pair-zero-comparison-only':
+                    self.assertNotIn('pair-zero-bounds-comparator', calls)
+                    self.assertNotIn('pair-zero-comparator', calls)
+                    self.assertNotIn('zeta23-counting-comparator', calls)
                 self.assertIn('Earlier Comparator suites are not rerun', report['verification_scope'])
 
     def test_preflight_failure_prevents_build_and_is_archived(self):

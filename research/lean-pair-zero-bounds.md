@@ -105,10 +105,11 @@ earlier Comparator suites are not rerun by the focused mode.
 
 ## Next boundary
 
-The historical `PAIR-TRUNC-001` remains partially formalized: cutoff optimization
-and its effective-constant claim are separate. Next derive the uniform pair
-comparison using an admissible optimized cutoff and the required quantitative
-zero-free envelope, then combine it with the RHS mean square to assemble the
-normalized pair asymptotic. Small-height absorption needed by a particular cutoff
-must be proved explicitly. The older explicit norm-tail constant and the signed
-triple complex-argument o(1) error also remain separate obligations.
+The cutoff optimization, small-height absorption, and uniform comparison are now
+checked in [the comparison milestone](lean-pair-zero-comparison.md), using the
+already verified PREPRINT strip input. The historical `PAIR-TRUNC-001` remains
+partial because its effective-constant assertion is separate; the original KV
+comparison route also remains incompletely formalized. Next combine the checked
+comparison with the RHS mean square to assemble the normalized pair asymptotic.
+The older explicit norm-tail constant and signed triple complex-argument o(1)
+error remain separate obligations.

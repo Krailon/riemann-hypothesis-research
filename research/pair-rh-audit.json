@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "191fcda190366c6ac31a5ccf5d1710fb7f1a4ef83471a0fb20c939ac2adf5e5b",
+  "ledger_sha256": "87ac9bdd8b10fadd6f88e59a9004407d9a93e2b89f52d407c2bbc87c26928b62",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2670,5 +2670,14 @@
     ],
     "report": "research/lean-pair-zero-bounds.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records all three uniform zero-side errors and the finite horizontal envelope with existential absolute constants. Cutoff optimization, quantitative zero-free envelopes, explicit norm-tail constants and historical effectivity assertions remain separate. No historical claim status or RH-audit scope is expanded."
+  },
+  "ledger_pair_zero_comparison_review": {
+    "reviewed_on": "2026-10-21",
+    "previous_ledger_sha256": "191fcda190366c6ac31a5ccf5d1710fb7f1a4ef83471a0fb20c939ac2adf5e5b",
+    "added_claim_ids": [
+      "PAIR-ZERO-COMPARISON-FORMAL-001"
+    ],
+    "report": "research/lean-pair-zero-comparison.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records optimized cutoff bounds, small-height absorption and the uniform comparison using the pinned PREPRINT QRH-STRIP-001. Historical KV/low-height inputs and effective constants remain separate. No historical claim status or pair/triple RH-audit scope is expanded."
   }
 }

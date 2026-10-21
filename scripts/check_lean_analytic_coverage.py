@@ -16,7 +16,7 @@ from check_triple_dependencies import closure, flat_section, subsection
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / 'research/lean-analytic-coverage.json'
 ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
-         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001', 'PAIR-TRUNC-001']
+         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001', 'PAIR-TRUNC-001', 'PAIR-COMPARE-001']
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001'}
@@ -36,8 +36,14 @@ PARTIAL = {
          'pairZeroHorizontalEnvelope_nonneg', 'pairZeroHorizontalEnvelope_lt', 'pairZeroHorizontalEnvelope_abs',
          'pairZeroHorizontalEnvelope_empty', 'pairZeroTruncError_bound', 'pairZeroTruncError_simple_bound',
          'pairZeroHeightError_bound', 'pairZeroExtensionError_bound', 'pairZeroUniformBounds',
-         'pairZeroUniformBounds_envelope'],
-        ['The exact decomposition is checked for X>=1,T,Z>=0; all three named uniform errors and the finite horizontal envelope are checked for X>=1,T>=3,Z>=2T with existential absolute constants. The optimized cutoff and historical effective-constant assertion remain unformalized.']),
+         'pairZeroUniformBounds_envelope', 'pairZeroCutoff_admissible', 'pairZeroCutoff_log',
+         'pairZeroCutoff_errors', 'pairZeroComparison_smallHeight', 'pairZeroComparison_optimized'],
+        ['The exact decomposition is checked for X>=1,T,Z>=0; all three named uniform errors and the finite horizontal envelope are checked for X>=1,T>=3,Z>=2T with existential absolute constants. The optimized cutoff and small-height O(X) absorption are now checked. The historical effective-constant assertion remains unformalized.']),
+    'PAIR-COMPARE-001': (
+        ['pairZeroHorizontalEnvelope_strip', 'pairZeroComparison_log_absorption',
+         'pairZeroComparison_weight_absorption', 'pairZeroComparison_strip_optimized',
+         'pairZeroComparison_uniform_errors', 'pairZeroComparison_uniform'],
+        ['The uniform O(T)+O(X) comparison is checked using the pinned PREPRINT QRH-STRIP-001 with existential constants. The historical Korobov-Vinogradov/low-height dependency chain and effective constants remain unformalized.']),
     'PAIR-RHS-MEAN-001': (
         ['pairRHSMean_uniform', 'pairRHS_decomposition', 'pairRHSSquare_eq_zeroMeanSquare',
          'pairRHSSquare_integrable', 'pairZeroMeanSquare_integrable', 'pairRHSPrimeArchError_bound',
@@ -493,9 +499,27 @@ def derive():
             'changed pair zero-side bounds verification scope')
     components.extend(pair_zero_bounds['components'])
     names.extend(c['declaration'] for c in pair_zero_bounds['components'])
+    pair_zero_comparison = json.loads(read('research/lean-pair-zero-comparison-inventory.json'))
+    found = []
+    for module in pair_zero_comparison['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair zero-side comparison solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in pair_zero_comparison['components']],
+            'pair zero-side comparison inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/pair-zero-comparison.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in pair_zero_comparison['components'] if c['comparator_checked']],
+            'pair zero-side comparison Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed pair zero-side comparison verification scope')
+    components.extend(pair_zero_comparison['components'])
+    names.extend(c['declaration'] for c in pair_zero_comparison['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -530,7 +554,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Optimize the cutoff and derive the uniform pair comparison, then assemble the normalized asymptotic. The exact decomposition, finite norm identity and all three uniform error bounds are checked with existential constants; the quantitative zero-free envelope, explicit norm tail, constant effectivity and signed triple o(1) remain separate.')
+        next_step='Combine the checked uniform pair comparison with the RHS mean square and formalize the normalized asymptotic. Cutoff optimization, small-height absorption and the comparison via the pinned PREPRINT strip are checked with existential constants; the historical KV/low-height route, explicit norm tail, constant effectivity and signed triple o(1) remain separate.')
 
 
 def validate(record):
@@ -541,7 +565,7 @@ class CoverageTests(unittest.TestCase):
     def setUp(self):
         self.record = json.loads(RECORD.read_text())
 
-    def test_zero_bounds_do_not_promote_optimized_comparison(self):
+    def test_zero_comparison_preserves_historical_effectivity_boundary(self):
         for key in ['PAIR-NORM-INTEGRAL-001', 'PAIR-NORM-001', 'PAIR-TRUNC-001']:
             node = next(n for n in self.record['nodes'] if n['id'] == key)
             self.assertEqual(node['coverage'], 'partial')
@@ -552,7 +576,14 @@ class CoverageTests(unittest.TestCase):
         self.assertIn('HigherCorrelations.pairZeroExtensionError_nonpos', trunc['components'])
         self.assertIn('HigherCorrelations.pairZeroUniformBounds', trunc['components'])
         self.assertIn('HigherCorrelations.pairZeroUniformBounds_envelope', trunc['components'])
-        self.assertTrue(any('optimized cutoff' in gap for gap in trunc['remaining_obligations']))
+        self.assertIn('HigherCorrelations.pairZeroComparison_optimized', trunc['components'])
+        self.assertTrue(any('effective-constant' in gap for gap in trunc['remaining_obligations']))
+        comparison = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-COMPARE-001')
+        self.assertEqual(comparison['coverage'], 'partial')
+        self.assertFalse(comparison['whole_claim_formalized'])
+        self.assertIn('HigherCorrelations.pairZeroComparison_uniform', comparison['components'])
+        self.assertTrue(any('PREPRINT' in gap and 'Korobov-Vinogradov' in gap
+                            for gap in comparison['remaining_obligations']))
 
     def test_current(self):
         validate(self.record)

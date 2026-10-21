@@ -9,7 +9,8 @@
     "ORDINATE-CONSTANT-KERNEL-001",
     "ORDINATE-TRIPLE-001",
     "PAIR-RHS-MEAN-001",
-    "PAIR-TRUNC-001"
+    "PAIR-TRUNC-001",
+    "PAIR-COMPARE-001"
   ],
   "analytic_proof_certificate": false,
   "whole_graph_formalized": false,
@@ -34,6 +35,17 @@
       "remaining_obligations": [
         "The effective bound 2/|z| on Re(z)>0 is checked; the full historical fixed-sector assertion remains unformalized."
       ]
+    },
+    {
+      "id": "MTY-KV-PROOF",
+      "dependencies": [],
+      "ledger_status": null,
+      "ledger_block_sha256": "20e02b7419331e60cc605cef532b8e23507a2b48b2b2c14d3cf56cecfda063cf",
+      "source": null,
+      "coverage": "provenance",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": []
     },
     {
       "id": "MV-PNT-PROOF",
@@ -374,6 +386,34 @@
       ]
     },
     {
+      "id": "PAIR-COMPARE-001",
+      "dependencies": [
+        "PAIR-TRUNC-001",
+        "PAIR-ENVELOPE-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "9e3bf570e73ee07d2f5b025eead47d013e066b4af4c3cae02aae2f5f87c72248",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-compare",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, Theorem 1 proof, equation (2.18)"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.pairZeroHorizontalEnvelope_strip",
+        "HigherCorrelations.pairZeroComparison_log_absorption",
+        "HigherCorrelations.pairZeroComparison_weight_absorption",
+        "HigherCorrelations.pairZeroComparison_strip_optimized",
+        "HigherCorrelations.pairZeroComparison_uniform_errors",
+        "HigherCorrelations.pairZeroComparison_uniform"
+      ],
+      "remaining_obligations": [
+        "The uniform O(T)+O(X) comparison is checked using the pinned PREPRINT QRH-STRIP-001 with existential constants. The historical Korobov-Vinogradov/low-height dependency chain and effective constants remain unformalized."
+      ]
+    },
+    {
       "id": "PAIR-COUNT-001",
       "dependencies": [
         "ZETA-COUNT-001",
@@ -548,6 +588,27 @@
       "remaining_obligations": [
         "The full kernel identity, absolute convergence, normalization and endpoint are checked by Mellin inversion.",
         "The historical contour-shift proof and its two-parameter limit order are not formalized; the exact statement has a separate formalized entry."
+      ]
+    },
+    {
+      "id": "PAIR-ENVELOPE-001",
+      "dependencies": [
+        "ZETA-KV-001",
+        "ZETA-LOW-001",
+        "PAIR-COUNT-001",
+        "ZETA-ANALYTIC-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "c01b353a19200567ef56a510076501861259e6b249c222e9f39eccb4b2c46a4e",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "lem:pair-envelope"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
       ]
     },
     {
@@ -779,10 +840,15 @@
         "HigherCorrelations.pairZeroHeightError_bound",
         "HigherCorrelations.pairZeroExtensionError_bound",
         "HigherCorrelations.pairZeroUniformBounds",
-        "HigherCorrelations.pairZeroUniformBounds_envelope"
+        "HigherCorrelations.pairZeroUniformBounds_envelope",
+        "HigherCorrelations.pairZeroCutoff_admissible",
+        "HigherCorrelations.pairZeroCutoff_log",
+        "HigherCorrelations.pairZeroCutoff_errors",
+        "HigherCorrelations.pairZeroComparison_smallHeight",
+        "HigherCorrelations.pairZeroComparison_optimized"
       ],
       "remaining_obligations": [
-        "The exact decomposition is checked for X>=1,T,Z>=0; all three named uniform errors and the finite horizontal envelope are checked for X>=1,T>=3,Z>=2T with existential absolute constants. The optimized cutoff and historical effective-constant assertion remain unformalized."
+        "The exact decomposition is checked for X>=1,T,Z>=0; all three named uniform errors and the finite horizontal envelope are checked for X>=1,T>=3,Z>=2T with existential absolute constants. The optimized cutoff and small-height O(X) absorption are now checked. The historical effective-constant assertion remains unformalized."
       ]
     },
     {
@@ -834,6 +900,17 @@
       "remaining_obligations": [
         "A uniform even-shift bound with an alternative averaged divisor factor is checked; the historical precise singular factor is not formalized."
       ]
+    },
+    {
+      "id": "PT-LOW-ZEROS",
+      "dependencies": [],
+      "ledger_status": null,
+      "ledger_block_sha256": "f4371acac4e9f97904e750c747f238842c0ef4b6f2fdab5d26456d4204e5b505",
+      "source": null,
+      "coverage": "provenance",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": []
     },
     {
       "id": "TRIPLE-BOUNDARY-ESTIMATES-001",
@@ -1241,6 +1318,53 @@
       "remaining_obligations": [
         "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
       ]
+    },
+    {
+      "id": "ZETA-KV-001",
+      "dependencies": [
+        "MTY-KV-PROOF",
+        "PT-LOW-ZEROS"
+      ],
+      "ledger_status": "published",
+      "ledger_block_sha256": "80523c5faffe53c9911766aaffea148f8499d423ec26314570f037134f4be1a5",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "inp:kv",
+        "bibliography_key": "MTY2024",
+        "version_consulted": "published_version_of_record_2024-01-12",
+        "url": "https://link.springer.com/content/pdf/10.1007/s40993-023-00498-y.pdf",
+        "locator": "Theorem 1.1, equation (1.5), p. 2 of 27; proof in Section 5",
+        "publication_doi": "10.1007/s40993-023-00498-y"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
+    },
+    {
+      "id": "ZETA-LOW-001",
+      "dependencies": [
+        "PT-LOW-ZEROS"
+      ],
+      "ledger_status": "published",
+      "ledger_block_sha256": "a6fc5dd26477a7dd0c4534c535c276e1fc5f129aabc533391d847aca4b4b4226",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "inp:low",
+        "bibliography_key": "PT2021",
+        "version_consulted": "published_abstract_and_arXiv_2004.09765v1",
+        "url": "https://doi.org/10.1112/blms.12460",
+        "locator": "Published abstract; arXiv:2004.09765v1 Theorem 1 and Section 2, pp. 2-3",
+        "publication_doi": "10.1112/blms.12460"
+      },
+      "coverage": "not_formalized",
+      "whole_claim_formalized": false,
+      "components": [],
+      "remaining_obligations": [
+        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+      ]
     }
   ],
   "edges": [
@@ -1381,6 +1505,14 @@
       "TRIPLE-SMOOTHED-CORRELATION-001"
     ],
     [
+      "PAIR-COMPARE-001",
+      "PAIR-ENVELOPE-001"
+    ],
+    [
+      "PAIR-COMPARE-001",
+      "PAIR-TRUNC-001"
+    ],
+    [
       "PAIR-COUNT-001",
       "ZETA-ANALYTIC-001"
     ],
@@ -1427,6 +1559,22 @@
     [
       "PAIR-EF-EXACT-001",
       "ZETA-CONTOUR-001"
+    ],
+    [
+      "PAIR-ENVELOPE-001",
+      "PAIR-COUNT-001"
+    ],
+    [
+      "PAIR-ENVELOPE-001",
+      "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-ENVELOPE-001",
+      "ZETA-KV-001"
+    ],
+    [
+      "PAIR-ENVELOPE-001",
+      "ZETA-LOW-001"
     ],
     [
       "PAIR-NORM-001",
@@ -1639,6 +1787,18 @@
     [
       "TRIPLE-UNIFORM-001",
       "TRIPLE-MASTER-001"
+    ],
+    [
+      "ZETA-KV-001",
+      "MTY-KV-PROOF"
+    ],
+    [
+      "ZETA-KV-001",
+      "PT-LOW-ZEROS"
+    ],
+    [
+      "ZETA-LOW-001",
+      "PT-LOW-ZEROS"
     ]
   ],
   "root_to_inputs_order": [
@@ -1655,6 +1815,8 @@
     "ORDINATE-DENSITY-INPUT-001",
     "ORDINATE-PAIR-INPUT-001",
     "ORDINATE-TRANSFER-001",
+    "PAIR-COMPARE-001",
+    "PAIR-ENVELOPE-001",
     "PAIR-RHS-MEAN-001",
     "PAIR-TRUNC-001",
     "PAIR-NORM-001",
@@ -1691,7 +1853,11 @@
     "PAIR-EF-MELLIN-001",
     "ZETA-ANALYTIC-001",
     "ZETA-CONTOUR-001",
-    "ZETA-COUNT-001"
+    "ZETA-COUNT-001",
+    "ZETA-KV-001",
+    "MTY-KV-PROOF",
+    "ZETA-LOW-001",
+    "PT-LOW-ZEROS"
   ],
   "components": [
     {
@@ -6042,7 +6208,67 @@
       "declaration": "HigherCorrelations.pairZeroUniformBounds_envelope",
       "source": "lean/HigherCorrelations/PairZeroUniformBounds.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoff_admissible",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoff_log",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_error_triangle",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoff_errors",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_smallHeight",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_optimized",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroHorizontalEnvelope_strip",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_log_absorption",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_weight_absorption",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_strip_optimized",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_uniform_errors",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_uniform",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Optimize the cutoff and derive the uniform pair comparison, then assemble the normalized asymptotic. The exact decomposition, finite norm identity and all three uniform error bounds are checked with existential constants; the quantitative zero-free envelope, explicit norm tail, constant effectivity and signed triple o(1) remain separate."
+  "next_step": "Combine the checked uniform pair comparison with the RHS mean square and formalize the normalized asymptotic. Cutoff optimization, small-height absorption and the comparison via the pinned PREPRINT strip are checked with existential constants; the historical KV/low-height route, explicit norm tail, constant effectivity and signed triple o(1) remain separate."
 }

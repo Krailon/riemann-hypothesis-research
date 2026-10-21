@@ -21,15 +21,18 @@ Each stage prints a log-following command and reports its elapsed time.
 See the [verification record](research/lean-verification.md) for pins, prerequisites,
 checked statements, proof-checking scope, and archived evidence.
 
-## Pair zero-side decomposition and error bounds formalized
+## Pair zero-side comparison formalized
 
 The finite squared-norm identity and exact decomposition into truncation,
 height-window and extension errors are formalized, with full multiplicities,
 endpoint weights and the extension error's nonpositive sign. Uniform bounds for
 all three errors now hold for X≥1, T≥3, Z≥2T with existential absolute constants
 and an explicit finite horizontal envelope. See the
-[error-bound record](research/lean-pair-zero-bounds.md). Cutoff optimization and
-the normalized pair theorem remain to formalize.
+[error-bound record](research/lean-pair-zero-bounds.md). The optimized cutoff and
+uniform comparison `|L - 2π Re Phi| <= Ct T + Cx X` for T≥3 and 1≤X≤T
+are now formalized using the imported PREPRINT strip theorem, with small heights
+handled separately. See the [comparison record](research/lean-pair-zero-comparison.md).
+The normalized pair theorem remains to formalize.
 
 ## Zeta23 inputs imported
 

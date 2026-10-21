@@ -4069,3 +4069,52 @@ claims:
       imported_inputs: "Existing ordinary critical-strip occurrence bounds and reflection, absolute vector convergence, global/distant/exterior/interior kernel bounds, logarithmic comparison, and mathlib improper integration and measure-preserving reflection."
       constants_scope: "Absolute existential constants inherited from the previously checked counting/kernel estimates. No numerical effectivity upgrade."
       baseline_audit_coverage: "Formalizes the separate uniform inequalities and finite horizontal envelope in PAIR-TRUNC-001. Its optimized-cutoff and effective-constant assertions remain separate, as do the quantitative zero-free envelope, explicit norm-tail constant and normalized pair asymptotic. Historical pair/triple claim statuses and RH-audit scopes are preserved; the signed triple error remains open."
+
+  - id: PAIR-ZERO-COMPARISON-FORMAL-001
+    title: Optimized cutoff and uniform pair comparison via the checked fixed strip
+    kind: theorem
+    statement: |
+      Use the actual-occurrence mean square L=pairZeroMeanSquare, finite
+      ordered-pair sum Phi=pairCorrelationSum, envelope B, and named errors
+      from PAIR-ZERO-BOUNDS-FORMAL-001. Every occurrence and its analytic
+      multiplicity is retained, including distinct complex zeros at a common
+      ordinate. The window is 0<gamma<=T and the cutoff is |gamma|<=Z.
+      Put Z*(T)=T log(T)^2. For T>=5, Z*>=2T and 0<=log Z*<=3 log T.
+      There exist absolute positive Ctr,Ch,Ce, chosen before X,T, such that
+      for X>=1,T>=5, |E_trunc(X,T,Z*)|<=Ctr X,
+      |E_height(X,T,Z*)|<=Ch X^(2 B(Z*))log(T)^3,
+      |E_extension(X,T)|<=Ce X^(2 B(Z*))log(T)^2 and E_extension<=0.
+      For X>=1,3<=T<=5, a separate comparison |L-2 pi Re Phi|<=Cs X
+      follows at cutoff Z=10. Thus for all X>=1,T>=3 the comparison error
+      is bounded by Cb X^(2 B(Z*))log(T)^3+Cx X.
+      The pinned PREPRINT strip input gives B(Z)<=3/8 for every real Z.
+      For T>=1, log(T)^3<=384 T^(1/4); hence for 1<=X<=T,
+      X^(3/4)log(T)^3<=384 T. Consequently there exist positive absolute
+      Ct,Cx such that for all T>=3 and 1<=X<=T,
+      |L(X,T)-2 pi Re Phi(X,T)|<=Ct T+Cx X.
+      Separate optimized named errors are O(X), O(T), O(T), with the
+      extension nonpositive, for T>=5 and 1<=X<=T. All stated endpoints
+      are included. Total constants are existential. The historical
+      Korobov-Vinogradov proof route and effective constants are not asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-ZERO-BOUNDS-FORMAL-001, PAIR-ZERO-DECOMPOSITION-FORMAL-001, QRH-STRIP-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairZeroComparison.lean
+      label: HigherCorrelations.pairZeroComparison_uniform
+      companion_declarations: "pairZeroCutoff_admissible, pairZeroCutoff_log, pairZero_error_triangle, pairZeroCutoff_errors, pairZeroComparison_smallHeight, pairZeroComparison_optimized, pairZeroHorizontalEnvelope_strip, pairZeroComparison_log_absorption, pairZeroComparison_weight_absorption, pairZeroComparison_strip_optimized, pairZeroComparison_uniform_errors"
+      bookkeeping: research/lean-pair-zero-comparison.md
+      imported_publication_status: PREPRINT
+      upstream_revision: adc7f1241b42e322a6451854ab7e4b4c146bf78a
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: d11a0f7f4487b24ac621b3fa117fe43bc5e51773d931f8f95c3cbc580e25a28e
+    limit_order: "No new limit or sum/integral interchange. All constants precede all real parameters. Apply the exact decomposition and previously checked inequalities, use the admissible optimized cutoff for T>=5 and the fixed cutoff 10 for 3<=T<5, then specialize to X<=T."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 12 new public declarations have definition-only Comparator checks and axiom reports. An unfinished uniform comparison is rejected for sorryAx. Combined build, complete axiom report, analytic coverage and pair/triple/harness regressions pass. Earlier Comparator suites are not rerun in the focused mode; only propext, Quot.sound and Classical.choice are permitted and the external kernel is disabled."
+      imported_inputs: "Existing exact decomposition and named errors, elementary logarithm/exponential inequalities, and QRH-STRIP-001 with its pinned, checked PREPRINT proof closure."
+      constants_scope: "The logarithmic absorption factor 384 is explicit; total constants remain existential through the counting/kernel bounds."
+      baseline_audit_coverage: "An alternative proof of the uniform comparison, with provenance distinct from PAIR-COMPARE-001. Cutoff optimization is checked; historical KV and low-height dependencies, effective constants, the explicit norm-tail bound and normalized pair asymptotic remain separate. Historical claim statuses and pair/triple RH-audit scopes are unchanged. The signed triple complex-argument error remains open."

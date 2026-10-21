@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "191fcda190366c6ac31a5ccf5d1710fb7f1a4ef83471a0fb20c939ac2adf5e5b",
+    "research/theorem-ledger.yaml": "87ac9bdd8b10fadd6f88e59a9004407d9a93e2b89f52d407c2bbc87c26928b62",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "9469796e83a9bbfdef0a9dd0f9602be53fd44c25fc404cc455d1b5eb2a4b45fd"
+    "research/pair-rh-audit.json": "082df8d58593931e012cc90896c4d9b242a1735f1eec9bde85051a910956ee6d"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4534,5 +4534,14 @@
     ],
     "report": "research/lean-pair-zero-bounds.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records all three uniform zero-side errors and the finite horizontal envelope with existential absolute constants. Cutoff optimization, quantitative zero-free envelopes, explicit norm-tail constants and historical effectivity assertions remain separate. No historical claim status or RH-audit scope is expanded."
+  },
+  "ledger_pair_zero_comparison_review": {
+    "reviewed_on": "2026-10-21",
+    "previous_ledger_sha256": "191fcda190366c6ac31a5ccf5d1710fb7f1a4ef83471a0fb20c939ac2adf5e5b",
+    "added_claim_ids": [
+      "PAIR-ZERO-COMPARISON-FORMAL-001"
+    ],
+    "report": "research/lean-pair-zero-comparison.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records optimized cutoff bounds, small-height absorption and the uniform comparison using the pinned PREPRINT QRH-STRIP-001. Historical KV/low-height inputs and effective constants remain separate. No historical claim status or pair/triple RH-audit scope is expanded."
   }
 }

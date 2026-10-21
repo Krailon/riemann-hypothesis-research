@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairZeroCutoff",
+    "PairZeroComparison"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoff_admissible",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoff_log",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_error_triangle",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoff_errors",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_smallHeight",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_optimized",
+      "source": "lean/HigherCorrelations/PairZeroCutoff.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroHorizontalEnvelope_strip",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_log_absorption",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_weight_absorption",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_strip_optimized",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_uniform_errors",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroComparison_uniform",
+      "source": "lean/HigherCorrelations/PairZeroComparison.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

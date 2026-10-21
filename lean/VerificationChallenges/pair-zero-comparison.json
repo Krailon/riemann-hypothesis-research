@@ -1,0 +1,25 @@
+{
+  "challenge_module": "VerificationChallenges.PairZeroComparison",
+  "solution_module": "HigherCorrelations.PairZeroComparison",
+  "theorem_names": [
+    "HigherCorrelations.pairZeroCutoff_admissible",
+    "HigherCorrelations.pairZeroCutoff_log",
+    "HigherCorrelations.pairZero_error_triangle",
+    "HigherCorrelations.pairZeroCutoff_errors",
+    "HigherCorrelations.pairZeroComparison_smallHeight",
+    "HigherCorrelations.pairZeroComparison_optimized",
+    "HigherCorrelations.pairZeroHorizontalEnvelope_strip",
+    "HigherCorrelations.pairZeroComparison_log_absorption",
+    "HigherCorrelations.pairZeroComparison_weight_absorption",
+    "HigherCorrelations.pairZeroComparison_strip_optimized",
+    "HigherCorrelations.pairZeroComparison_uniform_errors",
+    "HigherCorrelations.pairZeroComparison_uniform"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -1,3 +1,4 @@
+import HigherCorrelations.PairZeroComparison
 import HigherCorrelations.PairZeroUniformBounds
 import HigherCorrelations.PairZeroDecomposition
 import HigherCorrelations.Zeta23RankTrace
@@ -1017,3 +1018,16 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.pairZeroUniformBounds
 #print axioms HigherCorrelations.pairZeroEnvelope_monotone_weight
 #print axioms HigherCorrelations.pairZeroUniformBounds_envelope
+
+#print axioms HigherCorrelations.pairZeroCutoff_admissible
+#print axioms HigherCorrelations.pairZeroCutoff_log
+#print axioms HigherCorrelations.pairZero_error_triangle
+#print axioms HigherCorrelations.pairZeroCutoff_errors
+#print axioms HigherCorrelations.pairZeroComparison_smallHeight
+#print axioms HigherCorrelations.pairZeroComparison_optimized
+#print axioms HigherCorrelations.pairZeroHorizontalEnvelope_strip
+#print axioms HigherCorrelations.pairZeroComparison_log_absorption
+#print axioms HigherCorrelations.pairZeroComparison_weight_absorption
+#print axioms HigherCorrelations.pairZeroComparison_strip_optimized
+#print axioms HigherCorrelations.pairZeroComparison_uniform_errors
+#print axioms HigherCorrelations.pairZeroComparison_uniform

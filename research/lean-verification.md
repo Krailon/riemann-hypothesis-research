@@ -168,3 +168,16 @@ Re(s) > 7/8*, 30 September 2026, **PREPRINT**, and the associated
 [formalization scope](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/003.md).
 Only the zeta nonvanishing statement is imported here; the Dirichlet, Hecke,
 Landau–Siegel, and later manuscript applications are outside this check.
+
+## Optimized uniform pair comparison
+
+The [comparison milestone](lean-pair-zero-comparison.md) optimizes the zero cutoff,
+handles 3<=T<5 with a fixed admissible cutoff, and uses `QRH-STRIP-001` to obtain
+|L-2 pi Re Phi| <= Ct T + Cx X uniformly for T>=3 and 1<=X<=T. All constants
+except the elementary absorption factor remain existential. This alternative
+PREPRINT-based dependency route does not formalize the historical KV proof.
+
+Run the new Comparator suite, combined build, complete axiom report and
+regressions with `python3 -B scripts/reproduce_lean.py --reuse-dependencies
+--pair-zero-comparison-only` (one shell command). Earlier Comparator suites are
+not rerun by this focused mode.
