@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairZeroBounds",
+  "solution_module": "VerificationChallenges.PairZeroBoundsUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairZeroUniformBounds"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

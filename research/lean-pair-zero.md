@@ -108,3 +108,9 @@ the historical one-complex-parameter integral's full strip and semicircle estima
 and the finite-height envelope remain separate recorded obligations. Historical
 norm/truncation claims retain partial coverage. The signed complex-argument triple
 error remains open.
+
+## Follow-up
+
+The [uniform error-bound milestone](lean-pair-zero-bounds.md) now formalizes
+all three named errors and the finite horizontal envelope. The scope above
+records the earlier exact-identity milestone; cutoff optimization remains separate.

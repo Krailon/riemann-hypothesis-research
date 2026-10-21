@@ -17,12 +17,15 @@ Run `python3 -B scripts/reproduce_lean.py --fresh-project` on Linux x86_64.
 See the [verification record](research/lean-verification.md) for pins, prerequisites,
 checked statements, proof-checking scope, and archived evidence.
 
-## Exact pair zero-side decomposition formalized
+## Pair zero-side decomposition and error bounds formalized
 
 The finite squared-norm identity and exact decomposition into truncation,
 height-window and extension errors are formalized, with full multiplicities,
-endpoint weights and the extension error's nonpositive sign. The three quantitative
-error bounds are next. See the [proof and verification record](research/lean-pair-zero.md).
+endpoint weights and the extension error's nonpositive sign. Uniform bounds for
+all three errors now hold for X≥1, T≥3, Z≥2T with existential absolute constants
+and an explicit finite horizontal envelope. See the
+[error-bound record](research/lean-pair-zero-bounds.md). Cutoff optimization and
+the normalized pair theorem remain to formalize.
 
 ## Zeta23 inputs imported
 

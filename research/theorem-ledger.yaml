@@ -4027,3 +4027,45 @@ claims:
       imported_inputs: "Existing pair-series convergence and occurrence reflection, existing finite simple-pole integration, and mathlib Lebesgue translation, dominated continuity, finite integral linearity and measurable-set splitting."
       constants_scope: "Exact identities and explicit kernel majorants only; no effective asymptotic constant is claimed."
       baseline_audit_coverage: "Formalizes the exact identity portion of PAIR-TRUNC-001 and finite norm portion of PAIR-NORM-001. Their quantitative error and tail bounds remain separate. The historical complex-integral strip and semicircle bound are not promoted. Historical pair/triple statuses and RH-audit scopes are preserved; the signed triple error remains open."
+
+  - id: PAIR-ZERO-BOUNDS-FORMAL-001
+    title: Uniform named pair zero-side errors and finite horizontal envelope
+    kind: theorem
+    statement: |
+      Use the actual-occurrence vectors U,U_Z,V and three errors of
+      PAIR-ZERO-DECOMPOSITION-FORMAL-001, retaining analytic multiplicities.
+      Define B(Z)=max({0} union {delta_i:|gamma_i|<=Z}). For every real Z,
+      0<=B(Z)<1/2, every retained occurrence satisfies |delta_i|<=B(Z),
+      and an empty cutoff has B(Z)=0. There exist absolute positive
+      constants Ctr,Ch,Ce such that for all real X>=1,T>=3,Z>=2T,
+      |E_trunc|<=Ctr X T (log(T+2)log(Z)/Z+log(Z)^2/Z^2),
+      |E_trunc|<=Ctr X T log(Z)^2/Z,
+      |E_height|<=Ch X^(2 B(Z))log(T)^3,
+      |E_extension|<=Ce X^(2 B(Z))log(T)^2, and E_extension<=0.
+      The same constants work with B(Z) replaced by any larger real b
+      in the last two bounds. All parameter endpoints are included.
+      Distinct complex zeros sharing an ordinate and repeated occurrences
+      remain separate summands. The boundary profile integral is exactly
+      2 log(1+T); the squared exterior-distance profile has integral 2,
+      with integrability proved before integral comparison. No optimized
+      cutoff, quantitative zero-free envelope or effective constant is claimed.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-ZERO-DECOMPOSITION-FORMAL-001, ZERO-KERNEL-UNIFORM-001, PAIR-SERIES-CONVERGENCE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairZeroUniformBounds.lean
+      label: HigherCorrelations.pairZeroUniformBounds
+      companion_declarations: "pairZeroUniformBounds_envelope, pairZeroTruncError_bound, pairZeroTruncError_simple_bound, pairZeroHeightError_bound, pairZeroExtensionError_bound, pairZeroHorizontalEnvelope_nonneg, pairZeroHorizontalEnvelope_lt, pairZeroHorizontalEnvelope_abs, pairZeroHorizontalEnvelope_empty, pairZeroBoundaryProfile_integral, pairZeroExtensionProfile_integral"
+      bookkeeping: research/lean-pair-zero-bounds.md
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 5106934a4b45a242d4362dc20c3933fdb143dae090b189ce7629cc574b716a70
+    limit_order: "Every bound is simultaneous for all real X>=1,T>=3,Z>=2T. The full-minus-cutoff vector is identified using absolute convergence. Height replacement uses a finite set difference; no infinite double sum is integrated. Both boundary profiles are proved integrable before comparison. No varying-parameter limit is taken."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 33 new public declarations have definition-only Comparator checks and axiom reports. An unfinished consolidated theorem is rejected for sorryAx. Combined project build, complete axiom report, coverage and pair/triple regressions pass; earlier Comparator suites are not rerun in the focused mode."
+      imported_inputs: "Existing ordinary critical-strip occurrence bounds and reflection, absolute vector convergence, global/distant/exterior/interior kernel bounds, logarithmic comparison, and mathlib improper integration and measure-preserving reflection."
+      constants_scope: "Absolute existential constants inherited from the previously checked counting/kernel estimates. No numerical effectivity upgrade."
+      baseline_audit_coverage: "Formalizes the separate uniform inequalities and finite horizontal envelope in PAIR-TRUNC-001. Its optimized-cutoff and effective-constant assertions remain separate, as do the quantitative zero-free envelope, explicit norm-tail constant and normalized pair asymptotic. Historical pair/triple claim statuses and RH-audit scopes are preserved; the signed triple error remains open."

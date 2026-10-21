@@ -1,3 +1,4 @@
+import HigherCorrelations.PairZeroUniformBounds
 import HigherCorrelations.PairZeroDecomposition
 import HigherCorrelations.Zeta23RankTrace
 import HigherCorrelations.Zeta23Counting
@@ -982,3 +983,37 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.pairZero_empty_window
 #print axioms HigherCorrelations.pairZero_height_zero
 #print axioms MeasureTheory.integral_add_compl
+
+#print axioms HigherCorrelations.pairZeroHorizontalEnvelope_nonneg
+#print axioms HigherCorrelations.pairZeroHorizontalEnvelope_lt
+#print axioms HigherCorrelations.pairZeroHorizontalEnvelope_member
+#print axioms HigherCorrelations.pairZeroHorizontalEnvelope_abs
+#print axioms HigherCorrelations.pairZeroHorizontalEnvelope_empty
+#print axioms HigherCorrelations.pairZeroWindow_subset_cutoff
+#print axioms HigherCorrelations.pairZeroVector_envelope
+#print axioms HigherCorrelations.pairZeroWeight_square
+#print axioms HigherCorrelations.pairZeroFinite_majorant
+#print axioms HigherCorrelations.pairKernel_finite_le_restricted
+#print axioms HigherCorrelations.pairZeroFinite_global
+#print axioms HigherCorrelations.pairZeroFull_majorant
+#print axioms HigherCorrelations.pairZeroRemainder_majorant
+#print axioms HigherCorrelations.pairZeroCutoff_envelope
+#print axioms HigherCorrelations.pairZeroWindow_envelope
+#print axioms HigherCorrelations.pairZeroHeightRemainder_majorant
+#print axioms HigherCorrelations.pairZeroWindow_exterior_majorant
+#print axioms HigherCorrelations.pairZeroBoundaryProfile_integrable
+#print axioms HigherCorrelations.pairZeroBoundaryProfile_integral
+#print axioms HigherCorrelations.pairZero_tail_profile
+#print axioms HigherCorrelations.pairZero_left_profile
+#print axioms HigherCorrelations.pairZeroExtensionProfile_left
+#print axioms HigherCorrelations.pairZeroExtensionProfile_right
+#print axioms HigherCorrelations.pairZeroExtensionProfile_integral
+#print axioms HigherCorrelations.pairZero_square_difference
+#print axioms HigherCorrelations.pairZero_square_trunc
+#print axioms HigherCorrelations.pairZeroTruncError_bound
+#print axioms HigherCorrelations.pairZeroHeightError_bound
+#print axioms HigherCorrelations.pairZeroExtensionError_bound
+#print axioms HigherCorrelations.pairZeroTruncError_simple_bound
+#print axioms HigherCorrelations.pairZeroUniformBounds
+#print axioms HigherCorrelations.pairZeroEnvelope_monotone_weight
+#print axioms HigherCorrelations.pairZeroUniformBounds_envelope

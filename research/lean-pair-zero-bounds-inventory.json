@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairZeroBoundDefinitions",
+    "PairZeroEnvelope",
+    "PairZeroMajorants",
+    "PairZeroBoundaryIntegrals",
+    "PairZeroTruncBound",
+    "PairZeroHeightBound",
+    "PairZeroExtensionBound",
+    "PairZeroUniformBounds"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairZeroHorizontalEnvelope_nonneg",
+      "source": "lean/HigherCorrelations/PairZeroEnvelope.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroHorizontalEnvelope_lt",
+      "source": "lean/HigherCorrelations/PairZeroEnvelope.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroHorizontalEnvelope_member",
+      "source": "lean/HigherCorrelations/PairZeroEnvelope.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroHorizontalEnvelope_abs",
+      "source": "lean/HigherCorrelations/PairZeroEnvelope.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroHorizontalEnvelope_empty",
+      "source": "lean/HigherCorrelations/PairZeroEnvelope.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindow_subset_cutoff",
+      "source": "lean/HigherCorrelations/PairZeroEnvelope.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroVector_envelope",
+      "source": "lean/HigherCorrelations/PairZeroEnvelope.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWeight_square",
+      "source": "lean/HigherCorrelations/PairZeroEnvelope.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFinite_majorant",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairKernel_finite_le_restricted",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFinite_global",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroFull_majorant",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroRemainder_majorant",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroCutoff_envelope",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindow_envelope",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroHeightRemainder_majorant",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroWindow_exterior_majorant",
+      "source": "lean/HigherCorrelations/PairZeroMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroBoundaryProfile_integrable",
+      "source": "lean/HigherCorrelations/PairZeroBoundaryIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroBoundaryProfile_integral",
+      "source": "lean/HigherCorrelations/PairZeroBoundaryIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_tail_profile",
+      "source": "lean/HigherCorrelations/PairZeroBoundaryIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_left_profile",
+      "source": "lean/HigherCorrelations/PairZeroBoundaryIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroExtensionProfile_left",
+      "source": "lean/HigherCorrelations/PairZeroBoundaryIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroExtensionProfile_right",
+      "source": "lean/HigherCorrelations/PairZeroBoundaryIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroExtensionProfile_integral",
+      "source": "lean/HigherCorrelations/PairZeroBoundaryIntegrals.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_square_difference",
+      "source": "lean/HigherCorrelations/PairZeroTruncBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZero_square_trunc",
+      "source": "lean/HigherCorrelations/PairZeroTruncBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTruncError_bound",
+      "source": "lean/HigherCorrelations/PairZeroTruncBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroHeightError_bound",
+      "source": "lean/HigherCorrelations/PairZeroHeightBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroExtensionError_bound",
+      "source": "lean/HigherCorrelations/PairZeroExtensionBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTruncError_simple_bound",
+      "source": "lean/HigherCorrelations/PairZeroUniformBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroUniformBounds",
+      "source": "lean/HigherCorrelations/PairZeroUniformBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroEnvelope_monotone_weight",
+      "source": "lean/HigherCorrelations/PairZeroUniformBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroUniformBounds_envelope",
+      "source": "lean/HigherCorrelations/PairZeroUniformBounds.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

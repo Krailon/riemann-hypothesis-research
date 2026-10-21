@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "caa340ec4d377dbcbea190cc08d485690392894c178c12f25dcae28962872d6d",
+  "ledger_sha256": "191fcda190366c6ac31a5ccf5d1710fb7f1a4ef83471a0fb20c939ac2adf5e5b",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2661,5 +2661,14 @@
     ],
     "report": "research/lean-pair-zero.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records the exact zero-side decomposition, finite squared-norm identity, phase bridge, integrability and endpoint conventions. Quantitative errors and explicit norm-tail bounds remain separate. No historical claim status or RH-audit scope is expanded."
+  },
+  "ledger_pair_zero_bounds_review": {
+    "reviewed_on": "2026-10-20",
+    "previous_ledger_sha256": "caa340ec4d377dbcbea190cc08d485690392894c178c12f25dcae28962872d6d",
+    "added_claim_ids": [
+      "PAIR-ZERO-BOUNDS-FORMAL-001"
+    ],
+    "report": "research/lean-pair-zero-bounds.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records all three uniform zero-side errors and the finite horizontal envelope with existential absolute constants. Cutoff optimization, quantitative zero-free envelopes, explicit norm-tail constants and historical effectivity assertions remain separate. No historical claim status or RH-audit scope is expanded."
   }
 }
