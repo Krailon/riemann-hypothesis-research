@@ -123,12 +123,22 @@ class PairReproduction(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'missing prerequisite: git'):
                 runner.collect_environment(runner.ROOT, runner.ROOT, {'environment': {}}, True)
         with patch.object(runner.sys, 'version_info', (3, 11)):
-            with self.assertRaisesRegex(RuntimeError, 'Python 3.12'):
+            with self.assertRaisesRegex(RuntimeError, r'Python 3\.12 or newer'):
                 runner.collect_environment(runner.ROOT, runner.ROOT, {}, True)
         with patch.object(runner.shutil, 'which', side_effect=lambda name: '/git' if name == 'git' else None), \
                 patch.object(runner, 'execute', return_value=''):
             with self.assertRaisesRegex(RuntimeError, 'missing prerequisite: pdflatex'):
                 runner.collect_environment(runner.ROOT, runner.ROOT, {'environment': {}, 'source': {}}, False)
+
+    def test_minimum_and_newer_python_versions_are_accepted(self):
+        for version in [(3, 12), (3, 13), (3, 14), (3, 15)]:
+            with self.subTest(version=version), \
+                    patch.object(runner.sys, 'version_info', version), \
+                    patch.object(runner.shutil, 'which', return_value='/git'), \
+                    patch.object(runner, 'execute', return_value=''):
+                manifest = {'environment': {}, 'source': {}}
+                self.assertEqual(runner.collect_environment(
+                    runner.ROOT, runner.ROOT, manifest, True), {})
 
     def test_suite_summary_rejects_empty_failed_or_skipped_discovery(self):
         self.assertEqual(runner.check_test_log('Ran 70 tests in 1s\n\nOK\n'), 70)

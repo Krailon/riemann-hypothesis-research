@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline reproduction of the weighted triple theorem (installed Python 3.12).
+"""Offline reproduction of the weighted triple theorem (installed Python 3.12 or newer).
 
 Task: verification/exposition. UNCONDITIONAL algebra with recorded support.
 No analytic proof certificate or independent mathematical verification.
@@ -33,8 +33,8 @@ def source_state(root, out, manifest, suffix=''):
 
 
 def collect_environment(root, out, manifest, checks_only, require_clean):
-    if sys.version_info[:2] != (3, 12):
-        raise RuntimeError('Python 3.12 is required; use an installed Python 3.12 interpreter')
+    if sys.version_info[:2] < (3, 12):
+        raise RuntimeError('Python 3.12 or newer is required; use your system python3 if it meets this minimum')
     state = source_state(root, out, manifest)
     manifest['source'].update(state)
     if require_clean and state['dirty']:

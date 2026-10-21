@@ -6,7 +6,7 @@ Root: **TRIPLE-SMOOTHED-CORRELATION-001**, status **proved-draft**.
 
 ## Run and prerequisites
 
-Use installed Python **3.12** (standard library only), Git and Bash.
+Use installed Python **3.12 or newer** (standard library only), Git and Bash.
 Full mode also requires `pdflatex` with `geometry`, `amsmath`, `amssymb`,
 `amsthm`, `booktabs`, `longtable`, `hyperref`, and their dependencies.
 No BibTeX step is needed. Python and TeX versions are recorded, not

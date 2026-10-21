@@ -173,7 +173,7 @@ algebra. The analytic estimates are inputs from the written proof.
 
 Install these prerequisites before running:
 
-- Python **3.12** (standard library only), available as `python3`;
+- Python **3.12 or newer** (standard library only), available as `python3`;
 - Git and Bash;
 - for a full run, `pdflatex` and `bibtex`, with the packages required by the
   manuscript: `geometry`, `amsmath`, `amssymb`, `amsthm`, `booktabs`, `hyperref`
@@ -187,7 +187,9 @@ From a fresh Git checkout, run:
 
 The command also works from another directory when invoked by its path.
 It makes no downloads, installs no dependencies, and uses no previous build
-artifacts. Python/TeX patch versions are recorded, not provisioned or locked.
+artifacts. Exact Python/TeX versions are recorded, not provisioned or locked.
+Use your system `python3` when it meets the minimum; no separate Python
+installation or environment manager is required.
 The broader uv/Nix/container environment and CI setup are deferred.
 
 Output goes to a unique ignored directory under `artifacts/reproduction/`.
@@ -411,7 +413,7 @@ Work Package A scope.
 
 ## Reproduce the weighted triple theorem
 
-Use installed Python **3.12**, Git and Bash. Full runs also need `pdflatex`
+Use installed Python **3.12 or newer**, Git and Bash. Full runs also need `pdflatex`
 and the manuscript's `geometry`, `amsmath`, `amssymb`, `amsthm`, `booktabs`,
 `longtable`, `hyperref` packages and their dependencies. BibTeX is not used.
 From a fresh checkout:

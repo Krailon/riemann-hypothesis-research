@@ -128,7 +128,7 @@ class TripleReproductionChecks(unittest.TestCase):
 
     def test_environment_failures_and_dirty_tree(self):
         with patch.object(runner.sys,'version_info',(3,11)):
-            with self.assertRaisesRegex(RuntimeError,'Python 3.12'):
+            with self.assertRaisesRegex(RuntimeError,r'Python 3\.12 or newer'):
                 runner.collect_environment(runner.ROOT,None,{},True,False)
         with patch.object(runner.shutil,'which',return_value=None):
             with self.assertRaisesRegex(RuntimeError,'missing prerequisite: git'):
@@ -144,6 +144,18 @@ class TripleReproductionChecks(unittest.TestCase):
                 runner.collect_environment(runner.ROOT,None,{'source':{},'environment':{}},False,False)
             self.assertEqual(runner.collect_environment(runner.ROOT,None,
                              {'source':{},'environment':{}},True,False),{})
+
+    def test_minimum_and_newer_python_versions_are_accepted(self):
+        state = {'commit': 'abc', 'dirty': False, 'git_status': []}
+        for version in [(3, 12), (3, 13), (3, 14), (3, 15)]:
+            with self.subTest(version=version), \
+                    patch.object(runner.sys, 'version_info', version), \
+                    patch.object(runner, 'source_state', return_value=state), \
+                    patch.object(runner.shutil, 'which', return_value='/git'), \
+                    patch.object(runner, 'execute', return_value='git version'):
+                manifest = {'environment': {}, 'source': {}}
+                self.assertEqual(runner.collect_environment(
+                    runner.ROOT, None, manifest, True, True), {})
 
     def test_failed_subprocess_log(self):
         with tempfile.TemporaryDirectory() as tmp:

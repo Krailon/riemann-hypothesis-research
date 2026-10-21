@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline pair-baseline reproduction, using installed Python 3.12 and TeX.
+"""Offline pair-baseline reproduction, using installed Python 3.12 or newer and TeX.
 
 Task: verification/exposition. Assumptions: UNCONDITIONAL for exact algebra.
 Passing this harness is not independent mathematical verification.
@@ -80,8 +80,8 @@ def execute(manifest, out, name, command, cwd):
 
 
 def collect_environment(root, out, manifest, checks_only):
-    if sys.version_info[:2] != (3, 12):
-        raise RuntimeError('Python 3.12 is required; use an installed Python 3.12 interpreter')
+    if sys.version_info[:2] < (3, 12):
+        raise RuntimeError('Python 3.12 or newer is required; use your system python3 if it meets this minimum')
     git = shutil.which('git')
     if not git:
         raise RuntimeError('missing prerequisite: git')

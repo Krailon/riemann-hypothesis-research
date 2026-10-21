@@ -45,7 +45,7 @@ displacement and indexed-family versions. These declarations use no RH assumptio
 
 ## Reproduce
 
-On Linux x86_64, provide Python 3.12, Git, Bash, a C toolchain for Lean's native
+On Linux x86_64, provide Python 3.12 or newer, Git, Bash, a C toolchain for Lean's native
 build, network access, and enough space for the upstream checkout and Lean caches.
 Run from the repository root:
 
