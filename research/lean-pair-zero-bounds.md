@@ -109,7 +109,7 @@ The cutoff optimization, small-height absorption, and uniform comparison are now
 checked in [the comparison milestone](lean-pair-zero-comparison.md), using the
 already verified PREPRINT strip input. The historical `PAIR-TRUNC-001` remains
 partial because its effective-constant assertion is separate; the original KV
-comparison route also remains incompletely formalized. Next combine the checked
-comparison with the RHS mean square to assemble the normalized pair asymptotic.
+comparison route also remains incompletely formalized. The comparison and RHS
+mean square are now assembled in the [normalized pair theorem](lean-pair-asymptotic.md).
 The older explicit norm-tail constant and signed triple complex-argument o(1)
 error remain separate obligations.

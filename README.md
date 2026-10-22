@@ -32,7 +32,10 @@ and an explicit finite horizontal envelope. See the
 uniform comparison `|L - 2π Re Phi| <= Ct T + Cx X` for T≥3 and 1≤X≤T
 are now formalized using the imported PREPRINT strip theorem, with small heights
 handled separately. See the [comparison record](research/lean-pair-zero-comparison.md).
-The normalized pair theorem remains to formalize.
+The normalized pair asymptotic is now formalized on T≥3, |alpha|≤1, including
+reality, nonnegativity, evenness and the origin/endpoints, with existential
+constants. See the [normalized theorem record](research/lean-pair-asymptotic.md).
+The historical effective constants and classical KV proof route remain separate.
 
 ## Zeta23 inputs imported
 

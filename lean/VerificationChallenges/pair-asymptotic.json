@@ -1,0 +1,29 @@
+{
+  "challenge_module": "VerificationChallenges.PairAsymptotic",
+  "solution_module": "HigherCorrelations.PairAsymptotic",
+  "theorem_names": [
+    "HigherCorrelations.pairCorrelationSum_inv",
+    "HigherCorrelations.pairNormalizedCorrelation_complex",
+    "HigherCorrelations.pairNormalizedCorrelation_nonneg",
+    "HigherCorrelations.pairNormalizedCorrelation_even",
+    "HigherCorrelations.pairNormalizedCorrelation_abs",
+    "HigherCorrelations.pairNormalized_decomposition",
+    "HigherCorrelations.pairNormalized_errors",
+    "HigherCorrelations.pairNormalized_comparison_scales",
+    "HigherCorrelations.pairNormalized_base_bound",
+    "HigherCorrelations.pairNormalized_power",
+    "HigherCorrelations.pairNormalized_nonnegative_frequency",
+    "HigherCorrelations.pairNormalized_asymptotic",
+    "HigherCorrelations.pairNormalized_origin",
+    "HigherCorrelations.pairNormalized_endpoint_scales",
+    "HigherCorrelations.pairNormalized_endpoints",
+    "HigherCorrelations.pairNormalized_minimal_height"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

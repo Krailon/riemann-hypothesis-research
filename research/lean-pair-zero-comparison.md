@@ -70,6 +70,8 @@ is linked from the ledger; historical pair/triple RH audits retain their scope.
 
 ## Next boundary
 
-Combine this zero-side comparison with the already checked RHS mean square,
-then formalize the normalized pair asymptotic. This comparison does not prove
-the signed complex-argument error for the ordinate-only triple statistic.
+The [normalized pair asymptotic](lean-pair-asymptotic.md) now combines this
+comparison with the RHS mean square, including all frequency endpoints and
+finite symmetry. Effective constants and the historical KV route remain
+separate. This does not prove the signed complex-argument error for the
+ordinate-only triple statistic.

@@ -10,7 +10,8 @@
     "ORDINATE-TRIPLE-001",
     "PAIR-RHS-MEAN-001",
     "PAIR-TRUNC-001",
-    "PAIR-COMPARE-001"
+    "PAIR-COMPARE-001",
+    "PAIR-ASYMPTOTIC-001"
   ],
   "analytic_proof_certificate": false,
   "whole_graph_formalized": false,
@@ -386,6 +387,40 @@
       ]
     },
     {
+      "id": "PAIR-ASYMPTOTIC-001",
+      "dependencies": [
+        "PAIR-COMPARE-001",
+        "PAIR-RHS-MEAN-001",
+        "PAIR-POSITIVITY-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "6846ef18ff059839efadc92ee9b78ddf64182d060c7c57694f177ae2dea3aa14",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "thm:pair-asymptotic",
+        "comparison_bibliography_key": "BGSTB2024",
+        "comparison_locator": "arXiv:2306.04799v1, Theorem 1, equation (1.4)"
+      },
+      "coverage": "partial",
+      "whole_claim_formalized": false,
+      "components": [
+        "HigherCorrelations.pairNormalized_decomposition",
+        "HigherCorrelations.pairNormalized_errors",
+        "HigherCorrelations.pairNormalized_comparison_scales",
+        "HigherCorrelations.pairNormalized_base_bound",
+        "HigherCorrelations.pairNormalized_power",
+        "HigherCorrelations.pairNormalized_nonnegative_frequency",
+        "HigherCorrelations.pairNormalized_asymptotic",
+        "HigherCorrelations.pairNormalized_origin",
+        "HigherCorrelations.pairNormalized_endpoint_scales",
+        "HigherCorrelations.pairNormalized_endpoints",
+        "HigherCorrelations.pairNormalized_minimal_height"
+      ],
+      "remaining_obligations": [
+        "The full normalized inequality on T>=3, |alpha|<=1 and all endpoints are checked with existential constants using the pinned PREPRINT comparison. The historical effective-constant assertion and classical KV dependency route remain separate."
+      ]
+    },
+    {
       "id": "PAIR-COMPARE-001",
       "dependencies": [
         "PAIR-TRUNC-001",
@@ -682,6 +717,30 @@
       "remaining_obligations": [
         "The two-factor profile needed for actual zero pairs is checked on |e|,|f|<=3/4, including coincident poles. The full historical complex-parameter strip and explicit semicircle bound remain separate."
       ]
+    },
+    {
+      "id": "PAIR-POSITIVITY-001",
+      "dependencies": [
+        "PAIR-NORM-001"
+      ],
+      "ledger_status": "proved-draft",
+      "ledger_block_sha256": "76b1c11c1818ca7062c4a9d48734d364949c3edd071325579eaedf9dd419e827",
+      "source": {
+        "file": "proofs/pair_baseline.tex",
+        "label": "cor:pair-positivity"
+      },
+      "coverage": "formalized",
+      "whole_claim_formalized": true,
+      "components": [
+        "HigherCorrelations.pairCorrelationSum_im",
+        "HigherCorrelations.pairCorrelationSum_re_nonneg",
+        "HigherCorrelations.pairCorrelationSum_inv",
+        "HigherCorrelations.pairNormalizedCorrelation_complex",
+        "HigherCorrelations.pairNormalizedCorrelation_nonneg",
+        "HigherCorrelations.pairNormalizedCorrelation_even",
+        "HigherCorrelations.pairNormalizedCorrelation_abs"
+      ],
+      "remaining_obligations": []
     },
     {
       "id": "PAIR-PRIME-COUNT-001",
@@ -1505,6 +1564,18 @@
       "TRIPLE-SMOOTHED-CORRELATION-001"
     ],
     [
+      "PAIR-ASYMPTOTIC-001",
+      "PAIR-COMPARE-001"
+    ],
+    [
+      "PAIR-ASYMPTOTIC-001",
+      "PAIR-POSITIVITY-001"
+    ],
+    [
+      "PAIR-ASYMPTOTIC-001",
+      "PAIR-RHS-MEAN-001"
+    ],
+    [
       "PAIR-COMPARE-001",
       "PAIR-ENVELOPE-001"
     ],
@@ -1583,6 +1654,10 @@
     [
       "PAIR-NORM-001",
       "ZETA-ANALYTIC-001"
+    ],
+    [
+      "PAIR-POSITIVITY-001",
+      "PAIR-NORM-001"
     ],
     [
       "PAIR-PRIME-COUNT-001",
@@ -1815,8 +1890,10 @@
     "ORDINATE-DENSITY-INPUT-001",
     "ORDINATE-PAIR-INPUT-001",
     "ORDINATE-TRANSFER-001",
+    "PAIR-ASYMPTOTIC-001",
     "PAIR-COMPARE-001",
     "PAIR-ENVELOPE-001",
+    "PAIR-POSITIVITY-001",
     "PAIR-RHS-MEAN-001",
     "PAIR-TRUNC-001",
     "PAIR-NORM-001",
@@ -6268,7 +6345,87 @@
       "declaration": "HigherCorrelations.pairZeroComparison_uniform",
       "source": "lean/HigherCorrelations/PairZeroComparison.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairCorrelationSum_inv",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_complex",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_nonneg",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_even",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_abs",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_decomposition",
+      "source": "lean/HigherCorrelations/PairNormalizedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_errors",
+      "source": "lean/HigherCorrelations/PairNormalizedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_comparison_scales",
+      "source": "lean/HigherCorrelations/PairNormalizedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_base_bound",
+      "source": "lean/HigherCorrelations/PairNormalizedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_power",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_nonnegative_frequency",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_asymptotic",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_origin",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_endpoint_scales",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_endpoints",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_minimal_height",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "Combine the checked uniform pair comparison with the RHS mean square and formalize the normalized asymptotic. Cutoff optimization, small-height absorption and the comparison via the pinned PREPRINT strip are checked with existential constants; the historical KV/low-height route, explicit norm tail, constant effectivity and signed triple o(1) remain separate."
+  "next_step": "The normalized pair asymptotic and finite positivity/symmetry are checked. Continue the analytic dependency graph toward test-function and triple statements; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
 }

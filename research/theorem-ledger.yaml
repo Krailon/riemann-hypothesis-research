@@ -4118,3 +4118,52 @@ claims:
       imported_inputs: "Existing exact decomposition and named errors, elementary logarithm/exponential inequalities, and QRH-STRIP-001 with its pinned, checked PREPRINT proof closure."
       constants_scope: "The logarithmic absorption factor 384 is explicit; total constants remain existential through the counting/kernel bounds."
       baseline_audit_coverage: "An alternative proof of the uniform comparison, with provenance distinct from PAIR-COMPARE-001. Cutoff optimization is checked; historical KV and low-height dependencies, effective constants, the explicit norm-tail bound and normalized pair asymptotic remain separate. Historical claim statuses and pair/triple RH-audit scopes are unchanged. The signed triple complex-argument error remains open."
+
+  - id: PAIR-ASYMPTOTIC-FORMAL-001
+    title: Normalized pair asymptotic with closed frequency endpoints and existential constants
+    kind: theorem
+    statement: |
+      For real T>=3 let Phi(X,T) be the finite actual-occurrence pair sum
+      of PAIR-ZERO-DECOMPOSITION-FORMAL-001, with all ordered pairs,
+      analytic multiplicities and full weights for 0<gamma<=T. Define
+      F_T(alpha)=2 pi Re Phi(T^alpha,T)/(T log T). Its complex cast equals
+      Phi(T^alpha,T)/(T log T/(2 pi)) exactly. For every real alpha,
+      F_T(alpha)>=0 and F_T(-alpha)=F_T(alpha). The finite inversion
+      Phi(X^(-1),T)=Phi(X,T) follows by exchanging the pair indices.
+      There exist absolute positive C1,C2, chosen before T and alpha,
+      such that for all real T>=3 and |alpha|<=1,
+      |F_T(alpha)-T^(-2|alpha|)log T-|alpha||
+      <= C1 T^(-2|alpha|)+C2/sqrt(log T).
+      There exist absolute positive C0,Ce such that for every T>=3,
+      |F_T(0)-log T|<=C0 and |F_T(alpha)-1|<=Ce/sqrt(log T) if |alpha|=1.
+      T=3 and alpha=0,+1,-1 are included literally. The normalized peak,
+      mean-square and comparison errors form an exact three-term decomposition;
+      their separate bounds are A/X^2, B/sqrt(log T), and
+      D/log T+E X/(T log T), for 1<=X<=T and T>=3. Negative frequencies
+      use finite symmetry, not prime-side estimates at X<1. Constants are
+      existential and the comparison inherits the pinned PREPRINT strip proof.
+      No uniform vanishing total error at alpha=0, conventional ordinate-only
+      triple statistic, or effective numerical value for the constants is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-RHS-MEAN-FORMAL-001, PAIR-ZERO-COMPARISON-FORMAL-001, PAIR-ZERO-DECOMPOSITION-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairAsymptotic.lean
+      label: HigherCorrelations.pairNormalized_asymptotic
+      companion_declarations: "pairCorrelationSum_inv, pairNormalizedCorrelation_complex, pairNormalizedCorrelation_nonneg, pairNormalizedCorrelation_even, pairNormalizedCorrelation_abs, pairNormalized_decomposition, pairNormalized_errors, pairNormalized_comparison_scales, pairNormalized_base_bound, pairNormalized_power, pairNormalized_nonnegative_frequency, pairNormalized_origin, pairNormalized_endpoint_scales, pairNormalized_endpoints, pairNormalized_minimal_height"
+      bookkeeping: research/lean-pair-asymptotic.md
+      imported_publication_status: PREPRINT
+      upstream_revision: adc7f1241b42e322a6451854ab7e4b4c146bf78a
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 28534648909fe7a33bacde10e230dc4fe0ec5170e140b85599ad8d09e05c68f2
+    limit_order: "Algebra at fixed T,X; use estimates uniform for T>=3 and 1<=X<=T, substitute X=T^alpha for 0<=alpha<=1, and extend by finite-sum symmetry. The constants also apply when alpha depends on T. No new sum, integral or limit interchange."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 16 new public theorems have definition-only Comparator challenges and axiom reports. An unfinished normalized asymptotic is rejected for sorryAx. Integrated project build, complete axiom report, analytic coverage and pair/triple/harness regressions pass. Earlier Comparator suites are not rerun in the focused mode; only propext, Quot.sound and Classical.choice are allowed and the external kernel is disabled."
+      imported_inputs: "Previously checked RHS mean square, comparison via QRH-STRIP-001, finite pair norm/positivity, and elementary real powers, logarithms, square roots and finite sum commutation."
+      constants_scope: "The final constants can be A and B+D+E from the named normalized budget; they inherit existential counting/kernel constants. No numerical effectivity upgrade."
+      endpoint_audit: "All ordered pairs and complex zeros at a common ordinate remain separate; no simplicity or RH assumption. The alpha=0 bound remains O(1), whereas the alpha=+1,-1 bounds absorb the peak into O(1/sqrt(log T))."
+      baseline_audit_coverage: "The normalized inequality of PAIR-ASYMPTOTIC-001 is checked with existential constants, and the finite statement of PAIR-POSITIVITY-001 is fully covered. The historical effective-constant assertion and classical KV dependency route remain separate. Historical ledger statuses and pair/triple RH-audit scopes are preserved; the signed triple error remains open."

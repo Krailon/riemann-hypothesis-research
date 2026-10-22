@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "87ac9bdd8b10fadd6f88e59a9004407d9a93e2b89f52d407c2bbc87c26928b62",
+    "research/theorem-ledger.yaml": "0be3c0a16447bc487dd7b67d6f7c5e21f50cf4eca5708ddf9134802ec60ce860",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "082df8d58593931e012cc90896c4d9b242a1735f1eec9bde85051a910956ee6d"
+    "research/pair-rh-audit.json": "e35d5ec8fcdc48f2e0fdb090d73d6c8d9eefe03cb64977a69415c2ad91d077cc"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4543,5 +4543,14 @@
     ],
     "report": "research/lean-pair-zero-comparison.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records optimized cutoff bounds, small-height absorption and the uniform comparison using the pinned PREPRINT QRH-STRIP-001. Historical KV/low-height inputs and effective constants remain separate. No historical claim status or pair/triple RH-audit scope is expanded."
+  },
+  "ledger_pair_asymptotic_review": {
+    "reviewed_on": "2026-10-22",
+    "previous_ledger_sha256": "87ac9bdd8b10fadd6f88e59a9004407d9a93e2b89f52d407c2bbc87c26928b62",
+    "added_claim_ids": [
+      "PAIR-ASYMPTOTIC-FORMAL-001"
+    ],
+    "report": "research/lean-pair-asymptotic.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records the normalized pair asymptotic on the closed frequency interval, finite positivity and symmetry, three named normalized errors with four scales, and origin/endpoints. Total constants are existential through the pinned PREPRINT comparison. Historical effective constants and the classical KV route remain separate; no historical claim status or pair/triple RH-audit scope is expanded."
   }
 }

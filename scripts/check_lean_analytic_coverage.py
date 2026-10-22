@@ -16,11 +16,21 @@ from check_triple_dependencies import closure, flat_section, subsection
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / 'research/lean-analytic-coverage.json'
 ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
-         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001', 'PAIR-TRUNC-001', 'PAIR-COMPARE-001']
+         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001', 'PAIR-TRUNC-001', 'PAIR-COMPARE-001', 'PAIR-ASYMPTOTIC-001']
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
-COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001'}
+COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001'}
 PARTIAL = {
+    'PAIR-ASYMPTOTIC-001': (
+        ['pairNormalized_decomposition', 'pairNormalized_errors', 'pairNormalized_comparison_scales',
+         'pairNormalized_base_bound', 'pairNormalized_power', 'pairNormalized_nonnegative_frequency',
+         'pairNormalized_asymptotic', 'pairNormalized_origin', 'pairNormalized_endpoint_scales',
+         'pairNormalized_endpoints', 'pairNormalized_minimal_height'],
+        ['The full normalized inequality on T>=3, |alpha|<=1 and all endpoints are checked with existential constants using the pinned PREPRINT comparison. The historical effective-constant assertion and classical KV dependency route remain separate.']),
+    'PAIR-POSITIVITY-001': (
+        ['pairCorrelationSum_im', 'pairCorrelationSum_re_nonneg', 'pairCorrelationSum_inv',
+         'pairNormalizedCorrelation_complex', 'pairNormalizedCorrelation_nonneg',
+         'pairNormalizedCorrelation_even', 'pairNormalizedCorrelation_abs'], []),
     'PAIR-NORM-INTEGRAL-001': (
         ['pairKernelProduct_integrable', 'pairKernelIntegral_eq', 'pairKernelIntegral_coincident'],
         ['The two-factor profile needed for actual zero pairs is checked on |e|,|f|<=3/4, including coincident poles. The full historical complex-parameter strip and explicit semicircle bound remain separate.']),
@@ -517,9 +527,27 @@ def derive():
             'changed pair zero-side comparison verification scope')
     components.extend(pair_zero_comparison['components'])
     names.extend(c['declaration'] for c in pair_zero_comparison['components'])
+    pair_asymptotic = json.loads(read('research/lean-pair-asymptotic-inventory.json'))
+    found = []
+    for module in pair_asymptotic['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished normalized pair asymptotic solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in pair_asymptotic['components']],
+            'normalized pair asymptotic inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/pair-asymptotic.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in pair_asymptotic['components'] if c['comparator_checked']],
+            'normalized pair asymptotic Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed normalized pair asymptotic verification scope')
+    components.extend(pair_asymptotic['components'])
+    names.extend(c['declaration'] for c in pair_asymptotic['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -554,7 +582,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='Combine the checked uniform pair comparison with the RHS mean square and formalize the normalized asymptotic. Cutoff optimization, small-height absorption and the comparison via the pinned PREPRINT strip are checked with existential constants; the historical KV/low-height route, explicit norm tail, constant effectivity and signed triple o(1) remain separate.')
+        next_step='The normalized pair asymptotic and finite positivity/symmetry are checked. Continue the analytic dependency graph toward test-function and triple statements; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
 
 
 def validate(record):
@@ -584,6 +612,19 @@ class CoverageTests(unittest.TestCase):
         self.assertIn('HigherCorrelations.pairZeroComparison_uniform', comparison['components'])
         self.assertTrue(any('PREPRINT' in gap and 'Korobov-Vinogradov' in gap
                             for gap in comparison['remaining_obligations']))
+
+    def test_normalized_asymptotic_effectivity_and_positivity(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-ASYMPTOTIC-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertIn('HigherCorrelations.pairNormalized_asymptotic', node['components'])
+        self.assertIn('HigherCorrelations.pairNormalized_origin', node['components'])
+        self.assertIn('HigherCorrelations.pairNormalized_endpoints', node['components'])
+        self.assertTrue(any('effective-constant' in gap and 'PREPRINT' in gap
+                            for gap in node['remaining_obligations']))
+        positive = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-POSITIVITY-001')
+        self.assertTrue(positive['whole_claim_formalized'])
+        self.assertEqual(positive['remaining_obligations'], [])
 
     def test_current(self):
         validate(self.record)

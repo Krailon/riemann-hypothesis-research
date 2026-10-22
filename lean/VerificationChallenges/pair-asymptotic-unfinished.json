@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.PairAsymptotic",
+  "solution_module": "VerificationChallenges.PairAsymptoticUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.pairNormalized_asymptotic"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

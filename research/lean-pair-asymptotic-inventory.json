@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairAsymptoticDefinitions",
+    "PairNormalizedSymmetry",
+    "PairNormalizedAssembly",
+    "PairAsymptotic"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairCorrelationSum_inv",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_complex",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_nonneg",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_even",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_abs",
+      "source": "lean/HigherCorrelations/PairNormalizedSymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_decomposition",
+      "source": "lean/HigherCorrelations/PairNormalizedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_errors",
+      "source": "lean/HigherCorrelations/PairNormalizedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_comparison_scales",
+      "source": "lean/HigherCorrelations/PairNormalizedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_base_bound",
+      "source": "lean/HigherCorrelations/PairNormalizedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_power",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_nonnegative_frequency",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_asymptotic",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_origin",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_endpoint_scales",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_endpoints",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalized_minimal_height",
+      "source": "lean/HigherCorrelations/PairAsymptotic.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

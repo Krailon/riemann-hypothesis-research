@@ -82,15 +82,18 @@ class LeanReproductionTests(unittest.TestCase):
         for flag, suite in [('--zeta23-only', 'zeta23-counting-comparator'),
                             ('--pair-zero-only', 'pair-zero-comparator'),
                             ('--pair-zero-bounds-only', 'pair-zero-bounds-comparator'),
-                            ('--pair-zero-comparison-only', 'pair-zero-comparison-comparator')]:
+                            ('--pair-zero-comparison-only', 'pair-zero-comparison-comparator'),
+                            ('--pair-asymptotic-only', 'pair-asymptotic-comparator')]:
             with self.subTest(flag=flag):
                 code, calls, report, checked = self.run_workflow(['--reuse-dependencies', flag])
                 self.assertEqual(code, 0)
                 self.assertEqual(checked, 1)
                 self.assertIn(suite, calls)
+                if flag == '--pair-asymptotic-only':
+                    self.assertNotIn('pair-zero-comparison-comparator', calls)
                 self.assertNotIn('resolve', calls)
                 self.assertNotIn('upstream-comparator', calls)
-                if flag == '--pair-zero-comparison-only':
+                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only']:
                     self.assertNotIn('pair-zero-bounds-comparator', calls)
                     self.assertNotIn('pair-zero-comparator', calls)
                     self.assertNotIn('zeta23-counting-comparator', calls)

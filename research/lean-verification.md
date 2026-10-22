@@ -181,3 +181,16 @@ Run the new Comparator suite, combined build, complete axiom report and
 regressions with `python3 -B scripts/reproduce_lean.py --reuse-dependencies
 --pair-zero-comparison-only` (one shell command). Earlier Comparator suites are
 not rerun by this focused mode.
+
+## Normalized pair asymptotic
+
+The [normalized theorem milestone](lean-pair-asymptotic.md) combines the RHS
+mean square with the checked comparison, preserves the separate normalized
+error scales, and proves the closed-range theorem for T>=3 and |alpha|<=1.
+Finite-sum inversion supplies negative frequencies; origin and endpoint
+corollaries retain their correct error scales. Total constants are existential
+and the PREPRINT comparison dependency remains explicit.
+
+Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --pair-asymptotic-only`
+for the new Comparator suite, negative control, combined build, complete axiom
+report and regressions. Earlier Comparator suites are not rerun in this mode.

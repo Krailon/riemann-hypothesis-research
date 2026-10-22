@@ -1,3 +1,4 @@
+import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
 import HigherCorrelations.PairZeroUniformBounds
 import HigherCorrelations.PairZeroDecomposition

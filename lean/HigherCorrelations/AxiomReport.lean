@@ -1,3 +1,4 @@
+import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
 import HigherCorrelations.PairZeroUniformBounds
 import HigherCorrelations.PairZeroDecomposition
@@ -1031,3 +1032,20 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.pairZeroComparison_strip_optimized
 #print axioms HigherCorrelations.pairZeroComparison_uniform_errors
 #print axioms HigherCorrelations.pairZeroComparison_uniform
+
+#print axioms HigherCorrelations.pairCorrelationSum_inv
+#print axioms HigherCorrelations.pairNormalizedCorrelation_complex
+#print axioms HigherCorrelations.pairNormalizedCorrelation_nonneg
+#print axioms HigherCorrelations.pairNormalizedCorrelation_even
+#print axioms HigherCorrelations.pairNormalizedCorrelation_abs
+#print axioms HigherCorrelations.pairNormalized_decomposition
+#print axioms HigherCorrelations.pairNormalized_errors
+#print axioms HigherCorrelations.pairNormalized_comparison_scales
+#print axioms HigherCorrelations.pairNormalized_base_bound
+#print axioms HigherCorrelations.pairNormalized_power
+#print axioms HigherCorrelations.pairNormalized_nonnegative_frequency
+#print axioms HigherCorrelations.pairNormalized_asymptotic
+#print axioms HigherCorrelations.pairNormalized_origin
+#print axioms HigherCorrelations.pairNormalized_endpoint_scales
+#print axioms HigherCorrelations.pairNormalized_endpoints
+#print axioms HigherCorrelations.pairNormalized_minimal_height
