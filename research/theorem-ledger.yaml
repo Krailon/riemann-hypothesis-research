@@ -4269,3 +4269,56 @@ claims:
       constants_scope: "Kernel mass and moment constants are exact. Absolute A,B and total C_g remain existential through the normalized pair theorem."
       endpoint_audit: "T>=3 and the closed support interval [-1,1] are literal. Local mean-spacing conversion separately requires T>2 pi. No test varying with T is passed through the fixed-test limit."
       baseline_audit_coverage: "Separate formalized corollary; historical statuses and pair/triple RH-audit scopes are preserved. No conventional ordinate-only triple statistic, vanishing signed triple error, or improved critical-line proportion is inferred."
+
+  - id: MASTER-INTEGRATION-FORMAL-001
+    title: Uniform triple integral-norm bound and actual zero-sum interchange
+    kind: theorem
+    statement: |
+      Use actual ZeroOccurrence indices, with analytic multiplicity and both
+      ordinate signs retained. Let S_i(X,t)=pairZeroTerm i (X,t), including
+      its factor 2 and its full complex horizontal displacement. For
+      v:Fin 3->ZeroOccurrence define
+      G_v(t)=(omega(t/T)/T) S_{v_0}(X,t) S_{v_1}(Y,t)
+        conjugate(S_{v_2}(XY,t)).
+      There exists C0>0, chosen before every weight and parameter, such that
+      Q(t)=sum_i (1+(t-gamma_i)^2)^(-1)<=C0 log(|t|+2) for every real t,
+      and for every continuous real omega supported in [1,2], T>=3,
+      X,Y>=1, every G_v is integrable and
+      sum_v integral_R |G_v(t)| dt
+      <= (8/3)^3 C0^3 X Y log(2T+2)^3 integral_R |omega(u)| du < infinity.
+      The series of integral norms and the series of norms of evaluated
+      integrals are summable. Pointwise absolute summability also holds.
+      For every finite set D of triples, sum_{v in D}|G_v(t)| is bounded
+      by B(t)=(8/3)^3 C0^3 X Y log(2T+2)^3 |omega(t/T)|/T.
+      This B is integrable, supported in [T,2T], and has integral equal
+      to the displayed bound. Consequently
+      sum_v integral_R G_v(t) dt = integral_R sum_v G_v(t) dt.
+      With T,X,Y,omega fixed, integrated finite sums over three independent
+      exhaustive finite occurrence sets converge to the integral of the
+      full triple sum. The same holds for the independent inclusive height
+      cutoffs |gamma_i|<=U_r as (U_0,U_1,U_2) tends to infinity in the
+      product order. Signed and zero weights are allowed; no unit-mass or
+      smoothness condition is needed. T=3 and X=Y=1 are included literally.
+      C0 remains existential through the existing zero-kernel estimate.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-SERIES-CONVERGENCE-001, ZERO-KERNEL-UNIFORM-001, SUMMABILITY-INTEGRAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleMasterBounds.lean
+      label: HigherCorrelations.tripleMaster_uniform_integralNorm
+      companion_declarations: "tripleMasterTerm_integrable, tripleMasterTerm_bound, tripleMaster_finite_kernel, tripleMaster_finite_majorant, tripleMasterMajorant_integral, tripleMaster_finite_integralNorm_bound, tripleMaster_integralNorm_bound, tripleMaster_pointwise_summable, tripleMaster_evaluated_norm_summable, tripleMaster_sum_integral, tripleMaster_independent_cutoff_limit, tripleMaster_height_cutoff_limit, tripleMaster_minimal_parameters"
+      bookkeeping: research/lean-triple-master.md
+      inventory: research/lean-triple-master-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: afae83ecc388d7f09f95bbd8f3f5226fa4fb8ae6ed18ad674d46eb21ed6d9f2c
+    limit_order: "Choose the absolute zero-kernel constant before all parameters. Fix T,X,Y,omega before removing the three occurrence cutoffs independently in the product filter. No height asymptotic or varying-smoothing limit is taken. Finite integral-norm sums are bounded first; their nonnegative summability is then proved before the infinite interchange is applied."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 23 public declarations have definition-only Comparator statements and axiom reports. An unfinished uniform integral-norm bound is rejected for sorryAx. Combined project build, complete axiom report, analytic coverage and pair/triple/harness regressions pass. Earlier Comparator suites are not rerun in the focused mode; only propext, Quot.sound and Classical.choice are permitted and the external kernel is disabled."
+      imported_inputs: "Existing actual-zero term convergence and its (8/3)sqrt(X) ordinate-kernel bound, the uniform logarithmic zero-kernel estimate, finite product-sum algebra, nonnegative summability from bounded finite sums, and the previously checked Bochner interchange/cutoff interfaces. No zero-free-strip or pinned PREPRINT fixed-strip theorem is used."
+      constants_scope: "The factor (8/3)^3 and all normalizations are exact. C0 is the existing existential absolute zero-kernel constant, with no effectivity upgrade."
+      endpoint_audit: "Full complex zeros, both ordinate signs and all ordered occurrences remain distinct, including repeated occurrences and distinct zeros at equal ordinates. The third slot is conjugated and has parameter XY. Closed support and inclusive absolute-height cutoffs retain their full endpoint conventions."
+      baseline_audit_coverage: "Discharges the uniform master-integrand integral-norm bound and sum-integral interchange in TRIPLE-MASTER-001. Its full zero-series product identification, center-phase cancellation, explicit K_T identity, five index-pattern subseries, 27-word explicit-formula expansion, prime resonance and Fourier-decay clauses remain separate formalization obligations. Historical claim statuses and pair/triple audit scopes are unchanged; the signed complex-argument triple error remains open."

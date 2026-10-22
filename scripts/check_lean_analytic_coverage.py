@@ -133,8 +133,13 @@ PARTIAL = {
         [
          'Formalize the stated main term and named errors; the new real-test global majorants do not evaluate the complex-test errors.']),
     'TRIPLE-MASTER-001': (
-        ['integral_occurrence_sum', 'integral_occurrence_cutoff_limit', 'actualProfile_integrable'],
-        ['Prove the uniform master-kernel summable integral-norm bound.',
+        ['integral_occurrence_sum', 'integral_occurrence_cutoff_limit', 'actualProfile_integrable',
+         'tripleMasterTerm_integrable', 'tripleMasterTerm_bound', 'tripleMaster_finite_kernel',
+         'tripleMaster_finite_majorant', 'tripleMasterMajorant_integral',
+         'tripleMaster_integralNorm_bound', 'tripleMaster_uniform_integralNorm',
+         'tripleMaster_sum_integral', 'tripleMaster_independent_cutoff_limit',
+         'tripleMaster_height_cutoff_limit', 'tripleMaster_minimal_parameters'],
+        ['The uniform integral-norm bound and interchange are checked for continuous real smoothing supported in [1,2]. Identify the full zero-series product, cancel center phases, and establish the explicit K_T identity and its five index-pattern subseries.',
          'Formalize the explicit-formula expansion, prime-side sums and normalization.']),
     'TRIPLE-KERNEL-PROFILE-001': (
         ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
@@ -570,9 +575,27 @@ def derive():
             'changed pair Fourier passage verification scope')
     components.extend(pair_fourier['components'])
     names.extend(c['declaration'] for c in pair_fourier['components'])
+    triple_master = json.loads(read('research/lean-triple-master-inventory.json'))
+    found = []
+    for module in triple_master['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished triple master integral-norm bound solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in triple_master['components']],
+            'triple master integral-norm bound inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/triple-master.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in triple_master['components'] if c['comparator_checked']],
+            'triple master integral-norm bound Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed triple master integral-norm bound verification scope')
+    components.extend(triple_master['components'])
+    names.extend(c['declaration'] for c in triple_master['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -607,7 +630,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The exact pair Fourier translation and compactly supported C1 test-function asymptotic and limit are checked. Continue toward triple analytic statements; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
+        next_step='The triple master integral-norm bound, interchange and independent cutoff limits are checked. Next identify the full zero-series product and cancel center phases to obtain the explicit K_T identity; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
 
 
 def validate(record):
@@ -637,6 +660,16 @@ class CoverageTests(unittest.TestCase):
         self.assertIn('HigherCorrelations.pairZeroComparison_uniform', comparison['components'])
         self.assertTrue(any('PREPRINT' in gap and 'Korobov-Vinogradov' in gap
                             for gap in comparison['remaining_obligations']))
+
+    def test_triple_master_interchange_bound_partial(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'TRIPLE-MASTER-001')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertEqual(node['coverage'], 'partial')
+        for name in ['tripleMaster_uniform_integralNorm', 'tripleMaster_sum_integral',
+                     'tripleMaster_independent_cutoff_limit', 'tripleMaster_height_cutoff_limit']:
+            self.assertIn('HigherCorrelations.' + name, node['components'])
+        self.assertTrue(any('K_T identity' in gap for gap in node['remaining_obligations']))
+        self.assertTrue(any('prime-side' in gap for gap in node['remaining_obligations']))
 
     def test_pair_translation_complete(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-TRANSLATION-001')

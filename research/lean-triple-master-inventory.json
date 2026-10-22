@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "TripleMasterDefinitions",
+    "TripleMasterBounds",
+    "TripleMasterIntegration"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_continuous",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_support",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_weight_compact",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_weight_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_weight_mass",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterMajorant_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterMajorant_integral",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_bound",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_finite_kernel",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_finite_majorant",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_finite_integralNorm_bound",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_integralNorm_bound",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_uniform_integralNorm",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_integralNorm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_pointwise_summable",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_evaluated_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_sum_integral",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_independent_cutoff_limit",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_height_cutoff_limit",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_zero_weight",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_neg_weight",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_minimal_parameters",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

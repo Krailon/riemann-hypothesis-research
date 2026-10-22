@@ -39,6 +39,9 @@ The exact pair Fourier translation and compactly supported C¹ test-function
 asymptotic and limit are also formalized, retaining complex zero arguments and
 separate integrated errors. See the [Fourier passage record](research/lean-pair-fourier.md).
 The historical effective constants and classical KV proof route remain separate.
+The triple master sum now has a formalized uniform bound on the sum of integral
+norms, justifying sum–integral interchange and independent cutoff limits. See
+the [triple interchange record](research/lean-triple-master.md).
 
 ## Zeta23 inputs imported
 

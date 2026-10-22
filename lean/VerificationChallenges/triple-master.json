@@ -1,0 +1,36 @@
+{
+  "challenge_module": "VerificationChallenges.TripleMaster",
+  "solution_module": "HigherCorrelations.TripleMasterIntegration",
+  "theorem_names": [
+    "HigherCorrelations.tripleMasterTerm_continuous",
+    "HigherCorrelations.tripleMaster_support",
+    "HigherCorrelations.tripleMaster_weight_compact",
+    "HigherCorrelations.tripleMasterTerm_integrable",
+    "HigherCorrelations.tripleMaster_weight_integrable",
+    "HigherCorrelations.tripleMaster_weight_mass",
+    "HigherCorrelations.tripleMasterMajorant_integrable",
+    "HigherCorrelations.tripleMasterMajorant_integral",
+    "HigherCorrelations.tripleMasterTerm_bound",
+    "HigherCorrelations.tripleMaster_finite_kernel",
+    "HigherCorrelations.tripleMaster_finite_majorant",
+    "HigherCorrelations.tripleMaster_finite_integralNorm_bound",
+    "HigherCorrelations.tripleMaster_integralNorm_bound",
+    "HigherCorrelations.tripleMaster_uniform_integralNorm",
+    "HigherCorrelations.tripleMaster_integralNorm_summable",
+    "HigherCorrelations.tripleMaster_pointwise_summable",
+    "HigherCorrelations.tripleMaster_evaluated_norm_summable",
+    "HigherCorrelations.tripleMaster_sum_integral",
+    "HigherCorrelations.tripleMaster_independent_cutoff_limit",
+    "HigherCorrelations.tripleMaster_height_cutoff_limit",
+    "HigherCorrelations.tripleMaster_zero_weight",
+    "HigherCorrelations.tripleMaster_neg_weight",
+    "HigherCorrelations.tripleMaster_minimal_parameters"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "4db57035a415070a4187b230e45a64b47902ff0c28544f90fe986a1675dfb879",
+  "ledger_sha256": "2e5b489f166f42c032a45271cbce47d6fb652aaf8fca6971541b61118859f8dd",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2698,5 +2698,14 @@
     ],
     "report": "research/lean-pair-fourier.md",
     "changes": "The previous ledger remains an unchanged byte prefix. Separate formalized entries record the exact pair Fourier identity, actual multiplicity diagonals, reflection and scale translation, followed by the compactly supported C1 test-function error budget and fixed-test limit. Exact translation uses no strip input; the asymptotic inherits the pinned PREPRINT comparison with existential constants. Historical claim statuses and pair/triple RH-audit scopes are unchanged; the signed triple error remains open."
+  },
+  "ledger_triple_master_integration_review": {
+    "reviewed_on": "2026-10-22",
+    "previous_ledger_sha256": "4db57035a415070a4187b230e45a64b47902ff0c28544f90fe986a1675dfb879",
+    "added_claim_ids": [
+      "MASTER-INTEGRATION-FORMAL-001"
+    ],
+    "report": "research/lean-triple-master.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records the uniform triple integral-norm bound, the justified actual sum-integral interchange, and independent finite/height cutoff limits, with signed continuous smoothing weights and all endpoints retained. No zero-free-strip input is used; the existing absolute kernel constant remains existential. TRIPLE-MASTER-001 remains partial: full zero-series product identification, center-phase cancellation, explicit K_T identity and further expansions remain separate. Historical statuses and pair/triple RH-audit scopes are unchanged; the signed triple error remains open."
   }
 }

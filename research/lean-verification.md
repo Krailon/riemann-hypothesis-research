@@ -207,3 +207,16 @@ normalized theorem's pinned PREPRINT dependency and existential constants.
 Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --pair-fourier-only`
 for all 36 new Comparator statements, the negative control, combined build,
 complete axiom report and regressions. Earlier Comparator suites are not rerun.
+
+## Triple master integral-norm bound
+
+The [triple interchange milestone](lean-triple-master.md) proves the uniform
+sum of integral norms for the actual three zero terms, then discharges the
+interchange and independent cutoff-limit hypotheses. All signed continuous
+real smoothing weights supported in [1,2] are allowed. The explicit factor
+(8/3)^3 is preserved; the absolute zero-kernel constant remains existential.
+No zero-free-strip input is used. The full `TRIPLE-MASTER-001` remains partial.
+
+Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only`
+for all 23 new Comparator statements, the negative control, combined build,
+complete axiom report and regressions. Earlier Comparator suites are not rerun.

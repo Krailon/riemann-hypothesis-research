@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleMasterIntegration
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
@@ -1086,3 +1087,26 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.pairFourier_named_error_budget
 #print axioms HigherCorrelations.pairFourier_asymptotic
 #print axioms HigherCorrelations.pairFourier_tendsto
+#print axioms HigherCorrelations.tripleMasterTerm_continuous
+#print axioms HigherCorrelations.tripleMaster_support
+#print axioms HigherCorrelations.tripleMaster_weight_compact
+#print axioms HigherCorrelations.tripleMasterTerm_integrable
+#print axioms HigherCorrelations.tripleMaster_weight_integrable
+#print axioms HigherCorrelations.tripleMaster_weight_mass
+#print axioms HigherCorrelations.tripleMasterMajorant_integrable
+#print axioms HigherCorrelations.tripleMasterMajorant_integral
+#print axioms HigherCorrelations.tripleMasterTerm_bound
+#print axioms HigherCorrelations.tripleMaster_finite_kernel
+#print axioms HigherCorrelations.tripleMaster_finite_majorant
+#print axioms HigherCorrelations.tripleMaster_finite_integralNorm_bound
+#print axioms HigherCorrelations.tripleMaster_integralNorm_bound
+#print axioms HigherCorrelations.tripleMaster_uniform_integralNorm
+#print axioms HigherCorrelations.tripleMaster_integralNorm_summable
+#print axioms HigherCorrelations.tripleMaster_pointwise_summable
+#print axioms HigherCorrelations.tripleMaster_evaluated_norm_summable
+#print axioms HigherCorrelations.tripleMaster_sum_integral
+#print axioms HigherCorrelations.tripleMaster_independent_cutoff_limit
+#print axioms HigherCorrelations.tripleMaster_height_cutoff_limit
+#print axioms HigherCorrelations.tripleMaster_zero_weight
+#print axioms HigherCorrelations.tripleMaster_neg_weight
+#print axioms HigherCorrelations.tripleMaster_minimal_parameters

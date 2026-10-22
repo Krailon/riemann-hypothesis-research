@@ -1167,10 +1167,21 @@
       "components": [
         "HigherCorrelations.integral_occurrence_sum",
         "HigherCorrelations.integral_occurrence_cutoff_limit",
-        "HigherCorrelations.actualProfile_integrable"
+        "HigherCorrelations.actualProfile_integrable",
+        "HigherCorrelations.tripleMasterTerm_integrable",
+        "HigherCorrelations.tripleMasterTerm_bound",
+        "HigherCorrelations.tripleMaster_finite_kernel",
+        "HigherCorrelations.tripleMaster_finite_majorant",
+        "HigherCorrelations.tripleMasterMajorant_integral",
+        "HigherCorrelations.tripleMaster_integralNorm_bound",
+        "HigherCorrelations.tripleMaster_uniform_integralNorm",
+        "HigherCorrelations.tripleMaster_sum_integral",
+        "HigherCorrelations.tripleMaster_independent_cutoff_limit",
+        "HigherCorrelations.tripleMaster_height_cutoff_limit",
+        "HigherCorrelations.tripleMaster_minimal_parameters"
       ],
       "remaining_obligations": [
-        "Prove the uniform master-kernel summable integral-norm bound.",
+        "The uniform integral-norm bound and interchange are checked for continuous real smoothing supported in [1,2]. Identify the full zero-series product, cancel center phases, and establish the explicit K_T identity and its five index-pattern subseries.",
         "Formalize the explicit-formula expansion, prime-side sums and normalization."
       ]
     },
@@ -6640,7 +6651,122 @@
       "declaration": "HigherCorrelations.pairFourier_tendsto",
       "source": "lean/HigherCorrelations/PairFourierAsymptotic.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_continuous",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_support",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_weight_compact",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_weight_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_weight_mass",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterMajorant_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterMajorant_integral",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_bound",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_finite_kernel",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_finite_majorant",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_finite_integralNorm_bound",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_integralNorm_bound",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_uniform_integralNorm",
+      "source": "lean/HigherCorrelations/TripleMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_integralNorm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_pointwise_summable",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_evaluated_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_sum_integral",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_independent_cutoff_limit",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_height_cutoff_limit",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_zero_weight",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_neg_weight",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_minimal_parameters",
+      "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The exact pair Fourier translation and compactly supported C1 test-function asymptotic and limit are checked. Continue toward triple analytic statements; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
+  "next_step": "The triple master integral-norm bound, interchange and independent cutoff limits are checked. Next identify the full zero-series product and cancel center phases to obtain the explicit K_T identity; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
 }

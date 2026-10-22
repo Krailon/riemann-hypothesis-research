@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleMasterIntegration
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
