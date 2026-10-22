@@ -194,3 +194,16 @@ and the PREPRINT comparison dependency remains explicit.
 Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --pair-asymptotic-only`
 for the new Comparator suite, negative control, combined build, complete axiom
 report and regressions. Earlier Comparator suites are not rerun in this mode.
+
+## Pair Fourier test-function passage
+
+The [Fourier passage milestone](lean-pair-fourier.md) completes the exact
+`PAIR-TRANSLATION-001` bookkeeping and proves the integrated pair asymptotic
+for compactly supported complex C¹ tests in [-1,1], with a quantitative error
+budget and a Lean limit theorem. Actual complex zero differences and multiplicities
+are retained. The exact branch has no strip input; the asymptotic inherits the
+normalized theorem's pinned PREPRINT dependency and existential constants.
+
+Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --pair-fourier-only`
+for all 36 new Comparator statements, the negative control, combined build,
+complete axiom report and regressions. Earlier Comparator suites are not rerun.

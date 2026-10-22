@@ -4167,3 +4167,105 @@ claims:
       constants_scope: "The final constants can be A and B+D+E from the named normalized budget; they inherit existential counting/kernel constants. No numerical effectivity upgrade."
       endpoint_audit: "All ordered pairs and complex zeros at a common ordinate remain separate; no simplicity or RH assumption. The alpha=0 bound remains O(1), whereas the alpha=+1,-1 bounds absorb the peak into O(1/sqrt(log T))."
       baseline_audit_coverage: "The normalized inequality of PAIR-ASYMPTOTIC-001 is checked with existential constants, and the finite statement of PAIR-POSITIVITY-001 is fully covered. The historical effective-constant assertion and classical KV dependency route remain separate. Historical ledger statuses and pair/triple RH-audit scopes are preserved; the signed triple error remains open."
+
+  - id: PAIR-TRANSLATION-FORMAL-001
+    title: Exact pair Fourier translation with actual multiplicities and local scale
+    kind: theorem
+    statement: |
+      Let W_T be the actual zero-occurrence window 0<gamma<=T, retaining
+      analytic multiplicity. Put A_T=log T/(2 pi), C_T=T log T/(2 pi),
+      w(z)=4/(4-z^2), and hat g(z)=integral_R g(a)exp(-2 pi i z a) da.
+      For continuous compactly supported complex g this integral is
+      integrable for every complex z and equals mathlib's Fourier transform
+      at real z. For every real T>=3, the statistic
+      J_T[g]=C_T^(-1) sum_{i,j in W_T} w(rho_i-rho_j)
+        hat g(i A_T(rho_i-rho_j))
+      equals integral_R g(a) F_T(a) da, with F_T as defined in
+      PAIR-ASYMPTOTIC-FORMAL-001. The normalized integrand is integrable.
+      At every fixed real T,a, the summand equals
+      4 exp(a(x_i-x_j)+i a d log T)/(4-b^2+d^2-2 i b d),
+      where b=beta_i-beta_j, d=gamma_i-gamma_j, and x_i=(beta_i-1/2)log T.
+      The index diagonal is card(W_T); the equal-complex-zero diagonal is
+      sum m(rho)^2 over distinct zeros in W_T. Fiber cardinality equals
+      actual analytic multiplicity. Reflection of the second occurrence
+      reindexes the full sum using rho_i+conj(rho_j)-1.
+      For T>2 pi put L_T=log(T/(2 pi))/(2 pi), q_T=A_T/L_T>0,
+      u=L_T(gamma_j-gamma_i), and G_T(xi)=Re Phi((T/(2 pi))^xi,T)/(T L_T).
+      Then C_T=q_T T L_T, i A_T(rho_i-rho_j)=q_T u+i(x_i-x_j)/(2 pi),
+      G_T(xi)=q_T F_T(xi/q_T), and the vertical phase is exp(-2 pi i xi u)
+      under xi=q_T a. The condition |a|<=1 is equivalent to |xi|<=q_T.
+      For every complex f, integral f(xi/q_T) dxi=q_T integral f(a) da;
+      consequently integral g(xi/q_T)G_T(xi) dxi=q_T^2 integral g(a)F_T(a) da.
+      This completes the exact mathematical content of PAIR-TRANSLATION-001.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-ZERO-DECOMPOSITION-FORMAL-001, FINITE-REGROUP-001]
+    dependency_graph_complete: false
+    definitions_from: [PAIR-ASYMPTOTIC-FORMAL-001]
+    source:
+      file: lean/HigherCorrelations/PairFourierIdentity.lean
+      label: HigherCorrelations.pairFourierStatistic_identity
+      bookkeeping: research/lean-pair-fourier.md
+      inventory: research/lean-pair-fourier-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 5b66754b9f0f65a1a3814a4e5959d3f323fb6ec54c5ab1d2659a0f1da55fadcf
+    limit_order: "Exact at fixed parameters. Compact support proves integrability at every complex argument; only finite zero sums are interchanged with integrals. Local mean-spacing statements require T>2 pi; the source-scale identity includes T=3."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The exact branch has 24 public declarations, each checked against a definition-only Comparator challenge and included in the full axiom report. The shared Fourier milestone has 36 public declarations and a rejected unfinished-limit negative control. Only propext, Quot.sound and Classical.choice are permitted; the external kernel is disabled."
+      imported_inputs: "Actual zero occurrences, analytic multiplicity, finite reflection and norm identity, elementary scaling, compact support, Fourier definitions and finite Bochner integral linearity. No prime asymptotic or zero-free-strip theorem is used by the exact proof branch."
+      baseline_audit_coverage: "Coverage of the exact PAIR-TRANSLATION-001 statement is complete. Historical ledger statuses and pair/triple audit scopes are unchanged. Reflection is used only for the full pair sum; no preservation of diagonal subsets or ordinate-only substitution is asserted."
+
+  - id: PAIR-FOURIER-FORMAL-001
+    title: Compactly supported pair Fourier test asymptotic and fixed-test limit
+    kind: theorem
+    statement: |
+      Use J_T[g] and the negative-sign complex Fourier convention of
+      PAIR-TRANSLATION-FORMAL-001. The nonnegative kernel
+      k_q(a)=q exp(-2q|a|) is integrable for q>0, has integral 1,
+      and has integrable first absolute moment with integral 1/(2q).
+      For continuous compactly supported g satisfying
+      |g(a)-g(0)|<=M1 |a|, its peak approximation error is
+      |integral g(a)k_q(a) da-g(0)|<=M1/(2q).
+      There exist absolute positive A,B, chosen before g and T, such that
+      for any continuous compactly supported complex g with support
+      contained in [-1,1], any bounds |g(a)|<=M0 and
+      |g(a)-g(0)|<=M1 |a|, and every real T>=3,
+      |J_T[g]-g(0)-integral_R |a|g(a) da|
+      <= (A M0+M1/2)/log T+B integral_R |g(a)| da/sqrt(log T).
+      The spectral peak remainder and integrated mean remainder contribute
+      A M0/log T and B integral |g|/sqrt(log T), respectively;
+      the approximate-identity error contributes M1/(2 log T).
+      For every compactly supported complex C1 test g with support in
+      [-1,1], nonnegative global function and derivative bounds M0,M1
+      exist and the latter implies the required Lipschitz bound at zero.
+      There is a positive C_g, chosen before T, for which the total error
+      is at most C_g/sqrt(log T) for every T>=3. With g fixed,
+      J_T[g] tends to g(0)+integral_R |a|g(a) da as real T tends to infinity.
+      This includes smooth tests. The support endpoints are included;
+      all complex zero arguments and multiplicities are retained.
+    status: formalized
+    assumptions: [UNCONDITIONAL, "SUPPORT([-1,1])"]
+    dependencies: [PAIR-TRANSLATION-FORMAL-001, PAIR-ASYMPTOTIC-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/PairFourierAsymptotic.lean
+      label: HigherCorrelations.pairFourier_tendsto
+      companion_declarations: "pairFourier_integrated_error, pairFourier_named_error_budget, pairFourier_asymptotic, pairFourierPeak_mass, pairFourierPeak_moment, pairFourierPeak_approximation, pairFourierTest_bounds"
+      bookkeeping: research/lean-pair-fourier.md
+      imported_publication_status: PREPRINT
+      upstream_revision: adc7f1241b42e322a6451854ab7e4b4c146bf78a
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 5b66754b9f0f65a1a3814a4e5959d3f323fb6ec54c5ab1d2659a0f1da55fadcf
+    limit_order: "Fix g first, choose its global bounds and C_g, then let T tend to infinity. A,B precede all tests and heights. Integrable global majorants and exact kernel moments justify all integral estimates; the limit follows from the quantitative norm bound, without exchanging a pointwise asymptotic with an integral."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 36 new public declarations have definition-only Comparator challenges and axiom reports. An unfinished limit theorem is rejected for sorryAx. Combined project build, complete axiom report, analytic coverage and pair/triple/harness regressions pass. Earlier Comparator suites are not rerun in the focused mode; only propext, Quot.sound and Classical.choice are allowed and the external kernel is disabled."
+      imported_inputs: "Exact pair Fourier translation, elementary exponential/Gamma integrals, compact support and the mean value theorem, plus PAIR-ASYMPTOTIC-FORMAL-001. The asymptotic inherits the pinned PREPRINT strip dependency; the exact and kernel branches do not."
+      constants_scope: "Kernel mass and moment constants are exact. Absolute A,B and total C_g remain existential through the normalized pair theorem."
+      endpoint_audit: "T>=3 and the closed support interval [-1,1] are literal. Local mean-spacing conversion separately requires T>2 pi. No test varying with T is passed through the fixed-test limit."
+      baseline_audit_coverage: "Separate formalized corollary; historical statuses and pair/triple RH-audit scopes are preserved. No conventional ordinate-only triple statistic, vanishing signed triple error, or improved critical-line proportion is inferred."

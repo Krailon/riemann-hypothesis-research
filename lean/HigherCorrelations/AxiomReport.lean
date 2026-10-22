@@ -1,3 +1,4 @@
+import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
 import HigherCorrelations.PairZeroUniformBounds
@@ -1049,3 +1050,39 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.pairNormalized_endpoint_scales
 #print axioms HigherCorrelations.pairNormalized_endpoints
 #print axioms HigherCorrelations.pairNormalized_minimal_height
+#print axioms HigherCorrelations.pairComplexFourier_integrable
+#print axioms HigherCorrelations.pairComplexFourier_real
+#print axioms HigherCorrelations.pairComplexFourier_zero_argument
+#print axioms HigherCorrelations.pairComplexFourier_argument
+#print axioms HigherCorrelations.pairFrequencyTerm_sum
+#print axioms HigherCorrelations.pairFrequencyTerm_continuous
+#print axioms HigherCorrelations.pairNormalizedCorrelation_continuous
+#print axioms HigherCorrelations.pairFourierStatistic_integrable
+#print axioms HigherCorrelations.pairFourierStatistic_identity
+#print axioms HigherCorrelations.pairFrequencyTerm_horizontal
+#print axioms HigherCorrelations.pairFrequencyTerm_diagonal
+#print axioms HigherCorrelations.pairFrequencyTerm_index_diagonal
+#print axioms HigherCorrelations.pairWindow_fiber_card
+#print axioms HigherCorrelations.pairFrequencyTerm_equal_zero_diagonal
+#print axioms HigherCorrelations.pairFrequencyTerm_reflection
+#print axioms HigherCorrelations.pairScale_positive
+#print axioms HigherCorrelations.pairScale_normalization
+#print axioms HigherCorrelations.pairScale_argument
+#print axioms HigherCorrelations.pairScale_phase
+#print axioms HigherCorrelations.pairScale_support
+#print axioms HigherCorrelations.pairScale_power
+#print axioms HigherCorrelations.pairScale_correlation
+#print axioms HigherCorrelations.pairScale_jacobian
+#print axioms HigherCorrelations.pairScale_integrated
+#print axioms HigherCorrelations.pairFourierPeak_nonneg
+#print axioms HigherCorrelations.pairFourierPeak_integrable
+#print axioms HigherCorrelations.pairFourierPeak_mass
+#print axioms HigherCorrelations.pairFourierPeak_moment_integrable
+#print axioms HigherCorrelations.pairFourierPeak_moment
+#print axioms HigherCorrelations.pairFourierPeak_approximation
+#print axioms HigherCorrelations.pairFourierTest_bounds
+#print axioms HigherCorrelations.pairFourierPeak_power
+#print axioms HigherCorrelations.pairFourier_integrated_error
+#print axioms HigherCorrelations.pairFourier_named_error_budget
+#print axioms HigherCorrelations.pairFourier_asymptotic
+#print axioms HigherCorrelations.pairFourier_tendsto

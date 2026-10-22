@@ -83,17 +83,22 @@ class LeanReproductionTests(unittest.TestCase):
                             ('--pair-zero-only', 'pair-zero-comparator'),
                             ('--pair-zero-bounds-only', 'pair-zero-bounds-comparator'),
                             ('--pair-zero-comparison-only', 'pair-zero-comparison-comparator'),
-                            ('--pair-asymptotic-only', 'pair-asymptotic-comparator')]:
+                            ('--pair-asymptotic-only', 'pair-asymptotic-comparator'),
+                            ('--pair-fourier-only', 'pair-fourier-comparator')]:
             with self.subTest(flag=flag):
                 code, calls, report, checked = self.run_workflow(['--reuse-dependencies', flag])
                 self.assertEqual(code, 0)
                 self.assertEqual(checked, 1)
                 self.assertIn(suite, calls)
-                if flag == '--pair-asymptotic-only':
+                if flag == '--pair-fourier-only':
+                    self.assertNotIn('pair-asymptotic-comparator', calls)
+                else:
+                    self.assertNotIn('pair-fourier-comparator', calls)
+                if flag in ['--pair-asymptotic-only', '--pair-fourier-only']:
                     self.assertNotIn('pair-zero-comparison-comparator', calls)
                 self.assertNotIn('resolve', calls)
                 self.assertNotIn('upstream-comparator', calls)
-                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only']:
+                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only']:
                     self.assertNotIn('pair-zero-bounds-comparator', calls)
                     self.assertNotIn('pair-zero-comparator', calls)
                     self.assertNotIn('zeta23-counting-comparator', calls)

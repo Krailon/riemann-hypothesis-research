@@ -16,11 +16,18 @@ from check_triple_dependencies import closure, flat_section, subsection
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / 'research/lean-analytic-coverage.json'
 ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
-         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001', 'PAIR-TRUNC-001', 'PAIR-COMPARE-001', 'PAIR-ASYMPTOTIC-001']
+         'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001', 'PAIR-TRUNC-001', 'PAIR-COMPARE-001', 'PAIR-ASYMPTOTIC-001', 'PAIR-TRANSLATION-001']
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
-COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001'}
+COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
 PARTIAL = {
+    'PAIR-TRANSLATION-001': (
+        ['pairComplexFourier_integrable', 'pairComplexFourier_real', 'pairComplexFourier_argument',
+         'pairFourierStatistic_identity', 'pairFrequencyTerm_horizontal', 'pairFrequencyTerm_index_diagonal',
+         'pairWindow_fiber_card', 'pairFrequencyTerm_equal_zero_diagonal', 'pairFrequencyTerm_reflection',
+         'pairScale_positive', 'pairScale_normalization', 'pairScale_argument', 'pairScale_phase',
+         'pairScale_support', 'pairScale_power', 'pairScale_correlation', 'pairScale_jacobian',
+         'pairScale_integrated'], []),
     'PAIR-ASYMPTOTIC-001': (
         ['pairNormalized_decomposition', 'pairNormalized_errors', 'pairNormalized_comparison_scales',
          'pairNormalized_base_bound', 'pairNormalized_power', 'pairNormalized_nonnegative_frequency',
@@ -545,9 +552,27 @@ def derive():
             'changed normalized pair asymptotic verification scope')
     components.extend(pair_asymptotic['components'])
     names.extend(c['declaration'] for c in pair_asymptotic['components'])
+    pair_fourier = json.loads(read('research/lean-pair-fourier-inventory.json'))
+    found = []
+    for module in pair_fourier['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished pair Fourier passage solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in pair_fourier['components']],
+            'pair Fourier passage inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/pair-fourier.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in pair_fourier['components'] if c['comparator_checked']],
+            'pair Fourier passage Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed pair Fourier passage verification scope')
+    components.extend(pair_fourier['components'])
+    names.extend(c['declaration'] for c in pair_fourier['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -582,7 +607,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The normalized pair asymptotic and finite positivity/symmetry are checked. Continue the analytic dependency graph toward test-function and triple statements; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
+        next_step='The exact pair Fourier translation and compactly supported C1 test-function asymptotic and limit are checked. Continue toward triple analytic statements; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
 
 
 def validate(record):
@@ -612,6 +637,14 @@ class CoverageTests(unittest.TestCase):
         self.assertIn('HigherCorrelations.pairZeroComparison_uniform', comparison['components'])
         self.assertTrue(any('PREPRINT' in gap and 'Korobov-Vinogradov' in gap
                             for gap in comparison['remaining_obligations']))
+
+    def test_pair_translation_complete(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-TRANSLATION-001')
+        self.assertTrue(node['whole_claim_formalized'])
+        self.assertEqual(node['remaining_obligations'], [])
+        for name in ['pairComplexFourier_argument', 'pairFourierStatistic_identity',
+                     'pairFrequencyTerm_equal_zero_diagonal', 'pairScale_integrated']:
+            self.assertIn('HigherCorrelations.' + name, node['components'])
 
     def test_normalized_asymptotic_effectivity_and_positivity(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-ASYMPTOTIC-001')

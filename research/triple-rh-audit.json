@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "0be3c0a16447bc487dd7b67d6f7c5e21f50cf4eca5708ddf9134802ec60ce860",
+    "research/theorem-ledger.yaml": "4db57035a415070a4187b230e45a64b47902ff0c28544f90fe986a1675dfb879",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "e35d5ec8fcdc48f2e0fdb090d73d6c8d9eefe03cb64977a69415c2ad91d077cc"
+    "research/pair-rh-audit.json": "792332fbc37d8afcdda47987081eed4a8c31fcd9d0709be619bfe5b30e69e949"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4552,5 +4552,15 @@
     ],
     "report": "research/lean-pair-asymptotic.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records the normalized pair asymptotic on the closed frequency interval, finite positivity and symmetry, three named normalized errors with four scales, and origin/endpoints. Total constants are existential through the pinned PREPRINT comparison. Historical effective constants and the classical KV route remain separate; no historical claim status or pair/triple RH-audit scope is expanded."
+  },
+  "ledger_pair_fourier_review": {
+    "reviewed_on": "2026-10-22",
+    "previous_ledger_sha256": "0be3c0a16447bc487dd7b67d6f7c5e21f50cf4eca5708ddf9134802ec60ce860",
+    "added_claim_ids": [
+      "PAIR-TRANSLATION-FORMAL-001",
+      "PAIR-FOURIER-FORMAL-001"
+    ],
+    "report": "research/lean-pair-fourier.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. Separate formalized entries record the exact pair Fourier identity, actual multiplicity diagonals, reflection and scale translation, followed by the compactly supported C1 test-function error budget and fixed-test limit. Exact translation uses no strip input; the asymptotic inherits the pinned PREPRINT comparison with existential constants. Historical claim statuses and pair/triple RH-audit scopes are unchanged; the signed triple error remains open."
   }
 }

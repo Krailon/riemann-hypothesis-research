@@ -98,6 +98,10 @@ The coverage map records complete finite positivity/symmetry and leaves the
 historical `PAIR-ASYMPTOTIC-001` partial because of effectivity and its classical
 KV dependency route. Historical ledger statuses and RH-audit scopes are preserved.
 The written theorem's effective constants, earlier explicit norm-tail constant,
-further test-function and triple analytic statements, and the signed complex-
+triple analytic statements, and the signed complex-
 argument triple o(1) error remain separate obligations. This theorem supplies
 no new ordinate-only triple statistic or critical-line proportion.
+
+The subsequent [Fourier passage](lean-pair-fourier.md) checks exact translation,
+the integrated named error budget and the fixed-test limit for complex C¹ tests
+supported in [-1,1].

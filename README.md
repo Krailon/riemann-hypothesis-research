@@ -35,6 +35,9 @@ handled separately. See the [comparison record](research/lean-pair-zero-comparis
 The normalized pair asymptotic is now formalized on T≥3, |alpha|≤1, including
 reality, nonnegativity, evenness and the origin/endpoints, with existential
 constants. See the [normalized theorem record](research/lean-pair-asymptotic.md).
+The exact pair Fourier translation and compactly supported C¹ test-function
+asymptotic and limit are also formalized, retaining complex zero arguments and
+separate integrated errors. See the [Fourier passage record](research/lean-pair-fourier.md).
 The historical effective constants and classical KV proof route remain separate.
 
 ## Zeta23 inputs imported
@@ -174,7 +177,9 @@ The **full explicit-formula mean square** now combines these inputs with all
 four remainders, retaining separate errors O(T log(T)/X²) and O(T sqrt(log T)),
 the sharp prime–archimedean bound and exact zero-series normalization.
 Constants remain existential. See the [RHS mean-square record](research/lean-pair-rhs-mean.md).
-Next: assemble the normalized pair-correlation asymptotic.
+The normalized pair asymptotic and its Fourier test-function passage are now
+checked. The next analytic frontier is the triple theorem; historical effectivity
+and the signed complex-argument triple error remain separate.
 
 ## Reproduce the pair baseline
 

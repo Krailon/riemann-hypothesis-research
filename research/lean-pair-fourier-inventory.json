@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "PairFourierDefinitions",
+    "PairFourierIdentity",
+    "PairFourierBookkeeping",
+    "PairFourierScaling",
+    "PairFourierPeak",
+    "PairFourierAsymptotic"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairComplexFourier_integrable",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairComplexFourier_real",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairComplexFourier_zero_argument",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairComplexFourier_argument",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFrequencyTerm_sum",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFrequencyTerm_continuous",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairNormalizedCorrelation_continuous",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierStatistic_integrable",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierStatistic_identity",
+      "source": "lean/HigherCorrelations/PairFourierIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFrequencyTerm_horizontal",
+      "source": "lean/HigherCorrelations/PairFourierBookkeeping.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFrequencyTerm_diagonal",
+      "source": "lean/HigherCorrelations/PairFourierBookkeeping.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFrequencyTerm_index_diagonal",
+      "source": "lean/HigherCorrelations/PairFourierBookkeeping.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairWindow_fiber_card",
+      "source": "lean/HigherCorrelations/PairFourierBookkeeping.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFrequencyTerm_equal_zero_diagonal",
+      "source": "lean/HigherCorrelations/PairFourierBookkeeping.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFrequencyTerm_reflection",
+      "source": "lean/HigherCorrelations/PairFourierBookkeeping.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_positive",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_normalization",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_argument",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_phase",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_support",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_power",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_correlation",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_jacobian",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairScale_integrated",
+      "source": "lean/HigherCorrelations/PairFourierScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierPeak_nonneg",
+      "source": "lean/HigherCorrelations/PairFourierPeak.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierPeak_integrable",
+      "source": "lean/HigherCorrelations/PairFourierPeak.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierPeak_mass",
+      "source": "lean/HigherCorrelations/PairFourierPeak.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierPeak_moment_integrable",
+      "source": "lean/HigherCorrelations/PairFourierPeak.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierPeak_moment",
+      "source": "lean/HigherCorrelations/PairFourierPeak.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierPeak_approximation",
+      "source": "lean/HigherCorrelations/PairFourierPeak.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierTest_bounds",
+      "source": "lean/HigherCorrelations/PairFourierPeak.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourierPeak_power",
+      "source": "lean/HigherCorrelations/PairFourierAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourier_integrated_error",
+      "source": "lean/HigherCorrelations/PairFourierAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourier_named_error_budget",
+      "source": "lean/HigherCorrelations/PairFourierAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourier_asymptotic",
+      "source": "lean/HigherCorrelations/PairFourierAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairFourier_tendsto",
+      "source": "lean/HigherCorrelations/PairFourierAsymptotic.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}
