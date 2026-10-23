@@ -1178,10 +1178,21 @@
         "HigherCorrelations.tripleMaster_sum_integral",
         "HigherCorrelations.tripleMaster_independent_cutoff_limit",
         "HigherCorrelations.tripleMaster_height_cutoff_limit",
-        "HigherCorrelations.tripleMaster_minimal_parameters"
+        "HigherCorrelations.tripleMaster_minimal_parameters",
+        "HigherCorrelations.tripleMaster_product_eq",
+        "HigherCorrelations.tripleMaster_phase_cancel",
+        "HigherCorrelations.tripleMasterTerm_eq_kernel",
+        "HigherCorrelations.tripleMasterKernel_integrable",
+        "HigherCorrelations.tripleMasterProduct_integrable",
+        "HigherCorrelations.tripleMasterKernel_normalization",
+        "HigherCorrelations.tripleMaster_kernel_norm_summable",
+        "HigherCorrelations.tripleMaster_kernel_identity",
+        "HigherCorrelations.tripleMasterObservable_independent_cutoff",
+        "HigherCorrelations.tripleMasterObservable_height_cutoff",
+        "HigherCorrelations.tripleMaster_kernel_minimal"
       ],
       "remaining_obligations": [
-        "The uniform integral-norm bound and interchange are checked for continuous real smoothing supported in [1,2]. Identify the full zero-series product, cancel center phases, and establish the explicit K_T identity and its five index-pattern subseries.",
+        "The uniform integral-norm bound, interchange, full zero-series product, center-phase cancellation and explicit K_T identity are checked for continuous real smoothing supported in [1,2]. Formalize its five index-pattern subseries.",
         "Formalize the explicit-formula expansion, prime-side sums and normalization."
       ]
     },
@@ -6766,7 +6777,87 @@
       "declaration": "HigherCorrelations.tripleMaster_minimal_parameters",
       "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_finite_product",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_product_eq",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterDenominator_ne_zero",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_phase_cancel",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_eq_kernel",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_normalization",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterProduct_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_integral_eq_kernel",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_kernel_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_kernel_identity",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterObservable_independent_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterObservable_height_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_kernel_minimal",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_zero_weight",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_neg_weight",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The triple master integral-norm bound, interchange and independent cutoff limits are checked. Next identify the full zero-series product and cancel center phases to obtain the explicit K_T identity; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
+  "next_step": "The triple master integral-norm bound, interchange, exact K_T identity and independent cutoff limits are checked. Next specialize the five index-pattern subseries; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
 }

@@ -4322,3 +4322,53 @@ claims:
       constants_scope: "The factor (8/3)^3 and all normalizations are exact. C0 is the existing existential absolute zero-kernel constant, with no effectivity upgrade."
       endpoint_audit: "Full complex zeros, both ordinate signs and all ordered occurrences remain distinct, including repeated occurrences and distinct zeros at equal ordinates. The third slot is conjugated and has parameter XY. Closed support and inclusive absolute-height cutoffs retain their full endpoint conventions."
       baseline_audit_coverage: "Discharges the uniform master-integrand integral-norm bound and sum-integral interchange in TRIPLE-MASTER-001. Its full zero-series product identification, center-phase cancellation, explicit K_T identity, five index-pattern subseries, 27-word explicit-formula expansion, prime resonance and Fourier-decay clauses remain separate formalization obligations. Historical claim statuses and pair/triple audit scopes are unchanged; the signed complex-argument triple error remains open."
+
+  - id: MASTER-IDENTITY-FORMAL-001
+    title: Full zero-series product and exact smoothed triple kernel identity
+    kind: theorem
+    statement: |
+      Let omega be any continuous real function supported in [1,2], T>=3,
+      X,Y>=1. Sum over all ordered actual ZeroOccurrence triples v, retaining
+      analytic multiplicity, both ordinate signs and every coincidence.
+      Write D_i(t)=1+(t-gamma_i+i(beta_i-1/2))^2 and
+      K_T(v)=(1/T) integral_R omega(t/T)/(D_v0 D_v1 conjugate(D_v2)) dt.
+      Define C_3,T(X,Y)=integral_R (omega(t/T)/T) S(X,t) S(Y,t)
+      conjugate(S(XY,t)) dt, where S is the full pairZeroSeries.
+      Then C_3,T(X,Y)=8 sum_v A_v(X,Y) K_T(v), where
+      A_v=exp(log(X)*(rho_v0+conjugate(rho_v2)-1)) *
+          exp(log(Y)*(rho_v1+conjugate(rho_v2)-1)).
+      The coefficient-times-kernel series is absolutely convergent. Every
+      D_i is nonzero, the kernel integrand and full-product integrand are
+      integrable, and K_T has the displayed outside factor 1/T literally.
+      Finite rectangular products converge pointwise to the full zero-series
+      product; its weighted expansion equals the absolutely convergent triple
+      series. The center phases cancel exactly by log(XY)=log(X)+log(Y),
+      and the three numerator factors 2 give the factor 8. With omega,T,X,Y
+      fixed, integrated finite products over three independent occurrence
+      cutoffs converge to C_3,T, also for inclusive |gamma|<=U_r cutoffs in
+      the product filter. T=3, X=Y=1 and zero/negated weights are included.
+      No positivity, normalization, simplicity or critical-line assumption
+      is imposed. K_T is the smoothed absolute-center kernel, not the
+      unweighted translation-invariant integral profile.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-INTEGRATION-FORMAL-001, PAIR-SERIES-CONVERGENCE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleMasterIdentity.lean
+      label: HigherCorrelations.tripleMaster_kernel_identity
+      companion_declarations: "tripleMaster_finite_product, tripleMaster_product_eq, tripleMasterDenominator_ne_zero, tripleMaster_phase_cancel, tripleMasterTerm_eq_kernel, tripleMasterKernel_normalization, tripleMasterKernel_integrable, tripleMasterProduct_integrable, tripleMaster_integral_eq_kernel, tripleMaster_kernel_norm_summable, tripleMasterObservable_independent_cutoff, tripleMasterObservable_height_cutoff, tripleMaster_kernel_minimal, tripleMasterKernel_zero_weight, tripleMasterKernel_neg_weight"
+      bookkeeping: research/lean-triple-master.md
+      inventory: research/lean-triple-master-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: e5cfd60691f3115de6821f608ed882e4335ace4d65c699b56b94ef90b236f05d
+    limit_order: "Fix omega,T,X,Y first. Identify finite products before passing to absolutely convergent series; then use the proved sum-integral interchange. Remove the three occurrence or inclusive height cutoffs independently in the product filter. No T-asymptotic or varying-weight limit is asserted."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "16 new public declarations extend the triple-master Comparator inventory to 39. Definition-only statement challenges, unfinished-bound and unfinished-identity negative controls, combined project build, complete axiom report and analytic/pair/triple/harness regressions. Only propext, Quot.sound and Classical.choice are permitted; external kernel disabled. Earlier Comparator suites are not rerun in focused mode."
+      imported_inputs: "Actual zero-series absolute convergence and continuity; finite product-sum algebra; uniqueness of cutoff limits; complex exponential and conjugation identities; the previously checked triple integral-norm bound and Bochner interchange. No fixed-strip PREPRINT input is used."
+      constants_scope: "Factor 8 and normalization 1/T are exact; the underlying convergence bound retains its existing existential constant without an effectivity upgrade."
+      endpoint_audit: "T=3 and X=Y=1 checked explicitly. Signed and zero weights, closed smoothing support, both ordinate signs, coincident ordinates and repeated occurrence indices are admitted. The third slot alone is conjugated; horizontal sums are retained."
+      baseline_audit_coverage: "Discharges full zero-series product identification, center-phase cancellation and the exact K_T identity in TRIPLE-MASTER-001. Five index-pattern subseries, 27-word expansion, prime resonance and Fourier decay remain separate formalization obligations. Historical statuses and audit scopes remain unchanged; the signed complex-argument triple error remains open."

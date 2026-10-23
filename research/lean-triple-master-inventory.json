@@ -3,7 +3,8 @@
   "modules": [
     "TripleMasterDefinitions",
     "TripleMasterBounds",
-    "TripleMasterIntegration"
+    "TripleMasterIntegration",
+    "TripleMasterIdentity"
   ],
   "components": [
     {
@@ -119,6 +120,86 @@
     {
       "declaration": "HigherCorrelations.tripleMaster_minimal_parameters",
       "source": "lean/HigherCorrelations/TripleMasterIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_finite_product",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_product_eq",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterDenominator_ne_zero",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_phase_cancel",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_eq_kernel",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_normalization",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterProduct_integrable",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_integral_eq_kernel",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_kernel_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_kernel_identity",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterObservable_independent_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterObservable_height_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_kernel_minimal",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_zero_weight",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_neg_weight",
+      "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
       "comparator_checked": true
     }
   ],

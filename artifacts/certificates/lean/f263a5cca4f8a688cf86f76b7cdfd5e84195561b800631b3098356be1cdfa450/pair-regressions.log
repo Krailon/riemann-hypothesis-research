@@ -1,0 +1,45 @@
+...................................................................F.FE
+======================================================================
+ERROR: test_review_structure_and_freshness (check_pair_rh_audit.PairRHAuditStructure.test_review_structure_and_freshness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/god/riemann-hypothesis-research/scripts/check_pair_rh_audit.py", line 210, in test_review_structure_and_freshness
+    self.assertGreater(validate(self.record), 100)
+                       ~~~~~~~~^^^^^^^^^^^^^
+  File "/home/god/riemann-hypothesis-research/scripts/check_pair_rh_audit.py", line 84, in validate
+    require(digest(ledger) == record['ledger_sha256'], 'stale ledger hash')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/god/riemann-hypothesis-research/scripts/check_pair_rh_audit.py", line 27, in require
+    raise ValueError(message)
+ValueError: stale ledger hash
+
+======================================================================
+FAIL: test_reject_missing_imported_evidence (check_pair_rh_audit.PairRHAuditStructure.test_reject_missing_imported_evidence)
+----------------------------------------------------------------------
+ValueError: stale ledger hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/god/riemann-hypothesis-research/scripts/check_pair_rh_audit.py", line 269, in test_reject_missing_imported_evidence
+    with self.assertRaisesRegex(ValueError, 'evidence coverage'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "evidence coverage" does not match "stale ledger hash"
+
+======================================================================
+FAIL: test_reject_unresolved_and_unisolated_checks (check_pair_rh_audit.PairRHAuditStructure.test_reject_unresolved_and_unisolated_checks)
+----------------------------------------------------------------------
+ValueError: stale ledger hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/god/riemann-hypothesis-research/scripts/check_pair_rh_audit.py", line 242, in test_reject_unresolved_and_unisolated_checks
+    with self.assertRaisesRegex(ValueError, 'unresolved local'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unresolved local" does not match "stale ledger hash"
+
+----------------------------------------------------------------------
+Ran 71 tests in 1.905s
+
+FAILED (failures=2, errors=1)

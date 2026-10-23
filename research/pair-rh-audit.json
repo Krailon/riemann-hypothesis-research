@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "2e5b489f166f42c032a45271cbce47d6fb652aaf8fca6971541b61118859f8dd",
+  "ledger_sha256": "a5f2899f89f62361414b1c9db2ea2760855ca553dbf6f31d765459c13a0f374e",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",

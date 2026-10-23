@@ -40,8 +40,10 @@ asymptotic and limit are also formalized, retaining complex zero arguments and
 separate integrated errors. See the [Fourier passage record](research/lean-pair-fourier.md).
 The historical effective constants and classical KV proof route remain separate.
 The triple master sum now has a formalized uniform bound on the sum of integral
-norms, justifying sum–integral interchange and independent cutoff limits. See
-the [triple interchange record](research/lean-triple-master.md).
+norms, justifying sum–integral interchange and independent cutoff limits. The
+full-series product and center-phase cancellation now give the exact smoothed
+K_T identity, with absolute convergence and full horizontal dependence. See
+the [triple master record](research/lean-triple-master.md).
 
 ## Zeta23 inputs imported
 

@@ -1,8 +1,8 @@
-# Triple master integral-norm bound and interchange
+# Triple master interchange and exact kernel identity
 
 Task: proof and formal verification. Assumptions: `UNCONDITIONAL`.
-Ledger: `MASTER-INTEGRATION-FORMAL-001`.
-This milestone discharges the integral-norm summability obligation in
+Ledger: `MASTER-INTEGRATION-FORMAL-001` and `MASTER-IDENTITY-FORMAL-001`.
+These milestones discharge integral-norm summability and the exact kernel identity in
 `TRIPLE-MASTER-001`. Its whole statement remains partially formalized.
 
 ## Checked statement
@@ -42,6 +42,47 @@ provides the same conclusion directly.
 
 The evaluated-integral series is absolutely convergent as a consequence of the
 stronger sum of integral norms. Pointwise absolute summability is also checked.
+
+## Exact kernel identity
+
+`tripleMasterObservable` is the integral of the full-series product
+omega(t/T)/T * S(X,t) S(Y,t) conjugate(S(XY,t)). Write
+
+\[
+ D_i(t)=1+(t-\gamma_i+i(\beta_i-\tfrac12))^2,\qquad
+ K_T(v)=\frac1T\int_{\mathbb R}
+ \frac{\omega(t/T)}{D_{v_0}(t)D_{v_1}(t)\overline{D_{v_2}(t)}}\,dt.
+\]
+
+`tripleMaster_kernel_identity` proves
+
+\[
+ C_{3,T}(X,Y)=8\sum_v
+ X^{\rho_{v_0}+\overline{\rho_{v_2}}-1}
+ Y^{\rho_{v_1}+\overline{\rho_{v_2}}-1}K_T(v).
+\]
+
+Positive-real powers mean exp(log(base) * exponent). `tripleMasterKernel`
+is the smoothed absolute-center kernel, not the unweighted `integralProfile`.
+`tripleMasterKernel_normalization` moves its exact factor 1/T outside the
+integral. The coefficient retains horizontal **sums** delta_0+delta_2 and
+delta_1+delta_2 and ordinate differences gamma_0-gamma_2 and gamma_1-gamma_2.
+
+The proof first factors finite rectangular sums, then uses absolute convergence
+and uniqueness of the cutoff limit to identify the full-series product.
+`tripleMaster_phase_cancel` cancels the t-dependent exponents using
+log(XY)=log(X)+log(Y). Each term is eight times its constant coefficient times
+the kernel integrand. Integral linearity and the previously proved interchange
+then give the displayed identity. `tripleMaster_kernel_norm_summable` proves
+absolute convergence of the explicit coefficient-times-kernel series.
+
+The kernel and full-product integrands are separately proved integrable. Kernel
+integrability also follows from the X=Y=1 term identity, with its nonzero factor
+8. The denominator is nonzero throughout the full critical strip, including
+coincident ordinates and repeated occurrence indices. No distinctness condition
+or RH assumption enters any statement. Named observable cutoff theorems now
+identify the limits of the finite products with C_{3,T}. T=3, X=Y=1 and zero/
+negated weights have explicit checked specializations.
 
 ## Proof dependencies and domination
 
@@ -88,9 +129,9 @@ claimed.
 ## Verification and remaining boundary
 
 Definition-only interface: `TripleMasterDefinitions`. Proofs:
-`TripleMasterBounds` and `TripleMasterIntegration`.
-All **23 public declarations** have independent Comparator statements, inventory
-entries and axiom reports. The unfinished uniform integral-norm bound must be
+`TripleMasterBounds`, `TripleMasterIntegration` and `TripleMasterIdentity`.
+All **39 public declarations** have independent Comparator statements, inventory
+entries and axiom reports. The unfinished uniform integral-norm bound and headline kernel identity must be
 rejected for `sorryAx`. Only `propext`, `Quot.sound` and `Classical.choice` are
 permitted; the external kernel is disabled.
 
@@ -104,9 +145,8 @@ regressions. Earlier Comparator suites are not rerun. The ledger links the
 successful content-addressed evidence.
 
 The proof uses the existing unconditional counting/convergence infrastructure,
-not the imported PREPRINT fixed strip. The next step is to identify the summed
-integrand with the product of full zero series and cancel its center phases to
-obtain the manuscript's explicit K_T identity. The five-pattern decomposition,
+not the imported PREPRINT fixed strip. The next step is the five-pattern decomposition of the now identified
+absolutely convergent kernel series. The five-pattern decomposition,
 27-word expansion, prime resonance and Fourier-decay clauses remain separate
 formalization tasks. Historical claim statuses and pair/triple audit scopes are
 preserved; the open signed complex-argument triple error is unaffected.

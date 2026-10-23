@@ -121,5 +121,94 @@ theorem tripleMaster_minimal_parameters (ω : ℝ → ℝ) (hω : Continuous ω)
     (∑' v : MasterTriple, ∫ t : ℝ, tripleMasterTerm ω 3 1 1 v t) =
       ∫ t : ℝ, ∑' v : MasterTriple, tripleMasterTerm ω 3 1 1 v t := by sorry
 
+theorem tripleMaster_finite_product (ω : ℝ → ℝ) (T X Y t : ℝ)
+    (S : Fin 3 → Finset ZeroOccurrence) :
+    (∑ v ∈ tripleDomain S, tripleMasterTerm ω T X Y v t) =
+      (ω (t/T)/T : ℝ)*(∑ i ∈ S 0, pairZeroTerm i (X,t))*
+        (∑ j ∈ S 1, pairZeroTerm j (Y,t))*
+        star (∑ k ∈ S 2, pairZeroTerm k (X*Y,t)) := by sorry
+
+theorem tripleMaster_product_eq (ω : ℝ → ℝ)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (t : ℝ) :
+    (∑' v : MasterTriple, tripleMasterTerm ω T X Y v t) =
+      tripleMasterProduct ω T X Y t := by sorry
+
+theorem tripleMasterDenominator_ne_zero (i : ZeroOccurrence) (t : ℝ) :
+    tripleMasterDenominator i t ≠ 0 := by sorry
+
+theorem tripleMaster_phase_cancel (X Y t : ℝ) (hX : 0<X) (hY : 0<Y)
+    (v : MasterTriple) :
+    Complex.exp ((Real.log X : ℂ)*((occurrenceDisplacement (v 0):ℂ)+
+      Complex.I*(occurrenceOrdinate (v 0)-t))) *
+    Complex.exp ((Real.log Y : ℂ)*((occurrenceDisplacement (v 1):ℂ)+
+      Complex.I*(occurrenceOrdinate (v 1)-t))) *
+    star (Complex.exp ((Real.log (X*Y) : ℂ)*((occurrenceDisplacement (v 2):ℂ)+
+      Complex.I*(occurrenceOrdinate (v 2)-t)))) = tripleMasterCoefficient X Y v := by sorry
+
+theorem tripleMasterTerm_eq_kernel (ω : ℝ → ℝ) (T X Y : ℝ)
+    (hX : 0<X) (hY : 0<Y) (v : MasterTriple) (t : ℝ) :
+    tripleMasterTerm ω T X Y v t =
+      (8*tripleMasterCoefficient X Y v)*tripleMasterKernelIntegrand ω T v t := by sorry
+
+theorem tripleMasterKernel_normalization (ω : ℝ → ℝ) (T : ℝ) (v : MasterTriple) :
+    tripleMasterKernel ω T v = (1/(T:ℂ)) * ∫ t : ℝ,
+      (ω (t/T) : ℂ) / (tripleMasterDenominator (v 0) t *
+        tripleMasterDenominator (v 1) t * star (tripleMasterDenominator (v 2) t)) := by sorry
+
+theorem tripleMasterKernel_integrable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 0<T)
+    (v : MasterTriple) : Integrable (tripleMasterKernelIntegrand ω T v) := by sorry
+
+theorem tripleMasterProduct_integrable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 0<T) (hX : 1≤X) (hY : 1≤Y) :
+    Integrable (tripleMasterProduct ω T X Y) := by sorry
+
+theorem tripleMaster_integral_eq_kernel (ω : ℝ → ℝ) (T X Y : ℝ)
+    (hX : 0<X) (hY : 0<Y) (v : MasterTriple) :
+    (∫ t : ℝ, tripleMasterTerm ω T X Y v t) =
+      8*(tripleMasterCoefficient X Y v * tripleMasterKernel ω T v) := by sorry
+
+theorem tripleMaster_kernel_norm_summable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun v : MasterTriple =>
+      ‖tripleMasterCoefficient X Y v * tripleMasterKernel ω T v‖) := by sorry
+
+theorem tripleMaster_kernel_identity (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y = 8 * ∑' v : MasterTriple,
+      tripleMasterCoefficient X Y v * tripleMasterKernel ω T v := by sorry
+
+theorem tripleMasterObservable_independent_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Tendsto (fun S : Fin 3 → Finset ZeroOccurrence =>
+      ∫ t : ℝ, (ω (t/T)/T : ℝ)*(∑ i ∈ S 0, pairZeroTerm i (X,t))*
+        (∑ j ∈ S 1, pairZeroTerm j (Y,t))*
+        star (∑ k ∈ S 2, pairZeroTerm k (X*Y,t))) atTop
+      (𝓝 (tripleMasterObservable ω T X Y)) := by sorry
+
+theorem tripleMasterObservable_height_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Tendsto (fun U : Fin 3 → ℝ =>
+      ∫ t : ℝ, (ω (t/T)/T : ℝ)*(∑ i ∈ occurrenceCutoff (U 0), pairZeroTerm i (X,t))*
+        (∑ j ∈ occurrenceCutoff (U 1), pairZeroTerm j (Y,t))*
+        star (∑ k ∈ occurrenceCutoff (U 2), pairZeroTerm k (X*Y,t))) atTop
+      (𝓝 (tripleMasterObservable ω T X Y)) := by sorry
+
+theorem tripleMaster_kernel_minimal (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) :
+    tripleMasterObservable ω 3 1 1 = 8 * ∑' v : MasterTriple, tripleMasterKernel ω 3 v := by sorry
+
+theorem tripleMasterKernel_zero_weight (T : ℝ) (v : MasterTriple) :
+    tripleMasterKernel (fun _ => 0) T v = 0 := by sorry
+
+theorem tripleMasterKernel_neg_weight (ω : ℝ → ℝ) (T : ℝ) (v : MasterTriple) :
+    tripleMasterKernel (fun u => -ω u) T v = -tripleMasterKernel ω T v := by sorry
+
 end
 end HigherCorrelations

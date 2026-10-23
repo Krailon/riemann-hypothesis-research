@@ -1,6 +1,6 @@
 {
   "challenge_module": "VerificationChallenges.TripleMaster",
-  "solution_module": "HigherCorrelations.TripleMasterIntegration",
+  "solution_module": "HigherCorrelations.TripleMasterIdentity",
   "theorem_names": [
     "HigherCorrelations.tripleMasterTerm_continuous",
     "HigherCorrelations.tripleMaster_support",
@@ -24,7 +24,23 @@
     "HigherCorrelations.tripleMaster_height_cutoff_limit",
     "HigherCorrelations.tripleMaster_zero_weight",
     "HigherCorrelations.tripleMaster_neg_weight",
-    "HigherCorrelations.tripleMaster_minimal_parameters"
+    "HigherCorrelations.tripleMaster_minimal_parameters",
+    "HigherCorrelations.tripleMaster_finite_product",
+    "HigherCorrelations.tripleMaster_product_eq",
+    "HigherCorrelations.tripleMasterDenominator_ne_zero",
+    "HigherCorrelations.tripleMaster_phase_cancel",
+    "HigherCorrelations.tripleMasterTerm_eq_kernel",
+    "HigherCorrelations.tripleMasterKernel_normalization",
+    "HigherCorrelations.tripleMasterKernel_integrable",
+    "HigherCorrelations.tripleMasterProduct_integrable",
+    "HigherCorrelations.tripleMaster_integral_eq_kernel",
+    "HigherCorrelations.tripleMaster_kernel_norm_summable",
+    "HigherCorrelations.tripleMaster_kernel_identity",
+    "HigherCorrelations.tripleMasterObservable_independent_cutoff",
+    "HigherCorrelations.tripleMasterObservable_height_cutoff",
+    "HigherCorrelations.tripleMaster_kernel_minimal",
+    "HigherCorrelations.tripleMasterKernel_zero_weight",
+    "HigherCorrelations.tripleMasterKernel_neg_weight"
   ],
   "definition_names": [],
   "permitted_axioms": [

@@ -13,5 +13,11 @@ theorem tripleMaster_uniform_integralNorm :
       Summable (fun v : MasterTriple => ∫ t : ℝ, ‖tripleMasterTerm ω T X Y v t‖) ∧
       (∑' v : MasterTriple, ∫ t : ℝ, ‖tripleMasterTerm ω T X Y v t‖) ≤ tripleMasterL1Bound C₀ ω T X Y := by sorry
 
+theorem tripleMaster_kernel_identity (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y = 8 * ∑' v : MasterTriple,
+      tripleMasterCoefficient X Y v * tripleMasterKernel ω T v := by sorry
+
 end
 end HigherCorrelations

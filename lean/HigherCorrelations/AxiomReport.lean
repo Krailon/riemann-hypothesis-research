@@ -1,4 +1,4 @@
-import HigherCorrelations.TripleMasterIntegration
+import HigherCorrelations.TripleMasterIdentity
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
@@ -1110,3 +1110,20 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleMaster_zero_weight
 #print axioms HigherCorrelations.tripleMaster_neg_weight
 #print axioms HigherCorrelations.tripleMaster_minimal_parameters
+
+#print axioms HigherCorrelations.tripleMaster_finite_product
+#print axioms HigherCorrelations.tripleMaster_product_eq
+#print axioms HigherCorrelations.tripleMasterDenominator_ne_zero
+#print axioms HigherCorrelations.tripleMaster_phase_cancel
+#print axioms HigherCorrelations.tripleMasterTerm_eq_kernel
+#print axioms HigherCorrelations.tripleMasterKernel_normalization
+#print axioms HigherCorrelations.tripleMasterKernel_integrable
+#print axioms HigherCorrelations.tripleMasterProduct_integrable
+#print axioms HigherCorrelations.tripleMaster_integral_eq_kernel
+#print axioms HigherCorrelations.tripleMaster_kernel_norm_summable
+#print axioms HigherCorrelations.tripleMaster_kernel_identity
+#print axioms HigherCorrelations.tripleMasterObservable_independent_cutoff
+#print axioms HigherCorrelations.tripleMasterObservable_height_cutoff
+#print axioms HigherCorrelations.tripleMaster_kernel_minimal
+#print axioms HigherCorrelations.tripleMasterKernel_zero_weight
+#print axioms HigherCorrelations.tripleMasterKernel_neg_weight
