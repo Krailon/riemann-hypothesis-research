@@ -143,9 +143,17 @@ PARTIAL = {
          'tripleMasterKernel_integrable', 'tripleMasterProduct_integrable',
          'tripleMasterKernel_normalization', 'tripleMaster_kernel_norm_summable',
          'tripleMaster_kernel_identity', 'tripleMasterObservable_independent_cutoff',
-         'tripleMasterObservable_height_cutoff', 'tripleMaster_kernel_minimal'],
-        ['The uniform integral-norm bound, interchange, full zero-series product, center-phase cancellation and explicit K_T identity are checked for continuous real smoothing supported in [1,2]. Formalize its five index-pattern subseries.',
-         'Formalize the explicit-formula expansion, prime-side sums and normalization.']),
+         'tripleMasterObservable_height_cutoff', 'tripleMaster_kernel_minimal',
+         'tripleMasterPattern_allEqual', 'tripleMasterPattern_only01', 'tripleMasterPattern_only02',
+         'tripleMasterPattern_only12', 'tripleMasterPattern_allDistinct',
+         'tripleMasterPattern_norm_summable', 'tripleMasterPattern_integralNorm_summable',
+         'tripleMasterPattern_integralNorm_le', 'tripleMasterPattern_integral_identity',
+         'tripleMaster_pattern_decomposition', 'tripleMaster_rows_norm_summable',
+         'tripleMaster_five_subseries', 'tripleMasterPattern_finite_integral',
+         'tripleMasterPattern_independent_cutoff', 'tripleMasterPattern_height_cutoff',
+         'tripleMasterPattern_integral_cutoff', 'tripleMasterPattern_integral_height_cutoff',
+         'tripleMasterPattern_minimal', 'tripleMasterPattern_empty_slot'],
+        ['Formalize the explicit-formula expansion, prime-side sums and normalization.']),
     'TRIPLE-KERNEL-PROFILE-001': (
         ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
          'rationalKernel_reciprocal', 'rationalProfile_bound', 'rationalProfile_swap',
@@ -635,7 +643,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The triple master integral-norm bound, interchange, exact K_T identity and independent cutoff limits are checked. Next specialize the five index-pattern subseries; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
+        next_step='The triple master integral-norm bound, interchange, exact K_T identity, five occurrence-index subseries and independent cutoff limits are checked. Next formalize the ordered 27-term explicit-formula expansion; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
 
 
 def validate(record):
@@ -674,9 +682,12 @@ class CoverageTests(unittest.TestCase):
                      'tripleMaster_independent_cutoff_limit', 'tripleMaster_height_cutoff_limit',
                      'tripleMaster_product_eq', 'tripleMaster_phase_cancel',
                      'tripleMaster_kernel_identity', 'tripleMaster_kernel_norm_summable',
-                     'tripleMasterKernel_normalization', 'tripleMaster_kernel_minimal']:
+                     'tripleMasterKernel_normalization', 'tripleMaster_kernel_minimal',
+                     'tripleMaster_five_subseries', 'tripleMaster_rows_norm_summable',
+                     'tripleMasterPattern_integral_identity', 'tripleMasterPattern_integralNorm_le',
+                     'tripleMasterPattern_integral_height_cutoff', 'tripleMasterPattern_minimal']:
             self.assertIn('HigherCorrelations.' + name, node['components'])
-        self.assertTrue(any('five index-pattern subseries' in gap for gap in node['remaining_obligations']))
+        self.assertFalse(any('five index-pattern subseries' in gap for gap in node['remaining_obligations']))
         self.assertTrue(any('prime-side' in gap for gap in node['remaining_obligations']))
 
     def test_pair_translation_complete(self):

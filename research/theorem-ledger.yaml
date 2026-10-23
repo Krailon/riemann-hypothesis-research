@@ -4372,3 +4372,56 @@ claims:
       constants_scope: "Factor 8 and normalization 1/T are exact; the underlying convergence bound retains its existing existential constant without an effectivity upgrade."
       endpoint_audit: "T=3 and X=Y=1 checked explicitly. Signed and zero weights, closed smoothing support, both ordinate signs, coincident ordinates and repeated occurrence indices are admitted. The third slot alone is conjugated; horizontal sums are retained."
       baseline_audit_coverage: "Discharges full zero-series product identification, center-phase cancellation and the exact K_T identity in TRIPLE-MASTER-001. Five index-pattern subseries, 27-word expansion, prime resonance and Fourier decay remain separate formalization obligations. Historical statuses and audit scopes remain unchanged; the signed complex-argument triple error remains open."
+
+  - id: MASTER-PATTERNS-FORMAL-001
+    title: Five occurrence-index subseries of the smoothed triple kernel identity
+    kind: theorem
+    statement: |
+      Under continuous real omega supported in [1,2], T>=3 and X,Y>=1, let
+      B_v=8 A_v(X,Y) K_T(v), with the coefficient and smoothed kernel of
+      MASTER-IDENTITY-FORMAL-001. Partition all ordered ZeroOccurrence triples
+      by equality of occurrence indices, retaining analytic multiplicity.
+      Then C_3,T(X,Y)=sum_i B_(i,i,i) + sum_(i!=j) B_(i,i,j)
+        + sum_(i!=j) B_(i,j,i) + sum_(i!=j) B_(i,j,j)
+        + sum_(pairwise distinct i,j,k) B_(i,j,k).
+      Each row is absolutely convergent. Explicit bijections identify the
+      classifier subtypes with these single-index, unequal ordered-pair and
+      pairwise-distinct-triple summation domains. The partial diagonals keep
+      their distinct coefficients and third-slot conjugations.
+      For every pattern p, the restricted sum of integral norms of the actual
+      triple zero term G_v is summable and no larger than its full sum.
+      Thus it inherits the previous uniform bound without new constants.
+      Each restricted zero-term sum is pointwise absolutely convergent, and
+      the restricted B-series equals integral_R sum_(v in p) G_v(t) dt.
+      Finite restricted B-sums and integrated zero-term sums converge to the
+      corresponding row under three independent exhaustive occurrence cutoffs,
+      also under independent inclusive |gamma|<=U_r cutoffs. All three slot
+      memberships are retained on every partial diagonal. An empty finite
+      set in any slot gives zero in every row. At T=3,X=Y=1, each row is
+      exactly eight times its restricted K_T series.
+      Distinct indices may denote multiplicity copies of the same complex
+      zero; distinct complex zeros may have equal ordinates. No stronger
+      distinctness, positivity, normalization, RH or simplicity is assumed.
+      No asymptotic evaluation of individual rows is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-IDENTITY-FORMAL-001, MASTER-INTEGRATION-FORMAL-001, SUMMABILITY-LIMITS-001, SUMMABILITY-INTEGRAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleMasterPatterns.lean
+      label: HigherCorrelations.tripleMaster_five_subseries
+      companion_declarations: "tripleMasterPattern_allEqual, tripleMasterPattern_only01, tripleMasterPattern_only02, tripleMasterPattern_only12, tripleMasterPattern_allDistinct, tripleMasterKernelTerm_norm_summable, tripleMasterPattern_norm_summable, tripleMasterPattern_integralNorm_summable, tripleMasterPattern_integralNorm_le, tripleMasterPattern_integral_identity, tripleMaster_pattern_decomposition, tripleMaster_rows_norm_summable, tripleMasterPattern_pointwise_summable, tripleMasterPattern_finite_integral, tripleMasterPattern_independent_cutoff, tripleMasterPattern_height_cutoff, tripleMasterPattern_integral_cutoff, tripleMasterPattern_integral_height_cutoff, tripleMasterPattern_minimal, tripleMasterPattern_empty_slot"
+      bookkeeping: research/lean-triple-master.md
+      inventory: research/lean-triple-master-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: add3b8f848c039a9e3643fac04ee1a8343894e21e005b974223dcc4caafe60df
+    limit_order: "Fix omega,T,X,Y and the pattern before removing three finite occurrence cutoffs or inclusive height cutoffs in the product filter. Restricted integral-norm summability is inherited before applying Bochner interchange. No T-asymptotic, varying smoothing or row asymptotic is taken."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "21 new public declarations extend the triple-master Comparator inventory to 60. Definition-only challenges; separate unfinished-bound, unfinished-kernel-identity and unfinished-five-subseries controls; combined build, complete axiom report and analytic/pair/triple/harness regressions. Only propext, Quot.sound and Classical.choice permitted; external kernel disabled. Earlier Comparator suites are not rerun in focused mode."
+      imported_inputs: "Existing exact kernel identity and full absolute convergence, generic five-pattern regrouping, explicit occurrence-subtype bijections, nonnegative subseries bounds and checked Bochner interchange/cutoff interfaces. No narrower zero-free strip or fixed-strip PREPRINT is used."
+      constants_scope: "The factor 8 is retained in B. Restricted integral-norm sums are bounded by the previous full sum; its existential constant is unchanged."
+      endpoint_audit: "Occurrence equality is not ordinate or complex-value equality. All five rows are disjoint and exhaustive, all slot cutoffs survive coincidences, and any empty slot annihilates each finite row. Non-strict T>=3, X,Y>=1; explicit T=3,X=Y=1 specialization; signed/zero weights and inclusive height cutoffs admitted."
+      baseline_audit_coverage: "Discharges the five index-pattern subseries clause of TRIPLE-MASTER-001. The ordered 27-word expansion, prime-side resonance and Fourier-decay clauses remain separate. No new reflection/permutation identity or row asymptotic is asserted. Historical claim statuses and audit scopes are unchanged; the signed complex-argument triple error remains open."

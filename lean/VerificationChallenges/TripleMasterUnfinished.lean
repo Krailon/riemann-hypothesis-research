@@ -1,4 +1,4 @@
-import HigherCorrelations.TripleMasterDefinitions
+import HigherCorrelations.TripleMasterPatternDefinitions
 
 /-! Independent statement surface; intentional holes occur only in verification challenges. -/
 namespace HigherCorrelations
@@ -18,6 +18,16 @@ theorem tripleMaster_kernel_identity (ω : ℝ → ℝ) (hω : Continuous ω)
     (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
     tripleMasterObservable ω T X Y = 8 * ∑' v : MasterTriple,
       tripleMasterCoefficient X Y v * tripleMasterKernel ω T v := by sorry
+
+theorem tripleMaster_five_subseries (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y =
+      (∑' i : ZeroOccurrence, tripleMasterKernelTerm ω T X Y ![i,i,i]) +
+      (∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.1,q.val.2]) +
+      (∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.1]) +
+      (∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.2]) +
+      (∑' v : MasterDistinctTriple, tripleMasterKernelTerm ω T X Y v.val) := by sorry
 
 end
 end HigherCorrelations

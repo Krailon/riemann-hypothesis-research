@@ -4,7 +4,9 @@
     "TripleMasterDefinitions",
     "TripleMasterBounds",
     "TripleMasterIntegration",
-    "TripleMasterIdentity"
+    "TripleMasterIdentity",
+    "TripleMasterPatternDefinitions",
+    "TripleMasterPatterns"
   ],
   "components": [
     {
@@ -200,6 +202,111 @@
     {
       "declaration": "HigherCorrelations.tripleMasterKernel_neg_weight",
       "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_allEqual",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_only01",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_only02",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_only12",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_allDistinct",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernelTerm_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integralNorm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integralNorm_le",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integral_identity",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_pattern_decomposition",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_rows_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_five_subseries",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_pointwise_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_finite_integral",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_independent_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_height_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integral_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integral_height_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_minimal",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_empty_slot",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
       "comparator_checked": true
     }
   ],

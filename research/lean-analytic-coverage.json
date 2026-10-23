@@ -1189,10 +1189,28 @@
         "HigherCorrelations.tripleMaster_kernel_identity",
         "HigherCorrelations.tripleMasterObservable_independent_cutoff",
         "HigherCorrelations.tripleMasterObservable_height_cutoff",
-        "HigherCorrelations.tripleMaster_kernel_minimal"
+        "HigherCorrelations.tripleMaster_kernel_minimal",
+        "HigherCorrelations.tripleMasterPattern_allEqual",
+        "HigherCorrelations.tripleMasterPattern_only01",
+        "HigherCorrelations.tripleMasterPattern_only02",
+        "HigherCorrelations.tripleMasterPattern_only12",
+        "HigherCorrelations.tripleMasterPattern_allDistinct",
+        "HigherCorrelations.tripleMasterPattern_norm_summable",
+        "HigherCorrelations.tripleMasterPattern_integralNorm_summable",
+        "HigherCorrelations.tripleMasterPattern_integralNorm_le",
+        "HigherCorrelations.tripleMasterPattern_integral_identity",
+        "HigherCorrelations.tripleMaster_pattern_decomposition",
+        "HigherCorrelations.tripleMaster_rows_norm_summable",
+        "HigherCorrelations.tripleMaster_five_subseries",
+        "HigherCorrelations.tripleMasterPattern_finite_integral",
+        "HigherCorrelations.tripleMasterPattern_independent_cutoff",
+        "HigherCorrelations.tripleMasterPattern_height_cutoff",
+        "HigherCorrelations.tripleMasterPattern_integral_cutoff",
+        "HigherCorrelations.tripleMasterPattern_integral_height_cutoff",
+        "HigherCorrelations.tripleMasterPattern_minimal",
+        "HigherCorrelations.tripleMasterPattern_empty_slot"
       ],
       "remaining_obligations": [
-        "The uniform integral-norm bound, interchange, full zero-series product, center-phase cancellation and explicit K_T identity are checked for continuous real smoothing supported in [1,2]. Formalize its five index-pattern subseries.",
         "Formalize the explicit-formula expansion, prime-side sums and normalization."
       ]
     },
@@ -6857,7 +6875,112 @@
       "declaration": "HigherCorrelations.tripleMasterKernel_neg_weight",
       "source": "lean/HigherCorrelations/TripleMasterIdentity.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_allEqual",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_only01",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_only02",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_only12",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_allDistinct",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernelTerm_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integralNorm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integralNorm_le",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integral_identity",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_pattern_decomposition",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_rows_norm_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_five_subseries",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_pointwise_summable",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_finite_integral",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_independent_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_height_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integral_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_integral_height_cutoff",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_minimal",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterPattern_empty_slot",
+      "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The triple master integral-norm bound, interchange, exact K_T identity and independent cutoff limits are checked. Next specialize the five index-pattern subseries; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
+  "next_step": "The triple master integral-norm bound, interchange, exact K_T identity, five occurrence-index subseries and independent cutoff limits are checked. Next formalize the ordered 27-term explicit-formula expansion; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
 }

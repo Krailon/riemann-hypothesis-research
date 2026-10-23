@@ -1,8 +1,10 @@
-# Triple master interchange and exact kernel identity
+# Triple master identity and five occurrence-index subseries
 
 Task: proof and formal verification. Assumptions: `UNCONDITIONAL`.
-Ledger: `MASTER-INTEGRATION-FORMAL-001` and `MASTER-IDENTITY-FORMAL-001`.
-These milestones discharge integral-norm summability and the exact kernel identity in
+Ledger: `MASTER-INTEGRATION-FORMAL-001`, `MASTER-IDENTITY-FORMAL-001`, and
+`MASTER-PATTERNS-FORMAL-001`.
+These milestones discharge integral-norm summability, the exact kernel identity,
+and its five occurrence-index subseries in
 `TRIPLE-MASTER-001`. Its whole statement remains partially formalized.
 
 ## Checked statement
@@ -84,6 +86,50 @@ or RH assumption enters any statement. Named observable cutoff theorems now
 identify the limits of the finite products with C_{3,T}. T=3, X=Y=1 and zero/
 negated weights have explicit checked specializations.
 
+## Five occurrence-index subseries
+
+`tripleMasterKernelTerm` names the full summand B_v=8 A_v K_T(v), including
+its factor eight. `tripleMasterPatternSeries` restricts this summand to the
+subtype classified by the existing `TriplePattern` on **occurrence indices**.
+The checked row identifications are:
+
+| Pattern | Index condition | Reindexed series |
+| --- | --- | --- |
+| `allEqual` | i=j=k | sum_i B_(i,i,i) |
+| `only01` | i=j, i≠k | sum_(i≠j) B_(i,i,j) |
+| `only02` | i=k, i≠j | sum_(i≠j) B_(i,j,i) |
+| `only12` | j=k, i≠j | sum_(i≠j) B_(i,j,j) |
+| `allDistinct` | i≠j, i≠k, j≠k | sum_(pairwise distinct i,j,k) B_(i,j,k) |
+
+The unequal-pair rows range over ordered pairs. Explicit equivalences of index
+subtypes prove these reindexings, and `tripleMaster_five_subseries` states that
+the sum of the five displayed rows equals C_(3,T). The three partial-diagonal
+weights and kernels are retained separately. No full permutation symmetry or
+positivity of the rows is asserted.
+
+`tripleMasterPattern_norm_summable` and `tripleMaster_rows_norm_summable` prove
+absolute convergence for both the subtype and displayed row forms. Restricted
+integral-norm sums are summable and bounded above by the full integral-norm sum,
+hence inherit its common uniform bound without new constants.
+`tripleMasterPattern_integral_identity` identifies each subseries with the
+integral of its restricted zero-term sum. Pointwise absolute convergence is
+also inherited. The proof applies the existing Bochner interchange only after
+checking these hypotheses.
+
+Both the finite B-sums and the integrated restricted sums have independent
+finite-set and inclusive height-cutoff limits. Finite restrictions use
+`patternDomain id S p`: all three slot memberships are imposed even when
+indices coincide. In particular, the all-equal row uses the intersection of
+the three finite sets; an empty set in any slot annihilates every row.
+The T=3, X=Y=1 specialization retains exactly eight times the restricted K_T
+sum. The five-term identity applies at these endpoints without strictness.
+
+Distinct occurrence indices may represent different multiplicity copies of
+one complex zero. Distinct complex zeros may share an ordinate. None of the
+rows excludes either possibility, and no simplicity or RH premise is added.
+This milestone proves exact subseries identities and convergence, without
+asymptotic evaluation of individual rows or new finite-cardinality formulas.
+
 ## Proof dependencies and domination
 
 The proof uses `pairZeroTerm_bound` and `zeroKernel_summable_bound`. The former
@@ -128,25 +174,26 @@ claimed.
 
 ## Verification and remaining boundary
 
-Definition-only interface: `TripleMasterDefinitions`. Proofs:
-`TripleMasterBounds`, `TripleMasterIntegration` and `TripleMasterIdentity`.
-All **39 public declarations** have independent Comparator statements, inventory
-entries and axiom reports. The unfinished uniform integral-norm bound and headline kernel identity must be
-rejected for `sorryAx`. Only `propext`, `Quot.sound` and `Classical.choice` are
-permitted; the external kernel is disabled.
+Definition-only interfaces: `TripleMasterDefinitions` and
+`TripleMasterPatternDefinitions`. Proofs: `TripleMasterBounds`,
+`TripleMasterIntegration`, `TripleMasterIdentity` and `TripleMasterPatterns`.
+All **60 public declarations** have independent Comparator statements, inventory
+entries and axiom reports. The unfinished integral-norm bound, kernel identity
+and five-subseries identity must each be rejected for `sorryAx`. Only `propext`,
+`Quot.sound` and `Classical.choice` are permitted; the external kernel is disabled.
 
 ```sh
 python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only
 ```
 
-The focused mode checks the new Comparator suite, negative control, combined
+The focused mode checks the triple-master Comparator suite, three negative
+controls, combined
 project build, complete axiom report, analytic coverage and pair/triple/harness
 regressions. Earlier Comparator suites are not rerun. The ledger links the
 successful content-addressed evidence.
 
 The proof uses the existing unconditional counting/convergence infrastructure,
-not the imported PREPRINT fixed strip. The next step is the five-pattern decomposition of the now identified
-absolutely convergent kernel series. The five-pattern decomposition,
-27-word expansion, prime resonance and Fourier-decay clauses remain separate
-formalization tasks. Historical claim statuses and pair/triple audit scopes are
-preserved; the open signed complex-argument triple error is unaffected.
+not the imported PREPRINT fixed strip. The next step is the ordered 27-word
+explicit-formula expansion. Prime resonance and Fourier-decay clauses also
+remain separate formalization tasks. Historical claim statuses and pair/triple
+audit scopes are preserved; the open signed complex-argument triple error is unaffected.

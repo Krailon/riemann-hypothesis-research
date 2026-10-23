@@ -1,6 +1,6 @@
 {
   "challenge_module": "VerificationChallenges.TripleMaster",
-  "solution_module": "HigherCorrelations.TripleMasterIdentity",
+  "solution_module": "HigherCorrelations.TripleMasterPatterns",
   "theorem_names": [
     "HigherCorrelations.tripleMasterTerm_continuous",
     "HigherCorrelations.tripleMaster_support",
@@ -40,7 +40,28 @@
     "HigherCorrelations.tripleMasterObservable_height_cutoff",
     "HigherCorrelations.tripleMaster_kernel_minimal",
     "HigherCorrelations.tripleMasterKernel_zero_weight",
-    "HigherCorrelations.tripleMasterKernel_neg_weight"
+    "HigherCorrelations.tripleMasterKernel_neg_weight",
+    "HigherCorrelations.tripleMasterPattern_allEqual",
+    "HigherCorrelations.tripleMasterPattern_only01",
+    "HigherCorrelations.tripleMasterPattern_only02",
+    "HigherCorrelations.tripleMasterPattern_only12",
+    "HigherCorrelations.tripleMasterPattern_allDistinct",
+    "HigherCorrelations.tripleMasterKernelTerm_norm_summable",
+    "HigherCorrelations.tripleMasterPattern_norm_summable",
+    "HigherCorrelations.tripleMasterPattern_integralNorm_summable",
+    "HigherCorrelations.tripleMasterPattern_integralNorm_le",
+    "HigherCorrelations.tripleMasterPattern_integral_identity",
+    "HigherCorrelations.tripleMaster_pattern_decomposition",
+    "HigherCorrelations.tripleMaster_rows_norm_summable",
+    "HigherCorrelations.tripleMaster_five_subseries",
+    "HigherCorrelations.tripleMasterPattern_pointwise_summable",
+    "HigherCorrelations.tripleMasterPattern_finite_integral",
+    "HigherCorrelations.tripleMasterPattern_independent_cutoff",
+    "HigherCorrelations.tripleMasterPattern_height_cutoff",
+    "HigherCorrelations.tripleMasterPattern_integral_cutoff",
+    "HigherCorrelations.tripleMasterPattern_integral_height_cutoff",
+    "HigherCorrelations.tripleMasterPattern_minimal",
+    "HigherCorrelations.tripleMasterPattern_empty_slot"
   ],
   "definition_names": [],
   "permitted_axioms": [

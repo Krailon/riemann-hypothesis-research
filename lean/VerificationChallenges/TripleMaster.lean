@@ -1,4 +1,4 @@
-import HigherCorrelations.TripleMasterDefinitions
+import HigherCorrelations.TripleMasterPatternDefinitions
 
 /-! Independent statement surface; intentional holes occur only in verification challenges. -/
 namespace HigherCorrelations
@@ -209,6 +209,127 @@ theorem tripleMasterKernel_zero_weight (T : ℝ) (v : MasterTriple) :
 
 theorem tripleMasterKernel_neg_weight (ω : ℝ → ℝ) (T : ℝ) (v : MasterTriple) :
     tripleMasterKernel (fun u => -ω u) T v = -tripleMasterKernel ω T v := by sorry
+
+theorem tripleMasterPattern_allEqual (ω : ℝ → ℝ) (T X Y : ℝ) :
+    tripleMasterPatternSeries ω T X Y .allEqual =
+      ∑' i : ZeroOccurrence, tripleMasterKernelTerm ω T X Y ![i,i,i] := by sorry
+
+theorem tripleMasterPattern_only01 (ω : ℝ → ℝ) (T X Y : ℝ) :
+    tripleMasterPatternSeries ω T X Y .only01 =
+      ∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.1,q.val.2] := by sorry
+
+theorem tripleMasterPattern_only02 (ω : ℝ → ℝ) (T X Y : ℝ) :
+    tripleMasterPatternSeries ω T X Y .only02 =
+      ∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.1] := by sorry
+
+theorem tripleMasterPattern_only12 (ω : ℝ → ℝ) (T X Y : ℝ) :
+    tripleMasterPatternSeries ω T X Y .only12 =
+      ∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.2] := by sorry
+
+theorem tripleMasterPattern_allDistinct (ω : ℝ → ℝ) (T X Y : ℝ) :
+    tripleMasterPatternSeries ω T X Y .allDistinct =
+      ∑' v : MasterDistinctTriple, tripleMasterKernelTerm ω T X Y v.val := by sorry
+
+theorem tripleMasterKernelTerm_norm_summable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun v : MasterTriple => ‖tripleMasterKernelTerm ω T X Y v‖) := by sorry
+
+theorem tripleMasterPattern_norm_summable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) :
+    Summable (fun v : MasterPatternTriple p => ‖tripleMasterKernelTerm ω T X Y v.val‖) := by sorry
+
+theorem tripleMasterPattern_integralNorm_summable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) :
+    Summable (fun v : MasterPatternTriple p => ∫ t : ℝ, ‖tripleMasterTerm ω T X Y v.val t‖) := by sorry
+
+theorem tripleMasterPattern_integralNorm_le (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) :
+    (∑' v : MasterPatternTriple p, ∫ t : ℝ, ‖tripleMasterTerm ω T X Y v.val t‖) ≤
+      ∑' v : MasterTriple, ∫ t : ℝ, ‖tripleMasterTerm ω T X Y v t‖ := by sorry
+
+theorem tripleMasterPattern_integral_identity (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) :
+    tripleMasterPatternSeries ω T X Y p =
+      ∫ t : ℝ, ∑' v : MasterPatternTriple p, tripleMasterTerm ω T X Y v.val t := by sorry
+
+theorem tripleMaster_pattern_decomposition (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y = ∑ p : TriplePattern, tripleMasterPatternSeries ω T X Y p := by sorry
+
+theorem tripleMaster_rows_norm_summable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun i : ZeroOccurrence => ‖tripleMasterKernelTerm ω T X Y ![i,i,i]‖) ∧
+    Summable (fun q : MasterUnequalPair => ‖tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.1,q.val.2]‖) ∧
+    Summable (fun q : MasterUnequalPair => ‖tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.1]‖) ∧
+    Summable (fun q : MasterUnequalPair => ‖tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.2]‖) ∧
+    Summable (fun v : MasterDistinctTriple => ‖tripleMasterKernelTerm ω T X Y v.val‖) := by sorry
+
+theorem tripleMaster_five_subseries (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y =
+      (∑' i : ZeroOccurrence, tripleMasterKernelTerm ω T X Y ![i,i,i]) +
+      (∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.1,q.val.2]) +
+      (∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.1]) +
+      (∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.2]) +
+      (∑' v : MasterDistinctTriple, tripleMasterKernelTerm ω T X Y v.val) := by sorry
+
+theorem tripleMasterPattern_pointwise_summable (ω : ℝ → ℝ)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) (t : ℝ) :
+    Summable (fun v : MasterPatternTriple p => ‖tripleMasterTerm ω T X Y v.val t‖) := by sorry
+
+theorem tripleMasterPattern_finite_integral (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y)
+    (S : Fin 3 → Finset ZeroOccurrence) (p : TriplePattern) :
+    (∫ t : ℝ, ∑ v ∈ patternDomain id S p, tripleMasterTerm ω T X Y v t) =
+      ∑ v ∈ patternDomain id S p, tripleMasterKernelTerm ω T X Y v := by sorry
+
+theorem tripleMasterPattern_independent_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) :
+    Tendsto (fun S : Fin 3 → Finset ZeroOccurrence =>
+      ∑ v ∈ patternDomain id S p, tripleMasterKernelTerm ω T X Y v) atTop
+      (𝓝 (tripleMasterPatternSeries ω T X Y p)) := by sorry
+
+theorem tripleMasterPattern_height_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) :
+    Tendsto (fun U : Fin 3 → ℝ =>
+      ∑ v ∈ patternDomain id (fun r => occurrenceCutoff (U r)) p,
+        tripleMasterKernelTerm ω T X Y v) atTop
+      (𝓝 (tripleMasterPatternSeries ω T X Y p)) := by sorry
+
+theorem tripleMasterPattern_integral_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) :
+    Tendsto (fun S : Fin 3 → Finset ZeroOccurrence =>
+      ∫ t : ℝ, ∑ v ∈ patternDomain id S p, tripleMasterTerm ω T X Y v t) atTop
+      (𝓝 (tripleMasterPatternSeries ω T X Y p)) := by sorry
+
+theorem tripleMasterPattern_integral_height_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (p : TriplePattern) :
+    Tendsto (fun U : Fin 3 → ℝ => ∫ t : ℝ,
+      ∑ v ∈ patternDomain id (fun r => occurrenceCutoff (U r)) p,
+        tripleMasterTerm ω T X Y v t) atTop
+      (𝓝 (tripleMasterPatternSeries ω T X Y p)) := by sorry
+
+theorem tripleMasterPattern_minimal (ω : ℝ → ℝ) (p : TriplePattern) :
+    tripleMasterPatternSeries ω 3 1 1 p =
+      8 * ∑' v : MasterPatternTriple p, tripleMasterKernel ω 3 v.val := by sorry
+
+theorem tripleMasterPattern_empty_slot (ω : ℝ → ℝ) (T X Y : ℝ)
+    (S : Fin 3 → Finset ZeroOccurrence) (r : Fin 3) (hS : S r = ∅) (p : TriplePattern) :
+    (∑ v ∈ patternDomain id S p, tripleMasterKernelTerm ω T X Y v) = 0 := by sorry
 
 end
 end HigherCorrelations

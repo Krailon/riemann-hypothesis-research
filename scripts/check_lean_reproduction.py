@@ -93,6 +93,7 @@ class LeanReproductionTests(unittest.TestCase):
                 self.assertIn(suite, calls)
                 if flag == '--triple-master-only':
                     self.assertIn('triple-master-identity-unfinished-rejected', calls)
+                    self.assertIn('triple-master-patterns-unfinished-rejected', calls)
                     self.assertNotIn('pair-fourier-comparator', calls)
                 else:
                     self.assertNotIn('triple-master-comparator', calls)
