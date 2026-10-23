@@ -1,10 +1,10 @@
-# Triple master identity and five occurrence-index subseries
+# Triple master identity, subseries and ordered word expansion
 
 Task: proof and formal verification. Assumptions: `UNCONDITIONAL`.
 Ledger: `MASTER-INTEGRATION-FORMAL-001`, `MASTER-IDENTITY-FORMAL-001`, and
-`MASTER-PATTERNS-FORMAL-001`.
+`MASTER-PATTERNS-FORMAL-001`, and `MASTER-EXPANSION-FORMAL-001`.
 These milestones discharge integral-norm summability, the exact kernel identity,
-and its five occurrence-index subseries in
+its five occurrence-index subseries, and the ordered 27-word expansion in
 `TRIPLE-MASTER-001`. Its whole statement remains partially formalized.
 
 ## Checked statement
@@ -130,6 +130,50 @@ rows excludes either possibility, and no simplicity or RH premise is added.
 This milestone proves exact subseries identities and convergence, without
 asymptotic evaluation of individual rows or new finite-cardinality formulas.
 
+## Ordered 27-term explicit-formula expansion
+
+`MasterLetter` has the ordered letters P,A,H; `MasterWord` assigns one letter
+to each of the three slots. Use the existing prime series for P, define
+A_x(t)=log(|t|+2)/x on all real t, and use `pairRHSRemainderSum` for H.
+`tripleComponent_remainder` identifies H with the exact archimedean,
+Dirichlet-series, pole and trivial-zero remainders. The all-real-t
+`pairUniform_formula` gives S=-P+A+H without a positivity restriction on t.
+
+`tripleMaster_word_expansion` proves
+
+\[
+ C_{3,T}(X,Y)=\sum_{w\in\{P,A,H\}^3}(-1)^{N_P(w)}
+ I_T(w_0{}_X,w_1{}_Y,w_2{}_{XY}),\qquad
+ I_T(f,g,h)=\frac1T\int\omega(t/T)f(t)g(t)\overline{h(t)}\,dt.
+\]
+
+The overall prefactor here is 1. The factor 8 remains in the separate
+zero-kernel representation. The sign is the integer (-1) raised to the number
+of P letters; conjugating slot 2 also conjugates its factor, including H,
+while leaving this real sign unchanged.
+
+The proof establishes continuity of every actual component, then continuity
+and compact support of every weighted word integrand. Each is integrable
+before the finite 27-term sum is moved through the integral. A generic complex
+algebra theorem proves the pointwise expansion, and the main theorem connects
+it directly to `tripleMasterObservable`. No infinite prime-sum/integral
+interchange is needed at this stage.
+
+`tripleWordTable` is a literal ordered list in manuscript P,A,H order. Lean
+checks its completeness, absence of repeated words, every recorded sign and
+contains-H flag, and the counts 27=8+19. `tripleMaster_table_expansion` connects
+the observable to this literal signed list; `tripleMaster_word_split` separates
+the eight H-free terms and nineteen terms containing H exactly. No smallness
+estimate is attached to the latter. The Python manuscript-table regression
+also compares the Lean list to both existing printed tables, including order.
+
+The statement admits signed continuous real weights on [1,2]. T=3, X=Y=1 and
+zero/negated weights have explicit checked specializations. A unit base retains
+its actual S,P,A,H functions. Zero-index patterns and word expansions are
+separate decompositions, with no asserted rowwise correspondence. Prime-side
+Fourier interchange, resonance classification and error estimates remain open
+formalization obligations.
+
 ## Proof dependencies and domination
 
 The proof uses `pairZeroTerm_bound` and `zeroKernel_summable_bound`. The former
@@ -174,26 +218,28 @@ claimed.
 
 ## Verification and remaining boundary
 
-Definition-only interfaces: `TripleMasterDefinitions` and
-`TripleMasterPatternDefinitions`. Proofs: `TripleMasterBounds`,
-`TripleMasterIntegration`, `TripleMasterIdentity` and `TripleMasterPatterns`.
-All **60 public declarations** have independent Comparator statements, inventory
+Definition-only interfaces: `TripleMasterDefinitions`,
+`TripleMasterPatternDefinitions` and `TripleExpansionDefinitions`. Proofs:
+`TripleMasterBounds`, `TripleMasterIntegration`, `TripleMasterIdentity`,
+`TripleMasterPatterns` and `TripleExpansion`.
+All **79 public declarations** have independent Comparator statements, inventory
 entries and axiom reports. The unfinished integral-norm bound, kernel identity
-and five-subseries identity must each be rejected for `sorryAx`. Only `propext`,
+five-subseries identity and ordered word expansion must each be rejected
+for `sorryAx`. Only `propext`,
 `Quot.sound` and `Classical.choice` are permitted; the external kernel is disabled.
 
 ```sh
 python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only
 ```
 
-The focused mode checks the triple-master Comparator suite, three negative
+The focused mode checks the triple-master Comparator suite, four negative
 controls, combined
 project build, complete axiom report, analytic coverage and pair/triple/harness
 regressions. Earlier Comparator suites are not rerun. The ledger links the
 successful content-addressed evidence.
 
 The proof uses the existing unconditional counting/convergence infrastructure,
-not the imported PREPRINT fixed strip. The next step is the ordered 27-word
-explicit-formula expansion. Prime resonance and Fourier-decay clauses also
-remain separate formalization tasks. Historical claim statuses and pair/triple
+not the imported PREPRINT fixed strip. The next step is to identify the cubic
+prime term with its absolutely convergent Fourier series. Prime resonance and
+Fourier-decay clauses remain separate formalization tasks. Historical claim statuses and pair/triple
 audit scopes are preserved; the open signed complex-argument triple error is unaffected.

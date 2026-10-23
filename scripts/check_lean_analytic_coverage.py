@@ -152,8 +152,15 @@ PARTIAL = {
          'tripleMaster_five_subseries', 'tripleMasterPattern_finite_integral',
          'tripleMasterPattern_independent_cutoff', 'tripleMasterPattern_height_cutoff',
          'tripleMasterPattern_integral_cutoff', 'tripleMasterPattern_integral_height_cutoff',
-         'tripleMasterPattern_minimal', 'tripleMasterPattern_empty_slot'],
-        ['Formalize the explicit-formula expansion, prime-side sums and normalization.']),
+         'tripleMasterPattern_minimal', 'tripleMasterPattern_empty_slot',
+         'tripleComponent_remainder', 'tripleComponent_explicit_formula',
+         'tripleComponent_continuous', 'tripleSmoothedIntegral_normalization',
+         'tripleWordIntegrand_integrable', 'tripleWord_algebra',
+         'tripleMasterProduct_word_expansion', 'tripleMaster_word_expansion',
+         'tripleWordTable_nodup', 'tripleWordTable_complete', 'tripleWordTable_correct',
+         'tripleWord_counts', 'tripleMaster_table_expansion', 'tripleMaster_word_split',
+         'tripleMaster_word_minimal'],
+        ['Formalize the prime-side Fourier-series interchange, exact resonance classification and Fourier-decay statements.']),
     'TRIPLE-KERNEL-PROFILE-001': (
         ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
          'rationalKernel_reciprocal', 'rationalProfile_bound', 'rationalProfile_swap',
@@ -643,7 +650,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The triple master integral-norm bound, interchange, exact K_T identity, five occurrence-index subseries and independent cutoff limits are checked. Next formalize the ordered 27-term explicit-formula expansion; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
+        next_step='The triple master integral-norm bound, exact K_T identity, five occurrence-index subseries and ordered 27-term explicit-formula expansion are checked. Next identify the cubic prime term with its absolutely convergent Fourier series; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
 
 
 def validate(record):
@@ -685,7 +692,10 @@ class CoverageTests(unittest.TestCase):
                      'tripleMasterKernel_normalization', 'tripleMaster_kernel_minimal',
                      'tripleMaster_five_subseries', 'tripleMaster_rows_norm_summable',
                      'tripleMasterPattern_integral_identity', 'tripleMasterPattern_integralNorm_le',
-                     'tripleMasterPattern_integral_height_cutoff', 'tripleMasterPattern_minimal']:
+                     'tripleMasterPattern_integral_height_cutoff', 'tripleMasterPattern_minimal',
+                     'tripleMaster_word_expansion', 'tripleMaster_table_expansion',
+                     'tripleWordIntegrand_integrable', 'tripleWordTable_correct',
+                     'tripleWord_counts', 'tripleMaster_word_split', 'tripleMaster_word_minimal']:
             self.assertIn('HigherCorrelations.' + name, node['components'])
         self.assertFalse(any('five index-pattern subseries' in gap for gap in node['remaining_obligations']))
         self.assertTrue(any('prime-side' in gap for gap in node['remaining_obligations']))

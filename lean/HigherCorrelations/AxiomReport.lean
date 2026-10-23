@@ -1,4 +1,4 @@
-import HigherCorrelations.TripleMasterPatterns
+import HigherCorrelations.TripleExpansion
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
@@ -1149,3 +1149,23 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleMasterPattern_integral_height_cutoff
 #print axioms HigherCorrelations.tripleMasterPattern_minimal
 #print axioms HigherCorrelations.tripleMasterPattern_empty_slot
+
+#print axioms HigherCorrelations.tripleWordSign_product
+#print axioms HigherCorrelations.tripleComponent_remainder
+#print axioms HigherCorrelations.tripleComponent_explicit_formula
+#print axioms HigherCorrelations.tripleComponent_continuous
+#print axioms HigherCorrelations.tripleSmoothedIntegral_normalization
+#print axioms HigherCorrelations.tripleWordIntegrand_continuous
+#print axioms HigherCorrelations.tripleWordIntegrand_integrable
+#print axioms HigherCorrelations.tripleWord_algebra
+#print axioms HigherCorrelations.tripleMasterProduct_word_expansion
+#print axioms HigherCorrelations.tripleMaster_word_expansion
+#print axioms HigherCorrelations.tripleWordTable_nodup
+#print axioms HigherCorrelations.tripleWordTable_complete
+#print axioms HigherCorrelations.tripleWordTable_correct
+#print axioms HigherCorrelations.tripleWord_counts
+#print axioms HigherCorrelations.tripleMaster_table_expansion
+#print axioms HigherCorrelations.tripleMaster_word_split
+#print axioms HigherCorrelations.tripleMaster_word_minimal
+#print axioms HigherCorrelations.tripleWordIntegral_zero_weight
+#print axioms HigherCorrelations.tripleWordIntegral_neg_weight

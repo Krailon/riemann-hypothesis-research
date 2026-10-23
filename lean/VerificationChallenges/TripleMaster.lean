@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleExpansionDefinitions
 import HigherCorrelations.TripleMasterPatternDefinitions
 
 /-! Independent statement surface; intentional holes occur only in verification challenges. -/
@@ -330,6 +331,88 @@ theorem tripleMasterPattern_minimal (ω : ℝ → ℝ) (p : TriplePattern) :
 theorem tripleMasterPattern_empty_slot (ω : ℝ → ℝ) (T X Y : ℝ)
     (S : Fin 3 → Finset ZeroOccurrence) (r : Fin 3) (hS : S r = ∅) (p : TriplePattern) :
     (∑ v ∈ patternDomain id S p, tripleMasterKernelTerm ω T X Y v) = 0 := by sorry
+
+theorem tripleWordSign_product (w : MasterWord) :
+    tripleWordSign w = ∏ r : Fin 3, (if w r = .P then (-1:ℤ) else 1) := by sorry
+
+theorem tripleComponent_remainder (X t : ℝ) :
+    tripleComponent .H X t = pairArchError (X,t)+pairDSError (X,t)+
+      pairPoleCorrection (X,t)+pairTrivialCorrection (X,t) := by sorry
+
+theorem tripleComponent_explicit_formula (X t : ℝ) (hX : 1≤X) :
+    pairZeroSeries (X,t) = -tripleComponent .P X t + tripleComponent .A X t +
+      tripleComponent .H X t := by sorry
+
+theorem tripleComponent_continuous (l : MasterLetter) (X : ℝ) (hX : 1≤X) :
+    Continuous (tripleComponent l X) := by sorry
+
+theorem tripleSmoothedIntegral_normalization (ω : ℝ → ℝ) (T : ℝ) (f g h : ℝ → ℂ) :
+    tripleSmoothedIntegral ω T f g h = (1/(T:ℂ))*
+      ∫ t : ℝ, (ω (t/T):ℂ)*f t*g t*star (h t) := by sorry
+
+theorem tripleWordIntegrand_continuous (ω : ℝ → ℝ) (hω : Continuous ω)
+    (T X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) (w : MasterWord) :
+    Continuous (tripleWordIntegrand ω T X Y w) := by sorry
+
+theorem tripleWordIntegrand_integrable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 0<T) (hX : 1≤X) (hY : 1≤Y) (w : MasterWord) :
+    Integrable (tripleWordIntegrand ω T X Y w) := by sorry
+
+theorem tripleWord_algebra (F : Fin 3 → MasterLetter → ℂ) :
+    (-F 0 .P+F 0 .A+F 0 .H)*(-F 1 .P+F 1 .A+F 1 .H)*
+      star (-F 2 .P+F 2 .A+F 2 .H) =
+    ∑ w : MasterWord, (tripleWordSign w:ℂ)*
+      (F 0 (w 0)*F 1 (w 1)*star (F 2 (w 2))) := by sorry
+
+theorem tripleMasterProduct_word_expansion (ω : ℝ → ℝ) (T X Y : ℝ)
+    (hX : 1≤X) (hY : 1≤Y) (t : ℝ) :
+    tripleMasterProduct ω T X Y t =
+      ∑ w : MasterWord, (tripleWordSign w:ℂ)*tripleWordIntegrand ω T X Y w t := by sorry
+
+theorem tripleMaster_word_expansion (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y =
+      ∑ w : MasterWord, (tripleWordSign w:ℂ)*tripleWordIntegral ω T X Y w := by sorry
+
+theorem tripleWordTable_nodup : (tripleWordTable.map Prod.fst).Nodup := by sorry
+
+theorem tripleWordTable_complete : (tripleWordTable.map Prod.fst).toFinset =
+    (Finset.univ : Finset MasterWord) := by sorry
+
+theorem tripleWordTable_correct : ∀ row ∈ tripleWordTable,
+    row.2.1 = tripleWordSign row.1 ∧ row.2.2 = tripleWordHasH row.1 := by sorry
+
+theorem tripleWord_counts : Fintype.card MasterWord = 27 ∧
+    (Finset.univ.filter (fun w : MasterWord => tripleWordHasH w = false)).card = 8 ∧
+    (Finset.univ.filter (fun w : MasterWord => tripleWordHasH w = true)).card = 19 := by sorry
+
+theorem tripleMaster_table_expansion (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y =
+      (tripleWordTable.map (fun row => (row.2.1:ℂ)*tripleWordIntegral ω T X Y row.1)).sum := by sorry
+
+theorem tripleMaster_word_split (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y =
+      (∑ w ∈ Finset.univ.filter (fun w : MasterWord => tripleWordHasH w = false),
+        (tripleWordSign w:ℂ)*tripleWordIntegral ω T X Y w) +
+      (∑ w ∈ Finset.univ.filter (fun w : MasterWord => tripleWordHasH w = true),
+        (tripleWordSign w:ℂ)*tripleWordIntegral ω T X Y w) := by sorry
+
+theorem tripleMaster_word_minimal (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) :
+    tripleMasterObservable ω 3 1 1 =
+      ∑ w : MasterWord, (tripleWordSign w:ℂ)*tripleWordIntegral ω 3 1 1 w := by sorry
+
+theorem tripleWordIntegral_zero_weight (T X Y : ℝ) (w : MasterWord) :
+    tripleWordIntegral (fun _ => 0) T X Y w = 0 := by sorry
+
+theorem tripleWordIntegral_neg_weight (ω : ℝ → ℝ) (T X Y : ℝ) (w : MasterWord) :
+    tripleWordIntegral (fun t => -ω t) T X Y w = -tripleWordIntegral ω T X Y w := by sorry
 
 end
 end HigherCorrelations

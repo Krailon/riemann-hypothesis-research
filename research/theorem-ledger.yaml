@@ -4425,3 +4425,52 @@ claims:
       constants_scope: "The factor 8 is retained in B. Restricted integral-norm sums are bounded by the previous full sum; its existential constant is unchanged."
       endpoint_audit: "Occurrence equality is not ordinate or complex-value equality. All five rows are disjoint and exhaustive, all slot cutoffs survive coincidences, and any empty slot annihilates each finite row. Non-strict T>=3, X,Y>=1; explicit T=3,X=Y=1 specialization; signed/zero weights and inclusive height cutoffs admitted."
       baseline_audit_coverage: "Discharges the five index-pattern subseries clause of TRIPLE-MASTER-001. The ordered 27-word expansion, prime-side resonance and Fourier-decay clauses remain separate. No new reflection/permutation identity or row asymptotic is asserted. Historical claim statuses and audit scopes are unchanged; the signed complex-argument triple error remains open."
+
+  - id: MASTER-EXPANSION-FORMAL-001
+    title: Ordered 27-term explicit-formula expansion with exact remainders
+    kind: theorem
+    statement: |
+      Let omega be any continuous real function supported in [1,2], T>=3,
+      X,Y>=1, and Z=XY. Set P_x(t)=pairPrimeSeries(x,t),
+      A_x(t)=log(|t|+2)/x and H_x(t)=pairArchError(x,t)+pairDSError(x,t)
+      +pairPoleCorrection(x,t)+pairTrivialCorrection(x,t). These components
+      are continuous on all real t and satisfy S_x=-P_x+A_x+H_x exactly.
+      For each ordered word w:Fin 3->{P,A,H}, let N_P(w) count its P letters.
+      With I_T(f,g,h)=(1/T) integral_R omega(t/T) f(t) g(t) conjugate(h(t)) dt,
+      C_3,T(X,Y)=sum_w (-1)^N_P(w) I_T(w_0 at X,w_1 at Y,w_2 at XY).
+      Every weighted word integrand is continuous, compactly supported and
+      integrable; the finite sum is interchanged with integration only after
+      verifying integrability. The identity is also proved pointwise before
+      integration by generic complex distributivity with third-slot conjugation.
+      The overall prefactor is 1; the factor 8 belongs to the zero-kernel identity.
+      A literal 27-row list in manuscript P,A,H order is proved complete and
+      without repetitions; every integer sign and contains-H flag is checked.
+      The same observable equals this literal signed table sum and splits
+      exactly into eight words without H and nineteen containing H.
+      No approximation is made to any of the four remainders. Signed and zero
+      weights, T=3 and X=Y=1 are admitted, with explicit specializations.
+      Unit bases retain their actual component functions. No prime Fourier
+      interchange, resonance classification, rowwise zero-pattern correspondence,
+      smallness estimate or asymptotic assertion is made here.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-IDENTITY-FORMAL-001, PAIR-EF-001, PAIR-SERIES-CONVERGENCE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleExpansion.lean
+      label: HigherCorrelations.tripleMaster_word_expansion
+      companion_declarations: "tripleWordSign_product, tripleComponent_remainder, tripleComponent_explicit_formula, tripleComponent_continuous, tripleSmoothedIntegral_normalization, tripleWordIntegrand_continuous, tripleWordIntegrand_integrable, tripleWord_algebra, tripleMasterProduct_word_expansion, tripleWordTable_nodup, tripleWordTable_complete, tripleWordTable_correct, tripleWord_counts, tripleMaster_table_expansion, tripleMaster_word_split, tripleMaster_word_minimal, tripleWordIntegral_zero_weight, tripleWordIntegral_neg_weight"
+      bookkeeping: research/lean-triple-master.md
+      inventory: research/lean-triple-master-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: beb3a7b9a7964853c25292f1b6942ab6be798e46fd8fe3b2a2c3245fdab2d013
+    limit_order: "Fix omega,T,X,Y first. The zero and prime series are the existing convergent full series. Establish actual component continuity and each weighted word's integrability before finite sum-integral linearity. No new infinite-series interchange or asymptotic limit is taken."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "19 new public declarations extend the triple-master Comparator inventory to 79, with definition-only challenges and four separate unfinished-proof controls. Combined project build, full axiom report and analytic/pair/triple/harness regressions. The printed Markdown/LaTeX tables are compared to the Lean list, including order. Only propext, Quot.sound and Classical.choice permitted; external kernel disabled. Earlier Comparator suites are not rerun in focused mode."
+      imported_inputs: "The all-real-t pairUniform_formula, existing continuity of the actual prime series and all four named remainders, compact-support integrability, finite product-sum distributivity and finite integral linearity. No narrower zero-free strip or fixed-strip PREPRINT input is used."
+      constants_scope: "The prefactor 1, normalization 1/T, integer signs and counts 27=8+19 are exact. No new error constant or effectivity upgrade is asserted."
+      endpoint_audit: "Non-strict T>=3, X,Y>=1, signed/zero continuous real weights, closed smoothing support, all-real-t log(|t|+2), and conjugation of every third-slot component including H. Explicit minimal-parameter and zero/negated-weight lemmas."
+      baseline_audit_coverage: "Discharges the ordered 27-word explicit-formula expansion clause of TRIPLE-MASTER-001. Prime Fourier-series interchange, exact resonance and Fourier decay remain separate formalization obligations. No wordwise correspondence with the five zero-index patterns is claimed. Historical statuses and audit scopes remain unchanged; the signed complex-argument triple error remains open."

@@ -43,7 +43,9 @@ The triple master sum now has a formalized uniform bound on the sum of integral
 norms, justifying sum–integral interchange and independent cutoff limits. The
 full-series product and center-phase cancellation now give the exact smoothed
 K_T identity and its five occurrence-index subseries, with absolute convergence,
-restricted interchange, cutoff limits and full horizontal dependence. See
+restricted interchange, cutoff limits and full horizontal dependence. The ordered
+27-term P/A/H expansion is also formalized, including per-term integrability,
+all signs and the exact eight/nineteen split. See
 the [triple master record](research/lean-triple-master.md).
 
 ## Zeta23 inputs imported

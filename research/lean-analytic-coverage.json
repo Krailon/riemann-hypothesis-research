@@ -1208,10 +1208,25 @@
         "HigherCorrelations.tripleMasterPattern_integral_cutoff",
         "HigherCorrelations.tripleMasterPattern_integral_height_cutoff",
         "HigherCorrelations.tripleMasterPattern_minimal",
-        "HigherCorrelations.tripleMasterPattern_empty_slot"
+        "HigherCorrelations.tripleMasterPattern_empty_slot",
+        "HigherCorrelations.tripleComponent_remainder",
+        "HigherCorrelations.tripleComponent_explicit_formula",
+        "HigherCorrelations.tripleComponent_continuous",
+        "HigherCorrelations.tripleSmoothedIntegral_normalization",
+        "HigherCorrelations.tripleWordIntegrand_integrable",
+        "HigherCorrelations.tripleWord_algebra",
+        "HigherCorrelations.tripleMasterProduct_word_expansion",
+        "HigherCorrelations.tripleMaster_word_expansion",
+        "HigherCorrelations.tripleWordTable_nodup",
+        "HigherCorrelations.tripleWordTable_complete",
+        "HigherCorrelations.tripleWordTable_correct",
+        "HigherCorrelations.tripleWord_counts",
+        "HigherCorrelations.tripleMaster_table_expansion",
+        "HigherCorrelations.tripleMaster_word_split",
+        "HigherCorrelations.tripleMaster_word_minimal"
       ],
       "remaining_obligations": [
-        "Formalize the explicit-formula expansion, prime-side sums and normalization."
+        "Formalize the prime-side Fourier-series interchange, exact resonance classification and Fourier-decay statements."
       ]
     },
     {
@@ -6980,7 +6995,102 @@
       "declaration": "HigherCorrelations.tripleMasterPattern_empty_slot",
       "source": "lean/HigherCorrelations/TripleMasterPatterns.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWordSign_product",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleComponent_remainder",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleComponent_explicit_formula",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleComponent_continuous",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothedIntegral_normalization",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWordIntegrand_continuous",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWordIntegrand_integrable",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWord_algebra",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterProduct_word_expansion",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_word_expansion",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWordTable_nodup",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWordTable_complete",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWordTable_correct",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWord_counts",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_table_expansion",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_word_split",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_word_minimal",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWordIntegral_zero_weight",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWordIntegral_neg_weight",
+      "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The triple master integral-norm bound, interchange, exact K_T identity, five occurrence-index subseries and independent cutoff limits are checked. Next formalize the ordered 27-term explicit-formula expansion; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
+  "next_step": "The triple master integral-norm bound, exact K_T identity, five occurrence-index subseries and ordered 27-term explicit-formula expansion are checked. Next identify the cubic prime term with its absolutely convergent Fourier series; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate."
 }

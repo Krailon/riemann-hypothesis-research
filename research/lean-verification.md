@@ -208,7 +208,7 @@ Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --pair-fourier-on
 for all 36 new Comparator statements, the negative control, combined build,
 complete axiom report and regressions. Earlier Comparator suites are not rerun.
 
-## Triple master bound, kernel identity and five subseries
+## Triple master bound, kernel identity, subseries and word expansion
 
 The [triple master milestones](lean-triple-master.md) prove the uniform
 sum of integral norms for the actual three zero terms, then discharge the
@@ -220,8 +220,12 @@ and independent cutoff limits. Distinct indices need not denote distinct
 complex zeros or ordinates. All signed continuous
 real smoothing weights supported in [1,2] are allowed. The explicit factor
 (8/3)^3 is preserved; the absolute zero-kernel constant remains existential.
-No zero-free-strip input is used. The full `TRIPLE-MASTER-001` remains partial.
+The ordered 27-word explicit-formula expansion is also checked, with all four
+remainders retained exactly, per-word integrability, a verified sign table and
+the exact eight/nineteen split. No zero-free-strip input is used. The full
+`TRIPLE-MASTER-001` remains partial: prime Fourier interchange, resonance and
+Fourier decay are separate obligations.
 
 Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only`
-for all 60 triple-master Comparator statements, three negative controls, combined build,
+for all 79 triple-master Comparator statements, four negative controls, combined build,
 complete axiom report and regressions. Earlier Comparator suites are not rerun.

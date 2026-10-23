@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleExpansionDefinitions
 import HigherCorrelations.TripleMasterPatternDefinitions
 
 /-! Independent statement surface; intentional holes occur only in verification challenges. -/
@@ -28,6 +29,12 @@ theorem tripleMaster_five_subseries (ω : ℝ → ℝ) (hω : Continuous ω)
       (∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.1]) +
       (∑' q : MasterUnequalPair, tripleMasterKernelTerm ω T X Y ![q.val.1,q.val.2,q.val.2]) +
       (∑' v : MasterDistinctTriple, tripleMasterKernelTerm ω T X Y v.val) := by sorry
+
+theorem tripleMaster_word_expansion (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y =
+      ∑ w : MasterWord, (tripleWordSign w:ℂ)*tripleWordIntegral ω T X Y w := by sorry
 
 end
 end HigherCorrelations

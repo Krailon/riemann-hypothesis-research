@@ -1,6 +1,6 @@
 {
   "challenge_module": "VerificationChallenges.TripleMaster",
-  "solution_module": "HigherCorrelations.TripleMasterPatterns",
+  "solution_module": "HigherCorrelations.TripleExpansion",
   "theorem_names": [
     "HigherCorrelations.tripleMasterTerm_continuous",
     "HigherCorrelations.tripleMaster_support",
@@ -61,7 +61,26 @@
     "HigherCorrelations.tripleMasterPattern_integral_cutoff",
     "HigherCorrelations.tripleMasterPattern_integral_height_cutoff",
     "HigherCorrelations.tripleMasterPattern_minimal",
-    "HigherCorrelations.tripleMasterPattern_empty_slot"
+    "HigherCorrelations.tripleMasterPattern_empty_slot",
+    "HigherCorrelations.tripleWordSign_product",
+    "HigherCorrelations.tripleComponent_remainder",
+    "HigherCorrelations.tripleComponent_explicit_formula",
+    "HigherCorrelations.tripleComponent_continuous",
+    "HigherCorrelations.tripleSmoothedIntegral_normalization",
+    "HigherCorrelations.tripleWordIntegrand_continuous",
+    "HigherCorrelations.tripleWordIntegrand_integrable",
+    "HigherCorrelations.tripleWord_algebra",
+    "HigherCorrelations.tripleMasterProduct_word_expansion",
+    "HigherCorrelations.tripleMaster_word_expansion",
+    "HigherCorrelations.tripleWordTable_nodup",
+    "HigherCorrelations.tripleWordTable_complete",
+    "HigherCorrelations.tripleWordTable_correct",
+    "HigherCorrelations.tripleWord_counts",
+    "HigherCorrelations.tripleMaster_table_expansion",
+    "HigherCorrelations.tripleMaster_word_split",
+    "HigherCorrelations.tripleMaster_word_minimal",
+    "HigherCorrelations.tripleWordIntegral_zero_weight",
+    "HigherCorrelations.tripleWordIntegral_neg_weight"
   ],
   "definition_names": [],
   "permitted_axioms": [
