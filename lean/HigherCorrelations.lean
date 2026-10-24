@@ -1,4 +1,4 @@
-import HigherCorrelations.TriplePrimeFourier
+import HigherCorrelations.TriplePrimeResonance
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison

@@ -10,7 +10,9 @@
     "TripleExpansionDefinitions",
     "TripleExpansion",
     "TriplePrimeFourierDefinitions",
-    "TriplePrimeFourier"
+    "TriplePrimeFourier",
+    "TriplePrimeResonanceDefinitions",
+    "TriplePrimeResonance"
   ],
   "components": [
     {
@@ -551,6 +553,166 @@
     {
       "declaration": "HigherCorrelations.triplePrimeFourier_neg_weight",
       "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanPrimeCoefficient_ne_zero",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeCoefficient_ne_zero",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePower_unique",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePowerIndex_values",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePowerIndex_injective",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePowerIndex_supported",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePower_resonance_exists",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonance_classification",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonance_nonzero",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePowerIndex_bijective",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePower_resonance_unique",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_summable",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_norm_summable",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_reindex",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_nested",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_nonneg",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_bound",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_resonant_norm_summable",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_off_norm_summable",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_resonant_series",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_resonance_split",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_resonance_signed",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_resonance_unit_mass",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePowerIndex_excludes_one",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePowerIndex_equal_exponents",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePowerIndex_ordered",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePowerIndex_first",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.primePower_distinct_product",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonance_two_three",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeOffSeries_zero_weight",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeOffSeries_neg_weight",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_resonance_minimal",
+      "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
       "comparator_checked": true
     }
   ],

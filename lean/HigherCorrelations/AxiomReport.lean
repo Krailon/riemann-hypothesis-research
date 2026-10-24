@@ -1,4 +1,4 @@
-import HigherCorrelations.TriplePrimeFourier
+import HigherCorrelations.TriplePrimeResonance
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
@@ -1199,3 +1199,36 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.triplePrime_fourier_minimal
 #print axioms HigherCorrelations.triplePrimeFourier_zero_weight
 #print axioms HigherCorrelations.triplePrimeFourier_neg_weight
+
+#print axioms HigherCorrelations.pairMeanPrimeCoefficient_ne_zero
+#print axioms HigherCorrelations.triplePrimeCoefficient_ne_zero
+#print axioms HigherCorrelations.primePower_unique
+#print axioms HigherCorrelations.primePowerIndex_values
+#print axioms HigherCorrelations.primePowerIndex_injective
+#print axioms HigherCorrelations.primePowerIndex_supported
+#print axioms HigherCorrelations.primePower_resonance_exists
+#print axioms HigherCorrelations.triplePrimeResonance_classification
+#print axioms HigherCorrelations.triplePrimeResonance_nonzero
+#print axioms HigherCorrelations.primePowerIndex_bijective
+#print axioms HigherCorrelations.primePower_resonance_unique
+#print axioms HigherCorrelations.triplePrimeResonantMass_summable
+#print axioms HigherCorrelations.triplePrimeResonantMass_norm_summable
+#print axioms HigherCorrelations.triplePrimeResonantMass_reindex
+#print axioms HigherCorrelations.triplePrimeResonantMass_nested
+#print axioms HigherCorrelations.triplePrimeResonantMass_nonneg
+#print axioms HigherCorrelations.triplePrimeResonantMass_bound
+#print axioms HigherCorrelations.triplePrime_resonant_norm_summable
+#print axioms HigherCorrelations.triplePrime_off_norm_summable
+#print axioms HigherCorrelations.triplePrime_resonant_series
+#print axioms HigherCorrelations.triplePrime_resonance_split
+#print axioms HigherCorrelations.triplePrime_resonance_signed
+#print axioms HigherCorrelations.triplePrime_resonance_unit_mass
+#print axioms HigherCorrelations.primePowerIndex_excludes_one
+#print axioms HigherCorrelations.primePowerIndex_equal_exponents
+#print axioms HigherCorrelations.primePowerIndex_ordered
+#print axioms HigherCorrelations.primePowerIndex_first
+#print axioms HigherCorrelations.primePower_distinct_product
+#print axioms HigherCorrelations.triplePrimeResonance_two_three
+#print axioms HigherCorrelations.triplePrimeOffSeries_zero_weight
+#print axioms HigherCorrelations.triplePrimeOffSeries_neg_weight
+#print axioms HigherCorrelations.triplePrime_resonance_minimal

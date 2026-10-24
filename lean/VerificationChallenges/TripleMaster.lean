@@ -1,3 +1,4 @@
+import HigherCorrelations.TriplePrimeResonanceDefinitions
 import HigherCorrelations.TriplePrimeFourierDefinitions
 import HigherCorrelations.TripleExpansionDefinitions
 import HigherCorrelations.TripleMasterPatternDefinitions
@@ -557,6 +558,132 @@ theorem triplePrimeFourier_zero_weight (T X Y : ℝ) (v : PrimeTriple) :
 
 theorem triplePrimeFourier_neg_weight (ω : ℝ → ℝ) (T X Y : ℝ) (v : PrimeTriple) :
     triplePrimeFourierTerm (fun t => -ω t) T X Y v = -triplePrimeFourierTerm ω T X Y v := by sorry
+
+theorem pairMeanPrimeCoefficient_ne_zero (X : ℝ) (hX : 1≤X) (n : ℕ) :
+    pairMeanPrimeCoefficient X n ≠ 0 ↔ IsPrimePow (n+1) := by sorry
+
+theorem triplePrimeCoefficient_ne_zero (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y)
+    (v : PrimeTriple) : triplePrimeCoefficient X Y v ≠ 0 ↔ ∀ r, IsPrimePow (v r+1) := by sorry
+
+theorem primePower_unique (p q a b : ℕ) (hp : p.Prime) (hq : q.Prime)
+    (ha : 0<a) (hb : 0<b) (he : p^a=q^b) : p=q ∧ a=b := by sorry
+
+theorem primePowerIndex_values (q : PrimePowerParameters) :
+    (primePowerIndex q 0+1 = q.1.val^q.2.1.val) ∧
+    (primePowerIndex q 1+1 = q.1.val^q.2.2.val) ∧
+    (primePowerIndex q 2+1 = q.1.val^(q.2.1.val+q.2.2.val)) := by sorry
+
+theorem primePowerIndex_injective : Function.Injective primePowerIndex := by sorry
+
+theorem primePowerIndex_supported (q : PrimePowerParameters) :
+    triplePrimeResonant (primePowerIndex q) ∧ ∀ r, IsPrimePow (primePowerIndex q r+1) := by sorry
+
+theorem primePower_resonance_exists (m n k : ℕ) (hm : IsPrimePow m)
+    (hn : IsPrimePow n) (hk : IsPrimePow k) (he : m*n=k) :
+    ∃ q : PrimePowerParameters, m=q.1.val^q.2.1.val ∧ n=q.1.val^q.2.2.val ∧
+      k=q.1.val^(q.2.1.val+q.2.2.val) := by sorry
+
+theorem triplePrimeResonance_classification (v : PrimeTriple) :
+    (triplePrimeResonant v ∧ ∀ r, IsPrimePow (v r+1)) ↔
+      ∃! q : PrimePowerParameters, primePowerIndex q = v := by sorry
+
+theorem triplePrimeResonance_nonzero (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) :
+    (triplePrimeResonant v ∧ triplePrimeCoefficient X Y v ≠ 0) ↔
+      ∃! q : PrimePowerParameters, primePowerIndex q=v := by sorry
+
+theorem primePowerIndex_bijective : ∃ e : PrimePowerParameters ≃ SupportedPrimeResonance,
+    ∀ q, (e q).val = primePowerIndex q := by sorry
+
+
+theorem primePower_resonance_unique (m n k : ℕ) :
+    (m*n=k ∧ ArithmeticFunction.vonMangoldt m * ArithmeticFunction.vonMangoldt n *
+      ArithmeticFunction.vonMangoldt k ≠ 0) ↔
+    ∃! q : PrimePowerParameters, m=q.1.val^q.2.1.val ∧ n=q.1.val^q.2.2.val ∧
+      k=q.1.val^(q.2.1.val+q.2.2.val) := by sorry
+
+theorem triplePrimeResonantMass_summable (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun q : PrimePowerParameters => triplePrimeCoefficient X Y (primePowerIndex q)) := by sorry
+
+theorem triplePrimeResonantMass_norm_summable (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun q : PrimePowerParameters => ‖triplePrimeCoefficient X Y (primePowerIndex q)‖) := by sorry
+
+theorem triplePrimeResonantMass_reindex (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    (∑' v : {v : PrimeTriple // triplePrimeResonant v}, triplePrimeCoefficient X Y v.val) =
+      triplePrimeResonantMass X Y := by sorry
+
+theorem triplePrimeResonantMass_nested (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    triplePrimeResonantMass X Y =
+      ∑' p : {p : ℕ // p.Prime}, ∑' a : {a : ℕ // 0<a}, ∑' b : {b : ℕ // 0<b},
+        triplePrimeCoefficient X Y (primePowerIndex (p,a,b)) := by sorry
+
+theorem triplePrimeResonantMass_nonneg (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    0 ≤ triplePrimeResonantMass X Y := by sorry
+
+theorem triplePrimeResonantMass_bound (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    triplePrimeResonantMass X Y ≤ triplePrimeMass X*triplePrimeMass Y*triplePrimeMass (X*Y) := by sorry
+
+theorem triplePrime_resonant_norm_summable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun v : {v : PrimeTriple // triplePrimeResonant v} =>
+      ‖triplePrimeFourierTerm ω T X Y v.val‖) := by sorry
+
+theorem triplePrime_off_norm_summable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun v : {v : PrimeTriple // ¬triplePrimeResonant v} =>
+      ‖triplePrimeFourierTerm ω T X Y v.val‖) := by sorry
+
+theorem triplePrime_resonant_series (ω : ℝ → ℝ) (T X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    (∑' v : {v : PrimeTriple // triplePrimeResonant v}, triplePrimeFourierTerm ω T X Y v.val) =
+      (∫ u : ℝ, (ω u:ℂ))*(triplePrimeResonantMass X Y:ℂ) := by sorry
+
+theorem triplePrime_resonance_split (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleWordIntegral ω T X Y ![.P,.P,.P] =
+      (∫ u : ℝ, (ω u:ℂ))*(triplePrimeResonantMass X Y:ℂ)+triplePrimeOffSeries ω T X Y := by sorry
+
+theorem triplePrime_resonance_signed (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    (tripleWordSign ![.P,.P,.P]:ℂ)*tripleWordIntegral ω T X Y ![.P,.P,.P] =
+      -(∫ u : ℝ, (ω u:ℂ))*(triplePrimeResonantMass X Y:ℂ)-triplePrimeOffSeries ω T X Y := by sorry
+
+theorem triplePrime_resonance_unit_mass (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (hm : ∫ u : ℝ, (ω u:ℂ) = 1) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleWordIntegral ω T X Y ![.P,.P,.P] =
+      (triplePrimeResonantMass X Y:ℂ)+triplePrimeOffSeries ω T X Y := by sorry
+
+theorem primePowerIndex_excludes_one (q : PrimePowerParameters) (r : Fin 3) :
+    primePowerIndex q r ≠ 0 := by sorry
+
+theorem primePowerIndex_equal_exponents (p : {p : ℕ // p.Prime}) (a : {a : ℕ // 0<a}) :
+    primePowerIndex (p,a,a) 0 = primePowerIndex (p,a,a) 1 := by sorry
+
+theorem primePowerIndex_ordered (p : {p : ℕ // p.Prime}) (a b : {a : ℕ // 0<a}) (hab : a≠b) :
+    primePowerIndex (p,a,b) ≠ primePowerIndex (p,b,a) := by sorry
+
+theorem primePowerIndex_first :
+    primePowerIndex (⟨2,by decide⟩,⟨1,by decide⟩,⟨1,by decide⟩) = ![1,1,3] := by sorry
+
+theorem primePower_distinct_product (p q : ℕ) (hp : p.Prime) (hq : q.Prime) (hne : p≠q) :
+    ¬IsPrimePow (p*q) := by sorry
+
+theorem triplePrimeResonance_two_three (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    triplePrimeResonant ![1,2,5] ∧ triplePrimeCoefficient X Y ![1,2,5] = 0 := by sorry
+
+theorem triplePrimeOffSeries_zero_weight (T X Y : ℝ) :
+    triplePrimeOffSeries (fun _ => 0) T X Y = 0 := by sorry
+
+theorem triplePrimeOffSeries_neg_weight (ω : ℝ → ℝ) (T X Y : ℝ) :
+    triplePrimeOffSeries (fun t => -ω t) T X Y = -triplePrimeOffSeries ω T X Y := by sorry
+
+theorem triplePrime_resonance_minimal (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) :
+    tripleWordIntegral ω 3 1 1 ![.P,.P,.P] =
+      (∫ u : ℝ, (ω u:ℂ))*(triplePrimeResonantMass 1 1:ℂ)+triplePrimeOffSeries ω 3 1 1 := by sorry
 
 end
 end HigherCorrelations

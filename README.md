@@ -47,7 +47,10 @@ restricted interchange, cutoff limits and full horizontal dependence. The ordere
 27-term P/A/H expansion is also formalized, including per-term integrability,
 all signs and the exact eight/nineteen split. The cubic prime term is now
 identified with its absolutely convergent Fourier series, with justified
-interchange, independent cutoff limits and exact sign/normalization. See
+interchange, independent cutoff limits and exact sign/normalization. Nonzero
+resonances are uniquely classified as ordered powers of a common prime,
+giving an absolutely convergent resonant/off-resonant split with the smoothing
+mass retained. See
 the [triple master record](research/lean-triple-master.md).
 
 ## Zeta23 inputs imported

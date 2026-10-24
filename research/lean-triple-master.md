@@ -1,12 +1,12 @@
 # Triple master identity, subseries and ordered word expansion
 
 Task: proof and formal verification. Assumptions: `UNCONDITIONAL`.
-Ledger: `MASTER-INTEGRATION-FORMAL-001`, `MASTER-IDENTITY-FORMAL-001`, and
-`MASTER-PATTERNS-FORMAL-001`, `MASTER-EXPANSION-FORMAL-001`, and
-`MASTER-PRIME-FOURIER-FORMAL-001`.
+Ledger: `MASTER-INTEGRATION-FORMAL-001`, `MASTER-IDENTITY-FORMAL-001`,
+`MASTER-PATTERNS-FORMAL-001`, `MASTER-EXPANSION-FORMAL-001`,
+`MASTER-PRIME-FOURIER-FORMAL-001` and `MASTER-PRIME-RESONANCE-FORMAL-001`.
 These milestones discharge integral-norm summability, the exact kernel identity,
-its five occurrence-index subseries, the ordered 27-word expansion and the
-cubic prime Fourier-series identification in
+its five occurrence-index subseries, the ordered 27-word expansion, the
+cubic prime Fourier-series identification and the exact resonance split in
 `TRIPLE-MASTER-001`. Its whole statement remains partially formalized.
 
 ## Checked statement
@@ -172,8 +172,9 @@ also compares the Lean list to both existing printed tables, including order.
 The statement admits signed continuous real weights on [1,2]. T=3, X=Y=1 and
 zero/negated weights have explicit checked specializations. A unit base retains
 its actual S,P,A,H functions. Zero-index patterns and word expansions are
-separate decompositions, with no asserted rowwise correspondence. The next milestone below discharges the cubic prime Fourier interchange;
-prime-power resonance classification and error estimates remain separate.
+separate decompositions, with no asserted rowwise correspondence. The next
+two milestones below discharge the cubic prime Fourier interchange and
+resonance classification; error estimates remain separate.
 
 ## Cubic prime Fourier series
 
@@ -214,8 +215,56 @@ finite-set cutoffs and integer cutoffs. `range N_r` represents 1<=n<=N_r,
 including its endpoint in full. No uniform cutoff convergence in varying T is
 asserted. At mn=k the term retains coefficient times integral omega; unit mass
 is never imposed. Checked endpoints also include T=3,X=Y=1, a zero coefficient
-in any integer-one slot, and zero/negated weights. The arithmetic classification
-of nonzero resonances into powers of a common prime remains to be formalized.
+in any integer-one slot, and zero/negated weights. The following milestone
+classifies the arithmetic support of the resonant subseries.
+
+## Exact prime-power resonances
+
+`primePower_resonance_unique` proves, for natural m,n,k,
+\[
+ mn=k,\quad \Lambda(m)\Lambda(n)\Lambda(k)\ne0
+ \quad\Longleftrightarrow\quad
+ (m,n,k)=(p^a,p^b,p^{a+b})
+\]
+for a unique prime p and unique **ordered positive** exponents a,b. Nonzero
+von Mangoldt values imply the integers exceed one. Prime divisibility forces
+the same base, and injectivity of positive powers determines the exponents.
+No factorization algorithm, sieve input or numerical assumption is used.
+
+For X,Y>=1, the actual coefficient is nonzero exactly at prime powers.
+`primePowerIndex` maps (p,a,b) to the Lean indices (p^a-1,p^b-1,p^(a+b)-1);
+its integer values, injectivity and bijection onto supported resonant triples
+are checked. The arithmetic condition mn=k is independent of omega. A vanishing
+Fourier term does not imply a vanishing arithmetic coefficient.
+
+Define the nonnegative real mass
+\[
+ R_{\rm res}(X,Y)=\sum_{p\ {\rm prime}}\sum_{a\ge1}\sum_{b\ge1}
+ a_X(p^a)a_Y(p^b)a_{XY}(p^{a+b}).
+\]
+`triplePrimeResonantMass_reindex` discards only proved-zero coefficients from
+the full resonant subtype. Injectivity transfers absolute summability from
+the full coefficient series, and `triplePrimeResonantMass_nested` identifies
+the joint sum with the displayed nested sum. The bound
+0<=R_res<=B(X)B(Y)B(XY) is proved. Equal exponents appear once; unequal exponents
+remain ordered, with no division by two.
+
+Let R_off be the existing Fourier summand restricted to mn!=k. The resonant
+and off-resonant Fourier subseries are both absolutely convergent. The exact
+split and the signed PPP contribution are
+\[
+ I_T(P_X,P_Y,P_{XY})=(\int\omega)R_{\rm res}+R_{\rm off},\qquad
+ -I_T=-(\int\omega)R_{\rm res}-R_{\rm off}.
+\]
+The integral of omega is retained even when it is zero or negative. A separate
+unit-mass specialization recovers the manuscript formula. T=3,X=Y=1 and
+zero/negated weights are included. Checked arithmetic endpoints include
+integer-one exclusion, 2*2=4 and the zero coefficient at 2*3=6.
+
+All parameters are fixed before regrouping. Absolute convergence justifies
+the reindexing, nested sums and complementary-subseries split; no new
+sum/integral exchange is needed. Fourier decay, off-diagonal bounds and
+asymptotic evaluation of R_res remain separate formalization tasks.
 
 ## Proof dependencies and domination
 
@@ -262,14 +311,15 @@ claimed.
 ## Verification and remaining boundary
 
 Definition-only interfaces: `TripleMasterDefinitions`,
-`TripleMasterPatternDefinitions`, `TripleExpansionDefinitions` and
-`TriplePrimeFourierDefinitions`. Proofs:
+`TripleMasterPatternDefinitions`, `TripleExpansionDefinitions`,
+`TriplePrimeFourierDefinitions` and `TriplePrimeResonanceDefinitions`. Proofs:
 `TripleMasterBounds`, `TripleMasterIntegration`, `TripleMasterIdentity`,
-`TripleMasterPatterns`, `TripleExpansion` and `TriplePrimeFourier`.
-All **108 public declarations** have independent Comparator statements, inventory
-entries and axiom reports. The unfinished integral-norm bound, kernel identity
-five-subseries identity, ordered word expansion and cubic prime Fourier identity
-must each be rejected
+`TripleMasterPatterns`, `TripleExpansion`, `TriplePrimeFourier` and
+`TriplePrimeResonance`.
+All **140 public declarations** have independent Comparator statements, inventory
+entries and axiom reports. The unfinished integral-norm bound, kernel identity,
+five-subseries identity, ordered word expansion, cubic prime Fourier identity,
+unique resonance classification and resonance split must each be rejected
 for `sorryAx`. Only `propext`,
 `Quot.sound` and `Classical.choice` are permitted; the external kernel is disabled.
 
@@ -277,13 +327,14 @@ for `sorryAx`. Only `propext`,
 python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only
 ```
 
-The focused mode checks the triple-master Comparator suite, five negative
+The focused mode checks the triple-master Comparator suite, seven negative
 controls, combined
 project build, complete axiom report, analytic coverage and pair/triple/harness
 regressions. Earlier Comparator suites are not rerun. The ledger links the
 successful content-addressed evidence.
 
 The proof uses the existing unconditional counting/convergence infrastructure,
-not the imported PREPRINT fixed strip. The next step is the exact prime-power resonance classification.
-Fourier-decay and off-diagonal estimates remain separate formalization tasks. Historical claim statuses and pair/triple
-audit scopes are preserved; the open signed complex-argument triple error is unaffected.
+not the imported PREPRINT fixed strip. The next step is the Fourier-decay
+estimate in the exact conventions; off-diagonal estimates remain separate.
+Historical claim statuses and pair/triple audit scopes are preserved; the
+open signed complex-argument triple error is unaffected.

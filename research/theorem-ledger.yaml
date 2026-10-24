@@ -4522,3 +4522,53 @@ claims:
       constants_scope: "Exact sum-of-integral-norm bound B(X)B(Y)B(XY) integral |omega|; no hidden error constant. The effective flag refers only to this explicit bound, without upgrading any historical counting constant."
       endpoint_audit: "Non-strict T>=3,X,Y>=1, closed smoothing support, signed/zero weights, literal integer-one zero terms, inclusive integer cutoffs and unnormalized resonance mass. Positive Fourier argument and negative PPP sign checked separately."
       baseline_audit_coverage: "Discharges the cubic prime Fourier-series interchange clause of TRIPLE-MASTER-001. Exact prime-power resonance classification and Fourier decay remain separate. Historical statuses and audit scopes are preserved; the signed complex-argument triple error remains open."
+
+  - id: MASTER-PRIME-RESONANCE-FORMAL-001
+    title: Unique common-prime resonance classification and exact series split
+    kind: theorem
+    statement: |
+      For natural integers m,n,k, the conditions m*n=k and
+      Lambda(m)Lambda(n)Lambda(k) != 0 hold if and only if there is a unique
+      prime p and unique ordered positive exponents a,b such that
+      m=p^a, n=p^b, k=p^(a+b). For X,Y>=1 the actual prime coefficients
+      a_x(n)=Lambda(n)/sqrt(n)*min(n/x,x/n) are nonzero exactly at prime
+      powers. The map (p,a,b) to the indices (p^a-1,p^b-1,p^(a+b)-1)
+      is a bijection onto supported resonant triples, preserving n=index+1.
+      The full resonant coefficient subseries equals the absolutely convergent
+      joint sum R_res(X,Y) over these parameters, and equals the nested sum
+      over p prime, a>=1 and b>=1 in that order. It satisfies
+      0<=R_res(X,Y)<=B(X)B(Y)B(XY), with B(x)=sum_(n>=1) a_x(n).
+      Let omega be continuous real supported in [1,2], T>=3 and X,Y>=1.
+      Let R_off be the cubic Fourier summand restricted to m*n != k.
+      Both the resonant and off-resonant Fourier subseries converge absolutely,
+      and I_T(P_X,P_Y,P_XY)=(integral omega)*R_res(X,Y)+R_off(omega,T,X,Y).
+      The signed PPP contribution is -(integral omega)*R_res-R_off.
+      Unit smoothing mass is a separate specialization; signed and zero
+      weights are allowed. Equal exponents appear once, unequal exponents
+      remain ordered, and no factor of one half is introduced. Integer-one
+      coefficients vanish; 2*2=4 is supported while 2*3=6 has zero coefficient.
+      Minimal parameters T=3,X=Y=1 and zero/negated weights are checked.
+      Resonance is an arithmetic condition independent of Fourier nonvanishing.
+      No Fourier decay, off-diagonal smallness or asymptotic evaluation is claimed.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-PRIME-FOURIER-FORMAL-001, MASTER-EXPANSION-FORMAL-001, PAIR-MEANVALUE-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TriplePrimeResonance.lean
+      label: HigherCorrelations.triplePrime_resonance_split
+      companion_declarations: "primePower_resonance_unique, pairMeanPrimeCoefficient_ne_zero, triplePrimeResonance_nonzero, primePowerIndex_values, primePowerIndex_injective, primePowerIndex_bijective, triplePrimeResonantMass_summable, triplePrimeResonantMass_norm_summable, triplePrimeResonantMass_reindex, triplePrimeResonantMass_nested, triplePrimeResonantMass_bound, triplePrime_resonant_norm_summable, triplePrime_off_norm_summable, triplePrime_resonant_series, triplePrime_resonance_signed, triplePrime_resonance_unit_mass, primePowerIndex_excludes_one, primePowerIndex_equal_exponents, primePowerIndex_ordered, triplePrimeResonance_two_three, triplePrime_resonance_minimal"
+      bookkeeping: research/lean-triple-master.md
+      inventory: research/lean-triple-master-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: e654059e7d3c9759af48a30d017f469f12818eacf968a57ebdcb5e1a45f58b7d
+    limit_order: "Fix omega,T,X,Y before reindexing or regrouping. Inherit absolute summability from the existing full coefficient and Fourier series before applying nested tsum or complementary-subseries identities. No varying-parameter cutoff or asymptotic limit is asserted."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "32 new public declarations extend the triple-master Comparator suite to 140. Definition-only challenge surface and seven separate unfinished-proof rejection controls, including unique classification and series split. Combined build, complete axiom report and analytic/pair/triple/harness regressions. Only propext, Quot.sound and Classical.choice permitted; external kernel disabled. Earlier Comparator suites are not rerun in focused mode."
+      imported_inputs: "Pinned mathlib vonMangoldt_ne_zero_iff, isPrimePow_nat_iff, prime divisibility of powers and injectivity of natural powers; existing actual coefficient/Fourier summability and exact resonance Fourier value. No RH, sieve, zero-free-strip or prime-correlation assumption."
+      constants_scope: "Exact coefficient-subseries bound by B(X)B(Y)B(XY), with no hidden error constant or upgrade to historical counting constants."
+      endpoint_audit: "Positive ordered exponents; unique prime and exponents; integer-one exclusion; equal exponents counted once and unequal exponents retained in order. T>=3,X,Y>=1, closed smoothing support, signed/zero weights and literal smoothing mass."
+      baseline_audit_coverage: "Discharges the exact prime-power resonance classification and resonant/off-resonant decomposition clauses of TRIPLE-MASTER-001. Fourier decay remains separate. Historical claim statuses and RH-audit scopes are unchanged; the signed complex-argument triple error remains open."

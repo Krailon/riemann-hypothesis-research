@@ -188,8 +188,40 @@ PARTIAL = {
          'triplePrimeFourier_integer_one',
          'triplePrime_fourier_minimal',
          'triplePrimeFourier_zero_weight',
-         'triplePrimeFourier_neg_weight'],
-        ['Formalize the prime-side exact prime-power resonance classification and Fourier-decay statements.']),
+         'triplePrimeFourier_neg_weight',
+         'pairMeanPrimeCoefficient_ne_zero',
+         'triplePrimeCoefficient_ne_zero',
+         'primePower_unique',
+         'primePowerIndex_values',
+         'primePowerIndex_injective',
+         'primePowerIndex_supported',
+         'primePower_resonance_exists',
+         'triplePrimeResonance_classification',
+         'triplePrimeResonance_nonzero',
+         'primePowerIndex_bijective',
+         'primePower_resonance_unique',
+         'triplePrimeResonantMass_summable',
+         'triplePrimeResonantMass_norm_summable',
+         'triplePrimeResonantMass_reindex',
+         'triplePrimeResonantMass_nested',
+         'triplePrimeResonantMass_nonneg',
+         'triplePrimeResonantMass_bound',
+         'triplePrime_resonant_norm_summable',
+         'triplePrime_off_norm_summable',
+         'triplePrime_resonant_series',
+         'triplePrime_resonance_split',
+         'triplePrime_resonance_signed',
+         'triplePrime_resonance_unit_mass',
+         'primePowerIndex_excludes_one',
+         'primePowerIndex_equal_exponents',
+         'primePowerIndex_ordered',
+         'primePowerIndex_first',
+         'primePower_distinct_product',
+         'triplePrimeResonance_two_three',
+         'triplePrimeOffSeries_zero_weight',
+         'triplePrimeOffSeries_neg_weight',
+         'triplePrime_resonance_minimal'],
+        ['Formalize the remaining prime-side Fourier-decay statements.']),
     'TRIPLE-KERNEL-PROFILE-001': (
         ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
          'rationalKernel_reciprocal', 'rationalProfile_bound', 'rationalProfile_swap',
@@ -727,11 +759,15 @@ class CoverageTests(unittest.TestCase):
                      'tripleWord_counts', 'tripleMaster_word_split', 'tripleMaster_word_minimal',
                      'triplePrime_fourier_identity', 'triplePrimeFourier_summable',
                      'triplePrime_integralNorm', 'triplePrime_signed_PPP',
-                     'triplePrimeFourier_integer_cutoff', 'triplePrimeFourier_resonance']:
+                     'triplePrimeFourier_integer_cutoff', 'triplePrimeFourier_resonance',
+                     'primePower_resonance_unique', 'primePowerIndex_bijective',
+                     'triplePrimeResonantMass_nested', 'triplePrimeResonantMass_reindex',
+                     'triplePrime_resonance_split', 'triplePrime_resonance_signed']:
             self.assertIn('HigherCorrelations.' + name, node['components'])
         self.assertFalse(any('five index-pattern subseries' in gap for gap in node['remaining_obligations']))
         self.assertTrue(any('prime-side' in gap for gap in node['remaining_obligations']))
         self.assertFalse(any('Fourier-series interchange' in gap for gap in node['remaining_obligations']))
+        self.assertFalse(any('resonance classification' in gap for gap in node['remaining_obligations']))
 
     def test_pair_translation_complete(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-TRANSLATION-001')

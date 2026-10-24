@@ -1,3 +1,4 @@
+import HigherCorrelations.TriplePrimeResonanceDefinitions
 import HigherCorrelations.TriplePrimeFourierDefinitions
 import HigherCorrelations.TripleExpansionDefinitions
 import HigherCorrelations.TripleMasterPatternDefinitions
@@ -42,6 +43,18 @@ theorem triplePrime_fourier_identity (ω : ℝ → ℝ) (hω : Continuous ω)
     (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
     tripleWordIntegral ω T X Y ![.P,.P,.P] =
       ∑' v : PrimeTriple, triplePrimeFourierTerm ω T X Y v := by sorry
+
+theorem primePower_resonance_unique (m n k : ℕ) :
+    (m*n=k ∧ ArithmeticFunction.vonMangoldt m * ArithmeticFunction.vonMangoldt n *
+      ArithmeticFunction.vonMangoldt k ≠ 0) ↔
+    ∃! q : PrimePowerParameters, m=q.1.val^q.2.1.val ∧ n=q.1.val^q.2.2.val ∧
+      k=q.1.val^(q.2.1.val+q.2.2.val) := by sorry
+
+theorem triplePrime_resonance_split (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleWordIntegral ω T X Y ![.P,.P,.P] =
+      (∫ u : ℝ, (ω u:ℂ))*(triplePrimeResonantMass X Y:ℂ)+triplePrimeOffSeries ω T X Y := by sorry
 
 end
 end HigherCorrelations

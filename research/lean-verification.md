@@ -226,9 +226,10 @@ the exact eight/nineteen split. No zero-free-strip input is used. The full
 `TRIPLE-MASTER-001` remains partial. The cubic prime Fourier identity and its
 absolute convergence/interchange are now checked, retaining the frequency
 T log(mn/k)/(2 pi), the negative PPP sign, independent cutoffs and unnormalized
-resonance mass. Prime-power resonance classification and Fourier decay remain
-separate obligations.
+resonance mass. Nonzero resonances now have a unique common-prime/ordered-
+positive-exponent parametrization, with absolutely convergent reindexing and
+the exact resonant/off-resonant split. Fourier decay remains a separate obligation.
 
 Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only`
-for all 108 triple-master Comparator statements, five negative controls, combined build,
+for all 140 triple-master Comparator statements, seven negative controls, combined build,
 complete axiom report and regressions. Earlier Comparator suites are not rerun.
