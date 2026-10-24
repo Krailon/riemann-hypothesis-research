@@ -228,8 +228,12 @@ absolute convergence/interchange are now checked, retaining the frequency
 T log(mn/k)/(2 pi), the negative PPP sign, independent cutoffs and unnormalized
 resonance mass. Nonzero resonances now have a unique common-prime/ordered-
 positive-exponent parametrization, with absolutely convergent reindexing and
-the exact resonant/off-resonant split. Fourier decay remains a separate obligation.
+the exact resonant/off-resonant split. Finite-order Fourier decay is now checked
+with the literal derivative L1 norm, (2*pi*|xi|)^N denominator and exact cubic
+frequency substitution. The origin retains the mass bound. Whole-claim assembly,
+X/Y symmetry, the observable norm corollary and historical constant provenance
+remain separate; no summed off-diagonal smallness is inferred.
 
 Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only`
-for all 140 triple-master Comparator statements, seven negative controls, combined build,
+for all 173 triple-master Comparator statements, nine negative controls, combined build,
 complete axiom report and regressions. Earlier Comparator suites are not rerun.

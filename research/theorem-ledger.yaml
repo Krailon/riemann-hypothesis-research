@@ -4572,3 +4572,54 @@ claims:
       constants_scope: "Exact coefficient-subseries bound by B(X)B(Y)B(XY), with no hidden error constant or upgrade to historical counting constants."
       endpoint_audit: "Positive ordered exponents; unique prime and exponents; integer-one exclusion; equal exponents counted once and unequal exponents retained in order. T>=3,X,Y>=1, closed smoothing support, signed/zero weights and literal smoothing mass."
       baseline_audit_coverage: "Discharges the exact prime-power resonance classification and resonant/off-resonant decomposition clauses of TRIPLE-MASTER-001. Fourier decay remains separate. Historical claim statuses and RH-audit scopes are unchanged; the signed complex-argument triple error remains open."
+
+  - id: MASTER-FOURIER-DECAY-FORMAL-001
+    title: Exact finite-order Fourier decay and cubic-frequency specialization
+    kind: theorem
+    statement: |
+      For natural N and compactly supported complex f of class C^N on R,
+      each derivative through N is integrable and the project transform obeys
+      Fourier(f^(N))(xi)=(2*pi*i*xi)^N Fourier(f)(xi), in cycles with negative
+      exponential convention. Therefore (2*pi*|xi|)^N |Fourier(f)(xi)| is at
+      most integral |f^(N)|, for every real xi including zero.
+      Casting a real C^N weight omega to complex commutes with N derivatives.
+      Set D_N(omega)=integral_R |omega^(N)(u)| du. For compactly supported omega,
+      |omega_hat(xi)|<=D_0 and, if xi!=0, |omega_hat(xi)|<=D_N/(2*pi*|xi|)^N,
+      hence the minimum of these two bounds. At xi=0 the transform is integral
+      omega. N=0 uses 0^0=1 and recovers the mass bound; N=1, frequencies +1
+      and -1, zero weights and negated weights are explicitly checked.
+      For T>0 and the existing positive-integer cubic indices, the frequency
+      T/(2*pi)*log(m*n/k) vanishes exactly when m*n=k, and
+      2*pi*|T/(2*pi)*log(m*n/k)|=T*|log(m*n/k)| exactly.
+      For T>=3,X,Y>=1, continuous derivatives through N and support omega in
+      [1,2], every off-resonant cubic Fourier summand is bounded in norm by
+      a_X(m)a_Y(n)a_XY(k) times min(D_0,D_N/(T*|log(m*n/k)|)^N).
+      The mass bound applies also to resonant summands. Smooth weights in the
+      manuscript are included, with signed and zero weights and no unit-mass
+      hypothesis. Minimal parameters T=3,X=Y=1 are checked. Replacing D_0,D_N
+      by any common upper bounds proves uniformity for families with these
+      explicit bounds. No shrinking-width uniformity without derivative-norm
+      control, compact Fourier support, or negligible summed off-diagonal
+      error is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-PRIME-FOURIER-FORMAL-001, MASTER-PRIME-RESONANCE-FORMAL-001, PAIR-MEANVALUE-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleFourierDecay.lean
+      label: HigherCorrelations.triplePrimeFourierTerm_decay
+      companion_declarations: "fourierDecay_derivative_support, fourierDecay_derivative_compact, fourierDecay_derivative_integrable, pairMeanFourier_iteratedDeriv, pairMeanFourier_power_bound, pairMeanFourier_decay, fourierDecay_iteratedDeriv_ofReal, fourierDecay_real_power_bound, fourierDecay_real_min, fourierDecay_real_uniform, fourierDecay_zero_frequency, fourierDecay_first_order, fourierDecay_order_zero, fourierDecay_unit_frequencies, triplePrimeFrequency_eq_zero, triplePrimeFrequency_decay_scale, tripleWeight_fourier_smooth, tripleWeight_cubic_decay, triplePrimeFourierTerm_mass_bound, tripleWeight_cubic_uniform, triplePrimeFourierTerm_decay_minimal"
+      bookkeeping: research/lean-triple-master.md
+      inventory: research/lean-triple-master-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 0a1c95ba5df306c29c1fb1fec96ad17efca89f11dc4443e0d910292a407cc15d
+    limit_order: "Fix derivative order, smoothing weight, frequency and finite parameters. Verify derivative integrability before applying the Fourier derivative theorem. Divide only at nonzero frequency. No new infinite-series interchange or asymptotic limit; family uniformity requires explicit common derivative-norm bounds."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "33 new public declarations extend the triple-master Comparator suite to 173. Definition-only challenge surface and nine separate unfinished-proof controls, including general decay and cubic specialization. Combined build, complete axiom report and analytic/pair/triple/harness regressions. Only propext, Quot.sound and Classical.choice permitted; external kernel disabled. Earlier Comparator suites are not rerun in focused mode."
+      imported_inputs: "Pinned mathlib Real.fourier_iteratedDeriv, compact derivative support and continuity, continuous-linear-map differentiation, and existing pairMeanFourier_eq/norm_bound. The weaker compact-family existential decay estimate is not substituted for the sharp derivative-norm bound. No RH or arithmetic conjecture."
+      constants_scope: "Exact constant one, explicit derivative L1 norms, literal 2*pi and T cancellation. No effectivity upgrade to historical zero-counting constants."
+      endpoint_audit: "N=0 and N=1, xi=0 and both frequency signs; division only when xi!=0. C^N compact support, including closed [1,2], signed/zero weights, T>=3,X,Y>=1 and explicit minimal specialization."
+      baseline_audit_coverage: "Discharges the Fourier-decay clauses of TRIPLE-MASTER-001. Whole-claim assembly, X/Y symmetry, observable norm corollary and historical effective-constant provenance remain separate. Historical claim statuses and RH-audit scopes are preserved; the signed complex-argument triple error remains open."

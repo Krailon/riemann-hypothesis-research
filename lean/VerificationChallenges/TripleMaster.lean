@@ -1,3 +1,4 @@
+import HigherCorrelations.FourierDecayDefinitions
 import HigherCorrelations.TriplePrimeResonanceDefinitions
 import HigherCorrelations.TriplePrimeFourierDefinitions
 import HigherCorrelations.TripleExpansionDefinitions
@@ -684,6 +685,142 @@ theorem triplePrime_resonance_minimal (ω : ℝ → ℝ) (hω : Continuous ω)
     (hs : Function.support ω ⊆ Icc (1:ℝ) 2) :
     tripleWordIntegral ω 3 1 1 ![.P,.P,.P] =
       (∫ u : ℝ, (ω u:ℂ))*(triplePrimeResonantMass 1 1:ℂ)+triplePrimeOffSeries ω 3 1 1 := by sorry
+
+theorem fourierDecay_derivative_support (f : ℝ → ℂ) (N : ℕ) :
+    tsupport (iteratedDeriv N f) ⊆ tsupport f := by sorry
+
+theorem fourierDecay_derivative_compact (f : ℝ → ℂ) (hc : HasCompactSupport f) (N : ℕ) :
+    HasCompactSupport (iteratedDeriv N f) := by sorry
+
+theorem fourierDecay_derivative_integrable (f : ℝ → ℂ) (N : ℕ)
+    (hf : ContDiff ℝ N f) (hc : HasCompactSupport f) (j : ℕ) (hj : j≤N) :
+    Integrable (iteratedDeriv j f) := by sorry
+
+theorem pairMeanFourier_iteratedDeriv (f : ℝ → ℂ) (N : ℕ)
+    (hf : ContDiff ℝ N f) (hc : HasCompactSupport f) (ξ : ℝ) :
+    pairMeanFourier (iteratedDeriv N f) ξ =
+      (2*(Real.pi:ℂ)*Complex.I*ξ)^N * pairMeanFourier f ξ := by sorry
+
+theorem pairMeanFourier_power_bound (f : ℝ → ℂ) (N : ℕ)
+    (hf : ContDiff ℝ N f) (hc : HasCompactSupport f) (ξ : ℝ) :
+    (2*Real.pi*|ξ|)^N * ‖pairMeanFourier f ξ‖ ≤ ∫ u : ℝ, ‖iteratedDeriv N f u‖ := by sorry
+
+theorem pairMeanFourier_decay (f : ℝ → ℂ) (N : ℕ)
+    (hf : ContDiff ℝ N f) (hc : HasCompactSupport f) (ξ : ℝ) (hξ : ξ≠0) :
+    ‖pairMeanFourier f ξ‖ ≤ (∫ u : ℝ, ‖iteratedDeriv N f u‖)/(2*Real.pi*|ξ|)^N := by sorry
+
+theorem fourierDecay_iteratedDeriv_ofReal (ω : ℝ → ℝ) (N : ℕ) (hω : ContDiff ℝ N ω) :
+    iteratedDeriv N (fun u => (ω u:ℂ)) = fun u => ((iteratedDeriv N ω u:ℝ):ℂ) := by sorry
+
+theorem fourierDecay_ofReal_compact (ω : ℝ → ℝ) (hc : HasCompactSupport ω) :
+    HasCompactSupport (fun u => (ω u:ℂ)) := by sorry
+
+theorem fourierDerivativeL1_nonneg (ω : ℝ → ℝ) (N : ℕ) : 0 ≤ fourierDerivativeL1 ω N := by sorry
+
+theorem fourierDerivativeL1_zero_order (ω : ℝ → ℝ) : fourierDerivativeL1 ω 0 = ∫ u : ℝ, |ω u| := by sorry
+
+theorem fourierDecay_real_power_bound (ω : ℝ → ℝ) (N : ℕ)
+    (hω : ContDiff ℝ N ω) (hc : HasCompactSupport ω) (ξ : ℝ) :
+    (2*Real.pi*|ξ|)^N * ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤ fourierDerivativeL1 ω N := by sorry
+
+theorem fourierDecay_real_bound (ω : ℝ → ℝ) (N : ℕ)
+    (hω : ContDiff ℝ N ω) (hc : HasCompactSupport ω) (ξ : ℝ) (hξ : ξ≠0) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤ fourierDerivativeL1 ω N/(2*Real.pi*|ξ|)^N := by sorry
+
+theorem fourierDecay_real_mass (ω : ℝ → ℝ) (ξ : ℝ) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤ fourierDerivativeL1 ω 0 := by sorry
+
+theorem fourierDecay_real_min (ω : ℝ → ℝ) (N : ℕ)
+    (hω : ContDiff ℝ N ω) (hc : HasCompactSupport ω) (ξ : ℝ) (hξ : ξ≠0) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤
+      min (fourierDerivativeL1 ω 0) (fourierDerivativeL1 ω N/(2*Real.pi*|ξ|)^N) := by sorry
+
+theorem fourierDecay_real_uniform (ω : ℝ → ℝ) (N : ℕ)
+    (hω : ContDiff ℝ N ω) (hc : HasCompactSupport ω) (D₀ Dₙ : ℝ)
+    (h0 : fourierDerivativeL1 ω 0 ≤ D₀) (hn : fourierDerivativeL1 ω N ≤ Dₙ)
+    (ξ : ℝ) (hξ : ξ≠0) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤ min D₀ (Dₙ/(2*Real.pi*|ξ|)^N) := by sorry
+
+theorem fourierDecay_zero_frequency (ω : ℝ → ℝ) :
+    pairMeanFourier (fun u => (ω u:ℂ)) 0 = ∫ u : ℝ, (ω u:ℂ) := by sorry
+
+theorem fourierDecay_first_order (ω : ℝ → ℝ) (hω : ContDiff ℝ 1 ω)
+    (hc : HasCompactSupport ω) (ξ : ℝ) (hξ : ξ≠0) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤ (∫ u : ℝ, |deriv ω u|)/(2*Real.pi*|ξ|) := by sorry
+
+theorem fourierDerivativeL1_zero_weight (N : ℕ) : fourierDerivativeL1 (fun _ => 0) N = 0 := by sorry
+
+theorem fourierDerivativeL1_neg_weight (ω : ℝ → ℝ) (N : ℕ) :
+    fourierDerivativeL1 (fun u => -ω u) N = fourierDerivativeL1 ω N := by sorry
+
+theorem fourierDecay_real_neg_weight (ω : ℝ → ℝ) (ξ : ℝ) :
+    ‖pairMeanFourier (fun u => (-ω u:ℂ)) ξ‖ = ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ := by sorry
+
+theorem fourierDecay_order_zero (ω : ℝ → ℝ) (ξ : ℝ) :
+    (2*Real.pi*|ξ|)^0 * ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤ fourierDerivativeL1 ω 0 := by sorry
+
+theorem fourierDecay_unit_frequencies (ω : ℝ → ℝ) (N : ℕ)
+    (hω : ContDiff ℝ N ω) (hc : HasCompactSupport ω) :
+    (‖pairMeanFourier (fun u => (ω u:ℂ)) 1‖ ≤
+      min (fourierDerivativeL1 ω 0) (fourierDerivativeL1 ω N/(2*Real.pi)^N)) ∧
+    (‖pairMeanFourier (fun u => (ω u:ℂ)) (-1)‖ ≤
+      min (fourierDerivativeL1 ω 0) (fourierDerivativeL1 ω N/(2*Real.pi)^N)) := by sorry
+
+theorem triplePrimeFrequency_eq_zero (T : ℝ) (hT : 0<T) (v : PrimeTriple) :
+    triplePrimeFrequency T v = 0 ↔ triplePrimeResonant v := by sorry
+
+theorem triplePrimeFrequency_ne_zero (T : ℝ) (hT : 0<T) (v : PrimeTriple) :
+    triplePrimeFrequency T v ≠ 0 ↔ ¬triplePrimeResonant v := by sorry
+
+theorem triplePrimeFrequency_decay_scale (T : ℝ) (hT : 0<T) (v : PrimeTriple) :
+    2*Real.pi*|triplePrimeFrequency T v| =
+      T*|Real.log (((v 0+1:ℕ):ℝ)*((v 1+1:ℕ):ℝ)/((v 2+1:ℕ):ℝ))| := by sorry
+
+theorem tripleWeight_fourier_decay (ω : ℝ → ℝ) (N : ℕ) (hω : ContDiff ℝ N ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (ξ : ℝ) (hξ : ξ≠0) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤
+      min (fourierDerivativeL1 ω 0) (fourierDerivativeL1 ω N/(2*Real.pi*|ξ|)^N) := by sorry
+
+theorem tripleWeight_fourier_smooth (ω : ℝ → ℝ) (hω : ContDiff ℝ (⊤ : ℕ∞) ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (N : ℕ) (ξ : ℝ) (hξ : ξ≠0) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤
+      min (fourierDerivativeL1 ω 0) (fourierDerivativeL1 ω N/(2*Real.pi*|ξ|)^N) := by sorry
+
+theorem tripleWeight_cubic_decay (ω : ℝ → ℝ) (N : ℕ) (hω : ContDiff ℝ N ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 0<T)
+    (v : PrimeTriple) (hv : ¬triplePrimeResonant v) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) (triplePrimeFrequency T v)‖ ≤
+      min (fourierDerivativeL1 ω 0)
+        (fourierDerivativeL1 ω N/(T*|Real.log (((v 0+1:ℕ):ℝ)*((v 1+1:ℕ):ℝ)/((v 2+1:ℕ):ℝ))|)^N) := by sorry
+
+theorem triplePrimeFourierTerm_norm_factor (ω : ℝ → ℝ) (T X Y : ℝ)
+    (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) :
+    ‖triplePrimeFourierTerm ω T X Y v‖ = triplePrimeCoefficient X Y v*
+      ‖pairMeanFourier (fun u => (ω u:ℂ)) (triplePrimeFrequency T v)‖ := by sorry
+
+theorem triplePrimeFourierTerm_mass_bound (ω : ℝ → ℝ) (T X Y : ℝ)
+    (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) :
+    ‖triplePrimeFourierTerm ω T X Y v‖ ≤ triplePrimeCoefficient X Y v*fourierDerivativeL1 ω 0 := by sorry
+
+theorem triplePrimeFourierTerm_decay (ω : ℝ → ℝ) (N : ℕ) (hω : ContDiff ℝ N ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) (hv : ¬triplePrimeResonant v) :
+    ‖triplePrimeFourierTerm ω T X Y v‖ ≤ triplePrimeCoefficient X Y v*
+      min (fourierDerivativeL1 ω 0)
+        (fourierDerivativeL1 ω N/(T*|Real.log (((v 0+1:ℕ):ℝ)*((v 1+1:ℕ):ℝ)/((v 2+1:ℕ):ℝ))|)^N) := by sorry
+
+theorem tripleWeight_cubic_uniform (ω : ℝ → ℝ) (N : ℕ) (hω : ContDiff ℝ N ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (D₀ Dₙ : ℝ)
+    (h0 : fourierDerivativeL1 ω 0 ≤ D₀) (hn : fourierDerivativeL1 ω N ≤ Dₙ)
+    (T : ℝ) (hT : 0<T) (v : PrimeTriple) (hv : ¬triplePrimeResonant v) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) (triplePrimeFrequency T v)‖ ≤
+      min D₀ (Dₙ/(T*|Real.log (((v 0+1:ℕ):ℝ)*((v 1+1:ℕ):ℝ)/((v 2+1:ℕ):ℝ))|)^N) := by sorry
+
+theorem triplePrimeFourierTerm_decay_minimal (ω : ℝ → ℝ) (N : ℕ) (hω : ContDiff ℝ N ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (v : PrimeTriple) (hv : ¬triplePrimeResonant v) :
+    ‖triplePrimeFourierTerm ω 3 1 1 v‖ ≤ triplePrimeCoefficient 1 1 v*
+      min (fourierDerivativeL1 ω 0)
+        (fourierDerivativeL1 ω N/(3*|Real.log (((v 0+1:ℕ):ℝ)*((v 1+1:ℕ):ℝ)/((v 2+1:ℕ):ℝ))|)^N) := by sorry
 
 end
 end HigherCorrelations

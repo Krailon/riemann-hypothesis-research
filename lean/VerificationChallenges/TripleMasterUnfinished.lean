@@ -1,3 +1,4 @@
+import HigherCorrelations.FourierDecayDefinitions
 import HigherCorrelations.TriplePrimeResonanceDefinitions
 import HigherCorrelations.TriplePrimeFourierDefinitions
 import HigherCorrelations.TripleExpansionDefinitions
@@ -55,6 +56,17 @@ theorem triplePrime_resonance_split (ω : ℝ → ℝ) (hω : Continuous ω)
     (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
     tripleWordIntegral ω T X Y ![.P,.P,.P] =
       (∫ u : ℝ, (ω u:ℂ))*(triplePrimeResonantMass X Y:ℂ)+triplePrimeOffSeries ω T X Y := by sorry
+
+theorem fourierDecay_real_bound (ω : ℝ → ℝ) (N : ℕ)
+    (hω : ContDiff ℝ N ω) (hc : HasCompactSupport ω) (ξ : ℝ) (hξ : ξ≠0) :
+    ‖pairMeanFourier (fun u => (ω u:ℂ)) ξ‖ ≤ fourierDerivativeL1 ω N/(2*Real.pi*|ξ|)^N := by sorry
+
+theorem triplePrimeFourierTerm_decay (ω : ℝ → ℝ) (N : ℕ) (hω : ContDiff ℝ N ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) (hv : ¬triplePrimeResonant v) :
+    ‖triplePrimeFourierTerm ω T X Y v‖ ≤ triplePrimeCoefficient X Y v*
+      min (fourierDerivativeL1 ω 0)
+        (fourierDerivativeL1 ω N/(T*|Real.log (((v 0+1:ℕ):ℝ)*((v 1+1:ℕ):ℝ)/((v 2+1:ℕ):ℝ))|)^N) := by sorry
 
 end
 end HigherCorrelations

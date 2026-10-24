@@ -12,7 +12,10 @@
     "TriplePrimeFourierDefinitions",
     "TriplePrimeFourier",
     "TriplePrimeResonanceDefinitions",
-    "TriplePrimeResonance"
+    "TriplePrimeResonance",
+    "FourierDecayDefinitions",
+    "PairMeanFourierDecay",
+    "TripleFourierDecay"
   ],
   "components": [
     {
@@ -713,6 +716,171 @@
     {
       "declaration": "HigherCorrelations.triplePrime_resonance_minimal",
       "source": "lean/HigherCorrelations/TriplePrimeResonance.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_derivative_support",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_derivative_compact",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_derivative_integrable",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanFourier_iteratedDeriv",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanFourier_power_bound",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairMeanFourier_decay",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_iteratedDeriv_ofReal",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_ofReal_compact",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDerivativeL1_nonneg",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDerivativeL1_zero_order",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_real_power_bound",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_real_bound",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_real_mass",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_real_min",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_real_uniform",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_zero_frequency",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_first_order",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDerivativeL1_zero_weight",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDerivativeL1_neg_weight",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_real_neg_weight",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_order_zero",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.fourierDecay_unit_frequencies",
+      "source": "lean/HigherCorrelations/PairMeanFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFrequency_eq_zero",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFrequency_ne_zero",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFrequency_decay_scale",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWeight_fourier_decay",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWeight_fourier_smooth",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWeight_cubic_decay",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourierTerm_norm_factor",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourierTerm_mass_bound",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourierTerm_decay",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleWeight_cubic_uniform",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourierTerm_decay_minimal",
+      "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
       "comparator_checked": true
     }
   ],

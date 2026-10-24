@@ -1,0 +1,558 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.TripleMaster
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8947/8947] Built VerificationChallenges.TripleMaster (10s)
+warning: lean/VerificationChallenges/TripleMaster.lean:13:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:17:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:21:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:25:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:34:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:41:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:44:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:50:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:53:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:60:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:66:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:73:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:85:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:95:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:101:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:108:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:116:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:119:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:122:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:128:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:135:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:141:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:144:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:153:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:158:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:163:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:167:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:172:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:177:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:183:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:189:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:198:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:207:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:211:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:214:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:217:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:221:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:225:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:229:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:233:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:237:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:242:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:247:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:252:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:258:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:264:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:269:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:278:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:288:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:293:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:300:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:307:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:315:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:322:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:330:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:334:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:338:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:341:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:345:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:349:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:352:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:356:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:360:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:365:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:371:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:376:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:382:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:384:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:387:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:390:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:394:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:400:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:409:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:414:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:417:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:420:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:423:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:426:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:430:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:434:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:438:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:442:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:446:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:451:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:456:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:460:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:463:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:470:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:475:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:480:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:485:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:491:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:497:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:503:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:510:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:517:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:524:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:532:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:541:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:544:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:549:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:552:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:557:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:560:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:563:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:566:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:569:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:572:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:577:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:579:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:582:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:587:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:591:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:595:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:599:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:605:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:608:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:611:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:615:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:620:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:623:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:626:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:632:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:638:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:642:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:648:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:654:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:660:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:663:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:666:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:669:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:672:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:675:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:678:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:681:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:684:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:689:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:692:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:695:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:699:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:704:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:708:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:712:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:715:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:718:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:720:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:722:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:726:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:730:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:733:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:738:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:744:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:747:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:751:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:753:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:756:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:759:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:762:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:769:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:772:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:775:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:779:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:784:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:789:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:796:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:801:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:805:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:812:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleMaster.lean:819:8: declaration uses `sorry`
+Build completed successfully (8947 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.tripleMasterTerm_continuous, HigherCorrelations.tripleMaster_support, HigherCorrelations.tripleMaster_weight_compact, HigherCorrelations.tripleMasterTerm_integrable, HigherCorrelations.tripleMaster_weight_integrable, HigherCorrelations.tripleMaster_weight_mass, HigherCorrelations.tripleMasterMajorant_integrable, HigherCorrelations.tripleMasterMajorant_integral, HigherCorrelations.tripleMasterTerm_bound, HigherCorrelations.tripleMaster_finite_kernel, HigherCorrelations.tripleMaster_finite_majorant, HigherCorrelations.tripleMaster_finite_integralNorm_bound, HigherCorrelations.tripleMaster_integralNorm_bound, HigherCorrelations.tripleMaster_uniform_integralNorm, HigherCorrelations.tripleMaster_integralNorm_summable, HigherCorrelations.tripleMaster_pointwise_summable, HigherCorrelations.tripleMaster_evaluated_norm_summable, HigherCorrelations.tripleMaster_sum_integral, HigherCorrelations.tripleMaster_independent_cutoff_limit, HigherCorrelations.tripleMaster_height_cutoff_limit, HigherCorrelations.tripleMaster_zero_weight, HigherCorrelations.tripleMaster_neg_weight, HigherCorrelations.tripleMaster_minimal_parameters, HigherCorrelations.tripleMaster_finite_product, HigherCorrelations.tripleMaster_product_eq, HigherCorrelations.tripleMasterDenominator_ne_zero, HigherCorrelations.tripleMaster_phase_cancel, HigherCorrelations.tripleMasterTerm_eq_kernel, HigherCorrelations.tripleMasterKernel_normalization, HigherCorrelations.tripleMasterKernel_integrable, HigherCorrelations.tripleMasterProduct_integrable, HigherCorrelations.tripleMaster_integral_eq_kernel, HigherCorrelations.tripleMaster_kernel_norm_summable, HigherCorrelations.tripleMaster_kernel_identity, HigherCorrelations.tripleMasterObservable_independent_cutoff, HigherCorrelations.tripleMasterObservable_height_cutoff, HigherCorrelations.tripleMaster_kernel_minimal, HigherCorrelations.tripleMasterKernel_zero_weight, HigherCorrelations.tripleMasterKernel_neg_weight, HigherCorrelations.tripleMasterPattern_allEqual, HigherCorrelations.tripleMasterPattern_only01, HigherCorrelations.tripleMasterPattern_only02, HigherCorrelations.tripleMasterPattern_only12, HigherCorrelations.tripleMasterPattern_allDistinct, HigherCorrelations.tripleMasterKernelTerm_norm_summable, HigherCorrelations.tripleMasterPattern_norm_summable, HigherCorrelations.tripleMasterPattern_integralNorm_summable, HigherCorrelations.tripleMasterPattern_integralNorm_le, HigherCorrelations.tripleMasterPattern_integral_identity, HigherCorrelations.tripleMaster_pattern_decomposition, HigherCorrelations.tripleMaster_rows_norm_summable, HigherCorrelations.tripleMaster_five_subseries, HigherCorrelations.tripleMasterPattern_pointwise_summable, HigherCorrelations.tripleMasterPattern_finite_integral, HigherCorrelations.tripleMasterPattern_independent_cutoff, HigherCorrelations.tripleMasterPattern_height_cutoff, HigherCorrelations.tripleMasterPattern_integral_cutoff, HigherCorrelations.tripleMasterPattern_integral_height_cutoff, HigherCorrelations.tripleMasterPattern_minimal, HigherCorrelations.tripleMasterPattern_empty_slot, HigherCorrelations.tripleWordSign_product, HigherCorrelations.tripleComponent_remainder, HigherCorrelations.tripleComponent_explicit_formula, HigherCorrelations.tripleComponent_continuous, HigherCorrelations.tripleSmoothedIntegral_normalization, HigherCorrelations.tripleWordIntegrand_continuous, HigherCorrelations.tripleWordIntegrand_integrable, HigherCorrelations.tripleWord_algebra, HigherCorrelations.tripleMasterProduct_word_expansion, HigherCorrelations.tripleMaster_word_expansion, HigherCorrelations.tripleWordTable_nodup, HigherCorrelations.tripleWordTable_complete, HigherCorrelations.tripleWordTable_correct, HigherCorrelations.tripleWord_counts, HigherCorrelations.tripleMaster_table_expansion, HigherCorrelations.tripleMaster_word_split, HigherCorrelations.tripleMaster_word_minimal, HigherCorrelations.tripleWordIntegral_zero_weight, HigherCorrelations.tripleWordIntegral_neg_weight, HigherCorrelations.triplePrimeCoefficient_nonneg, HigherCorrelations.triplePrimeCoefficient_summable, HigherCorrelations.triplePrimeCoefficient_mass, HigherCorrelations.triplePrimeFrequency_phase, HigherCorrelations.triplePrimeTerm_phase, HigherCorrelations.triplePrimeTerm_norm, HigherCorrelations.triplePrimeTerm_integrable, HigherCorrelations.triplePrimeTerm_integralNorm, HigherCorrelations.triplePrime_integralNorm, HigherCorrelations.triplePrime_pointwise_summable, HigherCorrelations.triplePrimeTerm_fourier, HigherCorrelations.triplePrime_finite_product, HigherCorrelations.triplePrime_product_eq, HigherCorrelations.triplePrimeFourier_summable, HigherCorrelations.triplePrimeFourier_norm_bound, HigherCorrelations.triplePrime_sum_integral, HigherCorrelations.triplePrime_fourier_identity, HigherCorrelations.triplePrime_signed_PPP, HigherCorrelations.triplePrimeFourier_finite_cutoff, HigherCorrelations.triplePrimeFourier_integer_cutoff, HigherCorrelations.triplePrime_finite_integral, HigherCorrelations.triplePrime_integral_finite_cutoff, HigherCorrelations.triplePrime_integral_integer_cutoff, HigherCorrelations.triplePrimeFrequency_resonance, HigherCorrelations.triplePrimeFourier_resonance, HigherCorrelations.triplePrimeFourier_integer_one, HigherCorrelations.triplePrime_fourier_minimal, HigherCorrelations.triplePrimeFourier_zero_weight, HigherCorrelations.triplePrimeFourier_neg_weight, HigherCorrelations.pairMeanPrimeCoefficient_ne_zero, HigherCorrelations.triplePrimeCoefficient_ne_zero, HigherCorrelations.primePower_unique, HigherCorrelations.primePowerIndex_values, HigherCorrelations.primePowerIndex_injective, HigherCorrelations.primePowerIndex_supported, HigherCorrelations.primePower_resonance_exists, HigherCorrelations.triplePrimeResonance_classification, HigherCorrelations.triplePrimeResonance_nonzero, HigherCorrelations.primePowerIndex_bijective, HigherCorrelations.primePower_resonance_unique, HigherCorrelations.triplePrimeResonantMass_summable, HigherCorrelations.triplePrimeResonantMass_norm_summable, HigherCorrelations.triplePrimeResonantMass_reindex, HigherCorrelations.triplePrimeResonantMass_nested, HigherCorrelations.triplePrimeResonantMass_nonneg, HigherCorrelations.triplePrimeResonantMass_bound, HigherCorrelations.triplePrime_resonant_norm_summable, HigherCorrelations.triplePrime_off_norm_summable, HigherCorrelations.triplePrime_resonant_series, HigherCorrelations.triplePrime_resonance_split, HigherCorrelations.triplePrime_resonance_signed, HigherCorrelations.triplePrime_resonance_unit_mass, HigherCorrelations.primePowerIndex_excludes_one, HigherCorrelations.primePowerIndex_equal_exponents, HigherCorrelations.primePowerIndex_ordered, HigherCorrelations.primePowerIndex_first, HigherCorrelations.primePower_distinct_product, HigherCorrelations.triplePrimeResonance_two_three, HigherCorrelations.triplePrimeOffSeries_zero_weight, HigherCorrelations.triplePrimeOffSeries_neg_weight, HigherCorrelations.triplePrime_resonance_minimal, HigherCorrelations.fourierDecay_derivative_support, HigherCorrelations.fourierDecay_derivative_compact, HigherCorrelations.fourierDecay_derivative_integrable, HigherCorrelations.pairMeanFourier_iteratedDeriv, HigherCorrelations.pairMeanFourier_power_bound, HigherCorrelations.pairMeanFourier_decay, HigherCorrelations.fourierDecay_iteratedDeriv_ofReal, HigherCorrelations.fourierDecay_ofReal_compact, HigherCorrelations.fourierDerivativeL1_nonneg, HigherCorrelations.fourierDerivativeL1_zero_order, HigherCorrelations.fourierDecay_real_power_bound, HigherCorrelations.fourierDecay_real_bound, HigherCorrelations.fourierDecay_real_mass, HigherCorrelations.fourierDecay_real_min, HigherCorrelations.fourierDecay_real_uniform, HigherCorrelations.fourierDecay_zero_frequency, HigherCorrelations.fourierDecay_first_order, HigherCorrelations.fourierDerivativeL1_zero_weight, HigherCorrelations.fourierDerivativeL1_neg_weight, HigherCorrelations.fourierDecay_real_neg_weight, HigherCorrelations.fourierDecay_order_zero, HigherCorrelations.fourierDecay_unit_frequencies, HigherCorrelations.triplePrimeFrequency_eq_zero, HigherCorrelations.triplePrimeFrequency_ne_zero, HigherCorrelations.triplePrimeFrequency_decay_scale, HigherCorrelations.tripleWeight_fourier_decay, HigherCorrelations.tripleWeight_fourier_smooth, HigherCorrelations.tripleWeight_cubic_decay, HigherCorrelations.triplePrimeFourierTerm_norm_factor, HigherCorrelations.triplePrimeFourierTerm_mass_bound, HigherCorrelations.triplePrimeFourierTerm_decay, HigherCorrelations.tripleWeight_cubic_uniform, HigherCorrelations.triplePrimeFourierTerm_decay_minimal, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.TripleMaster
+Building HigherCorrelations.TripleFourierDecay
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [2729/2751] Replayed HigherCorrelations.PairMeanSeries
+warning: lean/HigherCorrelations/PairMeanSeries.lean:34:27: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanSeries.lean:34:52: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanSeries.lean:72:10: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairMeanCharacter_norm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3181/3215] Replayed HigherCorrelations.PairMeanFourierRules
+warning: lean/HigherCorrelations/PairMeanFourierRules.lean:40:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairMeanFourierRules.lean:40:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8999/9122] Replayed HigherCorrelations.PairRHSArchIntegrals
+warning: lean/HigherCorrelations/PairRHSArchIntegrals.lean:35:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairRHSArchIntegrals.lean:35:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairRHSArchIntegrals.lean:52:42: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairRHSArchIntegrals.lean:71:48: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9004/9122] Replayed HigherCorrelations.PairContourResidues
+info: lean/HigherCorrelations/PairContourResidues.lean:114:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairContourResidues.lean:120:56: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: lean/HigherCorrelations/PairContourResidues.lean:147:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: lean/HigherCorrelations/PairContourResidues.lean:162:32: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9006/9122] Replayed HigherCorrelations.PairGoodHeightSelection
+info: lean/HigherCorrelations/PairGoodHeightSelection.lean:44:48: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: lean/HigherCorrelations/PairGoodHeightSelection.lean:81:27: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairGoodHeightSelection.lean:81:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: lean/HigherCorrelations/PairGoodHeightSelection.lean:133:35: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: lean/HigherCorrelations/PairGoodHeightSelection.lean:134:68: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairGoodHeightSelection.lean:133:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairGoodHeightSelection.lean:134:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9044/9122] Replayed HigherCorrelations.PairContourPoleSets
+warning: lean/HigherCorrelations/PairContourPoleSets.lean:46:35: This simp argument is unused:
+  or_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairContourPoleCandidates]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9045/9122] Replayed HigherCorrelations.PairContourMeromorphic
+warning: lean/HigherCorrelations/PairContourMeromorphic.lean:80:42: This simp argument is unused:
+  Pi.div_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairContourIntegrand, Pi.neg_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/PairContourMeromorphic.lean:80:56: This simp argument is unused:
+  Pi.neg_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairContourIntegrand, Pi.div_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9047/9122] Replayed HigherCorrelations.PairHadamardBounds
+info: lean/HigherCorrelations/PairHadamardBounds.lean:131:68: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairHadamardBounds.lean:131:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9052/9122] Replayed HigherCorrelations.PairHorizontalDecay
+info: lean/HigherCorrelations/PairHorizontalDecay.lean:153:31: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairHorizontalDecay.lean:153:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9053/9122] Replayed HigherCorrelations.PairLeftKernel
+warning: lean/HigherCorrelations/PairLeftKernel.lean:37:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9062/9122] Replayed HigherCorrelations.PairBoundaryLimits
+info: lean/HigherCorrelations/PairBoundaryLimits.lean:66:8: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairBoundaryLimits.lean:65:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairBoundaryLimits.lean:66:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9064/9122] Replayed HigherCorrelations.PairResidueRegrouping
+warning: lean/HigherCorrelations/PairResidueRegrouping.lean:11:55: Variable name `ρ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ρ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9068/9122] Replayed HigherCorrelations.PairChiIdentity
+info: lean/HigherCorrelations/PairChiIdentity.lean:133:14: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairChiIdentity.lean:133:2: Unused tactic linter: `congr 1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairChiIdentity.lean:133:10: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9069/9122] Replayed HigherCorrelations.PairDigammaRemainder
+warning: lean/HigherCorrelations/PairDigammaRemainder.lean:121:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: lean/HigherCorrelations/PairDigammaRemainder.lean:170:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairDigammaRemainder.lean:169:6: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9071/9122] Replayed HigherCorrelations.PairElementaryErrorBounds
+warning: lean/HigherCorrelations/PairElementaryErrorBounds.lean:52:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9075/9122] Replayed HigherCorrelations.PairMeanTriangle
+warning: lean/HigherCorrelations/PairMeanTriangle.lean:47:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairMeanTriangle.lean:52:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9077/9122] Replayed HigherCorrelations.PairMeanKernelMass
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:69:110: This simp argument is unused:
+  Pi.neg_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [id_eq, Pi.pow_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:69:124: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:75:130: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9079/9122] Replayed HigherCorrelations.PairMeanKernelTail
+warning: lean/HigherCorrelations/PairMeanKernelTail.lean:30:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9081/9122] Replayed HigherCorrelations.PairMeanSandwich
+warning: lean/HigherCorrelations/PairMeanSandwich.lean:62:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/PairMeanSandwich.lean:62:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [9083/9122] Replayed HigherCorrelations.PairMeanOffDiagonal
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:65:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:69:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:12:13: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:44:19: This simp argument is unused:
+  Prod.fst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [B, Prod.snd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:44:28: This simp argument is unused:
+  Prod.snd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [B, Prod.fst]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9100/9122] Replayed HigherCorrelations.KernelTailShells
+warning: lean/HigherCorrelations/KernelTailShells.lean:17:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9101/9122] Replayed HigherCorrelations.KernelTailBounds
+info: lean/HigherCorrelations/KernelTailBounds.lean:11:45: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/KernelTailBounds.lean:11:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9117/9122] Replayed HigherCorrelations.PairUniformFormula
+warning: lean/HigherCorrelations/PairUniformFormula.lean:63:66: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9118/9122] Replayed HigherCorrelations.PairRHSContinuity
+warning: lean/HigherCorrelations/PairRHSContinuity.lean:74:4: This simp argument is unused:
+  Complex.ofReal_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairRHS, pairRHS_remainder_sum, pairRHSRemainder, pairRHSArch, div_eq_mul_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9119/9122] Replayed HigherCorrelations.TripleExpansion
+warning: lean/HigherCorrelations/TripleExpansion.lean:93:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/TripleExpansion.lean:95:49: `if_false` has been deprecated: Use `ite_false` instead
+warning: lean/HigherCorrelations/TripleExpansion.lean:97:49: `if_false` has been deprecated: Use `ite_false` instead
+warning: lean/HigherCorrelations/TripleExpansion.lean:104:34: `if_false` has been deprecated: Use `ite_false` instead
+warning: lean/HigherCorrelations/TripleExpansion.lean:104:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [9120/9122] Replayed HigherCorrelations.TriplePrimeFourier
+warning: lean/HigherCorrelations/TriplePrimeFourier.lean:102:5: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/TriplePrimeFourier.lean:102:16: Variable name `hY` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hY
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9121/9122] Replayed HigherCorrelations.TriplePrimeResonance
+warning: lean/HigherCorrelations/TriplePrimeResonance.lean:39:16: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/TriplePrimeResonance.lean:199:19: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (9122 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.tripleMasterTerm_continuous, HigherCorrelations.tripleMaster_support, HigherCorrelations.tripleMaster_weight_compact, HigherCorrelations.tripleMasterTerm_integrable, HigherCorrelations.tripleMaster_weight_integrable, HigherCorrelations.tripleMaster_weight_mass, HigherCorrelations.tripleMasterMajorant_integrable, HigherCorrelations.tripleMasterMajorant_integral, HigherCorrelations.tripleMasterTerm_bound, HigherCorrelations.tripleMaster_finite_kernel, HigherCorrelations.tripleMaster_finite_majorant, HigherCorrelations.tripleMaster_finite_integralNorm_bound, HigherCorrelations.tripleMaster_integralNorm_bound, HigherCorrelations.tripleMaster_uniform_integralNorm, HigherCorrelations.tripleMaster_integralNorm_summable, HigherCorrelations.tripleMaster_pointwise_summable, HigherCorrelations.tripleMaster_evaluated_norm_summable, HigherCorrelations.tripleMaster_sum_integral, HigherCorrelations.tripleMaster_independent_cutoff_limit, HigherCorrelations.tripleMaster_height_cutoff_limit, HigherCorrelations.tripleMaster_zero_weight, HigherCorrelations.tripleMaster_neg_weight, HigherCorrelations.tripleMaster_minimal_parameters, HigherCorrelations.tripleMaster_finite_product, HigherCorrelations.tripleMaster_product_eq, HigherCorrelations.tripleMasterDenominator_ne_zero, HigherCorrelations.tripleMaster_phase_cancel, HigherCorrelations.tripleMasterTerm_eq_kernel, HigherCorrelations.tripleMasterKernel_normalization, HigherCorrelations.tripleMasterKernel_integrable, HigherCorrelations.tripleMasterProduct_integrable, HigherCorrelations.tripleMaster_integral_eq_kernel, HigherCorrelations.tripleMaster_kernel_norm_summable, HigherCorrelations.tripleMaster_kernel_identity, HigherCorrelations.tripleMasterObservable_independent_cutoff, HigherCorrelations.tripleMasterObservable_height_cutoff, HigherCorrelations.tripleMaster_kernel_minimal, HigherCorrelations.tripleMasterKernel_zero_weight, HigherCorrelations.tripleMasterKernel_neg_weight, HigherCorrelations.tripleMasterPattern_allEqual, HigherCorrelations.tripleMasterPattern_only01, HigherCorrelations.tripleMasterPattern_only02, HigherCorrelations.tripleMasterPattern_only12, HigherCorrelations.tripleMasterPattern_allDistinct, HigherCorrelations.tripleMasterKernelTerm_norm_summable, HigherCorrelations.tripleMasterPattern_norm_summable, HigherCorrelations.tripleMasterPattern_integralNorm_summable, HigherCorrelations.tripleMasterPattern_integralNorm_le, HigherCorrelations.tripleMasterPattern_integral_identity, HigherCorrelations.tripleMaster_pattern_decomposition, HigherCorrelations.tripleMaster_rows_norm_summable, HigherCorrelations.tripleMaster_five_subseries, HigherCorrelations.tripleMasterPattern_pointwise_summable, HigherCorrelations.tripleMasterPattern_finite_integral, HigherCorrelations.tripleMasterPattern_independent_cutoff, HigherCorrelations.tripleMasterPattern_height_cutoff, HigherCorrelations.tripleMasterPattern_integral_cutoff, HigherCorrelations.tripleMasterPattern_integral_height_cutoff, HigherCorrelations.tripleMasterPattern_minimal, HigherCorrelations.tripleMasterPattern_empty_slot, HigherCorrelations.tripleWordSign_product, HigherCorrelations.tripleComponent_remainder, HigherCorrelations.tripleComponent_explicit_formula, HigherCorrelations.tripleComponent_continuous, HigherCorrelations.tripleSmoothedIntegral_normalization, HigherCorrelations.tripleWordIntegrand_continuous, HigherCorrelations.tripleWordIntegrand_integrable, HigherCorrelations.tripleWord_algebra, HigherCorrelations.tripleMasterProduct_word_expansion, HigherCorrelations.tripleMaster_word_expansion, HigherCorrelations.tripleWordTable_nodup, HigherCorrelations.tripleWordTable_complete, HigherCorrelations.tripleWordTable_correct, HigherCorrelations.tripleWord_counts, HigherCorrelations.tripleMaster_table_expansion, HigherCorrelations.tripleMaster_word_split, HigherCorrelations.tripleMaster_word_minimal, HigherCorrelations.tripleWordIntegral_zero_weight, HigherCorrelations.tripleWordIntegral_neg_weight, HigherCorrelations.triplePrimeCoefficient_nonneg, HigherCorrelations.triplePrimeCoefficient_summable, HigherCorrelations.triplePrimeCoefficient_mass, HigherCorrelations.triplePrimeFrequency_phase, HigherCorrelations.triplePrimeTerm_phase, HigherCorrelations.triplePrimeTerm_norm, HigherCorrelations.triplePrimeTerm_integrable, HigherCorrelations.triplePrimeTerm_integralNorm, HigherCorrelations.triplePrime_integralNorm, HigherCorrelations.triplePrime_pointwise_summable, HigherCorrelations.triplePrimeTerm_fourier, HigherCorrelations.triplePrime_finite_product, HigherCorrelations.triplePrime_product_eq, HigherCorrelations.triplePrimeFourier_summable, HigherCorrelations.triplePrimeFourier_norm_bound, HigherCorrelations.triplePrime_sum_integral, HigherCorrelations.triplePrime_fourier_identity, HigherCorrelations.triplePrime_signed_PPP, HigherCorrelations.triplePrimeFourier_finite_cutoff, HigherCorrelations.triplePrimeFourier_integer_cutoff, HigherCorrelations.triplePrime_finite_integral, HigherCorrelations.triplePrime_integral_finite_cutoff, HigherCorrelations.triplePrime_integral_integer_cutoff, HigherCorrelations.triplePrimeFrequency_resonance, HigherCorrelations.triplePrimeFourier_resonance, HigherCorrelations.triplePrimeFourier_integer_one, HigherCorrelations.triplePrime_fourier_minimal, HigherCorrelations.triplePrimeFourier_zero_weight, HigherCorrelations.triplePrimeFourier_neg_weight, HigherCorrelations.pairMeanPrimeCoefficient_ne_zero, HigherCorrelations.triplePrimeCoefficient_ne_zero, HigherCorrelations.primePower_unique, HigherCorrelations.primePowerIndex_values, HigherCorrelations.primePowerIndex_injective, HigherCorrelations.primePowerIndex_supported, HigherCorrelations.primePower_resonance_exists, HigherCorrelations.triplePrimeResonance_classification, HigherCorrelations.triplePrimeResonance_nonzero, HigherCorrelations.primePowerIndex_bijective, HigherCorrelations.primePower_resonance_unique, HigherCorrelations.triplePrimeResonantMass_summable, HigherCorrelations.triplePrimeResonantMass_norm_summable, HigherCorrelations.triplePrimeResonantMass_reindex, HigherCorrelations.triplePrimeResonantMass_nested, HigherCorrelations.triplePrimeResonantMass_nonneg, HigherCorrelations.triplePrimeResonantMass_bound, HigherCorrelations.triplePrime_resonant_norm_summable, HigherCorrelations.triplePrime_off_norm_summable, HigherCorrelations.triplePrime_resonant_series, HigherCorrelations.triplePrime_resonance_split, HigherCorrelations.triplePrime_resonance_signed, HigherCorrelations.triplePrime_resonance_unit_mass, HigherCorrelations.primePowerIndex_excludes_one, HigherCorrelations.primePowerIndex_equal_exponents, HigherCorrelations.primePowerIndex_ordered, HigherCorrelations.primePowerIndex_first, HigherCorrelations.primePower_distinct_product, HigherCorrelations.triplePrimeResonance_two_three, HigherCorrelations.triplePrimeOffSeries_zero_weight, HigherCorrelations.triplePrimeOffSeries_neg_weight, HigherCorrelations.triplePrime_resonance_minimal, HigherCorrelations.fourierDecay_derivative_support, HigherCorrelations.fourierDecay_derivative_compact, HigherCorrelations.fourierDecay_derivative_integrable, HigherCorrelations.pairMeanFourier_iteratedDeriv, HigherCorrelations.pairMeanFourier_power_bound, HigherCorrelations.pairMeanFourier_decay, HigherCorrelations.fourierDecay_iteratedDeriv_ofReal, HigherCorrelations.fourierDecay_ofReal_compact, HigherCorrelations.fourierDerivativeL1_nonneg, HigherCorrelations.fourierDerivativeL1_zero_order, HigherCorrelations.fourierDecay_real_power_bound, HigherCorrelations.fourierDecay_real_bound, HigherCorrelations.fourierDecay_real_mass, HigherCorrelations.fourierDecay_real_min, HigherCorrelations.fourierDecay_real_uniform, HigherCorrelations.fourierDecay_zero_frequency, HigherCorrelations.fourierDecay_first_order, HigherCorrelations.fourierDerivativeL1_zero_weight, HigherCorrelations.fourierDerivativeL1_neg_weight, HigherCorrelations.fourierDecay_real_neg_weight, HigherCorrelations.fourierDecay_order_zero, HigherCorrelations.fourierDecay_unit_frequencies, HigherCorrelations.triplePrimeFrequency_eq_zero, HigherCorrelations.triplePrimeFrequency_ne_zero, HigherCorrelations.triplePrimeFrequency_decay_scale, HigherCorrelations.tripleWeight_fourier_decay, HigherCorrelations.tripleWeight_fourier_smooth, HigherCorrelations.tripleWeight_cubic_decay, HigherCorrelations.triplePrimeFourierTerm_norm_factor, HigherCorrelations.triplePrimeFourierTerm_mass_bound, HigherCorrelations.triplePrimeFourierTerm_decay, HigherCorrelations.tripleWeight_cubic_uniform, HigherCorrelations.triplePrimeFourierTerm_decay_minimal, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from HigherCorrelations.TripleFourierDecay
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

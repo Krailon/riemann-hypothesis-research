@@ -3,10 +3,11 @@
 Task: proof and formal verification. Assumptions: `UNCONDITIONAL`.
 Ledger: `MASTER-INTEGRATION-FORMAL-001`, `MASTER-IDENTITY-FORMAL-001`,
 `MASTER-PATTERNS-FORMAL-001`, `MASTER-EXPANSION-FORMAL-001`,
-`MASTER-PRIME-FOURIER-FORMAL-001` and `MASTER-PRIME-RESONANCE-FORMAL-001`.
+`MASTER-PRIME-FOURIER-FORMAL-001`, `MASTER-PRIME-RESONANCE-FORMAL-001` and
+`MASTER-FOURIER-DECAY-FORMAL-001`.
 These milestones discharge integral-norm summability, the exact kernel identity,
 its five occurrence-index subseries, the ordered 27-word expansion, the
-cubic prime Fourier-series identification and the exact resonance split in
+cubic prime Fourier-series identification, exact resonance split and Fourier decay in
 `TRIPLE-MASTER-001`. Its whole statement remains partially formalized.
 
 ## Checked statement
@@ -263,8 +264,58 @@ integer-one exclusion, 2*2=4 and the zero coefficient at 2*3=6.
 
 All parameters are fixed before regrouping. Absolute convergence justifies
 the reindexing, nested sums and complementary-subseries split; no new
-sum/integral exchange is needed. Fourier decay, off-diagonal bounds and
-asymptotic evaluation of R_res remain separate formalization tasks.
+sum/integral exchange is needed. Off-diagonal bounds and
+asymptotic evaluation of R_res remain separate formalization tasks. The next
+section now discharges the pointwise Fourier-decay clause.
+
+## Exact Fourier decay
+
+`PairMeanFourierDecay` proves the finite-order statement for compactly supported
+complex f of class C^N, with N a natural number. Every derivative through N
+is integrable: its support remains inside the original topological support,
+and C^N supplies continuity. The existing exact bridge to mathlib's Fourier
+transform and `Real.fourier_iteratedDeriv` give
+\[
+ \widehat{f^{(N)}}(\xi)=(2\pi i\xi)^N\widehat f(\xi).
+\]
+The derivative multiplier has a positive sign for the project's negative
+exponential transform. No finite-interval boundary term is discarded.
+
+For a real weight omega, the checked real-to-complex derivative identity gives
+D_N(omega)=integral |omega^(N)|, implemented by `fourierDerivativeL1`. Then
+\[
+ (2\pi|\xi|)^N|\widehat\omega(\xi)|\le D_N(\omega),\qquad
+ |\widehat\omega(\xi)|\le D_0(\omega).
+\]
+The first inequality is valid at every frequency and at N=0 (with 0^0=1).
+Division is used only for xi!=0, yielding the minimum of D_0 and
+D_N/(2*pi*|xi|)^N. At zero, the transform is exactly integral omega; the
+mass bound is retained. Checked specializations include N=1, frequencies
++1 and -1, and zero/negated weights. Neither nonnegativity nor unit mass
+is assumed. The results include smooth weights supported in the closed
+interval [1,2], hence include the manuscript's C_c^infinity((1,2)) weights.
+
+`TripleFourierDecay` proves, for T>0, that the existing cubic frequency is
+zero if and only if mn=k, and proves the literal normalization
+\[
+ 2\pi\left|\frac{T}{2\pi}\log\frac{mn}{k}\right|
+ =T\left|\log\frac{mn}{k}\right|.
+\]
+For mn!=k and the existing nonnegative cubic coefficient c_(m,n,k),
+\[
+ |c_{m,n,k}\widehat\omega(T\log(mn/k)/(2\pi))|
+ \le c_{m,n,k}\min\left(D_0,
+ \frac{D_N}{(T|\log(mn/k)|)^N}\right).
+\]
+The coefficient mass bound also applies on resonance. The cubic theorem admits
+T>=3, X,Y>=1, with a checked T=3,X=Y=1 specialization.
+
+Uniformity over any varying family follows from explicit common upper bounds
+on D_0 and D_N; these dependencies are never absorbed into an unspecified
+constant. There is no asserted uniformity for shrinking smoothing widths
+without such bounds. All parameters and N remain fixed in each identity.
+No new infinite-series interchange is performed. Pointwise decay does not
+prove compact Fourier support or a negligible sum of near-resonant terms.
 
 ## Proof dependencies and domination
 
@@ -312,14 +363,16 @@ claimed.
 
 Definition-only interfaces: `TripleMasterDefinitions`,
 `TripleMasterPatternDefinitions`, `TripleExpansionDefinitions`,
-`TriplePrimeFourierDefinitions` and `TriplePrimeResonanceDefinitions`. Proofs:
+`TriplePrimeFourierDefinitions`, `TriplePrimeResonanceDefinitions` and
+`FourierDecayDefinitions`. Proofs:
 `TripleMasterBounds`, `TripleMasterIntegration`, `TripleMasterIdentity`,
 `TripleMasterPatterns`, `TripleExpansion`, `TriplePrimeFourier` and
-`TriplePrimeResonance`.
-All **140 public declarations** have independent Comparator statements, inventory
+`TriplePrimeResonance`, `PairMeanFourierDecay` and `TripleFourierDecay`.
+All **173 public declarations** have independent Comparator statements, inventory
 entries and axiom reports. The unfinished integral-norm bound, kernel identity,
 five-subseries identity, ordered word expansion, cubic prime Fourier identity,
-unique resonance classification and resonance split must each be rejected
+unique resonance classification, resonance split, general Fourier decay and
+cubic decay must each be rejected
 for `sorryAx`. Only `propext`,
 `Quot.sound` and `Classical.choice` are permitted; the external kernel is disabled.
 
@@ -327,14 +380,16 @@ for `sorryAx`. Only `propext`,
 python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only
 ```
 
-The focused mode checks the triple-master Comparator suite, seven negative
+The focused mode checks the triple-master Comparator suite, nine negative
 controls, combined
 project build, complete axiom report, analytic coverage and pair/triple/harness
 regressions. Earlier Comparator suites are not rerun. The ledger links the
 successful content-addressed evidence.
 
 The proof uses the existing unconditional counting/convergence infrastructure,
-not the imported PREPRINT fixed strip. The next step is the Fourier-decay
-estimate in the exact conventions; off-diagonal estimates remain separate.
+not the imported PREPRINT fixed strip. Fourier decay is now checked. Whole-claim
+coverage remains partial pending assembly of the master statement, including
+X/Y symmetry, the observable norm corollary and reconciliation of the historical
+effective counting constant. Off-diagonal estimates remain separate.
 Historical claim statuses and pair/triple audit scopes are preserved; the
 open signed complex-argument triple error is unaffected.

@@ -220,8 +220,41 @@ PARTIAL = {
          'triplePrimeResonance_two_three',
          'triplePrimeOffSeries_zero_weight',
          'triplePrimeOffSeries_neg_weight',
-         'triplePrime_resonance_minimal'],
-        ['Formalize the remaining prime-side Fourier-decay statements.']),
+         'triplePrime_resonance_minimal',
+         'fourierDecay_derivative_support',
+         'fourierDecay_derivative_compact',
+         'fourierDecay_derivative_integrable',
+         'pairMeanFourier_iteratedDeriv',
+         'pairMeanFourier_power_bound',
+         'pairMeanFourier_decay',
+         'fourierDecay_iteratedDeriv_ofReal',
+         'fourierDecay_ofReal_compact',
+         'fourierDerivativeL1_nonneg',
+         'fourierDerivativeL1_zero_order',
+         'fourierDecay_real_power_bound',
+         'fourierDecay_real_bound',
+         'fourierDecay_real_mass',
+         'fourierDecay_real_min',
+         'fourierDecay_real_uniform',
+         'fourierDecay_zero_frequency',
+         'fourierDecay_first_order',
+         'fourierDerivativeL1_zero_weight',
+         'fourierDerivativeL1_neg_weight',
+         'fourierDecay_real_neg_weight',
+         'fourierDecay_order_zero',
+         'fourierDecay_unit_frequencies',
+         'triplePrimeFrequency_eq_zero',
+         'triplePrimeFrequency_ne_zero',
+         'triplePrimeFrequency_decay_scale',
+         'tripleWeight_fourier_decay',
+         'tripleWeight_fourier_smooth',
+         'tripleWeight_cubic_decay',
+         'triplePrimeFourierTerm_norm_factor',
+         'triplePrimeFourierTerm_mass_bound',
+         'triplePrimeFourierTerm_decay',
+         'tripleWeight_cubic_uniform',
+         'triplePrimeFourierTerm_decay_minimal'],
+        ['Assemble the checked clauses into the full master statement, including X/Y symmetry, the observable norm corollary and reconciliation of the historical effective counting constant.']),
     'TRIPLE-KERNEL-PROFILE-001': (
         ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
          'rationalKernel_reciprocal', 'rationalProfile_bound', 'rationalProfile_swap',
@@ -762,10 +795,14 @@ class CoverageTests(unittest.TestCase):
                      'triplePrimeFourier_integer_cutoff', 'triplePrimeFourier_resonance',
                      'primePower_resonance_unique', 'primePowerIndex_bijective',
                      'triplePrimeResonantMass_nested', 'triplePrimeResonantMass_reindex',
-                     'triplePrime_resonance_split', 'triplePrime_resonance_signed']:
+                     'triplePrime_resonance_split', 'triplePrime_resonance_signed',
+                     'pairMeanFourier_iteratedDeriv', 'fourierDecay_real_bound',
+                     'fourierDecay_real_power_bound', 'fourierDecay_real_min',
+                     'triplePrimeFrequency_decay_scale', 'triplePrimeFourierTerm_decay']:
             self.assertIn('HigherCorrelations.' + name, node['components'])
         self.assertFalse(any('five index-pattern subseries' in gap for gap in node['remaining_obligations']))
-        self.assertTrue(any('prime-side' in gap for gap in node['remaining_obligations']))
+        self.assertTrue(any('X/Y symmetry' in gap for gap in node['remaining_obligations']))
+        self.assertFalse(any('Fourier-decay' in gap for gap in node['remaining_obligations']))
         self.assertFalse(any('Fourier-series interchange' in gap for gap in node['remaining_obligations']))
         self.assertFalse(any('resonance classification' in gap for gap in node['remaining_obligations']))
 

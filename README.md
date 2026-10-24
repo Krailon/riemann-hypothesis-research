@@ -50,7 +50,8 @@ identified with its absolutely convergent Fourier series, with justified
 interchange, independent cutoff limits and exact sign/normalization. Nonzero
 resonances are uniquely classified as ordered powers of a common prime,
 giving an absolutely convergent resonant/off-resonant split with the smoothing
-mass retained. See
+mass retained. Fourier decay is also formalized with exact derivative norms
+and all scale factors, giving pointwise bounds on off-resonant cubic terms. See
 the [triple master record](research/lean-triple-master.md).
 
 ## Zeta23 inputs imported

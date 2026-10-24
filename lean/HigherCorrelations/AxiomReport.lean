@@ -1,4 +1,4 @@
-import HigherCorrelations.TriplePrimeResonance
+import HigherCorrelations.TripleFourierDecay
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
@@ -1232,3 +1232,37 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.triplePrimeOffSeries_zero_weight
 #print axioms HigherCorrelations.triplePrimeOffSeries_neg_weight
 #print axioms HigherCorrelations.triplePrime_resonance_minimal
+
+#print axioms HigherCorrelations.fourierDecay_derivative_support
+#print axioms HigherCorrelations.fourierDecay_derivative_compact
+#print axioms HigherCorrelations.fourierDecay_derivative_integrable
+#print axioms HigherCorrelations.pairMeanFourier_iteratedDeriv
+#print axioms HigherCorrelations.pairMeanFourier_power_bound
+#print axioms HigherCorrelations.pairMeanFourier_decay
+#print axioms HigherCorrelations.fourierDecay_iteratedDeriv_ofReal
+#print axioms HigherCorrelations.fourierDecay_ofReal_compact
+#print axioms HigherCorrelations.fourierDerivativeL1_nonneg
+#print axioms HigherCorrelations.fourierDerivativeL1_zero_order
+#print axioms HigherCorrelations.fourierDecay_real_power_bound
+#print axioms HigherCorrelations.fourierDecay_real_bound
+#print axioms HigherCorrelations.fourierDecay_real_mass
+#print axioms HigherCorrelations.fourierDecay_real_min
+#print axioms HigherCorrelations.fourierDecay_real_uniform
+#print axioms HigherCorrelations.fourierDecay_zero_frequency
+#print axioms HigherCorrelations.fourierDecay_first_order
+#print axioms HigherCorrelations.fourierDerivativeL1_zero_weight
+#print axioms HigherCorrelations.fourierDerivativeL1_neg_weight
+#print axioms HigherCorrelations.fourierDecay_real_neg_weight
+#print axioms HigherCorrelations.fourierDecay_order_zero
+#print axioms HigherCorrelations.fourierDecay_unit_frequencies
+#print axioms HigherCorrelations.triplePrimeFrequency_eq_zero
+#print axioms HigherCorrelations.triplePrimeFrequency_ne_zero
+#print axioms HigherCorrelations.triplePrimeFrequency_decay_scale
+#print axioms HigherCorrelations.tripleWeight_fourier_decay
+#print axioms HigherCorrelations.tripleWeight_fourier_smooth
+#print axioms HigherCorrelations.tripleWeight_cubic_decay
+#print axioms HigherCorrelations.triplePrimeFourierTerm_norm_factor
+#print axioms HigherCorrelations.triplePrimeFourierTerm_mass_bound
+#print axioms HigherCorrelations.triplePrimeFourierTerm_decay
+#print axioms HigherCorrelations.tripleWeight_cubic_uniform
+#print axioms HigherCorrelations.triplePrimeFourierTerm_decay_minimal
