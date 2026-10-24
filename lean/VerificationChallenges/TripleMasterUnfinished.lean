@@ -1,3 +1,4 @@
+import HigherCorrelations.TriplePrimeFourierDefinitions
 import HigherCorrelations.TripleExpansionDefinitions
 import HigherCorrelations.TripleMasterPatternDefinitions
 
@@ -35,6 +36,12 @@ theorem tripleMaster_word_expansion (ω : ℝ → ℝ) (hω : Continuous ω)
     (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
     tripleMasterObservable ω T X Y =
       ∑ w : MasterWord, (tripleWordSign w:ℂ)*tripleWordIntegral ω T X Y w := by sorry
+
+theorem triplePrime_fourier_identity (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleWordIntegral ω T X Y ![.P,.P,.P] =
+      ∑' v : PrimeTriple, triplePrimeFourierTerm ω T X Y v := by sorry
 
 end
 end HigherCorrelations

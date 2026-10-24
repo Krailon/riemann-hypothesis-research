@@ -159,8 +159,37 @@ PARTIAL = {
          'tripleMasterProduct_word_expansion', 'tripleMaster_word_expansion',
          'tripleWordTable_nodup', 'tripleWordTable_complete', 'tripleWordTable_correct',
          'tripleWord_counts', 'tripleMaster_table_expansion', 'tripleMaster_word_split',
-         'tripleMaster_word_minimal'],
-        ['Formalize the prime-side Fourier-series interchange, exact resonance classification and Fourier-decay statements.']),
+         'tripleMaster_word_minimal',
+         'triplePrimeCoefficient_nonneg',
+         'triplePrimeCoefficient_summable',
+         'triplePrimeCoefficient_mass',
+         'triplePrimeFrequency_phase',
+         'triplePrimeTerm_phase',
+         'triplePrimeTerm_norm',
+         'triplePrimeTerm_integrable',
+         'triplePrimeTerm_integralNorm',
+         'triplePrime_integralNorm',
+         'triplePrime_pointwise_summable',
+         'triplePrimeTerm_fourier',
+         'triplePrime_finite_product',
+         'triplePrime_product_eq',
+         'triplePrimeFourier_summable',
+         'triplePrimeFourier_norm_bound',
+         'triplePrime_sum_integral',
+         'triplePrime_fourier_identity',
+         'triplePrime_signed_PPP',
+         'triplePrimeFourier_finite_cutoff',
+         'triplePrimeFourier_integer_cutoff',
+         'triplePrime_finite_integral',
+         'triplePrime_integral_finite_cutoff',
+         'triplePrime_integral_integer_cutoff',
+         'triplePrimeFrequency_resonance',
+         'triplePrimeFourier_resonance',
+         'triplePrimeFourier_integer_one',
+         'triplePrime_fourier_minimal',
+         'triplePrimeFourier_zero_weight',
+         'triplePrimeFourier_neg_weight'],
+        ['Formalize the prime-side exact prime-power resonance classification and Fourier-decay statements.']),
     'TRIPLE-KERNEL-PROFILE-001': (
         ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
          'rationalKernel_reciprocal', 'rationalProfile_bound', 'rationalProfile_swap',
@@ -695,10 +724,14 @@ class CoverageTests(unittest.TestCase):
                      'tripleMasterPattern_integral_height_cutoff', 'tripleMasterPattern_minimal',
                      'tripleMaster_word_expansion', 'tripleMaster_table_expansion',
                      'tripleWordIntegrand_integrable', 'tripleWordTable_correct',
-                     'tripleWord_counts', 'tripleMaster_word_split', 'tripleMaster_word_minimal']:
+                     'tripleWord_counts', 'tripleMaster_word_split', 'tripleMaster_word_minimal',
+                     'triplePrime_fourier_identity', 'triplePrimeFourier_summable',
+                     'triplePrime_integralNorm', 'triplePrime_signed_PPP',
+                     'triplePrimeFourier_integer_cutoff', 'triplePrimeFourier_resonance']:
             self.assertIn('HigherCorrelations.' + name, node['components'])
         self.assertFalse(any('five index-pattern subseries' in gap for gap in node['remaining_obligations']))
         self.assertTrue(any('prime-side' in gap for gap in node['remaining_obligations']))
+        self.assertFalse(any('Fourier-series interchange' in gap for gap in node['remaining_obligations']))
 
     def test_pair_translation_complete(self):
         node = next(n for n in self.record['nodes'] if n['id'] == 'PAIR-TRANSLATION-001')

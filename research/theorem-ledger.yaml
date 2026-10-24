@@ -4474,3 +4474,51 @@ claims:
       constants_scope: "The prefactor 1, normalization 1/T, integer signs and counts 27=8+19 are exact. No new error constant or effectivity upgrade is asserted."
       endpoint_audit: "Non-strict T>=3, X,Y>=1, signed/zero continuous real weights, closed smoothing support, all-real-t log(|t|+2), and conjugation of every third-slot component including H. Explicit minimal-parameter and zero/negated-weight lemmas."
       baseline_audit_coverage: "Discharges the ordered 27-word explicit-formula expansion clause of TRIPLE-MASTER-001. Prime Fourier-series interchange, exact resonance and Fourier decay remain separate formalization obligations. No wordwise correspondence with the five zero-index patterns is claimed. Historical statuses and audit scopes remain unchanged; the signed complex-argument triple error remains open."
+
+  - id: MASTER-PRIME-FOURIER-FORMAL-001
+    title: Absolutely convergent cubic prime Fourier identity
+    kind: theorem
+    statement: |
+      Let omega be continuous real with support in [1,2], T>=3, X,Y>=1,
+      and Z=XY. Write a_x(n)=Lambda(n)/sqrt(n)*min(n/x,x/n) for n>=1,
+      B(x)=sum_n a_x(n), and P_x for the existing actual prime series.
+      Then I_T(P_X,P_Y,P_Z)=sum_(m,n,k>=1) a_X(m)a_Y(n)a_Z(k)
+      times omega_hat(T/(2*pi)*log(m*n/k)), absolutely convergently.
+      Here I_T(f,g,h)=(1/T) integral omega(t/T) f(t)g(t)conjugate(h(t)) dt,
+      and omega_hat uses the negative-exponential Fourier convention in cycles.
+      The signed PPP word in the 27-term expansion is the negative of this sum.
+      For G_(m,n,k)(t)=omega(t/T)/T times the three actual prime terms,
+      conjugating the third, sum_(m,n,k) integral |G_(m,n,k)| equals
+      B(X)B(Y)B(XY) integral |omega|, independently of T. The sum of Fourier
+      term norms is at most this same bound. Each weighted term is integrable;
+      the infinite product is identified by finite Cartesian products before
+      Bochner interchange and termwise Fourier evaluation. Finite Fourier
+      sums and integrated finite prime products converge under independent
+      exhaustive finite-set cutoffs and inclusive integer cutoffs n<=N_r.
+      Lean index j denotes integer j+1. Integer-one terms vanish in any slot.
+      If m*n=k, the Fourier term is its coefficient times integral omega,
+      with no unit-mass assumption. Signed and zero weights, T=3 and X=Y=1
+      are included. No prime-power resonance classification, decay estimate,
+      off-diagonal asymptotic or varying-T cutoff limit is claimed.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-EXPANSION-FORMAL-001, PAIR-MEANVALUE-FORMAL-001, PAIR-SERIES-CONVERGENCE-001, SUMMABILITY-INTEGRAL-001, SUMMABILITY-LIMITS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TriplePrimeFourier.lean
+      label: HigherCorrelations.triplePrime_fourier_identity
+      companion_declarations: "triplePrimeCoefficient_summable, triplePrimeCoefficient_mass, triplePrimeTerm_phase, triplePrimeTerm_integrable, triplePrime_integralNorm, triplePrime_product_eq, triplePrimeTerm_fourier, triplePrimeFourier_summable, triplePrimeFourier_norm_bound, triplePrime_sum_integral, triplePrime_signed_PPP, triplePrimeFourier_finite_cutoff, triplePrimeFourier_integer_cutoff, triplePrime_integral_finite_cutoff, triplePrime_integral_integer_cutoff, triplePrimeFourier_resonance, triplePrimeFourier_integer_one, triplePrime_fourier_minimal"
+      bookkeeping: research/lean-triple-master.md
+      inventory: research/lean-triple-master-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: a44ed0d923416aba3324ffd10dcc2b47afe0c67b8a56fc21fde52f61dc4c1aff
+    limit_order: "Fix omega,T,X,Y before independently exhausting three finite integer sets or inclusive integer cutoffs. Prove absolute integral-norm summability before Bochner interchange. The displayed bound is independent of T; no asymptotic or cutoff uniformity in varying T is claimed."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "29 new public declarations extend the triple-master Comparator suite to 108. Definition-only challenges and five separate unfinished-proof controls; combined build, complete axiom report and analytic/pair/triple/harness regressions. Only propext, Quot.sound and Classical.choice permitted; external kernel disabled. Earlier Comparator suites are not rerun in focused mode."
+      imported_inputs: "Existing actual prime coefficients and absolute summability, character and Fourier scaling identities, compact-support integrability, generic Bochner interchange and independent-cutoff limits. No RH or narrower zero-free strip input."
+      constants_scope: "Exact sum-of-integral-norm bound B(X)B(Y)B(XY) integral |omega|; no hidden error constant. The effective flag refers only to this explicit bound, without upgrading any historical counting constant."
+      endpoint_audit: "Non-strict T>=3,X,Y>=1, closed smoothing support, signed/zero weights, literal integer-one zero terms, inclusive integer cutoffs and unnormalized resonance mass. Positive Fourier argument and negative PPP sign checked separately."
+      baseline_audit_coverage: "Discharges the cubic prime Fourier-series interchange clause of TRIPLE-MASTER-001. Exact prime-power resonance classification and Fourier decay remain separate. Historical statuses and audit scopes are preserved; the signed complex-argument triple error remains open."

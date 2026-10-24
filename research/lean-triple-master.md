@@ -2,9 +2,11 @@
 
 Task: proof and formal verification. Assumptions: `UNCONDITIONAL`.
 Ledger: `MASTER-INTEGRATION-FORMAL-001`, `MASTER-IDENTITY-FORMAL-001`, and
-`MASTER-PATTERNS-FORMAL-001`, and `MASTER-EXPANSION-FORMAL-001`.
+`MASTER-PATTERNS-FORMAL-001`, `MASTER-EXPANSION-FORMAL-001`, and
+`MASTER-PRIME-FOURIER-FORMAL-001`.
 These milestones discharge integral-norm summability, the exact kernel identity,
-its five occurrence-index subseries, and the ordered 27-word expansion in
+its five occurrence-index subseries, the ordered 27-word expansion and the
+cubic prime Fourier-series identification in
 `TRIPLE-MASTER-001`. Its whole statement remains partially formalized.
 
 ## Checked statement
@@ -170,9 +172,50 @@ also compares the Lean list to both existing printed tables, including order.
 The statement admits signed continuous real weights on [1,2]. T=3, X=Y=1 and
 zero/negated weights have explicit checked specializations. A unit base retains
 its actual S,P,A,H functions. Zero-index patterns and word expansions are
-separate decompositions, with no asserted rowwise correspondence. Prime-side
-Fourier interchange, resonance classification and error estimates remain open
-formalization obligations.
+separate decompositions, with no asserted rowwise correspondence. The next milestone below discharges the cubic prime Fourier interchange;
+prime-power resonance classification and error estimates remain separate.
+
+## Cubic prime Fourier series
+
+For positive integers n use the existing coefficient
+\[
+ a_X(n)=\frac{\Lambda(n)}{\sqrt n}\min(n/X,X/n),\qquad
+ B(X)=\sum_{n\ge1}a_X(n).
+\]
+`pairMeanPrimeCoefficient_sqrt` identifies this coefficient; Lean index j denotes
+n=j+1. Thus the series includes integer 1 with coefficient zero. For the same
+continuous real weight and T>=3, X,Y>=1, `triplePrime_fourier_identity` proves
+\[
+ I_T(P_X,P_Y,P_{XY})=\sum_{m,n,k\ge1}a_X(m)a_Y(n)a_{XY}(k)
+ \widehat\omega\!\left(\frac{T}{2\pi}\log\frac{mn}{k}\right).
+\]
+The Fourier transform is the existing negative-exponential transform in cycles.
+The conjugated third slot produces the positive displayed argument. Substitution
+t=Tu cancels the 1/T normalization exactly; no further prefactor occurs.
+`triplePrime_signed_PPP` gives the negative of this series as the PPP contribution
+in the 27-word expansion.
+
+The coefficient sums are nonnegative and summable. For the actual weighted
+prime summands G_(m,n,k), the stronger integral-norm identity is
+\[
+ \sum_{m,n,k}\int |G_{m,n,k}(t)|\,dt
+ =B(X)B(Y)B(XY)\int|\omega(u)|\,du.
+\]
+This bound is independent of T, with the displayed dependence on X,Y,omega.
+Continuity and compact support establish integrability. Finite Cartesian
+products and uniqueness of absolutely convergent limits identify the infinite
+product; verified Bochner interchange then evaluates each term. The resulting
+Fourier series is absolutely convergent, with sum of absolute values at most
+the same bound. No Fourier decay or prime-correlation estimate is needed here.
+
+Fix T,X,Y,omega before the three cutoffs exhaust independently. Both finite
+Fourier sums and integrated finite prime products converge under independent
+finite-set cutoffs and integer cutoffs. `range N_r` represents 1<=n<=N_r,
+including its endpoint in full. No uniform cutoff convergence in varying T is
+asserted. At mn=k the term retains coefficient times integral omega; unit mass
+is never imposed. Checked endpoints also include T=3,X=Y=1, a zero coefficient
+in any integer-one slot, and zero/negated weights. The arithmetic classification
+of nonzero resonances into powers of a common prime remains to be formalized.
 
 ## Proof dependencies and domination
 
@@ -219,12 +262,14 @@ claimed.
 ## Verification and remaining boundary
 
 Definition-only interfaces: `TripleMasterDefinitions`,
-`TripleMasterPatternDefinitions` and `TripleExpansionDefinitions`. Proofs:
+`TripleMasterPatternDefinitions`, `TripleExpansionDefinitions` and
+`TriplePrimeFourierDefinitions`. Proofs:
 `TripleMasterBounds`, `TripleMasterIntegration`, `TripleMasterIdentity`,
-`TripleMasterPatterns` and `TripleExpansion`.
-All **79 public declarations** have independent Comparator statements, inventory
+`TripleMasterPatterns`, `TripleExpansion` and `TriplePrimeFourier`.
+All **108 public declarations** have independent Comparator statements, inventory
 entries and axiom reports. The unfinished integral-norm bound, kernel identity
-five-subseries identity and ordered word expansion must each be rejected
+five-subseries identity, ordered word expansion and cubic prime Fourier identity
+must each be rejected
 for `sorryAx`. Only `propext`,
 `Quot.sound` and `Classical.choice` are permitted; the external kernel is disabled.
 
@@ -232,14 +277,13 @@ for `sorryAx`. Only `propext`,
 python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only
 ```
 
-The focused mode checks the triple-master Comparator suite, four negative
+The focused mode checks the triple-master Comparator suite, five negative
 controls, combined
 project build, complete axiom report, analytic coverage and pair/triple/harness
 regressions. Earlier Comparator suites are not rerun. The ledger links the
 successful content-addressed evidence.
 
 The proof uses the existing unconditional counting/convergence infrastructure,
-not the imported PREPRINT fixed strip. The next step is to identify the cubic
-prime term with its absolutely convergent Fourier series. Prime resonance and
-Fourier-decay clauses remain separate formalization tasks. Historical claim statuses and pair/triple
+not the imported PREPRINT fixed strip. The next step is the exact prime-power resonance classification.
+Fourier-decay and off-diagonal estimates remain separate formalization tasks. Historical claim statuses and pair/triple
 audit scopes are preserved; the open signed complex-argument triple error is unaffected.

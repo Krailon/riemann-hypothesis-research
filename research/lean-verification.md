@@ -223,9 +223,12 @@ real smoothing weights supported in [1,2] are allowed. The explicit factor
 The ordered 27-word explicit-formula expansion is also checked, with all four
 remainders retained exactly, per-word integrability, a verified sign table and
 the exact eight/nineteen split. No zero-free-strip input is used. The full
-`TRIPLE-MASTER-001` remains partial: prime Fourier interchange, resonance and
-Fourier decay are separate obligations.
+`TRIPLE-MASTER-001` remains partial. The cubic prime Fourier identity and its
+absolute convergence/interchange are now checked, retaining the frequency
+T log(mn/k)/(2 pi), the negative PPP sign, independent cutoffs and unnormalized
+resonance mass. Prime-power resonance classification and Fourier decay remain
+separate obligations.
 
 Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only`
-for all 79 triple-master Comparator statements, four negative controls, combined build,
+for all 108 triple-master Comparator statements, five negative controls, combined build,
 complete axiom report and regressions. Earlier Comparator suites are not rerun.

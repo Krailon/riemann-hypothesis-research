@@ -1223,10 +1223,39 @@
         "HigherCorrelations.tripleWord_counts",
         "HigherCorrelations.tripleMaster_table_expansion",
         "HigherCorrelations.tripleMaster_word_split",
-        "HigherCorrelations.tripleMaster_word_minimal"
+        "HigherCorrelations.tripleMaster_word_minimal",
+        "HigherCorrelations.triplePrimeCoefficient_nonneg",
+        "HigherCorrelations.triplePrimeCoefficient_summable",
+        "HigherCorrelations.triplePrimeCoefficient_mass",
+        "HigherCorrelations.triplePrimeFrequency_phase",
+        "HigherCorrelations.triplePrimeTerm_phase",
+        "HigherCorrelations.triplePrimeTerm_norm",
+        "HigherCorrelations.triplePrimeTerm_integrable",
+        "HigherCorrelations.triplePrimeTerm_integralNorm",
+        "HigherCorrelations.triplePrime_integralNorm",
+        "HigherCorrelations.triplePrime_pointwise_summable",
+        "HigherCorrelations.triplePrimeTerm_fourier",
+        "HigherCorrelations.triplePrime_finite_product",
+        "HigherCorrelations.triplePrime_product_eq",
+        "HigherCorrelations.triplePrimeFourier_summable",
+        "HigherCorrelations.triplePrimeFourier_norm_bound",
+        "HigherCorrelations.triplePrime_sum_integral",
+        "HigherCorrelations.triplePrime_fourier_identity",
+        "HigherCorrelations.triplePrime_signed_PPP",
+        "HigherCorrelations.triplePrimeFourier_finite_cutoff",
+        "HigherCorrelations.triplePrimeFourier_integer_cutoff",
+        "HigherCorrelations.triplePrime_finite_integral",
+        "HigherCorrelations.triplePrime_integral_finite_cutoff",
+        "HigherCorrelations.triplePrime_integral_integer_cutoff",
+        "HigherCorrelations.triplePrimeFrequency_resonance",
+        "HigherCorrelations.triplePrimeFourier_resonance",
+        "HigherCorrelations.triplePrimeFourier_integer_one",
+        "HigherCorrelations.triplePrime_fourier_minimal",
+        "HigherCorrelations.triplePrimeFourier_zero_weight",
+        "HigherCorrelations.triplePrimeFourier_neg_weight"
       ],
       "remaining_obligations": [
-        "Formalize the prime-side Fourier-series interchange, exact resonance classification and Fourier-decay statements."
+        "Formalize the prime-side exact prime-power resonance classification and Fourier-decay statements."
       ]
     },
     {
@@ -7089,6 +7118,151 @@
     {
       "declaration": "HigherCorrelations.tripleWordIntegral_neg_weight",
       "source": "lean/HigherCorrelations/TripleExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeCoefficient_nonneg",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeCoefficient_summable",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeCoefficient_mass",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFrequency_phase",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeTerm_phase",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeTerm_norm",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeTerm_integrable",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeTerm_integralNorm",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_integralNorm",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_pointwise_summable",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeTerm_fourier",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_finite_product",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_product_eq",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourier_summable",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourier_norm_bound",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_sum_integral",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_fourier_identity",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_signed_PPP",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourier_finite_cutoff",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourier_integer_cutoff",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_finite_integral",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_integral_finite_cutoff",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_integral_integer_cutoff",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFrequency_resonance",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourier_resonance",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourier_integer_one",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrime_fourier_minimal",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourier_zero_weight",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeFourier_neg_weight",
+      "source": "lean/HigherCorrelations/TriplePrimeFourier.lean",
       "comparator_checked": true
     }
   ],

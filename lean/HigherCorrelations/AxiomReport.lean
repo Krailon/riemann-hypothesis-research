@@ -1,4 +1,4 @@
-import HigherCorrelations.TripleExpansion
+import HigherCorrelations.TriplePrimeFourier
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
@@ -1169,3 +1169,33 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleMaster_word_minimal
 #print axioms HigherCorrelations.tripleWordIntegral_zero_weight
 #print axioms HigherCorrelations.tripleWordIntegral_neg_weight
+
+#print axioms HigherCorrelations.triplePrimeCoefficient_nonneg
+#print axioms HigherCorrelations.triplePrimeCoefficient_summable
+#print axioms HigherCorrelations.triplePrimeCoefficient_mass
+#print axioms HigherCorrelations.triplePrimeFrequency_phase
+#print axioms HigherCorrelations.triplePrimeTerm_phase
+#print axioms HigherCorrelations.triplePrimeTerm_norm
+#print axioms HigherCorrelations.triplePrimeTerm_integrable
+#print axioms HigherCorrelations.triplePrimeTerm_integralNorm
+#print axioms HigherCorrelations.triplePrime_integralNorm
+#print axioms HigherCorrelations.triplePrime_pointwise_summable
+#print axioms HigherCorrelations.triplePrimeTerm_fourier
+#print axioms HigherCorrelations.triplePrime_finite_product
+#print axioms HigherCorrelations.triplePrime_product_eq
+#print axioms HigherCorrelations.triplePrimeFourier_summable
+#print axioms HigherCorrelations.triplePrimeFourier_norm_bound
+#print axioms HigherCorrelations.triplePrime_sum_integral
+#print axioms HigherCorrelations.triplePrime_fourier_identity
+#print axioms HigherCorrelations.triplePrime_signed_PPP
+#print axioms HigherCorrelations.triplePrimeFourier_finite_cutoff
+#print axioms HigherCorrelations.triplePrimeFourier_integer_cutoff
+#print axioms HigherCorrelations.triplePrime_finite_integral
+#print axioms HigherCorrelations.triplePrime_integral_finite_cutoff
+#print axioms HigherCorrelations.triplePrime_integral_integer_cutoff
+#print axioms HigherCorrelations.triplePrimeFrequency_resonance
+#print axioms HigherCorrelations.triplePrimeFourier_resonance
+#print axioms HigherCorrelations.triplePrimeFourier_integer_one
+#print axioms HigherCorrelations.triplePrime_fourier_minimal
+#print axioms HigherCorrelations.triplePrimeFourier_zero_weight
+#print axioms HigherCorrelations.triplePrimeFourier_neg_weight

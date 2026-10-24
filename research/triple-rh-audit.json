@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "a49be398444608ccc396738cf9e6eb31ca5eeba370b145185fd575cebeec65c6",
+    "research/theorem-ledger.yaml": "d0dc618b4905614dfc72b563265140e02b17ccc782cb3d1954fa1e822076ffb7",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "f72f2a671d7b2a0b2247490fad6722dd7adf1c9991c3d47d67c47357829fa4e3"
+    "research/pair-rh-audit.json": "1daa23647017f766aece00a5689756b440a582b154e234b3c59236bc6eb9dd17"
   },
   "supplemental_evidence": {
     "sine-context": {

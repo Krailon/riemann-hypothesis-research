@@ -207,7 +207,7 @@ def main(argv=None):
     parser.add_argument('--pair-fourier-only', action='store_true',
                         help='Use prepared dependencies; check pair Fourier translation and test limits, combined build, all axioms and regressions.')
     parser.add_argument('--triple-master-only', action='store_true',
-                        help='Use prepared dependencies; check the triple integral-norm bound, interchange, kernel identity, five subseries and 27-word expansion, combined build, all axioms and regressions.')
+                        help='Use prepared dependencies; check the triple integral-norm bound, interchange, kernel identity, five subseries, 27-word expansion and cubic prime Fourier identity, combined build, all axioms and regressions.')
     args = parser.parse_args(argv)
     if sum([args.pair_zero_only, args.zeta23_only, args.pair_zero_bounds_only, args.pair_zero_comparison_only, args.pair_asymptotic_only, args.pair_fourier_only, args.triple_master_only]) > 1:
         parser.error('Choose at most one focused verification mode')
@@ -283,7 +283,7 @@ def main(argv=None):
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
         if not (args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only):
-            command('triple-master-build', ['lake', 'build', 'HigherCorrelations.TripleExpansion'])
+            command('triple-master-build', ['lake', 'build', 'HigherCorrelations.TriplePrimeFourier'])
             command('triple-master-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/triple-master.json'])
             command('triple-master-unfinished-rejected', ['lake', 'env', comparator,
@@ -294,6 +294,8 @@ def main(argv=None):
                     'lean/VerificationChallenges/triple-master-patterns-unfinished.json'], expected_failure=True)
             command('triple-master-expansion-unfinished-rejected', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/triple-master-expansion-unfinished.json'], expected_failure=True)
+            command('triple-master-prime-fourier-unfinished-rejected', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/triple-master-prime-fourier-unfinished.json'], expected_failure=True)
         if not (args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.triple_master_only):
             command('pair-fourier-build', ['lake', 'build', 'HigherCorrelations.PairFourierAsymptotic'])
             command('pair-fourier-comparator', ['lake', 'env', comparator,

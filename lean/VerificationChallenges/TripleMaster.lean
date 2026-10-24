@@ -1,3 +1,4 @@
+import HigherCorrelations.TriplePrimeFourierDefinitions
 import HigherCorrelations.TripleExpansionDefinitions
 import HigherCorrelations.TripleMasterPatternDefinitions
 
@@ -413,6 +414,149 @@ theorem tripleWordIntegral_zero_weight (T X Y : ℝ) (w : MasterWord) :
 
 theorem tripleWordIntegral_neg_weight (ω : ℝ → ℝ) (T X Y : ℝ) (w : MasterWord) :
     tripleWordIntegral (fun t => -ω t) T X Y w = -tripleWordIntegral ω T X Y w := by sorry
+
+theorem triplePrimeCoefficient_nonneg (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) :
+    0 ≤ triplePrimeCoefficient X Y v := by sorry
+
+theorem triplePrimeCoefficient_summable (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (triplePrimeCoefficient X Y) := by sorry
+
+theorem triplePrimeCoefficient_mass (X Y : ℝ) (hX : 1≤X) (hY : 1≤Y) :
+    (∑' v : PrimeTriple, triplePrimeCoefficient X Y v) =
+      triplePrimeMass X*triplePrimeMass Y*triplePrimeMass (X*Y) := by sorry
+
+theorem triplePrimeFrequency_phase (T : ℝ) (v : PrimeTriple) :
+    triplePrimeFrequency T v =
+      T*(-pairMeanPrimeFrequency (v 0)-pairMeanPrimeFrequency (v 1)+pairMeanPrimeFrequency (v 2)) := by sorry
+
+theorem triplePrimeTerm_phase (ω : ℝ → ℝ) (T X Y : ℝ) (v : PrimeTriple) (t : ℝ) :
+    triplePrimeTerm ω T X Y v t = (triplePrimeCoefficient X Y v:ℂ)*
+      ((ω (t/T)/T:ℝ)*pairMeanCharacter (-t*triplePrimeFrequency 1 v)) := by sorry
+
+theorem triplePrimeTerm_norm (ω : ℝ → ℝ) (T X Y : ℝ) (hT : 0<T)
+    (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) (t : ℝ) :
+    ‖triplePrimeTerm ω T X Y v t‖ = triplePrimeCoefficient X Y v*(|ω (t/T)|/T) := by sorry
+
+theorem triplePrimeTerm_integrable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ) (hT : 0<T)
+    (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) : Integrable (triplePrimeTerm ω T X Y v) := by sorry
+
+theorem triplePrimeTerm_integralNorm (ω : ℝ → ℝ) (T X Y : ℝ) (hT : 0<T)
+    (hX : 1≤X) (hY : 1≤Y) (v : PrimeTriple) :
+    (∫ t : ℝ, ‖triplePrimeTerm ω T X Y v t‖) =
+      triplePrimeCoefficient X Y v*(∫ u : ℝ, |ω u|) := by sorry
+
+theorem triplePrime_integralNorm (ω : ℝ → ℝ) (T X Y : ℝ) (hT : 0<T)
+    (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun v : PrimeTriple => ∫ t : ℝ, ‖triplePrimeTerm ω T X Y v t‖) ∧
+    (∑' v : PrimeTriple, ∫ t : ℝ, ‖triplePrimeTerm ω T X Y v t‖) = triplePrimeL1Bound ω X Y := by sorry
+
+theorem triplePrime_pointwise_summable (ω : ℝ → ℝ) (T X Y : ℝ) (hT : 0<T)
+    (hX : 1≤X) (hY : 1≤Y) (t : ℝ) :
+    Summable (fun v : PrimeTriple => ‖triplePrimeTerm ω T X Y v t‖) := by sorry
+
+theorem triplePrimeTerm_fourier (ω : ℝ → ℝ) (T X Y : ℝ) (hT : 0<T) (v : PrimeTriple) :
+    (∫ t : ℝ, triplePrimeTerm ω T X Y v t) = triplePrimeFourierTerm ω T X Y v := by sorry
+
+theorem triplePrime_finite_product (ω : ℝ → ℝ) (T X Y t : ℝ)
+    (S : Fin 3 → Finset ℕ) :
+    (∑ v ∈ tripleDomain S, triplePrimeTerm ω T X Y v t) =
+      (ω (t/T)/T : ℝ)*(∑ i ∈ S 0, pairPrimeTerm i (X,t))*
+        (∑ j ∈ S 1, pairPrimeTerm j (Y,t))*
+        star (∑ k ∈ S 2, pairPrimeTerm k (X*Y,t)) := by sorry
+
+theorem triplePrime_product_eq (ω : ℝ → ℝ)
+    (T X Y : ℝ) (hT : 0<T) (hX : 1≤X) (hY : 1≤Y) (t : ℝ) :
+    (∑' v : PrimeTriple, triplePrimeTerm ω T X Y v t) =
+      tripleWordIntegrand ω T X Y ![.P,.P,.P] t := by sorry
+
+theorem triplePrimeFourier_summable (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Summable (fun v : PrimeTriple => ‖triplePrimeFourierTerm ω T X Y v‖) := by sorry
+
+theorem triplePrimeFourier_norm_bound (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    (∑' v : PrimeTriple, ‖triplePrimeFourierTerm ω T X Y v‖) ≤ triplePrimeL1Bound ω X Y := by sorry
+
+theorem triplePrime_sum_integral (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    (∑' v : PrimeTriple, ∫ t : ℝ, triplePrimeTerm ω T X Y v t) =
+      ∫ t : ℝ, ∑' v : PrimeTriple, triplePrimeTerm ω T X Y v t := by sorry
+
+theorem triplePrime_fourier_identity (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleWordIntegral ω T X Y ![.P,.P,.P] =
+      ∑' v : PrimeTriple, triplePrimeFourierTerm ω T X Y v := by sorry
+
+theorem triplePrime_signed_PPP (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    (tripleWordSign ![.P,.P,.P]:ℂ)*tripleWordIntegral ω T X Y ![.P,.P,.P] =
+      -(∑' v : PrimeTriple, triplePrimeFourierTerm ω T X Y v) := by sorry
+
+theorem triplePrimeFourier_finite_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Tendsto (fun S : Fin 3 → Finset ℕ =>
+      ∑ v ∈ tripleDomain S, triplePrimeFourierTerm ω T X Y v) atTop
+      (𝓝 (tripleWordIntegral ω T X Y ![.P,.P,.P])) := by sorry
+
+theorem triplePrimeFourier_integer_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Tendsto (fun N : Fin 3 → ℕ =>
+      ∑ v ∈ tripleDomain (fun r => Finset.range (N r)), triplePrimeFourierTerm ω T X Y v) atTop
+      (𝓝 (tripleWordIntegral ω T X Y ![.P,.P,.P])) := by sorry
+
+theorem triplePrime_finite_integral (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) (S : Fin 3 → Finset ℕ) :
+    (∫ t : ℝ, (ω (t/T)/T:ℝ)*(∑ n ∈ S 0, pairPrimeTerm n (X,t))*
+      (∑ n ∈ S 1, pairPrimeTerm n (Y,t))*star (∑ n ∈ S 2, pairPrimeTerm n (X*Y,t))) =
+      ∑ v ∈ tripleDomain S, triplePrimeFourierTerm ω T X Y v := by sorry
+
+theorem triplePrime_integral_finite_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Tendsto (fun S : Fin 3 → Finset ℕ =>
+      ∫ t : ℝ, (ω (t/T)/T:ℝ)*(∑ n ∈ S 0, pairPrimeTerm n (X,t))*
+        (∑ n ∈ S 1, pairPrimeTerm n (Y,t))*star (∑ n ∈ S 2, pairPrimeTerm n (X*Y,t))) atTop
+      (𝓝 (tripleWordIntegral ω T X Y ![.P,.P,.P])) := by sorry
+
+theorem triplePrime_integral_integer_cutoff (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    Tendsto (fun N : Fin 3 → ℕ =>
+      ∫ t : ℝ, (ω (t/T)/T:ℝ)*(∑ n ∈ Finset.range (N 0), pairPrimeTerm n (X,t))*
+        (∑ n ∈ Finset.range (N 1), pairPrimeTerm n (Y,t))*
+        star (∑ n ∈ Finset.range (N 2), pairPrimeTerm n (X*Y,t))) atTop
+      (𝓝 (tripleWordIntegral ω T X Y ![.P,.P,.P])) := by sorry
+
+theorem triplePrimeFrequency_resonance (T : ℝ) (v : PrimeTriple)
+    (hv : (v 0+1)*(v 1+1) = v 2+1) : triplePrimeFrequency T v = 0 := by sorry
+
+theorem triplePrimeFourier_resonance (ω : ℝ → ℝ) (T X Y : ℝ) (v : PrimeTriple)
+    (hv : (v 0+1)*(v 1+1) = v 2+1) :
+    triplePrimeFourierTerm ω T X Y v =
+      (triplePrimeCoefficient X Y v:ℂ)*(∫ u : ℝ, (ω u:ℂ)) := by sorry
+
+theorem triplePrimeFourier_integer_one (ω : ℝ → ℝ) (T X Y : ℝ) (v : PrimeTriple)
+    (r : Fin 3) (hr : v r = 0) : triplePrimeFourierTerm ω T X Y v = 0 := by sorry
+
+theorem triplePrime_fourier_minimal (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) :
+    tripleWordIntegral ω 3 1 1 ![.P,.P,.P] =
+      ∑' v : PrimeTriple, triplePrimeFourierTerm ω 3 1 1 v := by sorry
+
+theorem triplePrimeFourier_zero_weight (T X Y : ℝ) (v : PrimeTriple) :
+    triplePrimeFourierTerm (fun _ => 0) T X Y v = 0 := by sorry
+
+theorem triplePrimeFourier_neg_weight (ω : ℝ → ℝ) (T X Y : ℝ) (v : PrimeTriple) :
+    triplePrimeFourierTerm (fun t => -ω t) T X Y v = -triplePrimeFourierTerm ω T X Y v := by sorry
 
 end
 end HigherCorrelations
