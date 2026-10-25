@@ -4623,3 +4623,60 @@ claims:
       constants_scope: "Exact constant one, explicit derivative L1 norms, literal 2*pi and T cancellation. No effectivity upgrade to historical zero-counting constants."
       endpoint_audit: "N=0 and N=1, xi=0 and both frequency signs; division only when xi!=0. C^N compact support, including closed [1,2], signed/zero weights, T>=3,X,Y>=1 and explicit minimal specialization."
       baseline_audit_coverage: "Discharges the Fourier-decay clauses of TRIPLE-MASTER-001. Whole-claim assembly, X/Y symmetry, observable norm corollary and historical effective-constant provenance remain separate. Historical claim statuses and RH-audit scopes are preserved; the signed complex-argument triple error remains open."
+
+  - id: MASTER-ASSEMBLY-FORMAL-001
+    title: Assembled unconditional smoothed triple master theorem
+    kind: theorem
+    statement: |
+      There exists one absolute C0>0 satisfying Q(t)<=C0 log(|t|+2) for every
+      real t, chosen before all weights and parameters, such that for every
+      smooth real omega supported in [1,2], T>=3 and X,Y>=1, the 25-field
+      proposition TripleMasterStatement(C0,omega,T,X,Y) holds.
+      It includes integral-norm summability and the exact bound
+      (8/3)^3 C0^3 XY log(2T+2)^3 integral |omega|; justified zero sum/integral
+      interchange; absolute kernel-series convergence and the exact factor-8
+      kernel identity retaining full zero coordinates, both ordinate signs
+      and multiplicity; five occurrence-index subseries with absolute convergence;
+      C_(3,T)(X,Y)=C_(3,T)(Y,X); and the same explicit bound for |C_(3,T)|.
+      It includes the 27-word explicit-formula expansion and literal signed
+      table, the absolutely convergent cubic prime Fourier identity, absolute
+      resonant/off-resonant subseries, unique common-prime/ordered-positive-
+      exponent classification, and the absolutely convergent nested resonant
+      coefficient sum. The unsigned PPP term is (integral omega)*R_res+R_off;
+      the signed PPP contribution is -(integral omega)*R_res-R_off.
+      It also includes the Fourier mass bound and every finite-order derivative
+      L1 decay bound with the exact (2*pi*|xi|)^N denominator for xi!=0.
+      A parameterized theorem accepts any positive C0 satisfying the same
+      zero-kernel bound; the closed universal theorem discharges that premise
+      using the existing unconditional zero-kernel estimate.
+      For nonnegative smooth omega with topological support in (1,2) and real
+      integral one, the manuscript specialization proves both L1 norm and
+      complex mass equal one and removes those factors from the majorant and
+      unsigned/signed resonance split. T=3,X=Y=1, zero and negated weights,
+      and swapped bases are checked with the same constant. Negating the
+      weight negates the observable and preserves the L1 bound.
+      The constant is existential; no numerical-effectiveness claim is made.
+      No new interchange, negligible summed off-diagonal error, or three-level
+      asymptotic is asserted by this exact theorem.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-INTEGRATION-FORMAL-001, MASTER-IDENTITY-FORMAL-001, MASTER-PATTERNS-FORMAL-001, MASTER-EXPANSION-FORMAL-001, MASTER-PRIME-FOURIER-FORMAL-001, MASTER-PRIME-RESONANCE-FORMAL-001, MASTER-FOURIER-DECAY-FORMAL-001, ZERO-KERNEL-UNIFORM-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleMasterAssembly.lean
+      label: HigherCorrelations.tripleMaster_uniform
+      companion_declarations: "tripleMaster_assembled, tripleMasterProduct_swap, tripleMasterObservable_swap, tripleMasterObservable_integral_series, tripleMasterObservable_norm_bound, tripleMaster_weight_mass_one, tripleMaster_manuscript, tripleMasterObservable_neg, tripleMasterL1Bound_neg, tripleMaster_assembled_minimal, tripleMaster_assembled_zero, tripleMaster_assembled_neg, tripleMaster_assembled_swapped"
+      bookkeeping: research/lean-triple-master.md
+      inventory: research/lean-triple-master-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 4f547211aaeebdbaaed193bf100e773df3a4d8216b0e1b1af6bddbc3be697b2e
+    limit_order: "Choose C0 before omega,T,X,Y. For any admissible parameters, assemble previously checked absolute-convergence identities. Existing independent finite-set and inclusive height-cutoff limits retain fixed omega,T,X,Y. No new limit interchange or asymptotic is taken."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "14 new public declarations extend the triple-master Comparator suite to 187. Definition-only proposition with 25 explicit conclusion fields, independent challenge statements and eleven separate unfinished-proof controls, including parameterized assembly and the universal theorem. Combined build, complete axiom report and analytic/pair/triple/harness regressions. Only propext, Quot.sound and Classical.choice permitted; external kernel disabled. Earlier Comparator suites are not rerun in focused mode."
+      imported_inputs: "Existing exact master components and zeroKernel_summable_bound. New symmetry uses commutativity of the first two full zero-series factors; the norm bound uses the triangle inequality for the absolutely convergent evaluated-integral series and its established integral-norm majorant. No RH, simplicity or narrower zero-free strip."
+      constants_scope: "C0 is the same kind of zero-kernel constant required by the manuscript and is chosen uniformly before all weights and parameters. The current proof uses an unevaluated low-height count at height 5; the historical numerical-effectiveness qualification remains unformalized."
+      endpoint_audit: "General signed smooth real weights with closed [1,2] support; exact T>=3,X,Y>=1 endpoints; zero, negated and swapped cases. Manuscript corollary uses topological support inside (1,2), nonnegativity and real integral one, with both complex mass and L1 normalization verified."
+      baseline_audit_coverage: "Assembles all mathematical clauses of TRIPLE-MASTER-001 with an existential constant. A clause-to-declaration map is recorded in research/lean-triple-master.md. Only the historical numerical-effectiveness qualification remains in its coverage gap. Historical statuses and RH-audit scopes are preserved; the signed complex-argument triple error remains open."

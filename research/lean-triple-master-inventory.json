@@ -15,7 +15,9 @@
     "TriplePrimeResonance",
     "FourierDecayDefinitions",
     "PairMeanFourierDecay",
-    "TripleFourierDecay"
+    "TripleFourierDecay",
+    "TripleMasterStatement",
+    "TripleMasterAssembly"
   ],
   "components": [
     {
@@ -881,6 +883,76 @@
     {
       "declaration": "HigherCorrelations.triplePrimeFourierTerm_decay_minimal",
       "source": "lean/HigherCorrelations/TripleFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterProduct_swap",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterObservable_swap",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterObservable_integral_series",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterObservable_norm_bound",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_assembled",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_uniform",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_weight_mass_one",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_manuscript",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterObservable_neg",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterL1Bound_neg",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_assembled_minimal",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_assembled_zero",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_assembled_neg",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_assembled_swapped",
+      "source": "lean/HigherCorrelations/TripleMasterAssembly.lean",
       "comparator_checked": true
     }
   ],

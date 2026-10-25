@@ -1,6 +1,6 @@
 {
   "challenge_module": "VerificationChallenges.TripleMaster",
-  "solution_module": "HigherCorrelations.TripleFourierDecay",
+  "solution_module": "HigherCorrelations.TripleMasterAssembly",
   "theorem_names": [
     "HigherCorrelations.tripleMasterTerm_continuous",
     "HigherCorrelations.tripleMaster_support",
@@ -174,7 +174,21 @@
     "HigherCorrelations.triplePrimeFourierTerm_mass_bound",
     "HigherCorrelations.triplePrimeFourierTerm_decay",
     "HigherCorrelations.tripleWeight_cubic_uniform",
-    "HigherCorrelations.triplePrimeFourierTerm_decay_minimal"
+    "HigherCorrelations.triplePrimeFourierTerm_decay_minimal",
+    "HigherCorrelations.tripleMasterProduct_swap",
+    "HigherCorrelations.tripleMasterObservable_swap",
+    "HigherCorrelations.tripleMasterObservable_integral_series",
+    "HigherCorrelations.tripleMasterObservable_norm_bound",
+    "HigherCorrelations.tripleMaster_assembled",
+    "HigherCorrelations.tripleMaster_uniform",
+    "HigherCorrelations.tripleMaster_weight_mass_one",
+    "HigherCorrelations.tripleMaster_manuscript",
+    "HigherCorrelations.tripleMasterObservable_neg",
+    "HigherCorrelations.tripleMasterL1Bound_neg",
+    "HigherCorrelations.tripleMaster_assembled_minimal",
+    "HigherCorrelations.tripleMaster_assembled_zero",
+    "HigherCorrelations.tripleMaster_assembled_neg",
+    "HigherCorrelations.tripleMaster_assembled_swapped"
   ],
   "definition_names": [],
   "permitted_axioms": [

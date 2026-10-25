@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleMasterStatement
 import HigherCorrelations.FourierDecayDefinitions
 import HigherCorrelations.TriplePrimeResonanceDefinitions
 import HigherCorrelations.TriplePrimeFourierDefinitions
@@ -821,6 +822,83 @@ theorem triplePrimeFourierTerm_decay_minimal (ω : ℝ → ℝ) (N : ℕ) (hω :
     ‖triplePrimeFourierTerm ω 3 1 1 v‖ ≤ triplePrimeCoefficient 1 1 v*
       min (fourierDerivativeL1 ω 0)
         (fourierDerivativeL1 ω N/(3*|Real.log (((v 0+1:ℕ):ℝ)*((v 1+1:ℕ):ℝ)/((v 2+1:ℕ):ℝ))|)^N) := by sorry
+
+theorem tripleMasterProduct_swap (ω : ℝ → ℝ) (T X Y t : ℝ) :
+    tripleMasterProduct ω T X Y t = tripleMasterProduct ω T Y X t := by sorry
+
+theorem tripleMasterObservable_swap (ω : ℝ → ℝ) (T X Y : ℝ) :
+    tripleMasterObservable ω T X Y = tripleMasterObservable ω T Y X := by sorry
+
+theorem tripleMasterObservable_integral_series (ω : ℝ → ℝ) (hω : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    tripleMasterObservable ω T X Y = ∑' v : MasterTriple, ∫ t : ℝ, tripleMasterTerm ω T X Y v t := by sorry
+
+theorem tripleMasterObservable_norm_bound (C₀ : ℝ) (hC₀ : 0≤C₀)
+    (hQ : ∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2))
+    (ω : ℝ → ℝ) (hω : Continuous ω) (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (T X Y : ℝ) (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    ‖tripleMasterObservable ω T X Y‖ ≤ tripleMasterL1Bound C₀ ω T X Y := by sorry
+
+theorem tripleMaster_assembled (C₀ : ℝ) (hC₀ : 0<C₀)
+    (hQ : ∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2))
+    (ω : ℝ → ℝ) (hω : ContDiff ℝ (⊤ : ℕ∞) ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) : TripleMasterStatement C₀ ω T X Y := by sorry
+
+theorem tripleMaster_uniform : ∃ C₀ : ℝ, 0<C₀ ∧
+    (∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2)) ∧
+    ∀ (ω : ℝ → ℝ), ContDiff ℝ (⊤ : ℕ∞) ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ T X Y : ℝ, 3≤T → 1≤X → 1≤Y → TripleMasterStatement C₀ ω T X Y := by sorry
+
+theorem tripleMaster_weight_mass_one (ω : ℝ → ℝ) (hn : ∀ u, 0≤ω u)
+    (hm : ∫ u : ℝ, ω u = 1) :
+    fourierDerivativeL1 ω 0 = 1 ∧ (∫ u : ℝ, (ω u:ℂ)) = 1 := by sorry
+
+theorem tripleMaster_manuscript (C₀ : ℝ) (hC₀ : 0<C₀)
+    (hQ : ∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2))
+    (ω : ℝ → ℝ) (hω : ContDiff ℝ (⊤ : ℕ∞) ω) (hs : tsupport ω ⊆ Ioo (1:ℝ) 2)
+    (hn : ∀ u, 0≤ω u) (hm : ∫ u : ℝ, ω u = 1)
+    (T X Y : ℝ) (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    TripleMasterStatement C₀ ω T X Y ∧ fourierDerivativeL1 ω 0 = 1 ∧
+    (∫ u : ℝ, (ω u:ℂ)) = 1 ∧
+    ‖tripleMasterObservable ω T X Y‖ ≤ (8/3:ℝ)^3*C₀^3*X*Y*Real.log (2*T+2)^3 ∧
+    tripleWordIntegral ω T X Y ![.P,.P,.P] = (triplePrimeResonantMass X Y:ℂ)+triplePrimeOffSeries ω T X Y ∧
+    (tripleWordSign ![.P,.P,.P]:ℂ)*tripleWordIntegral ω T X Y ![.P,.P,.P] =
+      -(triplePrimeResonantMass X Y:ℂ)-triplePrimeOffSeries ω T X Y := by sorry
+
+theorem tripleMasterObservable_neg (ω : ℝ → ℝ) (T X Y : ℝ) :
+    tripleMasterObservable (fun t => -ω t) T X Y = -tripleMasterObservable ω T X Y := by sorry
+
+theorem tripleMasterL1Bound_neg (C₀ : ℝ) (ω : ℝ → ℝ) (T X Y : ℝ) :
+    tripleMasterL1Bound C₀ (fun t => -ω t) T X Y = tripleMasterL1Bound C₀ ω T X Y := by sorry
+
+theorem tripleMaster_assembled_minimal (C₀ : ℝ) (hC₀ : 0<C₀)
+    (hQ : ∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2))
+    (ω : ℝ → ℝ) (hω : ContDiff ℝ (⊤ : ℕ∞) ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) : TripleMasterStatement C₀ ω 3 1 1 := by sorry
+
+theorem tripleMaster_assembled_zero (C₀ : ℝ) (hC₀ : 0<C₀)
+    (hQ : ∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2))
+    (T X Y : ℝ) (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    TripleMasterStatement C₀ (fun _ => 0) T X Y ∧
+    tripleMasterObservable (fun _ => 0) T X Y = 0 ∧
+    tripleMasterL1Bound C₀ (fun _ => 0) T X Y = 0 := by sorry
+
+theorem tripleMaster_assembled_neg (C₀ : ℝ) (hC₀ : 0<C₀)
+    (hQ : ∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2))
+    (ω : ℝ → ℝ) (hω : ContDiff ℝ (⊤ : ℕ∞) ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    TripleMasterStatement C₀ (fun t => -ω t) T X Y ∧
+    ‖tripleMasterObservable (fun t => -ω t) T X Y‖ ≤ tripleMasterL1Bound C₀ ω T X Y := by sorry
+
+theorem tripleMaster_assembled_swapped (C₀ : ℝ) (hC₀ : 0<C₀)
+    (hQ : ∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2))
+    (ω : ℝ → ℝ) (hω : ContDiff ℝ (⊤ : ℕ∞) ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) :
+    TripleMasterStatement C₀ ω T Y X ∧ tripleMasterObservable ω T X Y = tripleMasterObservable ω T Y X := by sorry
 
 end
 end HigherCorrelations

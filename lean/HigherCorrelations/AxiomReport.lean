@@ -1,4 +1,4 @@
-import HigherCorrelations.TripleFourierDecay
+import HigherCorrelations.TripleMasterAssembly
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison
@@ -1266,3 +1266,18 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.triplePrimeFourierTerm_decay
 #print axioms HigherCorrelations.tripleWeight_cubic_uniform
 #print axioms HigherCorrelations.triplePrimeFourierTerm_decay_minimal
+
+#print axioms HigherCorrelations.tripleMasterProduct_swap
+#print axioms HigherCorrelations.tripleMasterObservable_swap
+#print axioms HigherCorrelations.tripleMasterObservable_integral_series
+#print axioms HigherCorrelations.tripleMasterObservable_norm_bound
+#print axioms HigherCorrelations.tripleMaster_assembled
+#print axioms HigherCorrelations.tripleMaster_uniform
+#print axioms HigherCorrelations.tripleMaster_weight_mass_one
+#print axioms HigherCorrelations.tripleMaster_manuscript
+#print axioms HigherCorrelations.tripleMasterObservable_neg
+#print axioms HigherCorrelations.tripleMasterL1Bound_neg
+#print axioms HigherCorrelations.tripleMaster_assembled_minimal
+#print axioms HigherCorrelations.tripleMaster_assembled_zero
+#print axioms HigherCorrelations.tripleMaster_assembled_neg
+#print axioms HigherCorrelations.tripleMaster_assembled_swapped

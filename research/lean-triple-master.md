@@ -1,14 +1,16 @@
-# Triple master identity, subseries and ordered word expansion
+# Assembled unconditional triple master theorem
 
 Task: proof and formal verification. Assumptions: `UNCONDITIONAL`.
 Ledger: `MASTER-INTEGRATION-FORMAL-001`, `MASTER-IDENTITY-FORMAL-001`,
 `MASTER-PATTERNS-FORMAL-001`, `MASTER-EXPANSION-FORMAL-001`,
 `MASTER-PRIME-FOURIER-FORMAL-001`, `MASTER-PRIME-RESONANCE-FORMAL-001` and
-`MASTER-FOURIER-DECAY-FORMAL-001`.
+`MASTER-FOURIER-DECAY-FORMAL-001` and `MASTER-ASSEMBLY-FORMAL-001`.
 These milestones discharge integral-norm summability, the exact kernel identity,
 its five occurrence-index subseries, the ordered 27-word expansion, the
 cubic prime Fourier-series identification, exact resonance split and Fourier decay in
-`TRIPLE-MASTER-001`. Its whole statement remains partially formalized.
+`TRIPLE-MASTER-001`. The exact theorem is now assembled with a universal
+existential counting constant. Historical coverage remains partial solely for
+the numerical-effectiveness qualification on that constant.
 
 ## Checked statement
 
@@ -317,6 +319,78 @@ without such bounds. All parameters and N remain fixed in each identity.
 No new infinite-series interchange is performed. Pointwise decay does not
 prove compact Fourier support or a negligible sum of near-resonant terms.
 
+## Assembled statement and entry points
+
+`TripleMasterStatement C0 omega T X Y` is a definition-only proposition with
+25 named fields. Its fields explicitly state convergence, interchange, kernel
+and pattern identities, symmetry, the observable norm bound, both forms of
+the 27-word expansion, prime Fourier convergence and identity, resonance
+classification/evaluation/split, the negative PPP sign and all Fourier-decay
+orders. The fields are conclusions, not hypotheses supplied by callers.
+
+`tripleMaster_assembled` proves this proposition for any positive C0 satisfying
+Q(t)<=C0 log(|t|+2), smooth real omega with support in [1,2], T>=3 and X,Y>=1.
+`tripleMaster_uniform` then discharges the counting premise:
+\[
+ \exists C_0>0,\quad [\forall t,\ Q(t)\le C_0\log(|t|+2)]\ \land
+ \forall\omega,T,X,Y\ \text{admissible},\quad
+ \operatorname{TripleMasterStatement}(C_0,\omega,T,X,Y).
+\]
+The **same C0 is chosen before every weight, height and pair of bases**.
+The witness comes from `tripleMaster_uniform_integralNorm`, hence from the
+existing `zeroKernel_summable_bound`. It is an absolute existential constant;
+the bounded-height count at height 5 is not evaluated numerically. This
+reconciles the constant's mathematical role with the source theorem without
+claiming the historical numerical-effectiveness assertion is formalized.
+
+The new symmetry proof exchanges the first two actual zero-series factors and
+uses XY=YX. It does not discard horizontal coordinates or permute the
+conjugated third slot. The norm proof identifies the observable with the sum
+of evaluated integrals, applies the triangle inequality to the absolutely
+convergent series, bounds each term by its integral norm and invokes the
+previous uniform estimate. It retains exactly
+\[
+ |C_{3,T}(X,Y)|\le (8/3)^3 C_0^3 XY\log^3(2T+2)\|\omega\|_1.
+\]
+
+`tripleMaster_manuscript` specializes to nonnegative smooth omega with
+**topological support inside (1,2)** and real integral one. It proves both
+D_0(omega)=1 and the complex smoothing mass equal to one, then removes those
+factors from the norm bound and the unsigned/signed resonance split. Use the
+C0 witness from `tripleMaster_uniform` for this specialization; it requires no
+new counting input. The general statement retains signed weights and arbitrary
+mass. Checked cases include T=3,X=Y=1, zero and negated weights, and swapped
+bases with the same constant. Negation reverses the observable and preserves
+the L1 bound.
+
+### Historical clause-to-declaration map
+
+All names below are in the `HigherCorrelations` namespace.
+
+| Historical clause | Assembled field or checked declaration |
+| --- | --- |
+| Actual zeros, both signs, multiplicity and full horizontal coordinates | Existing `ZeroOccurrence`, `tripleMasterObservable`, `tripleMasterCoefficient` and `tripleMasterKernel` definitions; `tripleMaster_phase_cancel`, `tripleMasterTerm_eq_kernel` |
+| Exact 1/T normalization and factor 8 | `kernel_identity`; `tripleMasterKernel_normalization`, `tripleSmoothedIntegral_normalization` |
+| Absolute zero convergence and justified interchange | `integral_norm_summable`, `integral_norm_bound`, `sum_integral`, `kernel_absolute` |
+| Five index patterns, distinctness conventions and absolute subseries | `pattern_absolute`, `pattern_decomposition`, `five_subseries`; `tripleMaster_rows_norm_summable` |
+| X/Y symmetry | `symmetry`; `tripleMasterObservable_swap` |
+| Observable majorant with the same zero-kernel constant | `observable_bound`; `tripleMasterObservable_norm_bound`, `tripleMaster_uniform` |
+| Actual P,A,H components and four exact remainders | `tripleComponent_remainder`, `tripleComponent_explicit_formula` |
+| All 27 ordered signed words | `word_expansion`, `word_table`, `word_count`; `tripleWordTable_correct`, `tripleWordTable_complete` |
+| Cubic prime Fourier identity and absolute convergence | `prime_identity`, `prime_absolute`; `triplePrimeTerm_fourier` |
+| Unique common prime and ordered positive exponents | `resonance_classification`; `primePower_resonance_unique`, `primePowerIndex_bijective` |
+| Nested resonant sum and absolute convergence | `resonance_nested`, `resonance_mass_absolute`, `resonant_absolute`, `off_absolute` |
+| Resonant value, complementary split and negative PPP sign | `resonance_value`, `prime_split`, `signed_PPP`; `tripleMaster_manuscript` supplies unit mass |
+| Fourier mass bound, decay and nonzero-frequency convention | `fourier_mass`, `fourier_decay`; `triplePrimeFrequency_eq_zero`, `triplePrimeFourierTerm_decay` |
+| Fixed-parameter independent occurrence/height and prime cutoffs | `tripleMasterObservable_independent_cutoff`, `tripleMasterObservable_height_cutoff`, `triplePrime_integral_finite_cutoff`, `triplePrime_integral_integer_cutoff` |
+| Historical numerical effectiveness of C0 | **Not formalized**; existential constant only, as documented in `lean-uniform-height.md` |
+
+This assembly adds no new interchange or asymptotic. The existing independent
+finite-set and inclusive |gamma| height-cutoff theorems remain the limit
+interfaces, with omega,T,X,Y fixed before cutoffs are removed. An exact master
+identity does not assert a negligible summed off-diagonal term or the final
+three-level asymptotic.
+
 ## Proof dependencies and domination
 
 The proof uses `pairZeroTerm_bound` and `zeroKernel_summable_bound`. The former
@@ -364,15 +438,17 @@ claimed.
 Definition-only interfaces: `TripleMasterDefinitions`,
 `TripleMasterPatternDefinitions`, `TripleExpansionDefinitions`,
 `TriplePrimeFourierDefinitions`, `TriplePrimeResonanceDefinitions` and
-`FourierDecayDefinitions`. Proofs:
+`FourierDecayDefinitions` and `TripleMasterStatement`. Proofs:
 `TripleMasterBounds`, `TripleMasterIntegration`, `TripleMasterIdentity`,
 `TripleMasterPatterns`, `TripleExpansion`, `TriplePrimeFourier` and
-`TriplePrimeResonance`, `PairMeanFourierDecay` and `TripleFourierDecay`.
-All **173 public declarations** have independent Comparator statements, inventory
+`TriplePrimeResonance`, `PairMeanFourierDecay`, `TripleFourierDecay` and
+`TripleMasterAssembly`.
+All **187 public declarations** have independent Comparator statements, inventory
 entries and axiom reports. The unfinished integral-norm bound, kernel identity,
 five-subseries identity, ordered word expansion, cubic prime Fourier identity,
 unique resonance classification, resonance split, general Fourier decay and
-cubic decay must each be rejected
+cubic decay, parameterized assembly and the universal master theorem must each
+be rejected
 for `sorryAx`. Only `propext`,
 `Quot.sound` and `Classical.choice` are permitted; the external kernel is disabled.
 
@@ -380,16 +456,16 @@ for `sorryAx`. Only `propext`,
 python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only
 ```
 
-The focused mode checks the triple-master Comparator suite, nine negative
+The focused mode checks the triple-master Comparator suite, eleven negative
 controls, combined
 project build, complete axiom report, analytic coverage and pair/triple/harness
 regressions. Earlier Comparator suites are not rerun. The ledger links the
 successful content-addressed evidence.
 
 The proof uses the existing unconditional counting/convergence infrastructure,
-not the imported PREPRINT fixed strip. Fourier decay is now checked. Whole-claim
-coverage remains partial pending assembly of the master statement, including
-X/Y symmetry, the observable norm corollary and reconciliation of the historical
-effective counting constant. Off-diagonal estimates remain separate.
+not the imported PREPRINT fixed strip. The exact master theorem is assembled.
+Historical coverage remains partial only for the numerical-effectiveness
+qualification of the counting constant. Uniform error budgets, summed
+off-diagonal estimates and the three-level asymptotic remain separate.
 Historical claim statuses and pair/triple audit scopes are preserved; the
 open signed complex-argument triple error is unaffected.

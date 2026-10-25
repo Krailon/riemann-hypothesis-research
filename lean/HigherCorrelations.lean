@@ -1,4 +1,4 @@
-import HigherCorrelations.TripleFourierDecay
+import HigherCorrelations.TripleMasterAssembly
 import HigherCorrelations.PairFourierAsymptotic
 import HigherCorrelations.PairAsymptotic
 import HigherCorrelations.PairZeroComparison

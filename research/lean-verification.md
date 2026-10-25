@@ -230,10 +230,12 @@ resonance mass. Nonzero resonances now have a unique common-prime/ordered-
 positive-exponent parametrization, with absolutely convergent reindexing and
 the exact resonant/off-resonant split. Finite-order Fourier decay is now checked
 with the literal derivative L1 norm, (2*pi*|xi|)^N denominator and exact cubic
-frequency substitution. The origin retains the mass bound. Whole-claim assembly,
-X/Y symmetry, the observable norm corollary and historical constant provenance
-remain separate; no summed off-diagonal smallness is inferred.
+frequency substitution. The origin retains the mass bound. The master theorem
+is now assembled, including X/Y symmetry, the observable norm bound and the
+normalized manuscript specialization. One existential constant precedes all
+weights and parameters. Only its historical numerical-effectiveness claim
+remains outside formal coverage; no summed off-diagonal smallness is inferred.
 
 Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only`
-for all 173 triple-master Comparator statements, nine negative controls, combined build,
+for all 187 triple-master Comparator statements, eleven negative controls, combined build,
 complete axiom report and regressions. Earlier Comparator suites are not rerun.

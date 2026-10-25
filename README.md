@@ -51,7 +51,10 @@ interchange, independent cutoff limits and exact sign/normalization. Nonzero
 resonances are uniquely classified as ordered powers of a common prime,
 giving an absolutely convergent resonant/off-resonant split with the smoothing
 mass retained. Fourier decay is also formalized with exact derivative norms
-and all scale factors, giving pointwise bounds on off-resonant cubic terms. See
+and all scale factors, giving pointwise bounds on off-resonant cubic terms.
+These components now form an assembled exact master theorem, with symmetry,
+the observable norm bound and a normalized manuscript specialization. Its
+universal counting constant remains existential. See
 the [triple master record](research/lean-triple-master.md).
 
 ## Zeta23 inputs imported

@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleMasterStatement
 import HigherCorrelations.FourierDecayDefinitions
 import HigherCorrelations.TriplePrimeResonanceDefinitions
 import HigherCorrelations.TriplePrimeFourierDefinitions
@@ -67,6 +68,17 @@ theorem triplePrimeFourierTerm_decay (ω : ℝ → ℝ) (N : ℕ) (hω : ContDif
     ‖triplePrimeFourierTerm ω T X Y v‖ ≤ triplePrimeCoefficient X Y v*
       min (fourierDerivativeL1 ω 0)
         (fourierDerivativeL1 ω N/(T*|Real.log (((v 0+1:ℕ):ℝ)*((v 1+1:ℕ):ℝ)/((v 2+1:ℕ):ℝ))|)^N) := by sorry
+
+theorem tripleMaster_assembled (C₀ : ℝ) (hC₀ : 0<C₀)
+    (hQ : ∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2))
+    (ω : ℝ → ℝ) (hω : ContDiff ℝ (⊤ : ℕ∞) ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T X Y : ℝ)
+    (hT : 3≤T) (hX : 1≤X) (hY : 1≤Y) : TripleMasterStatement C₀ ω T X Y := by sorry
+
+theorem tripleMaster_uniform : ∃ C₀ : ℝ, 0<C₀ ∧
+    (∀ t : ℝ, zeroKernelSum t ≤ C₀*Real.log (|t|+2)) ∧
+    ∀ (ω : ℝ → ℝ), ContDiff ℝ (⊤ : ℕ∞) ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ T X Y : ℝ, 3≤T → 1≤X → 1≤Y → TripleMasterStatement C₀ ω T X Y := by sorry
 
 end
 end HigherCorrelations

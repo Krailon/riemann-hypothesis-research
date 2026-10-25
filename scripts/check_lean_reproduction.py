@@ -100,6 +100,8 @@ class LeanReproductionTests(unittest.TestCase):
                     self.assertIn('triple-master-resonance-split-unfinished-rejected', calls)
                     self.assertIn('triple-master-fourier-decay-unfinished-rejected', calls)
                     self.assertIn('triple-master-cubic-decay-unfinished-rejected', calls)
+                    self.assertIn('triple-master-assembly-unfinished-rejected', calls)
+                    self.assertIn('triple-master-uniform-unfinished-rejected', calls)
                     self.assertNotIn('pair-fourier-comparator', calls)
                 else:
                     self.assertNotIn('triple-master-comparator', calls)

@@ -253,8 +253,22 @@ PARTIAL = {
          'triplePrimeFourierTerm_mass_bound',
          'triplePrimeFourierTerm_decay',
          'tripleWeight_cubic_uniform',
-         'triplePrimeFourierTerm_decay_minimal'],
-        ['Assemble the checked clauses into the full master statement, including X/Y symmetry, the observable norm corollary and reconciliation of the historical effective counting constant.']),
+         'triplePrimeFourierTerm_decay_minimal',
+         'tripleMasterProduct_swap',
+         'tripleMasterObservable_swap',
+         'tripleMasterObservable_integral_series',
+         'tripleMasterObservable_norm_bound',
+         'tripleMaster_assembled',
+         'tripleMaster_uniform',
+         'tripleMaster_weight_mass_one',
+         'tripleMaster_manuscript',
+         'tripleMasterObservable_neg',
+         'tripleMasterL1Bound_neg',
+         'tripleMaster_assembled_minimal',
+         'tripleMaster_assembled_zero',
+         'tripleMaster_assembled_neg',
+         'tripleMaster_assembled_swapped'],
+        ['The assembled master statement, symmetry, observable norm and manuscript specialization are checked with one universal existential constant; only the historical numerical-effectiveness qualification of the counting constant remains unformalized.']),
     'TRIPLE-KERNEL-PROFILE-001': (
         ['dominated_integral_limit', 'rational_denominator_lower', 'rational_denominator_ne_zero',
          'rationalKernel_reciprocal', 'rationalProfile_bound', 'rationalProfile_swap',
@@ -798,10 +812,14 @@ class CoverageTests(unittest.TestCase):
                      'triplePrime_resonance_split', 'triplePrime_resonance_signed',
                      'pairMeanFourier_iteratedDeriv', 'fourierDecay_real_bound',
                      'fourierDecay_real_power_bound', 'fourierDecay_real_min',
-                     'triplePrimeFrequency_decay_scale', 'triplePrimeFourierTerm_decay']:
+                     'triplePrimeFrequency_decay_scale', 'triplePrimeFourierTerm_decay',
+                     'tripleMaster_assembled', 'tripleMaster_uniform',
+                     'tripleMasterObservable_swap', 'tripleMasterObservable_norm_bound',
+                     'tripleMaster_manuscript', 'tripleMaster_assembled_minimal']:
             self.assertIn('HigherCorrelations.' + name, node['components'])
         self.assertFalse(any('five index-pattern subseries' in gap for gap in node['remaining_obligations']))
-        self.assertTrue(any('X/Y symmetry' in gap for gap in node['remaining_obligations']))
+        self.assertEqual(len(node['remaining_obligations']), 1)
+        self.assertIn('numerical-effectiveness', node['remaining_obligations'][0])
         self.assertFalse(any('Fourier-decay' in gap for gap in node['remaining_obligations']))
         self.assertFalse(any('Fourier-series interchange' in gap for gap in node['remaining_obligations']))
         self.assertFalse(any('resonance classification' in gap for gap in node['remaining_obligations']))

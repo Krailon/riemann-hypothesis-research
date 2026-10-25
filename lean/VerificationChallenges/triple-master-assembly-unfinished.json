@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.TripleMaster",
+  "solution_module": "VerificationChallenges.TripleMasterUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.tripleMaster_assembled"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
