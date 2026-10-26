@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "TripleResonanceDecayDefinitions",
+    "TripleProperPowerCount",
+    "TripleResonanceMajorant",
+    "TripleResonanceBalls",
+    "TripleResonanceDecay",
+    "TripleResonanceEndpoints"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.tripleProperPowerConstant_pos",
+      "source": "lean/HigherCorrelations/TripleProperPowerCount.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleProperPower_exponent_bound",
+      "source": "lean/HigherCorrelations/TripleProperPowerCount.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleProperPower_cover",
+      "source": "lean/HigherCorrelations/TripleProperPowerCount.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleProperPower_count_raw",
+      "source": "lean/HigherCorrelations/TripleProperPowerCount.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleProperPower_count",
+      "source": "lean/HigherCorrelations/TripleProperPowerCount.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleProperPower_count_one",
+      "source": "lean/HigherCorrelations/TripleProperPowerCount.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleArithmeticConvolution_prime",
+      "source": "lean/HigherCorrelations/TripleResonanceMajorant.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonance_support",
+      "source": "lean/HigherCorrelations/TripleResonanceMajorant.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceMajorant_nonneg",
+      "source": "lean/HigherCorrelations/TripleResonanceMajorant.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonance_pointwise",
+      "source": "lean/HigherCorrelations/TripleResonanceMajorant.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonance_weight_identity",
+      "source": "lean/HigherCorrelations/TripleResonanceMajorant.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_nonneg",
+      "source": "lean/HigherCorrelations/TripleResonanceBalls.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_support",
+      "source": "lean/HigherCorrelations/TripleResonanceBalls.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_summable",
+      "source": "lean/HigherCorrelations/TripleResonanceBalls.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_sum",
+      "source": "lean/HigherCorrelations/TripleResonanceBalls.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_dyadic_bound",
+      "source": "lean/HigherCorrelations/TripleResonanceBalls.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_cover",
+      "source": "lean/HigherCorrelations/TripleResonanceBalls.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceDecayConstant_pos",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_double_summable",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceMajorant_cover",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceMajorant_summable",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceMajorant_bound",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonance_grouped_summable",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_decay",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceScale_tendsto",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_uniform_vanishing",
+      "source": "lean/HigherCorrelations/TripleResonanceDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_decay_unit_left",
+      "source": "lean/HigherCorrelations/TripleResonanceEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_decay_unit_right",
+      "source": "lean/HigherCorrelations/TripleResonanceEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_decay_unit_unit",
+      "source": "lean/HigherCorrelations/TripleResonanceEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_integer_cutoff",
+      "source": "lean/HigherCorrelations/TripleResonanceEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonanceBall_prime_square_endpoint",
+      "source": "lean/HigherCorrelations/TripleResonanceEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleResonance_square_summand",
+      "source": "lean/HigherCorrelations/TripleResonanceEndpoints.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

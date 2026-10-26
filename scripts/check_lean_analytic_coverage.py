@@ -21,8 +21,8 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'TRIPLE-LOG-GAP-001', 'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
 PARTIAL = {
-    'TRIPLE-RETAINED-001': (['tripleMixedDiagonal_asymptotic', 'tripleMixedDiagonal_asymptotic_symmetric', 'tripleMixedDiagonal_finite_error_identity', 'tripleMixedDiagonal_integer_split', 'tripleSmoothingMoment_sharp', 'tripleSmoothingMean_manuscript', 'tripleSmoothingError_integral'], [
-        'The mixed-prime diagonal is checked with existential absolute constants; the sharper smoothing moment has explicit constant two and a checked logarithmic mean. Resonance decay and assembled retained-term evaluation remain unformalized; numerical effectivity of the diagonal constant is not claimed.']),
+    'TRIPLE-RETAINED-001': (['tripleMixedDiagonal_asymptotic', 'tripleMixedDiagonal_asymptotic_symmetric', 'tripleMixedDiagonal_finite_error_identity', 'tripleMixedDiagonal_integer_split', 'tripleSmoothingMoment_sharp', 'tripleSmoothingMean_manuscript', 'tripleSmoothingError_integral', 'tripleProperPower_count', 'triplePrimeResonantMass_decay', 'triplePrimeResonantMass_uniform_vanishing'], [
+        'The mixed-prime diagonal is checked with existential absolute constants; the sharper smoothing moment has explicit constant two and a checked logarithmic mean. Resonance decay is checked with an explicit convergent-series constant. The assembled retained-term evaluation remains unformalized; numerical effectivity of the diagonal constant is not claimed.']),
     'TRIPLE-LOG-GAP-001': (['tripleLogGap_summable', 'tripleLogGap_bound'], []),
     'TRIPLE-UNIFORM-001': (
         ['tripleBudget_exact', 'tripleBudget_refinement', 'tripleBudget_refined_bound',
@@ -797,9 +797,27 @@ def derive():
             'changed sharp first smoothing moment verification scope')
     components.extend(triple_smoothing['components'])
     names.extend(c['declaration'] for c in triple_smoothing['components'])
+    triple_resonance_decay = json.loads(read('research/lean-triple-resonance-decay-inventory.json'))
+    found = []
+    for module in triple_resonance_decay['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished decaying resonance bound solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in triple_resonance_decay['components']],
+            'decaying resonance bound inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/triple-resonance-decay.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in triple_resonance_decay['components'] if c['comparator_checked']],
+            'decaying resonance bound Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed decaying resonance bound verification scope')
+    components.extend(triple_resonance_decay['components'])
+    names.extend(c['declaration'] for c in triple_resonance_decay['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]

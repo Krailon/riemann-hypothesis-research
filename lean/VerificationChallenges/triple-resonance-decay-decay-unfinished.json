@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.TripleResonanceDecay",
+  "solution_module": "VerificationChallenges.TripleResonanceDecayUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.triplePrimeResonantMass_decay"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

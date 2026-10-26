@@ -4909,3 +4909,45 @@ claims:
       imported_inputs: "Existing smoothing-weight support and integrability lemmas, real logarithm inequalities, compact-support integration and elementary limits from mathlib. No arithmetic, RH, simplicity or zero-location input."
       constants_scope: "The bounds log(2) for the mean and 2/T for the remainder are explicit and independent of the weight. No existential analytic constant enters this lemma."
       baseline_audit_coverage: "The smoothing-moment portion of TRIPLE-RETAINED-001 is covered, alongside the earlier mixed-diagonal milestone. Resonance decay and assembled retained-term evaluation remain separate. Historical statuses and RH-audit scopes are preserved; the signed complex-argument error remains open."
+  - id: MASTER-RESONANCE-DECAY-FORMAL-001
+    title: Lean uniform decaying prime-power resonance bound
+    kind: proposition
+    statement: |
+      For the existing ordered resonance mass R_res(X,Y), for every real
+      X,Y>=1, with Z=XY,
+      0<=R_res(X,Y)<=C_res log(2Z)^3/sqrt(Z), where
+      C_pp=1+6/log(2) and
+      C_res=8 C_pp sum_{j>=0}(j+1)^3 4^(-j)>0.
+      The defining geometric series is summable. The inclusive count of
+      distinct proper prime powers satisfies N_pp(u)<=C_pp sqrt(u) for
+      every real u>=1, by separating squares from exponents at least three.
+      The actual grouped resonance c(X,Y;n)a_Z(n) vanishes outside proper
+      prime powers and is bounded by v_Z(n)^2 log(n)^3/n on those powers.
+      The finite inclusive balls B(Z,R;n)=1_{n<=R, proper prime power}
+      (8Z^2/R^3)log(2R)^3, at R=2^j Z, form a nonnegative cover. Their
+      double series is absolutely summable before the sums are interchanged.
+      X=1, Y=1, and X=Y=1 are included. Integer ball cutoffs include equality,
+      and the repeated-factor p*p contribution is explicitly retained.
+      For every eta>0 there exists R>=1 such that the resonance is below
+      eta for all X,Y>=1 with XY>=R. Only the product scale must grow.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-PRIME-RESONANCE-FORMAL-001, MASTER-BUDGET-FORMAL-001, MASTER-OFFDIAG-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleResonanceDecay.lean
+      label: HigherCorrelations.triplePrimeResonantMass_decay
+      companion_declarations: "tripleProperPower_count, tripleResonance_pointwise, tripleResonanceBall_double_summable, tripleResonanceMajorant_bound, tripleResonanceDecayConstant_pos, tripleResonanceScale_tendsto, triplePrimeResonantMass_uniform_vanishing, triplePrimeResonantMass_decay_unit_unit, tripleResonanceBall_prime_square_endpoint, tripleResonance_square_summand"
+      bookkeeping: research/lean-triple-resonance-decay.md
+      inventory: research/lean-triple-resonance-decay-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 2e112d78f1e15b1e8ee5cbf8e7104546d04e0be3b791974ddfd4e618c8a6fa70
+    limit_order: "Fix X,Y>=1. Finite inclusive counts and ball estimates precede proof of absolute double summability. Only then exchange the dyadic and integer sums and identify the existing grouped resonance. Finally the explicit scalar envelope tends to zero as Z=XY tends to infinity, uniformly over both scales."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 32 public declarations are independently compared against a definition-only challenge, with three unfinished-proof controls for the proper-power count, double summability and decay bound; combined build, complete axiom report and Python regressions."
+      imported_inputs: "Checked actual ordered convolution/resonance identity, multiplicative weight and convolution bounds, coefficient nonnegativity, and geometric-series summability; elementary prime-power representations, finite sets, real powers and logarithms from mathlib. No new prime-correlation estimate or zero-location premise."
+      constants_scope: "Explicit C_pp=1+6/log(2) and C_res defined by a checked convergent geometric series. No existential PNT constant is used in this estimate."
+      baseline_audit_coverage: "The resonance-decay portion of TRIPLE-RETAINED-001 is now covered alongside the previously checked mixed diagonal and sharp smoothing moment. The combined retained evaluation remains to be assembled. Historical statuses and RH-audit scopes are unchanged; the signed complex-argument error remains open."

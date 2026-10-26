@@ -279,3 +279,19 @@ python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-smoothing-onl
 The focused suite compares all 13 public declarations and rejects two
 unfinished-proof controls. Resonance decay and the assembled retained-term
 evaluation remain separate tasks.
+
+## Decaying resonance bound
+
+The [resonance decay milestone](lean-triple-resonance-decay.md) proves the
+square-root proper-power count without logarithmic loss, an absolutely
+summable dyadic cover, and the uniform bound
+0<=R_res(X,Y)<=C_res log(2XY)^3/sqrt(XY) with an explicit convergent-series
+constant. It includes either unit scale, product one and repeated prime factors.
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-resonance-decay-only
+```
+
+The focused suite compares all 32 public declarations and rejects three
+unfinished-proof controls. The full retained-term evaluation remains a
+separate assembly step.

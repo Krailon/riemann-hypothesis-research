@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "127e6a835dfbeeaf9ad474e2aeaa2b17de2a4b6f69e11c082ec8ce53e0f7d619",
+    "research/theorem-ledger.yaml": "475f0e7ab94a6b8131cc737106bfe20503dcc52f20185bf43dac8be3c14217c8",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "60204c65c2450c81c80ecf8b9b0522922354af5b6ee821f39e833f4f2b6561e7"
+    "research/pair-rh-audit.json": "23734eab4c190ab66cb2155ccb2123a745e2445ff0bfb5c085ba0e1b6c412eb5"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4601,5 +4601,14 @@
     ],
     "report": "research/lean-triple-smoothing.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the sharper first smoothing moment, logarithmic mean, exact integrable correction and fixed-weight limit. The error constant two is explicit and uniform in the weight and positive height. Resonance decay and the assembled retained evaluation remain separate; historical statuses, source passages and RH-audit scopes are unchanged."
+  },
+  "ledger_triple_resonance_decay_review": {
+    "reviewed_on": "2026-10-26",
+    "previous_ledger_sha256": "127e6a835dfbeeaf9ad474e2aeaa2b17de2a4b6f69e11c082ec8ce53e0f7d619",
+    "added_claim_ids": [
+      "MASTER-RESONANCE-DECAY-FORMAL-001"
+    ],
+    "report": "research/lean-triple-resonance-decay.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the square-root proper-power count, absolutely summable dyadic cover, explicit resonance decay and product-scale uniform vanishing, including unit scales and repeated prime factors. The combined retained evaluation remains separate. Historical statuses, source passages and RH-audit scopes are unchanged."
   }
 }
