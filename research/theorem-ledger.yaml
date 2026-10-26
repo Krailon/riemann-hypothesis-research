@@ -4680,3 +4680,149 @@ claims:
       constants_scope: "C0 is the same kind of zero-kernel constant required by the manuscript and is chosen uniformly before all weights and parameters. The current proof uses an unevaluated low-height count at height 5; the historical numerical-effectiveness qualification remains unformalized."
       endpoint_audit: "General signed smooth real weights with closed [1,2] support; exact T>=3,X,Y>=1 endpoints; zero, negated and swapped cases. Manuscript corollary uses topological support inside (1,2), nonnegativity and real integral one, with both complex mass and L1 normalization verified."
       baseline_audit_coverage: "Assembles all mathematical clauses of TRIPLE-MASTER-001 with an existential constant. A clause-to-declaration map is recorded in research/lean-triple-master.md. Only the historical numerical-effectiveness qualification remains in its coverage gap. Historical statuses and RH-audit scopes are preserved; the signed complex-argument triple error remains open."
+
+  - id: MASTER-LOG-GAP-FORMAL-001
+    title: Checked absolute integer logarithmic-gap inequality
+    kind: lemma
+    statement: |
+      For complex sequences c,d on integers n>=2 with summable absolute
+      coefficients and summable energies n log(2n)|c_n|^2 and n log(2n)|d_n|^2,
+      the ordered off-diagonal reciprocal-log series is summable and bounded
+      by B(c)B(d)/log 2 + 4 sqrt(2) sqrt(E(c)E(d)). Equal frequencies are
+      excluded before division; the comparable-ratio endpoints are included.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: true
+    source:
+      file: lean/HigherCorrelations/TripleLogGap.lean
+      label: HigherCorrelations.tripleLogGap_bound
+      bookkeeping: research/lean-triple-budget.md
+      inventory: research/lean-triple-budget-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: b8d98bd2eea497f713bc0a57972c67b44a818a7c825e1c5f846355b68d57da8d
+    limit_order: "Bound finite independent rectangles first, then arbitrary finite subsets and the nonnegative infinite sum."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator statements, reciprocal-log unfinished-proof rejection, complete axiom report and regressions. Only propext, Quot.sound and Classical.choice; external kernel disabled."
+      baseline_audit_coverage: "Separate formal claim; historical ledger statuses and audit scope remain unchanged."
+
+  - id: MASTER-BUDGET-FORMAL-001
+    title: Checked signed triple budget and uniform primitive bounds
+    kind: lemma
+    statement: |
+      For smooth nonnegative mass-one real omega with topological support
+      inside (1,2), T>=3 and X,Y>=1, the exact full-zero master observable
+      equals the retained expression (log T)^3/(XY)^2 + J1 D(X,XY)/Y
+      + J1 D(Y,XY)/X - R_res(X,Y), plus eight named errors and nineteen
+      signed remainder-containing words. These words have 208 ordered
+      refinements, summed exactly rather than counted as extra errors.
+      Each word and refinement has the product bound using actual weighted
+      prime L2 norms, archimedean sup bounds and four explicit remainder bounds.
+      The prime norm admits the minimum of the elementary mass envelope and
+      sqrt(2 C_pair W log(2x)) for x<=2T, including equality; above 2T only
+      the elementary envelope is used. W is any nonnegative bound for omega.
+      The mass constant is exactly 1+2/(1-1/sqrt(2))^2. Moment, derivative-L1,
+      mixed-diagonal, same-sign and one-prime bounds are checked. The one-prime
+      estimate uses constant five. Coarse mixed and cubic bounds retain
+      actual prime L2 norms and coefficient masses with separate envelopes.
+      The pair mean-square and diagonal constants are existential.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-ASSEMBLY-FORMAL-001, PAIR-UNIFORM-FORMAL-001, PAIR-PRIME-MEAN-FORMAL-001, PAIR-PRIME-DIAGONAL-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleBudgetAccounting.lean
+      label: HigherCorrelations.tripleBudget_exact
+      bookkeeping: research/lean-triple-budget.md
+      inventory: research/lean-triple-budget-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: b8d98bd2eea497f713bc0a57972c67b44a818a7c825e1c5f846355b68d57da8d
+    limit_order: "Parameters fixed before removing absolutely convergent coefficient cutoffs. Compact smooth zero extensions justify differentiation and eliminate endpoint terms."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Part of the 219-statement triple-budget Comparator suite, with separate accounting and refinement unfinished-proof controls. Combined project build, complete axiom report and Python regressions."
+      constants_scope: "Explicit elementary constants; existential upstream pair mean-square and diagonal constants. No numerical-effectiveness promotion."
+      endpoint_audit: "T=3,X=Y=1 and the x=2T norm-branch boundary included; strict topological smoothing support is explicit."
+      baseline_audit_coverage: "Separate formal claim. Historical claim statuses and audit scopes remain unchanged; no ordinate-only replacement."
+
+  - id: MASTER-OFFDIAG-FORMAL-001
+    title: Checked grouped mixed and cubic off-diagonal decay
+    kind: lemma
+    statement: |
+      For every admissible omega, T>=3 and X,Y>=1, Z=XY, the actual signed
+      errors satisfy |E_PPP,off| <= C_c W1 Z log(2Z)^4/T and
+      |E_PAP,off| <= C_m (Omega_1/T)(X/sqrt(Y))
+      sqrt(log(2X)^3 log(2Z)^3), with the X,Y-swapped APP bound.
+      C_m=C_B^2/(log 2)^2+4 sqrt(2) K3 and
+      C_c=C_B^3/(log 2)^2+4 sqrt(2) sqrt(K5 K3), where
+      Kk=1+2 sum_{j>=0} 2^(-j)(j+2)^k. No restriction Z<=2T is imposed.
+      Ordered repeated product frequencies are combined by the integer product
+      map. Their mass is B(a_X)B(a_Y), their energy is at most K5 Z log(2Z)^5,
+      and their exact diagonal equals R_res(X,Y). Prime energy is at most
+      K3 x log(2x)^3. Equal frequencies are removed before Fourier decay;
+      each normalized Fourier argument has the literal T/(2pi) factor.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-LOG-GAP-FORMAL-001, MASTER-BUDGET-FORMAL-001, MASTER-FOURIER-DECAY-FORMAL-001, MASTER-PRIME-RESONANCE-FORMAL-001]
+    dependency_graph_complete: true
+    source:
+      file: lean/HigherCorrelations/TripleBudgetOffDiagonalRates.lean
+      label: HigherCorrelations.tripleBudget_PPPoff_rate
+      bookkeeping: research/lean-triple-budget.md
+      inventory: research/lean-triple-budget-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: b8d98bd2eea497f713bc0a57972c67b44a818a7c825e1c5f846355b68d57da8d
+    limit_order: "Absolute coefficient masses justify product grouping and integral interchange at fixed parameters; summed reciprocal-log bounds then control the off-diagonal series."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "Definition-only Comparator statements for convolution, diagonal identification, Fourier passage and named rates, including separate cubic-rate unfinished-proof rejection."
+      horizontal_audit: "Bounds the exact full-zero master observable through its prime representation; no restriction on beta or multiplicity."
+      baseline_audit_coverage: "Separate formal claim; the mixed logarithmic factor is stated with an explicit square root rather than fractional-power typography."
+
+  - id: MASTER-ADDITIVE-FORMAL-001
+    title: Checked uniform additive smoothed triple asymptotic
+    kind: theorem
+    statement: |
+      There is an absolute C>0, chosen before all weights and parameters,
+      such that for every smooth nonnegative real omega of integral one
+      with topological support inside (1,2), every nonnegative W bounding
+      omega pointwise, 0<epsilon<1/3, T>=3, T^epsilon<=X,Y and
+      XY<=T^(1-epsilon), the exact full-zero observable satisfies
+      |C_(3,T)(X,Y)-M_T(X,Y)| <= C(1+W+||omega'||_1)
+      T^(-epsilon) log(2T+2)^4. The retained M_T is exact:
+      (log T)^3/(XY)^2 + J1 D(X,XY)/Y + J1 D(Y,XY)/X - R_res(X,Y).
+      The sum of the nineteen remainder words has bound
+      K(1+W) log(2T+2)^2/R whenever R>=1, R<=X,Y and XY<=T/R.
+      For fixed omega, W and positive epsilon the additive error tends to
+      zero uniformly over the moving parameter range, including its boundaries.
+      The constant is existential through the pair mean-square input.
+      No relative error, varying-margin limit, general test-function correlation,
+      Fourier-support extension or ordinate-only replacement is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-BUDGET-FORMAL-001, MASTER-OFFDIAG-FORMAL-001, PAIR-PRIME-MEAN-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleBudgetAsymptotic.lean
+      label: HigherCorrelations.tripleBudget_uniform_asymptotic
+      companion_declarations: "tripleBudget_uniform_lower_scale, tripleBudget_uniform_additive_limit, tripleBudget_remainder_words_uniform"
+      bookkeeping: research/lean-triple-budget.md
+      inventory: research/lean-triple-budget-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: b8d98bd2eea497f713bc0a57972c67b44a818a7c825e1c5f846355b68d57da8d
+    limit_order: "First remove absolutely convergent cutoffs at fixed parameters. Choose one absolute constant; then fix omega,W,epsilon and let T tend to infinity uniformly over X,Y in the stated moving range."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "219 public statements checked by Comparator and six separate unfinished-proof controls, including the uniform asymptotic and limit. Combined project build, complete axiom report and analytic/pair/triple/harness regressions; only propext, Quot.sound and Classical.choice, external kernel disabled."
+      constants_scope: "Existential constant with all required quantifier uniformity; historical numerical-effectiveness qualification remains separate."
+      endpoint_audit: "Closed height and X,Y,XY range boundaries; epsilon remains strictly positive and below 1/3."
+      baseline_audit_coverage: "Separate formal claim, with historical statuses and audit scopes preserved. The signed complex-argument ordinate-only error remains open."

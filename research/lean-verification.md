@@ -239,3 +239,14 @@ remains outside formal coverage; no summed off-diagonal smallness is inferred.
 Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-master-only`
 for all 187 triple-master Comparator statements, eleven negative controls, combined build,
 complete axiom report and regressions. Earlier Comparator suites are not rerun.
+
+The uniform triple budget is implemented in `TripleBudgetAssembly`, with its
+scope and qualifications in [lean-triple-budget.md](lean-triple-budget.md).
+It includes the ordered logarithmic-gap bound, convolution and diagonal
+identification, all three summed off-diagonal rates, the nineteen remainder
+words and the uniform additive asymptotic. Its 219 public declarations have a
+separate definition-only challenge and six unfinished-proof controls. Run
+`python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-budget-only`
+to reproduce this milestone without rerunning earlier Comparator suites.
+The effective-constant qualification and the signed complex-argument error
+for an ordinate-only statistic remain separate.

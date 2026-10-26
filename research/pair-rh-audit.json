@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "61e5e915b1742228371b4f96f2fafd24be179254dd6cc4351814a6001ad9450a",
+  "ledger_sha256": "5e6244947b7a3a7efcf43dc775456edda2faeb4672cf8474d3bcddf14c1472aa",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2707,5 +2707,17 @@
     ],
     "report": "research/lean-triple-master.md",
     "changes": "The previous ledger remains an unchanged byte prefix. A separate formalized entry records the uniform triple integral-norm bound, the justified actual sum-integral interchange, and independent finite/height cutoff limits, with signed continuous smoothing weights and all endpoints retained. No zero-free-strip input is used; the existing absolute kernel constant remains existential. TRIPLE-MASTER-001 remains partial: full zero-series product identification, center-phase cancellation, explicit K_T identity and further expansions remain separate. Historical statuses and pair/triple RH-audit scopes are unchanged; the signed triple error remains open."
+  },
+  "ledger_triple_budget_review": {
+    "reviewed_on": "2026-10-26",
+    "previous_ledger_sha256": "61e5e915b1742228371b4f96f2fafd24be179254dd6cc4351814a6001ad9450a",
+    "added_claim_ids": [
+      "MASTER-LOG-GAP-FORMAL-001",
+      "MASTER-BUDGET-FORMAL-001",
+      "MASTER-OFFDIAG-FORMAL-001",
+      "MASTER-ADDITIVE-FORMAL-001"
+    ],
+    "report": "research/lean-triple-budget.md",
+    "changes": "The previous ledger is an unchanged byte prefix. Separate formal claims record the reciprocal-log inequality, signed budget, summed off-diagonal bounds and uniform additive limit. Constants from the pair mean-square input remain existential. Historical statuses, source passages and pair/triple RH-audit scopes are unchanged; the signed complex-argument ordinate-only error remains open."
   }
 }

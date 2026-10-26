@@ -19,8 +19,28 @@ ROOTS = ['TRIPLE-SMOOTHED-CORRELATION-001', 'ORDINATE-CONSTANT-KERNEL-001',
          'ORDINATE-TRIPLE-001', 'PAIR-RHS-MEAN-001', 'PAIR-TRUNC-001', 'PAIR-COMPARE-001', 'PAIR-ASYMPTOTIC-001', 'PAIR-TRANSLATION-001']
 MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
-COMPLETE_STATEMENTS = {'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
+COMPLETE_STATEMENTS = {'TRIPLE-LOG-GAP-001', 'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
 PARTIAL = {
+    'TRIPLE-LOG-GAP-001': (['tripleLogGap_summable', 'tripleLogGap_bound'], []),
+    'TRIPLE-UNIFORM-001': (
+        ['tripleBudget_exact', 'tripleBudget_refinement', 'tripleBudget_refined_bound',
+         'tripleBudget_word_bound', 'tripleBudgetPrime_norm_envelope', 'tripleBudgetOmega_bound',
+         'tripleBudgetDiagonal_uniform', 'tripleBudgetMoment_bounds', 'tripleBudget_remainder_count',
+         'tripleBudget_refinement_count', 'tripleBudget_PPA_bound', 'tripleBudget_PAA_bound',
+         'tripleBudget_APA_bound', 'tripleBudget_AAP_bound', 'tripleBudget_PAPoff_coarse',
+         'tripleBudget_APPoff_coarse', 'tripleBudget_PPP_coarse'],
+        ['The pair mean-square and diagonal constants remain existential; the historical effective-constant qualification is not formalized.',
+         'Coarse word bounds retain actual weighted L2 norms and masses, with separate checked envelope comparisons; no single packaged manuscript-bound record is asserted.']),
+    'TRIPLE-OFFDIAG-001': (
+        ['tripleBudget_PAPoff_rate', 'tripleBudget_APPoff_rate', 'tripleBudget_PPPoff_rate',
+         'tripleArithmeticConvolution_diagonal', 'tripleLogCoefficient_energy_bound',
+         'tripleLogConvolution_energy_bound', 'triplePrimeMassConstant_closed'],
+        ['The mixed logarithmic factor is stated as sqrt(ell_x^3 ell_z^3); translation to the literal fractional-power typography is not a separate checked declaration.']),
+    'TRIPLE-SMOOTHED-ADDITIVE-001': (
+        ['tripleBudget_remainder_words_uniform', 'tripleBudget_uniform_lower_scale',
+         'tripleBudget_uniform_asymptotic', 'tripleBudget_uniform_additive_limit'],
+        ['The absolute constant is existential through the pair mean-square input; the historical effective-constant qualification remains unformalized.']),
+
     'PAIR-TRANSLATION-001': (
         ['pairComplexFourier_integrable', 'pairComplexFourier_real', 'pairComplexFourier_argument',
          'pairFourierStatistic_identity', 'pairFrequencyTerm_horizontal', 'pairFrequencyTerm_index_diagonal',
@@ -721,9 +741,27 @@ def derive():
             'changed triple master integral-norm bound verification scope')
     components.extend(triple_master['components'])
     names.extend(c['declaration'] for c in triple_master['components'])
+    triple_budget = json.loads(read('research/lean-triple-budget-inventory.json'))
+    found = []
+    for module in triple_budget['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished uniform triple error budget solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in triple_budget['components']],
+            'uniform triple error budget inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/triple-budget.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in triple_budget['components'] if c['comparator_checked']],
+            'uniform triple error budget Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed uniform triple error budget verification scope')
+    components.extend(triple_budget['components'])
+    names.extend(c['declaration'] for c in triple_budget['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -758,7 +796,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The triple master integral-norm bound, exact K_T identity, five occurrence-index subseries and ordered 27-term explicit-formula expansion are checked. Next identify the cubic prime term with its absolutely convergent Fourier series; historical KV/low-height inputs, explicit norm tails, effective constants and signed triple o(1) remain separate.')
+        next_step='The uniform triple named budget, grouped off-diagonal decay and additive fixed-weight limit are checked. Next evaluate retained terms and continue the test-function passage; historical effective constants and the signed complex-argument ordinate-only error remain separate.')
 
 
 def validate(record):
