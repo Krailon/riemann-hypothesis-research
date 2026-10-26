@@ -30,7 +30,7 @@ def digest(path):
 def source_hashes():
     files = [ROOT / p for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json',
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
-             'scripts/reproduce_lean.py', 'scripts/check_lean_reproduction.py', 'scripts/check_triple_expansion.py', 'research/lean-verification.md', 'scripts/check_zeta23_import.py', 'research/lean-zeta23-inventory.json', 'research/lean-zeta23.md', 'research/lean-pair-zero-inventory.json', 'research/lean-pair-zero.md', 'research/lean-pair-zero-bounds-inventory.json', 'research/lean-pair-zero-bounds.md', 'research/lean-pair-zero-comparison-inventory.json', 'research/lean-pair-zero-comparison.md', 'research/lean-pair-asymptotic-inventory.json', 'research/lean-pair-asymptotic.md', 'research/lean-pair-fourier-inventory.json', 'research/lean-pair-fourier.md', 'research/lean-triple-master-inventory.json', 'research/lean-triple-master.md', 'research/lean-triple-budget-inventory.json', 'research/lean-triple-budget.md', 'scripts/check_lean_triple_budget.py', 'scripts/prepare_lean_diagonal.py', 'scripts/check_lean_analytic_coverage.py',
+             'scripts/reproduce_lean.py', 'scripts/check_lean_reproduction.py', 'scripts/check_triple_expansion.py', 'research/lean-verification.md', 'scripts/check_zeta23_import.py', 'research/lean-zeta23-inventory.json', 'research/lean-zeta23.md', 'research/lean-pair-zero-inventory.json', 'research/lean-pair-zero.md', 'research/lean-pair-zero-bounds-inventory.json', 'research/lean-pair-zero-bounds.md', 'research/lean-pair-zero-comparison-inventory.json', 'research/lean-pair-zero-comparison.md', 'research/lean-pair-asymptotic-inventory.json', 'research/lean-pair-asymptotic.md', 'research/lean-pair-fourier-inventory.json', 'research/lean-pair-fourier.md', 'research/lean-triple-master-inventory.json', 'research/lean-triple-master.md', 'research/lean-triple-budget-inventory.json', 'research/lean-triple-budget.md', 'scripts/check_lean_triple_budget.py', 'research/lean-triple-mixed-diagonal-inventory.json', 'research/lean-triple-mixed-diagonal.md', 'scripts/check_lean_triple_mixed_diagonal.py', 'scripts/prepare_lean_diagonal.py', 'scripts/check_lean_analytic_coverage.py',
              'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json',
              'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json', 'research/lean-pair-exact-inventory.json', 'research/lean-pair-uniform-inventory.json', 'research/lean-pair-meanvalue-inventory.json', 'research/lean-pair-sieve-inventory.json', 'research/lean-pair-diagonal-inventory.json', 'research/lean-pair-prime-mean-inventory.json', 'research/lean-pair-rhs-mean-inventory.json']]
     files += sorted(p for p in (ROOT / 'vendor/zeta23').rglob('*') if p.is_file())
@@ -210,10 +210,12 @@ def main(argv=None):
                         help='Use prepared dependencies; check the triple integral-norm bound, interchange, kernel identity, five subseries, 27-word expansion cubic prime Fourier identity exact resonance split, Fourier decay and assembled master theorem, combined build, all axioms and regressions.')
     parser.add_argument('--triple-budget-only', action='store_true',
                         help='Use prepared dependencies; check the uniform triple budget and additive limit, combined build, all axioms and regressions.')
+    parser.add_argument('--triple-mixed-diagonal-only', action='store_true',
+                        help='Check the uniform mixed-prime diagonal, combined build, all axioms and regressions using prepared dependencies.')
     args = parser.parse_args(argv)
-    if sum([args.pair_zero_only, args.zeta23_only, args.pair_zero_bounds_only, args.pair_zero_comparison_only, args.pair_asymptotic_only, args.pair_fourier_only, args.triple_master_only, args.triple_budget_only]) > 1:
+    if sum([args.pair_zero_only, args.zeta23_only, args.pair_zero_bounds_only, args.pair_zero_comparison_only, args.pair_asymptotic_only, args.pair_fourier_only, args.triple_master_only, args.triple_budget_only, args.triple_mixed_diagonal_only]) > 1:
         parser.error('Choose at most one focused verification mode')
-    prepared = args.reuse_dependencies or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only or args.triple_budget_only
+    prepared = args.reuse_dependencies or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only or args.triple_budget_only or args.triple_mixed_diagonal_only
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     run_dir = ROOT / 'artifacts/lean-runs' / stamp
     run_dir.mkdir(parents=True)
@@ -257,6 +259,10 @@ def main(argv=None):
         report['verification_scope'] = ('Uniform triple named budget, logarithmic-gap lemma, grouped off-diagonal bounds and additive asymptotic; '
             'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun.')
 
+    if args.triple_mixed_diagonal_only:
+        report['verification_scope'] = ('Uniform two-scale mixed-prime diagonal, finite Abel identity and inclusive endpoints; '
+            'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun.')
+
     def command(name, argv, *, expected_failure=False):
         return run_command(run_dir, report, name, argv, expected_failure=expected_failure)
 
@@ -288,7 +294,15 @@ def main(argv=None):
                 build.rename(ROOT / '.lake' / ('previous-build-' + stamp))
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
-        if not (args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
+        if not (args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only or args.triple_budget_only):
+            command('triple-mixed-diagonal-build', ['lake', 'build', 'HigherCorrelations.TripleMixedDiagonalEndpoints'])
+            command('triple-mixed-diagonal-comparator', ['lake', 'env', comparator,
+                    'lean/VerificationChallenges/triple-mixed-diagonal.json'])
+            for control in ['finite', 'asymptotic', 'endpoints']:
+                command('triple-mixed-diagonal-' + control + '-unfinished-rejected', ['lake', 'env', comparator,
+                        'lean/VerificationChallenges/triple-mixed-diagonal-' + control + '-unfinished.json'], expected_failure=True)
+            command('triple-mixed-diagonal-regressions', [sys.executable, '-B', 'scripts/check_lean_triple_mixed_diagonal.py'])
+        if not (args.triple_mixed_diagonal_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
             command('triple-budget-build', ['lake', 'build', 'HigherCorrelations.TripleBudgetAssembly'])
             command('triple-budget-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/triple-budget.json'])
@@ -296,7 +310,7 @@ def main(argv=None):
                 command('triple-budget-' + control + '-unfinished-rejected', ['lake', 'env', comparator,
                         'lean/VerificationChallenges/triple-budget-' + control + '-unfinished.json'], expected_failure=True)
             command('triple-budget-regressions', [sys.executable, '-B', 'scripts/check_lean_triple_budget.py'])
-        if not (args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only):
+        if not (args.triple_mixed_diagonal_only or args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only):
             command('triple-master-build', ['lake', 'build', 'HigherCorrelations.TripleMasterAssembly'])
             command('triple-master-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/triple-master.json'])
@@ -322,37 +336,37 @@ def main(argv=None):
                     'lean/VerificationChallenges/triple-master-assembly-unfinished.json'], expected_failure=True)
             command('triple-master-uniform-unfinished-rejected', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/triple-master-uniform-unfinished.json'], expected_failure=True)
-        if not (args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.triple_master_only):
+        if not (args.triple_mixed_diagonal_only or args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.triple_master_only):
             command('pair-fourier-build', ['lake', 'build', 'HigherCorrelations.PairFourierAsymptotic'])
             command('pair-fourier-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-fourier.json'])
             command('pair-fourier-unfinished-rejected', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-fourier-unfinished.json'], expected_failure=True)
-        if not (args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_fourier_only or args.triple_master_only):
+        if not (args.triple_mixed_diagonal_only or args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_fourier_only or args.triple_master_only):
             command('pair-asymptotic-build', ['lake', 'build', 'HigherCorrelations.PairAsymptotic'])
             command('pair-asymptotic-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-asymptotic.json'])
             command('pair-asymptotic-unfinished-rejected', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-asymptotic-unfinished.json'], expected_failure=True)
-        if not (args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
+        if not (args.triple_mixed_diagonal_only or args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
             command('pair-zero-comparison-build', ['lake', 'build', 'HigherCorrelations.PairZeroComparison'])
             command('pair-zero-comparison-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-zero-comparison.json'])
             command('pair-zero-comparison-unfinished-rejected', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-zero-comparison-unfinished.json'], expected_failure=True)
-        if not (args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
+        if not (args.triple_mixed_diagonal_only or args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
             command('pair-zero-bounds-build', ['lake', 'build', 'HigherCorrelations.PairZeroUniformBounds'])
             command('pair-zero-bounds-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-zero-bounds.json'])
             command('pair-zero-bounds-unfinished-rejected', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-zero-bounds-unfinished.json'], expected_failure=True)
-        if not (args.triple_budget_only or args.zeta23_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
+        if not (args.triple_mixed_diagonal_only or args.triple_budget_only or args.zeta23_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
             command('pair-zero-build', ['lake', 'build', 'HigherCorrelations.PairZeroDecomposition'])
             command('pair-zero-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-zero.json'])
             command('pair-zero-unfinished-rejected', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-zero-unfinished.json'], expected_failure=True)
-        if not (args.triple_budget_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
+        if not (args.triple_mixed_diagonal_only or args.triple_budget_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
             command('zeta23-provenance', [sys.executable, '-B', 'scripts/check_zeta23_import.py'])
             command('zeta23-build', ['lake', 'build', 'HigherCorrelations.Zeta23RankTrace',
                                     'HigherCorrelations.Zeta23Counting'])
@@ -363,7 +377,7 @@ def main(argv=None):
                     'lean/VerificationChallenges/zeta23-unfinished.json'], expected_failure=True)
         command('project-build', ['lake', 'build', 'HigherCorrelations'])
         command('analytic-coverage', [sys.executable, '-B', 'scripts/check_lean_analytic_coverage.py'])
-        if not (args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
+        if not (args.triple_mixed_diagonal_only or args.triple_budget_only or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only):
             command('pair-rhs-mean-build', ['lake', 'build', 'HigherCorrelations.PairRHSMean'])
             command('pair-rhs-mean-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/pair-rhs-mean.json'])
@@ -520,6 +534,9 @@ def main(argv=None):
         budget_inventory = json.loads((ROOT / 'research/lean-triple-budget-inventory.json').read_text())
         expected.update(c['declaration'] for c in budget_inventory['components'])
         expected.update(budget_inventory['imported_axioms'])
+        mixed_inventory = json.loads((ROOT / 'research/lean-triple-mixed-diagonal-inventory.json').read_text())
+        expected.update(c['declaration'] for c in mixed_inventory['components'])
+        expected.update(mixed_inventory['imported_axioms'])
         expected.add('OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re')
         if (len(entries) != len(expected) or {name for name, _ in entries} != expected
                 or any(set(re.findall(r'[\w.]+', e)) - allowed for _, e in entries)):

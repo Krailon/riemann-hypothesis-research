@@ -1,0 +1,41 @@
+{
+  "challenge_module": "VerificationChallenges.TripleMixedDiagonal",
+  "solution_module": "HigherCorrelations.TripleMixedDiagonalEndpoints",
+  "theorem_names": [
+    "HigherCorrelations.tripleMixedDiagonal_middle_derivative",
+    "HigherCorrelations.tripleMixedDiagonal_middle_abel",
+    "HigherCorrelations.tripleMixedDiagonal_finite_abel",
+    "HigherCorrelations.tripleMixedDiagonal_middle_integral",
+    "HigherCorrelations.tripleMixedDiagonal_cumulative_div_integrable",
+    "HigherCorrelations.tripleMixedDiagonal_error_integral_split",
+    "HigherCorrelations.tripleMixedDiagonalWeight_knots",
+    "HigherCorrelations.tripleMixedDiagonal_coefficient",
+    "HigherCorrelations.tripleMixedDiagonalWeight_summable",
+    "HigherCorrelations.tripleMixedDiagonal_weight",
+    "HigherCorrelations.tripleMixedDiagonal_partial_tendsto",
+    "HigherCorrelations.tripleMixedDiagonal_finite_split",
+    "HigherCorrelations.tripleMixedDiagonal_boundary_tendsto",
+    "HigherCorrelations.tripleMixedDiagonal_model_bound_of_cumulative",
+    "HigherCorrelations.tripleMixedDiagonal_model_correction",
+    "HigherCorrelations.tripleMixedDiagonal_asymptotic_of_cumulative",
+    "HigherCorrelations.tripleMixedDiagonal_asymptotic",
+    "HigherCorrelations.tripleMixedDiagonal_asymptotic_symmetric",
+    "HigherCorrelations.tripleMixedDiagonalWeight_self",
+    "HigherCorrelations.tripleMixedDiagonalMain_self",
+    "HigherCorrelations.tripleMixedDiagonalModel_self",
+    "HigherCorrelations.tripleMixedDiagonal_unit_model",
+    "HigherCorrelations.tripleMixedDiagonal_unit_unit",
+    "HigherCorrelations.tripleMixedDiagonal_self_asymptotic",
+    "HigherCorrelations.tripleMixedDiagonal_integer_split",
+    "HigherCorrelations.tripleMixedDiagonal_finite_error_identity",
+    "HigherCorrelations.tripleMixedDiagonal_middle_error",
+    "HigherCorrelations.tripleMixedDiagonal_finite_error_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

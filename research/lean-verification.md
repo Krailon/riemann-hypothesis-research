@@ -250,3 +250,17 @@ separate definition-only challenge and six unfinished-proof controls. Run
 to reproduce this milestone without rerunning earlier Comparator suites.
 The effective-constant qualification and the signed complex-argument error
 for an ordinate-only statistic remain separate.
+
+## Uniform mixed-prime diagonal
+
+The [two-scale diagonal milestone](lean-triple-mixed-diagonal.md) extends the
+checked pair diagonal to every ordered pair of real scales 1<=a<=b, with a
+uniform existential constant, absolute convergence, and inclusive endpoints.
+Its 28 public statements and three unfinished-proof controls have a focused
+reproduction mode:
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-mixed-diagonal-only
+```
+
+This covers only the mixed-diagonal part of `TRIPLE-RETAINED-001`.

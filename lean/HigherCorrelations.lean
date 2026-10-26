@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleMixedDiagonalEndpoints
 import HigherCorrelations.TripleBudgetAssembly
 import HigherCorrelations.TripleMasterAssembly
 import HigherCorrelations.PairFourierAsymptotic

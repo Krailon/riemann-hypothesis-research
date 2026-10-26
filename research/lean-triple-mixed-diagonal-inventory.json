@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "TripleMixedDiagonalAbel",
+    "TripleMixedDiagonalAlgebra",
+    "TripleMixedDiagonalAsymptotic",
+    "TripleMixedDiagonalDefinitions",
+    "TripleMixedDiagonalEndpoints",
+    "TripleMixedDiagonalFinite"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_middle_derivative",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAbel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_middle_abel",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAbel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_finite_abel",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAbel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_middle_integral",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAbel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_cumulative_div_integrable",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAbel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_error_integral_split",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAbel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonalWeight_knots",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_coefficient",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonalWeight_summable",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_weight",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_partial_tendsto",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_finite_split",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_boundary_tendsto",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_model_bound_of_cumulative",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_model_correction",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_asymptotic_of_cumulative",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_asymptotic",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_asymptotic_symmetric",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonalWeight_self",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonalMain_self",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonalModel_self",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_unit_model",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_unit_unit",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_self_asymptotic",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_integer_split",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_finite_error_identity",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalFinite.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_middle_error",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalFinite.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMixedDiagonal_finite_error_bound",
+      "source": "lean/HigherCorrelations/TripleMixedDiagonalFinite.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

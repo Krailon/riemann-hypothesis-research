@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.TripleMixedDiagonal",
+  "solution_module": "VerificationChallenges.TripleMixedDiagonalUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.tripleMixedDiagonal_integer_split"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

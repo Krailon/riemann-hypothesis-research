@@ -4826,3 +4826,47 @@ claims:
       constants_scope: "Existential constant with all required quantifier uniformity; historical numerical-effectiveness qualification remains separate."
       endpoint_audit: "Closed height and X,Y,XY range boundaries; epsilon remains strictly positive and below 1/3."
       baseline_audit_coverage: "Separate formal claim, with historical statuses and audit scopes preserved. The signed complex-argument ordinate-only error remains open."
+  - id: MASTER-MIXED-DIAGONAL-FORMAL-001
+    title: Lean uniform two-scale mixed-prime diagonal asymptotic
+    kind: proposition
+    statement: |
+      For the actual coefficients a_x(n)=Lambda(n)/sqrt(n) min(n/x,x/n),
+      let D(a,b)=sum_{n>=1} a_a(n)a_b(n), including all prime powers.
+      There exists one absolute C>0 such that for every real 1<=a<=b,
+      |D(a,b)-(a/(2b))(1+log(b/a))log(ab)|
+        <=C(a/b)(1+log(b/a)).
+      A symmetric version uses min(a,b), max(a,b) for arbitrary a,b>=1.
+      The coefficient series is absolutely summable. At finite Y>=b,
+      its three ranges are n<=a, a<n<=b, b<n<=Y, with respective weights
+      n/(ab), a/(bn), ab/n^3 multiplying Lambda(n)^2.
+      Both internal Abel boundary terms cancel exactly. If
+      |A(u)-u log(u)|<=K u for every u>=1 and K>0, the finite model
+      (a/(2b))(1+h)log(ab)+(a/b)(1+h)-1/(4ab)
+        -ab(2log(Y)+3)/(4Y^2), h=log(b/a),
+      has error at most K(a/b)(3+h), and C=3K+1 is admissible.
+      The checked unconditional cumulative theorem discharges this premise.
+      The equal-scale specialization gives D(a,a)=log(a)+O(1).
+      The unit scales, coincident knots, and all integer cutoffs, including
+      primes and proper prime powers, are included without extra terms.
+      The absolute constant is existential through the checked PNT input.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [PAIR-PRIME-DIAGONAL-FORMAL-001, MASTER-BUDGET-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleMixedDiagonalAsymptotic.lean
+      label: HigherCorrelations.tripleMixedDiagonal_asymptotic
+      companion_declarations: "tripleMixedDiagonal_asymptotic_symmetric, tripleMixedDiagonal_asymptotic_of_cumulative, tripleMixedDiagonal_finite_error_identity, tripleMixedDiagonal_finite_error_bound, tripleMixedDiagonal_partial_tendsto, tripleMixedDiagonal_boundary_tendsto, tripleMixedDiagonal_self_asymptotic, tripleMixedDiagonal_integer_split"
+      bookkeeping: research/lean-triple-mixed-diagonal.md
+      inventory: research/lean-triple-mixed-diagonal-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8d5c0ef3de903e7864c8f508f71cb233f7a4f33c1cd6565263fb102e0a42ceb5
+    limit_order: "Fix 1<=a<=b. Finite Abel summation and finite integral identities precede Y=N tending to infinity. Absolute summability identifies the partial-sum limit and the explicit upper model boundary vanishes. The final constant is chosen independently of both scales."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 28 public statements are independently compared against a definition-only challenge, with three unfinished-proof controls for the finite identity, asymptotic, and integer endpoints; combined build, complete axiom report, and Python regressions."
+      imported_inputs: "Checked actual coefficient convergence, mixed-diagonal symmetry, and squared-Mangoldt cumulative bound including proper prime powers; finite Abel summation and real integration from mathlib. No RH, simplicity, or zero-free-strip premise."
+      constants_scope: "The explicit transfer C=3K+1 is checked. K and hence the final absolute constant remain existential through the checked unconditional PNT input."
+      baseline_audit_coverage: "Only the mixed-diagonal part of TRIPLE-RETAINED-001 is covered. The smoothing-moment refinement, resonance decay, assembled retained evaluation and interior vanishing remain separate. Historical statuses and RH-audit scopes are preserved; the signed complex-argument error remains open."
