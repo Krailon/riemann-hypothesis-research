@@ -4870,3 +4870,42 @@ claims:
       imported_inputs: "Checked actual coefficient convergence, mixed-diagonal symmetry, and squared-Mangoldt cumulative bound including proper prime powers; finite Abel summation and real integration from mathlib. No RH, simplicity, or zero-free-strip premise."
       constants_scope: "The explicit transfer C=3K+1 is checked. K and hence the final absolute constant remain existential through the checked unconditional PNT input."
       baseline_audit_coverage: "Only the mixed-diagonal part of TRIPLE-RETAINED-001 is covered. The smoothing-moment refinement, resonance decay, assembled retained evaluation and interior vanishing remain separate. Historical statuses and RH-audit scopes are preserved; the signed complex-argument error remains open."
+  - id: MASTER-SMOOTHING-MOMENT-FORMAL-001
+    title: Lean sharp first smoothing moment with explicit uniform remainder
+    kind: lemma
+    statement: |
+      Let omega be smooth, nonnegative, with topological support contained
+      in (1,2), and integral over R equal to one (TripleBudgetWeight).
+      Define mu_omega=integral_R omega(u)log(u) du and use the existing
+      J1(T)=integral_R omega(u)log(|T u|+2) du. The mean is exactly the
+      interval integral from 1 to 2 and satisfies 0<=mu_omega<=log(2).
+      For every real T>0, with constant two independent of omega,
+      0<=J1(T)-log(T)-mu_omega<=2/T.
+      In particular the manuscript assertion holds for every T>=3,
+      including T=3. The error equals the absolutely integrable correction
+      integral_R omega(u)log(1+2/(T u)) du. The weighted log and the
+      difference integrands are integrable before any integral splitting.
+      For each fixed admissible omega, J1(T)-log(T) tends to mu_omega as
+      T tends to infinity. This limit uses the explicit squeeze bound
+      and exchanges no limit with an integral.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-BUDGET-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleSmoothingMoment.lean
+      label: HigherCorrelations.tripleSmoothingMoment_sharp
+      companion_declarations: "tripleSmoothingMean_integrable, tripleSmoothingMean_manuscript, tripleSmoothingMean_bounds, tripleSmoothingError_integrable, tripleSmoothingError_integral, tripleSmoothingError_bounds, tripleSmoothingMoment_tendsto"
+      bookkeeping: research/lean-triple-smoothing.md
+      inventory: research/lean-triple-smoothing-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 1848346f53adca617e727a3dc5d7cdd1673b07f1c9e1ed129a1fc28726671449
+    limit_order: "The bounds hold for every positive height and every admissible weight with the same explicit constant. The limit theorem fixes omega before T tends to infinity and uses the bound 2/T; no integral-limit interchange is used."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 13 public declarations are independently compared against a definition-only challenge, with two unfinished-proof controls for the exact correction integral and sharp bound; combined build, complete axiom report and Python regressions."
+      imported_inputs: "Existing smoothing-weight support and integrability lemmas, real logarithm inequalities, compact-support integration and elementary limits from mathlib. No arithmetic, RH, simplicity or zero-location input."
+      constants_scope: "The bounds log(2) for the mean and 2/T for the remainder are explicit and independent of the weight. No existential analytic constant enters this lemma."
+      baseline_audit_coverage: "The smoothing-moment portion of TRIPLE-RETAINED-001 is covered, alongside the earlier mixed-diagonal milestone. Resonance decay and assembled retained-term evaluation remain separate. Historical statuses and RH-audit scopes are preserved; the signed complex-argument error remains open."

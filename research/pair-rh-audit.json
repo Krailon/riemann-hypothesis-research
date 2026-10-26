@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "ca840edeecc7b9b07208e7de2fd544f7c146742f4da07525cd0d656311d1f7c0",
+  "ledger_sha256": "127e6a835dfbeeaf9ad474e2aeaa2b17de2a4b6f69e11c082ec8ce53e0f7d619",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2728,5 +2728,14 @@
     ],
     "report": "research/lean-triple-mixed-diagonal.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the uniform two-scale mixed-prime diagonal, finite Abel cancellation, convergence and inclusive endpoints. Constants are existential through the checked PNT input. Only the mixed-diagonal part of TRIPLE-RETAINED-001 is covered; historical statuses, source passages and RH-audit scopes are unchanged."
+  },
+  "ledger_triple_smoothing_review": {
+    "reviewed_on": "2026-10-26",
+    "previous_ledger_sha256": "ca840edeecc7b9b07208e7de2fd544f7c146742f4da07525cd0d656311d1f7c0",
+    "added_claim_ids": [
+      "MASTER-SMOOTHING-MOMENT-FORMAL-001"
+    ],
+    "report": "research/lean-triple-smoothing.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the sharper first smoothing moment, logarithmic mean, exact integrable correction and fixed-weight limit. The error constant two is explicit and uniform in the weight and positive height. Resonance decay and the assembled retained evaluation remain separate; historical statuses, source passages and RH-audit scopes are unchanged."
   }
 }

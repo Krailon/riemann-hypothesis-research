@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "TripleSmoothingMomentDefinitions",
+    "TripleSmoothingMoment"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMean_continuous",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMean_integrable",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMean_manuscript",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMean_bounds",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_log_identity",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_log_bounds",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_difference_integrable",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingError_difference_integral",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingError_integrable",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingError_integral",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingError_bounds",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_sharp",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_tendsto",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

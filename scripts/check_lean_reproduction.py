@@ -87,12 +87,19 @@ class LeanReproductionTests(unittest.TestCase):
                             ('--pair-fourier-only', 'pair-fourier-comparator'),
                             ('--triple-master-only', 'triple-master-comparator'),
                             ('--triple-budget-only', 'triple-budget-comparator'),
-                            ('--triple-mixed-diagonal-only', 'triple-mixed-diagonal-comparator')]:
+                            ('--triple-mixed-diagonal-only', 'triple-mixed-diagonal-comparator'),
+                            ('--triple-smoothing-only', 'triple-smoothing-comparator')]:
             with self.subTest(flag=flag):
                 code, calls, report, checked = self.run_workflow(['--reuse-dependencies', flag])
                 self.assertEqual(code, 0)
                 self.assertEqual(checked, 1)
                 self.assertIn(suite, calls)
+                if flag == '--triple-smoothing-only':
+                    for control in ['identity', 'sharp']:
+                        self.assertIn('triple-smoothing-' + control + '-unfinished-rejected', calls)
+                    self.assertIn('triple-smoothing-regressions', calls)
+                else:
+                    self.assertNotIn('triple-smoothing-comparator', calls)
                 if flag == '--triple-mixed-diagonal-only':
                     for control in ['finite', 'asymptotic', 'endpoints']:
                         self.assertIn('triple-mixed-diagonal-' + control + '-unfinished-rejected', calls)
@@ -118,15 +125,15 @@ class LeanReproductionTests(unittest.TestCase):
                     self.assertNotIn('pair-fourier-comparator', calls)
                 else:
                     self.assertNotIn('triple-master-comparator', calls)
-                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only']:
+                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only']:
                     self.assertNotIn('pair-asymptotic-comparator', calls)
                 else:
                     self.assertNotIn('pair-fourier-comparator', calls)
-                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only']:
+                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only']:
                     self.assertNotIn('pair-zero-comparison-comparator', calls)
                 self.assertNotIn('resolve', calls)
                 self.assertNotIn('upstream-comparator', calls)
-                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only']:
+                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only']:
                     self.assertNotIn('pair-zero-bounds-comparator', calls)
                     self.assertNotIn('pair-zero-comparator', calls)
                     self.assertNotIn('zeta23-counting-comparator', calls)

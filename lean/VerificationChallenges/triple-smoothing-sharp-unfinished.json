@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.TripleSmoothingMoment",
+  "solution_module": "VerificationChallenges.TripleSmoothingMomentUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.tripleSmoothingMoment_sharp"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

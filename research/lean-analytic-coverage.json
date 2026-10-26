@@ -1407,10 +1407,13 @@
         "HigherCorrelations.tripleMixedDiagonal_asymptotic",
         "HigherCorrelations.tripleMixedDiagonal_asymptotic_symmetric",
         "HigherCorrelations.tripleMixedDiagonal_finite_error_identity",
-        "HigherCorrelations.tripleMixedDiagonal_integer_split"
+        "HigherCorrelations.tripleMixedDiagonal_integer_split",
+        "HigherCorrelations.tripleSmoothingMoment_sharp",
+        "HigherCorrelations.tripleSmoothingMean_manuscript",
+        "HigherCorrelations.tripleSmoothingError_integral"
       ],
       "remaining_obligations": [
-        "The mixed-prime diagonal asymptotic is checked with existential absolute constants. The sharper smoothing moment, resonance decay and assembled retained-term evaluation remain unformalized; historical numerical effectivity is not claimed."
+        "The mixed-prime diagonal is checked with existential absolute constants; the sharper smoothing moment has explicit constant two and a checked logarithmic mean. Resonance decay and assembled retained-term evaluation remain unformalized; numerical effectivity of the diagonal constant is not claimed."
       ]
     },
     {
@@ -9005,6 +9008,71 @@
     {
       "declaration": "HigherCorrelations.tripleMixedDiagonal_finite_error_bound",
       "source": "lean/HigherCorrelations/TripleMixedDiagonalFinite.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMean_continuous",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMean_integrable",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMean_manuscript",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMean_bounds",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_log_identity",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_log_bounds",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_difference_integrable",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingError_difference_integral",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingError_integrable",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingError_integral",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingError_bounds",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_sharp",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleSmoothingMoment_tendsto",
+      "source": "lean/HigherCorrelations/TripleSmoothingMoment.lean",
       "comparator_checked": true
     }
   ],

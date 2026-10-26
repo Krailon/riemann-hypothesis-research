@@ -1,0 +1,26 @@
+{
+  "challenge_module": "VerificationChallenges.TripleSmoothingMoment",
+  "solution_module": "HigherCorrelations.TripleSmoothingMoment",
+  "theorem_names": [
+    "HigherCorrelations.tripleSmoothingMean_continuous",
+    "HigherCorrelations.tripleSmoothingMean_integrable",
+    "HigherCorrelations.tripleSmoothingMean_manuscript",
+    "HigherCorrelations.tripleSmoothingMean_bounds",
+    "HigherCorrelations.tripleSmoothingMoment_log_identity",
+    "HigherCorrelations.tripleSmoothingMoment_log_bounds",
+    "HigherCorrelations.tripleSmoothingMoment_difference_integrable",
+    "HigherCorrelations.tripleSmoothingError_difference_integral",
+    "HigherCorrelations.tripleSmoothingError_integrable",
+    "HigherCorrelations.tripleSmoothingError_integral",
+    "HigherCorrelations.tripleSmoothingError_bounds",
+    "HigherCorrelations.tripleSmoothingMoment_sharp",
+    "HigherCorrelations.tripleSmoothingMoment_tendsto"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -264,3 +264,18 @@ python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-mixed-diagona
 ```
 
 This covers only the mixed-diagonal part of `TRIPLE-RETAINED-001`.
+
+## Sharp first smoothing moment
+
+The [first-moment milestone](lean-triple-smoothing.md) proves the bounded
+logarithmic smoothing mean, exact integrable correction, the uniform explicit
+bound 0<=J1-log T-mu<=2/T, and the fixed-weight limit. It includes T=3 and
+requires no arithmetic or zero-location input.
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-smoothing-only
+```
+
+The focused suite compares all 13 public declarations and rejects two
+unfinished-proof controls. Resonance decay and the assembled retained-term
+evaluation remain separate tasks.

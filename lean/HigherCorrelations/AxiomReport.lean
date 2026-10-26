@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleSmoothingMoment
 import HigherCorrelations.TripleMixedDiagonalEndpoints
 import HigherCorrelations.TripleBudgetAssembly
 import HigherCorrelations.TripleMasterAssembly
@@ -1532,3 +1533,17 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleMixedDiagonal_finite_error_identity
 #print axioms HigherCorrelations.tripleMixedDiagonal_middle_error
 #print axioms HigherCorrelations.tripleMixedDiagonal_finite_error_bound
+
+#print axioms HigherCorrelations.tripleSmoothingMean_continuous
+#print axioms HigherCorrelations.tripleSmoothingMean_integrable
+#print axioms HigherCorrelations.tripleSmoothingMean_manuscript
+#print axioms HigherCorrelations.tripleSmoothingMean_bounds
+#print axioms HigherCorrelations.tripleSmoothingMoment_log_identity
+#print axioms HigherCorrelations.tripleSmoothingMoment_log_bounds
+#print axioms HigherCorrelations.tripleSmoothingMoment_difference_integrable
+#print axioms HigherCorrelations.tripleSmoothingError_difference_integral
+#print axioms HigherCorrelations.tripleSmoothingError_integrable
+#print axioms HigherCorrelations.tripleSmoothingError_integral
+#print axioms HigherCorrelations.tripleSmoothingError_bounds
+#print axioms HigherCorrelations.tripleSmoothingMoment_sharp
+#print axioms HigherCorrelations.tripleSmoothingMoment_tendsto
