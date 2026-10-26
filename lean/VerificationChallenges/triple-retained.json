@@ -1,0 +1,41 @@
+{
+  "challenge_module": "VerificationChallenges.TripleRetained",
+  "solution_module": "HigherCorrelations.TripleRetainedEndpoints",
+  "theorem_names": [
+    "HigherCorrelations.tripleRetainedDelta_ordered",
+    "HigherCorrelations.tripleRetainedDelta_swap",
+    "HigherCorrelations.tripleRetainedG_swap",
+    "HigherCorrelations.tripleRetainedDiagonalScale_swap",
+    "HigherCorrelations.tripleRetainedErrorD_swap",
+    "HigherCorrelations.tripleRetainedErrorJ_swap",
+    "HigherCorrelations.tripleRetainedG_nonneg",
+    "HigherCorrelations.tripleRetainedDiagonalScale_nonneg",
+    "HigherCorrelations.tripleRetainedG_diagonal_main",
+    "HigherCorrelations.tripleRetained_exact",
+    "HigherCorrelations.tripleRetained_residual_norm",
+    "HigherCorrelations.tripleRetainedDelta_uniform",
+    "HigherCorrelations.tripleRetained_delta_term_bound",
+    "HigherCorrelations.tripleRetainedErrorD_bound_of_diagonal",
+    "HigherCorrelations.tripleRetainedErrorD_uniform",
+    "HigherCorrelations.tripleRetainedErrorJ_bounds",
+    "HigherCorrelations.tripleRetained_combined_bound",
+    "HigherCorrelations.tripleRetained_evaluation",
+    "HigherCorrelations.tripleRetainedMain_swap",
+    "HigherCorrelations.triplePrimeResonantMass_swap",
+    "HigherCorrelations.tripleBudgetRetained_swap",
+    "HigherCorrelations.tripleRetainedDelta_self",
+    "HigherCorrelations.tripleRetainedG_self",
+    "HigherCorrelations.tripleRetainedG_unit_left",
+    "HigherCorrelations.tripleRetainedG_unit_right",
+    "HigherCorrelations.tripleRetained_unit_values",
+    "HigherCorrelations.tripleRetained_unit_identity",
+    "HigherCorrelations.tripleRetained_height_three"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -295,3 +295,17 @@ python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-resonance-dec
 The focused suite compares all 32 public declarations and rejects three
 unfinished-proof controls. The full retained-term evaluation remains a
 separate assembly step.
+
+## Full retained-term evaluation
+
+The [retained-term assembly](lean-triple-retained.md) gives the exact formula,
+named diagonal and smoothing error bounds, resonance decay, and a combined
+additive estimate, with symmetry and endpoint checks. The diagonal constant
+remains existential; the other constants are explicit.
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-retained-only
+```
+
+The focused suite compares all 28 public statements and rejects three
+unfinished-proof controls. Interior vanishing remains a separate milestone.

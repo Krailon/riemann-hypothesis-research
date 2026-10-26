@@ -4951,3 +4951,51 @@ claims:
       imported_inputs: "Checked actual ordered convolution/resonance identity, multiplicative weight and convolution bounds, coefficient nonnegativity, and geometric-series summability; elementary prime-power representations, finite sets, real powers and logarithms from mathlib. No new prime-correlation estimate or zero-location premise."
       constants_scope: "Explicit C_pp=1+6/log(2) and C_res defined by a checked convergent geometric series. No existential PNT constant is used in this estimate."
       baseline_audit_coverage: "The resonance-decay portion of TRIPLE-RETAINED-001 is now covered alongside the previously checked mixed diagonal and sharp smoothing moment. The combined retained evaluation remains to be assembled. Historical statuses and RH-audit scopes are unchanged; the signed complex-argument error remains open."
+  - id: MASTER-RETAINED-FORMAL-001
+    title: Lean complete additive evaluation of the retained triple terms
+    kind: proposition
+    statement: |
+      Let omega satisfy the existing normalized TripleBudgetWeight hypotheses,
+      T>=3, X,Y>=1, q=log T, Z=XY, and L=log(2T+2). Define
+      Delta(a,b)=D(a,b)-Main(min(a,b),max(a,b)),
+      G(X,Y)=(1+log Y)log(XZ)/(2Y^2)+(1+log X)log(YZ)/(2X^2),
+      B(X,Y)=(1+log Y)/Y^2+(1+log X)/X^2,
+      E_D=J1(Delta(X,Z)/Y+Delta(Y,Z)/X),
+      E_J=(J1-q-mu_omega)G(X,Y), and P=q^3/Z^2+(q+mu_omega)G(X,Y).
+      For the existing complex-valued retained term, exactly
+      M_T=(P+E_D+E_J-R_res(X,Y):R), with the explicit coercion into C.
+      There exists one absolute C>0, chosen before omega,T,X,Y, such that
+      |E_D|<=C L B(X,Y), 0<=E_J<=2G(X,Y)/T, G(X,Y)>=0,
+      and 0<=mu_omega<=log 2. The resonance satisfies
+      0<=R_res(X,Y)<=C_res log(2Z)^3/sqrt Z with the previously checked
+      explicit C_res=8(1+6/log 2)sum_{j>=0}(j+1)^3 4^(-j).
+      Consequently |M_T-P|<=C L B(X,Y)+2G(X,Y)/T
+        +C_res log(2Z)^3/sqrt Z.
+      The exact retained term, main expression, and named errors are symmetric
+      in X,Y. Equal scales, either unit scale, X=Y=1, and T=3 are included.
+      At X=Y=1, G=0, B=2, E_J=0, and exactly
+      M_T=q^3+2J1 D(1,1)-R_res(1,1).
+      These are additive evaluations. The diagonal constant is existential;
+      smoothing and resonance constants are explicit. No relative estimate
+      or interior-vanishing conclusion is asserted by this assembly.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-MIXED-DIAGONAL-FORMAL-001, MASTER-SMOOTHING-MOMENT-FORMAL-001, MASTER-RESONANCE-DECAY-FORMAL-001, MASTER-BUDGET-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleRetainedEvaluation.lean
+      label: HigherCorrelations.tripleRetained_evaluation
+      companion_declarations: "tripleRetained_exact, tripleRetainedG_diagonal_main, tripleRetainedErrorD_uniform, tripleRetainedErrorJ_bounds, tripleRetained_combined_bound, tripleBudgetRetained_swap, tripleRetainedDelta_self, tripleRetainedG_self, tripleRetained_unit_identity, tripleRetained_height_three"
+      bookkeeping: research/lean-triple-retained.md
+      inventory: research/lean-triple-retained-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 6e1d78c3a685eabb8a41254786799a50c52eaf6cc98db78540738f6998a14aad
+    limit_order: "The evaluation assembles already justified identities and bounds at fixed omega,T,X,Y. No new limiting argument is required. Resonance symmetry exchanges the already absolutely summable ordered product series. The diagonal constant is chosen before every smoothing and scale parameter."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 28 public statements are independently compared against a definition-only challenge, with three unfinished-proof controls for the exact identity, uniform diagonal error and consolidated evaluation; combined build, complete axiom report and regressions."
+      imported_inputs: "The checked two-scale diagonal, sharper first smoothing moment, decaying resonance bound, existing moment bound and actual retained-term definitions. Exact resonance symmetry uses the checked absolutely summable ordered factor series."
+      constants_scope: "The diagonal constant remains existential through the checked PNT input. The smoothing constant two and convergent-series resonance constant are explicit and unchanged."
+      baseline_audit_coverage: "All mathematical parts of TRIPLE-RETAINED-001 are recovered. Its historical numerical-effectiveness assertion for the mixed-diagonal constant remains outside formal coverage. Historical statuses and RH-audit scopes are preserved. Interior vanishing is a separate next milestone; the signed complex-argument error remains open."

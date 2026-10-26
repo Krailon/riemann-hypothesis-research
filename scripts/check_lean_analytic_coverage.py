@@ -21,8 +21,8 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'TRIPLE-LOG-GAP-001', 'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
 PARTIAL = {
-    'TRIPLE-RETAINED-001': (['tripleMixedDiagonal_asymptotic', 'tripleMixedDiagonal_asymptotic_symmetric', 'tripleMixedDiagonal_finite_error_identity', 'tripleMixedDiagonal_integer_split', 'tripleSmoothingMoment_sharp', 'tripleSmoothingMean_manuscript', 'tripleSmoothingError_integral', 'tripleProperPower_count', 'triplePrimeResonantMass_decay', 'triplePrimeResonantMass_uniform_vanishing'], [
-        'The mixed-prime diagonal is checked with existential absolute constants; the sharper smoothing moment has explicit constant two and a checked logarithmic mean. Resonance decay is checked with an explicit convergent-series constant. The assembled retained-term evaluation remains unformalized; numerical effectivity of the diagonal constant is not claimed.']),
+    'TRIPLE-RETAINED-001': (['tripleMixedDiagonal_asymptotic', 'tripleMixedDiagonal_asymptotic_symmetric', 'tripleMixedDiagonal_finite_error_identity', 'tripleMixedDiagonal_integer_split', 'tripleSmoothingMoment_sharp', 'tripleSmoothingMean_manuscript', 'tripleSmoothingError_integral', 'tripleProperPower_count', 'triplePrimeResonantMass_decay', 'triplePrimeResonantMass_uniform_vanishing', 'tripleRetained_evaluation', 'tripleRetained_combined_bound', 'tripleRetained_height_three'], [
+        'The full mathematical retained-term evaluation, its named bounds and combined additive estimate are checked. The sole remaining qualification is the historical numerical-effectiveness assertion for the mixed-diagonal constant: the formal constant is existential. Smoothing and resonance constants are explicit.']),
     'TRIPLE-LOG-GAP-001': (['tripleLogGap_summable', 'tripleLogGap_bound'], []),
     'TRIPLE-UNIFORM-001': (
         ['tripleBudget_exact', 'tripleBudget_refinement', 'tripleBudget_refined_bound',
@@ -815,9 +815,27 @@ def derive():
             'changed decaying resonance bound verification scope')
     components.extend(triple_resonance_decay['components'])
     names.extend(c['declaration'] for c in triple_resonance_decay['components'])
+    triple_retained = json.loads(read('research/lean-triple-retained-inventory.json'))
+    found = []
+    for module in triple_retained['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished retained-term evaluation solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in triple_retained['components']],
+            'retained-term evaluation inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/triple-retained.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in triple_retained['components'] if c['comparator_checked']],
+            'retained-term evaluation Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed retained-term evaluation verification scope')
+    components.extend(triple_retained['components'])
+    names.extend(c['declaration'] for c in triple_retained['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]

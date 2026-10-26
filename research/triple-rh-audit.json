@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "475f0e7ab94a6b8131cc737106bfe20503dcc52f20185bf43dac8be3c14217c8",
+    "research/theorem-ledger.yaml": "d3bb0ad7c11ecf5b6f95e9c750a0a8b327e7bb55753d0f0fd818d7282025ca67",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "23734eab4c190ab66cb2155ccb2123a745e2445ff0bfb5c085ba0e1b6c412eb5"
+    "research/pair-rh-audit.json": "8dbc0b042709cd6e1b44e9289dda5ea59578423d67ff67935819843533e8c584"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4610,5 +4610,14 @@
     ],
     "report": "research/lean-triple-resonance-decay.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the square-root proper-power count, absolutely summable dyadic cover, explicit resonance decay and product-scale uniform vanishing, including unit scales and repeated prime factors. The combined retained evaluation remains separate. Historical statuses, source passages and RH-audit scopes are unchanged."
+  },
+  "ledger_triple_retained_review": {
+    "reviewed_on": "2026-10-26",
+    "previous_ledger_sha256": "475f0e7ab94a6b8131cc737106bfe20503dcc52f20185bf43dac8be3c14217c8",
+    "added_claim_ids": [
+      "MASTER-RETAINED-FORMAL-001"
+    ],
+    "report": "research/lean-triple-retained.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim assembles the exact retained-term evaluation, named errors, combined additive bound, symmetry and endpoints. The diagonal constant remains existential; smoothing and resonance constants are explicit. This recovers the mathematical evaluation in TRIPLE-RETAINED-001 while its historical numerical-effectiveness assertion remains separate. Historical statuses, source passages and RH-audit scopes are unchanged."
   }
 }

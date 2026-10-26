@@ -1413,10 +1413,13 @@
         "HigherCorrelations.tripleSmoothingError_integral",
         "HigherCorrelations.tripleProperPower_count",
         "HigherCorrelations.triplePrimeResonantMass_decay",
-        "HigherCorrelations.triplePrimeResonantMass_uniform_vanishing"
+        "HigherCorrelations.triplePrimeResonantMass_uniform_vanishing",
+        "HigherCorrelations.tripleRetained_evaluation",
+        "HigherCorrelations.tripleRetained_combined_bound",
+        "HigherCorrelations.tripleRetained_height_three"
       ],
       "remaining_obligations": [
-        "The mixed-prime diagonal is checked with existential absolute constants; the sharper smoothing moment has explicit constant two and a checked logarithmic mean. Resonance decay is checked with an explicit convergent-series constant. The assembled retained-term evaluation remains unformalized; numerical effectivity of the diagonal constant is not claimed."
+        "The full mathematical retained-term evaluation, its named bounds and combined additive estimate are checked. The sole remaining qualification is the historical numerical-effectiveness assertion for the mixed-diagonal constant: the formal constant is existential. Smoothing and resonance constants are explicit."
       ]
     },
     {
@@ -9236,6 +9239,146 @@
     {
       "declaration": "HigherCorrelations.tripleResonance_square_summand",
       "source": "lean/HigherCorrelations/TripleResonanceEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedDelta_ordered",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedDelta_swap",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedG_swap",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedDiagonalScale_swap",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedErrorD_swap",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedErrorJ_swap",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedG_nonneg",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedDiagonalScale_nonneg",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedG_diagonal_main",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetained_exact",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetained_residual_norm",
+      "source": "lean/HigherCorrelations/TripleRetainedAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedDelta_uniform",
+      "source": "lean/HigherCorrelations/TripleRetainedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetained_delta_term_bound",
+      "source": "lean/HigherCorrelations/TripleRetainedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedErrorD_bound_of_diagonal",
+      "source": "lean/HigherCorrelations/TripleRetainedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedErrorD_uniform",
+      "source": "lean/HigherCorrelations/TripleRetainedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedErrorJ_bounds",
+      "source": "lean/HigherCorrelations/TripleRetainedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetained_combined_bound",
+      "source": "lean/HigherCorrelations/TripleRetainedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetained_evaluation",
+      "source": "lean/HigherCorrelations/TripleRetainedEvaluation.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedMain_swap",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.triplePrimeResonantMass_swap",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleBudgetRetained_swap",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedDelta_self",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedG_self",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedG_unit_left",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetainedG_unit_right",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetained_unit_values",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetained_unit_identity",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleRetained_height_three",
+      "source": "lean/HigherCorrelations/TripleRetainedEndpoints.lean",
       "comparator_checked": true
     }
   ],

@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleRetainedEndpoints
 import HigherCorrelations.TripleResonanceEndpoints
 import HigherCorrelations.TripleSmoothingMoment
 import HigherCorrelations.TripleMixedDiagonalEndpoints
@@ -1581,3 +1582,32 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleResonanceBall_integer_cutoff
 #print axioms HigherCorrelations.tripleResonanceBall_prime_square_endpoint
 #print axioms HigherCorrelations.tripleResonance_square_summand
+
+#print axioms HigherCorrelations.tripleRetainedDelta_ordered
+#print axioms HigherCorrelations.tripleRetainedDelta_swap
+#print axioms HigherCorrelations.tripleRetainedG_swap
+#print axioms HigherCorrelations.tripleRetainedDiagonalScale_swap
+#print axioms HigherCorrelations.tripleRetainedErrorD_swap
+#print axioms HigherCorrelations.tripleRetainedErrorJ_swap
+#print axioms HigherCorrelations.tripleRetainedG_nonneg
+#print axioms HigherCorrelations.tripleRetainedDiagonalScale_nonneg
+#print axioms HigherCorrelations.tripleRetainedG_diagonal_main
+#print axioms HigherCorrelations.tripleRetained_exact
+#print axioms HigherCorrelations.tripleRetained_residual_norm
+#print axioms HigherCorrelations.tripleRetainedDelta_uniform
+#print axioms HigherCorrelations.tripleRetained_delta_term_bound
+#print axioms HigherCorrelations.tripleRetainedErrorD_bound_of_diagonal
+#print axioms HigherCorrelations.tripleRetainedErrorD_uniform
+#print axioms HigherCorrelations.tripleRetainedErrorJ_bounds
+#print axioms HigherCorrelations.tripleRetained_combined_bound
+#print axioms HigherCorrelations.tripleRetained_evaluation
+#print axioms HigherCorrelations.tripleRetainedMain_swap
+#print axioms HigherCorrelations.triplePrimeResonantMass_swap
+#print axioms HigherCorrelations.tripleBudgetRetained_swap
+#print axioms HigherCorrelations.tripleRetainedDelta_self
+#print axioms HigherCorrelations.tripleRetainedG_self
+#print axioms HigherCorrelations.tripleRetainedG_unit_left
+#print axioms HigherCorrelations.tripleRetainedG_unit_right
+#print axioms HigherCorrelations.tripleRetained_unit_values
+#print axioms HigherCorrelations.tripleRetained_unit_identity
+#print axioms HigherCorrelations.tripleRetained_height_three
