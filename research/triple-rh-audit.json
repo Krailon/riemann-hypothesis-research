@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "d3bb0ad7c11ecf5b6f95e9c750a0a8b327e7bb55753d0f0fd818d7282025ca67",
+    "research/theorem-ledger.yaml": "616a2dedc9abb74c8e5140547892431a0d3c1a88fc1860e978af2d5cbac90e9f",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "8dbc0b042709cd6e1b44e9289dda5ea59578423d67ff67935819843533e8c584"
+    "research/pair-rh-audit.json": "abf2efe17db7232d3a94994a9cd8a510cde7cad1a96d387ca43f38e5fbc23b2b"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4619,5 +4619,14 @@
     ],
     "report": "research/lean-triple-retained.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim assembles the exact retained-term evaluation, named errors, combined additive bound, symmetry and endpoints. The diagonal constant remains existential; smoothing and resonance constants are explicit. This recovers the mathematical evaluation in TRIPLE-RETAINED-001 while its historical numerical-effectiveness assertion remains separate. Historical statuses, source passages and RH-audit scopes are unchanged."
+  },
+  "ledger_triple_interior_vanishing_review": {
+    "reviewed_on": "2026-10-27",
+    "previous_ledger_sha256": "d3bb0ad7c11ecf5b6f95e9c750a0a8b327e7bb55753d0f0fd818d7282025ca67",
+    "added_claim_ids": [
+      "MASTER-INTERIOR-VANISHING-FORMAL-001"
+    ],
+    "report": "research/lean-triple-interior-vanishing.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records both quantitative interior bounds and uniform moving-range limits, including fixed-weight boundedness, inclusive height and scale endpoints and exchange symmetry. Absolute constants remain existential. The mathematical content of TRIPLE-INTERIOR-VANISHING-001 is checked while its historical numerical-effectiveness assertion remains separate. Historical statuses, source passages and RH-audit scopes are unchanged; the signed complex-argument ordinate-only error remains open."
   }
 }

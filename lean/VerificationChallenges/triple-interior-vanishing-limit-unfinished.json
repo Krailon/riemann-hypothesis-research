@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.TripleInteriorVanishing",
+  "solution_module": "VerificationChallenges.TripleInteriorVanishingUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.tripleInterior_observable_limit"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

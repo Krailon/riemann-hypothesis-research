@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "TripleInteriorLowerScale",
+    "TripleInteriorBounds",
+    "TripleInteriorVanishing"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.tripleInterior_range",
+      "source": "lean/HigherCorrelations/TripleInteriorLowerScale.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_log",
+      "source": "lean/HigherCorrelations/TripleInteriorLowerScale.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_log_square",
+      "source": "lean/HigherCorrelations/TripleInteriorLowerScale.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_diagonal_scale",
+      "source": "lean/HigherCorrelations/TripleInteriorLowerScale.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_G",
+      "source": "lean/HigherCorrelations/TripleInteriorLowerScale.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_arch",
+      "source": "lean/HigherCorrelations/TripleInteriorLowerScale.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_resonance_scale",
+      "source": "lean/HigherCorrelations/TripleInteriorLowerScale.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_main",
+      "source": "lean/HigherCorrelations/TripleInteriorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_diagonal_error",
+      "source": "lean/HigherCorrelations/TripleInteriorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_smoothing_error",
+      "source": "lean/HigherCorrelations/TripleInteriorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_resonance",
+      "source": "lean/HigherCorrelations/TripleInteriorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_retained_lower_scale",
+      "source": "lean/HigherCorrelations/TripleInteriorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_retained_bound",
+      "source": "lean/HigherCorrelations/TripleInteriorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_observable_bound",
+      "source": "lean/HigherCorrelations/TripleInteriorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_cubic_envelope_tendsto",
+      "source": "lean/HigherCorrelations/TripleInteriorVanishing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_retained_limit",
+      "source": "lean/HigherCorrelations/TripleInteriorVanishing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_observable_limit",
+      "source": "lean/HigherCorrelations/TripleInteriorVanishing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_fixed_weight_limit",
+      "source": "lean/HigherCorrelations/TripleInteriorVanishing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_power_endpoints",
+      "source": "lean/HigherCorrelations/TripleInteriorVanishing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_exchange",
+      "source": "lean/HigherCorrelations/TripleInteriorVanishing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleInterior_height_three",
+      "source": "lean/HigherCorrelations/TripleInteriorVanishing.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

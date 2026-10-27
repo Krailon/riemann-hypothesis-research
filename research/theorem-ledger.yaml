@@ -4999,3 +4999,52 @@ claims:
       imported_inputs: "The checked two-scale diagonal, sharper first smoothing moment, decaying resonance bound, existing moment bound and actual retained-term definitions. Exact resonance symmetry uses the checked absolutely summable ordered factor series."
       constants_scope: "The diagonal constant remains existential through the checked PNT input. The smoothing constant two and convergent-series resonance constant are explicit and unchanged."
       baseline_audit_coverage: "All mathematical parts of TRIPLE-RETAINED-001 are recovered. Its historical numerical-effectiveness assertion for the mixed-diagonal constant remains outside formal coverage. Historical statuses and RH-audit scopes are preserved. Interior vanishing is a separate next milestone; the signed complex-argument error remains open."
+  - id: MASTER-INTERIOR-VANISHING-FORMAL-001
+    title: Lean uniform interior vanishing of the retained and full triple observables
+    kind: corollary
+    statement: |
+      Let omega satisfy the existing normalized TripleBudgetWeight hypotheses,
+      L=log(2T+2), and let W>=0 be any pointwise upper bound for omega.
+      There exist absolute C_M,C_C>0, chosen before omega,W,epsilon,T,X,Y,
+      such that for 0<epsilon<1/3, T>=3, T^epsilon<=X,Y and
+      XY<=T^(1-epsilon), the existing complex-valued observables satisfy
+      ||tripleBudgetRetained omega T X Y||<=C_M T^(-epsilon)L^3 and
+      ||tripleMasterObservable omega T X Y||
+        <=C_C(1+W+fourierDerivativeL1 omega 1)T^(-epsilon)L^4.
+      The retained bound first holds as C_M L^3/R for R>=1, X,Y>=R,
+      XY<=T/R. Its named main, diagonal, smoothing and resonance pieces
+      are bounded by 9L^3/R, 4K L^3/R, 8L^3/R and C_res L^3/R,
+      respectively, so C_M=17+4K+C_res suffices for an existential K>0.
+      For fixed epsilon and admissible omega, both observables tend
+      uniformly to zero over the moving X,Y range: for every eta>0,
+      eventually for all heights T and every admissible X,Y, the norm
+      is below eta. Compact support supplies W, so the full-observable
+      fixed-weight limit requires no extra weight-boundedness premise.
+      T=3 and all scale inequalities are inclusive. The lower corner
+      (T^epsilon,T^epsilon) and the upper corners
+      (T^epsilon,T^(1-2epsilon)) and its exchange belong to the range.
+      Both exact observables are invariant under exchanging X,Y.
+      Constants remain existential through the checked mixed diagonal and
+      additive prime mean-square inputs. Full zero coordinates, occurrence
+      multiplicities and all partial diagonals retain their conventions.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-RETAINED-FORMAL-001, MASTER-ADDITIVE-FORMAL-001, MASTER-ASSEMBLY-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleInteriorBounds.lean
+      label: HigherCorrelations.tripleInterior_observable_bound
+      companion_declarations: "tripleInterior_retained_lower_scale, tripleInterior_retained_bound, tripleInterior_retained_limit, tripleInterior_observable_limit, tripleInterior_fixed_weight_limit, tripleInterior_cubic_envelope_tendsto, tripleInterior_power_endpoints, tripleInterior_exchange, tripleInterior_height_three"
+      bookkeeping: research/lean-triple-interior-vanishing.md
+      inventory: research/lean-triple-interior-vanishing-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 1bb6996e7767999b0a1a2162fe3d85a98675f69aacb9095c90d3b96d5742a75a
+    limit_order: "All imported series and identities are defined at fixed parameters. First prove estimates with an independent R>=1, then set R=T^epsilon. Fix epsilon>0 and the admissible smoothing before sending T to infinity, uniformly over every X,Y in the moving range. Scalar envelope limits suffice; no new interchange of sums, integrals or limits is used."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 21 public declarations are independently compared against a definition-only challenge. Three unfinished-proof controls cover the retained bound, observable bound and observable uniform limit. The suite also runs the combined build, complete axiom report, analytic coverage, harness and pair/triple regressions."
+      imported_inputs: "Checked exact retained evaluation, named mixed-diagonal and smoothing corrections, explicit resonance decay, uniform additive approximation, scalar quartic-envelope limit and exact master exchange symmetry; elementary inequalities and compact-support boundedness from mathlib. No new zero-location or prime-correlation premise."
+      constants_scope: "Absolute constants are quantified before the margin, smoothing, height and scales. They remain existential through the mixed-diagonal and prime mean-square inputs; the resonance series constant remains explicit."
+      baseline_audit_coverage: "Both mathematical inequalities and the uniform limits of TRIPLE-INTERIOR-VANISHING-001 are checked. Its historical numerical-effectiveness assertion remains separate. Historical statuses, source passages and RH-audit scopes are unchanged. No extension to frequency axes or the outer support boundary, and no ordinate-only statistic or signed complex-argument cancellation claim."

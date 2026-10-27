@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleInteriorVanishing
 import HigherCorrelations.TripleRetainedEndpoints
 import HigherCorrelations.TripleResonanceEndpoints
 import HigherCorrelations.TripleSmoothingMoment

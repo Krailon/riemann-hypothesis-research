@@ -1,0 +1,34 @@
+{
+  "challenge_module": "VerificationChallenges.TripleInteriorVanishing",
+  "solution_module": "HigherCorrelations.TripleInteriorVanishing",
+  "theorem_names": [
+    "HigherCorrelations.tripleInterior_range",
+    "HigherCorrelations.tripleInterior_log",
+    "HigherCorrelations.tripleInterior_log_square",
+    "HigherCorrelations.tripleInterior_diagonal_scale",
+    "HigherCorrelations.tripleInterior_G",
+    "HigherCorrelations.tripleInterior_arch",
+    "HigherCorrelations.tripleInterior_resonance_scale",
+    "HigherCorrelations.tripleInterior_main",
+    "HigherCorrelations.tripleInterior_diagonal_error",
+    "HigherCorrelations.tripleInterior_smoothing_error",
+    "HigherCorrelations.tripleInterior_resonance",
+    "HigherCorrelations.tripleInterior_retained_lower_scale",
+    "HigherCorrelations.tripleInterior_retained_bound",
+    "HigherCorrelations.tripleInterior_observable_bound",
+    "HigherCorrelations.tripleInterior_cubic_envelope_tendsto",
+    "HigherCorrelations.tripleInterior_retained_limit",
+    "HigherCorrelations.tripleInterior_observable_limit",
+    "HigherCorrelations.tripleInterior_fixed_weight_limit",
+    "HigherCorrelations.tripleInterior_power_endpoints",
+    "HigherCorrelations.tripleInterior_exchange",
+    "HigherCorrelations.tripleInterior_height_three"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

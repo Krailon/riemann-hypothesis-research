@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleInteriorVanishing
 import HigherCorrelations.TripleRetainedEndpoints
 import HigherCorrelations.TripleResonanceEndpoints
 import HigherCorrelations.TripleSmoothingMoment
@@ -1611,3 +1612,26 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleRetained_unit_values
 #print axioms HigherCorrelations.tripleRetained_unit_identity
 #print axioms HigherCorrelations.tripleRetained_height_three
+
+#print axioms HigherCorrelations.tripleInterior_range
+#print axioms HigherCorrelations.tripleInterior_log
+#print axioms HigherCorrelations.tripleInterior_log_square
+#print axioms HigherCorrelations.tripleInterior_diagonal_scale
+#print axioms HigherCorrelations.tripleInterior_G
+#print axioms HigherCorrelations.tripleInterior_arch
+#print axioms HigherCorrelations.tripleInterior_resonance_scale
+#print axioms HigherCorrelations.tripleInterior_main
+#print axioms HigherCorrelations.tripleInterior_diagonal_error
+#print axioms HigherCorrelations.tripleInterior_smoothing_error
+#print axioms HigherCorrelations.tripleInterior_resonance
+#print axioms HigherCorrelations.tripleInterior_retained_lower_scale
+#print axioms HigherCorrelations.tripleInterior_retained_bound
+#print axioms HigherCorrelations.tripleInterior_observable_bound
+#print axioms HigherCorrelations.tripleInterior_cubic_envelope_tendsto
+#print axioms HigherCorrelations.tripleInterior_retained_limit
+#print axioms HigherCorrelations.tripleInterior_observable_limit
+#print axioms HigherCorrelations.tripleInterior_power_endpoints
+#print axioms HigherCorrelations.tripleInterior_exchange
+#print axioms HigherCorrelations.tripleInterior_height_three
+
+#print axioms HigherCorrelations.tripleInterior_fixed_weight_limit

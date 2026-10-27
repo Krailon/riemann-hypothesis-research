@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "d3bb0ad7c11ecf5b6f95e9c750a0a8b327e7bb55753d0f0fd818d7282025ca67",
+  "ledger_sha256": "616a2dedc9abb74c8e5140547892431a0d3c1a88fc1860e978af2d5cbac90e9f",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2755,5 +2755,14 @@
     ],
     "report": "research/lean-triple-retained.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim assembles the exact retained-term evaluation, named errors, combined additive bound, symmetry and endpoints. The diagonal constant remains existential; smoothing and resonance constants are explicit. This recovers the mathematical evaluation in TRIPLE-RETAINED-001 while its historical numerical-effectiveness assertion remains separate. Historical statuses, source passages and RH-audit scopes are unchanged."
+  },
+  "ledger_triple_interior_vanishing_review": {
+    "reviewed_on": "2026-10-27",
+    "previous_ledger_sha256": "d3bb0ad7c11ecf5b6f95e9c750a0a8b327e7bb55753d0f0fd818d7282025ca67",
+    "added_claim_ids": [
+      "MASTER-INTERIOR-VANISHING-FORMAL-001"
+    ],
+    "report": "research/lean-triple-interior-vanishing.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records both quantitative interior bounds and uniform moving-range limits, including fixed-weight boundedness, inclusive height and scale endpoints and exchange symmetry. Absolute constants remain existential. The mathematical content of TRIPLE-INTERIOR-VANISHING-001 is checked while its historical numerical-effectiveness assertion remains separate. Historical statuses, source passages and RH-audit scopes are unchanged; the signed complex-argument ordinate-only error remains open."
   }
 }

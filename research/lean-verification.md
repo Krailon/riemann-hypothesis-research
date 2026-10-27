@@ -309,3 +309,20 @@ python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-retained-only
 
 The focused suite compares all 28 public statements and rejects three
 unfinished-proof controls. Interior vanishing remains a separate milestone.
+
+## Interior-vanishing corollary
+
+The next focused suite checks the retained O(T^(-epsilon)L^3) bound,
+the full-observable O((1+W+W1)T^(-epsilon)L^4) bound, and both uniform
+moving-range limits. It includes 21 independently compared declarations,
+three unfinished-proof controls, inclusive height and scale endpoints,
+and exchange symmetry. Absolute constants remain existential. See
+[the proof scope](lean-triple-interior-vanishing.md) and
+[the inventory](lean-triple-interior-vanishing-inventory.json).
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-interior-vanishing-only
+```
+
+This retains the full-zero observable and does not close the signed
+complex-argument error for an ordinate-only statistic.
