@@ -326,3 +326,19 @@ python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-interior-vani
 
 This retains the full-zero observable and does not close the signed
 complex-argument error for an ordinate-only statistic.
+
+## Interior weighted test-function passage
+
+The focused suite checks support margins, joint entire regularity, Schwartz
+Fourier inversion, the absolute frequency/zero interchange, the exact native
+kernel identity, local-spacing bounds and fixed-test limits. All 31 public
+statements have independent specifications and four unfinished-proof controls.
+The combined build, complete axiom audit and regressions are included:
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-test-function-only
+```
+
+See [the proof scope](lean-triple-test-function.md) and
+[the declaration inventory](lean-triple-test-function-inventory.json).
+Constants remain existential, and the ordinate-only signed error remains open.

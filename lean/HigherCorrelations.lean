@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleTestAssembly
 import HigherCorrelations.TripleInteriorVanishing
 import HigherCorrelations.TripleRetainedEndpoints
 import HigherCorrelations.TripleResonanceEndpoints

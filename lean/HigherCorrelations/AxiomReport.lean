@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleTestAssembly
 import HigherCorrelations.TripleInteriorVanishing
 import HigherCorrelations.TripleRetainedEndpoints
 import HigherCorrelations.TripleResonanceEndpoints
@@ -1635,3 +1636,35 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleInterior_height_three
 
 #print axioms HigherCorrelations.tripleInterior_fixed_weight_limit
+
+#print axioms HigherCorrelations.tripleTestMargin_subset
+#print axioms HigherCorrelations.tripleTest_compact_margin
+#print axioms HigherCorrelations.tripleTestBase_bounds
+#print axioms HigherCorrelations.tripleTest_scale_range
+#print axioms HigherCorrelations.complexFourier_entire
+#print axioms HigherCorrelations.complexFourier_schwartz_inversion
+#print axioms HigherCorrelations.tripleTest_coefficient_unit
+#print axioms HigherCorrelations.tripleTest_coefficient_bound
+#print axioms HigherCorrelations.tripleTest_phase
+#print axioms HigherCorrelations.tripleTestFrequencyTerm_integrable
+#print axioms HigherCorrelations.tripleTestFrequencyTerm_integral
+#print axioms HigherCorrelations.tripleTest_kernel_bound
+#print axioms HigherCorrelations.tripleTestFrequencyTerm_bound
+#print axioms HigherCorrelations.tripleTestFrequencyTerm_integralNorm_bound
+#print axioms HigherCorrelations.tripleTest_integralNorm_summable
+#print axioms HigherCorrelations.tripleTest_integralNorm_uniform
+#print axioms HigherCorrelations.tripleTest_frequency_sum
+#print axioms HigherCorrelations.tripleTest_identity
+#print axioms HigherCorrelations.tripleTest_zero_sum_absolute
+#print axioms HigherCorrelations.tripleTest_frequency_integrable
+#print axioms HigherCorrelations.tripleTest_observable_lower_scale
+#print axioms HigherCorrelations.tripleTest_bound
+#print axioms HigherCorrelations.tripleTest_envelope_tendsto
+#print axioms HigherCorrelations.tripleTest_fixed_margin_limit
+#print axioms HigherCorrelations.tripleTest_interior_limit
+#print axioms HigherCorrelations.tripleTest_zero
+#print axioms HigherCorrelations.tripleTest_margin_exchange
+#print axioms HigherCorrelations.tripleTest_frequency_exchange
+#print axioms HigherCorrelations.tripleTest_nonempty
+#print axioms HigherCorrelations.tripleTest_independent_cutoff
+#print axioms HigherCorrelations.tripleTest_theorem

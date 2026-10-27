@@ -91,12 +91,19 @@ class LeanReproductionTests(unittest.TestCase):
                             ('--triple-smoothing-only', 'triple-smoothing-comparator'),
                             ('--triple-resonance-decay-only', 'triple-resonance-decay-comparator'),
                             ('--triple-retained-only', 'triple-retained-comparator'),
-                            ('--triple-interior-vanishing-only', 'triple-interior-vanishing-comparator')]:
+                            ('--triple-interior-vanishing-only', 'triple-interior-vanishing-comparator'),
+                            ('--triple-test-function-only', 'triple-test-function-comparator')]:
             with self.subTest(flag=flag):
                 code, calls, report, checked = self.run_workflow(['--reuse-dependencies', flag])
                 self.assertEqual(code, 0)
                 self.assertEqual(checked, 1)
                 self.assertIn(suite, calls)
+                if flag == '--triple-test-function-only':
+                    for control in ['regularity', 'interchange', 'bound', 'limit']:
+                        self.assertIn('triple-test-function-' + control + '-unfinished-rejected', calls)
+                    self.assertIn('triple-test-function-regressions', calls)
+                else:
+                    self.assertNotIn('triple-test-function-comparator', calls)
                 if flag == '--triple-interior-vanishing-only':
                     for control in ['retained', 'observable', 'limit']:
                         self.assertIn('triple-interior-vanishing-' + control + '-unfinished-rejected', calls)
@@ -146,15 +153,15 @@ class LeanReproductionTests(unittest.TestCase):
                     self.assertNotIn('pair-fourier-comparator', calls)
                 else:
                     self.assertNotIn('triple-master-comparator', calls)
-                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only']:
+                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only']:
                     self.assertNotIn('pair-asymptotic-comparator', calls)
                 else:
                     self.assertNotIn('pair-fourier-comparator', calls)
-                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only']:
+                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only']:
                     self.assertNotIn('pair-zero-comparison-comparator', calls)
                 self.assertNotIn('resolve', calls)
                 self.assertNotIn('upstream-comparator', calls)
-                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only']:
+                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only']:
                     self.assertNotIn('pair-zero-bounds-comparator', calls)
                     self.assertNotIn('pair-zero-comparator', calls)
                     self.assertNotIn('zeta23-counting-comparator', calls)

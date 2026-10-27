@@ -5048,3 +5048,64 @@ claims:
       imported_inputs: "Checked exact retained evaluation, named mixed-diagonal and smoothing corrections, explicit resonance decay, uniform additive approximation, scalar quartic-envelope limit and exact master exchange symmetry; elementary inequalities and compact-support boundedness from mathlib. No new zero-location or prime-correlation premise."
       constants_scope: "Absolute constants are quantified before the margin, smoothing, height and scales. They remain existential through the mixed-diagonal and prime mean-square inputs; the resonance series constant remains explicit."
       baseline_audit_coverage: "Both mathematical inequalities and the uniform limits of TRIPLE-INTERIOR-VANISHING-001 are checked. Its historical numerical-effectiveness assertion remains separate. Historical statuses, source passages and RH-audit scopes are unchanged. No extension to frequency axes or the outer support boundary, and no ordinate-only statistic or signed complex-argument cancellation claim."
+  - id: MASTER-TEST-FUNCTION-FORMAL-001
+    title: Lean interior weighted full-zero test-function identity and vanishing limit
+    kind: theorem
+    statement: |
+      Let omega satisfy TripleBudgetWeight and let phi:R^2->C be smooth
+      and compactly supported in Omega_plus={xi>0,eta>0,xi+eta<1}.
+      Every such compact support admits 0<epsilon<1/3 with
+      tsupport(phi) contained in Omega_epsilon={xi,eta>=epsilon,
+      xi+eta<=1-epsilon}; the empty support is included.
+      The project inverse transform F=complexFourier phi is jointly
+      complex differentiable on C^2. Its real restriction is represented
+      by a Schwartz map on FourierPlane with Fourier transform phi in
+      the volume-preserving project coordinates and exact 2pi convention.
+      For T>2pi, put B=T/(2pi), L_T=log(B)/(2pi), L=log(2T+2), and
+      z_j1=L_T((gamma_j-gamma_1)-i(delta_j+delta_1)). Exactly,
+      R^K_3,T=8 sum_{i1,i2,i3} K_T(i2,i3,i1)F(z_21,z_31)
+        =integral_R2 phi(xi,eta) C_3,T(B^xi,B^eta) dxi deta.
+      The sum is over all ordered actual zero occurrences, both ordinate
+      signs, full multiplicities and every partial diagonal. The explicit
+      tuple equivalence places the anchor in the conjugated third kernel
+      slot. The factor eight is retained; 1/T is already inside K_T,
+      with no additional Jacobian or L_T^2 normalization.
+      There exists an absolute A>0 chosen before omega,phi,epsilon,T such
+      that the sum over zero tuples of the frequency integrals of norms
+      is at most A||phi||_1 B^(1-epsilon)L^3. This series of integral
+      norms is summable before the interchange; the evaluated zero sum
+      is absolutely convergent and the frequency integral is integrable.
+      For one absolute C>0 chosen before omega,W,phi,epsilon,T, if W>=0
+      bounds omega pointwise and tsupport(phi) is in Omega_epsilon,
+      ||R^K_3,T||<=C||phi||_1(1+W+||omega'||_1)B^(-epsilon)L^4.
+      The proof sets R=B^epsilon in checked lower-scale bounds, using
+      X,Y>=R and XY<=B/R<=T/R. For every fixed admissible omega and phi,
+      R^K_3,T tends to zero as T tends to infinity. Compact support supplies
+      W; no extra weight-boundedness premise is needed for the limit.
+      Independent rectangular zero cutoffs converge at fixed parameters.
+      A nonzero admissible smooth test equals one at (1/4,1/4) with support
+      inside [3/16,5/16]^2 contained in Omega_(1/8). The zero test and
+      coordinate exchange of the margins and frequency integral are checked.
+      All margin inequalities are inclusive, while T>2pi is strict.
+      The absolute constants remain existential through the existing inputs.
+    status: formalized
+    assumptions: [UNCONDITIONAL, "SUPPORT(compact subset of xi>0, eta>0, xi+eta<1)"]
+    dependencies: [MASTER-INTERIOR-VANISHING-FORMAL-001, MASTER-ASSEMBLY-FORMAL-001, FOURIER-COMPLEX-DECAY-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleTestAssembly.lean
+      label: HigherCorrelations.tripleTest_theorem
+      companion_declarations: "complexFourier_entire, complexFourier_schwartz_inversion, tripleTest_compact_margin, tripleTest_phase, tripleTest_integralNorm_summable, tripleTest_integralNorm_uniform, tripleTest_identity, tripleTest_zero_sum_absolute, tripleTest_frequency_integrable, tripleTest_bound, tripleTest_interior_limit, tripleTest_nonempty, tripleTest_independent_cutoff"
+      bookkeeping: research/lean-triple-test-function.md
+      inventory: research/lean-triple-test-function-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: c45bb9fa9331dbc3c0a8414c11c718a6bd58e7c2016787df6a16a6bebc3bad3a
+    limit_order: "Fix T,phi,omega and a support margin. Prove summability of frequency integral norms using the unit-scale kernel majorant; then interchange the zero series and frequency integral and remove independent occurrence cutoffs. Only afterwards send T to infinity with phi,epsilon,omega fixed. The conversion R=(T/(2pi))^epsilon is a pointwise application of the checked uniform lower-scale bounds, not a varying-epsilon limit argument."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 31 public declarations are independently compared against a definition-only challenge. Four unfinished-proof controls cover joint complex regularity, interchange, the quantitative bound and the fixed-test limit. The suite also runs the combined build, complete axiom report, analytic coverage, harness and pair/triple regressions."
+      imported_inputs: "Checked full-zero master identity and integral-norm majorant, retained lower-scale estimate and additive lower-scale budget, scalar envelope limit, exact complex inverse-Fourier/volume conventions; mathlib dominated differentiation, Schwartz inversion, compact extrema and smooth bumps. No new zero-location or prime-correlation premise."
+      constants_scope: "Absolute constants are quantified before the margin, test, smoothing and height. They remain existential through the checked zero-kernel, diagonal and prime mean-square bounds."
+      baseline_audit_coverage: "The mathematical statement of TRIPLE-TEST-FUNCTION-001 is checked; its historical numerical-effectiveness assertion remains separate. The direct lower-scale spacing conversion replaces the manuscript's theta_T bookkeeping with an equivalent argument. Historical statuses, source passages and RH-audit scopes are unchanged. No frequency-axis, origin, outer-boundary, ordinate-only, positivity or horizontal-consequence claim is introduced; the signed complex-argument error remains open."

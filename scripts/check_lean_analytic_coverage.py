@@ -21,6 +21,8 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'TRIPLE-LOG-GAP-001', 'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
 PARTIAL = {
+    'TRIPLE-TEST-FUNCTION-001': (['tripleTest_compact_margin', 'complexFourier_entire', 'complexFourier_schwartz_inversion', 'tripleTest_phase', 'tripleTest_integralNorm_summable', 'tripleTest_integralNorm_uniform', 'tripleTest_identity', 'tripleTest_zero_sum_absolute', 'tripleTest_frequency_integrable', 'tripleTest_bound', 'tripleTest_interior_limit', 'tripleTest_nonempty', 'tripleTest_independent_cutoff', 'tripleTest_theorem'], [
+        'The entire extension, Schwartz inversion, exact weighted full-zero identity, absolute convergence, local-spacing bound and fixed-test limit are checked. The sole historical qualification remaining is numerical effectiveness: the absolute constants are existential. The scaling proof directly sets R=(T/(2pi))^epsilon in checked lower-scale bounds.']),
     'TRIPLE-INTERIOR-VANISHING-001': (['tripleInterior_retained_lower_scale', 'tripleInterior_retained_bound', 'tripleInterior_observable_bound', 'tripleInterior_retained_limit', 'tripleInterior_observable_limit', 'tripleInterior_fixed_weight_limit', 'tripleInterior_power_endpoints', 'tripleInterior_exchange', 'tripleInterior_height_three'], [
         'Both quantitative interior bounds and the uniform moving-range limits are checked. The historical numerical-effectiveness assertion remains unformalized: the absolute constants are existential through the diagonal and prime mean-square inputs.']),
     'TRIPLE-RETAINED-001': (['tripleMixedDiagonal_asymptotic', 'tripleMixedDiagonal_asymptotic_symmetric', 'tripleMixedDiagonal_finite_error_identity', 'tripleMixedDiagonal_integer_split', 'tripleSmoothingMoment_sharp', 'tripleSmoothingMean_manuscript', 'tripleSmoothingError_integral', 'tripleProperPower_count', 'triplePrimeResonantMass_decay', 'triplePrimeResonantMass_uniform_vanishing', 'tripleRetained_evaluation', 'tripleRetained_combined_bound', 'tripleRetained_height_three'], [
@@ -853,9 +855,27 @@ def derive():
             'changed interior-vanishing corollary verification scope')
     components.extend(triple_interior_vanishing['components'])
     names.extend(c['declaration'] for c in triple_interior_vanishing['components'])
+    triple_test_function = json.loads(read('research/lean-triple-test-function-inventory.json'))
+    found = []
+    for module in triple_test_function['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished interior weighted test-function passage solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in triple_test_function['components']],
+            'interior weighted test-function passage inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/triple-test-function.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in triple_test_function['components'] if c['comparator_checked']],
+            'interior weighted test-function passage Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed interior weighted test-function passage verification scope')
+    components.extend(triple_test_function['components'])
+    names.extend(c['declaration'] for c in triple_test_function['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms'] + triple_interior_vanishing['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms'] + triple_interior_vanishing['imported_axioms'] + triple_test_function['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -890,7 +910,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The retained-term evaluation and uniform interior vanishing of the full-zero observable are checked. Next formalize the interior weighted test-function passage; historical effective constants and the signed complex-argument ordinate-only error remain separate.')
+        next_step='The interior weighted full-zero test-function identity, absolute convergence and vanishing limit are checked. Next continue with frequency-axis and origin analysis; historical effective constants and the signed complex-argument ordinate-only error remain separate.')
 
 
 def validate(record):

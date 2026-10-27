@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "616a2dedc9abb74c8e5140547892431a0d3c1a88fc1860e978af2d5cbac90e9f",
+    "research/theorem-ledger.yaml": "e73791e6137e1dc498e2c4ea660419c4f543fdef4fbc83a2df168d4c90358803",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "abf2efe17db7232d3a94994a9cd8a510cde7cad1a96d387ca43f38e5fbc23b2b"
+    "research/pair-rh-audit.json": "3f290d007a4a4ba209db821586ad9c4ec1917b120b13b6d8e98bb4f829036822"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4628,5 +4628,14 @@
     ],
     "report": "research/lean-triple-interior-vanishing.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records both quantitative interior bounds and uniform moving-range limits, including fixed-weight boundedness, inclusive height and scale endpoints and exchange symmetry. Absolute constants remain existential. The mathematical content of TRIPLE-INTERIOR-VANISHING-001 is checked while its historical numerical-effectiveness assertion remains separate. Historical statuses, source passages and RH-audit scopes are unchanged; the signed complex-argument ordinate-only error remains open."
+  },
+  "ledger_triple_test_function_review": {
+    "reviewed_on": "2026-10-27",
+    "previous_ledger_sha256": "616a2dedc9abb74c8e5140547892431a0d3c1a88fc1860e978af2d5cbac90e9f",
+    "added_claim_ids": [
+      "MASTER-TEST-FUNCTION-FORMAL-001"
+    ],
+    "report": "research/lean-triple-test-function.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the interior weighted full-zero identity, entire and Schwartz regularity, absolute frequency interchange, local-spacing bound and fixed-test limit. Constants remain existential. The mathematical content of TRIPLE-TEST-FUNCTION-001 is checked while historical numerical effectiveness remains separate. The spacing proof uses the checked lower-scale estimates directly. Historical statuses, source passages and RH-audit scopes are unchanged; the signed complex-argument ordinate-only error remains open."
   }
 }

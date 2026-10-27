@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.TripleTestFunction",
+  "solution_module": "VerificationChallenges.TripleTestFunctionUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.tripleTest_identity"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
