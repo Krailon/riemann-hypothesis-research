@@ -1,0 +1,227 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.TripleBoundary
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8964/8964] Replayed VerificationChallenges.TripleBoundary
+warning: lean/VerificationChallenges/TripleBoundary.lean:16:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:23:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:27:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:32:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:35:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:38:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:49:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:53:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:61:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:64:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:71:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:74:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:78:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:81:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:84:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:89:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:93:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:96:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:100:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:102:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:108:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:120:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:123:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:126:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:132:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:140:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:142:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:146:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:151:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:164:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:169:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:174:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:181:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:188:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:196:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:198:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:202:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:206:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:210:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:214:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:220:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:231:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:235:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:239:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:244:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:253:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:256:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:260:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:268:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:277:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:282:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:285:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:289:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:293:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:299:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:307:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:313:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:317:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:322:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:326:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:334:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:340:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:347:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:350:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:354:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:360:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:362:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:367:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:370:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:380:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:385:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:391:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:397:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:402:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:408:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:414:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:420:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:426:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:431:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:435:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:443:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:448:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:458:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:465:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:469:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:474:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:485:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:491:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:501:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:503:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:505:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:508:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:511:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:515:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:518:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:523:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:533:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:537:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:541:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:544:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:547:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:551:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:554:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:557:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:561:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:568:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:579:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:593:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:602:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:605:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:609:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:619:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:630:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:639:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:643:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:649:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:652:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:659:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:668:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:677:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:684:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:687:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:690:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:693:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:698:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:705:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:709:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:717:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:724:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:733:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:740:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:747:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:759:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundary.lean:771:8: declaration uses `sorry`
+Build completed successfully (8964 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.tripleQuadrant_identity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.TripleBoundary
+Building VerificationChallenges.TripleBoundaryUnfinished
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8964/8964] Replayed VerificationChallenges.TripleBoundaryUnfinished
+warning: lean/VerificationChallenges/TripleBoundaryUnfinished.lean:16:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundaryUnfinished.lean:24:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundaryUnfinished.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundaryUnfinished.lean:39:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundaryUnfinished.lean:45:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/TripleBoundaryUnfinished.lean:52:8: declaration uses `sorry`
+Build completed successfully (8964 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.tripleQuadrant_identity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.TripleBoundaryUnfinished
+uncaught exception: Illegal axiom detected: 'sorryAx'

@@ -342,3 +342,22 @@ python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-test-function
 See [the proof scope](lean-triple-test-function.md) and
 [the declaration inventory](lean-triple-test-function-inventory.json).
 Constants remain existential, and the ordinate-only signed error remains open.
+
+
+## Frequency axes and origin
+
+The completed boundary suite checks all 143 public declarations across 51
+modules: exact full-zero and tempered Fourier passage, the uniform integrated
+budget, local origin and both axis profiles, and the normalized quadrant limit.
+Six unfinished-proof controls, the combined build and complete axiom report
+are included:
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-boundary-only
+```
+
+See [the certified scope and manifest](lean-triple-boundary.md) and
+[the declaration inventory](lean-triple-boundary-inventory.json). The axes and
+origin are included; the upper support margin remains strictly positive.
+Inherited constants remain existential. Signed-sector assembly and the
+ordinate-only signed error are separate remaining work.

@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "e73791e6137e1dc498e2c4ea660419c4f543fdef4fbc83a2df168d4c90358803",
+  "ledger_sha256": "9fa4c91d511a683bb861c4804bb7e8d10f977762c0a92dc2c6865830ea96835d",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2773,5 +2773,14 @@
     ],
     "report": "research/lean-triple-test-function.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the interior weighted full-zero identity, entire and Schwartz regularity, absolute frequency interchange, local-spacing bound and fixed-test limit. Constants remain existential. The mathematical content of TRIPLE-TEST-FUNCTION-001 is checked while historical numerical effectiveness remains separate. The spacing proof uses the checked lower-scale estimates directly. Historical statuses, source passages and RH-audit scopes are unchanged; the signed complex-argument ordinate-only error remains open."
+  },
+  "ledger_triple_boundary_review": {
+    "reviewed_on": "2026-10-29",
+    "previous_ledger_sha256": "e73791e6137e1dc498e2c4ea660419c4f543fdef4fbc83a2df168d4c90358803",
+    "added_claim_ids": [
+      "MASTER-BOUNDARY-FORMAL-001"
+    ],
+    "report": "research/lean-triple-boundary.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the uniform integrated quadrant budget, both axis and origin local profiles, exact full-zero identity, entire and tempered Fourier passage, and normalized quadrant limit. The mathematical content of TRIPLE-BOUNDARY-ESTIMATES-001 and TRIPLE-QUADRANT-LIMIT-001 is checked apart from historical numerical effectiveness: inherited constants remain existential. Existing statuses, source passages, assumptions, dependencies and RH-audit scope are unchanged. Signed-sector and ordinate-only conclusions are not asserted; the signed complex-argument error remains open."
   }
 }

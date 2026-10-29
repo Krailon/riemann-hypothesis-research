@@ -21,6 +21,10 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'TRIPLE-LOG-GAP-001', 'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
 PARTIAL = {
+    'TRIPLE-BOUNDARY-ESTIMATES-001': (['tripleBoundary_remainder_exact', 'tripleBoundary_uniform_integrated', 'tripleBoundary_origin_uniform', 'tripleBoundary_axis_uniform', 'tripleBoundary_exchanged_axis_uniform'], [
+        'The integrated estimate and all three uniform local profiles, including endpoints, are checked. The historical numerical-effectiveness qualification remains separate: inherited analytic constants are existential.']),
+    'TRIPLE-QUADRANT-LIMIT-001': (['tripleQuadrant_integralNorm_uniform', 'tripleQuadrant_identity', 'tripleQuadrant_zero_sum_absolute', 'tripleQuadrant_entire', 'tripleQuadrant_distribution', 'tripleQuadrant_zero_identity', 'tripleQuadrant_independent_cutoff', 'tripleQuadrantN1_bounds', 'tripleBoundary_origin_mass_closed', 'tripleBoundary_axis_mass', 'tripleQuadrant_uniform_bound', 'tripleQuadrant_fixed_margin_limit'], [
+        'The full quadrant identity, entire and tempered-distribution passage, exact one-sided masses, N1 error bound and fixed-test height limit are checked. The historical numerical-effectiveness qualification remains unformalized. No signed-sector or ordinate-only conclusion follows.']),
     'TRIPLE-TEST-FUNCTION-001': (['tripleTest_compact_margin', 'complexFourier_entire', 'complexFourier_schwartz_inversion', 'tripleTest_phase', 'tripleTest_integralNorm_summable', 'tripleTest_integralNorm_uniform', 'tripleTest_identity', 'tripleTest_zero_sum_absolute', 'tripleTest_frequency_integrable', 'tripleTest_bound', 'tripleTest_interior_limit', 'tripleTest_nonempty', 'tripleTest_independent_cutoff', 'tripleTest_theorem'], [
         'The entire extension, Schwartz inversion, exact weighted full-zero identity, absolute convergence, local-spacing bound and fixed-test limit are checked. The sole historical qualification remaining is numerical effectiveness: the absolute constants are existential. The scaling proof directly sets R=(T/(2pi))^epsilon in checked lower-scale bounds.']),
     'TRIPLE-INTERIOR-VANISHING-001': (['tripleInterior_retained_lower_scale', 'tripleInterior_retained_bound', 'tripleInterior_observable_bound', 'tripleInterior_retained_limit', 'tripleInterior_observable_limit', 'tripleInterior_fixed_weight_limit', 'tripleInterior_power_endpoints', 'tripleInterior_exchange', 'tripleInterior_height_three'], [
@@ -873,9 +877,27 @@ def derive():
             'changed interior weighted test-function passage verification scope')
     components.extend(triple_test_function['components'])
     names.extend(c['declaration'] for c in triple_test_function['components'])
+    triple_boundary = json.loads(read('research/lean-triple-boundary-inventory.json'))
+    found = []
+    for module in triple_boundary['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished quadrant boundary passage solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in triple_boundary['components']],
+            'quadrant boundary passage inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/triple-boundary.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in triple_boundary['components'] if c['comparator_checked']],
+            'quadrant boundary passage Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed quadrant boundary passage verification scope')
+    components.extend(triple_boundary['components'])
+    names.extend(c['declaration'] for c in triple_boundary['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms'] + triple_interior_vanishing['imported_axioms'] + triple_test_function['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms'] + triple_interior_vanishing['imported_axioms'] + triple_test_function['imported_axioms'] + triple_boundary['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]

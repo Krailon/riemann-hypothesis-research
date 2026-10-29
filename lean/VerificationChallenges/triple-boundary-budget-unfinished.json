@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.TripleBoundary",
+  "solution_module": "VerificationChallenges.TripleBoundaryUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.tripleBoundary_uniform_integrated"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

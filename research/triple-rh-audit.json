@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "e73791e6137e1dc498e2c4ea660419c4f543fdef4fbc83a2df168d4c90358803",
+    "research/theorem-ledger.yaml": "9fa4c91d511a683bb861c4804bb7e8d10f977762c0a92dc2c6865830ea96835d",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "3f290d007a4a4ba209db821586ad9c4ec1917b120b13b6d8e98bb4f829036822"
+    "research/pair-rh-audit.json": "908e3553e05106098f8ec4de12f1d9e327fe80a5260aa07e862806b6419c9eb4"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4637,5 +4637,14 @@
     ],
     "report": "research/lean-triple-test-function.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the interior weighted full-zero identity, entire and Schwartz regularity, absolute frequency interchange, local-spacing bound and fixed-test limit. Constants remain existential. The mathematical content of TRIPLE-TEST-FUNCTION-001 is checked while historical numerical effectiveness remains separate. The spacing proof uses the checked lower-scale estimates directly. Historical statuses, source passages and RH-audit scopes are unchanged; the signed complex-argument ordinate-only error remains open."
+  },
+  "ledger_triple_boundary_review": {
+    "reviewed_on": "2026-10-29",
+    "previous_ledger_sha256": "e73791e6137e1dc498e2c4ea660419c4f543fdef4fbc83a2df168d4c90358803",
+    "added_claim_ids": [
+      "MASTER-BOUNDARY-FORMAL-001"
+    ],
+    "report": "research/lean-triple-boundary.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the uniform integrated quadrant budget, both axis and origin local profiles, exact full-zero identity, entire and tempered Fourier passage, and normalized quadrant limit. The mathematical content of TRIPLE-BOUNDARY-ESTIMATES-001 and TRIPLE-QUADRANT-LIMIT-001 is checked apart from historical numerical effectiveness: inherited constants remain existential. Existing statuses, source passages, assumptions, dependencies and RH-audit scope are unchanged. Signed-sector and ordinate-only conclusions are not asserted; the signed complex-argument error remains open."
   }
 }

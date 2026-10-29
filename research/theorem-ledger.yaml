@@ -5109,3 +5109,67 @@ claims:
       imported_inputs: "Checked full-zero master identity and integral-norm majorant, retained lower-scale estimate and additive lower-scale budget, scalar envelope limit, exact complex inverse-Fourier/volume conventions; mathlib dominated differentiation, Schwartz inversion, compact extrema and smooth bumps. No new zero-location or prime-correlation premise."
       constants_scope: "Absolute constants are quantified before the margin, test, smoothing and height. They remain existential through the checked zero-kernel, diagonal and prime mean-square bounds."
       baseline_audit_coverage: "The mathematical statement of TRIPLE-TEST-FUNCTION-001 is checked; its historical numerical-effectiveness assertion remains separate. The direct lower-scale spacing conversion replaces the manuscript's theta_T bookkeeping with an equivalent argument. Historical statuses, source passages and RH-audit scopes are unchanged. No frequency-axis, origin, outer-boundary, ordinate-only, positivity or horizontal-consequence claim is introduced; the signed complex-argument error remains open."
+
+  - id: MASTER-BOUNDARY-FORMAL-001
+    title: Lean quadrant boundary budget, local profiles and full-zero correlation limit
+    kind: theorem
+    statement: |
+      Let omega satisfy TripleBudgetWeight, Q=[0,infinity)^2, and let
+      psi:R^2->C be smooth and compactly supported, with psi(p) nonzero
+      on Q only when p.1+p.2<=1-kappa for a fixed kappa>0. Write
+      B=T/(2pi), b=log B, q=log T, L=log(2T+2), and Wcal=1+W+||omega'||_1,
+      where W>=0 bounds omega. The full-zero residual is exactly
+      R_T(X,Y)=C_3,T(X,Y)-q^3/(XY)^2-(q+mu_omega)G(X,Y).
+      One absolute C>0 chosen before omega,W,T,kappa,M,psi gives
+      integral_Q |psi R_T(B^xi,B^eta)|<=C M Wcal (1+B^(-kappa)L^4)
+      for T>=2pi exp(1), whenever M>=0 bounds |psi| on Q.
+      The eight old non-H errors, nineteen H words and retained evaluation
+      errors are counted once; the earlier 208 component refinement remains
+      available. Continuous actual-residual majorants justify integration.
+      For fixed omega, q^(-3)C_3,T(exp u,exp v) tends uniformly to
+      exp(-2(u+v)) on every closed nonnegative rectangle, and
+      q^(-2)C_3,T(B^r,exp s) tends uniformly to r(1+s)exp(-2s) on
+      [r0,r1] x [0,S] for 0<r0<=r1<1 and S>=0. The exchanged-axis
+      profile is checked as well. These profiles require no test function.
+      Define N1 as the sum of the Q suprema of |psi|, |partial_xi psi|
+      and |partial_eta psi|. It bounds the real Frechet derivative in
+      the project product norm. For T>=2pi exp(1), one absolute C>0 gives
+      |B_T[psi]-psi(0,0)/4-(3/4)integral_0^infinity
+        r(psi(r,0)+psi(0,r)) dr|<=C N1(psi) Wcal (1/b+B^(-kappa)L^3),
+      where B_T=q^(-1)integral_Q psi C_3,T(B^xi,B^eta).
+      Hence the fixed-test height limit is the stated origin and axis
+      functional. Closed endpoints carry full one-sided masses: 1/4 at
+      the origin and 3/4 for each axis trace, without extra half weights.
+      F_plus(z)=integral_Q psi(p) exp(2pi i p dot z) is jointly entire.
+      Its real restriction defines a tempered distribution whose Fourier
+      transform is the zero extension of psi in project coordinates.
+      No Schwartz regularity across the axes is assumed. For T>2pi,
+      B_T[psi]=(8/q)sum_{i1,i2,i3} K_T(i2,i3,i1)F_plus(z21,z31),
+      with z_j1=L_T((gamma_j-gamma_1)-i(delta_j+delta_1)) and
+      L_T=log B/(2pi). All actual zero occurrences, both ordinate signs,
+      multiplicities and all partial diagonals are included; K_T already
+      contains 1/T. The frequency integral-norm majorant before division
+      by q is A||psi||_L1(Q) B^(1-kappa)L^3. Absolute convergence and
+      independent rectangular occurrence cutoffs are proved at fixed
+      parameters. All analytic constants inherited from earlier inputs
+      remain existential. No signed-sector or ordinate-only claim follows.
+    status: formalized
+    assumptions: [UNCONDITIONAL, "SUPPORT(relative support in xi>=0, eta>=0, xi+eta<=1-kappa; kappa>0)"]
+    dependencies: [MASTER-TEST-FUNCTION-FORMAL-001, MASTER-RETAINED-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/TripleQuadrantAsymptotic.lean
+      label: HigherCorrelations.tripleQuadrant_fixed_margin_limit
+      companion_declarations: [tripleQuadrant_uniform_bound, tripleBoundary_uniform_integrated, tripleBoundary_origin_uniform, tripleBoundary_axis_uniform, tripleBoundary_exchanged_axis_uniform, tripleQuadrant_zero_identity, tripleQuadrant_distribution]
+      inventory: research/lean-triple-boundary-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 6db5d078c7212b8bdfe6f7b6251b3aa6573149617e3147f3ae09af733dcfb419
+    limit_order: "Fix height, smoothing, test and support margin. Prove summability of frequency integral norms, interchange the full-zero series and frequency integral, and remove independent occurrence cutoffs. Then send height to infinity with smoothing, test and margin fixed. Local profiles instead fix a compact parameter rectangle and smoothing before the uniform height limit."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 143 public declarations across 51 modules are compared against definition-only challenges. Six unfinished-proof controls cover the interchange, budget, origin, axis, quadrant limit and tempered Fourier passage. The focused suite also checks the combined build, complete axiom report, analytic coverage, harness and pair/triple regressions."
+      imported_inputs: "Previously checked full-zero master identity, prime and remainder budgets, mixed diagonal, smoothing and resonance estimates; mathlib measure changes, Bochner integration, mean-value inequality, Fourier duality and uniform convergence. No new zero-location or prime-correlation premise."
+      constants_scope: "Uniform constants precede smoothing, height, margin and test; they remain existential through earlier analytic inputs. Historical numerical-effectiveness assertions are not promoted."
+      baseline_audit_coverage: "The mathematical content of TRIPLE-BOUNDARY-ESTIMATES-001 and TRIPLE-QUADRANT-LIMIT-001 is checked, apart from the historical numerical-effectiveness qualification. Historical statuses and RH-audit source scope remain unchanged. Signed sectors, outer support boundary, kernel removal, ordinate-only statistics and new horizontal consequences are not claimed; the signed complex-argument error remains open."
