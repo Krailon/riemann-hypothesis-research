@@ -359,5 +359,26 @@ python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-boundary-only
 See [the certified scope and manifest](lean-triple-boundary.md) and
 [the declaration inventory](lean-triple-boundary-inventory.json). The axes and
 origin are included; the upper support margin remains strictly positive.
-Inherited constants remain existential. Signed-sector assembly and the
-ordinate-only signed error are separate remaining work.
+Inherited constants remain existential. Signed-sector assembly is completed
+by the following milestone; the ordinate-only signed error remains open.
+
+
+## Signed frequency sectors and smooth tests
+
+The completed signed-sector suite checks 84 public statements across 19 modules:
+positive-base convergence, reciprocal reflection, all six sectors and null seams,
+the sharp hexagonal majorant, the exact full-zero identity, complex test
+pullbacks, entire/Schwartz inversion and the uniform normalized asymptotic.
+The final origin and line coefficients are 3/2, with parameter measure dr on
+all three lines and no additional half weights.
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-signed-sectors-only
+```
+
+See [the certified scope and manifest](lean-triple-signed-sectors.md) and
+[the declaration inventory](lean-triple-signed-sectors-inventory.json).
+The support stays strictly inside the hexagon. Constants remain existential;
+the horizontal kernel and complex test arguments are retained. This completes
+the mathematical signed-sector passage, with historical effectiveness claims
+kept separate, and does not resolve the ordinate-only signed error.

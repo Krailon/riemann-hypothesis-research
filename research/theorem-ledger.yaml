@@ -5173,3 +5173,74 @@ claims:
       imported_inputs: "Previously checked full-zero master identity, prime and remainder budgets, mixed diagonal, smoothing and resonance estimates; mathlib measure changes, Bochner integration, mean-value inequality, Fourier duality and uniform convergence. No new zero-location or prime-correlation premise."
       constants_scope: "Uniform constants precede smoothing, height, margin and test; they remain existential through earlier analytic inputs. Historical numerical-effectiveness assertions are not promoted."
       baseline_audit_coverage: "The mathematical content of TRIPLE-BOUNDARY-ESTIMATES-001 and TRIPLE-QUADRANT-LIMIT-001 is checked, apart from the historical numerical-effectiveness qualification. Historical statuses and RH-audit source scope remain unchanged. Signed sectors, outer support boundary, kernel removal, ordinate-only statistics and new horizontal consequences are not claimed; the signed complex-argument error remains open."
+
+  - id: MASTER-SIGNED-SECTORS-FORMAL-001
+    title: Signed-frequency sectors and full smooth-test three-level passage in Lean
+    kind: theorem
+    statement: |
+      The actual full-zero series S(x,t) converges absolutely locally
+      uniformly for x>0,t real, with S(1/x,t)=conjugate(S(x,t)) under
+      multiplicity-preserving horizontal reflection. The smoothed master
+      identity and independent occurrence cutoffs hold for every X,Y>0.
+      For B=T/(2pi), Ctilde_T(xi,eta)=C_3,T(B^xi,B^eta) is invariant
+      under R(xi,eta)=(eta,-xi-eta) and coordinate swap; simultaneous
+      negation conjugates it. The six archived maps plus/minus R^k
+      preserve Lebesgue measure, have determinant one, cover the plane
+      with disjoint interiors, and overlap only on the three null seams.
+      The seam integrand and observable are real. On each quadrant image,
+      h=max(abs(xi),abs(eta),abs(xi+eta))=u+v; globally h is half the sum
+      of the three absolute frequencies. Collecting the anchor displacement
+      gives the sharp coefficient bound B^h. For integrable phi supported
+      in h<=1-kappa, kappa>0, the integrated absolute zero-series majorant
+      before normalization is A||phi||_1 B^(1-kappa)log(2T+2)^3, with A
+      selected before smoothing, test, margin and height.
+      Let omega be a TripleBudgetWeight and phi:R2->C smooth and compactly
+      supported in h<1. For T>2pi, q=log T and b=log B, the exact statistic
+      A_T[phi]=q^(-1)integral_R2 phi Ctilde_T equals
+      (8/q)sum_{i1,i2,i3}K_T(i2,i3,i1)F(z21,z31), where F is the entire
+      inverse Fourier transform of phi and z_j1=L_T((gamma_j-gamma_1)
+      -i(delta_j+delta_1)), L_T=b/(2pi). Its real restriction is Schwartz
+      with Fourier transform phi in the project's negative-forward,
+      positive-inverse 2pi convention. All actual zero occurrences,
+      multiplicities, both ordinate signs and partial diagonals are
+      included. Absolute convergence justifies the integral interchange
+      and independent occurrence cutoffs at fixed parameters.
+      Sector tests are phi composed with the three positive maps and
+      conjugate(phi composed with the three negative maps). Each quadrant
+      N1 seminorm is at most twice the global C1 seminorm, defined as the
+      sum of suprema of phi and its two first partial derivatives. The
+      exact sector decomposition has limiting functional
+      A[phi]=(3/2)phi(0,0)+(3/2)integral_R |r|
+      (phi(r,0)+phi(0,r)+phi(r,-r)) dr. Six origin masses of 1/4 and
+      two incident sectors per ray, each with coefficient 3/4, give these
+      coefficients without additional half weights. The diagonal uses
+      parameter measure dr, not arclength.
+      One absolute C>0 chosen before omega,W,phi,T,kappa gives
+      |A_T[phi]-A[phi]|<=C||phi||_C1(1+W+||omega'||_1)
+      (1/b+B^(-kappa)log(2T+2)^3), for T>=2pi exp(1), W>=0 bounding
+      omega, and support in h<=1-kappa with kappa>0. Therefore A_T tends
+      to A for fixed test and smoothing. Every compact subset of h<1
+      admits a margin 0<kappa<1. All inherited analytic constants remain
+      existential. The horizontal kernel and complex test arguments are
+      retained; no ordinate-only conclusion or outer-boundary extension
+      is asserted.
+    status: formalized
+    assumptions: [UNCONDITIONAL, "SUPPORT(compact subset of max(abs(xi),abs(eta),abs(xi+eta))<1)"]
+    dependencies: [MASTER-BOUNDARY-FORMAL-001, MASTER-TEST-FUNCTION-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/SignedAsymptotic.lean
+      label: HigherCorrelations.signed_compact_limit
+      companion_declarations: [signed_uniform_bound, signed_zero_identity, signed_sector_decomposition, signed_limit_sector_sum, signed_integralNorm_uniform, pairZeroSeries_reciprocal]
+      inventory: research/lean-triple-signed-sectors-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 9bb0d8a231766ad5f7448cf57f9770ffc515114c31df691f16dcf08c8331fd21
+    limit_order: "Fix height, smoothing, test and support margin. Prove absolute frequency integral norms, interchange the full-zero series and integral, and remove independent occurrence cutoffs. Only then let height grow with smoothing, test and margin fixed. Reciprocal reindexing and sector changes occur under absolute convergence at fixed parameters."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 84 public declarations in 19 modules are compared against definition-only expected statements. Six unfinished-proof controls cover reflection, interchange, support, conjugation, normalization and the limit. The focused suite also runs the combined project build, complete axiom report, coverage, harness and pair/triple regressions."
+      imported_inputs: "Checked actual occurrence reflection, counting and kernel majorants, positive-quadrant asymptotic and Fourier regularity; mathlib absolute series convergence, Bochner integration, measure-preserving changes and finite sums. No new zero-location or prime-correlation assumption."
+      constants_scope: "Uniform constants are selected before smoothing, height, margin and test. They remain existential through previously checked analytic inputs; historical numerical-effectiveness claims are not promoted."
+      baseline_audit_coverage: "The signed-sector and signed-test mathematical statements are checked with the historical numerical-effectiveness qualification kept separate. Historical ledger statuses and RH-audit source scope remain unchanged. Outer support boundary, kernel removal, ordinate-only statistics, GUE identification and horizontal extraction are not claimed; the signed complex-argument error remains open."

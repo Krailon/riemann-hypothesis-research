@@ -1,0 +1,13 @@
+{
+  "challenge_module": "VerificationChallenges.TripleSigned",
+  "solution_module": "VerificationChallenges.TripleSignedUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.signed_sector_decomposition"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -93,12 +93,19 @@ class LeanReproductionTests(unittest.TestCase):
                             ('--triple-retained-only', 'triple-retained-comparator'),
                             ('--triple-interior-vanishing-only', 'triple-interior-vanishing-comparator'),
                             ('--triple-test-function-only', 'triple-test-function-comparator'),
-                            ('--triple-boundary-only', 'triple-boundary-comparator')]:
+                            ('--triple-boundary-only', 'triple-boundary-comparator'),
+                            ('--triple-signed-sectors-only', 'triple-signed-sectors-comparator')]:
             with self.subTest(flag=flag):
                 code, calls, report, checked = self.run_workflow(['--reuse-dependencies', flag])
                 self.assertEqual(code, 0)
                 self.assertEqual(checked, 1)
                 self.assertIn(suite, calls)
+                if flag == '--triple-signed-sectors-only':
+                    for control in ['reflection', 'interchange', 'support', 'conjugation', 'normalization', 'limit']:
+                        self.assertIn('triple-signed-sectors-' + control + '-unfinished-rejected', calls)
+                    self.assertIn('triple-signed-sectors-regressions', calls)
+                else:
+                    self.assertNotIn('triple-signed-sectors-comparator', calls)
                 if flag == '--triple-boundary-only':
                     for control in ['interchange', 'budget', 'origin', 'axis', 'limit', 'distribution']:
                         self.assertIn('triple-boundary-' + control + '-unfinished-rejected', calls)
@@ -160,15 +167,15 @@ class LeanReproductionTests(unittest.TestCase):
                     self.assertNotIn('pair-fourier-comparator', calls)
                 else:
                     self.assertNotIn('triple-master-comparator', calls)
-                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only']:
+                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only']:
                     self.assertNotIn('pair-asymptotic-comparator', calls)
                 else:
                     self.assertNotIn('pair-fourier-comparator', calls)
-                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only']:
+                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only']:
                     self.assertNotIn('pair-zero-comparison-comparator', calls)
                 self.assertNotIn('resolve', calls)
                 self.assertNotIn('upstream-comparator', calls)
-                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only']:
+                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only']:
                     self.assertNotIn('pair-zero-bounds-comparator', calls)
                     self.assertNotIn('pair-zero-comparator', calls)
                     self.assertNotIn('zeta23-counting-comparator', calls)

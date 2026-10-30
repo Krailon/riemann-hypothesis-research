@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "9fa4c91d511a683bb861c4804bb7e8d10f977762c0a92dc2c6865830ea96835d",
+    "research/theorem-ledger.yaml": "8bbe17880363861960fa5bb0888f4ac7e7289df631fd97fb1008c44bc45da0dc",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "908e3553e05106098f8ec4de12f1d9e327fe80a5260aa07e862806b6419c9eb4"
+    "research/pair-rh-audit.json": "da0c73b8a4af3eb2b24f69fb6bfafcee872f686d3d4abeea1dad3f77faab59dc"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4646,5 +4646,14 @@
     ],
     "report": "research/lean-triple-boundary.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the uniform integrated quadrant budget, both axis and origin local profiles, exact full-zero identity, entire and tempered Fourier passage, and normalized quadrant limit. The mathematical content of TRIPLE-BOUNDARY-ESTIMATES-001 and TRIPLE-QUADRANT-LIMIT-001 is checked apart from historical numerical effectiveness: inherited constants remain existential. Existing statuses, source passages, assumptions, dependencies and RH-audit scope are unchanged. Signed-sector and ordinate-only conclusions are not asserted; the signed complex-argument error remains open."
+  },
+  "ledger_triple_signed_sectors_review": {
+    "reviewed_on": "2026-10-30",
+    "previous_ledger_sha256": "9fa4c91d511a683bb861c4804bb7e8d10f977762c0a92dc2c6865830ea96835d",
+    "added_claim_ids": [
+      "MASTER-SIGNED-SECTORS-FORMAL-001"
+    ],
+    "report": "research/lean-triple-signed-sectors.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records positive-base convergence, reciprocal reflection, the six signed sectors, absolute frequency interchange, the exact full-zero smooth-test identity and the uniform hexagonal-support asymptotic. Historical numerical-effectiveness qualifications remain separate: inherited constants are existential. Existing historical statements, statuses, source passages and RH-audit scope are unchanged. The horizontal kernel and complex arguments remain; the ordinate-only signed error is still open."
   }
 }

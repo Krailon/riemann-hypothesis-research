@@ -1,0 +1,447 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "SignedSeriesDefinitions",
+    "SignedSeriesConvergence",
+    "SignedSeriesReflection",
+    "SignedMasterBounds",
+    "SignedMasterIdentity",
+    "SignedSectorDefinitions",
+    "SignedSectorGeometry",
+    "SignedFrequencySymmetry",
+    "SignedCoefficientBound",
+    "SignedIntegration",
+    "SignedIdentity",
+    "SignedSectorMeasure",
+    "SignedTestDefinitions",
+    "SignedTestRegularity",
+    "SignedSeminorm",
+    "SignedTestAssembly",
+    "SignedTrace",
+    "SignedAsymptotic",
+    "TripleSignedAssembly"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_positive_bound",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_positive_summable",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSeries_log_bound",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSeries_rectangle_majorant",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSeries_uniform_rectangle",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSeries_norm_uniform_rectangle",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSeriesRectangle_nhds",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSeries_locallyUniform",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSeries_norm_locallyUniform",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_positive_continuous",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSeries_continuous",
+      "source": "lean/HigherCorrelations/SignedSeriesConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroTerm_reciprocal",
+      "source": "lean/HigherCorrelations/SignedSeriesReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroSeries_reciprocal",
+      "source": "lean/HigherCorrelations/SignedSeriesReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroSeries_unit_real",
+      "source": "lean/HigherCorrelations/SignedSeriesReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterCoefficient_positive_bound",
+      "source": "lean/HigherCorrelations/SignedMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_positive_unit",
+      "source": "lean/HigherCorrelations/SignedMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterTerm_positive_integrable",
+      "source": "lean/HigherCorrelations/SignedMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_positive_integralNorm_summable",
+      "source": "lean/HigherCorrelations/SignedMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_positive_pointwise_summable",
+      "source": "lean/HigherCorrelations/SignedMasterBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_positive_product_eq",
+      "source": "lean/HigherCorrelations/SignedMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_positive_sum_integral",
+      "source": "lean/HigherCorrelations/SignedMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_positive_kernel_identity",
+      "source": "lean/HigherCorrelations/SignedMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_positive_kernel_summable",
+      "source": "lean/HigherCorrelations/SignedMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMaster_positive_kernel_cutoff",
+      "source": "lean/HigherCorrelations/SignedMasterIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSectorEquiv_apply",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedRotation_order_three",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_determinant",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_image",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_cover",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_overlap",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedGauge_continuous",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedGauge_nonneg",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedGauge_half_sum",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedGauge_sector",
+      "source": "lean/HigherCorrelations/SignedSectorGeometry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.pairZeroSeries_frequency_neg",
+      "source": "lean/HigherCorrelations/SignedFrequencySymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterProduct_three_frequencies",
+      "source": "lean/HigherCorrelations/SignedFrequencySymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedFrequency_rotation",
+      "source": "lean/HigherCorrelations/SignedFrequencySymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedFrequency_neg",
+      "source": "lean/HigherCorrelations/SignedFrequencySymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedFrequency_swap",
+      "source": "lean/HigherCorrelations/SignedFrequencySymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedFrequency_sector",
+      "source": "lean/HigherCorrelations/SignedFrequencySymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedFrequency_seam_real",
+      "source": "lean/HigherCorrelations/SignedFrequencySymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterProduct_signed_seam_real",
+      "source": "lean/HigherCorrelations/SignedFrequencySymmetry.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_horizontal_exponent_bound",
+      "source": "lean/HigherCorrelations/SignedCoefficientBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_coefficient_bound",
+      "source": "lean/HigherCorrelations/SignedCoefficientBound.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedFrequencyTerm_bound",
+      "source": "lean/HigherCorrelations/SignedIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedFrequencyTerm_integrable",
+      "source": "lean/HigherCorrelations/SignedIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedFrequencyTerm_integralNorm_bound",
+      "source": "lean/HigherCorrelations/SignedIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_integralNorm_summable",
+      "source": "lean/HigherCorrelations/SignedIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_integralNorm_uniform",
+      "source": "lean/HigherCorrelations/SignedIntegration.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_frequency_sum",
+      "source": "lean/HigherCorrelations/SignedIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_identity",
+      "source": "lean/HigherCorrelations/SignedIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_zero_sum_absolute",
+      "source": "lean/HigherCorrelations/SignedIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_frequency_integrable",
+      "source": "lean/HigherCorrelations/SignedIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_measurePreserving",
+      "source": "lean/HigherCorrelations/SignedSectorMeasure.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_measurable",
+      "source": "lean/HigherCorrelations/SignedSectorMeasure.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_integral",
+      "source": "lean/HigherCorrelations/SignedSectorMeasure.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_seams_null",
+      "source": "lean/HigherCorrelations/SignedSectorMeasure.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_partition_integral",
+      "source": "lean/HigherCorrelations/SignedSectorMeasure.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_disjoint_interiors",
+      "source": "lean/HigherCorrelations/SignedSectorMeasure.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedConjugate_involutive",
+      "source": "lean/HigherCorrelations/SignedTestRegularity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedConjugate_norm",
+      "source": "lean/HigherCorrelations/SignedTestRegularity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedPullback_smooth",
+      "source": "lean/HigherCorrelations/SignedTestRegularity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedPullback_compact",
+      "source": "lean/HigherCorrelations/SignedTestRegularity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedPullback_support",
+      "source": "lean/HigherCorrelations/SignedTestRegularity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_compact_margin",
+      "source": "lean/HigherCorrelations/SignedTestRegularity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSup_bounds",
+      "source": "lean/HigherCorrelations/SignedSeminorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedPullback_fderiv_norm",
+      "source": "lean/HigherCorrelations/SignedSeminorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedSector_coordinate_norm",
+      "source": "lean/HigherCorrelations/SignedSeminorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedPullback_N1_bound",
+      "source": "lean/HigherCorrelations/SignedSeminorm.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedConjugate_integral",
+      "source": "lean/HigherCorrelations/SignedTestAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedConjugate_div_real",
+      "source": "lean/HigherCorrelations/SignedTestAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_normalized_identity",
+      "source": "lean/HigherCorrelations/SignedTestAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_zero_identity",
+      "source": "lean/HigherCorrelations/SignedTestAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_independent_cutoff",
+      "source": "lean/HigherCorrelations/SignedTestAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_sector_decomposition",
+      "source": "lean/HigherCorrelations/SignedTestAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_trace_integrable",
+      "source": "lean/HigherCorrelations/SignedTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_trace_split",
+      "source": "lean/HigherCorrelations/SignedTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_sector_limit",
+      "source": "lean/HigherCorrelations/SignedTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_limit_sector_sum",
+      "source": "lean/HigherCorrelations/SignedTrace.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_uniform_bound",
+      "source": "lean/HigherCorrelations/SignedAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_fixed_margin_limit",
+      "source": "lean/HigherCorrelations/SignedAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_compact_limit",
+      "source": "lean/HigherCorrelations/SignedAsymptotic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_test_entire",
+      "source": "lean/HigherCorrelations/TripleSignedAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signed_test_schwartz_inversion",
+      "source": "lean/HigherCorrelations/TripleSignedAssembly.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}
