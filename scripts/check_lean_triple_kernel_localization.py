@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the exact kernel-localization passage's verification boundary; no analytic proof by Python."""
+"""Validate the fixed-tuple kernel-localization passage's verification boundary; no analytic proof by Python."""
 import copy
 import json
 from pathlib import Path
@@ -7,7 +7,8 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-CONTROLS = {'translation': 'tripleAnchoredProfile_denominators', 'decomposition': 'tripleMasterKernel_localization'}
+CONTROLS = {'translation': 'tripleAnchoredProfile_denominators', 'decomposition': 'tripleMasterKernel_localization',
+            'sharp': 'scalarKernel_half_strip_bound', 'bound': 'tripleKernelLocalizationError_bound'}
 
 
 def read_json(path):

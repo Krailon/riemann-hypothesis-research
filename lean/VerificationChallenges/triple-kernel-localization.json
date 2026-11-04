@@ -14,8 +14,22 @@
     "HigherCorrelations.tripleMasterKernel_anchored_integral",
     "HigherCorrelations.tripleMasterKernel_localization",
     "HigherCorrelations.tripleTestKernel_localization",
+    "HigherCorrelations.scalar_denominator_half_strip",
+    "HigherCorrelations.scalarKernel_half_strip_bound",
+    "HigherCorrelations.localization_pair_majorant_integrable",
+    "HigherCorrelations.localization_pair_majorant_integral",
+    "HigherCorrelations.localization_anchor_moment_bound",
+    "HigherCorrelations.profileIntegrand_localization_moment",
+    "HigherCorrelations.localization_weight_difference",
+    "HigherCorrelations.tripleKernelLocalizationIntegrand_bound",
+    "HigherCorrelations.tripleKernelLocalizationIntegrand_integrable_lipschitz",
+    "HigherCorrelations.tripleKernelLocalizationError_bound",
+    "HigherCorrelations.tripleKernelLocalizationError_bound_deriv",
     "HigherCorrelations.tripleKernelLocalizationError_zero",
-    "HigherCorrelations.tripleAnchoredProfile_repeated"
+    "HigherCorrelations.tripleAnchoredProfile_repeated",
+    "HigherCorrelations.tripleMasterKernel_localization_bound",
+    "HigherCorrelations.tripleTestKernel_localization_bound",
+    "HigherCorrelations.tripleKernelLocalizationError_equal_ordinates"
   ],
   "permitted_axioms": [
     "propext",

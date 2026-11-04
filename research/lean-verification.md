@@ -402,3 +402,24 @@ See [the certified scope and manifest](lean-triple-kernel-localization.md) and
 TRIPLE-KERNEL-LOCALIZATION-001 remains partially formalized. Its quantitative
 tuplewise estimate, separate summed near/far bounds, profile correlation transfer
 and height limit are subsequent stages; no ordinate-only conclusion is added.
+
+### Quantitative tuplewise kernel localization
+
+The localization suite now includes the sharp half-strip scalar bound, the
+exact two-center majorant integral through coincident centers, Lipschitz
+error-integral convergence and the uniform 64pi/27 tuplewise bound. A derivative
+bound supplies the manuscript smoothing constant. Master and test orderings
+and equal-ordinate tuples are covered. This extends the fixed-tuple stage;
+summed near/far estimates and profile transfer remain separate.
+
+The focused command remains:
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-kernel-localization-only
+```
+
+The extended suite checks 28 statements and four unfinished-proof rejection
+controls, then the combined project build, complete axiom report, coverage,
+harness and pair/triple regressions. See
+[the localization record](lean-triple-kernel-localization.md) for scope and
+certificates.

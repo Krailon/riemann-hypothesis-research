@@ -5291,3 +5291,49 @@ claims:
       imported_inputs: "Checked smoothed master-kernel integrability, actual-occurrence displacement bounds and integral-profile evaluation, including center collisions; mathlib translation invariance and Bochner integral linearity. No new zero-location or prime-correlation premise."
       constants_scope: "The identity retains the exact outside factor 1/T. No estimated analytic constant is introduced or certified; the historical quantitative estimates remain outside this milestone."
       baseline_audit_coverage: "Only the exact-decomposition and fixed-tuple integrability part of TRIPLE-KERNEL-LOCALIZATION-001 is formalized. Its historical status and the existing RH-audit scope are unchanged. The tuplewise error constant, near/far decomposition, summed error bound, explicit-profile correlation transfer and height limit remain pending; the ordinate-only signed error remains open."
+
+  - id: MASTER-KERNEL-LOCALIZATION-BOUND-FORMAL-001
+    title: Uniform quantitative tuplewise triple-kernel localization with explicit constant
+    kind: theorem
+    statement: |
+      For every real weight omega with global Lipschitz constant M>=0,
+      T>0 and arbitrary ordered actual zero-occurrence triple v, the explicit
+      localization error integral is absolutely integrable and
+      ||E_kernel(v)|| <= 64 pi M / (27 T^2 (4+(gamma(v0)-gamma(v1))^2)).
+      No compact-support hypothesis is needed for this error-integral bound.
+      In particular it holds for differentiable omega with |deriv omega(x)|<=M
+      for every real x; for compact smooth omega one may take M=Wprime_inf.
+      With support omega contained in [1,2], combine the exact decomposition
+      with this estimate to bound ||K_T(v)-omega(gamma(v2)/T)J(a,b;delta)/T||
+      by the same expression. The test-order permutation sends v to
+      (v1,v2,v0), so its denominator uses 4+(gamma(v1)-gamma(v2))^2 and
+      its frozen weight is omega(gamma(v0)/T)/T. No factor eight is introduced.
+      The scalar estimate ||scalarKernel(x,e)||<=4/(3(1+x^2)) holds on
+      the closed strip |e|<=1/2. The real two-center majorant has integral
+      2 pi/(4+(a-b)^2), including a=b. The anchor moment inequality
+      |u|/(1+u^2)<=1/2 gives the coefficient 64pi/27 after the outside 1/T.
+      Equal non-anchor ordinates give ||E_kernel||<=16 pi M/(27 T^2).
+      Both ordinate signs, all multiplicities, repeated occurrences and
+      distinct complex zeros at equal ordinates are included. No sum over
+      all triples, summed near/far bound, correlation transfer or height
+      limit is asserted. Horizontal displacements are retained throughout.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-KERNEL-LOCALIZATION-IDENTITY-FORMAL-001, PAIR-ZERO-DECOMPOSITION-FORMAL-001, ACTUAL-INTEGRAL-PROFILE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/KernelLocalizationBounds.lean
+      label: HigherCorrelations.tripleKernelLocalizationError_bound
+      companion_declarations: [scalarKernel_half_strip_bound, localization_pair_majorant_integral, profileIntegrand_localization_moment, tripleKernelLocalizationIntegrand_integrable_lipschitz, tripleKernelLocalizationError_bound_deriv, tripleMasterKernel_localization_bound, tripleTestKernel_localization_bound, tripleKernelLocalizationError_equal_ordinates]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: b297cd3415f733367b4b5edf5ead3d7f7066bd8e89dd90b82ee8bdecf54ed966
+    limit_order: "All parameters and the occurrence tuple are fixed. Prove integrability of the two-center majorant and the Lipschitz error integrand before integrating its pointwise bound. The checked pair-kernel evaluation includes coincident centers. No infinite zero-sum interchange, cutoff removal or height limit is used."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The expanded localization suite compares all 28 public declarations in four modules against definition-only expected statements. Four unfinished-proof controls cover translation, exact decomposition, the sharper scalar bound and the quantitative tuplewise estimate. Combined build, complete axiom report, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "Checked actual-occurrence displacement bounds, the exact anchored decomposition and the pair-kernel integral including coincident centers; mathlib mean-value, translation and Bochner integral inequalities. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "The tuplewise coefficient 64pi/27 is explicit and effective, uniform in all ordinates, actual horizontal displacements and positive heights, with explicit dependence on the supplied derivative/Lipschitz bound M. No sharpness claim or effectiveness claim for summed estimates is made."
+      baseline_audit_coverage: "TRIPLE-KERNEL-LOCALIZATION-001 retains partial coverage and its historical status. Its exact decomposition and quantitative tuplewise estimate are now checked, but the separate summed near/far estimates, profile transfer and height limit remain unformalized. The existing historical RH-audit scope is unchanged and the ordinate-only signed error remains open."

@@ -1,0 +1,13 @@
+{
+  "challenge_module": "VerificationChallenges.TripleKernelLocalization",
+  "solution_module": "VerificationChallenges.TripleKernelLocalizationUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.scalarKernel_half_strip_bound"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -3,6 +3,7 @@
   "modules": [
     "KernelLocalizationDefinitions",
     "KernelLocalizationIdentity",
+    "KernelLocalizationBounds",
     "TripleKernelLocalizationAssembly"
   ],
   "components": [
@@ -67,12 +68,82 @@
       "comparator_checked": true
     },
     {
+      "declaration": "HigherCorrelations.scalar_denominator_half_strip",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.scalarKernel_half_strip_bound",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_pair_majorant_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_pair_majorant_integral",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_anchor_moment_bound",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileIntegrand_localization_moment",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_weight_difference",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationIntegrand_bound",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationIntegrand_integrable_lipschitz",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_bound",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_bound_deriv",
+      "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
       "declaration": "HigherCorrelations.tripleKernelLocalizationError_zero",
       "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
       "comparator_checked": true
     },
     {
       "declaration": "HigherCorrelations.tripleAnchoredProfile_repeated",
+      "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_localization_bound",
+      "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleTestKernel_localization_bound",
+      "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_equal_ordinates",
       "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
       "comparator_checked": true
     }

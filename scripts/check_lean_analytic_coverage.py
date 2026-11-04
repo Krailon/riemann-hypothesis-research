@@ -21,8 +21,8 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'TRIPLE-LOG-GAP-001', 'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
 PARTIAL = {
-    'TRIPLE-KERNEL-LOCALIZATION-001': (['tripleAnchoredProfile_denominators', 'tripleMasterKernelIntegrand_translate', 'tripleAnchoredProfile_integrable', 'tripleAnchoredProfile_integral', 'tripleAnchoredProfile_test_order', 'tripleKernel_weighted_profile_integrable', 'tripleKernel_frozen_profile_integrable', 'tripleKernelLocalizationIntegrand_integrable', 'tripleKernelLocalizationError_absolutely_integrable', 'tripleMasterKernel_anchored_integral', 'tripleMasterKernel_localization', 'tripleTestKernel_localization'], [
-        'The exact anchored decomposition and absolute error-integral convergence are checked at fixed positive height. The quantitative tuplewise bound, disjoint near/far estimates, summed absolute error bound, explicit-profile correlation transfer and its height limit remain unformalized.']),
+    'TRIPLE-KERNEL-LOCALIZATION-001': (['tripleAnchoredProfile_denominators', 'tripleMasterKernelIntegrand_translate', 'tripleAnchoredProfile_integrable', 'tripleAnchoredProfile_integral', 'tripleAnchoredProfile_test_order', 'tripleKernel_weighted_profile_integrable', 'tripleKernel_frozen_profile_integrable', 'tripleKernelLocalizationIntegrand_integrable', 'tripleKernelLocalizationError_absolutely_integrable', 'tripleMasterKernel_anchored_integral', 'tripleMasterKernel_localization', 'tripleTestKernel_localization', 'scalar_denominator_half_strip', 'scalarKernel_half_strip_bound', 'localization_pair_majorant_integrable', 'localization_pair_majorant_integral', 'localization_anchor_moment_bound', 'profileIntegrand_localization_moment', 'localization_weight_difference', 'tripleKernelLocalizationIntegrand_bound', 'tripleKernelLocalizationIntegrand_integrable_lipschitz', 'tripleKernelLocalizationError_bound', 'tripleKernelLocalizationError_bound_deriv', 'tripleMasterKernel_localization_bound', 'tripleTestKernel_localization_bound', 'tripleKernelLocalizationError_equal_ordinates'], [
+        'The exact anchored decomposition, absolute error-integral convergence and quantitative tuplewise bound with explicit constant 64pi/27 are checked at fixed positive height, including equal ordinates. The disjoint near/far estimates, summed absolute error bound, explicit-profile correlation transfer and its height limit remain unformalized.']),
     'TRIPLE-SIGNED-SECTORS-001': (['signedSeries_norm_locallyUniform', 'signedSeries_locallyUniform', 'pairZeroSeries_reciprocal', 'tripleMaster_positive_kernel_identity', 'tripleMaster_positive_kernel_summable', 'tripleMaster_positive_kernel_cutoff', 'signedSector_determinant', 'signedSector_cover', 'signedSector_overlap', 'signedSector_disjoint_interiors', 'signedSector_measurePreserving', 'signedSector_seams_null', 'signedGauge_half_sum', 'signedGauge_sector', 'signedFrequency_sector', 'signedFrequency_swap', 'signedFrequency_seam_real', 'tripleMasterProduct_signed_seam_real', 'signed_coefficient_bound', 'signed_integralNorm_uniform'], [
         'Positive-base convergence, reciprocal reflection, all six sectors and seam identities, the full master identity and sharp integrated majorant are checked. The historical numerical-effectiveness qualification remains separate: inherited analytic constants are existential.']),
     'TRIPLE-SIGNED-TEST-FUNCTION-001': (['signed_compact_margin', 'signed_test_entire', 'signed_test_schwartz_inversion', 'signed_identity', 'signed_zero_sum_absolute', 'signed_frequency_integrable', 'signed_normalized_identity', 'signed_zero_identity', 'signed_independent_cutoff', 'signed_sector_decomposition', 'signedPullback_N1_bound', 'signed_limit_sector_sum', 'signed_uniform_bound', 'signed_fixed_margin_limit', 'signed_compact_limit'], [
@@ -974,7 +974,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The exact kernel-localization identity and absolute error-integral convergence are checked. Next prove the quantitative tuplewise localization bound, followed by the separate summed near/far bounds and profile transfer. Historical effective constants and the signed complex-argument ordinate-only error remain separate.')
+        next_step='The exact kernel-localization identity, absolute error-integral convergence and quantitative tuplewise bound with explicit constant 64pi/27 are checked. Next prove the separate summed near/far bounds, then profile transfer. Remaining historical effective constants and the signed complex-argument ordinate-only error remain separate.')
 
 
 def validate(record):
@@ -990,6 +990,8 @@ class CoverageTests(unittest.TestCase):
         self.assertEqual(node['coverage'], 'partial')
         self.assertFalse(node['whole_claim_formalized'])
         self.assertIn('HigherCorrelations.tripleMasterKernel_localization', node['components'])
+        self.assertIn('HigherCorrelations.tripleKernelLocalizationError_bound', node['components'])
+        self.assertIn('HigherCorrelations.tripleTestKernel_localization_bound', node['components'])
         self.assertIn('HigherCorrelations.tripleKernelLocalizationError_absolutely_integrable', node['components'])
         self.assertTrue(any('summed absolute error bound' in gap and 'remain unformalized' in gap
                             for gap in node['remaining_obligations']))

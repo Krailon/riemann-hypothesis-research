@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "7b1b9daedcffa988f6b6b46c3ccc1fcc6abb6fe196fbca464d822696f48e5b9a",
+    "research/theorem-ledger.yaml": "743306dfa0e9a458fba94b0937c245b644a399626809c9a1986fbb68ecdd7315",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "d58faeffde60c6804288b1cdfddd12f6a6ac52c4e060213b30105069d038608c"
+    "research/pair-rh-audit.json": "59a19b92d981e069108eb65fcd4642e65a5bb1dae70d8be7693b3f8cd60a2432"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4664,5 +4664,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records only exact anchored kernel localization and fixed-tuple absolute error-integral convergence, with the correct 1/T normalization and test-order permutation. Historical statements, statuses and RH-audit scope are unchanged. Quantitative tuplewise and summed errors, near/far estimates, profile correlation transfer and its height limit remain pending; the ordinate-only signed error is still open."
+  },
+  "ledger_kernel_localization_bound_review": {
+    "reviewed_on": "2026-11-04",
+    "previous_ledger_sha256": "7b1b9daedcffa988f6b6b46c3ccc1fcc6abb6fe196fbca464d822696f48e5b9a",
+    "added_claim_ids": [
+      "MASTER-KERNEL-LOCALIZATION-BOUND-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the uniform quantitative tuplewise kernel error with explicit constant 64pi/27, Lipschitz error-integral convergence, derivative-bound and master/test-order corollaries including equal ordinates. Historical statements, statuses and RH-audit scope are unchanged. Summed near/far estimates, correlation transfer and the height limit remain pending; the ordinate-only signed error remains open."
   }
 }

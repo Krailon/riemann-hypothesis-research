@@ -1917,3 +1917,31 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleTestKernel_localization
 #print axioms HigherCorrelations.tripleKernelLocalizationError_zero
 #print axioms HigherCorrelations.tripleAnchoredProfile_repeated
+
+#print axioms HigherCorrelations.scalar_denominator_half_strip
+
+#print axioms HigherCorrelations.scalarKernel_half_strip_bound
+
+#print axioms HigherCorrelations.localization_pair_majorant_integrable
+
+#print axioms HigherCorrelations.localization_pair_majorant_integral
+
+#print axioms HigherCorrelations.localization_anchor_moment_bound
+
+#print axioms HigherCorrelations.profileIntegrand_localization_moment
+
+#print axioms HigherCorrelations.localization_weight_difference
+
+#print axioms HigherCorrelations.tripleKernelLocalizationIntegrand_bound
+
+#print axioms HigherCorrelations.tripleKernelLocalizationIntegrand_integrable_lipschitz
+
+#print axioms HigherCorrelations.tripleKernelLocalizationError_bound
+
+#print axioms HigherCorrelations.tripleKernelLocalizationError_bound_deriv
+
+#print axioms HigherCorrelations.tripleMasterKernel_localization_bound
+
+#print axioms HigherCorrelations.tripleTestKernel_localization_bound
+
+#print axioms HigherCorrelations.tripleKernelLocalizationError_equal_ordinates
