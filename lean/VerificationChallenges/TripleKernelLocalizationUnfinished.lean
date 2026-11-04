@@ -1,8 +1,9 @@
 import HigherCorrelations.KernelLocalizationDefinitions
+import HigherCorrelations.KernelLocalizationSumDefinitions
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.Calculus.MeanValue
 
-/-! UNCONDITIONAL independent expected statements for exact and quantitative fixed-tuple localization.
+/-! UNCONDITIONAL independent expected statements for exact, tuplewise and summed localization.
 Intentional holes are confined to verification challenges. -/
 namespace HigherCorrelations
 noncomputable section
@@ -106,6 +107,213 @@ theorem tripleKernelLocalizationError_bound_deriv (ω : ℝ → ℝ) (M : ℝ)
     (T : ℝ) (hT : 0<T) (v : MasterTriple) :
     ‖tripleKernelLocalizationError ω T v‖ ≤
       64*Real.pi*M/(27*T^2*(4+(occurrenceOrdinate (v 0)-occurrenceOrdinate (v 1))^2)) := by sorry
+
+theorem localizationRegion_measurable (r : LocalizationRegion) (T c : ℝ) :
+    MeasurableSet (localizationRegionSet r T c) := by sorry
+
+theorem localizationRegion_disjoint (T c : ℝ) :
+    Disjoint (localizationRegionSet .near T c) (localizationRegionSet .farCenter T c) ∧
+    Disjoint (localizationRegionSet .near T c) (localizationRegionSet .farAnchor T c) ∧
+    Disjoint (localizationRegionSet .farCenter T c) (localizationRegionSet .farAnchor T c) := by sorry
+
+theorem localization_weight_zero (ω : ℝ → ℝ)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T t : ℝ) (hT : 0<T)
+    (ht : t ∉ Icc T (2*T)) : ω (t/T)=0 := by sorry
+
+theorem localizationErrorDensity_integrable (ω : ℝ → ℝ) (M : ℝ≥0)
+    (hω : LipschitzWith M ω) (T : ℝ) (hT : 0<T) (v : MasterTriple) :
+    Integrable (localizationErrorDensity ω T v) := by sorry
+
+theorem localizationRegionalDensity_integrable (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (M : ℝ≥0) (hω : LipschitzWith M ω) (T : ℝ) (hT : 0<T) (v : MasterTriple) :
+    Integrable (localizationRegionalDensity r ω T v) := by sorry
+
+theorem localizationErrorDensity_integral (ω : ℝ → ℝ) (T : ℝ) (v : MasterTriple) :
+    (∫ t : ℝ, localizationErrorDensity ω T v t) = tripleKernelLocalizationError ω T v := by sorry
+
+theorem localizationRegionalDensity_partition (ω : ℝ → ℝ)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 0<T)
+    (v : MasterTriple) (t : ℝ) :
+    localizationErrorDensity ω T v t =
+      localizationRegionalDensity .near ω T v t+
+      localizationRegionalDensity .farCenter ω T v t+
+      localizationRegionalDensity .farAnchor ω T v t := by sorry
+
+theorem localizationRegionalError_partition (ω : ℝ → ℝ) (M : ℝ≥0)
+    (hω : LipschitzWith M ω) (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (T : ℝ) (hT : 0<T) (v : MasterTriple) :
+    tripleKernelLocalizationError ω T v = localizationRegionalError .near ω T v+
+      localizationRegionalError .farCenter ω T v+localizationRegionalError .farAnchor ω T v := by sorry
+
+theorem localizationRegionalMass_nonneg (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (T : ℝ) (v : MasterTriple) : 0 ≤ localizationRegionalMass r ω T v := by sorry
+
+theorem localizationRegionalError_norm_le (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (T : ℝ) (v : MasterTriple) :
+    ‖localizationRegionalError r ω T v‖ ≤ localizationRegionalMass r ω T v := by sorry
+
+theorem localization_log_ge_one (T : ℝ) (hT : 3≤T) : 1≤Real.log (2*T+2) := by sorry
+
+theorem localization_local_log (T x : ℝ) (hT : 3≤T) (hx : |x|≤4*T+2) :
+    Real.log (|x|+2) ≤ 2*Real.log (2*T+2) := by sorry
+
+theorem localization_unit_shell_weight (u : ℝ) (n : ℕ) (hn : (n:ℝ)≤|u|) :
+    |u| *ordinateKernel u ≤ 2/((n:ℝ)+1) := by sorry
+
+theorem localization_near_moment_finite :
+    ∃ C : ℝ, 0<C ∧ ∀ T t : ℝ, 3≤T → t ∈ Icc 0 (3*T) →
+      ∀ s : Finset ZeroOccurrence, (∀ i ∈ s, |t-occurrenceOrdinate i|≤T) →
+      (∑ i ∈ s, |t-occurrenceOrdinate i| *ordinateKernel (t-occurrenceOrdinate i)) ≤
+        C*Real.log (2*T+2)^2 := by sorry
+
+theorem localizationTailProfile_nonneg (u : ℝ) : 0≤localizationTailProfile u := by sorry
+
+theorem localizationTailProfile_integrable : Integrable localizationTailProfile := by sorry
+
+theorem localization_tail_scaled_bound (T c t : ℝ) (hT : 3≤T)
+    (hc : c ∈ Icc T (2*T)) (ht : T< |t-c|) :
+    Real.log (|t|+2)^2*ordinateKernel (t-c) ≤
+      (4*Real.log (2*T+2)^2/T^2)*localizationTailProfile ((t-c)/T) := by sorry
+
+theorem localization_scaled_profile_integrable (T c : ℝ) (hT : 0<T) :
+    Integrable (fun t : ℝ => localizationTailProfile ((t-c)/T)) := by sorry
+
+theorem localization_scaled_profile_integral (T c : ℝ) (hT : 0<T) :
+    (∫ t : ℝ, localizationTailProfile ((t-c)/T)) = T*∫ u : ℝ, localizationTailProfile u := by sorry
+
+theorem localizationAnchorWeight_nonneg (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (T t : ℝ) (i : ZeroOccurrence) : 0≤localizationAnchorWeight r ω T t i := by sorry
+
+theorem localizationRegionalDensity_majorant (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (T : ℝ) (hT : 0<T) (v : MasterTriple) (t : ℝ) :
+    ‖localizationRegionalDensity r ω T v t‖ ≤ (64/(27*T)) *
+      (ordinateKernel (t-occurrenceOrdinate (v 0))*ordinateKernel (t-occurrenceOrdinate (v 1))*
+        localizationAnchorWeight r ω T t (v 2)) := by sorry
+
+theorem localization_finite_product (D : Finset MasterTriple) (s : Finset ZeroOccurrence)
+    (hs : ∀ v ∈ D, ∀ r, v r ∈ s) (t : ℝ) (f : ZeroOccurrence → ℝ) (hf : ∀ i, 0≤f i) :
+    (∑ v ∈ D, ordinateKernel (t-occurrenceOrdinate (v 0))*
+      ordinateKernel (t-occurrenceOrdinate (v 1))*f (v 2)) ≤
+      (zeroKernelSum t)^2*(∑ i ∈ s, f i) := by sorry
+
+theorem localization_finite_majorant (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (T : ℝ) (hT : 0<T) (D : Finset MasterTriple) (s : Finset ZeroOccurrence)
+    (hs : ∀ v ∈ D, ∀ r, v r ∈ s) (t : ℝ) :
+    (∑ v ∈ D, ‖localizationRegionalDensity r ω T v t‖) ≤
+      (64/(27*T))*(zeroKernelSum t)^2*(∑ i ∈ s, localizationAnchorWeight r ω T t i) := by sorry
+
+theorem localization_near_weight_zero (ω : ℝ → ℝ)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T t : ℝ) (hT : 0<T)
+    (ht : t ∉ Icc 0 (3*T)) (i : ZeroOccurrence) :
+    localizationAnchorWeight .near ω T t i=0 := by sorry
+
+theorem localization_near_anchor_sum :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M : ℝ≥0), LipschitzWith M ω →
+      ∀ T t : ℝ, 3≤T → t ∈ Icc 0 (3*T) → ∀ s : Finset ZeroOccurrence,
+      (∑ i ∈ s, localizationAnchorWeight .near ω T t i) ≤
+        C*(M:ℝ)*Real.log (2*T+2)^2/T := by sorry
+
+theorem localization_far_center_anchor_sum :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M : ℝ), 0≤M → (∀ x, |ω x|≤M) →
+      ∀ T t : ℝ, 3≤T → t ∈ Icc T (2*T) → ∀ s : Finset ZeroOccurrence,
+      (∑ i ∈ s, localizationAnchorWeight .farCenter ω T t i) ≤
+        C*M*Real.log (2*T+2)/T := by sorry
+
+theorem localization_Q_nonneg (t : ℝ) : 0≤zeroKernelSum t := by sorry
+
+theorem localization_Q_local :
+    ∃ C : ℝ, 0<C ∧ ∀ T t : ℝ, 3≤T → t ∈ Icc 0 (3*T) →
+      zeroKernelSum t ≤ C*Real.log (2*T+2) := by sorry
+
+theorem localization_anchor_count :
+    ∃ C : ℝ, 0<C ∧ ∀ T : ℝ, 3≤T →
+      ((occurrenceInterval T (2*T)).card:ℝ) ≤ C*T*Real.log (2*T+2) := by sorry
+
+theorem localization_mass_of_indicator_bound (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (M : ℝ≥0) (hω : LipschitzWith M ω) (T : ℝ) (hT : 0<T)
+    (D : Finset MasterTriple) (a b A : ℝ) (hab : a≤b)
+    (hb : ∀ t, (∑ v ∈ D, ‖localizationRegionalDensity r ω T v t‖) ≤ (Icc a b).indicator (fun _ => A) t) :
+    (∑ v ∈ D, localizationRegionalMass r ω T v) ≤ (b-a)*A := by sorry
+
+theorem localization_near_finite_mass :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M : ℝ≥0), LipschitzWith M ω →
+      Function.support ω ⊆ Icc (1:ℝ) 2 → ∀ T : ℝ, 3≤T → ∀ D : Finset MasterTriple,
+      (∑ v ∈ D, localizationRegionalMass .near ω T v) ≤
+        C*(M:ℝ)*Real.log (2*T+2)^4/T := by sorry
+
+theorem localization_far_center_finite_mass :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ x, |ω x|≤M₀) → LipschitzWith M₁ ω → ∀ T : ℝ, 3≤T → ∀ D : Finset MasterTriple,
+      (∑ v ∈ D, localizationRegionalMass .farCenter ω T v) ≤
+        C*M₀*Real.log (2*T+2)^3/T := by sorry
+
+theorem localization_far_anchor_weight (Q : ℝ) (hQ : 0<Q)
+    (hq : ∀ t, zeroKernelSum t ≤ Q*Real.log (|t|+2))
+    (ω : ℝ → ℝ) (M : ℝ) (hM : 0≤M) (hw : ∀ x, |ω x|≤M)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T t : ℝ) (hT : 3≤T) (i : ZeroOccurrence) :
+    (zeroKernelSum t)^2*localizationAnchorWeight .farAnchor ω T t i ≤
+      (if i ∈ occurrenceInterval T (2*T) then
+        (4*Q^2*M*Real.log (2*T+2)^2/T^2)*localizationTailProfile ((t-occurrenceOrdinate i)/T) else 0) := by sorry
+
+theorem localization_far_anchor_finite_mass :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ x, |ω x|≤M₀) → LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ T : ℝ, 3≤T → ∀ D : Finset MasterTriple,
+      (∑ v ∈ D, localizationRegionalMass .farAnchor ω T v) ≤
+        C*M₀*Real.log (2*T+2)^3/T := by sorry
+
+theorem localizationRegionalMass_summable_of_finite (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (T B : ℝ) (hb : ∀ D : Finset MasterTriple, (∑ v ∈ D, localizationRegionalMass r ω T v)≤B) :
+    Summable (localizationRegionalMass r ω T) ∧ (∑' v, localizationRegionalMass r ω T v)≤B := by sorry
+
+theorem localizationRegionalError_summable_bound (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (T : ℝ) (hm : Summable (localizationRegionalMass r ω T)) :
+    Summable (fun v => ‖localizationRegionalError r ω T v‖) ∧
+      (∑' v, ‖localizationRegionalError r ω T v‖) ≤ ∑' v, localizationRegionalMass r ω T v := by sorry
+
+theorem localizationRegional_sum_integral (r : LocalizationRegion) (ω : ℝ → ℝ)
+    (M : ℝ≥0) (hω : LipschitzWith M ω) (T : ℝ) (hT : 0<T)
+    (hm : Summable (localizationRegionalMass r ω T)) :
+    (∑' v, localizationRegionalError r ω T v) = ∫ t : ℝ, ∑' v, localizationRegionalDensity r ω T v t := by sorry
+
+theorem localization_near_summed_mass :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M : ℝ≥0), LipschitzWith M ω →
+      Function.support ω ⊆ Icc (1:ℝ) 2 → ∀ T : ℝ, 3≤T →
+      Summable (localizationRegionalMass .near ω T) ∧
+      (∑' v, localizationRegionalMass .near ω T v) ≤ C*(M:ℝ)*Real.log (2*T+2)^4/T := by sorry
+
+theorem localization_far_center_summed_mass :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ x, |ω x|≤M₀) → LipschitzWith M₁ ω → ∀ T : ℝ, 3≤T →
+      Summable (localizationRegionalMass .farCenter ω T) ∧
+      (∑' v, localizationRegionalMass .farCenter ω T v) ≤ C*M₀*Real.log (2*T+2)^3/T := by sorry
+
+theorem localization_far_anchor_summed_mass :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ x, |ω x|≤M₀) → LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ T : ℝ, 3≤T → Summable (localizationRegionalMass .farAnchor ω T) ∧
+      (∑' v, localizationRegionalMass .farAnchor ω T v) ≤ C*M₀*Real.log (2*T+2)^3/T := by sorry
+
+theorem localization_total_error_le_masses (ω : ℝ → ℝ) (M : ℝ≥0)
+    (hw : LipschitzWith M ω) (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (T : ℝ) (hT : 0<T) (v : MasterTriple) :
+    ‖tripleKernelLocalizationError ω T v‖ ≤ localizationRegionalMass .near ω T v+
+      localizationRegionalMass .farCenter ω T v+localizationRegionalMass .farAnchor ω T v := by sorry
+
+theorem tripleKernelLocalizationError_summed_bound :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ x, |ω x|≤M₀) → LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ T : ℝ, 3≤T → Summable (fun v : MasterTriple => ‖tripleKernelLocalizationError ω T v‖) ∧
+      (∑' v : MasterTriple, ‖tripleKernelLocalizationError ω T v‖) ≤
+        C*((M₁:ℝ)*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/T := by sorry
+
+theorem tripleKernelLocalizationError_summed_bound_deriv :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M₀ M₁ : ℝ), 0≤M₀ → 0≤M₁ →
+      (∀ x, |ω x|≤M₀) → Differentiable ℝ ω → (∀ x, |deriv ω x|≤M₁) →
+      Function.support ω ⊆ Icc (1:ℝ) 2 → ∀ T : ℝ, 3≤T →
+      Summable (fun v : MasterTriple => ‖tripleKernelLocalizationError ω T v‖) ∧
+      (∑' v : MasterTriple, ‖tripleKernelLocalizationError ω T v‖) ≤
+        C*(M₁*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/T := by sorry
 
 theorem tripleKernelLocalizationError_zero (T : ℝ) (v : MasterTriple) :
     tripleKernelLocalizationError (fun _ => 0) T v=0 := by sorry

@@ -1945,3 +1945,89 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleTestKernel_localization_bound
 
 #print axioms HigherCorrelations.tripleKernelLocalizationError_equal_ordinates
+
+#print axioms HigherCorrelations.localizationRegion_measurable
+
+#print axioms HigherCorrelations.localizationRegion_disjoint
+
+#print axioms HigherCorrelations.localization_weight_zero
+
+#print axioms HigherCorrelations.localizationErrorDensity_integrable
+
+#print axioms HigherCorrelations.localizationRegionalDensity_integrable
+
+#print axioms HigherCorrelations.localizationErrorDensity_integral
+
+#print axioms HigherCorrelations.localizationRegionalDensity_partition
+
+#print axioms HigherCorrelations.localizationRegionalError_partition
+
+#print axioms HigherCorrelations.localizationRegionalMass_nonneg
+
+#print axioms HigherCorrelations.localizationRegionalError_norm_le
+
+#print axioms HigherCorrelations.localization_log_ge_one
+
+#print axioms HigherCorrelations.localization_local_log
+
+#print axioms HigherCorrelations.localization_unit_shell_weight
+
+#print axioms HigherCorrelations.localization_near_moment_finite
+
+#print axioms HigherCorrelations.localizationTailProfile_nonneg
+
+#print axioms HigherCorrelations.localizationTailProfile_integrable
+
+#print axioms HigherCorrelations.localization_tail_scaled_bound
+
+#print axioms HigherCorrelations.localization_scaled_profile_integrable
+
+#print axioms HigherCorrelations.localization_scaled_profile_integral
+
+#print axioms HigherCorrelations.localizationAnchorWeight_nonneg
+
+#print axioms HigherCorrelations.localizationRegionalDensity_majorant
+
+#print axioms HigherCorrelations.localization_finite_product
+
+#print axioms HigherCorrelations.localization_finite_majorant
+
+#print axioms HigherCorrelations.localization_near_weight_zero
+
+#print axioms HigherCorrelations.localization_near_anchor_sum
+
+#print axioms HigherCorrelations.localization_far_center_anchor_sum
+
+#print axioms HigherCorrelations.localization_Q_nonneg
+
+#print axioms HigherCorrelations.localization_Q_local
+
+#print axioms HigherCorrelations.localization_anchor_count
+
+#print axioms HigherCorrelations.localization_mass_of_indicator_bound
+
+#print axioms HigherCorrelations.localization_near_finite_mass
+
+#print axioms HigherCorrelations.localization_far_center_finite_mass
+
+#print axioms HigherCorrelations.localization_far_anchor_weight
+
+#print axioms HigherCorrelations.localization_far_anchor_finite_mass
+
+#print axioms HigherCorrelations.localizationRegionalMass_summable_of_finite
+
+#print axioms HigherCorrelations.localizationRegionalError_summable_bound
+
+#print axioms HigherCorrelations.localizationRegional_sum_integral
+
+#print axioms HigherCorrelations.localization_near_summed_mass
+
+#print axioms HigherCorrelations.localization_far_center_summed_mass
+
+#print axioms HigherCorrelations.localization_far_anchor_summed_mass
+
+#print axioms HigherCorrelations.localization_total_error_le_masses
+
+#print axioms HigherCorrelations.tripleKernelLocalizationError_summed_bound
+
+#print axioms HigherCorrelations.tripleKernelLocalizationError_summed_bound_deriv

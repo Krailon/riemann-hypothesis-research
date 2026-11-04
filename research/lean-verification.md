@@ -423,3 +423,16 @@ controls, then the combined project build, complete axiom report, coverage,
 harness and pair/triple regressions. See
 [the localization record](lean-triple-kernel-localization.md) for scope and
 certificates.
+
+### Summed near/far kernel localization
+
+The localization suite now includes the disjoint three-region partition,
+separate uniform near/far integral-norm budgets, absolute summability of the
+kernel error and its derivative-bound wrapper. It checks 71 public statements
+in 13 modules and nine unfinished-proof rejection controls, together with the
+combined build, axiom audit and regressions. The command remains
+`python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-kernel-localization-only`.
+See [the localization record](lean-triple-kernel-localization.md) for the bounds,
+endpoint conventions, finite-cutoff proof route and certificate. Constants of
+the summed estimates remain absolute existential constants. Complex-test
+profile transfer and height limits remain separate.

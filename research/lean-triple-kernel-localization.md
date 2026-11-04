@@ -56,8 +56,9 @@ Formal ledger entry: `MASTER-KERNEL-LOCALIZATION-BOUND-FORMAL-001`.
 The full focused suite passed all 28 statement comparisons, four rejection
 controls, the combined build, axiom audit and regressions.
 Certificate: [PASS manifest](../artifacts/certificates/lean/b297cd3415f733367b4b5edf5ead3d7f7066bd8e89dd90b82ee8bdecf54ed966/manifest.json).
-All Lean source and challenge hashes match this certified run. Subsequent
-metadata updates record the result without changing proof sources.
+This certificate records the sources for the tuplewise stage. The summed
+extension below supersedes its assembly and inventory; the tuplewise proof
+module is unchanged.
 
 The next stage proves the manuscript's exact bound
 
@@ -98,3 +99,73 @@ bound and the final tuplewise estimate. The separate summed near/far estimates,
 correlation transfer, and height limit remain pending. The tuplewise bound is
 not used as a summable bound over all triples. The ordinate-only signed error
 remains open.
+
+## Summed near/far extension (complete)
+
+Formal ledger entry: `MASTER-KERNEL-LOCALIZATION-SUM-FORMAL-001`.
+All 71 statement comparisons, nine rejection controls, the combined build,
+axiom audit and regressions passed.
+Certificate: [PASS manifest](../artifacts/certificates/lean/6a35fdbed75bfc10efbec04f4a43f6e5c4078c22472bafaa86daf718386889db/manifest.json).
+All Lean source and challenge hashes match this run; subsequent ledger and
+audit metadata updates do not change the proof sources.
+
+For T>=3 put L=log(2T+2). Let omega be real, supported in [1,2],
+with |omega|<=M0 and global Lipschitz constant M1. The three regional errors
+are integrals of the actual translated complex error density, including its
+outside factor 1/T. Their regions are exactly:
+
+- near: |t-gamma_l|<=T;
+- far-center: |t-gamma_l|>T and t in [T,2T];
+- far-anchor: |t-gamma_l|>T, t outside [T,2T], gamma_l in [T,2T].
+
+The distance boundary belongs to near. Both center-interval endpoints belong
+to far-center when the distance is greater than T. The regions are disjoint;
+outside their union the weight difference is zero. Integrability is established
+before reconstructing E_kernel as the sum of these three complex integrals.
+
+The stronger regional integral-norm budgets are summable over all MasterTriple
+occurrences, with separate absolute constants independent of weight and height:
+
+| Region | Sum of integral norms (and hence sum of error norms) |
+|---|---|
+| near | <= C_near M1 L^4/T |
+| far-center | <= C_center M0 L^3/T |
+| far-anchor | <= C_anchor M0 L^3/T |
+
+Consequently sum_v ||E_kernel(v)|| <= C (M1 L^4+M0 L^3)/T.
+A differentiable-weight wrapper takes an explicit bound |deriv omega|<=M1;
+this is the derivative supremum dependence Wprime_inf, not the earlier
+L1 derivative norm. The error retains every horizontal displacement, both
+ordinate signs, repeated occurrences and distinct complex zeros sharing an
+ordinate. No simplicity or critical-line substitution is used.
+
+The near first moment uses unit shells and the checked harmonic-sum bound.
+The strict far-center tail is dominated by the existing closed-tail estimate.
+For far anchors, a scaled integrable profile
+
+F(u) = (1+log(3|u|+2)^2)/(1+u^2)
+
+provides the required logarithm-squared integral tail. Its integrability follows
+from a (1+u^2)^(-3/4) majorant. This implements the manuscript tail estimate by
+scaling rather than a new dyadic integral decomposition, with the same L^2/T
+rate. Only the anchors are restricted to [T,2T]; the center integral includes
+the entire real line, including both distant tails.
+
+Finite rectangular occurrence sums are bounded first, followed by finite
+sum/integral interchange and uniform finite integral-norm bounds. Those bounds
+prove summability before infinite complex sum/integral interchange is invoked.
+This finite-cutoff route replaces the planned nonnegative Tonelli construction
+without introducing an unproved convergence hypothesis. The tuplewise bound
+from the previous stage is not summed over all triples.
+
+Constants are absolute and uniform but existential in Lean. The inherited
+low-height counting constant and the profile integral are not numerically
+certified here. The previous explicit tuplewise constant 64pi/27 is unchanged.
+The historical lemma retains partial formalization coverage: frozen-profile
+summability, complex-test correlation transfer and the inherited height limit
+remain pending. The ordinate-only signed complex-argument error is still open.
+
+The expanded suite covers all 71 public statements in 13 modules, with nine
+unfinished-proof rejection controls: the preceding four plus region assembly,
+near, far-center, far-anchor and combined summability. It also runs the combined
+project build, full axiom report, coverage, harness and pair/triple regressions.

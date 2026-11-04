@@ -5337,3 +5337,58 @@ claims:
       imported_inputs: "Checked actual-occurrence displacement bounds, the exact anchored decomposition and the pair-kernel integral including coincident centers; mathlib mean-value, translation and Bochner integral inequalities. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "The tuplewise coefficient 64pi/27 is explicit and effective, uniform in all ordinates, actual horizontal displacements and positive heights, with explicit dependence on the supplied derivative/Lipschitz bound M. No sharpness claim or effectiveness claim for summed estimates is made."
       baseline_audit_coverage: "TRIPLE-KERNEL-LOCALIZATION-001 retains partial coverage and its historical status. Its exact decomposition and quantitative tuplewise estimate are now checked, but the separate summed near/far estimates, profile transfer and height limit remain unformalized. The existing historical RH-audit scope is unchanged and the ordinate-only signed error remains open."
+
+  - id: MASTER-KERNEL-LOCALIZATION-SUM-FORMAL-001
+    title: Separate near and far regional integral-norm budgets and summed kernel localization
+    kind: theorem
+    statement: |
+      Let T>=3, L=log(2T+2), omega:R->R have support contained in [1,2],
+      |omega|<=M0 with M0>=0, and global Lipschitz constant M1>=0.
+      The translated localization error density includes its outside factor
+      1/T and retains the full complex scalar kernels. Split its integral
+      into the following disjoint regions: near has |t-gamma_l|<=T;
+      far-center has |t-gamma_l|>T and t in [T,2T]; far-anchor has
+      |t-gamma_l|>T, t outside [T,2T], and gamma_l in [T,2T].
+      The distance endpoint belongs to near, and both height endpoints
+      belong to far-center when the distance is greater than T.
+      Outside the union the density is zero; the three regional complex
+      integrals reconstruct the previously defined E_kernel exactly.
+      Each regional density is integrable before the decomposition is used.
+      There exist absolute positive constants C_near,C_center,C_anchor,
+      independent of T,omega,M0,M1, such that the sums over all ordered
+      actual zero-occurrence triples of the regional integral norms are
+      summable and bounded respectively by C_near M1 L^4/T,
+      C_center M0 L^3/T, and C_anchor M0 L^3/T. Each also bounds the sum
+      of norms of the corresponding regional errors. Their complex
+      sum/integral interchange follows from the proved integral-norm
+      summability. Consequently the full error norms are summable and
+      sum_v ||E_kernel(v)|| <= C (M1 L^4+M0 L^3)/T for an absolute C>0.
+      A derivative wrapper assumes differentiability and |deriv omega|<=M1;
+      M1 is the derivative supremum dependence, not an L1 derivative norm.
+      All multiplicities, both ordinate signs, repeated occurrences and
+      distinct complex zeros with equal ordinates are included. Only the
+      far anchors are height restricted; their centers range over the
+      entire real line. No RH, simplicity or critical-line substitution
+      is used. The theorem asserts no complex-test correlation transfer
+      or height limit, and no ordinate-only signed-error conclusion.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-KERNEL-LOCALIZATION-BOUND-FORMAL-001, LOCAL-ZERO-COUNT-001, ZERO-KERNEL-UNIFORM-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/KernelLocalizationSummed.lean
+      label: HigherCorrelations.tripleKernelLocalizationError_summed_bound
+      companion_declarations: [localizationRegionalError_partition, localization_near_moment_finite, localization_tail_scaled_bound, localization_near_summed_mass, localization_far_center_summed_mass, localization_far_anchor_summed_mass, localizationRegionalError_summable_bound, localizationRegional_sum_integral, tripleKernelLocalizationError_summed_bound_deriv]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 6a35fdbed75bfc10efbec04f4a43f6e5c4078c22472bafaa86daf718386889db
+    limit_order: "Fix T, smoothing and its two bounds. Establish regional integrability and uniform finite occurrence integral-norm bounds first; those prove absolute summability before invoking the infinite complex sum/integral interchange. No height limit is taken. The earlier tuplewise bound is not summed over all triples."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 71 public statements in 13 localization modules are compared with definition-only expected statements. Nine unfinished-proof rejection controls cover translation, exact decomposition, sharp scalar and tuplewise bounds, regional assembly, near, far-center, far-anchor and combined summability. Combined build, full axiom audit, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "Checked local and interval counts, uniform ordinate-kernel sum and closed-tail bounds, the sharper scalar bound, mathlib harmonic-sum estimates, Japanese-bracket integrability and finite/infinite Bochner integration. Only propext, Quot.sound and Classical.choice are permitted."
+      proof_route: "Near uses unit shells. Far-center dominates the strict tail by the checked inclusive tail. Far-anchor uses the scaled integrable profile (1+log(3|u|+2)^2)/(1+u^2), proved integrable by a (1+u^2)^(-3/4) majorant, instead of a new dyadic integral decomposition. Finite rectangular majorants and uniform finite integral-norm bounds replace the planned nonnegative Tonelli construction while giving the same rates and proving all convergence premises."
+      constants_scope: "Constants are absolute and uniform but existential: the inherited finite low-height count and a finite profile integral are not numerically evaluated. The existing tuplewise constant 64pi/27 is unchanged."
+      baseline_audit_coverage: "The historical TRIPLE-KERNEL-LOCALIZATION-001 remains partially formalized and retains its status and RH-audit scope. Exact localization, tuplewise and summed near/far estimates are checked; frozen-profile summability, complex-test correlation transfer, the inherited height limit and the historical numerical-effectiveness qualification remain separate. The ordinate-only signed complex-argument error remains open."

@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "743306dfa0e9a458fba94b0937c245b644a399626809c9a1986fbb68ecdd7315",
+  "ledger_sha256": "ef37ca0ec744234334892e861167dcfb8bb9a718181e9c72ff234ff16207643a",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2809,5 +2809,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the uniform quantitative tuplewise kernel error with explicit constant 64pi/27, Lipschitz error-integral convergence, derivative-bound and master/test-order corollaries including equal ordinates. Historical statements, statuses and RH-audit scope are unchanged. Summed near/far estimates, correlation transfer and the height limit remain pending; the ordinate-only signed error remains open."
+  },
+  "ledger_kernel_localization_sum_review": {
+    "reviewed_on": "2026-11-04",
+    "previous_ledger_sha256": "743306dfa0e9a458fba94b0937c245b644a399626809c9a1986fbb68ecdd7315",
+    "added_claim_ids": [
+      "MASTER-KERNEL-LOCALIZATION-SUM-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the disjoint near/far decomposition, separate summed integral-norm budgets and absolute kernel-error summability, with uniform existential constants. The finite-cutoff proof route proves convergence before infinite complex interchange. Historical statements, statuses and RH-audit scope are unchanged; complex-test profile transfer, height limits, numerical effectiveness and the ordinate-only signed error remain separate."
   }
 }

@@ -1,7 +1,8 @@
 import HigherCorrelations.KernelLocalizationBounds
+import HigherCorrelations.KernelLocalizationSummed
 
-/-! UNCONDITIONAL exact and quantitative fixed-tuple kernel localization.
-Summed error bounds and height limits remain separate. -/
+/-! UNCONDITIONAL exact, tuplewise and summed kernel localization.
+Correlation transfer and height limits remain separate. -/
 namespace HigherCorrelations
 noncomputable section
 open Set

@@ -4,6 +4,15 @@
     "KernelLocalizationDefinitions",
     "KernelLocalizationIdentity",
     "KernelLocalizationBounds",
+    "KernelLocalizationSumDefinitions",
+    "KernelLocalizationRegions",
+    "KernelLocalizationCounting",
+    "KernelLocalizationTail",
+    "KernelLocalizationMajorants",
+    "KernelLocalizationAnchorBounds",
+    "KernelLocalizationFiniteBounds",
+    "KernelLocalizationFarAnchor",
+    "KernelLocalizationSummed",
     "TripleKernelLocalizationAssembly"
   ],
   "components": [
@@ -120,6 +129,221 @@
     {
       "declaration": "HigherCorrelations.tripleKernelLocalizationError_bound_deriv",
       "source": "lean/HigherCorrelations/KernelLocalizationBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegion_measurable",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegion_disjoint",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_weight_zero",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationErrorDensity_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegionalDensity_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationErrorDensity_integral",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegionalDensity_partition",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegionalError_partition",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegionalMass_nonneg",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegionalError_norm_le",
+      "source": "lean/HigherCorrelations/KernelLocalizationRegions.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_log_ge_one",
+      "source": "lean/HigherCorrelations/KernelLocalizationCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_local_log",
+      "source": "lean/HigherCorrelations/KernelLocalizationCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_unit_shell_weight",
+      "source": "lean/HigherCorrelations/KernelLocalizationCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_near_moment_finite",
+      "source": "lean/HigherCorrelations/KernelLocalizationCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationTailProfile_nonneg",
+      "source": "lean/HigherCorrelations/KernelLocalizationTail.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationTailProfile_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationTail.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_tail_scaled_bound",
+      "source": "lean/HigherCorrelations/KernelLocalizationTail.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_scaled_profile_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationTail.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_scaled_profile_integral",
+      "source": "lean/HigherCorrelations/KernelLocalizationTail.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationAnchorWeight_nonneg",
+      "source": "lean/HigherCorrelations/KernelLocalizationMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegionalDensity_majorant",
+      "source": "lean/HigherCorrelations/KernelLocalizationMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_finite_product",
+      "source": "lean/HigherCorrelations/KernelLocalizationMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_finite_majorant",
+      "source": "lean/HigherCorrelations/KernelLocalizationMajorants.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_near_weight_zero",
+      "source": "lean/HigherCorrelations/KernelLocalizationAnchorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_near_anchor_sum",
+      "source": "lean/HigherCorrelations/KernelLocalizationAnchorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_far_center_anchor_sum",
+      "source": "lean/HigherCorrelations/KernelLocalizationAnchorBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_Q_nonneg",
+      "source": "lean/HigherCorrelations/KernelLocalizationFiniteBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_Q_local",
+      "source": "lean/HigherCorrelations/KernelLocalizationFiniteBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_anchor_count",
+      "source": "lean/HigherCorrelations/KernelLocalizationFiniteBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_mass_of_indicator_bound",
+      "source": "lean/HigherCorrelations/KernelLocalizationFiniteBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_near_finite_mass",
+      "source": "lean/HigherCorrelations/KernelLocalizationFiniteBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_far_center_finite_mass",
+      "source": "lean/HigherCorrelations/KernelLocalizationFiniteBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_far_anchor_weight",
+      "source": "lean/HigherCorrelations/KernelLocalizationFarAnchor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_far_anchor_finite_mass",
+      "source": "lean/HigherCorrelations/KernelLocalizationFarAnchor.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegionalMass_summable_of_finite",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegionalError_summable_bound",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localizationRegional_sum_integral",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_near_summed_mass",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_far_center_summed_mass",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_far_anchor_summed_mass",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.localization_total_error_le_masses",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_summed_bound",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_summed_bound_deriv",
+      "source": "lean/HigherCorrelations/KernelLocalizationSummed.lean",
       "comparator_checked": true
     },
     {

@@ -1,0 +1,13 @@
+{
+  "challenge_module": "VerificationChallenges.TripleKernelLocalization",
+  "solution_module": "VerificationChallenges.TripleKernelLocalizationUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.localization_far_anchor_summed_mass"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
