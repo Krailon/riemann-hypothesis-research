@@ -1,0 +1,26 @@
+{
+  "challenge_module": "VerificationChallenges.TripleKernelLocalization",
+  "solution_module": "HigherCorrelations.TripleKernelLocalizationAssembly",
+  "theorem_names": [
+    "HigherCorrelations.tripleAnchoredProfile_denominators",
+    "HigherCorrelations.tripleMasterKernelIntegrand_translate",
+    "HigherCorrelations.tripleAnchoredProfile_integrable",
+    "HigherCorrelations.tripleAnchoredProfile_integral",
+    "HigherCorrelations.tripleAnchoredProfile_test_order",
+    "HigherCorrelations.tripleKernel_weighted_profile_integrable",
+    "HigherCorrelations.tripleKernel_frozen_profile_integrable",
+    "HigherCorrelations.tripleKernelLocalizationIntegrand_integrable",
+    "HigherCorrelations.tripleKernelLocalizationError_absolutely_integrable",
+    "HigherCorrelations.tripleMasterKernel_anchored_integral",
+    "HigherCorrelations.tripleMasterKernel_localization",
+    "HigherCorrelations.tripleTestKernel_localization",
+    "HigherCorrelations.tripleKernelLocalizationError_zero",
+    "HigherCorrelations.tripleAnchoredProfile_repeated"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

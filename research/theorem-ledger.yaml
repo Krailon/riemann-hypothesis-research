@@ -5244,3 +5244,50 @@ claims:
       imported_inputs: "Checked actual occurrence reflection, counting and kernel majorants, positive-quadrant asymptotic and Fourier regularity; mathlib absolute series convergence, Bochner integration, measure-preserving changes and finite sums. No new zero-location or prime-correlation assumption."
       constants_scope: "Uniform constants are selected before smoothing, height, margin and test. They remain existential through previously checked analytic inputs; historical numerical-effectiveness claims are not promoted."
       baseline_audit_coverage: "The signed-sector and signed-test mathematical statements are checked with the historical numerical-effectiveness qualification kept separate. Historical ledger statuses and RH-audit source scope remain unchanged. Outer support boundary, kernel removal, ordinate-only statistics, GUE identification and horizontal extraction are not claimed; the signed complex-argument error remains open."
+
+  - id: MASTER-KERNEL-LOCALIZATION-IDENTITY-FORMAL-001
+    title: Exact anchored triple-kernel localization and absolute error-integral convergence
+    kind: theorem
+    statement: |
+      Let omega:R->R be continuous with support contained in [1,2], T>0,
+      and v:Fin(3)->ZeroOccurrence an arbitrary ordered actual occurrence
+      triple. Put a=gamma(v0)-gamma(v2), b=gamma(v1)-gamma(v2), and
+      P_v(u)=scalarKernel(u-a,delta(v0))*scalarKernel(u-b,delta(v1))*
+      scalarKernel(u,-delta(v2)). The translated master denominator
+      reciprocal is exactly P_v(u). Its integral is the existing rational
+      profile J(a,b;delta(v0),delta(v1),delta(v2)). Both
+      omega((gamma(v2)+u)/T) P_v(u) and omega(gamma(v2)/T) P_v(u)
+      are integrable. Define E_kernel directly by
+      (1/T) integral_R [omega((gamma(v2)+u)/T)-omega(gamma(v2)/T)] P_v(u) du.
+      The scaled error integrand is absolutely integrable, and exactly
+      K_T(v)=omega(gamma(v2)/T) J(a,b;delta)/T+E_kernel(v).
+      In test ordering t=(i1,i2,i3), the existing permutation sends t
+      to (i2,i3,i1); the profile is actualRationalKernel(t), and the
+      frozen weight is omega(gamma(i1)/T)/T. No extra factor eight
+      enters the kernel. The zero weight has zero localization error;
+      a fully repeated occurrence retains the exact profile J(0,0;delta,delta,delta).
+      All ordinate signs, multiplicities, repeated occurrences, equal
+      ordinates and center collisions are allowed. This is a fixed-tuple,
+      fixed-height identity and convergence result. It does not assert a
+      quantitative tuplewise bound, any summed localization bound,
+      correlation transfer or a height limit.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-IDENTITY-FORMAL-001, ACTUAL-INTEGRAL-PROFILE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/KernelLocalizationIdentity.lean
+      label: HigherCorrelations.tripleMasterKernel_localization
+      companion_declarations: [tripleAnchoredProfile_denominators, tripleMasterKernelIntegrand_translate, tripleAnchoredProfile_integral, tripleKernelLocalizationIntegrand_integrable, tripleKernelLocalizationError_absolutely_integrable, tripleTestKernel_localization]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: cb642dcc43967da2bd3328a5f8e0f32697b0b5f4abf892136165be98eb35aba7
+    limit_order: "All parameters and the occurrence tuple are fixed. Translate the real integration variable, establish integrability of both weighted profile terms, and only then subtract integrals and apply the checked rational-profile evaluation. No infinite zero-sum interchange, cutoff removal or height limit is asserted."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 14 public declarations across three modules are compared against definition-only expected statements. Two unfinished-proof controls cover denominator translation and the exact decomposition. The focused suite also checks the combined project build, complete axiom report, analytic coverage, harness and pair/triple regressions."
+      imported_inputs: "Checked smoothed master-kernel integrability, actual-occurrence displacement bounds and integral-profile evaluation, including center collisions; mathlib translation invariance and Bochner integral linearity. No new zero-location or prime-correlation premise."
+      constants_scope: "The identity retains the exact outside factor 1/T. No estimated analytic constant is introduced or certified; the historical quantitative estimates remain outside this milestone."
+      baseline_audit_coverage: "Only the exact-decomposition and fixed-tuple integrability part of TRIPLE-KERNEL-LOCALIZATION-001 is formalized. Its historical status and the existing RH-audit scope are unchanged. The tuplewise error constant, near/far decomposition, summed error bound, explicit-profile correlation transfer and height limit remain pending; the ordinate-only signed error remains open."

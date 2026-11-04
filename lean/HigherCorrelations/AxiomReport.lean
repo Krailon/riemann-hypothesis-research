@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleKernelLocalizationAssembly
 import HigherCorrelations.TripleSignedAssembly
 import HigherCorrelations.TripleBoundaryAssembly
 import HigherCorrelations.TripleTestAssembly
@@ -1900,3 +1901,19 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.signed_compact_limit
 #print axioms HigherCorrelations.signed_test_entire
 #print axioms HigherCorrelations.signed_test_schwartz_inversion
+
+-- Exact kernel localization inventory
+#print axioms HigherCorrelations.tripleAnchoredProfile_denominators
+#print axioms HigherCorrelations.tripleMasterKernelIntegrand_translate
+#print axioms HigherCorrelations.tripleAnchoredProfile_integrable
+#print axioms HigherCorrelations.tripleAnchoredProfile_integral
+#print axioms HigherCorrelations.tripleAnchoredProfile_test_order
+#print axioms HigherCorrelations.tripleKernel_weighted_profile_integrable
+#print axioms HigherCorrelations.tripleKernel_frozen_profile_integrable
+#print axioms HigherCorrelations.tripleKernelLocalizationIntegrand_integrable
+#print axioms HigherCorrelations.tripleKernelLocalizationError_absolutely_integrable
+#print axioms HigherCorrelations.tripleMasterKernel_anchored_integral
+#print axioms HigherCorrelations.tripleMasterKernel_localization
+#print axioms HigherCorrelations.tripleTestKernel_localization
+#print axioms HigherCorrelations.tripleKernelLocalizationError_zero
+#print axioms HigherCorrelations.tripleAnchoredProfile_repeated

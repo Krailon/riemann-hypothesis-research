@@ -382,3 +382,23 @@ The support stays strictly inside the hexagon. Constants remain existential;
 the horizontal kernel and complex test arguments are retained. This completes
 the mathematical signed-sector passage, with historical effectiveness claims
 kept separate, and does not resolve the ordinate-only signed error.
+
+
+## Exact kernel-localization identity
+
+The first localization stage is complete: 14 checked public declarations give
+the anchor translation, integrability of both weighted profile terms, absolute
+error-integral convergence and the exact decomposition in master and test
+order. The named error is an explicit weight-difference integral. The outside
+factor is 1/T, and the conjugated anchor's horizontal sign is retained.
+The hypotheses are continuity, support in [1,2] and T>0.
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-kernel-localization-only
+```
+
+See [the certified scope and manifest](lean-triple-kernel-localization.md) and
+[the declaration inventory](lean-triple-kernel-localization-inventory.json).
+TRIPLE-KERNEL-LOCALIZATION-001 remains partially formalized. Its quantitative
+tuplewise estimate, separate summed near/far bounds, profile correlation transfer
+and height limit are subsequent stages; no ordinate-only conclusion is added.

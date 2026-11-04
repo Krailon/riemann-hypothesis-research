@@ -1069,11 +1069,24 @@
         "label": "lem:triple-kernel-localization",
         "bookkeeping": "research/triple-kernel.md"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.tripleAnchoredProfile_denominators",
+        "HigherCorrelations.tripleMasterKernelIntegrand_translate",
+        "HigherCorrelations.tripleAnchoredProfile_integrable",
+        "HigherCorrelations.tripleAnchoredProfile_integral",
+        "HigherCorrelations.tripleAnchoredProfile_test_order",
+        "HigherCorrelations.tripleKernel_weighted_profile_integrable",
+        "HigherCorrelations.tripleKernel_frozen_profile_integrable",
+        "HigherCorrelations.tripleKernelLocalizationIntegrand_integrable",
+        "HigherCorrelations.tripleKernelLocalizationError_absolutely_integrable",
+        "HigherCorrelations.tripleMasterKernel_anchored_integral",
+        "HigherCorrelations.tripleMasterKernel_localization",
+        "HigherCorrelations.tripleTestKernel_localization"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "The exact anchored decomposition and absolute error-integral convergence are checked at fixed positive height. The quantitative tuplewise bound, disjoint near/far estimates, summed absolute error bound, explicit-profile correlation transfer and its height limit remain unformalized."
       ]
     },
     {
@@ -10831,7 +10844,77 @@
       "declaration": "HigherCorrelations.signed_test_schwartz_inversion",
       "source": "lean/HigherCorrelations/TripleSignedAssembly.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_denominators",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernelIntegrand_translate",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_integral",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_test_order",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernel_weighted_profile_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernel_frozen_profile_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationIntegrand_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_absolutely_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_anchored_integral",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_localization",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleTestKernel_localization",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_zero",
+      "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_repeated",
+      "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The full signed-frequency smooth-test passage and hexagonal-support asymptotic are checked. Continue through the kernel-profile and main-term-comparison dependencies; historical effective constants and the signed complex-argument ordinate-only error remain separate."
+  "next_step": "The exact kernel-localization identity and absolute error-integral convergence are checked. Next prove the quantitative tuplewise localization bound, followed by the separate summed near/far bounds and profile transfer. Historical effective constants and the signed complex-argument ordinate-only error remain separate."
 }

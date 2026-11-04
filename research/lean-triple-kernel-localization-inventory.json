@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "KernelLocalizationDefinitions",
+    "KernelLocalizationIdentity",
+    "TripleKernelLocalizationAssembly"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_denominators",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernelIntegrand_translate",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_integral",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_test_order",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernel_weighted_profile_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernel_frozen_profile_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationIntegrand_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_absolutely_integrable",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_anchored_integral",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_localization",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleTestKernel_localization",
+      "source": "lean/HigherCorrelations/KernelLocalizationIdentity.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleKernelLocalizationError_zero",
+      "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_repeated",
+      "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

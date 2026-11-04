@@ -1,3 +1,4 @@
+import HigherCorrelations.TripleKernelLocalizationAssembly
 import HigherCorrelations.TripleSignedAssembly
 import HigherCorrelations.TripleBoundaryAssembly
 import HigherCorrelations.TripleTestAssembly

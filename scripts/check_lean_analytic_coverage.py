@@ -21,6 +21,8 @@ MODULES = ['OccurrenceSummability', 'OccurrenceLimits',
            'OccurrenceIntegration', 'SummabilityExamples']
 COMPLETE_STATEMENTS = {'TRIPLE-LOG-GAP-001', 'PAIR-EF-001', 'PAIR-MEANVALUE-001', 'PAIR-PRIME-COUNT-001', 'PAIR-POSITIVITY-001', 'PAIR-TRANSLATION-001'}
 PARTIAL = {
+    'TRIPLE-KERNEL-LOCALIZATION-001': (['tripleAnchoredProfile_denominators', 'tripleMasterKernelIntegrand_translate', 'tripleAnchoredProfile_integrable', 'tripleAnchoredProfile_integral', 'tripleAnchoredProfile_test_order', 'tripleKernel_weighted_profile_integrable', 'tripleKernel_frozen_profile_integrable', 'tripleKernelLocalizationIntegrand_integrable', 'tripleKernelLocalizationError_absolutely_integrable', 'tripleMasterKernel_anchored_integral', 'tripleMasterKernel_localization', 'tripleTestKernel_localization'], [
+        'The exact anchored decomposition and absolute error-integral convergence are checked at fixed positive height. The quantitative tuplewise bound, disjoint near/far estimates, summed absolute error bound, explicit-profile correlation transfer and its height limit remain unformalized.']),
     'TRIPLE-SIGNED-SECTORS-001': (['signedSeries_norm_locallyUniform', 'signedSeries_locallyUniform', 'pairZeroSeries_reciprocal', 'tripleMaster_positive_kernel_identity', 'tripleMaster_positive_kernel_summable', 'tripleMaster_positive_kernel_cutoff', 'signedSector_determinant', 'signedSector_cover', 'signedSector_overlap', 'signedSector_disjoint_interiors', 'signedSector_measurePreserving', 'signedSector_seams_null', 'signedGauge_half_sum', 'signedGauge_sector', 'signedFrequency_sector', 'signedFrequency_swap', 'signedFrequency_seam_real', 'tripleMasterProduct_signed_seam_real', 'signed_coefficient_bound', 'signed_integralNorm_uniform'], [
         'Positive-base convergence, reciprocal reflection, all six sectors and seam identities, the full master identity and sharp integrated majorant are checked. The historical numerical-effectiveness qualification remains separate: inherited analytic constants are existential.']),
     'TRIPLE-SIGNED-TEST-FUNCTION-001': (['signed_compact_margin', 'signed_test_entire', 'signed_test_schwartz_inversion', 'signed_identity', 'signed_zero_sum_absolute', 'signed_frequency_integrable', 'signed_normalized_identity', 'signed_zero_identity', 'signed_independent_cutoff', 'signed_sector_decomposition', 'signedPullback_N1_bound', 'signed_limit_sector_sum', 'signed_uniform_bound', 'signed_fixed_margin_limit', 'signed_compact_limit'], [
@@ -917,9 +919,27 @@ def derive():
             'changed signed-sector passage verification scope')
     components.extend(triple_signed['components'])
     names.extend(c['declaration'] for c in triple_signed['components'])
+    triple_localization = json.loads(read('research/lean-triple-kernel-localization-inventory.json'))
+    found = []
+    for module in triple_localization['modules']:
+        path = 'lean/HigherCorrelations/' + module + '.lean'
+        source = read(path)
+        require(not re.search(r'\b(sorry|admit|native_decide)\b|^\s*(axiom|constant)\b', source, re.M),
+                'unfinished exact kernel-localization passage solution: ' + path)
+        found.extend(dict(declaration='HigherCorrelations.' + name, source=path)
+                     for name in re.findall(r'^theorem (\w+)\b', source, re.M))
+    require(found == [{k: c[k] for k in ('declaration', 'source')} for c in triple_localization['components']],
+            'exact kernel-localization passage inventory differs from source declarations')
+    cfg = json.loads(read('lean/VerificationChallenges/triple-kernel-localization.json'))
+    require(cfg['theorem_names'] == [c['declaration'] for c in triple_localization['components'] if c['comparator_checked']],
+            'exact kernel-localization passage Comparator coverage differs from inventory')
+    require(cfg['permitted_axioms'] == config['permitted_axioms'] and cfg['enable_nanoda'] is False,
+            'changed exact kernel-localization passage verification scope')
+    components.extend(triple_localization['components'])
+    names.extend(c['declaration'] for c in triple_localization['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
-    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms'] + triple_interior_vanishing['imported_axioms'] + triple_test_function['imported_axioms'] + triple_boundary['imported_axioms'] + triple_signed['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
+    require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms'] + triple_interior_vanishing['imported_axioms'] + triple_test_function['imported_axioms'] + triple_boundary['imported_axioms'] + triple_signed['imported_axioms'] + triple_localization['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
     nodes = []
     for key in sorted(deps):
         block = blocks[key]
@@ -954,7 +974,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The full signed-frequency smooth-test passage and hexagonal-support asymptotic are checked. Continue through the kernel-profile and main-term-comparison dependencies; historical effective constants and the signed complex-argument ordinate-only error remain separate.')
+        next_step='The exact kernel-localization identity and absolute error-integral convergence are checked. Next prove the quantitative tuplewise localization bound, followed by the separate summed near/far bounds and profile transfer. Historical effective constants and the signed complex-argument ordinate-only error remain separate.')
 
 
 def validate(record):
@@ -964,6 +984,15 @@ def validate(record):
 class CoverageTests(unittest.TestCase):
     def setUp(self):
         self.record = json.loads(RECORD.read_text())
+
+    def test_localization_identity_does_not_promote_summed_bounds(self):
+        node = next(n for n in self.record['nodes'] if n['id'] == 'TRIPLE-KERNEL-LOCALIZATION-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertIn('HigherCorrelations.tripleMasterKernel_localization', node['components'])
+        self.assertIn('HigherCorrelations.tripleKernelLocalizationError_absolutely_integrable', node['components'])
+        self.assertTrue(any('summed absolute error bound' in gap and 'remain unformalized' in gap
+                            for gap in node['remaining_obligations']))
 
     def test_signed_passage_preserves_effectivity_and_horizontal_boundary(self):
         for key in ['TRIPLE-SIGNED-SECTORS-001', 'TRIPLE-SIGNED-TEST-FUNCTION-001']:
