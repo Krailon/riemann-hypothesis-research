@@ -1,5 +1,6 @@
 import HigherCorrelations.KernelLocalizationDefinitions
 import HigherCorrelations.KernelLocalizationSumDefinitions
+import HigherCorrelations.FrozenProfileDefinitions
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.Calculus.MeanValue
 
@@ -7,8 +8,8 @@ import Mathlib.Analysis.Calculus.MeanValue
 Intentional holes are confined to verification challenges. -/
 namespace HigherCorrelations
 noncomputable section
-open MeasureTheory Set
-open scoped NNReal
+open MeasureTheory Set Filter
+open scoped NNReal Topology
 
 theorem tripleAnchoredProfile_denominators (v : MasterTriple) (u : ℝ) :
     (tripleMasterDenominator (v 0) (occurrenceOrdinate (v 2)+u)*
@@ -314,6 +315,101 @@ theorem tripleKernelLocalizationError_summed_bound_deriv :
       Summable (fun v : MasterTriple => ‖tripleKernelLocalizationError ω T v‖) ∧
       (∑' v : MasterTriple, ‖tripleKernelLocalizationError ω T v‖) ≤
         C*(M₁*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/T := by sorry
+
+theorem tripleFrozenProfile_test_order (ω : ℝ → ℝ) (T : ℝ) (v : MasterTriple) :
+    tripleFrozenProfile ω T (tripleTestToMaster v)=tripleFrozenTestProfile ω T v := by sorry
+
+theorem tripleFrozenProfile_eq_sub (ω : ℝ → ℝ) (hw : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 0<T) (v : MasterTriple) :
+    tripleFrozenProfile ω T v=tripleMasterKernel ω T v-tripleKernelLocalizationError ω T v := by sorry
+
+theorem tripleFrozenProfile_norm_le (ω : ℝ → ℝ) (hw : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 0<T) (v : MasterTriple) :
+    ‖tripleFrozenProfile ω T v‖≤‖tripleMasterKernel ω T v‖+‖tripleKernelLocalizationError ω T v‖ := by sorry
+
+theorem tripleFrozen_weight_mass_bound (ω : ℝ → ℝ) (hw : Continuous ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (M : ℝ) (hM : 0≤M)
+    (hb : ∀ u, |ω u|≤M) : (∫ u : ℝ, |ω u|)≤M := by sorry
+
+theorem tripleFrozen_kernel_mass_bound :
+    ∃ A : ℝ, 0<A ∧ ∀ (ω : ℝ → ℝ), Continuous ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ M : ℝ, 0≤M → (∀ u, |ω u|≤M) → ∀ T : ℝ, 3≤T →
+      Summable (fun v : MasterTriple => ‖tripleMasterKernel ω T v‖) ∧
+      (∑' v : MasterTriple, ‖tripleMasterKernel ω T v‖)≤A*M*Real.log (2*T+2)^3 := by sorry
+
+theorem tripleFrozenProfile_summable_bound :
+    ∃ A B : ℝ, 0<A ∧ 0<B ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ u, |ω u|≤M₀) → LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ T : ℝ, 3≤T → Summable (fun v : MasterTriple => ‖tripleFrozenProfile ω T v‖) ∧
+      (∑' v : MasterTriple, ‖tripleFrozenProfile ω T v‖) ≤
+        A*M₀*Real.log (2*T+2)^3+B*((M₁:ℝ)*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/T := by sorry
+
+theorem tripleFrozenProfile_norm_summable (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 3≤T) :
+    Summable (fun v : MasterTriple => ‖tripleFrozenProfile ω T v‖) := by sorry
+
+theorem tripleFrozenProfile_mass_triangle (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 3≤T) :
+    (∑' v : MasterTriple, ‖tripleFrozenProfile ω T v‖) ≤
+      (∑' v : MasterTriple, ‖tripleMasterKernel ω T v‖)+
+      (∑' v : MasterTriple, ‖tripleKernelLocalizationError ω T v‖) := by sorry
+
+theorem tripleFrozenProfile_summable_bound_deriv :
+    ∃ A B : ℝ, 0<A ∧ 0<B ∧ ∀ (ω : ℝ → ℝ) (M₀ M₁ : ℝ), 0≤M₀ → 0≤M₁ →
+      (∀ u, |ω u|≤M₀) → Differentiable ℝ ω → (∀ u, |deriv ω u|≤M₁) →
+      Function.support ω ⊆ Icc (1:ℝ) 2 → ∀ T : ℝ, 3≤T →
+      Summable (fun v : MasterTriple => ‖tripleFrozenProfile ω T v‖) ∧
+      (∑' v : MasterTriple, ‖tripleFrozenProfile ω T v‖) ≤
+        A*M₀*Real.log (2*T+2)^3+B*(M₁*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/T := by sorry
+
+theorem tripleFrozenTestProfile_summable_bound :
+    ∃ A B : ℝ, 0<A ∧ 0<B ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ u, |ω u|≤M₀) → LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ T : ℝ, 3≤T → Summable (fun v : MasterTriple => ‖tripleFrozenTestProfile ω T v‖) ∧
+      (∑' v : MasterTriple, ‖tripleFrozenTestProfile ω T v‖) ≤
+        A*M₀*Real.log (2*T+2)^3+B*((M₁:ℝ)*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/T := by sorry
+
+theorem tripleFrozenProfile_sum_identity (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 3≤T) :
+    (∑' v : MasterTriple, tripleMasterKernel ω T v) =
+      (∑' v : MasterTriple, tripleFrozenProfile ω T v)+
+      (∑' v : MasterTriple, tripleKernelLocalizationError ω T v) := by sorry
+
+theorem tripleFrozenTestProfile_sum_identity (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 3≤T) :
+    (∑' v : MasterTriple, tripleMasterKernel ω T (tripleTestToMaster v)) =
+      (∑' v : MasterTriple, tripleFrozenTestProfile ω T v)+
+      (∑' v : MasterTriple, tripleKernelLocalizationError ω T (tripleTestToMaster v)) := by sorry
+
+theorem tripleFrozenProfile_independent_cutoff (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 3≤T) :
+    Tendsto (fun S : Fin 3 → Finset ZeroOccurrence => ∑ v ∈ tripleDomain S, tripleFrozenProfile ω T v)
+      atTop (𝓝 (∑' v : MasterTriple, tripleFrozenProfile ω T v)) := by sorry
+
+theorem tripleFrozenProfile_height_cutoff (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 3≤T) :
+    Tendsto (fun U : Fin 3 → ℝ =>
+      ∑ v ∈ tripleDomain (fun r => occurrenceCutoff (U r)), tripleFrozenProfile ω T v)
+      atTop (𝓝 (∑' v : MasterTriple, tripleFrozenProfile ω T v)) := by sorry
+
+theorem tripleFrozenTestProfile_independent_cutoff (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (T : ℝ) (hT : 3≤T) :
+    Tendsto (fun S : Fin 3 → Finset ZeroOccurrence => ∑ v ∈ tripleDomain S, tripleFrozenTestProfile ω T v)
+      atTop (𝓝 (∑' v : MasterTriple, tripleFrozenTestProfile ω T v)) := by sorry
+
+theorem tripleFrozenProfile_zero (T : ℝ) (v : MasterTriple) :
+    tripleFrozenProfile (fun _ => 0) T v=0 := by sorry
+
+theorem tripleFrozenProfile_repeated (ω : ℝ → ℝ) (T : ℝ) (i : ZeroOccurrence) :
+    tripleFrozenProfile ω T (fun _ => i) = (ω (occurrenceOrdinate i/T)/T:ℝ)*
+      rationalProfile 0 0 (occurrenceDisplacement i) (occurrenceDisplacement i) (occurrenceDisplacement i) := by sorry
 
 theorem tripleKernelLocalizationError_zero (T : ℝ) (v : MasterTriple) :
     tripleKernelLocalizationError (fun _ => 0) T v=0 := by sorry

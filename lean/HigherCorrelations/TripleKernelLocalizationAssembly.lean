@@ -1,7 +1,9 @@
 import HigherCorrelations.KernelLocalizationBounds
 import HigherCorrelations.KernelLocalizationSummed
+import HigherCorrelations.FrozenProfileLimits
 
-/-! UNCONDITIONAL exact, tuplewise and summed kernel localization.
+/-! UNCONDITIONAL exact, tuplewise and summed kernel localization, including
+absolute frozen-profile convergence.
 Correlation transfer and height limits remain separate. -/
 namespace HigherCorrelations
 noncomputable section

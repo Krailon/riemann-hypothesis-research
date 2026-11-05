@@ -5392,3 +5392,54 @@ claims:
       proof_route: "Near uses unit shells. Far-center dominates the strict tail by the checked inclusive tail. Far-anchor uses the scaled integrable profile (1+log(3|u|+2)^2)/(1+u^2), proved integrable by a (1+u^2)^(-3/4) majorant, instead of a new dyadic integral decomposition. Finite rectangular majorants and uniform finite integral-norm bounds replace the planned nonnegative Tonelli construction while giving the same rates and proving all convergence premises."
       constants_scope: "Constants are absolute and uniform but existential: the inherited finite low-height count and a finite profile integral are not numerically evaluated. The existing tuplewise constant 64pi/27 is unchanged."
       baseline_audit_coverage: "The historical TRIPLE-KERNEL-LOCALIZATION-001 remains partially formalized and retains its status and RH-audit scope. Exact localization, tuplewise and summed near/far estimates are checked; frozen-profile summability, complex-test correlation transfer, the inherited height limit and the historical numerical-effectiveness qualification remain separate. The ordinate-only signed complex-argument error remains open."
+
+  - id: MASTER-FROZEN-PROFILE-SUMMABILITY-FORMAL-001
+    title: Absolute unweighted frozen-profile summability and independent occurrence cutoffs
+    kind: theorem
+    statement: |
+      Define P_T(v) directly as omega(gamma(v2)/T) times
+      J(gamma(v0)-gamma(v2),gamma(v1)-gamma(v2);delta(v0),delta(v1),delta(v2))/T.
+      For T>=3, a real weight omega supported in [1,2], |omega|<=M0 with
+      M0>=0, and global Lipschitz constant M1>=0, the full ordered actual
+      zero-occurrence sum of ||P_T(v)|| is summable. With L=log(2T+2)
+      there exist absolute A,B>0 independent of omega,M0,M1,T such that
+      sum_v ||P_T(v)|| <= A M0 L^3+B (M1 L^4+M0 L^3)/T.
+      The unsimplified mass bound is sum ||P_T||<=sum ||K_T||+sum ||E_kernel||.
+      The kernel bound uses integral |omega|<=M0, without assuming a
+      nonnegative weight or unit mass. The existing identity proves
+      P_T=K_T-E_kernel after P_T is defined by its profile expression.
+      The test-order coefficient is omega(gamma(v0)/T) actualRationalKernel(v)/T;
+      it equals P_T(tripleTestToMaster v), is absolutely summable and obeys
+      the same uniform bound. No factor eight is included in either frozen
+      coefficient. Absolute summability justifies sum K_T=sum P_T+sum E_kernel
+      in both orderings. Independent finite occurrence cutoffs converge in
+      both orderings. In master order three independent closed ordinate
+      cutoffs |gamma|<=U_r also converge to the same sum, with T fixed.
+      A derivative wrapper accepts differentiability and |deriv omega|<=M1.
+      Zero smoothing gives zero coefficients, and a fully repeated occurrence
+      retains J(0,0;delta,delta,delta). Both ordinate signs, all multiplicities,
+      and distinct complex zeros sharing an ordinate are included.
+      No RH, simplicity or critical-line substitution is used. The statement
+      concerns the unweighted frozen series, not its complex-Fourier-test
+      weighting, correlation transfer, T-to-infinity limit or the ordinate-only
+      signed complex-argument error.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-KERNEL-LOCALIZATION-SUM-FORMAL-001, MASTER-IDENTITY-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/FrozenProfileSummability.lean
+      label: HigherCorrelations.tripleFrozenProfile_summable_bound
+      companion_declarations: [tripleFrozenProfile_eq_sub, tripleFrozenProfile_mass_triangle, tripleFrozenProfile_summable_bound_deriv, tripleFrozenTestProfile_summable_bound, tripleFrozenProfile_sum_identity, tripleFrozenTestProfile_sum_identity, tripleFrozenProfile_independent_cutoff, tripleFrozenProfile_height_cutoff, tripleFrozenTestProfile_independent_cutoff, tripleFrozenProfile_repeated]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: ab42ee3727e01132cf0817954f4012f687c26093aba1092fc8b7a5ccf8747587
+    limit_order: "Fix T, smoothing and its bounds. First prove absolute summability from the master kernel and localization-error budgets. Only then add the complex sums and remove three independent finite occurrence cutoffs, or three independent inclusive ordinate cutoffs. No T-to-infinity limit or complex-test interchange is taken."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 88 public statements across 16 localization modules are compared with definition-only expected statements. Twelve unfinished-proof controls include frozen summability, normalization and independent cutoff convergence. Combined project build, full axiom report, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "Checked unit-scale master identity and integral-norm bound, exact localization, summed regional error estimates, tuple-order equivalence and generic absolute occurrence-cutoff convergence; mathlib norm and summable-series algebra. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Absolute existential A,B, uniform in the height and both displayed smoothing bounds. No numerical evaluation or effectiveness certification is introduced. The factor eight from the master explicit formula is divided out when bounding K_T; the frozen coefficient retains exactly 1/T."
+      baseline_audit_coverage: "The historical TRIPLE-KERNEL-LOCALIZATION-001 remains partially formalized with unchanged status and RH-audit scope. Unweighted frozen-profile summability, its summed identity and fixed-height cutoffs are checked. Complex-test profile summability, correlation transfer, the inherited T-to-infinity limit and the numerical-effectiveness qualification remain separate; the ordinate-only signed error remains open."

@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "ef37ca0ec744234334892e861167dcfb8bb9a718181e9c72ff234ff16207643a",
+    "research/theorem-ledger.yaml": "e5271883721affbaed6c9c60132d2c868cd93897ad54ce41bb89defd65bf41c0",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "4e4b07cfe5ed8c1f405c58c1754733aa88c01e70954581ccd0e34a2991f00310"
+    "research/pair-rh-audit.json": "48ab237b5dc91bdbffefa1aa582eb21c4e27342cc20d68b8204a05baedf07498"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4682,5 +4682,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the disjoint near/far decomposition, separate summed integral-norm budgets and absolute kernel-error summability, with uniform existential constants. The finite-cutoff proof route proves convergence before infinite complex interchange. Historical statements, statuses and RH-audit scope are unchanged; complex-test profile transfer, height limits, numerical effectiveness and the ordinate-only signed error remain separate."
+  },
+  "ledger_frozen_profile_review": {
+    "reviewed_on": "2026-11-05",
+    "previous_ledger_sha256": "ef37ca0ec744234334892e861167dcfb8bb9a718181e9c72ff234ff16207643a",
+    "added_claim_ids": [
+      "MASTER-FROZEN-PROFILE-SUMMABILITY-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records absolute unweighted frozen-profile summability, uniform mass bounds, the summed localization identity and independent occurrence cutoffs at fixed T in the stated orderings. Both horizontal dependence and multiplicity are retained. Historical statements, statuses and RH-audit scope are unchanged. Complex-test weighting and transfer, T-to-infinity limits, numerical effectiveness and the ordinate-only signed error remain separate."
   }
 }

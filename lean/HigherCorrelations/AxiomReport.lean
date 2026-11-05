@@ -2031,3 +2031,37 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleKernelLocalizationError_summed_bound
 
 #print axioms HigherCorrelations.tripleKernelLocalizationError_summed_bound_deriv
+
+#print axioms HigherCorrelations.tripleFrozenProfile_test_order
+
+#print axioms HigherCorrelations.tripleFrozenProfile_eq_sub
+
+#print axioms HigherCorrelations.tripleFrozenProfile_norm_le
+
+#print axioms HigherCorrelations.tripleFrozen_weight_mass_bound
+
+#print axioms HigherCorrelations.tripleFrozen_kernel_mass_bound
+
+#print axioms HigherCorrelations.tripleFrozenProfile_summable_bound
+
+#print axioms HigherCorrelations.tripleFrozenProfile_norm_summable
+
+#print axioms HigherCorrelations.tripleFrozenProfile_mass_triangle
+
+#print axioms HigherCorrelations.tripleFrozenProfile_summable_bound_deriv
+
+#print axioms HigherCorrelations.tripleFrozenTestProfile_summable_bound
+
+#print axioms HigherCorrelations.tripleFrozenProfile_sum_identity
+
+#print axioms HigherCorrelations.tripleFrozenTestProfile_sum_identity
+
+#print axioms HigherCorrelations.tripleFrozenProfile_independent_cutoff
+
+#print axioms HigherCorrelations.tripleFrozenProfile_height_cutoff
+
+#print axioms HigherCorrelations.tripleFrozenTestProfile_independent_cutoff
+
+#print axioms HigherCorrelations.tripleFrozenProfile_zero
+
+#print axioms HigherCorrelations.tripleFrozenProfile_repeated

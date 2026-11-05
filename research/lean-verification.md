@@ -436,3 +436,15 @@ See [the localization record](lean-triple-kernel-localization.md) for the bounds
 endpoint conventions, finite-cutoff proof route and certificate. Constants of
 the summed estimates remain absolute existential constants. Complex-test
 profile transfer and height limits remain separate.
+
+### Unweighted frozen-profile summability
+
+The localization suite includes the directly defined frozen coefficient in
+master and test order, absolute summability with uniform mass bounds, the
+summed localization identity and independent occurrence cutoff convergence at
+fixed height. Its 88 statements in 16 modules are covered by independent
+expected statements and twelve unfinished-proof controls. The focused command
+remains `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-kernel-localization-only`.
+See [the localization record](lean-triple-kernel-localization.md) for scope and
+certificate. Complex-test weighting and transfer, T-to-infinity limits and
+numerical evaluation of the inherited constants remain separate.

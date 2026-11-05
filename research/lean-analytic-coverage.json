@@ -1138,6 +1138,23 @@
         "HigherCorrelations.localization_total_error_le_masses",
         "HigherCorrelations.tripleKernelLocalizationError_summed_bound",
         "HigherCorrelations.tripleKernelLocalizationError_summed_bound_deriv",
+        "HigherCorrelations.tripleFrozenProfile_test_order",
+        "HigherCorrelations.tripleFrozenProfile_eq_sub",
+        "HigherCorrelations.tripleFrozenProfile_norm_le",
+        "HigherCorrelations.tripleFrozen_weight_mass_bound",
+        "HigherCorrelations.tripleFrozen_kernel_mass_bound",
+        "HigherCorrelations.tripleFrozenProfile_summable_bound",
+        "HigherCorrelations.tripleFrozenProfile_norm_summable",
+        "HigherCorrelations.tripleFrozenProfile_mass_triangle",
+        "HigherCorrelations.tripleFrozenProfile_summable_bound_deriv",
+        "HigherCorrelations.tripleFrozenTestProfile_summable_bound",
+        "HigherCorrelations.tripleFrozenProfile_sum_identity",
+        "HigherCorrelations.tripleFrozenTestProfile_sum_identity",
+        "HigherCorrelations.tripleFrozenProfile_independent_cutoff",
+        "HigherCorrelations.tripleFrozenProfile_height_cutoff",
+        "HigherCorrelations.tripleFrozenTestProfile_independent_cutoff",
+        "HigherCorrelations.tripleFrozenProfile_zero",
+        "HigherCorrelations.tripleFrozenProfile_repeated",
         "HigherCorrelations.tripleKernelLocalizationError_zero",
         "HigherCorrelations.tripleAnchoredProfile_repeated",
         "HigherCorrelations.tripleMasterKernel_localization_bound",
@@ -1145,7 +1162,7 @@
         "HigherCorrelations.tripleKernelLocalizationError_equal_ordinates"
       ],
       "remaining_obligations": [
-        "The exact decomposition, explicit tuplewise constant and disjoint near/far integral-norm budgets and summed absolute error bound are checked. Explicit-profile correlation transfer and its height limit remain unformalized. Numerical effectiveness of inherited summed constants is not certified; they remain absolute existential constants."
+        "The exact decomposition, tuplewise and summed near/far bounds, and unweighted frozen-profile absolute summability with uniform mass bounds and independent fixed-height cutoffs are checked. Complex-test profile summability, correlation transfer and its T-to-infinity limit remain unformalized. Numerical effectiveness of inherited summed constants is not certified; they remain absolute existential constants."
       ]
     },
     {
@@ -11235,6 +11252,91 @@
       "comparator_checked": true
     },
     {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_test_order",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_eq_sub",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_norm_le",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozen_weight_mass_bound",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozen_kernel_mass_bound",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_summable_bound",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_norm_summable",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_mass_triangle",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_summable_bound_deriv",
+      "source": "lean/HigherCorrelations/FrozenProfileSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_summable_bound",
+      "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_sum_identity",
+      "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_sum_identity",
+      "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_independent_cutoff",
+      "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_height_cutoff",
+      "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_independent_cutoff",
+      "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_zero",
+      "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenProfile_repeated",
+      "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
       "declaration": "HigherCorrelations.tripleKernelLocalizationError_zero",
       "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
       "comparator_checked": true
@@ -11260,5 +11362,5 @@
       "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates are checked. Next prove absolute summability of the frozen-profile statistic and its complex-test correlation transfer, then the inherited height limit. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and unweighted frozen-profile summability are checked. Next prove complex-test weighted profile summability and correlation transfer, then the inherited T-to-infinity limit. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
 }

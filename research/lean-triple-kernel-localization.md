@@ -106,8 +106,9 @@ Formal ledger entry: `MASTER-KERNEL-LOCALIZATION-SUM-FORMAL-001`.
 All 71 statement comparisons, nine rejection controls, the combined build,
 axiom audit and regressions passed.
 Certificate: [PASS manifest](../artifacts/certificates/lean/6a35fdbed75bfc10efbec04f4a43f6e5c4078c22472bafaa86daf718386889db/manifest.json).
-All Lean source and challenge hashes match this run; subsequent ledger and
-audit metadata updates do not change the proof sources.
+This certificate records the regional summed-error stage. The frozen-profile
+extension below supersedes its assembly and inventory; the regional proof
+modules are unchanged.
 
 For T>=3 put L=log(2T+2). Let omega be real, supported in [1,2],
 with |omega|<=M0 and global Lipschitz constant M1. The three regional errors
@@ -161,11 +162,66 @@ from the previous stage is not summed over all triples.
 Constants are absolute and uniform but existential in Lean. The inherited
 low-height counting constant and the profile integral are not numerically
 certified here. The previous explicit tuplewise constant 64pi/27 is unchanged.
-The historical lemma retains partial formalization coverage: frozen-profile
-summability, complex-test correlation transfer and the inherited height limit
-remain pending. The ordinate-only signed complex-argument error is still open.
+This stage left frozen-profile summability, complex-test correlation transfer
+and the inherited height limit pending. The next section records the
+unweighted frozen-profile summability milestone. The ordinate-only signed complex-argument error is still open.
 
 The expanded suite covers all 71 public statements in 13 modules, with nine
 unfinished-proof rejection controls: the preceding four plus region assembly,
 near, far-center, far-anchor and combined summability. It also runs the combined
 project build, full axiom report, coverage, harness and pair/triple regressions.
+
+## Unweighted frozen-profile summability (complete)
+
+Formal ledger entry: `MASTER-FROZEN-PROFILE-SUMMABILITY-FORMAL-001`.
+All 88 statement comparisons, twelve rejection controls, the combined build,
+axiom audit and regressions passed.
+Certificate: [PASS manifest](../artifacts/certificates/lean/ab42ee3727e01132cf0817954f4012f687c26093aba1092fc8b7a5ccf8747587/manifest.json).
+All Lean source and challenge hashes match this run; subsequent ledger and
+audit metadata updates do not change the proof sources.
+
+The frozen coefficient is defined directly, with the exact outside factor 1/T:
+
+P_T(v) = omega(gamma(v2)/T) J(gamma(v0)-gamma(v2),gamma(v1)-gamma(v2);delta)/T.
+
+It is not defined by subtracting two kernels. The checked identity subsequently
+identifies P_T with K_T-E_kernel. For T>=3, support omega in [1,2], |omega|<=M0,
+and global Lipschitz constant M1, its full occurrence series is absolutely
+summable. With L=log(2T+2), there are absolute A,B>0, uniform in all displayed
+parameters, such that
+
+sum_v ||P_T(v)|| <= A M0 L^3 + B (M1 L^4 + M0 L^3)/T.
+
+The proof also retains the unsimplified mass bound
+sum ||P_T|| <= sum ||K_T|| + sum ||E_kernel||. The kernel bound uses the
+unit-scale master identity and integral |omega|<=M0 from support of length one;
+it does not require nonnegative smoothing or unit mass. The factor eight in
+the master explicit formula is divided out when bounding K_T and never enters
+the definition of P_T. The error uses the separately checked regional budgets.
+A derivative wrapper accepts differentiability and |deriv omega|<=M1.
+
+The test-order coefficient is omega(gamma(v0)/T) actualRationalKernel(v)/T.
+The existing permutation identifies it exactly with P_T(tripleTestToMaster v)
+and transfers the same absolute mass bound. Only after absolute summability is
+proved are the complex sums added to obtain sum K_T = sum P_T + sum E_kernel,
+in both tuple orderings.
+
+Independent finite occurrence cutoffs converge to the full frozen sum in both
+orderings. In master order this is also specialized to three independent closed
+ordinate cutoffs |gamma|<=U_r. T is fixed while these cutoffs are removed;
+no T-to-infinity assertion is made. Zero smoothing and a fully repeated
+occurrence are checked explicitly. The repeated profile remains
+J(0,0;delta,delta,delta), preserving its horizontal dependence and multiplicity.
+Both ordinate signs and distinct complex zeros with equal ordinates remain.
+
+This is summability of the unweighted coefficient series. It does not assert
+summability after inserting an unbounded complex Fourier test. Complex-test
+profile summability, its correlation transfer, and the inherited T-to-infinity
+limit are the next steps. The ordinate-only signed error remains open.
+Constants remain absolute existential constants, without numerical evaluation.
+
+The expanded localization suite checks 88 public statements in 16 modules.
+Its twelve unfinished-proof controls include frozen summability, normalization
+and independent cutoff convergence, in addition to the preceding nine. The
+focused harness also runs the combined build, full axiom audit, coverage,
+harness and pair/triple regressions.
