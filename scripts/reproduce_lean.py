@@ -227,7 +227,7 @@ def main(argv=None):
     parser.add_argument('--triple-signed-sectors-only', action='store_true',
                         help='Check signed sectors, full smooth-test passage and limit; combined build, all axioms and regressions using prepared dependencies.')
     parser.add_argument('--triple-kernel-localization-only', action='store_true',
-                        help='Check kernel localization, summed near/far bounds and complex-test weighted frozen-profile summability, normalized transfer and height limits; combined build, axioms and regressions using prepared dependencies.')
+                        help='Check kernel localization, summed near/far bounds and complex-test weighted frozen-profile summability, normalized transfer, height limits and uniform microscopic profile; combined build, axioms and regressions using prepared dependencies.')
     args = parser.parse_args(argv)
     if sum([args.pair_zero_only, args.zeta23_only, args.pair_zero_bounds_only, args.pair_zero_comparison_only, args.pair_asymptotic_only, args.pair_fourier_only, args.triple_master_only, args.triple_budget_only, args.triple_mixed_diagonal_only, args.triple_smoothing_only, args.triple_resonance_decay_only, args.triple_retained_only, args.triple_interior_vanishing_only, args.triple_test_function_only, args.triple_boundary_only, args.triple_signed_sectors_only, args.triple_kernel_localization_only]) > 1:
         parser.error('Choose at most one focused verification mode')
@@ -308,7 +308,7 @@ def main(argv=None):
             'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun.')
 
     if args.triple_kernel_localization_only:
-        report['verification_scope'] = ('Exact anchored profile translation, tuplewise localization, the disjoint near/far budgets, summed error bound, signed complex-test majorant and absolute unweighted/weighted frozen-profile convergence with uniform mass bounds, independent fixed-height cutoffs, normalized correlation transfer and fixed-test height limits; '
+        report['verification_scope'] = ('Exact anchored profile translation, tuplewise localization, the disjoint near/far budgets, summed error bound, signed complex-test majorant and absolute unweighted/weighted frozen-profile convergence with uniform mass bounds, independent fixed-height cutoffs, normalized correlation transfer, fixed-test height limits and effective microscopic profile convergence; '
             'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun. No ordinate-only replacement or varying-parameter limit is asserted. Summed constants remain absolute existential constants.')
 
     def command(name, argv, *, expected_failure=False):
@@ -346,7 +346,7 @@ def main(argv=None):
             command('triple-kernel-localization-build', ['lake', 'build', 'HigherCorrelations.TripleKernelLocalizationAssembly'])
             command('triple-kernel-localization-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/triple-kernel-localization.json'])
-            for control in ['translation', 'decomposition', 'sharp', 'bound', 'regions', 'near', 'far-center', 'far-anchor', 'summability', 'frozen-summability', 'frozen-normalization', 'frozen-cutoff', 'complex-test', 'weighted-profile', 'weighted-error', 'weighted-cutoff', 'profile-normalization', 'profile-transfer', 'profile-limit']:
+            for control in ['translation', 'decomposition', 'sharp', 'bound', 'regions', 'near', 'far-center', 'far-anchor', 'summability', 'frozen-summability', 'frozen-normalization', 'frozen-cutoff', 'complex-test', 'weighted-profile', 'weighted-error', 'weighted-cutoff', 'profile-normalization', 'profile-transfer', 'profile-limit', 'micro-gap', 'micro-rate', 'micro-limit']:
                 command('triple-kernel-localization-' + control + '-unfinished-rejected', ['lake', 'env', comparator,
                         'lean/VerificationChallenges/triple-kernel-localization-' + control + '-unfinished.json'], expected_failure=True)
             command('triple-kernel-localization-regressions', [sys.executable, '-B', 'scripts/check_lean_triple_kernel_localization.py'])

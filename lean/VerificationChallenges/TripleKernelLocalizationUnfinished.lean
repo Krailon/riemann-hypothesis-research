@@ -3,6 +3,7 @@ import HigherCorrelations.KernelLocalizationSumDefinitions
 import HigherCorrelations.FrozenProfileDefinitions
 import HigherCorrelations.SignedSectorDefinitions
 import HigherCorrelations.ProfileTransferDefinitions
+import HigherCorrelations.ProfileMicroscopicDefinitions
 import HigherCorrelations.TripleBoundaryDefinitions
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.Calculus.MeanValue
@@ -628,6 +629,73 @@ theorem frozenStatistic_compact_limit (ω : ℝ → ℝ) (hω : TripleBudgetWeig
     (φ : ℝ × ℝ → ℂ) (hφ : ContDiff ℝ (⊤ : ℕ∞) φ) (hc : HasCompactSupport φ)
     (hs : tsupport φ ⊆ signedRegion) :
     Tendsto (frozenStatistic ω φ) atTop (𝓝 (signedLimit φ)) := by sorry
+
+theorem profileGapFactor_denominator_ne (x h : ℝ) (hh : |h|≤1) :
+    4+((x:ℂ)-Complex.I*h)^2≠0 := by sorry
+
+theorem profileGapFactor_norm_bound (x h : ℝ) (hh : |h|≤1) :
+    ‖profileGapFactor x h‖≤(1:ℝ)/3 := by sorry
+
+theorem profileGapFactor_difference (x h : ℝ) (hh : |h|≤1) :
+    ‖profileGapFactor x h-profileGapFactor 0 h‖≤(|x|+2)*|x|/9 := by sorry
+
+theorem profileReciprocalSum_difference (p q r p' q' r' : ℂ)
+    (hp' : ‖p'‖≤(1:ℝ)/3) (hq : ‖q‖≤(1:ℝ)/3)
+    (hq' : ‖q'‖≤(1:ℝ)/3) (hr : ‖r‖≤(1:ℝ)/3) :
+    ‖profileReciprocalSum p q r-profileReciprocalSum p' q' r'‖ ≤
+      2*(‖p-p'‖+‖q-q'‖+‖r-r'‖) := by sorry
+
+theorem rationalProfile_eq_gap_factors (a b e f g : ℝ)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    rationalProfile a b e f g = (Real.pi:ℂ)*profileReciprocalSum
+      (profileGapFactor (a-b) (e-f)) (profileGapFactor a (e+g)) (profileGapFactor b (f+g)) := by sorry
+
+theorem profileGapFactor_difference_bounded (R x h : ℝ) (hR : 0≤R)
+    (hx : |x|≤2*R) (hh : |h|≤1) :
+    ‖profileGapFactor x h-profileGapFactor 0 h‖≤(2*R+2)*|x|/9 := by sorry
+
+theorem rationalProfile_gap_bound (R a b e f g : ℝ) (hR : 0≤R)
+    (ha : |a|≤R) (hb : |b|≤R) (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    ‖rationalProfile a b e f g-rationalProfile 0 0 e f g‖ ≤
+      (8*Real.pi*(R+1)/9)*(|a|+|b|) := by sorry
+
+theorem rationalProfile_scaled_gap_bound (R ℓ u v e f g : ℝ) (hR : 0≤R) (hℓ : 1≤ℓ)
+    (hu : |u|≤R) (hv : |v|≤R) (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    ‖rationalProfile (u/ℓ) (v/ℓ) e f g-rationalProfile 0 0 e f g‖ ≤
+      (16*Real.pi*R*(R+1)/9)/ℓ := by sorry
+
+theorem microscopic_meanSpacing_ge_one (T : ℝ) (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) :
+    1≤ meanSpacing T := by sorry
+
+theorem microscopic_meanSpacing_tendsto : Tendsto meanSpacing atTop atTop := by sorry
+
+theorem rationalProfile_microscopic_bound (R T u v e f g : ℝ) (hR : 0≤R)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) (hu : |u|≤R) (hv : |v|≤R)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    ‖rationalProfile (u/meanSpacing T) (v/meanSpacing T) e f g-rationalProfile 0 0 e f g‖ ≤
+      (16*Real.pi*R*(R+1)/9)/meanSpacing T := by sorry
+
+theorem rationalProfile_microscopic_tendstoUniformlyOn (R : ℝ) (hR : 0≤R) :
+    TendstoUniformlyOn
+      (fun T (p : Fin 5 → ℝ) => rationalProfile (p 0/meanSpacing T) (p 1/meanSpacing T) (p 2) (p 3) (p 4))
+      (fun p => rationalProfile 0 0 (p 2) (p 3) (p 4)) atTop (profileMicroscopicBox R) := by sorry
+
+theorem rationalProfile_microscopic_zero_gaps (ℓ e f g : ℝ) :
+    rationalProfile (0/ℓ) (0/ℓ) e f g=rationalProfile 0 0 e f g := by sorry
+
+theorem rationalProfile_microscopic_zero_radius (ℓ u v e f g : ℝ)
+    (hu : |u|≤0) (hv : |v|≤0) :
+    rationalProfile (u/ℓ) (v/ℓ) e f g=rationalProfile 0 0 e f g := by sorry
+
+theorem rationalProfile_microscopic_coincident_gaps (R ℓ u e f g : ℝ) (hR : 0≤R)
+    (hℓ : 1≤ℓ) (hu : |u|≤R) (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    ‖rationalProfile (u/ℓ) (u/ℓ) e f g-rationalProfile 0 0 e f g‖ ≤
+      (16*Real.pi*R*(R+1)/9)/ℓ := by sorry
+
+theorem rationalProfile_microscopic_closed_endpoints (R ℓ u v : ℝ) (hR : 0≤R)
+    (hℓ : 1≤ℓ) (hu : |u|≤R) (hv : |v|≤R) :
+    ‖rationalProfile (u/ℓ) (v/ℓ) (1/2) (-1/2) (1/2)-rationalProfile 0 0 (1/2) (-1/2) (1/2)‖ ≤
+      (16*Real.pi*R*(R+1)/9)/ℓ := by sorry
 
 theorem tripleKernelLocalizationError_zero (T : ℝ) (v : MasterTriple) :
     tripleKernelLocalizationError (fun _ => 0) T v=0 := by sorry

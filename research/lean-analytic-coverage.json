@@ -1045,11 +1045,31 @@
         "label": "cor:triple-kernel-critical",
         "bookkeeping": "research/triple-kernel.md"
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.rationalProfile_origin",
+        "HigherCorrelations.rationalProfile_real",
+        "HigherCorrelations.profileGapFactor_denominator_ne",
+        "HigherCorrelations.profileGapFactor_norm_bound",
+        "HigherCorrelations.profileGapFactor_difference",
+        "HigherCorrelations.profileReciprocalSum_difference",
+        "HigherCorrelations.rationalProfile_eq_gap_factors",
+        "HigherCorrelations.profileGapFactor_difference_bounded",
+        "HigherCorrelations.rationalProfile_gap_bound",
+        "HigherCorrelations.rationalProfile_scaled_gap_bound",
+        "HigherCorrelations.microscopic_meanSpacing_ge_one",
+        "HigherCorrelations.microscopic_meanSpacing_tendsto",
+        "HigherCorrelations.rationalProfile_microscopic_bound",
+        "HigherCorrelations.rationalProfile_microscopic_tendstoUniformlyOn",
+        "HigherCorrelations.rationalProfile_microscopic_zero_gaps",
+        "HigherCorrelations.rationalProfile_microscopic_zero_radius",
+        "HigherCorrelations.rationalProfile_microscopic_coincident_gaps",
+        "HigherCorrelations.rationalProfile_microscopic_closed_endpoints"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "The explicit gap bound, scaled-gap rate and microscopic limit are checked uniformly on the closed horizontal cube, with effective constant 16*pi*R*(R+1)/9 and threshold T>=2*pi*exp(2*pi). Zero radius, zero/coincident gaps and horizontal endpoints are included.",
+        "The explicit zero-gap horizontal formula, critical-line quadratic expansion with fourth-order remainder, its tuplewise kernel consequence and the local critical-line normalization comparison remain unformalized. No limit is interchanged with an infinite zero sum."
       ]
     },
     {
@@ -11535,6 +11555,86 @@
       "comparator_checked": true
     },
     {
+      "declaration": "HigherCorrelations.profileGapFactor_denominator_ne",
+      "source": "lean/HigherCorrelations/ProfileGapBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileGapFactor_norm_bound",
+      "source": "lean/HigherCorrelations/ProfileGapBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileGapFactor_difference",
+      "source": "lean/HigherCorrelations/ProfileGapBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileReciprocalSum_difference",
+      "source": "lean/HigherCorrelations/ProfileGapBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_eq_gap_factors",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileGapFactor_difference_bounded",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_gap_bound",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_scaled_gap_bound",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.microscopic_meanSpacing_ge_one",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.microscopic_meanSpacing_tendsto",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_bound",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_tendstoUniformlyOn",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_zero_gaps",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_zero_radius",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_coincident_gaps",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_closed_endpoints",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
       "declaration": "HigherCorrelations.tripleKernelLocalizationError_zero",
       "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
       "comparator_checked": true
@@ -11560,5 +11660,5 @@
       "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. Continue through the remaining profile specialization and main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. Next formalize the remaining critical-line expansion, tuplewise specialization and main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
 }

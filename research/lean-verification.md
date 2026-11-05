@@ -478,3 +478,18 @@ See [the localization record](lean-triple-kernel-localization.md) for the
 certificate and exact scope. Historical coverage stays partial solely for the
 uncertified numerical-effectiveness qualification. The ordinate-only signed
 error is not resolved by profile localization.
+
+
+### Effective uniform microscopic profile
+
+The localization suite adds an explicit gap bound and scaled-gap rate with
+C_R=16 pi R(R+1)/9, including the closed horizontal cube. The height threshold
+T>=2 pi exp(2 pi) ensures L_T>=1, and the profile converges uniformly on the
+full five-parameter box to its horizontally dependent zero-gap profile.
+Zero radius, coincident/zero gaps and horizontal endpoints are checked.
+The suite covers 137 statements in 26 modules with twenty-two unfinished-proof
+controls. Use the existing localization reproduction command with dependency
+reuse. See [the localization record](lean-triple-kernel-localization.md) for
+verification evidence and scope. The critical-line quadratic expansion and
+summed constant-kernel replacement remain separate; the new explicit constant
+does not resolve effectiveness of inherited counting constants.

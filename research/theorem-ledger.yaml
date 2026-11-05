@@ -5570,3 +5570,58 @@ claims:
       imported_inputs: "Checked weighted kernel/frozen/error summability, exact localization and normalization, the signed uniform bound and fixed-margin limit, compact positive-margin extraction and log/power limits; mathlib compact-support Lipschitz bounds and summable-series/filter algebra. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "Absolute existential constants selected before smoothing, test, margin and height. Raw near/far smoothing losses remain visible before the exact B^(1-kappa)/T conversion and height comparison. The inherited error and new transfer error are displayed separately; no effectiveness certification is added."
       baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. The analytic normalization, transfer budget and fixed-test height limit of historical TRIPLE-KERNEL-LOCALIZATION-001 are checked. That historical claim retains partial formalization coverage solely because its numerical-effectiveness qualification is not certified. The historical statement/status and RH-audit scope remain unchanged; the ordinate-only signed complex-argument error remains open."
+
+  - id: MASTER-MICROSCOPIC-PROFILE-FORMAL-001
+    title: Effective microscopic kernel limit uniform over the closed horizontal cube
+    kind: theorem
+    statement: |
+      Let J be the existing rational triple profile. For R>=0, |a|,|b|<=R
+      and e,f,g in [-1/2,1/2],
+      ||J(a,b;e,f,g)-J(0,0;e,f,g)|| <= (8 pi (R+1)/9)(|a|+|b|).
+      Explicitly Q(x,h)=(4+(x-i h)^2)^(-1) obeys ||Q(x,h)||<=1/3 and
+      ||Q(x,h)-Q(0,h)||<=(|x|+2)|x|/9 for |h|<=1. The reciprocal
+      polynomial p q+p r+q r+12 p q r has norm difference bounded by
+      twice the sum of its three factor differences on the stated
+      reciprocal range. The gap estimate follows by applying this to
+      (x,h)=(a-b,e-f),(a,e+g),(b,f+g).
+      For every scale ell>=1 and |u|,|v|<=R, uniformly on the same cube,
+      ||J(u/ell,v/ell;e,f,g)-J(0,0;e,f,g)||<=C_R/ell,
+      with the explicit effective C_R=16 pi R(R+1)/9.
+      For T>=2 pi exp(2 pi), L_T=log(T/(2 pi))/(2 pi)>=1, so
+      ||J(u/L_T,v/L_T;e,f,g)-J(0,0;e,f,g)||<=C_R/L_T.
+      L_T tends to infinity, and the family converges uniformly to
+      J(0,0;e,f,g) on the closed five-parameter box
+      [-R,R]^2 times [-1/2,1/2]^3. R is fixed before T tends to infinity;
+      all five parameters may vary inside that box without converging.
+      Zero radius, zero gaps, coincident gaps and the extremal horizontal
+      corner (1/2,-1/2,1/2) have explicit checked specializations.
+      Both the scale endpoint ell=1 and the displayed height threshold
+      are included. There are no excluded collisions or horizontal endpoints.
+      These are unconditional kernel-parameter statements: horizontal
+      dependence remains in J(0,0;e,f,g). No RH, simplicity, critical-line
+      substitution, off-line zero existence assertion or limit interchange
+      with an infinite zero sum or smoothed integral is used.
+      The critical-line quadratic expansion, its fourth-order remainder,
+      its tuplewise kernel consequence and global constant-kernel replacement
+      remain separate. This effective local bound does not certify
+      effectiveness of inherited summed counting constants.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [RATIONAL-KERNEL-BOUNDS-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ProfileMicroscopicLimits.lean
+      label: HigherCorrelations.rationalProfile_microscopic_bound
+      companion_declarations: [profileGapFactor_denominator_ne, profileGapFactor_norm_bound, profileGapFactor_difference, profileReciprocalSum_difference, rationalProfile_eq_gap_factors, profileGapFactor_difference_bounded, rationalProfile_gap_bound, rationalProfile_scaled_gap_bound, microscopic_meanSpacing_ge_one, microscopic_meanSpacing_tendsto, rationalProfile_microscopic_tendstoUniformlyOn, rationalProfile_microscopic_zero_gaps, rationalProfile_microscopic_zero_radius, rationalProfile_microscopic_coincident_gaps, rationalProfile_microscopic_closed_endpoints]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 02195e4d735c016170afadaae421b25315b95dbff7a4eeefceb18800c7549ef1
+    limit_order: "Fix R>=0. Prove the finite-scale bound uniformly in all five parameters of the closed box, then let T tend to infinity using L_T tending to infinity. Horizontal parameters need not converge. No zero-sum or integral limit interchange is made."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 137 public statements across 26 localization modules match definition-only expected statements. Twenty-two unfinished-proof controls include the gap bound, explicit microscopic rate and uniform limit. Combined build, complete axiom audit, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "Checked rational reciprocal decomposition and denominator lower bound; norm, reciprocal and telescoping-product algebra; real logarithm limits and the existing generic uniform convergence-from-an-envelope helper. Only propext, Quot.sound and Classical.choice are permitted. No zero-counting constant or compact derivative supremum is used."
+      constants_scope: "Explicit effective gap coefficient 8 pi (R+1)/9, microscopic coefficient C_R=16 pi R(R+1)/9 and sufficient height threshold 2 pi exp(2 pi). These constants require no numerical optimization or quadrature."
+      baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. Historical TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 receives partial formalization coverage for the uniform microscopic assertion. Its explicit zero-gap horizontal formula, critical-line quadratic expansion with fourth-order remainder, tuplewise kernel consequence and local critical-line normalization comparison remain unformalized. Historical statements, statuses and RH-audit scope are unchanged. The ordinate-only signed complex-argument error remains open."

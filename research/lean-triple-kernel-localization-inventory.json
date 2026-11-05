@@ -22,6 +22,10 @@
     "ProfileTransferIdentity",
     "ProfileTransferBounds",
     "ProfileTransferLimits",
+    "ProfileMicroscopicDefinitions",
+    "ProfileGapBounds",
+    "ProfileMicroscopicBounds",
+    "ProfileMicroscopicLimits",
     "TripleKernelLocalizationAssembly"
   ],
   "components": [
@@ -603,6 +607,86 @@
     {
       "declaration": "HigherCorrelations.frozenStatistic_compact_limit",
       "source": "lean/HigherCorrelations/ProfileTransferLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileGapFactor_denominator_ne",
+      "source": "lean/HigherCorrelations/ProfileGapBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileGapFactor_norm_bound",
+      "source": "lean/HigherCorrelations/ProfileGapBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileGapFactor_difference",
+      "source": "lean/HigherCorrelations/ProfileGapBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileReciprocalSum_difference",
+      "source": "lean/HigherCorrelations/ProfileGapBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_eq_gap_factors",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.profileGapFactor_difference_bounded",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_gap_bound",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_scaled_gap_bound",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.microscopic_meanSpacing_ge_one",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.microscopic_meanSpacing_tendsto",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_bound",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_tendstoUniformlyOn",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_zero_gaps",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_zero_radius",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_coincident_gaps",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_microscopic_closed_endpoints",
+      "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
       "comparator_checked": true
     },
     {

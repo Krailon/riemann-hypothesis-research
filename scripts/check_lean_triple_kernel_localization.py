@@ -12,7 +12,8 @@ CONTROLS = {'translation': 'tripleAnchoredProfile_denominators', 'decomposition'
             'regions': 'localizationRegionalError_partition', 'near': 'localization_near_summed_mass', 'far-center': 'localization_far_center_summed_mass', 'far-anchor': 'localization_far_anchor_summed_mass', 'summability': 'tripleKernelLocalizationError_summed_bound',
             'frozen-summability': 'tripleFrozenProfile_summable_bound', 'frozen-normalization': 'tripleFrozenProfile_eq_sub', 'frozen-cutoff': 'tripleFrozenProfile_independent_cutoff',
             'complex-test': 'signedTest_bound', 'weighted-profile': 'tripleFrozenTestProfile_weighted_bound', 'weighted-error': 'tripleLocalizationError_weighted_bound', 'weighted-cutoff': 'tripleFrozenTestProfile_weighted_height_cutoff',
-            'profile-normalization': 'frozenStatistic_profile_formula', 'profile-transfer': 'frozenStatistic_transfer_bound', 'profile-limit': 'frozenStatistic_compact_limit'}
+            'profile-normalization': 'frozenStatistic_profile_formula', 'profile-transfer': 'frozenStatistic_transfer_bound', 'profile-limit': 'frozenStatistic_compact_limit',
+            'micro-gap': 'rationalProfile_gap_bound', 'micro-rate': 'rationalProfile_microscopic_bound', 'micro-limit': 'rationalProfile_microscopic_tendstoUniformlyOn'}
 
 
 def read_json(path):

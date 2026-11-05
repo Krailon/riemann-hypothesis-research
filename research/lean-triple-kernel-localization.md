@@ -364,3 +364,61 @@ localization lemma. Historical TRIPLE-KERNEL-LOCALIZATION-001 remains partial
 because its numerical-effectiveness qualification is not certified by these
 existential constants. Its statement and status are not rewritten. The
 ordinate-only signed complex-argument error remains open.
+
+
+## Effective uniform microscopic profile (complete)
+
+Formal ledger entry: `MASTER-MICROSCOPIC-PROFILE-FORMAL-001`.
+All 137 statement comparisons, twenty-two rejection controls, the combined
+build, axiom audit and regressions passed.
+Certificate: [PASS manifest](../artifacts/certificates/lean/02195e4d735c016170afadaae421b25315b95dbff7a4eeefceb18800c7549ef1/manifest.json).
+All Lean/challenge and verification-script hashes match this run; subsequent
+ledger and audit metadata updates do not change those sources.
+
+Task type: proof formalization. Assumptions: `UNCONDITIONAL`.
+
+For fixed R>=0 and |a|,|b|<=R, uniformly in e,f,g in [-1/2,1/2],
+
+||J(a,b;e,f,g)-J(0,0;e,f,g)|| <= (8 pi (R+1)/9)(|a|+|b|).
+
+This uses the checked reciprocal decomposition directly. If
+Q(x,h)=(4+(x-i h)^2)^(-1), |h|<=1, then ||Q||<=1/3 and
+||Q(x,h)-Q(0,h)||<=(|x|+2)|x|/9. The polynomial
+p q+p r+q r+12 p q r has difference bounded by twice the sum of
+its three factor differences on this reciprocal range. Taking
+(x,h)=(a-b,e-f),(a,e+g),(b,f+g) proves the displayed gap bound.
+All denominator lower bounds include the closed horizontal endpoints.
+No unspecified derivative or zero-counting constant enters this argument.
+
+For every scale ell>=1, |u|,|v|<=R, the bound specializes to
+
+||J(u/ell,v/ell;e,f,g)-J(0,0;e,f,g)|| <= C_R/ell,
+C_R=16 pi R(R+1)/9.
+
+The checked threshold T>=2 pi exp(2 pi) ensures
+L_T=log(T/(2 pi))/(2 pi)>=1. Substitution ell=L_T gives the effective
+microscopic rate C_R/L_T, and L_T tends to infinity. The resulting
+TendstoUniformlyOn statement is over the entire closed five-parameter box
+[-R,R]^2 times [-1/2,1/2]^3. R is fixed first; all gap and horizontal
+parameters may vary with T inside that box, without converging themselves.
+The limiting function is J(0,0;e,f,g), retaining its horizontal dependence.
+
+Zero radius, zero gaps, coincident gaps and an extremal horizontal corner
+have explicit checked statements. The bound includes the scale endpoint
+ell=1 and height endpoint T=2 pi exp(2 pi). It applies to kernel parameters;
+it asserts neither the existence nor absence of hypothetical off-line zeros.
+No microscopic limit is interchanged with a zero sum or smoothed integral.
+
+The localization suite now covers 137 public statements in 26 modules and
+twenty-two unfinished-proof rejection controls, including the gap bound,
+explicit microscopic rate and uniform limit. The new rate and threshold are
+effective; this does not certify effectiveness of the earlier summed
+counting constants. The full suite retains definition-only independent
+contracts, the combined build, complete axiom report and Python regressions.
+
+Historical TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 has partial coverage:
+the exact real critical-line profile was already checked, and the uniform
+microscopic part is added here. The explicit zero-gap horizontal formula,
+critical-line quadratic expansion with fourth-order remainder, its tuplewise
+kernel consequence and local critical-line normalization comparison remain
+separate. No constant-kernel replacement inside an infinite sum is claimed.

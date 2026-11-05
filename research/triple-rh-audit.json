@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "7861fbd65e3041187ecfec3efd7090b46a89760a29bd7a969c8fd9073f968a02",
+    "research/theorem-ledger.yaml": "430f8b13668ea4130e9ff7eb549bc50286cc9588ee868511203f3e2efce18aa7",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "178ca8c0a6aa2ead8fcfdb075c0fb622cb530df1aa0469a61c41c7ac37754d42"
+    "research/pair-rh-audit.json": "ef021e3e935f985a643d5a76117e38dec2865c0a4eb57ea8d868904debb00819"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4709,5 +4709,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the normalized profile formula and error identity, raw and simplified uniform transfer bounds, independent normalized cutoffs and the fixed-test height limit, including the compact open-hexagon corollary. All horizontal arguments and multiplicities are retained. Historical statements, statuses and RH-audit scope are unchanged. Numerical-effectiveness certification remains the sole unformalized qualification of the historical localization lemma; the ordinate-only signed error is separate and remains open."
+  },
+  "ledger_microscopic_profile_review": {
+    "reviewed_on": "2026-11-05",
+    "previous_ledger_sha256": "7861fbd65e3041187ecfec3efd7090b46a89760a29bd7a969c8fd9073f968a02",
+    "added_claim_ids": [
+      "MASTER-MICROSCOPIC-PROFILE-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the effective gap bound, scaled-gap rate and uniform microscopic limit on the closed horizontal cube, with zero radius, zero/coincident gaps and endpoints included. Historical critical-specialization coverage is partial; its remaining expansion and tuplewise conclusions are not promoted. Historical statements, statuses and RH-audit scope are unchanged. The local explicit constant does not certify effectiveness of earlier counting constants; no zero-sum interchange or ordinate-only replacement is asserted."
   }
 }
