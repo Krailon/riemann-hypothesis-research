@@ -20,6 +20,7 @@ import sys
 import time
 
 from bootstrap_lean import ROOT, TOOLS, PINS, environment, upstream_checkout
+from lean_control_pool import available_cpus, cancel_queued, control_entry, run_control_pool, utc_now
 
 
 def digest(path):
@@ -30,7 +31,7 @@ def digest(path):
 def source_hashes():
     files = [ROOT / p for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json',
              'research/lean-import-pins.json', 'scripts/bootstrap_lean.py',
-             'scripts/reproduce_lean.py', 'scripts/check_lean_reproduction.py', 'scripts/check_triple_expansion.py', 'research/lean-verification.md', 'scripts/check_zeta23_import.py', 'research/lean-zeta23-inventory.json', 'research/lean-zeta23.md', 'research/lean-pair-zero-inventory.json', 'research/lean-pair-zero.md', 'research/lean-pair-zero-bounds-inventory.json', 'research/lean-pair-zero-bounds.md', 'research/lean-pair-zero-comparison-inventory.json', 'research/lean-pair-zero-comparison.md', 'research/lean-pair-asymptotic-inventory.json', 'research/lean-pair-asymptotic.md', 'research/lean-pair-fourier-inventory.json', 'research/lean-pair-fourier.md', 'research/lean-triple-master-inventory.json', 'research/lean-triple-master.md', 'research/lean-triple-budget-inventory.json', 'research/lean-triple-budget.md', 'scripts/check_lean_triple_budget.py', 'research/lean-triple-mixed-diagonal-inventory.json', 'research/lean-triple-mixed-diagonal.md', 'scripts/check_lean_triple_mixed_diagonal.py', 'research/lean-triple-smoothing-inventory.json', 'research/lean-triple-smoothing.md', 'scripts/check_lean_triple_smoothing.py', 'research/lean-triple-resonance-decay-inventory.json', 'research/lean-triple-resonance-decay.md', 'scripts/check_lean_triple_resonance_decay.py', 'research/lean-triple-retained-inventory.json', 'research/lean-triple-retained.md', 'scripts/check_lean_triple_retained.py', 'research/lean-triple-interior-vanishing-inventory.json', 'research/lean-triple-interior-vanishing.md', 'scripts/check_lean_triple_interior_vanishing.py', 'research/lean-triple-test-function-inventory.json', 'research/lean-triple-test-function.md', 'scripts/check_lean_triple_test_function.py', 'research/lean-triple-boundary-inventory.json', 'research/lean-triple-boundary.md', 'scripts/check_lean_triple_boundary.py', 'research/lean-triple-signed-sectors-inventory.json', 'research/lean-triple-signed-sectors.md', 'scripts/check_lean_triple_signed_sectors.py', 'research/lean-triple-kernel-localization-inventory.json', 'research/lean-triple-kernel-localization.md', 'scripts/check_lean_triple_kernel_localization.py', 'scripts/prepare_lean_diagonal.py', 'scripts/check_lean_analytic_coverage.py',
+             'scripts/reproduce_lean.py', 'scripts/lean_control_pool.py', 'scripts/check_lean_control_pool.py', 'scripts/check_lean_reproduction.py', 'scripts/check_triple_expansion.py', 'research/lean-verification.md', 'scripts/check_zeta23_import.py', 'research/lean-zeta23-inventory.json', 'research/lean-zeta23.md', 'research/lean-pair-zero-inventory.json', 'research/lean-pair-zero.md', 'research/lean-pair-zero-bounds-inventory.json', 'research/lean-pair-zero-bounds.md', 'research/lean-pair-zero-comparison-inventory.json', 'research/lean-pair-zero-comparison.md', 'research/lean-pair-asymptotic-inventory.json', 'research/lean-pair-asymptotic.md', 'research/lean-pair-fourier-inventory.json', 'research/lean-pair-fourier.md', 'research/lean-triple-master-inventory.json', 'research/lean-triple-master.md', 'research/lean-triple-budget-inventory.json', 'research/lean-triple-budget.md', 'scripts/check_lean_triple_budget.py', 'research/lean-triple-mixed-diagonal-inventory.json', 'research/lean-triple-mixed-diagonal.md', 'scripts/check_lean_triple_mixed_diagonal.py', 'research/lean-triple-smoothing-inventory.json', 'research/lean-triple-smoothing.md', 'scripts/check_lean_triple_smoothing.py', 'research/lean-triple-resonance-decay-inventory.json', 'research/lean-triple-resonance-decay.md', 'scripts/check_lean_triple_resonance_decay.py', 'research/lean-triple-retained-inventory.json', 'research/lean-triple-retained.md', 'scripts/check_lean_triple_retained.py', 'research/lean-triple-interior-vanishing-inventory.json', 'research/lean-triple-interior-vanishing.md', 'scripts/check_lean_triple_interior_vanishing.py', 'research/lean-triple-test-function-inventory.json', 'research/lean-triple-test-function.md', 'scripts/check_lean_triple_test_function.py', 'research/lean-triple-boundary-inventory.json', 'research/lean-triple-boundary.md', 'scripts/check_lean_triple_boundary.py', 'research/lean-triple-signed-sectors-inventory.json', 'research/lean-triple-signed-sectors.md', 'scripts/check_lean_triple_signed_sectors.py', 'research/lean-triple-kernel-localization-inventory.json', 'research/lean-triple-kernel-localization.md', 'scripts/check_lean_triple_kernel_localization.py', 'scripts/prepare_lean_diagonal.py', 'scripts/check_lean_analytic_coverage.py',
              'research/lean-analytic-coverage.json', 'research/lean-actual-occurrences-inventory.json',
              'research/lean-rational-transfer-inventory.json', 'research/lean-integral-profile-inventory.json', 'research/lean-uniform-height-inventory.json', 'research/lean-pair-series-inventory.json', 'research/lean-paired-mellin-inventory.json', 'research/lean-pair-exact-inventory.json', 'research/lean-pair-uniform-inventory.json', 'research/lean-pair-meanvalue-inventory.json', 'research/lean-pair-sieve-inventory.json', 'research/lean-pair-diagonal-inventory.json', 'research/lean-pair-prime-mean-inventory.json', 'research/lean-pair-rhs-mean-inventory.json']]
     files += sorted(p for p in (ROOT / 'vendor/zeta23').rglob('*') if p.is_file())
@@ -128,7 +129,7 @@ def run_command(run_dir, report, name, argv, *, expected_failure=False):
     argv = list(map(str, argv))
     log = run_dir / (name + '.log')
     entry = dict(name=name, argv=argv, exit_code=None, log=log.name,
-                 expected_failure=expected_failure, status='running')
+                 expected_failure=expected_failure, status='running', started_utc=utc_now())
     report['commands'].append(entry)
     print(f'{name}: {shlex.join(argv)}\n  Log: {log}\n  Follow progress: tail -f {shlex.quote(str(log))}', flush=True)
     started = time.monotonic()
@@ -167,6 +168,7 @@ def run_command(run_dir, report, name, argv, *, expected_failure=False):
         raise
     finally:
         entry['duration_seconds'] = round(time.monotonic() - started, 3)
+        entry['finished_utc'] = utc_now()
         print(f'{name}: {entry["status"]} ({entry["duration_seconds"]:.1f}s)', flush=True)
 
 
@@ -228,14 +230,20 @@ def main(argv=None):
                         help='Check signed sectors, full smooth-test passage and limit; combined build, all axioms and regressions using prepared dependencies.')
     parser.add_argument('--triple-kernel-localization-only', action='store_true',
                         help='Check kernel localization, summed near/far bounds and complex-test weighted frozen-profile summability, normalized transfer, height limits and uniform microscopic profile; combined build, axioms and regressions using prepared dependencies.')
+    parser.add_argument('--control-jobs', type=int, default=4, metavar='N',
+                        help='Parallel rejection controls (default 4, capped by CPU affinity); 1 preserves serial ordering.')
     args = parser.parse_args(argv)
+    if args.control_jobs < 1:
+        parser.error('--control-jobs must be a positive integer')
+    cpu_count = available_cpus()
+    control_jobs = min(args.control_jobs, cpu_count)
     if sum([args.pair_zero_only, args.zeta23_only, args.pair_zero_bounds_only, args.pair_zero_comparison_only, args.pair_asymptotic_only, args.pair_fourier_only, args.triple_master_only, args.triple_budget_only, args.triple_mixed_diagonal_only, args.triple_smoothing_only, args.triple_resonance_decay_only, args.triple_retained_only, args.triple_interior_vanishing_only, args.triple_test_function_only, args.triple_boundary_only, args.triple_signed_sectors_only, args.triple_kernel_localization_only]) > 1:
         parser.error('Choose at most one focused verification mode')
     prepared = args.reuse_dependencies or args.zeta23_only or args.pair_zero_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only or args.triple_budget_only or args.triple_mixed_diagonal_only or args.triple_smoothing_only or args.triple_resonance_decay_only or args.triple_retained_only or args.triple_interior_vanishing_only or args.triple_test_function_only or args.triple_boundary_only or args.triple_signed_sectors_only or args.triple_kernel_localization_only
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     run_dir = ROOT / 'artifacts/lean-runs' / stamp
     run_dir.mkdir(parents=True)
-    report = dict(schema_version=1, task='formal_verification', started_utc=stamp,
+    report = dict(schema_version=2, task='formal_verification', started_utc=stamp,
                   status='running', pins=PINS, commands=[], external_kernel=False,
                   fresh_project_build=args.fresh_project, source_hashes=source_hashes(),
                   dependency_mode='reuse' if prepared else 'prepare',
@@ -311,7 +319,22 @@ def main(argv=None):
         report['verification_scope'] = ('Exact anchored profile translation, tuplewise localization, the disjoint near/far budgets, summed error bound, signed complex-test majorant and absolute unweighted/weighted frozen-profile convergence with uniform mass bounds, independent fixed-height cutoffs, normalized correlation transfer, fixed-test height limits and effective microscopic profile convergence; '
             'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun. No ordinate-only replacement or varying-parameter limit is asserted. Summed constants remain absolute existential constants.')
 
+    controls = []
+    deferred_build = []
+    report['rejection_controls'] = dict(requested_jobs=args.control_jobs, cpu_affinity_count=cpu_count,
+                                       effective_jobs=control_jobs,
+                                       mode='parallel' if control_jobs > 1 else 'serial')
+
     def command(name, argv, *, expected_failure=False):
+        if control_jobs > 1 and expected_failure:
+            entry = control_entry(name, argv)
+            controls.append(entry)
+            # Keep deterministic declaration order, irrespective of execution order.
+            report['commands'].append(entry)
+            return ''
+        if control_jobs > 1 and name == 'project-build':
+            deferred_build.append((name, argv))
+            return ''
         return run_command(run_dir, report, name, argv, expected_failure=expected_failure)
 
     try:
@@ -576,6 +599,15 @@ def main(argv=None):
                     'lean/VerificationChallenges/horizontal-strip.json'])
             command('unfinished-rejected', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/unfinished.json'], expected_failure=True)
+        if controls:
+            modules = set()
+            for entry in controls:
+                config = json.loads((ROOT / entry['argv'][-1]).read_text())
+                modules.update([config['challenge_module'], config['solution_module']])
+            command('rejection-controls-prebuild', ['lake', 'build', *sorted(modules)])
+            run_control_pool(ROOT, run_dir, controls, control_jobs, environment(), report['rejection_controls'])
+        for name, argv in deferred_build:
+            run_command(run_dir, report, name, argv)
         axioms = command('axioms', ['lake', 'env', 'lean',
                                    'lean/HigherCorrelations/AxiomReport.lean'])
         entries = re.findall(r"'(\S+)' (?:depends on axioms:\s*\[([^]]*)\]|does not depend on any axioms)", axioms)
@@ -682,6 +714,7 @@ def main(argv=None):
         command('triple-regressions', [sys.executable, '-B', '-m', 'unittest', 'discover',
                                       '-s', 'scripts', '-p', 'check_triple_*.py'])
         command('harness-regressions', [sys.executable, '-B', 'scripts/check_lean_reproduction.py'])
+        command('control-pool-regressions', [sys.executable, '-B', 'scripts/check_lean_control_pool.py'])
         report['status'] = 'pass'
     except KeyboardInterrupt:
         report['status'] = 'interrupted'
@@ -692,6 +725,7 @@ def main(argv=None):
         report['error'] = str(exc)
         print(str(exc), file=sys.stderr, flush=True)
     finally:
+        cancel_queued(controls)
         report['source_hashes'] = source_hashes()
         report['finished_utc'] = datetime.now(timezone.utc).isoformat()
         report['source_commit'] = subprocess.check_output(

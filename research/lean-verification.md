@@ -59,6 +59,57 @@ shell configuration. `--skip-bootstrap` reuses an existing installation.
 dependency build caches are reused. This is a fresh **project** build, not a
 claim to have rebuilt every dependency from an empty machine or clean Git commit.
 
+### Parallel rejection controls
+
+The runner defaults to `--control-jobs 4`, capped by the process's CPU affinity.
+Use `--control-jobs 1` for the original serial ordering, or explicitly choose a
+larger positive value on machines with sufficient memory:
+
+```bash
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-kernel-localization-only --control-jobs 4
+```
+
+Parallel mode queues the selected unfinished-proof controls, completes the
+positive checks, and prebuilds the controls' challenge and solution modules.
+A bounded worker pool then runs those controls before the final combined build
+and axiom audit. Each worker has copied project sources/configuration and its own
+`.lake/build`, seeded with `cp --reflink=auto` (ordinary copies when cloning is
+unavailable). No writable hardlinks are used. Prepared dependency trees are
+shared through symlinks; Comparator's unchanged Landrun sandbox permits build
+writes only inside the worker's own `.lake`, so the dependency targets remain
+read-only to those builds. Bootstrap, dependency preparation, positive checks,
+final build, axiom audit and regression suites remain sequential stages. Lake
+may use its own internal parallelism within a build.
+
+Worker scratch trees live under `.lake/rejection-controls-*`, outside archived
+logs, and are removed after worker processes terminate. A conservative free-space
+check reserves the full ordinary-copy size per worker plus 1 GiB. Memory is not
+reserved: reduce the worker count if the host lacks RAM. As with serial mode,
+catchable interruption archives an incomplete run; SIGKILL/power loss may leave
+scratch directories behind.
+
+Every original control and JSON configuration remains selected. A control passes
+only when Comparator exits nonzero and its log contains
+`Illegal axiom detected: 'sorryAx'`. Unexpected success or another failure cause
+stops the pool, cancels queued controls and terminates active process groups.
+The manifest (schema version 2) retains deterministic command declaration order;
+actual start/end timestamps show execution order. It records worker assignments,
+requested/effective concurrency, setup/execution elapsed time and sampled Linux
+process-group RSS. RSS is sampled every 0.5 seconds, can double-count shared pages
+and is not a rigorous upper bound on peak memory. Per-control logs keep their
+existing names. `--control-jobs 1` avoids worker copies and uses the original
+per-stage execution path.
+
+Fast checks: `python3 -B scripts/check_lean_reproduction.py` tests scope and
+archival behavior; `python3 -B scripts/check_lean_control_pool.py` uses real small
+subprocesses to test overlap, isolation, rejection criteria, cancellation,
+process-group interruption and scratch cleanup. These are harness tests, not
+mathematical proof certificates.
+
+The [localization benchmark](lean-rejection-control-benchmark.md) records a
+43.5-to-16.1-minute improvement with four workers on the current host. Eight
+workers were not benchmarked because their projected memory demand exceeds its RAM.
+
 ### Reuse an installed or migrated environment
 
 After copying the complete working directory, including `.tools/` and `.lake/`, use:

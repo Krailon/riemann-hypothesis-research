@@ -23,7 +23,7 @@ REAL_ROOT = runner.ROOT
 
 
 class LeanReproductionTests(unittest.TestCase):
-    def run_workflow(self, flags, *, interrupt=False, preflight_error=None):
+    def run_workflow(self, flags, *, interrupt=False, preflight_error=None, jobs=1, pool_error=None):
         with tempfile.TemporaryDirectory() as tmp, ExitStack() as stack:
             root = Path(tmp)
             for name in ['lean', 'research']:
@@ -44,6 +44,17 @@ class LeanReproductionTests(unittest.TestCase):
                     return '\n'.join(f"'{n}' depends on axioms: [propext, Quot.sound, Classical.choice]" for n in names)
                 return ''
 
+            def pool(root, run_dir, entries, jobs, env, metadata):
+                metadata['effective_jobs'] = min(jobs, len(entries))
+                if pool_error:
+                    raise pool_error
+                for entry in entries:
+                    calls.append(entry['name'])
+                    entry.update(status='pass', exit_code=1)
+                    (run_dir / entry['log']).write_text("Illegal axiom detected: 'sorryAx'\n")
+
+            stack.enter_context(patch.object(runner, 'run_control_pool', side_effect=pool))
+            stack.enter_context(patch.object(runner, 'available_cpus', return_value=32))
             stack.enter_context(patch.object(runner, 'ROOT', root))
             stack.enter_context(patch.object(runner, 'TOOLS', root / '.tools'))
             stack.enter_context(patch.object(runner, 'run_command', side_effect=command))
@@ -56,7 +67,7 @@ class LeanReproductionTests(unittest.TestCase):
             stack.enter_context(patch.object(runner.subprocess, 'check_output', return_value=''))
             stack.enter_context(redirect_stdout(io.StringIO()))
             stack.enter_context(redirect_stderr(io.StringIO()))
-            code = runner.main(flags)
+            code = runner.main(flags if jobs is None else [*flags, '--control-jobs', str(jobs)])
             reports = list((root / 'artifacts/certificates/lean').glob('*/manifest.json'))
             self.assertEqual(len(reports), 1)
             report = json.loads(reports[0].read_text())
@@ -187,6 +198,48 @@ class LeanReproductionTests(unittest.TestCase):
                     self.assertNotIn('pair-zero-comparator', calls)
                     self.assertNotIn('zeta23-counting-comparator', calls)
                 self.assertIn('Earlier Comparator suites are not rerun', report['verification_scope'])
+
+    def test_parallel_preserves_full_and_focused_scope(self):
+        for flags in [['--reuse-dependencies'],
+                      ['--reuse-dependencies', '--triple-kernel-localization-only']]:
+            serial = self.run_workflow(flags)
+            parallel = self.run_workflow(flags, jobs=4)
+            self.assertEqual(parallel[0], 0)
+            self.assertEqual(set(serial[1]), set(parallel[1]) - {'rejection-controls-prebuild'})
+            self.assertEqual(serial[2]['verification_scope'], parallel[2]['verification_scope'])
+            expected = [n for n in serial[1] if n.endswith('unfinished-rejected')]
+            actual = [e['name'] for e in parallel[2]['commands'] if e.get('expected_failure')]
+            self.assertEqual(actual, expected)
+            prebuild = parallel[1].index('rejection-controls-prebuild')
+            self.assertTrue(all(parallel[1].index(n) > prebuild for n in expected))
+            self.assertTrue(all(parallel[1].index(n) < parallel[1].index('project-build') for n in expected))
+            self.assertLess(parallel[1].index('project-build'), parallel[1].index('axioms'))
+            self.assertEqual(parallel[2]['rejection_controls']['effective_jobs'], 4)
+
+    def test_default_concurrency_cpu_cap_and_argument_validation(self):
+        default = self.run_workflow(['--reuse-dependencies', '--triple-kernel-localization-only'], jobs=None)
+        self.assertEqual(default[0], 0)
+        self.assertEqual(default[2]['rejection_controls']['effective_jobs'], 4)
+        capped = self.run_workflow(['--reuse-dependencies'], jobs=99)
+        self.assertEqual(capped[0], 0)
+        self.assertEqual(capped[2]['rejection_controls']['requested_jobs'], 99)
+        self.assertEqual(capped[2]['rejection_controls']['effective_jobs'], 32)
+        for invalid in ['0', '-1', 'many']:
+            with redirect_stderr(io.StringIO()), self.assertRaises(SystemExit) as error:
+                runner.main(['--control-jobs', invalid])
+            self.assertEqual(error.exception.code, 2)
+
+    def test_pool_failure_and_interruption_are_archived(self):
+        for error, code, status in [(RuntimeError('pool failure'), 1, 'fail'),
+                                    (KeyboardInterrupt(), 130, 'interrupted')]:
+            result, calls, report, _ = self.run_workflow(
+                ['--reuse-dependencies', '--triple-kernel-localization-only'], jobs=4, pool_error=error)
+            self.assertEqual(result, code)
+            self.assertEqual(report['status'], status)
+            self.assertNotIn('axioms', calls)
+            controls = [e for e in report['commands'] if e.get('expected_failure')]
+            self.assertEqual(len(controls), 22)
+            self.assertTrue(all(e['status'] == 'cancelled' for e in controls))
 
     def test_preflight_failure_prevents_build_and_is_archived(self):
         code, calls, report, _ = self.run_workflow(['--reuse-dependencies'],
