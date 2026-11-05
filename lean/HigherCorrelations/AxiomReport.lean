@@ -2065,3 +2065,18 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleFrozenProfile_zero
 
 #print axioms HigherCorrelations.tripleFrozenProfile_repeated
+
+-- Complex-test weighted localization
+#print axioms HigherCorrelations.signedTest_integrand_bound
+#print axioms HigherCorrelations.signedTest_integrable
+#print axioms HigherCorrelations.signedTest_bound
+#print axioms HigherCorrelations.signedTest_weighted_summable_bound
+#print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_bound
+#print axioms HigherCorrelations.tripleTestKernel_weighted_bound
+#print axioms HigherCorrelations.tripleLocalizationError_weighted_bound
+#print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_summable
+#print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_independent_cutoff
+#print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_height_cutoff
+#print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_zero_test
+#print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_zero_weight
+#print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_repeated

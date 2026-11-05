@@ -10,7 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTROLS = {'translation': 'tripleAnchoredProfile_denominators', 'decomposition': 'tripleMasterKernel_localization',
             'sharp': 'scalarKernel_half_strip_bound', 'bound': 'tripleKernelLocalizationError_bound',
             'regions': 'localizationRegionalError_partition', 'near': 'localization_near_summed_mass', 'far-center': 'localization_far_center_summed_mass', 'far-anchor': 'localization_far_anchor_summed_mass', 'summability': 'tripleKernelLocalizationError_summed_bound',
-            'frozen-summability': 'tripleFrozenProfile_summable_bound', 'frozen-normalization': 'tripleFrozenProfile_eq_sub', 'frozen-cutoff': 'tripleFrozenProfile_independent_cutoff'}
+            'frozen-summability': 'tripleFrozenProfile_summable_bound', 'frozen-normalization': 'tripleFrozenProfile_eq_sub', 'frozen-cutoff': 'tripleFrozenProfile_independent_cutoff',
+            'complex-test': 'signedTest_bound', 'weighted-profile': 'tripleFrozenTestProfile_weighted_bound', 'weighted-error': 'tripleLocalizationError_weighted_bound', 'weighted-cutoff': 'tripleFrozenTestProfile_weighted_height_cutoff'}
 
 
 def read_json(path):

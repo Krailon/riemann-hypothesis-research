@@ -1,6 +1,7 @@
 import HigherCorrelations.KernelLocalizationDefinitions
 import HigherCorrelations.KernelLocalizationSumDefinitions
 import HigherCorrelations.FrozenProfileDefinitions
+import HigherCorrelations.SignedSectorDefinitions
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.Calculus.MeanValue
 
@@ -410,6 +411,105 @@ theorem tripleFrozenProfile_zero (T : ℝ) (v : MasterTriple) :
 theorem tripleFrozenProfile_repeated (ω : ℝ → ℝ) (T : ℝ) (i : ZeroOccurrence) :
     tripleFrozenProfile ω T (fun _ => i) = (ω (occurrenceOrdinate i/T)/T:ℝ)*
       rationalProfile 0 0 (occurrenceDisplacement i) (occurrenceDisplacement i) (occurrenceDisplacement i) := by sorry
+
+theorem signedTest_integrand_bound (φ : ℝ × ℝ → ℂ) (κ T : ℝ)
+    (hT : 2*Real.pi<T) (hs : tsupport φ ⊆ signedMargin κ)
+    (v : MasterTriple) (p : ℝ × ℝ) :
+    ‖φ p*Complex.exp (2*Real.pi*Complex.I*
+      ((tripleTestArguments T v).1*p.1+(tripleTestArguments T v).2*p.2))‖ ≤
+        ‖φ p‖*(tripleTestBase T)^(1-κ) := by sorry
+
+theorem signedTest_integrable (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ) (κ T : ℝ)
+    (hT : 2*Real.pi<T) (hs : tsupport φ ⊆ signedMargin κ) (v : MasterTriple) :
+    Integrable (fun p : ℝ × ℝ => φ p*Complex.exp (2*Real.pi*Complex.I*
+      ((tripleTestArguments T v).1*p.1+(tripleTestArguments T v).2*p.2))) := by sorry
+
+theorem signedTest_bound (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ) (κ T : ℝ)
+    (hT : 2*Real.pi<T) (hs : tsupport φ ⊆ signedMargin κ) (v : MasterTriple) :
+    ‖complexFourier φ (tripleTestArguments T v)‖ ≤ tripleTestL1 φ*(tripleTestBase T)^(1-κ) := by sorry
+
+theorem signedTest_weighted_summable_bound (f : MasterTriple → ℂ)
+    (hf : Summable (fun v => ‖f v‖)) (D : ℝ) (hD : (∑' v, ‖f v‖)≤D)
+    (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ) (κ T : ℝ)
+    (hT : 2*Real.pi<T) (hs : tsupport φ ⊆ signedMargin κ) :
+    Summable (fun v => ‖f v*complexFourier φ (tripleTestArguments T v)‖) ∧
+    (∑' v, ‖f v*complexFourier φ (tripleTestArguments T v)‖) ≤
+      tripleTestL1 φ*(tripleTestBase T)^(1-κ)*D := by sorry
+
+theorem tripleFrozenTestProfile_weighted_bound :
+    ∃ A C : ℝ, 0<A ∧ 0<C ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ u, |ω u|≤M₀) → LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ (φ : ℝ × ℝ → ℂ), Integrable φ → ∀ κ T : ℝ, 2*Real.pi<T →
+      tsupport φ ⊆ signedMargin κ →
+      Summable (fun v : MasterTriple =>
+        ‖tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v)‖) ∧
+      (∑' v : MasterTriple,
+        ‖tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v)‖) ≤
+      tripleTestL1 φ*(tripleTestBase T)^(1-κ)*
+        (A*M₀*Real.log (2*T+2)^3+C*((M₁:ℝ)*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/T) := by sorry
+
+theorem tripleTestKernel_weighted_bound :
+    ∃ A : ℝ, 0<A ∧ ∀ (ω : ℝ → ℝ), Continuous ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ M : ℝ, 0≤M → (∀ u, |ω u|≤M) →
+      ∀ (φ : ℝ × ℝ → ℂ), Integrable φ → ∀ κ T : ℝ, 2*Real.pi<T →
+      tsupport φ ⊆ signedMargin κ →
+      Summable (fun v : MasterTriple =>
+        ‖tripleMasterKernel ω T (tripleTestToMaster v)*complexFourier φ (tripleTestArguments T v)‖) ∧
+      (∑' v : MasterTriple,
+        ‖tripleMasterKernel ω T (tripleTestToMaster v)*complexFourier φ (tripleTestArguments T v)‖) ≤
+      tripleTestL1 φ*(tripleTestBase T)^(1-κ)*(A*M*Real.log (2*T+2)^3) := by sorry
+
+theorem tripleLocalizationError_weighted_bound :
+    ∃ C : ℝ, 0<C ∧ ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ →
+      (∀ u, |ω u|≤M₀) → LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+      ∀ (φ : ℝ × ℝ → ℂ), Integrable φ → ∀ κ T : ℝ, 2*Real.pi<T →
+      tsupport φ ⊆ signedMargin κ →
+      Summable (fun v : MasterTriple =>
+        ‖tripleKernelLocalizationError ω T (tripleTestToMaster v)*complexFourier φ (tripleTestArguments T v)‖) ∧
+      (∑' v : MasterTriple,
+        ‖tripleKernelLocalizationError ω T (tripleTestToMaster v)*complexFourier φ (tripleTestArguments T v)‖) ≤
+      tripleTestL1 φ*(tripleTestBase T)^(1-κ)*
+        (C*((M₁:ℝ)*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/T) := by sorry
+
+theorem tripleFrozenTestProfile_weighted_summable (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ)
+    (κ T : ℝ) (hT : 2*Real.pi<T) (hφs : tsupport φ ⊆ signedMargin κ) :
+    Summable (fun v : MasterTriple =>
+      ‖tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v)‖) := by sorry
+
+theorem tripleFrozenTestProfile_weighted_independent_cutoff
+    (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0) (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀)
+    (hω : LipschitzWith M₁ ω) (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ) (κ T : ℝ) (hT : 2*Real.pi<T)
+    (hφs : tsupport φ ⊆ signedMargin κ) :
+    Tendsto (fun S : Fin 3 → Finset ZeroOccurrence => ∑ v ∈ tripleDomain S,
+      tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v)) atTop
+      (𝓝 (∑' v : MasterTriple,
+        tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v))) := by sorry
+
+theorem tripleFrozenTestProfile_weighted_height_cutoff
+    (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0) (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀)
+    (hω : LipschitzWith M₁ ω) (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ) (κ T : ℝ) (hT : 2*Real.pi<T)
+    (hφs : tsupport φ ⊆ signedMargin κ) :
+    Tendsto (fun U : Fin 3 → ℝ => ∑ v ∈ tripleDomain (fun r => occurrenceCutoff (U r)),
+      tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v)) atTop
+      (𝓝 (∑' v : MasterTriple,
+        tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v))) := by sorry
+
+theorem tripleFrozenTestProfile_weighted_zero_test (ω : ℝ → ℝ) (T : ℝ) (v : MasterTriple) :
+    tripleFrozenTestProfile ω T v*complexFourier (fun _ => 0) (tripleTestArguments T v)=0 := by sorry
+
+theorem tripleFrozenTestProfile_weighted_zero_weight (φ : ℝ × ℝ → ℂ) (T : ℝ) (v : MasterTriple) :
+    tripleFrozenTestProfile (fun _ => 0) T v*complexFourier φ (tripleTestArguments T v)=0 := by sorry
+
+theorem tripleFrozenTestProfile_weighted_repeated (ω : ℝ → ℝ) (φ : ℝ × ℝ → ℂ)
+    (T : ℝ) (i : ZeroOccurrence) :
+    tripleFrozenTestProfile ω T (fun _ => i)*complexFourier φ (tripleTestArguments T (fun _ => i)) =
+      ((ω (occurrenceOrdinate i/T)/T:ℝ):ℂ)*
+        rationalProfile 0 0 (occurrenceDisplacement i) (occurrenceDisplacement i) (occurrenceDisplacement i)*
+          complexFourier φ (tripleTestArguments T (fun _ => i)) := by sorry
 
 theorem tripleKernelLocalizationError_zero (T : ℝ) (v : MasterTriple) :
     tripleKernelLocalizationError (fun _ => 0) T v=0 := by sorry

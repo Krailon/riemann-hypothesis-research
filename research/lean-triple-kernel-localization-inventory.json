@@ -16,6 +16,8 @@
     "FrozenProfileDefinitions",
     "FrozenProfileSummability",
     "FrozenProfileLimits",
+    "ComplexTestWeightedSummability",
+    "FrozenProfileWeighted",
     "TripleKernelLocalizationAssembly"
   ],
   "components": [
@@ -432,6 +434,71 @@
     {
       "declaration": "HigherCorrelations.tripleFrozenProfile_repeated",
       "source": "lean/HigherCorrelations/FrozenProfileLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedTest_integrand_bound",
+      "source": "lean/HigherCorrelations/ComplexTestWeightedSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedTest_integrable",
+      "source": "lean/HigherCorrelations/ComplexTestWeightedSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedTest_bound",
+      "source": "lean/HigherCorrelations/ComplexTestWeightedSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.signedTest_weighted_summable_bound",
+      "source": "lean/HigherCorrelations/ComplexTestWeightedSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_weighted_bound",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleTestKernel_weighted_bound",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleLocalizationError_weighted_bound",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_weighted_summable",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_weighted_independent_cutoff",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_weighted_height_cutoff",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_weighted_zero_test",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_weighted_zero_weight",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleFrozenTestProfile_weighted_repeated",
+      "source": "lean/HigherCorrelations/FrozenProfileWeighted.lean",
       "comparator_checked": true
     },
     {

@@ -448,3 +448,17 @@ remains `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-kern
 See [the localization record](lean-triple-kernel-localization.md) for scope and
 certificate. Complex-test weighting and transfer, T-to-infinity limits and
 numerical evaluation of the inherited constants remain separate.
+
+
+### Complex-test weighted summability
+
+The localization suite extends the signed coefficient majorant to the full
+complex Fourier test and transfers absolute summability and uniform mass
+bounds to the test-weighted kernel, frozen profile and localization error.
+Independent finite and inclusive ordinate cutoffs converge for the weighted
+frozen series at fixed T. Its 101 statements in 18 modules have independent
+expected contracts and sixteen unfinished-proof rejection controls. Run
+`python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-kernel-localization-only`.
+See [the localization record](lean-triple-kernel-localization.md) for exact
+hypotheses and verification evidence. Normalized correlation transfer and
+T-to-infinity limits remain the next step; horizontal information is retained.

@@ -5443,3 +5443,64 @@ claims:
       imported_inputs: "Checked unit-scale master identity and integral-norm bound, exact localization, summed regional error estimates, tuple-order equivalence and generic absolute occurrence-cutoff convergence; mathlib norm and summable-series algebra. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "Absolute existential A,B, uniform in the height and both displayed smoothing bounds. No numerical evaluation or effectiveness certification is introduced. The factor eight from the master explicit formula is divided out when bounding K_T; the frozen coefficient retains exactly 1/T."
       baseline_audit_coverage: "The historical TRIPLE-KERNEL-LOCALIZATION-001 remains partially formalized with unchanged status and RH-audit scope. Unweighted frozen-profile summability, its summed identity and fixed-height cutoffs are checked. Complex-test profile summability, correlation transfer, the inherited T-to-infinity limit and the numerical-effectiveness qualification remain separate; the ordinate-only signed error remains open."
+
+  - id: MASTER-COMPLEX-TEST-SUMMABILITY-FORMAL-001
+    title: Complex-test weighted frozen-profile summability and fixed-height cutoffs
+    kind: theorem
+    statement: |
+      For T>2pi, B=T/(2pi), any real kappa, and integrable phi:R2->C with
+      topological support contained in h(xi,eta)<=1-kappa, where
+      h=max(|xi|,|eta|,|xi+eta|), the inverse Fourier test at the actual
+      complex zero arguments satisfies ||F(z21,z31)||<=||phi||_1 B^(1-kappa)
+      uniformly in all ordered actual zero-occurrence triples. Here
+      z_j1=L_T((gamma_j-gamma_1)-i(delta_j+delta_1)), L_T=log B/(2pi).
+      The frequency integrand is integrable by an explicit L1 majorant.
+      A generic checked interface transfers sum_v ||f(v)||<=D and absolute
+      summability to sum_v ||f(v)F(z_v)||<=||phi||_1 B^(1-kappa)D.
+      Let omega be real, supported in [1,2], globally bounded in absolute
+      value by M0>=0 and Lipschitz with constant M1>=0. Put L=log(2T+2)
+      and P_test(v)=omega(gamma(v0)/T)actualRationalKernel(v)/T.
+      There exist absolute A,C>0 independent of all displayed parameters
+      such that the norm series of P_test(v)F(z_v) is summable and its sum
+      is at most ||phi||_1 B^(1-kappa)[A M0 L^3+C(M1 L^4+M0 L^3)/T].
+      Separately the test-weighted kernel K_T(tripleTestToMaster v) has
+      summable norms bounded by ||phi||_1 B^(1-kappa) A M0 L^3; this only
+      requires continuity, support and the absolute smoothing bound.
+      The test-weighted localization error E_T(tripleTestToMaster v) has
+      summable norms bounded by ||phi||_1 B^(1-kappa) C(M1 L^4+M0 L^3)/T.
+      The constants in the separate bounds may be chosen separately.
+      Independent finite occurrence cutoffs and three independent inclusive
+      ordinate cutoffs |gamma(vr)|<=U_r converge to the weighted frozen sum
+      with T and all other parameters fixed. Zero tests and zero smoothing
+      give zero summands. Fully repeated occurrences retain both the profile
+      J(0,0;delta,delta,delta) and the full complex test arguments.
+      All signed frequency sectors, axes and the origin are allowed; all
+      ordered zero occurrences, both ordinate signs and multiplicities are
+      retained. No nonnegative or unit-mass smoothing assumption is made.
+      The constants are existential, not numerically evaluated. The factors
+      8 and 1/log T are not part of these unnormalized summands.
+      Positive kappa is needed by the intended subsequent height-decay
+      argument, but not by these fixed-height summability statements.
+      No RH, simplicity, critical-line substitution, normalized correlation
+      transfer, T-to-infinity limit, or ordinate-only signed-error conclusion
+      is asserted here.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-FROZEN-PROFILE-SUMMABILITY-FORMAL-001, MASTER-KERNEL-LOCALIZATION-SUM-FORMAL-001, MASTER-SIGNED-SECTORS-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/FrozenProfileWeighted.lean
+      label: HigherCorrelations.tripleFrozenTestProfile_weighted_bound
+      companion_declarations: [signedTest_integrand_bound, signedTest_integrable, signedTest_bound, signedTest_weighted_summable_bound, tripleTestKernel_weighted_bound, tripleLocalizationError_weighted_bound, tripleFrozenTestProfile_weighted_summable, tripleFrozenTestProfile_weighted_independent_cutoff, tripleFrozenTestProfile_weighted_height_cutoff, tripleFrozenTestProfile_weighted_zero_test, tripleFrozenTestProfile_weighted_zero_weight, tripleFrozenTestProfile_weighted_repeated]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 965bbe3001164d9d09659ff490afd66dff060b35153b1abcdec6c1a9320c9267
+    limit_order: "Fix T>2pi, phi, kappa and smoothing with its bounds. First prove frequency integrability and the uniform complex-test bound, then absolute weighted summability. Only then remove three independent finite occurrence cutoffs or three independent closed ordinate cutoffs. No T-to-infinity limit is taken."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 101 public statements across 18 localization modules match definition-only expected statements. Sixteen unfinished-proof controls include the complex-test majorant, weighted profile, weighted error and weighted ordinate cutoff. Combined project build, complete axiom audit, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "Checked signed horizontal-exponent and coefficient bounds, exact complex phase identity, unweighted kernel/frozen/error mass bounds, tuple-order equivalence and generic absolute occurrence-cutoff convergence; mathlib dominated integrability and norm/integral/summable algebra. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Absolute existential constants precede smoothing, test, support margin and height. The signed coefficient bound supplies the exact multiplier ||phi||_1 B^(1-kappa). No numerical effectiveness certification is introduced."
+      baseline_audit_coverage: "The previous ledger is preserved as an unchanged byte prefix. Historical TRIPLE-KERNEL-LOCALIZATION-001 remains partial: weighted summability and fixed-height cutoffs are checked; normalized correlation transfer and its height limit remain unformalized. Numerical evaluation of inherited constants and the ordinate-only signed complex-argument error remain separate."

@@ -214,10 +214,9 @@ occurrence are checked explicitly. The repeated profile remains
 J(0,0;delta,delta,delta), preserving its horizontal dependence and multiplicity.
 Both ordinate signs and distinct complex zeros with equal ordinates remain.
 
-This is summability of the unweighted coefficient series. It does not assert
-summability after inserting an unbounded complex Fourier test. Complex-test
-profile summability, its correlation transfer, and the inherited T-to-infinity
-limit are the next steps. The ordinate-only signed error remains open.
+This stage established summability of the unweighted coefficient series.
+Complex-test weighting is recorded in the next section; correlation transfer
+and the inherited T-to-infinity limit remain separate. The ordinate-only signed error remains open.
 Constants remain absolute existential constants, without numerical evaluation.
 
 The expanded localization suite checks 88 public statements in 16 modules.
@@ -225,3 +224,67 @@ Its twelve unfinished-proof controls include frozen summability, normalization
 and independent cutoff convergence, in addition to the preceding nine. The
 focused harness also runs the combined build, full axiom audit, coverage,
 harness and pair/triple regressions.
+
+
+## Complex-test weighted summability (complete)
+
+Formal ledger entry: `MASTER-COMPLEX-TEST-SUMMABILITY-FORMAL-001`.
+All 101 statement comparisons, sixteen rejection controls, the combined build,
+axiom audit and regressions passed.
+Certificate: [PASS manifest](../artifacts/certificates/lean/965bbe3001164d9d09659ff490afd66dff060b35153b1abcdec6c1a9320c9267/manifest.json).
+All Lean/challenge and verification-script hashes match this run; subsequent
+ledger and audit metadata updates do not change those sources.
+
+Task type: proof formalization. Assumptions: `UNCONDITIONAL`.
+
+For B=T/(2pi)>1 and any integrable amplitude phi whose topological support
+lies in signedMargin(kappa), the checked signed coefficient bound and exact
+phase identity give
+
+||F(z21,z31)|| <= ||phi||_1 B^(1-kappa).
+
+The proof first establishes integrability of the frequency integrand using
+this explicit L1 majorant; the norm-of-integral inequality then gives the
+bound uniformly in every actual zero tuple. All six signed sectors, axes,
+and the origin are included. This fixed-height assertion works for every
+real kappa with the stated support condition; kappa>0 is the intended margin
+for the later asymptotic. It makes no boundary asymptotic claim.
+
+The generic interface `signedTest_weighted_summable_bound` transfers any
+absolute occurrence-series bound sum ||f||<=D to the weighted series, with
+bound ||phi||_1 B^(1-kappa) D. Applying it separately to the kernel, frozen
+profile, and localization error gives absolute convergence and, with
+L=log(2T+2), the respective bounds
+
+- kernel: ||phi||_1 B^(1-kappa) A M0 L^3;
+- frozen profile: ||phi||_1 B^(1-kappa) [A M0 L^3+C(M1 L^4+M0 L^3)/T];
+- error: ||phi||_1 B^(1-kappa) C(M1 L^4+M0 L^3)/T.
+
+The positive absolute constants are independent of all displayed parameters
+and remain existential. Smoothing is real and may be signed, supported in
+[1,2], with global absolute bound M0 and Lipschitz constant M1. The kernel
+alone only needs continuity and the absolute bound. Each coefficient is in
+test order with anchor v0; the old master-order sums are reindexed by the
+checked occurrence permutation. The frozen coefficient retains exactly 1/T,
+with no factor eight or division by log T in these summands.
+
+Both independent finite occurrence cutoffs and the three independent closed
+ordinate cutoffs |gamma|<=U_r converge for the weighted frozen series, with
+T, phi, kappa and smoothing fixed. Absolute summability is proved before
+removing cutoffs. All ordered triples, repeated occurrences, negative
+ordinates and equal-ordinate distinct complex zeros are retained. Zero tests,
+zero smoothing and repeated occurrences have explicit checked identities;
+the repeated tuple retains J(0,0;delta,delta,delta) and the complex test
+arguments. No critical-line substitution occurs.
+
+The localization suite now covers 101 statements in 18 modules and sixteen
+unfinished-proof rejection controls, including the complex-test bound,
+weighted profile bound, weighted error bound and weighted ordinate cutoff.
+Independent expected statements import definitions only. The focused harness
+also runs the combined build, full axiom audit and Python regressions.
+Only propext, Quot.sound and Classical.choice are permitted.
+
+Normalized correlation transfer, its T-to-infinity limit, numerical evaluation
+of the inherited constants, and the ordinate-only signed complex-argument
+error remain separate. The historical localization claim retains partial
+formalization coverage.
