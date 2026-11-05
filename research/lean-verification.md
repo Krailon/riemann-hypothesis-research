@@ -462,3 +462,19 @@ expected contracts and sixteen unfinished-proof rejection controls. Run
 See [the localization record](lean-triple-kernel-localization.md) for exact
 hypotheses and verification evidence. Normalized correlation transfer and
 T-to-infinity limits remain the next step; horizontal information is retained.
+
+
+### Normalized profile transfer and fixed-test height limit
+
+The localization suite now includes the exact normalized profile formula,
+the absolutely convergent transfer-error identity, raw and simplified uniform
+transfer estimates, a derivative-bound wrapper, and normalized independent
+finite/inclusive ordinate cutoffs. The inherited signed error and transfer
+error remain separate in the combined uniform bound. The fixed positive-margin
+limit and compact-support-in-the-open-hexagon corollary recover signedLimit.
+The suite checks 121 statements in 22 modules with nineteen unfinished-proof
+controls; run the existing focused command with `--reuse-dependencies`.
+See [the localization record](lean-triple-kernel-localization.md) for the
+certificate and exact scope. Historical coverage stays partial solely for the
+uncertified numerical-effectiveness qualification. The ordinate-only signed
+error is not resolved by profile localization.

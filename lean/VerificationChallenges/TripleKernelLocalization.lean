@@ -2,6 +2,8 @@ import HigherCorrelations.KernelLocalizationDefinitions
 import HigherCorrelations.KernelLocalizationSumDefinitions
 import HigherCorrelations.FrozenProfileDefinitions
 import HigherCorrelations.SignedSectorDefinitions
+import HigherCorrelations.ProfileTransferDefinitions
+import HigherCorrelations.TripleBoundaryDefinitions
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.Calculus.MeanValue
 
@@ -510,6 +512,122 @@ theorem tripleFrozenTestProfile_weighted_repeated (ω : ℝ → ℝ) (φ : ℝ �
       ((ω (occurrenceOrdinate i/T)/T:ℝ):ℂ)*
         rationalProfile 0 0 (occurrenceDisplacement i) (occurrenceDisplacement i) (occurrenceDisplacement i)*
           complexFourier φ (tripleTestArguments T (fun _ => i)) := by sorry
+
+theorem frozenStatistic_profile_formula (ω : ℝ → ℝ) (φ : ℝ × ℝ → ℂ) (T : ℝ) :
+    frozenStatistic ω φ T = (8/((T:ℂ)*(Real.log T:ℂ)))*
+      ∑' v : MasterTriple, (ω (occurrenceOrdinate (v 0)/T):ℂ)*actualRationalKernel v*
+        complexFourier φ (tripleTestArguments T v) := by sorry
+
+theorem frozenStatistic_transfer_identity (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ)
+    (κ T : ℝ) (hT : 2*Real.pi<T) (hφs : tsupport φ ⊆ signedMargin κ) :
+    signedStatistic ω φ T-frozenStatistic ω φ T=frozenTransferError ω φ T := by sorry
+
+theorem frozenStatistic_independent_cutoff (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ)
+    (κ T : ℝ) (hT : 2*Real.pi<T) (hφs : tsupport φ ⊆ signedMargin κ) :
+    Tendsto (fun S : Fin 3 → Finset ZeroOccurrence => (8/(Real.log T:ℂ))*
+      ∑ v ∈ tripleDomain S, tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v))
+      atTop (𝓝 (frozenStatistic ω φ T)) := by sorry
+
+theorem frozenStatistic_height_cutoff (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ)
+    (κ T : ℝ) (hT : 2*Real.pi<T) (hφs : tsupport φ ⊆ signedMargin κ) :
+    Tendsto (fun U : Fin 3 → ℝ => (8/(Real.log T:ℂ))*
+      ∑ v ∈ tripleDomain (fun r => occurrenceCutoff (U r)),
+        tripleFrozenTestProfile ω T v*complexFourier φ (tripleTestArguments T v))
+      atTop (𝓝 (frozenStatistic ω φ T)) := by sorry
+
+theorem frozenStatistic_zero_test (ω : ℝ → ℝ) (T : ℝ) :
+    frozenStatistic ω (fun _ => 0) T=0 := by sorry
+
+theorem frozenStatistic_zero_weight (φ : ℝ × ℝ → ℂ) (T : ℝ) :
+    frozenStatistic (fun _ => 0) φ T=0 := by sorry
+
+theorem frozenTransferError_raw_bound : ∃ C : ℝ, 0<C ∧
+    ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ → (∀ u, |ω u|≤M₀) →
+    LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+    ∀ (φ : ℝ × ℝ → ℂ), Integrable φ → ∀ κ T : ℝ, 2*Real.pi<T →
+    tsupport φ ⊆ signedMargin κ →
+    ‖frozenTransferError ω φ T‖ ≤
+      8*C*tripleTestL1 φ*(tripleTestBase T)^(1-κ)/(T*Real.log T)*
+        ((M₁:ℝ)*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3) := by sorry
+
+theorem profileTransfer_power_scale (κ T : ℝ) (hT : 2*Real.pi<T) :
+    (tripleTestBase T)^(1-κ)/T=(tripleTestBase T)^(-κ)/(2*Real.pi) := by sorry
+
+theorem profileTransfer_height_bounds (T : ℝ) (hT : 2*Real.pi*Real.exp 1≤T) :
+    1≤Real.log T ∧ Real.log (2*T+2)≤tripleBoundaryLogConstant*Real.log T := by sorry
+
+theorem profileTransfer_log_budget (M₀ M₁ T : ℝ) (hM₀ : 0≤M₀) (hM₁ : 0≤M₁)
+    (hT : 2*Real.pi*Real.exp 1≤T) :
+    (M₁*Real.log (2*T+2)^4+M₀*Real.log (2*T+2)^3)/Real.log T ≤
+      (tripleBoundaryLogConstant+1)*(M₀+M₁)*Real.log (2*T+2)^3 := by sorry
+
+theorem frozenTransferError_bound : ∃ C : ℝ, 0<C ∧
+    ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ → (∀ u, |ω u|≤M₀) →
+    LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+    ∀ (φ : ℝ × ℝ → ℂ), Integrable φ → ∀ κ T : ℝ, 2*Real.pi*Real.exp 1≤T →
+    tsupport φ ⊆ signedMargin κ →
+    ‖frozenTransferError ω φ T‖ ≤ C*tripleTestL1 φ*(M₀+(M₁:ℝ))*
+      (tripleTestBase T)^(-κ)*Real.log (2*T+2)^3 := by sorry
+
+theorem frozenStatistic_transfer_bound : ∃ C : ℝ, 0<C ∧
+    ∀ (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ → (∀ u, |ω u|≤M₀) →
+    LipschitzWith M₁ ω → Function.support ω ⊆ Icc (1:ℝ) 2 →
+    ∀ (φ : ℝ × ℝ → ℂ), Integrable φ → ∀ κ T : ℝ, 2*Real.pi*Real.exp 1≤T →
+    tsupport φ ⊆ signedMargin κ →
+    ‖signedStatistic ω φ T-frozenStatistic ω φ T‖ ≤ C*tripleTestL1 φ*(M₀+(M₁:ℝ))*
+      (tripleTestBase T)^(-κ)*Real.log (2*T+2)^3 := by sorry
+
+theorem frozenStatistic_transfer_bound_deriv : ∃ C : ℝ, 0<C ∧
+    ∀ (ω : ℝ → ℝ) (M₀ M₁ : ℝ), 0≤M₀ → 0≤M₁ → (∀ u, |ω u|≤M₀) →
+    Differentiable ℝ ω → (∀ u, |deriv ω u|≤M₁) → Function.support ω ⊆ Icc (1:ℝ) 2 →
+    ∀ (φ : ℝ × ℝ → ℂ), Integrable φ → ∀ κ T : ℝ, 2*Real.pi*Real.exp 1≤T →
+    tsupport φ ⊆ signedMargin κ →
+    ‖signedStatistic ω φ T-frozenStatistic ω φ T‖ ≤ C*tripleTestL1 φ*(M₀+M₁)*
+      (tripleTestBase T)^(-κ)*Real.log (2*T+2)^3 := by sorry
+
+theorem profileTransfer_envelope_tendsto (κ : ℝ) (hκ : 0<κ) :
+    Tendsto (fun T : ℝ => (tripleTestBase T)^(-κ)*Real.log (2*T+2)^3) atTop (𝓝 0) := by sorry
+
+theorem frozenTransferError_tendsto (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ)
+    (κ : ℝ) (hκ : 0<κ) (hφs : tsupport φ ⊆ signedMargin κ) :
+    Tendsto (frozenTransferError ω φ) atTop (𝓝 0) := by sorry
+
+theorem frozenStatistic_transfer_tendsto (ω : ℝ → ℝ) (M₀ : ℝ) (M₁ : ℝ≥0)
+    (hM₀ : 0≤M₀) (hw : ∀ u, |ω u|≤M₀) (hω : LipschitzWith M₁ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2) (φ : ℝ × ℝ → ℂ) (hφ : Integrable φ)
+    (κ : ℝ) (hκ : 0<κ) (hφs : tsupport φ ⊆ signedMargin κ) :
+    Tendsto (fun T => signedStatistic ω φ T-frozenStatistic ω φ T) atTop (𝓝 0) := by sorry
+
+theorem profileTransfer_smoothing_bounds (ω : ℝ → ℝ) (hω : TripleBudgetWeight ω) :
+    ∃ (M₀ : ℝ) (M₁ : ℝ≥0), 0≤M₀ ∧ (∀ u, |ω u|≤M₀) ∧ LipschitzWith M₁ ω := by sorry
+
+theorem frozenStatistic_uniform_bound : ∃ A C : ℝ, 0<A ∧ 0<C ∧
+    ∀ (ω : ℝ → ℝ), TripleBudgetWeight ω → ∀ (M₀ : ℝ) (M₁ : ℝ≥0),
+    0≤M₀ → (∀ u, |ω u|≤M₀) → LipschitzWith M₁ ω →
+    ∀ (φ : ℝ × ℝ → ℂ), ContDiff ℝ (⊤ : ℕ∞) φ → HasCompactSupport φ →
+    ∀ κ T : ℝ, 0<κ → 2*Real.pi*Real.exp 1≤T → tsupport φ ⊆ signedMargin κ →
+    ‖frozenStatistic ω φ T-signedLimit φ‖ ≤
+      A*signedC1 φ*(1+M₀+fourierDerivativeL1 ω 1)*
+        (1/Real.log (tripleTestBase T)+(tripleTestBase T)^(-κ)*Real.log (2*T+2)^3)+
+      C*tripleTestL1 φ*(M₀+(M₁:ℝ))*(tripleTestBase T)^(-κ)*Real.log (2*T+2)^3 := by sorry
+
+theorem frozenStatistic_fixed_margin_limit (ω : ℝ → ℝ) (hω : TripleBudgetWeight ω)
+    (φ : ℝ × ℝ → ℂ) (hφ : ContDiff ℝ (⊤ : ℕ∞) φ) (hc : HasCompactSupport φ)
+    (κ : ℝ) (hκ : 0<κ) (hs : tsupport φ ⊆ signedMargin κ) :
+    Tendsto (frozenStatistic ω φ) atTop (𝓝 (signedLimit φ)) := by sorry
+
+theorem frozenStatistic_compact_limit (ω : ℝ → ℝ) (hω : TripleBudgetWeight ω)
+    (φ : ℝ × ℝ → ℂ) (hφ : ContDiff ℝ (⊤ : ℕ∞) φ) (hc : HasCompactSupport φ)
+    (hs : tsupport φ ⊆ signedRegion) :
+    Tendsto (frozenStatistic ω φ) atTop (𝓝 (signedLimit φ)) := by sorry
 
 theorem tripleKernelLocalizationError_zero (T : ℝ) (v : MasterTriple) :
     tripleKernelLocalizationError (fun _ => 0) T v=0 := by sorry

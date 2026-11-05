@@ -5504,3 +5504,69 @@ claims:
       imported_inputs: "Checked signed horizontal-exponent and coefficient bounds, exact complex phase identity, unweighted kernel/frozen/error mass bounds, tuple-order equivalence and generic absolute occurrence-cutoff convergence; mathlib dominated integrability and norm/integral/summable algebra. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "Absolute existential constants precede smoothing, test, support margin and height. The signed coefficient bound supplies the exact multiplier ||phi||_1 B^(1-kappa). No numerical effectiveness certification is introduced."
       baseline_audit_coverage: "The previous ledger is preserved as an unchanged byte prefix. Historical TRIPLE-KERNEL-LOCALIZATION-001 remains partial: weighted summability and fixed-height cutoffs are checked; normalized correlation transfer and its height limit remain unformalized. Numerical evaluation of inherited constants and the ordinate-only signed complex-argument error remain separate."
+
+  - id: MASTER-PROFILE-TRANSFER-FORMAL-001
+    title: Normalized frozen-profile correlation transfer and fixed-test height limit
+    kind: theorem
+    statement: |
+      Define A_T^J=(8/log T) sum_v P_test(v)F(z_v) and the named error
+      E_transfer=(8/log T) sum_v E_kernel(tripleTestToMaster v)F(z_v).
+      The checked profile formula expands A_T^J to exactly
+      (8/(T log T)) sum_v omega(gamma(v0)/T)actualRationalKernel(v)F(z_v).
+      For T>2pi, integrable phi supported in h<=1-kappa, any real kappa,
+      and real signed smoothing omega supported in [1,2], |omega|<=M0>=0,
+      globally Lipschitz with constant M1>=0, weighted absolute convergence
+      proves the exact identity signedStatistic(omega,phi,T)-A_T^J=E_transfer.
+      Put B=T/(2pi), L=log(2T+2). There is an absolute C>0 independent of all
+      displayed parameters such that
+      ||E_transfer||<=8 C ||phi||_1 B^(1-kappa)(M1 L^4+M0 L^3)/(T log T).
+      For T>=2pi e, the checked power/height comparisons give a separate
+      absolute C'>0 with ||A_T-A_T^J||<=C' ||phi||_1(M0+M1)B^(-kappa)L^3.
+      A derivative wrapper assumes differentiability and |deriv omega|<=M1.
+      For fixed integrable phi, smoothing and positive kappa, the transfer
+      error and statistic difference tend to zero as T tends to infinity.
+      If omega is a TripleBudgetWeight (smooth, nonnegative, unit mass and
+      topological support in (1,2)), and phi is smooth and compactly supported
+      in h<=1-kappa with kappa>0, the combined uniform error is the sum of
+      A signedC1(phi)(1+M0+fourierDerivativeL1(omega,1))
+      times [1/log B+B^(-kappa)L^3], and
+      C' ||phi||_1(M0+M1)B^(-kappa)L^3.
+      The absolute A,C'>0 are chosen before all parameters; the inherited
+      L1 derivative norm is not identified with the Lipschitz bound M1.
+      Smooth compact support supplies finite M0,M1 for each fixed omega.
+      Consequently A_T^J tends to signedLimit(phi), namely
+      (3/2)phi(0,0)+(3/2)integral |r|[phi(r,0)+phi(0,r)+phi(r,-r)]dr.
+      The same conclusion holds for smooth compactly supported phi whose
+      topological support is contained in the open signed hexagon h<1,
+      by extracting a fixed positive support margin.
+      Normalized independent finite occurrence cutoffs and three independent
+      inclusive ordinate cutoffs converge at fixed T>2pi. These cutoffs are
+      removed before the height limit. Zero tests and zero smoothing give
+      zero frozen statistics. All ordered actual zero occurrences, horizontal
+      parameters, full complex arguments, multiplicities and both ordinate
+      signs remain present, including all frequency axes and the origin.
+      No RH, simplicity, critical-line substitution, closed outer boundary
+      asymptotic, varying-parameter limit or ordinate-only replacement is used.
+      Constants remain absolute existential constants without numerical
+      effectiveness certification. The kernel-free signed complex-argument
+      error is not resolved by this transfer.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-COMPLEX-TEST-SUMMABILITY-FORMAL-001, MASTER-SIGNED-SECTORS-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ProfileTransferLimits.lean
+      label: HigherCorrelations.frozenStatistic_compact_limit
+      companion_declarations: [frozenStatistic_profile_formula, frozenStatistic_transfer_identity, frozenStatistic_independent_cutoff, frozenStatistic_height_cutoff, frozenTransferError_raw_bound, profileTransfer_power_scale, profileTransfer_height_bounds, profileTransfer_log_budget, frozenTransferError_bound, frozenStatistic_transfer_bound, frozenStatistic_transfer_bound_deriv, profileTransfer_envelope_tendsto, frozenTransferError_tendsto, frozenStatistic_transfer_tendsto, profileTransfer_smoothing_bounds, frozenStatistic_uniform_bound, frozenStatistic_fixed_margin_limit, frozenStatistic_zero_test, frozenStatistic_zero_weight]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: dd111d98b5d1ef589f6544e46305a0b9740f27ee778648ef758c745c670e1414
+    limit_order: "Fix smoothing and its bounds, integrable test and support margin. Establish weighted absolute convergence, the normalized sum identity and independent finite/inclusive ordinate cutoff limits at fixed T. Then hold smoothing, test and a positive margin fixed while sending T to infinity. For compact support in h<1, select a positive margin first. No varying-test/margin or simultaneous cutoff-height limit is claimed."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 121 public statements across 22 localization modules match definition-only expected statements. Nineteen unfinished-proof controls include expanded normalization, transfer bound and compact-support height limit. Combined build, complete axiom audit, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "Checked weighted kernel/frozen/error summability, exact localization and normalization, the signed uniform bound and fixed-margin limit, compact positive-margin extraction and log/power limits; mathlib compact-support Lipschitz bounds and summable-series/filter algebra. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Absolute existential constants selected before smoothing, test, margin and height. Raw near/far smoothing losses remain visible before the exact B^(1-kappa)/T conversion and height comparison. The inherited error and new transfer error are displayed separately; no effectiveness certification is added."
+      baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. The analytic normalization, transfer budget and fixed-test height limit of historical TRIPLE-KERNEL-LOCALIZATION-001 are checked. That historical claim retains partial formalization coverage solely because its numerical-effectiveness qualification is not certified. The historical statement/status and RH-audit scope remain unchanged; the ordinate-only signed complex-argument error remains open."

@@ -2080,3 +2080,25 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_zero_test
 #print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_zero_weight
 #print axioms HigherCorrelations.tripleFrozenTestProfile_weighted_repeated
+
+-- Normalized profile transfer and fixed-test height limits
+#print axioms HigherCorrelations.frozenStatistic_profile_formula
+#print axioms HigherCorrelations.frozenStatistic_transfer_identity
+#print axioms HigherCorrelations.frozenStatistic_independent_cutoff
+#print axioms HigherCorrelations.frozenStatistic_height_cutoff
+#print axioms HigherCorrelations.frozenStatistic_zero_test
+#print axioms HigherCorrelations.frozenStatistic_zero_weight
+#print axioms HigherCorrelations.frozenTransferError_raw_bound
+#print axioms HigherCorrelations.profileTransfer_power_scale
+#print axioms HigherCorrelations.profileTransfer_height_bounds
+#print axioms HigherCorrelations.profileTransfer_log_budget
+#print axioms HigherCorrelations.frozenTransferError_bound
+#print axioms HigherCorrelations.frozenStatistic_transfer_bound
+#print axioms HigherCorrelations.frozenStatistic_transfer_bound_deriv
+#print axioms HigherCorrelations.profileTransfer_envelope_tendsto
+#print axioms HigherCorrelations.frozenTransferError_tendsto
+#print axioms HigherCorrelations.frozenStatistic_transfer_tendsto
+#print axioms HigherCorrelations.profileTransfer_smoothing_bounds
+#print axioms HigherCorrelations.frozenStatistic_uniform_bound
+#print axioms HigherCorrelations.frozenStatistic_fixed_margin_limit
+#print axioms HigherCorrelations.frozenStatistic_compact_limit

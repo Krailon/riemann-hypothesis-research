@@ -1,10 +1,11 @@
 import HigherCorrelations.KernelLocalizationBounds
 import HigherCorrelations.KernelLocalizationSummed
-import HigherCorrelations.FrozenProfileWeighted
+import HigherCorrelations.ProfileTransferLimits
 
 /-! UNCONDITIONAL exact, tuplewise and summed kernel localization, including
 absolute unweighted and complex-test weighted frozen-profile convergence.
-Correlation transfer and height limits remain separate. -/
+Normalized correlation transfer and fixed-test height limits are included.
+The ordinate-only signed error and numerical effectivity remain separate. -/
 namespace HigherCorrelations
 noncomputable section
 open Set

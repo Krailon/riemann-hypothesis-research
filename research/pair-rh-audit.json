@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "b92acf45b5d540661519a15eec5b98bf23510032c08be6201f58d08081ad0742",
+  "ledger_sha256": "7861fbd65e3041187ecfec3efd7090b46a89760a29bd7a969c8fd9073f968a02",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2836,5 +2836,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the uniform complex-test bound, absolute weighted kernel/frozen/error summability with explicit mass bounds, and independent finite and inclusive ordinate cutoffs at fixed T. Horizontal arguments, all signed sectors and occurrence multiplicities are retained. Historical statements, statuses and RH-audit scope are unchanged. Normalized correlation transfer, height limits, numerical effectiveness and the ordinate-only signed error remain separate."
+  },
+  "ledger_profile_transfer_review": {
+    "reviewed_on": "2026-11-05",
+    "previous_ledger_sha256": "b92acf45b5d540661519a15eec5b98bf23510032c08be6201f58d08081ad0742",
+    "added_claim_ids": [
+      "MASTER-PROFILE-TRANSFER-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the normalized profile formula and error identity, raw and simplified uniform transfer bounds, independent normalized cutoffs and the fixed-test height limit, including the compact open-hexagon corollary. All horizontal arguments and multiplicities are retained. Historical statements, statuses and RH-audit scope are unchanged. Numerical-effectiveness certification remains the sole unformalized qualification of the historical localization lemma; the ordinate-only signed error is separate and remains open."
   }
 }

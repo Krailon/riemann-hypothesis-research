@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "b92acf45b5d540661519a15eec5b98bf23510032c08be6201f58d08081ad0742",
+    "research/theorem-ledger.yaml": "7861fbd65e3041187ecfec3efd7090b46a89760a29bd7a969c8fd9073f968a02",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "52e32cf5a89b15bc2a8b1ff493a9b09e40f1da05201a388225ea9f63c8e18f93"
+    "research/pair-rh-audit.json": "178ca8c0a6aa2ead8fcfdb075c0fb622cb530df1aa0469a61c41c7ac37754d42"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4700,5 +4700,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the uniform complex-test bound, absolute weighted kernel/frozen/error summability with explicit mass bounds, and independent finite and inclusive ordinate cutoffs at fixed T. Horizontal arguments, all signed sectors and occurrence multiplicities are retained. Historical statements, statuses and RH-audit scope are unchanged. Normalized correlation transfer, height limits, numerical effectiveness and the ordinate-only signed error remain separate."
+  },
+  "ledger_profile_transfer_review": {
+    "reviewed_on": "2026-11-05",
+    "previous_ledger_sha256": "b92acf45b5d540661519a15eec5b98bf23510032c08be6201f58d08081ad0742",
+    "added_claim_ids": [
+      "MASTER-PROFILE-TRANSFER-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the normalized profile formula and error identity, raw and simplified uniform transfer bounds, independent normalized cutoffs and the fixed-test height limit, including the compact open-hexagon corollary. All horizontal arguments and multiplicities are retained. Historical statements, statuses and RH-audit scope are unchanged. Numerical-effectiveness certification remains the sole unformalized qualification of the historical localization lemma; the ordinate-only signed error is separate and remains open."
   }
 }

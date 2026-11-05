@@ -284,7 +284,83 @@ Independent expected statements import definitions only. The focused harness
 also runs the combined build, full axiom audit and Python regressions.
 Only propext, Quot.sound and Classical.choice are permitted.
 
-Normalized correlation transfer, its T-to-infinity limit, numerical evaluation
-of the inherited constants, and the ordinate-only signed complex-argument
-error remain separate. The historical localization claim retains partial
-formalization coverage.
+This stage left normalized correlation transfer and its T-to-infinity limit
+for the next milestone, recorded below. Numerical evaluation of the inherited
+constants and the ordinate-only signed complex-argument error remain separate.
+
+
+## Normalized profile transfer and fixed-test height limit (complete)
+
+Formal ledger entry: `MASTER-PROFILE-TRANSFER-FORMAL-001`.
+All 121 statement comparisons, nineteen rejection controls, the combined build,
+axiom audit and regressions passed.
+Certificate: [PASS manifest](../artifacts/certificates/lean/dd111d98b5d1ef589f6544e46305a0b9740f27ee778648ef758c745c670e1414/manifest.json).
+All Lean/challenge and verification-script hashes match this run; subsequent
+ledger and audit metadata updates do not change those sources.
+
+Task type: proof formalization. Assumptions: `UNCONDITIONAL`.
+
+The definition `frozenStatistic` is A_T^J=(8/log T) sum_v P_test(v)F(z_v).
+The independent normalization statement expands it to exactly
+(8/(T log T)) sum_v omega(gamma(v0)/T) actualRationalKernel(v) F(z_v).
+The profile coefficient's existing 1/T is counted once. The named error
+`frozenTransferError` is (8/log T) times the weighted localization-error sum.
+Absolute weighted summability justifies the exact identity
+A_T-A_T^J=E_transfer before either statistic is estimated.
+
+For T>2pi and integrable phi supported in h<=1-kappa, real signed smoothing
+supported in [1,2], |omega|<=M0 and Lipschitz constant M1, the raw bound is
+
+||E_transfer|| <= 8 C ||phi||_1 B^(1-kappa) (M1 L^4+M0 L^3)/(T log T),
+
+where B=T/(2pi), L=log(2T+2). The separately checked scale identity
+B^(1-kappa)/T=B^(-kappa)/(2pi), together with log T>=1 and
+L<=tripleBoundaryLogConstant log T for T>=2pi e, gives
+
+||A_T-A_T^J|| <= C' ||phi||_1 (M0+M1) B^(-kappa) L^3.
+
+The absolute constants are independent of smoothing, test, support margin
+and height, but remain existential. A derivative wrapper accepts
+differentiability and |deriv omega|<=M1. The finite-height bounds work for
+any real kappa under the stated support condition; the limiting statements
+require a fixed positive kappa.
+
+For TripleBudgetWeight smoothing and smooth compactly supported phi, the
+combined uniform bound keeps two errors separately:
+
+- inherited signed error:
+  A signedC1(phi) (1+M0+fourierDerivativeL1(omega,1)) [1/log B+B^(-kappa)L^3];
+- localization-transfer error:
+  C ||phi||_1 (M0+M1) B^(-kappa)L^3.
+
+Here fourierDerivativeL1 is the inherited L1 derivative norm, whereas M1
+controls the global Lipschitz/derivative-supremum loss. They are not identified.
+The transfer error tends to zero at fixed test, smoothing and positive margin.
+Smooth compact support supplies the smoothing bounds required for this step.
+Combining it with the checked signed-statistic limit gives
+
+A_T^J -> signedLimit(phi)
+  = (3/2) phi(0,0) + (3/2) integral |r|[phi(r,0)+phi(0,r)+phi(r,-r)] dr.
+
+A compact-support-in-the-open-hexagon corollary obtains a positive margin
+using the existing compactness lemma. Internal axes and the origin remain
+included. No closed outer boundary or varying-test/margin limit is asserted.
+
+The normalized finite-occurrence and three independent inclusive ordinate
+cutoffs converge with T fixed; only after their removal is T sent to infinity.
+Zero smoothing and zero tests give zero frozen statistics. Every tuple still
+uses actual zero occurrences, full complex arguments and the horizontal
+rational profile, with multiplicities and both ordinate signs retained.
+There is no ordinate-only replacement.
+
+The expanded localization suite covers 121 statements in 22 modules, with
+nineteen unfinished-proof rejection controls. New controls cover the expanded
+8/(T log T) normalization, the uniform transfer estimate and compact-support
+height limit. The existing definition-only independent contracts, combined
+build, axiom audit and Python regressions remain in force.
+
+This completes the analytic transfer and fixed-test limit portion of the
+localization lemma. Historical TRIPLE-KERNEL-LOCALIZATION-001 remains partial
+because its numerical-effectiveness qualification is not certified by these
+existential constants. Its statement and status are not rewritten. The
+ordinate-only signed complex-argument error remains open.
