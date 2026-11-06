@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "430f8b13668ea4130e9ff7eb549bc50286cc9588ee868511203f3e2efce18aa7",
+  "ledger_sha256": "e026b2adc94dc387f1ce072514e66f311e02ffe4339d24e7755123ffffd97838",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2854,5 +2854,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the effective gap bound, scaled-gap rate and uniform microscopic limit on the closed horizontal cube, with zero radius, zero/coincident gaps and endpoints included. Historical critical-specialization coverage is partial; its remaining expansion and tuplewise conclusions are not promoted. Historical statements, statuses and RH-audit scope are unchanged. The local explicit constant does not certify effectiveness of earlier counting constants; no zero-sum interchange or ordinate-only replacement is asserted."
+  },
+  "ledger_critical_profile_review": {
+    "reviewed_on": "2026-11-06",
+    "previous_ledger_sha256": "430f8b13668ea4130e9ff7eb549bc50286cc9588ee868511203f3e2efce18aa7",
+    "added_claim_ids": [
+      "MASTER-CRITICAL-PROFILE-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the explicit critical-line quadratic expansion and fourth-order remainder and the quadratic-corrected and leading-only tuplewise kernel estimates. All critical-line restrictions are explicit per-tuple hypotheses; repeated occurrences and endpoints are included. The explicit zero-gap horizontal formula and local critical-line normalization comparison remain unformalized. Historical statements, statuses and RH-audit scope are unchanged. No unrestricted constant-kernel replacement or signed ordinate-only error estimate is asserted."
   }
 }

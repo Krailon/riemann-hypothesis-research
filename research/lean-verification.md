@@ -544,3 +544,17 @@ reuse. See [the localization record](lean-triple-kernel-localization.md) for
 verification evidence and scope. The critical-line quadratic expansion and
 summed constant-kernel replacement remain separate; the new explicit constant
 does not resolve effectiveness of inherited counting constants.
+
+
+## Critical-line quadratic profile and tuplewise kernel specialization
+
+The localization suite extends to 160 public statements in 29 modules, with
+26 unfinished-proof controls. It includes the explicit fourth-order remainder,
+the height specialization, and quadratic-corrected and leading-only tuplewise
+kernel estimates in master and test order. Every tuple theorem assumes zero
+horizontal displacement for its three occurrences explicitly. Effective constants
+are C_R=pi(R^4+R^6+R^8), B_R=15pi R^2/32+C_R and localization coefficient 16pi/27.
+Details and verification provenance are recorded in
+[the localization note](lean-triple-kernel-localization.md).
+Use the existing focused localization command; four rejection workers remain the
+default. This stage does not replace kernels inside an unrestricted infinite sum.

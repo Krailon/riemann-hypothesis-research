@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "430f8b13668ea4130e9ff7eb549bc50286cc9588ee868511203f3e2efce18aa7",
+    "research/theorem-ledger.yaml": "e026b2adc94dc387f1ce072514e66f311e02ffe4339d24e7755123ffffd97838",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "ef021e3e935f985a643d5a76117e38dec2865c0a4eb57ea8d868904debb00819"
+    "research/pair-rh-audit.json": "f413c80e26967f08ddd7bd51713a11f5b5e51034a03695b614601d058c7788d0"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4718,5 +4718,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the effective gap bound, scaled-gap rate and uniform microscopic limit on the closed horizontal cube, with zero radius, zero/coincident gaps and endpoints included. Historical critical-specialization coverage is partial; its remaining expansion and tuplewise conclusions are not promoted. Historical statements, statuses and RH-audit scope are unchanged. The local explicit constant does not certify effectiveness of earlier counting constants; no zero-sum interchange or ordinate-only replacement is asserted."
+  },
+  "ledger_critical_profile_review": {
+    "reviewed_on": "2026-11-06",
+    "previous_ledger_sha256": "430f8b13668ea4130e9ff7eb549bc50286cc9588ee868511203f3e2efce18aa7",
+    "added_claim_ids": [
+      "MASTER-CRITICAL-PROFILE-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the explicit critical-line quadratic expansion and fourth-order remainder and the quadratic-corrected and leading-only tuplewise kernel estimates. All critical-line restrictions are explicit per-tuple hypotheses; repeated occurrences and endpoints are included. The explicit zero-gap horizontal formula and local critical-line normalization comparison remain unformalized. Historical statements, statuses and RH-audit scope are unchanged. No unrestricted constant-kernel replacement or signed ordinate-only error estimate is asserted."
   }
 }

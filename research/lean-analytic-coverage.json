@@ -1065,11 +1065,34 @@
         "HigherCorrelations.rationalProfile_microscopic_zero_gaps",
         "HigherCorrelations.rationalProfile_microscopic_zero_radius",
         "HigherCorrelations.rationalProfile_microscopic_coincident_gaps",
-        "HigherCorrelations.rationalProfile_microscopic_closed_endpoints"
+        "HigherCorrelations.rationalProfile_microscopic_closed_endpoints",
+        "HigherCorrelations.criticalGapQuadratic_nonneg",
+        "HigherCorrelations.criticalGapQuadratic_bound",
+        "HigherCorrelations.criticalGapQuadratic_div",
+        "HigherCorrelations.criticalProfileRemainderConstant_nonneg",
+        "HigherCorrelations.rationalProfile_critical_remainder_identity",
+        "HigherCorrelations.rationalProfile_critical_remainder_bound",
+        "HigherCorrelations.rationalProfile_critical_scaled_bound",
+        "HigherCorrelations.rationalProfile_critical_microscopic_bound",
+        "HigherCorrelations.rationalProfile_critical_leading_bound",
+        "HigherCorrelations.rationalProfile_critical_zero_radius",
+        "HigherCorrelations.rationalProfile_critical_coincident_bound",
+        "HigherCorrelations.rationalProfile_critical_scale_endpoint",
+        "HigherCorrelations.rationalProfile_critical_height_endpoint",
+        "HigherCorrelations.rationalProfile_critical_gap_endpoints",
+        "HigherCorrelations.criticalMasterGap_unscale",
+        "HigherCorrelations.tripleAnchoredProfile_critical_quadratic_bound",
+        "HigherCorrelations.tripleAnchoredProfile_critical_leading_bound",
+        "HigherCorrelations.tripleMasterKernel_critical_quadratic_bound",
+        "HigherCorrelations.tripleMasterKernel_critical_leading_bound",
+        "HigherCorrelations.tripleTestKernel_critical_quadratic_bound",
+        "HigherCorrelations.tripleTestKernel_critical_leading_bound",
+        "HigherCorrelations.tripleAnchoredProfile_critical_repeated",
+        "HigherCorrelations.tripleMasterKernel_critical_zero_weight"
       ],
       "remaining_obligations": [
         "The explicit gap bound, scaled-gap rate and microscopic limit are checked uniformly on the closed horizontal cube, with effective constant 16*pi*R*(R+1)/9 and threshold T>=2*pi*exp(2*pi). Zero radius, zero/coincident gaps and horizontal endpoints are included.",
-        "The explicit zero-gap horizontal formula, critical-line quadratic expansion with fourth-order remainder, its tuplewise kernel consequence and the local critical-line normalization comparison remain unformalized. No limit is interchanged with an infinite zero sum."
+        "The explicit critical-line quadratic expansion and fourth-order remainder, and both quadratic-corrected and leading-only tuplewise estimates are checked with effective constants and explicit per-tuple critical-line hypotheses. The explicit zero-gap horizontal formula and the local critical-line normalization comparison remain unformalized. No limit is interchanged with an infinite zero sum."
       ]
     },
     {
@@ -11635,6 +11658,121 @@
       "comparator_checked": true
     },
     {
+      "declaration": "HigherCorrelations.criticalGapQuadratic_nonneg",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalGapQuadratic_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalGapQuadratic_div",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalProfileRemainderConstant_nonneg",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_remainder_identity",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_remainder_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_scaled_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_microscopic_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_leading_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_zero_radius",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_coincident_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_scale_endpoint",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_height_endpoint",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_gap_endpoints",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalMasterGap_unscale",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_critical_quadratic_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_critical_leading_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_critical_quadratic_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_critical_leading_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleTestKernel_critical_quadratic_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleTestKernel_critical_leading_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_critical_repeated",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_critical_zero_weight",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
       "declaration": "HigherCorrelations.tripleKernelLocalizationError_zero",
       "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
       "comparator_checked": true
@@ -11660,5 +11798,5 @@
       "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. Next formalize the remaining critical-line expansion, tuplewise specialization and main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. Next formalize the explicit zero-gap horizontal formula, local critical-line normalization comparison and remaining main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
 }

@@ -4,6 +4,7 @@ import HigherCorrelations.FrozenProfileDefinitions
 import HigherCorrelations.SignedSectorDefinitions
 import HigherCorrelations.ProfileTransferDefinitions
 import HigherCorrelations.ProfileMicroscopicDefinitions
+import HigherCorrelations.ProfileCriticalDefinitions
 import HigherCorrelations.TripleBoundaryDefinitions
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.Calculus.MeanValue
@@ -696,6 +697,138 @@ theorem rationalProfile_microscopic_closed_endpoints (R ℓ u v : ℝ) (hR : 0�
     (hℓ : 1≤ℓ) (hu : |u|≤R) (hv : |v|≤R) :
     ‖rationalProfile (u/ℓ) (v/ℓ) (1/2) (-1/2) (1/2)-rationalProfile 0 0 (1/2) (-1/2) (1/2)‖ ≤
       (16*Real.pi*R*(R+1)/9)/ℓ := by sorry
+
+theorem criticalGapQuadratic_nonneg (u v : ℝ) : 0≤criticalGapQuadratic u v := by sorry
+
+theorem criticalGapQuadratic_bound (R u v : ℝ) (hR : 0≤R)
+    (hu : |u|≤R) (hv : |v|≤R) : criticalGapQuadratic u v≤3*R^2 := by sorry
+
+theorem criticalGapQuadratic_div (u v ℓ : ℝ) :
+    criticalGapQuadratic (u/ℓ) (v/ℓ)=criticalGapQuadratic u v/ℓ^2 := by sorry
+
+theorem criticalProfileRemainderConstant_nonneg (R : ℝ) :
+    0≤criticalProfileRemainderConstant R := by sorry
+
+theorem rationalProfile_critical_remainder_identity (a b : ℝ) :
+    rationalProfile a b 0 0 0-criticalProfileApproximation 1 a b =
+      ((Real.pi*((7/2:ℝ)*(criticalGapQuadratic a b)^2+
+        (5/8:ℝ)*(criticalGapQuadratic a b)^3-(3/8:ℝ)*(a^2*b^2*(a-b)^2)+
+        (5/32:ℝ)*criticalGapQuadratic a b*(a^2*b^2*(a-b)^2))/
+        ((4+(a-b)^2)*(4+a^2)*(4+b^2)) : ℝ) : ℂ) := by sorry
+
+theorem rationalProfile_critical_remainder_bound (R a b : ℝ) (hR : 0≤R)
+    (ha : |a|≤R) (hb : |b|≤R) :
+    ‖rationalProfile a b 0 0 0-criticalProfileApproximation 1 a b‖ ≤
+      criticalProfileRemainderConstant R := by sorry
+
+theorem rationalProfile_critical_scaled_bound (R ℓ u v : ℝ) (hR : 0≤R) (hℓ : 1≤ℓ)
+    (hu : |u|≤R) (hv : |v|≤R) :
+    ‖rationalProfile (u/ℓ) (v/ℓ) 0 0 0-criticalProfileApproximation ℓ u v‖ ≤
+      criticalProfileRemainderConstant R/ℓ^4 := by sorry
+
+theorem rationalProfile_critical_microscopic_bound (R T u v : ℝ) (hR : 0≤R)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) (hu : |u|≤R) (hv : |v|≤R) :
+    ‖rationalProfile (u/meanSpacing T) (v/meanSpacing T) 0 0 0-
+      criticalProfileApproximation (meanSpacing T) u v‖ ≤
+      criticalProfileRemainderConstant R/(meanSpacing T)^4 := by sorry
+
+theorem rationalProfile_critical_leading_bound (R ℓ u v : ℝ) (hR : 0≤R) (hℓ : 1≤ℓ)
+    (hu : |u|≤R) (hv : |v|≤R) :
+    ‖rationalProfile (u/ℓ) (v/ℓ) 0 0 0-kernelBenchmark‖ ≤
+      criticalProfileLeadingConstant R/ℓ^2 := by sorry
+
+theorem rationalProfile_critical_zero_radius (ℓ u v : ℝ) (hu : |u|≤0) (hv : |v|≤0) :
+    rationalProfile (u/ℓ) (v/ℓ) 0 0 0=criticalProfileApproximation ℓ u v := by sorry
+
+theorem rationalProfile_critical_coincident_bound (R ℓ u : ℝ) (hR : 0≤R) (hℓ : 1≤ℓ)
+    (hu : |u|≤R) :
+    ‖rationalProfile (u/ℓ) (u/ℓ) 0 0 0-criticalProfileApproximation ℓ u u‖ ≤
+      criticalProfileRemainderConstant R/ℓ^4 := by sorry
+
+theorem rationalProfile_critical_scale_endpoint (R u v : ℝ) (hR : 0≤R)
+    (hu : |u|≤R) (hv : |v|≤R) :
+    ‖rationalProfile u v 0 0 0-criticalProfileApproximation 1 u v‖ ≤
+      criticalProfileRemainderConstant R := by sorry
+
+theorem rationalProfile_critical_height_endpoint (R u v : ℝ) (hR : 0≤R)
+    (hu : |u|≤R) (hv : |v|≤R) :
+    ‖rationalProfile (u/meanSpacing (2*Real.pi*Real.exp (2*Real.pi)))
+      (v/meanSpacing (2*Real.pi*Real.exp (2*Real.pi))) 0 0 0-
+      criticalProfileApproximation (meanSpacing (2*Real.pi*Real.exp (2*Real.pi))) u v‖ ≤
+      criticalProfileRemainderConstant R/(meanSpacing (2*Real.pi*Real.exp (2*Real.pi)))^4 := by sorry
+
+theorem rationalProfile_critical_gap_endpoints (R ℓ : ℝ) (hR : 0≤R) (hℓ : 1≤ℓ) :
+    ‖rationalProfile (R/ℓ) (-R/ℓ) 0 0 0-criticalProfileApproximation ℓ R (-R)‖ ≤
+      criticalProfileRemainderConstant R/ℓ^4 := by sorry
+
+theorem criticalMasterGap_unscale (T : ℝ) (v : MasterTriple) (i : Fin 3)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) :
+    criticalMasterGap T v i/meanSpacing T=occurrenceOrdinate (v i)-occurrenceOrdinate (v 2) := by sorry
+
+theorem tripleAnchoredProfile_critical_quadratic_bound (R T : ℝ) (v : MasterTriple) (hR : 0≤R)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T)
+    (hline : ∀ i, occurrenceDisplacement (v i)=0)
+    (hu : |criticalMasterGap T v 0|≤R) (hv : |criticalMasterGap T v 1|≤R) :
+    ‖tripleAnchoredProfile v-criticalProfileApproximation (meanSpacing T)
+      (criticalMasterGap T v 0) (criticalMasterGap T v 1)‖ ≤
+      criticalProfileRemainderConstant R/(meanSpacing T)^4 := by sorry
+
+theorem tripleAnchoredProfile_critical_leading_bound (R T : ℝ) (v : MasterTriple) (hR : 0≤R)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T)
+    (hline : ∀ i, occurrenceDisplacement (v i)=0)
+    (hu : |criticalMasterGap T v 0|≤R) (hv : |criticalMasterGap T v 1|≤R) :
+    ‖tripleAnchoredProfile v-kernelBenchmark‖ ≤
+      criticalProfileLeadingConstant R/(meanSpacing T)^2 := by sorry
+
+theorem tripleMasterKernel_critical_quadratic_bound (ω : ℝ → ℝ) (W M R T : ℝ)
+    (hW : 0≤W) (hM : 0≤M) (hR : 0≤R) (hω : Differentiable ℝ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (hw : ∀ x, |ω x|≤W) (hd : ∀ x, |deriv ω x|≤M)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) (v : MasterTriple)
+    (hline : ∀ i, occurrenceDisplacement (v i)=0)
+    (hu : |criticalMasterGap T v 0|≤R) (hv : |criticalMasterGap T v 1|≤R) :
+    ‖tripleMasterKernel ω T v-(ω (occurrenceOrdinate (v 2)/T)/T:ℝ)*
+      criticalProfileApproximation (meanSpacing T) (criticalMasterGap T v 0) (criticalMasterGap T v 1)‖ ≤
+      W*criticalProfileRemainderConstant R/(T*(meanSpacing T)^4)+16*Real.pi*M/(27*T^2) := by sorry
+
+theorem tripleMasterKernel_critical_leading_bound (ω : ℝ → ℝ) (W M R T : ℝ)
+    (hW : 0≤W) (hM : 0≤M) (hR : 0≤R) (hω : Differentiable ℝ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (hw : ∀ x, |ω x|≤W) (hd : ∀ x, |deriv ω x|≤M)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) (v : MasterTriple)
+    (hline : ∀ i, occurrenceDisplacement (v i)=0)
+    (hu : |criticalMasterGap T v 0|≤R) (hv : |criticalMasterGap T v 1|≤R) :
+    ‖tripleMasterKernel ω T v-(ω (occurrenceOrdinate (v 2)/T)/T:ℝ)*kernelBenchmark‖ ≤
+      W*criticalProfileLeadingConstant R/(T*(meanSpacing T)^2)+16*Real.pi*M/(27*T^2) := by sorry
+
+theorem tripleTestKernel_critical_quadratic_bound (ω : ℝ → ℝ) (W M R T : ℝ)
+    (hW : 0≤W) (hM : 0≤M) (hR : 0≤R) (hω : Differentiable ℝ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (hw : ∀ x, |ω x|≤W) (hd : ∀ x, |deriv ω x|≤M)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) (v : MasterTriple)
+    (hline : ∀ i, occurrenceDisplacement (v i)=0)
+    (hu : |meanSpacing T*actualProfileGap v 1|≤R) (hv : |meanSpacing T*actualProfileGap v 2|≤R) :
+    ‖tripleMasterKernel ω T (tripleTestToMaster v)-(ω (occurrenceOrdinate (v 0)/T)/T:ℝ)*
+      criticalProfileApproximation (meanSpacing T) (meanSpacing T*actualProfileGap v 1)
+        (meanSpacing T*actualProfileGap v 2)‖ ≤
+      W*criticalProfileRemainderConstant R/(T*(meanSpacing T)^4)+16*Real.pi*M/(27*T^2) := by sorry
+
+theorem tripleTestKernel_critical_leading_bound (ω : ℝ → ℝ) (W M R T : ℝ)
+    (hW : 0≤W) (hM : 0≤M) (hR : 0≤R) (hω : Differentiable ℝ ω)
+    (hs : Function.support ω ⊆ Icc (1:ℝ) 2)
+    (hw : ∀ x, |ω x|≤W) (hd : ∀ x, |deriv ω x|≤M)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) (v : MasterTriple)
+    (hline : ∀ i, occurrenceDisplacement (v i)=0)
+    (hu : |meanSpacing T*actualProfileGap v 1|≤R) (hv : |meanSpacing T*actualProfileGap v 2|≤R) :
+    ‖tripleMasterKernel ω T (tripleTestToMaster v)-(ω (occurrenceOrdinate (v 0)/T)/T:ℝ)*kernelBenchmark‖ ≤
+      W*criticalProfileLeadingConstant R/(T*(meanSpacing T)^2)+16*Real.pi*M/(27*T^2) := by sorry
+
+theorem tripleAnchoredProfile_critical_repeated (i : ZeroOccurrence)
+    (hi : occurrenceDisplacement i=0) :
+    tripleAnchoredProfile (fun _ => i)=kernelBenchmark := by sorry
+
+theorem tripleMasterKernel_critical_zero_weight (T : ℝ) (v : MasterTriple) (ℓ u w : ℝ) :
+    tripleMasterKernel (fun _ => 0) T v-(0/T:ℝ)*criticalProfileApproximation ℓ u w=0 := by sorry
 
 theorem tripleKernelLocalizationError_zero (T : ℝ) (v : MasterTriple) :
     tripleKernelLocalizationError (fun _ => 0) T v=0 := by sorry

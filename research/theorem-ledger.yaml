@@ -5625,3 +5625,59 @@ claims:
       imported_inputs: "Checked rational reciprocal decomposition and denominator lower bound; norm, reciprocal and telescoping-product algebra; real logarithm limits and the existing generic uniform convergence-from-an-envelope helper. Only propext, Quot.sound and Classical.choice are permitted. No zero-counting constant or compact derivative supremum is used."
       constants_scope: "Explicit effective gap coefficient 8 pi (R+1)/9, microscopic coefficient C_R=16 pi R(R+1)/9 and sufficient height threshold 2 pi exp(2 pi). These constants require no numerical optimization or quadrature."
       baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. Historical TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 receives partial formalization coverage for the uniform microscopic assertion. Its explicit zero-gap horizontal formula, critical-line quadratic expansion with fourth-order remainder, tuplewise kernel consequence and local critical-line normalization comparison remain unformalized. Historical statements, statuses and RH-audit scope are unchanged. The ordinate-only signed complex-argument error remains open."
+
+  - id: MASTER-CRITICAL-PROFILE-FORMAL-001
+    title: Effective critical-line quadratic profile expansion and tuplewise kernel estimates
+    kind: theorem
+    statement: |
+      Let Q(u,v)=u^2+v^2-u*v, C_R=pi(R^4+R^6+R^8), and
+      B_R=15 pi R^2/32+C_R. For all R>=0, ell>=1 and |u|,|v|<=R,
+      ||J(u/ell,v/ell;0)-(3pi/8-5pi Q(u,v)/(32 ell^2))||<=C_R/ell^4.
+      The leading-only profile error is <=B_R/ell^2. The real rational
+      formula is used with positive denominators. Explicitly, for
+      q=Q(a,b), p=a^2 b^2(a-b)^2 and D=(4+a^2)(4+b^2)(4+(a-b)^2),
+      J(a,b;0)-(3pi/8-5pi q/32)=
+      pi((7/2)q^2+(5/8)q^3-(3/8)p+(5/32)q*p)/D.
+      For |a|,|b|<=r, r>=0, 0<=q<=3r^2, 0<=p<=4r^6 and D>=64.
+      The finite-scale bound follows by r=R/ell; no Taylor-limit
+      interchange, numerical quadrature or unspecified constant is used.
+      At T>=2 pi exp(2 pi), L_T=log(T/(2 pi))/(2 pi)>=1, so ell=L_T
+      gives the explicit fourth-order microscopic profile remainder.
+      Let omega be a real differentiable function supported in [1,2],
+      with |omega(x)|<=W and |omega'(x)|<=M for all real x, W,M>=0.
+      For any ordered actual zero-occurrence tuple (j,k,l) satisfying
+      delta_j=delta_k=delta_l=0, put u=L_T(gamma_j-gamma_l),
+      v=L_T(gamma_k-gamma_l), and assume |u|,|v|<=R. Then
+      ||K_T-(omega(gamma_l/T)/T)(3pi/8-5pi Q(u,v)/(32 L_T^2))||
+        <=W C_R/(T L_T^4)+16pi M/(27 T^2),
+      and ||K_T-(3pi/(8T))omega(gamma_l/T)||
+        <=W B_R/(T L_T^2)+16pi M/(27 T^2).
+      Both estimates are checked in master order (anchor slot 2) and
+      test order (anchor slot 0), with no extra factor eight.
+      Zero radius, zero/coincident gaps, closed gap endpoints, ell=1,
+      the exact height threshold, repeated occurrences and zero smoothing
+      are included. Each critical-line restriction is an explicit hypothesis
+      about the indicated tuple, not a statement about all zeros.
+      No RH, simplicity, unrestricted constant-kernel replacement or infinite
+      zero-sum interchange is asserted. These bounds do not resolve the
+      signed ordinate-only error or the effectiveness of summed constants.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [RATIONAL-KERNEL-BOUNDS-001, MASTER-MICROSCOPIC-PROFILE-FORMAL-001, MASTER-KERNEL-LOCALIZATION-IDENTITY-FORMAL-001, MASTER-KERNEL-LOCALIZATION-BOUND-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/KernelCriticalSpecialization.lean
+      label: HigherCorrelations.tripleMasterKernel_critical_quadratic_bound
+      companion_declarations: [criticalGapQuadratic_nonneg, criticalGapQuadratic_bound, criticalGapQuadratic_div, criticalProfileRemainderConstant_nonneg, rationalProfile_critical_remainder_identity, rationalProfile_critical_remainder_bound, rationalProfile_critical_scaled_bound, rationalProfile_critical_microscopic_bound, rationalProfile_critical_leading_bound, rationalProfile_critical_zero_radius, rationalProfile_critical_coincident_bound, rationalProfile_critical_scale_endpoint, rationalProfile_critical_height_endpoint, rationalProfile_critical_gap_endpoints, criticalMasterGap_unscale, tripleAnchoredProfile_critical_quadratic_bound, tripleAnchoredProfile_critical_leading_bound, tripleMasterKernel_critical_leading_bound, tripleTestKernel_critical_quadratic_bound, tripleTestKernel_critical_leading_bound, tripleAnchoredProfile_critical_repeated, tripleMasterKernel_critical_zero_weight]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 9d30ae128723446de4ea686f8ad1f5882e37dcc782444aaaaefd529c2b31baa9
+    limit_order: "Finite-scale inequalities hold uniformly for all R>=0, ell>=1 and gaps in the closed radius-R box. Substitute ell=L_T at the explicit threshold. Fix R and supplied weight bounds when interpreting the height rates; tuples may vary with T within the stated restrictions. No new sum, integral or limit interchange is used."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 160 public statements across 29 localization modules match definition-only expected statements. Twenty-six unfinished-proof controls include the scaled critical expansion, microscopic rate, quadratic-corrected tuple estimate and leading-only tuple estimate. The combined build, complete axiom audit, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "Checked real rational profile, effective spacing threshold, exact tuplewise localization identity and derivative bound. Polynomial algebra, real inequalities, complex norm and finite triangle inequalities use only propext, Quot.sound and Classical.choice. No additional analytic hypothesis is supplied as an axiom."
+      constants_scope: "C_R=pi(R^4+R^6+R^8) and B_R=15pi R^2/32+C_R are explicit and deliberately nonoptimal. The localization coefficient is 16pi/27. These bounds are uniform on the closed scaled-gap box and include all collisions. They do not claim effective values for inherited summed counting constants."
+      baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. Historical TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 gains partial formalization coverage for the quadratic expansion and its tuplewise kernel consequences. Its explicit zero-gap horizontal formula and local critical-line normalization comparison remain unformalized. Historical theorem statuses and RH-audit scope are unchanged. Per-tuple zero horizontal displacement is explicit; the all-zero RH interpretation is not imported. The ordinate-only signed complex-argument error remains open."

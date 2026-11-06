@@ -26,6 +26,9 @@
     "ProfileGapBounds",
     "ProfileMicroscopicBounds",
     "ProfileMicroscopicLimits",
+    "ProfileCriticalDefinitions",
+    "ProfileCriticalExpansion",
+    "KernelCriticalSpecialization",
     "TripleKernelLocalizationAssembly"
   ],
   "components": [
@@ -687,6 +690,121 @@
     {
       "declaration": "HigherCorrelations.rationalProfile_microscopic_closed_endpoints",
       "source": "lean/HigherCorrelations/ProfileMicroscopicLimits.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalGapQuadratic_nonneg",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalGapQuadratic_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalGapQuadratic_div",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalProfileRemainderConstant_nonneg",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_remainder_identity",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_remainder_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_scaled_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_microscopic_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_leading_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_zero_radius",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_coincident_bound",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_scale_endpoint",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_height_endpoint",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_critical_gap_endpoints",
+      "source": "lean/HigherCorrelations/ProfileCriticalExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalMasterGap_unscale",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_critical_quadratic_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_critical_leading_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_critical_quadratic_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_critical_leading_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleTestKernel_critical_quadratic_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleTestKernel_critical_leading_bound",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleAnchoredProfile_critical_repeated",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.tripleMasterKernel_critical_zero_weight",
+      "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
       "comparator_checked": true
     },
     {

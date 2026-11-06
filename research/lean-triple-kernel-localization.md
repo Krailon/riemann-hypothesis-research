@@ -422,3 +422,57 @@ microscopic part is added here. The explicit zero-gap horizontal formula,
 critical-line quadratic expansion with fourth-order remainder, its tuplewise
 kernel consequence and local critical-line normalization comparison remain
 separate. No constant-kernel replacement inside an infinite sum is claimed.
+
+
+## Critical-line quadratic expansion and tuplewise specialization
+
+Completed verification: [PASS manifest](../artifacts/certificates/lean/9d30ae128723446de4ea686f8ad1f5882e37dcc782444aaaaefd529c2b31baa9/manifest.json).
+The full four-worker run passed in 18.19 minutes. All Lean sources, independent
+contracts and verification-script hashes match the certificate. The ledger entry
+and this verification citation were added afterward; the proof sources are unchanged.
+
+Task type: proof formalization. Assumptions: `UNCONDITIONAL`.
+The formal milestone is `MASTER-CRITICAL-PROFILE-FORMAL-001`.
+
+The exact checked real profile is expanded by polynomial algebra after clearing
+positive denominators. With q=a^2+b^2-ab, p=a^2 b^2(a-b)^2 and
+D=(4+a^2)(4+b^2)(4+(a-b)^2), the exact remainder after 3pi/8-5pi q/32 is
+
+pi ((7/2)q^2+(5/8)q^3-(3/8)p+(5/32)qp)/D.
+
+For R>=0, ell>=1 and |u|,|v|<=R, the fourth-order norm remainder for
+J(u/ell,v/ell;0) is <= C_R/ell^4, with C_R=pi(R^4+R^6+R^8).
+This explicit constant is deliberately nonoptimal. The proof uses
+0<=q<=3r^2, 0<=p<=4r^6 and D>=64 on the radius-r gap box, then r=R/ell.
+At T>=2 pi exp(2 pi), ell=L_T>=1 gives the height version.
+
+For a tuple v, the hypothesis is explicitly
+`forall i, occurrenceDisplacement (v i) = 0`.
+Master slots j,k,l use the conjugated anchor l (slot 2), and scaled gaps
+u=L_T(gamma_j-gamma_l), v=L_T(gamma_k-gamma_l). For a real differentiable
+weight supported in [1,2], |omega|<=W and |omega'|<=M, with W,M>=0,
+
+||K_T-(omega(gamma_l/T)/T)(3pi/8-5pi(u^2+v^2-uv)/(32 L_T^2))||
+  <= W C_R/(T L_T^4)+16pi M/(27 T^2).
+
+The leading-only estimate is <= W B_R/(T L_T^2)+16pi M/(27 T^2),
+where B_R=15pi R^2/32+C_R. The two error sources stay separate. Both
+master order and test order (anchor slot 0) have public checked statements.
+No factor eight is introduced by this reindexing.
+
+Zero radius, zero/coincident gaps, closed gap endpoints, ell=1, the exact height
+threshold, repeated occurrences and zero smoothing have explicit statements.
+R is fixed for interpreting the rates as T grows; no new limit interchange is
+needed. Only the named tuple is restricted to the line. The all-zero population
+is not specialized, and no global ordinate-only statistic is obtained.
+
+The expanded suite covers 160 public statements in 29 modules and 26 rejection
+controls, including the scaled expansion, height rate and both tuple estimates.
+The challenge imports definition-only project modules. Only propext, Quot.sound
+and Classical.choice are permitted; the complete axiom audit remains mandatory.
+Run `python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-kernel-localization-only`.
+
+The historical `TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001` remains partially
+formalized: its explicit zero-gap horizontal formula and local critical-line
+normalization comparison are still separate obligations. The historical ledger
+entries and audit scope remain unchanged; the signed ordinate-only error is open.

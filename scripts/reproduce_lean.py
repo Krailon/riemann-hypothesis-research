@@ -229,7 +229,7 @@ def main(argv=None):
     parser.add_argument('--triple-signed-sectors-only', action='store_true',
                         help='Check signed sectors, full smooth-test passage and limit; combined build, all axioms and regressions using prepared dependencies.')
     parser.add_argument('--triple-kernel-localization-only', action='store_true',
-                        help='Check kernel localization, summed near/far bounds and complex-test weighted frozen-profile summability, normalized transfer, height limits and uniform microscopic profile; combined build, axioms and regressions using prepared dependencies.')
+                        help='Check kernel localization, summed near/far bounds and complex-test weighted frozen-profile summability, normalized transfer, height limits, uniform microscopic profile and tuplewise critical-line quadratic expansion; combined build, axioms and regressions using prepared dependencies.')
     parser.add_argument('--control-jobs', type=int, default=4, metavar='N',
                         help='Parallel rejection controls (default 4, capped by CPU affinity); 1 preserves serial ordering.')
     args = parser.parse_args(argv)
@@ -316,7 +316,7 @@ def main(argv=None):
             'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun.')
 
     if args.triple_kernel_localization_only:
-        report['verification_scope'] = ('Exact anchored profile translation, tuplewise localization, the disjoint near/far budgets, summed error bound, signed complex-test majorant and absolute unweighted/weighted frozen-profile convergence with uniform mass bounds, independent fixed-height cutoffs, normalized correlation transfer, fixed-test height limits and effective microscopic profile convergence; '
+        report['verification_scope'] = ('Exact anchored profile translation, tuplewise localization, the disjoint near/far budgets, summed error bound, signed complex-test majorant and absolute unweighted/weighted frozen-profile convergence with uniform mass bounds, independent fixed-height cutoffs, normalized correlation transfer, fixed-test height limits effective microscopic profile convergence, and the explicit critical-line quadratic expansion and tuplewise specialization; '
             'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun. No ordinate-only replacement or varying-parameter limit is asserted. Summed constants remain absolute existential constants.')
 
     controls = []
@@ -369,7 +369,7 @@ def main(argv=None):
             command('triple-kernel-localization-build', ['lake', 'build', 'HigherCorrelations.TripleKernelLocalizationAssembly'])
             command('triple-kernel-localization-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/triple-kernel-localization.json'])
-            for control in ['translation', 'decomposition', 'sharp', 'bound', 'regions', 'near', 'far-center', 'far-anchor', 'summability', 'frozen-summability', 'frozen-normalization', 'frozen-cutoff', 'complex-test', 'weighted-profile', 'weighted-error', 'weighted-cutoff', 'profile-normalization', 'profile-transfer', 'profile-limit', 'micro-gap', 'micro-rate', 'micro-limit']:
+            for control in ['translation', 'decomposition', 'sharp', 'bound', 'regions', 'near', 'far-center', 'far-anchor', 'summability', 'frozen-summability', 'frozen-normalization', 'frozen-cutoff', 'complex-test', 'weighted-profile', 'weighted-error', 'weighted-cutoff', 'profile-normalization', 'profile-transfer', 'profile-limit', 'micro-gap', 'micro-rate', 'micro-limit', 'critical-expansion', 'critical-rate', 'critical-quadratic-tuple', 'critical-leading-tuple']:
                 command('triple-kernel-localization-' + control + '-unfinished-rejected', ['lake', 'env', comparator,
                         'lean/VerificationChallenges/triple-kernel-localization-' + control + '-unfinished.json'], expected_failure=True)
             command('triple-kernel-localization-regressions', [sys.executable, '-B', 'scripts/check_lean_triple_kernel_localization.py'])
