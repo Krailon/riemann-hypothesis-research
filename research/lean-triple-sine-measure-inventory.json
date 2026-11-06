@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "SineOverlapDefinitions",
+    "SineOverlap"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.sineOverlap_translated",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_interval",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_span",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_volume",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_measurable",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_finite",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlapIntegrand_indicator",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlapIntegrand_integrable",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_integral",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_nonempty",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_touching",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_empty",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_pos",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_zero",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_sector",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_axes",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_origin",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_repeated",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_examples",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

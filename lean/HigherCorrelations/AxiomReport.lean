@@ -1,3 +1,4 @@
+import HigherCorrelations.SineOverlap
 import HigherCorrelations.TripleKernelLocalizationAssembly
 import HigherCorrelations.TripleSignedAssembly
 import HigherCorrelations.TripleBoundaryAssembly
@@ -2180,3 +2181,24 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.criticalLocalCoefficient_endpoint
 #print axioms HigherCorrelations.criticalLocalNormalization_endpoint_spacing
 #print axioms HigherCorrelations.criticalLocalNormalization_endpoint_excluded
+
+#print axioms HigherCorrelations.sineOverlap_translated
+#print axioms HigherCorrelations.sineOverlap_interval
+#print axioms HigherCorrelations.sineOverlap_span
+#print axioms HigherCorrelations.sineOverlap_volume
+#print axioms HigherCorrelations.sineOverlap_length
+#print axioms HigherCorrelations.sineOverlap_measurable
+#print axioms HigherCorrelations.sineOverlap_finite
+#print axioms HigherCorrelations.sineOverlapIntegrand_indicator
+#print axioms HigherCorrelations.sineOverlapIntegrand_integrable
+#print axioms HigherCorrelations.sineOverlap_integral
+#print axioms HigherCorrelations.sineOverlap_nonempty
+#print axioms HigherCorrelations.sineOverlap_touching
+#print axioms HigherCorrelations.sineOverlap_empty
+#print axioms HigherCorrelations.sineOverlap_length_pos
+#print axioms HigherCorrelations.sineOverlap_length_zero
+#print axioms HigherCorrelations.sineOverlap_length_sector
+#print axioms HigherCorrelations.sineOverlap_length_axes
+#print axioms HigherCorrelations.sineOverlap_length_origin
+#print axioms HigherCorrelations.sineOverlap_length_repeated
+#print axioms HigherCorrelations.sineOverlap_length_examples

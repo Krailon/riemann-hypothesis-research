@@ -5778,3 +5778,50 @@ claims:
       imported_inputs: "Existing mean-spacing and transfer coefficient definitions, proved logarithm and spacing positivity, real logarithm division and growth at infinity, field algebra and continuity of the real-to-complex embedding. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "The limit 3/2 and exact error 3log(2pi)/(2log T) are effective, with the explicit strict domain T>2pi. No numerical approximation or effectiveness claim for summed counting constants is involved."
       baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. Together with the previously checked zero-gap horizontal profile, microscopic uniformity, quadratic expansion and tuplewise critical-line estimates, this closes formal coverage of the recorded TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 statement. Its historical status and audit scope remain unchanged. The full main-term comparison, effectiveness of summed constants and ordinate-only signed error remain separate."
+
+  - id: MASTER-SINE-OVERLAP-FORMAL-001
+    title: Closed sine-cycle interval overlap and integrable indicator product
+    kind: lemma
+    statement: |
+      Let I=[-1/2,1/2], h(xi,eta)=max(|xi|,|eta|,|xi+eta|),
+      and Q(xi,eta)=I intersect (xi+I) intersect (-eta+I).
+      For all real xi,eta, Q is the closed interval with endpoints
+      max(0,xi,-eta)-1/2 and min(0,xi,-eta)+1/2. The span
+      max(0,xi,-eta)-min(0,xi,-eta) equals h(xi,eta).
+      Its Lebesgue measure is ENNReal.ofReal(1-h), and its real length
+      is c(xi,eta)=max(0,1-h). Q is nonempty exactly when h<=1,
+      is a singleton when h=1, and is empty when h>1. Its length
+      is positive exactly when h<1 and is zero for h>=1.
+      The real function 1_I(d)1_I(xi-d)1_I(eta+d) equals 1_Q(d)
+      pointwise. Q is measurable with finite measure, so the product
+      is integrable and its Lebesgue Bochner integral equals c(xi,eta).
+      For every j in Fin 6 and p in the closed positive quadrant,
+      the overlap length at signedSector j p is max(0,1-p.1-p.2).
+      The three frequency seams (r,0), (0,r), (r,-r) have length
+      max(0,1-|r|); the last includes repeated interval centers.
+      The origin has length 1. The lengths at (1/4,1/4), (3/4,3/4)
+      and (1,0) are respectively 1/2, 0 and 0.
+      These are deterministic interval and measure identities, with closed
+      endpoints throughout. No sinc Fourier pairing, five-partition benchmark,
+      cumulant formula, zeta support-boundary extension, or ordinate-only
+      correlation theorem is asserted by this formal milestone.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-SIGNED-SECTORS-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/SineOverlap.lean
+      label: HigherCorrelations.sineOverlap_integral
+      companion_declarations: [sineOverlap_translated, sineOverlap_interval, sineOverlap_span, sineOverlap_volume, sineOverlap_length, sineOverlap_measurable, sineOverlap_finite, sineOverlapIntegrand_indicator, sineOverlapIntegrand_integrable, sineOverlap_nonempty, sineOverlap_touching, sineOverlap_empty, sineOverlap_length_pos, sineOverlap_length_zero, sineOverlap_length_sector, sineOverlap_length_axes, sineOverlap_length_origin, sineOverlap_length_repeated, sineOverlap_length_examples]
+      inventory: research/lean-triple-sine-measure-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 8b54dde147c6072ee467a9fcdd0a4a714db439da5a6bcb05c5a1e7224f6b25c1
+    limit_order: "No limiting parameter or sum/integral interchange. Finite Lebesgue measure and measurability prove integrability before evaluation of the indicator integral. All real frequencies, closed interval endpoints, repeated centers and all six closed sectors are included."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 20 public statements across two modules match definition-only expected statements. Six unfinished-proof controls check span, volume, integrability, integral, singleton endpoint and sector law. Combined project build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Existing signedGauge half-sum and six-sector identities; Mathlib closed-interval measure, indicator integrability and indicator integral; ordered real arithmetic. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Exact overlap length max(0,1-h); no numerical approximation, asymptotic error, or existential constant is used."
+      baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. TRIPLE-SINE-MEASURE-001 gains partial coverage only. Its Fourier pairing, five-partition benchmark and cumulant assertions remain separate. Historical ledger statuses, dependency graph and RH-review scope are unchanged; no zeta support-boundary extension is inferred."

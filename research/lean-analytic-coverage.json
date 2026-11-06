@@ -1727,11 +1727,32 @@
         "bibliography_key": "ConreySnaith2014",
         "imported_scope": "Theorem 1, equation (2), author manuscript v2 p. 2 fixes the distinct-index unitary determinant convention; all claimed identities are proved directly."
       },
-      "coverage": "not_formalized",
+      "coverage": "partial",
       "whole_claim_formalized": false,
-      "components": [],
+      "components": [
+        "HigherCorrelations.sineOverlap_translated",
+        "HigherCorrelations.sineOverlap_interval",
+        "HigherCorrelations.sineOverlap_span",
+        "HigherCorrelations.sineOverlap_volume",
+        "HigherCorrelations.sineOverlap_length",
+        "HigherCorrelations.sineOverlap_measurable",
+        "HigherCorrelations.sineOverlap_finite",
+        "HigherCorrelations.sineOverlapIntegrand_indicator",
+        "HigherCorrelations.sineOverlapIntegrand_integrable",
+        "HigherCorrelations.sineOverlap_integral",
+        "HigherCorrelations.sineOverlap_nonempty",
+        "HigherCorrelations.sineOverlap_touching",
+        "HigherCorrelations.sineOverlap_empty",
+        "HigherCorrelations.sineOverlap_length_pos",
+        "HigherCorrelations.sineOverlap_length_zero",
+        "HigherCorrelations.sineOverlap_length_sector",
+        "HigherCorrelations.sineOverlap_length_axes",
+        "HigherCorrelations.sineOverlap_length_origin",
+        "HigherCorrelations.sineOverlap_length_repeated",
+        "HigherCorrelations.sineOverlap_length_examples"
+      ],
       "remaining_obligations": [
-        "Formalize the exact recorded statement and proof, including its analytic hypotheses and limit order."
+        "Closed interval geometry, Lebesgue volume and the integrable indicator-product identity are checked, including axes and touching endpoints. The sinc Fourier pairing, five-partition benchmark assembly, cumulant identities and ordinary/factorial distinction remain unformalized. This does not extend the zeta theorem to the support boundary."
       ]
     },
     {
@@ -11997,7 +12018,107 @@
       "declaration": "HigherCorrelations.tripleKernelLocalizationError_equal_ordinates",
       "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_translated",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_interval",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_span",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_volume",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_measurable",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_finite",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlapIntegrand_indicator",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlapIntegrand_integrable",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_integral",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_nonempty",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_touching",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_empty",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_pos",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_zero",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_sector",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_axes",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_origin",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_repeated",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOverlap_length_examples",
+      "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. Next formalize the remaining main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The sine-cycle interval geometry and indicator integral are checked, including closed endpoints. Next formalize the sinc Fourier pairing and five-partition benchmark, then the main-term comparison. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
 }

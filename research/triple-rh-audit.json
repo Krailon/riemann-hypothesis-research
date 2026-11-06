@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "b37a975e46ebe7cefe3bd7d71bd68f6e0917ad43c7effe8ad432dd276bce2c8b",
+    "research/theorem-ledger.yaml": "6107c60c54e925319730664806e7b908bddf8f525b67a4ee8176e12c4405e28a",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "ecba229abcdec03c46495e400a7820fc4c9e4842f63ec66942185be329ccd32b"
+    "research/pair-rh-audit.json": "0b6a50899ef52fc5dcaaf209d3ea3a5f0d9a8cd5c115826f360ea79bb8e0956d"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4745,5 +4745,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the exact local normalization for T>2pi, its real and complex interfaces, the bridges to the earlier transfer convention, exact logarithmic error and coefficient limit 3/2. The endpoint T=2pi is explicitly excluded. Together with the previously checked profile and tuplewise components this completes formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. Historical ledger statuses, dependency graph and RH-review scope are unchanged. The full main-term comparison, effectiveness of summed constants and ordinate-only signed error remain separate."
+  },
+  "ledger_sine_overlap_review": {
+    "reviewed_on": "2026-11-06",
+    "previous_ledger_sha256": "b37a975e46ebe7cefe3bd7d71bd68f6e0917ad43c7effe8ad432dd276bce2c8b",
+    "added_claim_ids": [
+      "MASTER-SINE-OVERLAP-FORMAL-001"
+    ],
+    "report": "research/lean-triple-sine-measure.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the exact closed interval overlap, span, finite Lebesgue measure, integrable indicator product and its integral, all six closed frequency sectors and singleton endpoint. TRIPLE-SINE-MEASURE-001 gains partial geometry coverage only. Fourier pairing, five-partition benchmark and cumulant identities remain separate. Historical ledger statuses, dependency graph and RH-review scope are unchanged. No zeta support-boundary extension or ordinate-only conclusion is inferred."
   }
 }

@@ -1,0 +1,33 @@
+{
+  "challenge_module": "VerificationChallenges.SineOverlap",
+  "solution_module": "HigherCorrelations.SineOverlap",
+  "theorem_names": [
+    "HigherCorrelations.sineOverlap_translated",
+    "HigherCorrelations.sineOverlap_interval",
+    "HigherCorrelations.sineOverlap_span",
+    "HigherCorrelations.sineOverlap_volume",
+    "HigherCorrelations.sineOverlap_length",
+    "HigherCorrelations.sineOverlap_measurable",
+    "HigherCorrelations.sineOverlap_finite",
+    "HigherCorrelations.sineOverlapIntegrand_indicator",
+    "HigherCorrelations.sineOverlapIntegrand_integrable",
+    "HigherCorrelations.sineOverlap_integral",
+    "HigherCorrelations.sineOverlap_nonempty",
+    "HigherCorrelations.sineOverlap_touching",
+    "HigherCorrelations.sineOverlap_empty",
+    "HigherCorrelations.sineOverlap_length_pos",
+    "HigherCorrelations.sineOverlap_length_zero",
+    "HigherCorrelations.sineOverlap_length_sector",
+    "HigherCorrelations.sineOverlap_length_axes",
+    "HigherCorrelations.sineOverlap_length_origin",
+    "HigherCorrelations.sineOverlap_length_repeated",
+    "HigherCorrelations.sineOverlap_length_examples"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

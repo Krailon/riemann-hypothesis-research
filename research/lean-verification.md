@@ -583,3 +583,19 @@ This completes formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001
 through its checked components, while retaining its historical ledger status.
 The main-term comparison and ordinate-only research claims remain separate.
 Statements and provenance are in the [localization note](lean-triple-kernel-localization.md).
+
+## Sine-cycle interval geometry
+
+A separate sine-measure suite checks 20 public statements in two modules,
+with six unfinished-proof rejection controls. It proves the exact closed
+interval overlap and Lebesgue measure, finite integrability and the product
+indicator integral, including the singleton boundary and all six sectors.
+
+```sh
+python3 -B scripts/reproduce_lean.py --reuse-dependencies --triple-sine-measure-only
+```
+
+The default four-worker control pool, combined build and full axiom report
+remain enabled. This supplies partial coverage of TRIPLE-SINE-MEASURE-001;
+the sinc Fourier pairing and full five-partition benchmark remain separate.
+See the [sine-measure note](lean-triple-sine-measure.md).

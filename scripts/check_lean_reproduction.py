@@ -106,12 +106,19 @@ class LeanReproductionTests(unittest.TestCase):
                             ('--triple-test-function-only', 'triple-test-function-comparator'),
                             ('--triple-boundary-only', 'triple-boundary-comparator'),
                             ('--triple-signed-sectors-only', 'triple-signed-sectors-comparator'),
-                            ('--triple-kernel-localization-only', 'triple-kernel-localization-comparator')]:
+                            ('--triple-kernel-localization-only', 'triple-kernel-localization-comparator'),
+                            ('--triple-sine-measure-only', 'triple-sine-measure-comparator')]:
             with self.subTest(flag=flag):
                 code, calls, report, checked = self.run_workflow(['--reuse-dependencies', flag])
                 self.assertEqual(code, 0)
                 self.assertEqual(checked, 1)
                 self.assertIn(suite, calls)
+                if flag == '--triple-sine-measure-only':
+                    for control in ['span', 'volume', 'integrability', 'integral', 'endpoint', 'sectors']:
+                        self.assertIn('triple-sine-measure-' + control + '-unfinished-rejected', calls)
+                    self.assertIn('triple-sine-measure-regressions', calls)
+                else:
+                    self.assertNotIn('triple-sine-measure-comparator', calls)
                 if flag == '--triple-kernel-localization-only':
                     for control in ['translation', 'decomposition']:
                         self.assertIn('triple-kernel-localization-' + control + '-unfinished-rejected', calls)
@@ -185,15 +192,15 @@ class LeanReproductionTests(unittest.TestCase):
                     self.assertNotIn('pair-fourier-comparator', calls)
                 else:
                     self.assertNotIn('triple-master-comparator', calls)
-                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only']:
+                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only']:
                     self.assertNotIn('pair-asymptotic-comparator', calls)
                 else:
                     self.assertNotIn('pair-fourier-comparator', calls)
-                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only']:
+                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only']:
                     self.assertNotIn('pair-zero-comparison-comparator', calls)
                 self.assertNotIn('resolve', calls)
                 self.assertNotIn('upstream-comparator', calls)
-                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only']:
+                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only']:
                     self.assertNotIn('pair-zero-bounds-comparator', calls)
                     self.assertNotIn('pair-zero-comparator', calls)
                     self.assertNotIn('zeta23-counting-comparator', calls)
@@ -201,7 +208,8 @@ class LeanReproductionTests(unittest.TestCase):
 
     def test_parallel_preserves_full_and_focused_scope(self):
         for flags in [['--reuse-dependencies'],
-                      ['--reuse-dependencies', '--triple-kernel-localization-only']]:
+                      ['--reuse-dependencies', '--triple-kernel-localization-only'],
+                      ['--reuse-dependencies', '--triple-sine-measure-only']]:
             serial = self.run_workflow(flags)
             parallel = self.run_workflow(flags, jobs=4)
             self.assertEqual(parallel[0], 0)

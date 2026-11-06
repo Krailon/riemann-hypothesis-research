@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "b37a975e46ebe7cefe3bd7d71bd68f6e0917ad43c7effe8ad432dd276bce2c8b",
+  "ledger_sha256": "6107c60c54e925319730664806e7b908bddf8f525b67a4ee8176e12c4405e28a",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2881,5 +2881,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the exact local normalization for T>2pi, its real and complex interfaces, the bridges to the earlier transfer convention, exact logarithmic error and coefficient limit 3/2. The endpoint T=2pi is explicitly excluded. Together with the previously checked profile and tuplewise components this completes formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. Historical ledger statuses, dependency graph and RH-review scope are unchanged. The full main-term comparison, effectiveness of summed constants and ordinate-only signed error remain separate."
+  },
+  "ledger_sine_overlap_review": {
+    "reviewed_on": "2026-11-06",
+    "previous_ledger_sha256": "b37a975e46ebe7cefe3bd7d71bd68f6e0917ad43c7effe8ad432dd276bce2c8b",
+    "added_claim_ids": [
+      "MASTER-SINE-OVERLAP-FORMAL-001"
+    ],
+    "report": "research/lean-triple-sine-measure.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the exact closed interval overlap, span, finite Lebesgue measure, integrable indicator product and its integral, all six closed frequency sectors and singleton endpoint. TRIPLE-SINE-MEASURE-001 gains partial geometry coverage only. Fourier pairing, five-partition benchmark and cumulant identities remain separate. Historical ledger statuses, dependency graph and RH-review scope are unchanged. No zeta support-boundary extension or ordinate-only conclusion is inferred."
   }
 }
