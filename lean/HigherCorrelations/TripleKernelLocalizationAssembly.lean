@@ -4,13 +4,15 @@ import HigherCorrelations.ProfileTransferLimits
 import HigherCorrelations.ProfileMicroscopicLimits
 import HigherCorrelations.KernelCriticalSpecialization
 import HigherCorrelations.ProfileZeroGap
+import HigherCorrelations.ProfileLocalNormalization
 
 /-! UNCONDITIONAL exact, tuplewise and summed kernel localization, including
 absolute unweighted and complex-test weighted frozen-profile convergence.
 Normalized correlation transfer and fixed-test height limits are included.
 The effective microscopic profile limit and the critical-parameter quadratic
 expansion with tuplewise critical-line bounds are also included. The explicit
-zero-gap horizontal profile and its closed-cube denominator positivity are checked. The ordinate-only
+zero-gap horizontal profile and its closed-cube denominator positivity are checked.
+The local normalization identity and coefficient limit 3/2 are included. The ordinate-only
 signed error and effectiveness of the summed counting constants remain separate. -/
 namespace HigherCorrelations
 noncomputable section

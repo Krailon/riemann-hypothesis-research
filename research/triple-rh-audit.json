@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "f432ec44f01096004831a62a5a3bbd81ae5c916405b9421298a938ce469c0d74",
+    "research/theorem-ledger.yaml": "b37a975e46ebe7cefe3bd7d71bd68f6e0917ad43c7effe8ad432dd276bce2c8b",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "38f94513275aaac8274ebef91d1add6eb9cc7f3bae02632dc865b7a4b006cf35"
+    "research/pair-rh-audit.json": "ecba229abcdec03c46495e400a7820fc4c9e4842f63ec66942185be329ccd32b"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4736,5 +4736,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the explicit real zero-gap horizontal profile, positive denominator factors in [3,4] and product in [27,64] on the entire closed cube, symmetry and exact parameter examples, and the explicit horizontal target for the microscopic rate and uniform limit. Only the historical corollary's local critical-line normalization identity and coefficient limit remain unformalized. Historical statements, statuses, dependency graph and RH-review scope are unchanged. No off-line zero existence assertion, infinite-zero-sum interchange or unrestricted constant-kernel replacement is asserted; the ordinate-only signed error remains open."
+  },
+  "ledger_local_normalization_review": {
+    "reviewed_on": "2026-11-06",
+    "previous_ledger_sha256": "f432ec44f01096004831a62a5a3bbd81ae5c916405b9421298a938ce469c0d74",
+    "added_claim_ids": [
+      "MASTER-LOCAL-NORMALIZATION-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the exact local normalization for T>2pi, its real and complex interfaces, the bridges to the earlier transfer convention, exact logarithmic error and coefficient limit 3/2. The endpoint T=2pi is explicitly excluded. Together with the previously checked profile and tuplewise components this completes formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. Historical ledger statuses, dependency graph and RH-review scope are unchanged. The full main-term comparison, effectiveness of summed constants and ordinate-only signed error remain separate."
   }
 }

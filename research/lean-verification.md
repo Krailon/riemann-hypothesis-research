@@ -570,3 +570,16 @@ example are checked. The scaled-gap bound and uniform microscopic limit now
 identify their explicit horizontal target. This adds no zero-sum interchange
 or global critical-line assumption. See the
 [localization note](lean-triple-kernel-localization.md) for statements and provenance.
+
+## Local critical-line normalization
+
+The localization suite extends to 194 statements in 33 modules and 32 rejection
+controls. The local identity (8/(T log T))(3pi/8)=c(T)/(T L_T) is checked for
+T>2pi, with c(T)=3 log(T/(2pi))/(2 log T). Real and complex versions, bridges to
+the existing transfer normalization, the exact logarithmic error and the limit
+c(T)->3/2 are included. The excluded endpoint T=2pi is explicitly checked.
+
+This completes formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001
+through its checked components, while retaining its historical ledger status.
+The main-term comparison and ordinate-only research claims remain separate.
+Statements and provenance are in the [localization note](lean-triple-kernel-localization.md).

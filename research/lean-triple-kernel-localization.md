@@ -532,3 +532,54 @@ only its local critical-line normalization identity and coefficient limit
 remain unformalized. Historical ledger entries and review scope stay unchanged.
 The signed ordinate-only error and unrestricted constant-kernel replacement
 remain separate research issues.
+
+## Local normalization identity and coefficient limit
+
+Completed verification: [PASS manifest](../artifacts/certificates/lean/d94c1c3dc137d729bffcc30f8326279e788d96bdd96a8e66ca5cd207399134f7/manifest.json).
+The four-worker run passed in 19.16 minutes. All Lean/challenge and verification-script
+hashes match the certificate. The ledger entry, audit-binding metadata and this
+verification citation were updated afterward without changing the proof sources.
+
+Task type: proof formalization. Assumptions: `UNCONDITIONAL`.
+Formal milestone: `MASTER-LOCAL-NORMALIZATION-FORMAL-001`.
+
+For T>2pi define c(T)=3 log(T/(2pi))/(2 log T). With the project's
+L_T=log(T/(2pi))/(2pi), the exact real identity is
+
+(8/(T log T))(3pi/8)=c(T)/(T L_T).
+
+The complex version is (8/(T log T))*kernelBenchmark
+  = (c(T):Complex)*ordinateCoefficient T.
+The normalization bridges are (c(T):Complex)=(3/2)*transferRatio T and
+8/(T log T)=(3/2)*transferCoefficient T. Thus the factor 1/T occurs once;
+this is the local kernel normalization, with no sum or integral added.
+
+The checked exact logarithmic decomposition is
+
+c(T)=3/2-3 log(2pi)/(2 log T).
+
+For T>2pi, 0<c(T)<3/2 and the absolute error from 3/2 is exactly
+3 log(2pi)/(2 log T). The real and complex Tendsto statements give the
+coefficient limit 3/2 as T tends to infinity. All denominators used by the
+identity are positive on the stated domain.
+
+The strict endpoint matters: at T=2pi the spacing L_T is zero. The coefficient
+also evaluates to zero there; a checked endpoint-exclusion statement confirms
+that Lean's totalized division does not extend the displayed normalization
+identity to this height. No endpoint value for an analytic ordinate-normalized
+statistic is asserted.
+
+The localization suite now covers 194 public statements in 33 modules with
+32 unfinished-proof rejection controls. The new controls cover the exact
+identity, coefficient limit and excluded endpoint. Independent contracts import
+definition-only project modules, and the complete axiom audit retains only
+propext, Quot.sound and Classical.choice. Use the existing focused localization
+command with four rejection workers by default.
+
+Together with the previously checked explicit horizontal profile, uniform
+microscopic rate, critical-line quadratic expansion and tuplewise consequences,
+this completes the recorded formal coverage of
+TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. Its historical ledger status and the
+historical audit scope remain unchanged. The full main-term comparison, the
+numerical effectiveness of summed constants, and the ordinate-only signed error
+are not promoted by this scalar identity or limit.

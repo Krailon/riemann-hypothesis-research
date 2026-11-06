@@ -1045,8 +1045,8 @@
         "label": "cor:triple-kernel-critical",
         "bookkeeping": "research/triple-kernel.md"
       },
-      "coverage": "partial",
-      "whole_claim_formalized": false,
+      "coverage": "formalized",
+      "whole_claim_formalized": true,
       "components": [
         "HigherCorrelations.rationalProfile_origin",
         "HigherCorrelations.rationalProfile_real",
@@ -1109,12 +1109,22 @@
         "HigherCorrelations.zeroGapHorizontalProfile_corners",
         "HigherCorrelations.rationalProfile_zero_gap_scaled_bound",
         "HigherCorrelations.rationalProfile_zero_gap_microscopic_bound",
-        "HigherCorrelations.rationalProfile_zero_gap_tendstoUniformlyOn"
+        "HigherCorrelations.rationalProfile_zero_gap_tendstoUniformlyOn",
+        "HigherCorrelations.criticalLocalNormalization_denominators",
+        "HigherCorrelations.criticalLocalNormalization_identity",
+        "HigherCorrelations.criticalLocalNormalization_complex",
+        "HigherCorrelations.criticalLocalCoefficient_transferRatio",
+        "HigherCorrelations.criticalLocalNormalization_transferCoefficient",
+        "HigherCorrelations.criticalLocalCoefficient_sub_log",
+        "HigherCorrelations.criticalLocalCoefficient_bounds",
+        "HigherCorrelations.criticalLocalCoefficient_error",
+        "HigherCorrelations.criticalLocalCoefficient_tendsto",
+        "HigherCorrelations.criticalLocalCoefficient_complex_tendsto",
+        "HigherCorrelations.criticalLocalCoefficient_endpoint",
+        "HigherCorrelations.criticalLocalNormalization_endpoint_spacing",
+        "HigherCorrelations.criticalLocalNormalization_endpoint_excluded"
       ],
-      "remaining_obligations": [
-        "The explicit gap bound, scaled-gap rate and microscopic limit are checked uniformly on the closed horizontal cube, with effective constant 16*pi*R*(R+1)/9 and threshold T>=2*pi*exp(2*pi). Zero radius, zero/coincident gaps and horizontal endpoints are included.",
-        "The explicit critical-line quadratic expansion and fourth-order remainder, and both quadratic-corrected and leading-only tuplewise estimates are checked with effective constants and explicit per-tuple critical-line hypotheses. The real zero-gap horizontal formula, denominator factor bounds [3,4], product bound [27,64], positivity and explicit horizontal microscopic target are checked on the closed cube. Only the local critical-line normalization comparison and its coefficient limit remain unformalized. No limit is interchanged with an infinite zero sum."
-      ]
+      "remaining_obligations": []
     },
     {
       "id": "TRIPLE-KERNEL-LOCALIZATION-001",
@@ -11899,6 +11909,71 @@
       "comparator_checked": true
     },
     {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_denominators",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_identity",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_complex",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_transferRatio",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_transferCoefficient",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_sub_log",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_bounds",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_error",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_tendsto",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_complex_tendsto",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_endpoint",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_endpoint_spacing",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_endpoint_excluded",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
       "declaration": "HigherCorrelations.tripleKernelLocalizationError_zero",
       "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
       "comparator_checked": true
@@ -11924,5 +11999,5 @@
       "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. Next formalize the local critical-line normalization comparison and remaining main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. Next formalize the remaining main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
 }

@@ -6,6 +6,7 @@ import HigherCorrelations.ProfileTransferDefinitions
 import HigherCorrelations.ProfileMicroscopicDefinitions
 import HigherCorrelations.ProfileCriticalDefinitions
 import HigherCorrelations.ProfileZeroGapDefinitions
+import HigherCorrelations.ProfileLocalNormalizationDefinitions
 import HigherCorrelations.TripleBoundaryDefinitions
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.Calculus.MeanValue
@@ -906,6 +907,46 @@ theorem rationalProfile_zero_gap_tendstoUniformlyOn (R : ℝ) (hR : 0≤R) :
     TendstoUniformlyOn
       (fun T (p : Fin 5 → ℝ) => rationalProfile (p 0/meanSpacing T) (p 1/meanSpacing T) (p 2) (p 3) (p 4))
       (fun p => (zeroGapHorizontalProfile (p 2) (p 3) (p 4):ℂ)) atTop (profileMicroscopicBox R) := by sorry
+
+theorem criticalLocalNormalization_denominators (T : ℝ) (hT : 2*Real.pi<T) :
+    0<T ∧ 0<Real.log T ∧ 0 < meanSpacing T := by sorry
+
+theorem criticalLocalNormalization_identity (T : ℝ) (hT : 2*Real.pi<T) :
+    (8/(T*Real.log T))*(3*Real.pi/8)=
+      criticalLocalCoefficient T*(1/(T*meanSpacing T)) := by sorry
+
+theorem criticalLocalNormalization_complex (T : ℝ) (hT : 2*Real.pi<T) :
+    (8/((T:ℂ)*Real.log T))*kernelBenchmark=
+      (criticalLocalCoefficient T:ℂ)*ordinateCoefficient T := by sorry
+
+theorem criticalLocalCoefficient_transferRatio (T : ℝ) :
+    (criticalLocalCoefficient T:ℂ)=(3/2:ℂ)*transferRatio T := by sorry
+
+theorem criticalLocalNormalization_transferCoefficient (T : ℝ) :
+    (8/((T:ℂ)*Real.log T))=(3/2:ℂ)*transferCoefficient T := by sorry
+
+theorem criticalLocalCoefficient_sub_log (T : ℝ) (hT : 2*Real.pi<T) :
+    criticalLocalCoefficient T=(3/2:ℝ)-3*Real.log (2*Real.pi)/(2*Real.log T) := by sorry
+
+theorem criticalLocalCoefficient_bounds (T : ℝ) (hT : 2*Real.pi<T) :
+    0<criticalLocalCoefficient T ∧ criticalLocalCoefficient T<(3/2:ℝ) := by sorry
+
+theorem criticalLocalCoefficient_error (T : ℝ) (hT : 2*Real.pi<T) :
+    |criticalLocalCoefficient T-(3/2:ℝ)|=3*Real.log (2*Real.pi)/(2*Real.log T) := by sorry
+
+theorem criticalLocalCoefficient_tendsto :
+    Tendsto criticalLocalCoefficient atTop (𝓝 (3/2:ℝ)) := by sorry
+
+theorem criticalLocalCoefficient_complex_tendsto :
+    Tendsto (fun T => (criticalLocalCoefficient T:ℂ)) atTop (𝓝 (3/2:ℂ)) := by sorry
+
+theorem criticalLocalCoefficient_endpoint : criticalLocalCoefficient (2*Real.pi)=0 := by sorry
+
+theorem criticalLocalNormalization_endpoint_spacing : meanSpacing (2*Real.pi)=0 := by sorry
+
+theorem criticalLocalNormalization_endpoint_excluded :
+    (8/((2*Real.pi)*Real.log (2*Real.pi)))*(3*Real.pi/8) ≠
+      criticalLocalCoefficient (2*Real.pi)*(1/((2*Real.pi)*meanSpacing (2*Real.pi))) := by sorry
 
 theorem tripleKernelLocalizationError_zero (T : ℝ) (v : MasterTriple) :
     tripleKernelLocalizationError (fun _ => 0) T v=0 := by sorry

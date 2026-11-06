@@ -238,7 +238,7 @@ class LeanReproductionTests(unittest.TestCase):
             self.assertEqual(report['status'], status)
             self.assertNotIn('axioms', calls)
             controls = [e for e in report['commands'] if e.get('expected_failure')]
-            self.assertEqual(len(controls), 29)
+            self.assertEqual(len(controls), 32)
             self.assertTrue(all(e['status'] == 'cancelled' for e in controls))
 
     def test_preflight_failure_prevents_build_and_is_archived(self):

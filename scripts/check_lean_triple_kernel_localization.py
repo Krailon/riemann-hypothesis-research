@@ -15,7 +15,8 @@ CONTROLS = {'translation': 'tripleAnchoredProfile_denominators', 'decomposition'
             'profile-normalization': 'frozenStatistic_profile_formula', 'profile-transfer': 'frozenStatistic_transfer_bound', 'profile-limit': 'frozenStatistic_compact_limit',
             'micro-gap': 'rationalProfile_gap_bound', 'micro-rate': 'rationalProfile_microscopic_bound', 'micro-limit': 'rationalProfile_microscopic_tendstoUniformlyOn',
             'critical-expansion': 'rationalProfile_critical_scaled_bound', 'critical-rate': 'rationalProfile_critical_microscopic_bound', 'critical-quadratic-tuple': 'tripleMasterKernel_critical_quadratic_bound', 'critical-leading-tuple': 'tripleMasterKernel_critical_leading_bound',
-            'horizontal-denominator': 'zeroGapHorizontalDenominator_bounds', 'horizontal-formula': 'rationalProfile_zero_gap_horizontal', 'horizontal-target': 'rationalProfile_zero_gap_tendstoUniformlyOn'}
+            'horizontal-denominator': 'zeroGapHorizontalDenominator_bounds', 'horizontal-formula': 'rationalProfile_zero_gap_horizontal', 'horizontal-target': 'rationalProfile_zero_gap_tendstoUniformlyOn',
+            'local-normalization': 'criticalLocalNormalization_identity', 'local-coefficient-limit': 'criticalLocalCoefficient_tendsto', 'local-endpoint': 'criticalLocalNormalization_endpoint_excluded'}
 
 
 def read_json(path):

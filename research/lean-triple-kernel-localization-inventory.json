@@ -31,6 +31,8 @@
     "KernelCriticalSpecialization",
     "ProfileZeroGapDefinitions",
     "ProfileZeroGap",
+    "ProfileLocalNormalizationDefinitions",
+    "ProfileLocalNormalization",
     "TripleKernelLocalizationAssembly"
   ],
   "components": [
@@ -912,6 +914,71 @@
     {
       "declaration": "HigherCorrelations.rationalProfile_zero_gap_tendstoUniformlyOn",
       "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_denominators",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_identity",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_complex",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_transferRatio",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_transferCoefficient",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_sub_log",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_bounds",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_error",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_tendsto",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_complex_tendsto",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalCoefficient_endpoint",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_endpoint_spacing",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.criticalLocalNormalization_endpoint_excluded",
+      "source": "lean/HigherCorrelations/ProfileLocalNormalization.lean",
       "comparator_checked": true
     },
     {

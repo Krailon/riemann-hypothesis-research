@@ -5733,3 +5733,48 @@ claims:
       imported_inputs: "The rational profile definition, checked microscopic gap estimate and spacing threshold, and the existing uniform-convergence-from-an-envelope helper. Only propext, Quot.sound and Classical.choice are permitted. Real and complex polynomial algebra supplies the formula and exact parameter examples."
       constants_scope: "Explicit, deliberately conservative factor bounds [3,4], denominator-product bounds [27,64], numerator lower bound 21, and microscopic coefficient 16pi R(R+1)/9. All cube boundaries and coincidences are included. No numerical optimization, quadrature or effectiveness claim for summed counting constants is used."
       baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. Historical TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 gains partial coverage for its explicit horizontal zero-gap formula; only the local critical-line normalization identity and coefficient limit remain unformalized. Historical statuses, dependency graph and RH-review scope are unchanged. No off-line zero existence assertion, unrestricted constant-kernel replacement or ordinate-only signed error bound is inferred."
+
+  - id: MASTER-LOCAL-NORMALIZATION-FORMAL-001
+    title: Exact local critical-line normalization and coefficient limit three halves
+    kind: theorem
+    statement: |
+      Let L_T=log(T/(2pi))/(2pi) and c(T)=3log(T/(2pi))/(2log T).
+      For every T>2pi, T, log T and L_T are strictly positive, and
+      (8/(T log T))(3pi/8)=c(T)/(T L_T).
+      In the existing complex-valued interfaces this is
+      (8/(T log T))*kernelBenchmark=(c(T):Complex)*ordinateCoefficient T.
+      The algebraic bridges to the earlier transfer convention are
+      (c(T):Complex)=(3/2)*transferRatio T and
+      8/(T log T)=(3/2)*transferCoefficient T.
+      For T>2pi, c(T)=3/2-3log(2pi)/(2log T), 0<c(T)<3/2, and
+      |c(T)-3/2|=3log(2pi)/(2log T). Hence c(T) tends to 3/2 as
+      T tends to infinity; both real and complex Tendsto statements are checked.
+      At T=2pi, L_T=0 and c(T)=0. Even under Lean's totalized division,
+      the displayed normalization identity fails at that endpoint, so the
+      strict height condition is retained. No analytic ordinate-normalized
+      statistic is assigned a value there.
+      This is a local scalar normalization of the critical-parameter kernel
+      value 3pi/8. It neither specializes the entire zero population nor
+      replaces a kernel inside an infinite zero sum. No RH, simplicity,
+      global main-term identification or signed ordinate-only error estimate
+      follows from the normalization identity or scalar limit alone.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [RATIONAL-ORDINATE-TRANSFER-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ProfileLocalNormalization.lean
+      label: HigherCorrelations.criticalLocalNormalization_identity
+      companion_declarations: [criticalLocalNormalization_denominators, criticalLocalNormalization_complex, criticalLocalCoefficient_transferRatio, criticalLocalNormalization_transferCoefficient, criticalLocalCoefficient_sub_log, criticalLocalCoefficient_bounds, criticalLocalCoefficient_error, criticalLocalCoefficient_tendsto, criticalLocalCoefficient_complex_tendsto, criticalLocalCoefficient_endpoint, criticalLocalNormalization_endpoint_spacing, criticalLocalNormalization_endpoint_excluded]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: d94c1c3dc137d729bffcc30f8326279e788d96bdd96a8e66ca5cd207399134f7
+    limit_order: "The algebraic identities and exact error hold at each T>2pi. The scalar coefficient tends to 3/2 using log T tending to infinity. No zero sum, integral or second parameter limit is interchanged with this height limit."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 194 public statements across 33 localization modules match definition-only expected statements. Thirty-two unfinished-proof controls include the local identity, scalar coefficient limit and excluded endpoint. Combined build, complete axiom audit, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "Existing mean-spacing and transfer coefficient definitions, proved logarithm and spacing positivity, real logarithm division and growth at infinity, field algebra and continuity of the real-to-complex embedding. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "The limit 3/2 and exact error 3log(2pi)/(2log T) are effective, with the explicit strict domain T>2pi. No numerical approximation or effectiveness claim for summed counting constants is involved."
+      baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. Together with the previously checked zero-gap horizontal profile, microscopic uniformity, quadratic expansion and tuplewise critical-line estimates, this closes formal coverage of the recorded TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 statement. Its historical status and audit scope remain unchanged. The full main-term comparison, effectiveness of summed constants and ordinate-only signed error remain separate."
