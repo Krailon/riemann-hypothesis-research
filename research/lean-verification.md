@@ -558,3 +558,15 @@ Details and verification provenance are recorded in
 [the localization note](lean-triple-kernel-localization.md).
 Use the existing focused localization command; four rejection workers remain the
 default. This stage does not replace kernels inside an unrestricted infinite sum.
+
+## Explicit zero-gap horizontal profile
+
+The localization suite extends to 181 public statements in 31 modules and
+29 unfinished-proof controls. The exact zero-gap profile retains all three
+horizontal parameters, with each denominator factor in [3,4] and their product
+in [27,64] throughout the closed cube. Positivity, symmetry, all eight corners,
+the cancelling/aligned one-parameter families and the nonconstant quarter-point
+example are checked. The scaled-gap bound and uniform microscopic limit now
+identify their explicit horizontal target. This adds no zero-sum interchange
+or global critical-line assumption. See the
+[localization note](lean-triple-kernel-localization.md) for statements and provenance.

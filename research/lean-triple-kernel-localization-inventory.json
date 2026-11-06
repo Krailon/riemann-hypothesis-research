@@ -29,6 +29,8 @@
     "ProfileCriticalDefinitions",
     "ProfileCriticalExpansion",
     "KernelCriticalSpecialization",
+    "ProfileZeroGapDefinitions",
+    "ProfileZeroGap",
     "TripleKernelLocalizationAssembly"
   ],
   "components": [
@@ -805,6 +807,111 @@
     {
       "declaration": "HigherCorrelations.tripleMasterKernel_critical_zero_weight",
       "source": "lean/HigherCorrelations/KernelCriticalSpecialization.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_differences",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_factor_bounds",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_factor_pos",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_factor_ne_zero",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalDenominator_bounds",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalDenominator_pos",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalDenominator_ne_zero",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_numerator_lower",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_pos",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_zero_gap_horizontal",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_swap",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_reflection",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_origin",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_cancelling",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_aligned",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_quarter",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_quarter_ne_origin",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_corners",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_zero_gap_scaled_bound",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_zero_gap_microscopic_bound",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_zero_gap_tendstoUniformlyOn",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
       "comparator_checked": true
     },
     {

@@ -5,6 +5,7 @@ import HigherCorrelations.SignedSectorDefinitions
 import HigherCorrelations.ProfileTransferDefinitions
 import HigherCorrelations.ProfileMicroscopicDefinitions
 import HigherCorrelations.ProfileCriticalDefinitions
+import HigherCorrelations.ProfileZeroGapDefinitions
 import HigherCorrelations.TripleBoundaryDefinitions
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.Calculus.MeanValue
@@ -829,6 +830,82 @@ theorem tripleAnchoredProfile_critical_repeated (i : ZeroOccurrence)
 
 theorem tripleMasterKernel_critical_zero_weight (T : ℝ) (v : MasterTriple) (ℓ u w : ℝ) :
     tripleMasterKernel (fun _ => 0) T v-(0/T:ℝ)*criticalProfileApproximation ℓ u w=0 := by sorry
+
+theorem zeroGapHorizontal_differences (e f g : ℝ)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    |e-f|≤1 ∧ |e+g|≤1 ∧ |f+g|≤1 := by sorry
+
+theorem zeroGapHorizontal_factor_bounds (h : ℝ) (hh : |h|≤1) :
+    3≤4-h^2 ∧ 4-h^2≤4 := by sorry
+
+theorem zeroGapHorizontal_factor_pos (h : ℝ) (hh : |h|≤1) : 0<4-h^2 := by sorry
+
+theorem zeroGapHorizontal_factor_ne_zero (h : ℝ) (hh : |h|≤1) : 4-h^2≠0 := by sorry
+
+theorem zeroGapHorizontalDenominator_bounds (e f g : ℝ)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    27≤zeroGapHorizontalDenominator e f g ∧ zeroGapHorizontalDenominator e f g≤64 := by sorry
+
+theorem zeroGapHorizontalDenominator_pos (e f g : ℝ)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    0<zeroGapHorizontalDenominator e f g := by sorry
+
+theorem zeroGapHorizontalDenominator_ne_zero (e f g : ℝ)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    zeroGapHorizontalDenominator e f g≠0 := by sorry
+
+theorem zeroGapHorizontal_numerator_lower (e f g : ℝ)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    21≤24-(e-f)^2-(e+g)^2-(f+g)^2 := by sorry
+
+theorem zeroGapHorizontalProfile_pos (e f g : ℝ)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    0<zeroGapHorizontalProfile e f g := by sorry
+
+theorem rationalProfile_zero_gap_horizontal (e f g : ℝ)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    rationalProfile 0 0 e f g=(zeroGapHorizontalProfile e f g:ℂ) := by sorry
+
+theorem zeroGapHorizontalProfile_swap (e f g : ℝ) :
+    zeroGapHorizontalProfile e f g=zeroGapHorizontalProfile f e g := by sorry
+
+theorem zeroGapHorizontalProfile_reflection (e f g : ℝ) :
+    zeroGapHorizontalProfile (-e) (-f) (-g)=zeroGapHorizontalProfile e f g := by sorry
+
+theorem zeroGapHorizontalProfile_origin : zeroGapHorizontalProfile 0 0 0=3*Real.pi/8 := by sorry
+
+theorem zeroGapHorizontalProfile_cancelling (d : ℝ) :
+    zeroGapHorizontalProfile d d (-d)=3*Real.pi/8 := by sorry
+
+theorem zeroGapHorizontalProfile_aligned (d : ℝ) (hd : |d|≤1/2) :
+    zeroGapHorizontalProfile d d d=Real.pi*(3-d^2)/(8*(1-d^2)^2) := by sorry
+
+theorem zeroGapHorizontalProfile_quarter :
+    zeroGapHorizontalProfile (1/4) (1/4) (1/4)=94*Real.pi/225 := by sorry
+
+theorem zeroGapHorizontalProfile_quarter_ne_origin :
+    zeroGapHorizontalProfile (1/4) (1/4) (1/4)≠zeroGapHorizontalProfile 0 0 0 := by sorry
+
+theorem zeroGapHorizontalProfile_corners (s t r : Bool) :
+    zeroGapHorizontalProfile (if s then (1/2:ℝ) else -1/2)
+      (if t then (1/2:ℝ) else -1/2) (if r then (1/2:ℝ) else -1/2) =
+      if s=t ∧ t≠r then 3*Real.pi/8 else 11*Real.pi/18 := by sorry
+
+theorem rationalProfile_zero_gap_scaled_bound (R ℓ u v e f g : ℝ) (hR : 0≤R) (hℓ : 1≤ℓ)
+    (hu : |u|≤R) (hv : |v|≤R) (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    ‖rationalProfile (u/ℓ) (v/ℓ) e f g-(zeroGapHorizontalProfile e f g:ℂ)‖ ≤
+      (16*Real.pi*R*(R+1)/9)/ℓ := by sorry
+
+theorem rationalProfile_zero_gap_microscopic_bound (R T u v e f g : ℝ) (hR : 0≤R)
+    (hT : 2*Real.pi*Real.exp (2*Real.pi)≤T) (hu : |u|≤R) (hv : |v|≤R)
+    (he : |e|≤1/2) (hf : |f|≤1/2) (hg : |g|≤1/2) :
+    ‖rationalProfile (u/meanSpacing T) (v/meanSpacing T) e f g-(zeroGapHorizontalProfile e f g:ℂ)‖ ≤
+      (16*Real.pi*R*(R+1)/9)/meanSpacing T := by sorry
+
+theorem rationalProfile_zero_gap_tendstoUniformlyOn (R : ℝ) (hR : 0≤R) :
+    TendstoUniformlyOn
+      (fun T (p : Fin 5 → ℝ) => rationalProfile (p 0/meanSpacing T) (p 1/meanSpacing T) (p 2) (p 3) (p 4))
+      (fun p => (zeroGapHorizontalProfile (p 2) (p 3) (p 4):ℂ)) atTop (profileMicroscopicBox R) := by sorry
 
 theorem tripleKernelLocalizationError_zero (T : ℝ) (v : MasterTriple) :
     tripleKernelLocalizationError (fun _ => 0) T v=0 := by sorry

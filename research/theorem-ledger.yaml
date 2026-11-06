@@ -5681,3 +5681,55 @@ claims:
       imported_inputs: "Checked real rational profile, effective spacing threshold, exact tuplewise localization identity and derivative bound. Polynomial algebra, real inequalities, complex norm and finite triangle inequalities use only propext, Quot.sound and Classical.choice. No additional analytic hypothesis is supplied as an axiom."
       constants_scope: "C_R=pi(R^4+R^6+R^8) and B_R=15pi R^2/32+C_R are explicit and deliberately nonoptimal. The localization coefficient is 16pi/27. These bounds are uniform on the closed scaled-gap box and include all collisions. They do not claim effective values for inherited summed counting constants."
       baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. Historical TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 gains partial formalization coverage for the quadratic expansion and its tuplewise kernel consequences. Its explicit zero-gap horizontal formula and local critical-line normalization comparison remain unformalized. Historical theorem statuses and RH-audit scope are unchanged. Per-tuple zero horizontal displacement is explicit; the all-zero RH interpretation is not imported. The ordinate-only signed complex-argument error remains open."
+
+  - id: MASTER-ZERO-GAP-HORIZONTAL-FORMAL-001
+    title: Explicit zero-gap horizontal profile and closed-cube denominator positivity
+    kind: theorem
+    statement: |
+      For real e,f,g with |e|,|f|,|g|<=1/2, put h12=e-f, h13=e+g,
+      h23=f+g and D=(4-h12^2)(4-h13^2)(4-h23^2). Then |hij|<=1,
+      each denominator factor lies in [3,4], and 27<=D<=64.
+      All factors and D are strictly positive and nonzero, including
+      every boundary point of the closed horizontal cube.
+      The exact rational triple profile satisfies
+      J(0,0;e,f,g)=H(e,f,g)=pi(24-h12^2-h13^2-h23^2)/D,
+      with the right side a real number embedded into Complex.
+      The numerator before multiplication by pi is at least 21, so H>0.
+      H(e,f,g)=H(f,e,g)=H(-e,-f,-g). H(0,0,0)=3pi/8,
+      H(d,d,-d)=3pi/8 for every real d, and on |d|<=1/2,
+      H(d,d,d)=pi(3-d^2)/(8(1-d^2)^2).
+      H(1/4,1/4,1/4)=94pi/225 is unequal to H(0,0,0).
+      All eight cube corners have explicit values: the two with e=f=-g
+      give 3pi/8; the remaining six give 11pi/18.
+      For R>=0, ell>=1, |u|,|v|<=R and the same horizontal cube,
+      ||J(u/ell,v/ell;e,f,g)-H(e,f,g)||<=16pi R(R+1)/(9 ell).
+      At T>=2pi exp(2pi), ell=L_T=log(T/(2pi))/(2pi)>=1 gives
+      the explicit microscopic rate. The functions converge uniformly
+      to H(e,f,g) on the closed five-parameter box
+      [-R,R]^2 times [-1/2,1/2]^3. R is fixed before T tends to infinity;
+      all five parameters may vary in this box without converging individually.
+      All horizontal dependence is retained. The examples are kernel-parameter
+      calculations, not assertions that any off-line zero exists.
+      No RH, simplicity, global constant-kernel replacement, signed ordinate-only
+      error estimate or interchange with an infinite zero sum is asserted.
+      The local critical-line normalization comparison remains separate.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [RATIONAL-KERNEL-BOUNDS-001, MASTER-MICROSCOPIC-PROFILE-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ProfileZeroGap.lean
+      label: HigherCorrelations.rationalProfile_zero_gap_horizontal
+      companion_declarations: [zeroGapHorizontal_differences, zeroGapHorizontal_factor_bounds, zeroGapHorizontal_factor_pos, zeroGapHorizontal_factor_ne_zero, zeroGapHorizontalDenominator_bounds, zeroGapHorizontalDenominator_pos, zeroGapHorizontalDenominator_ne_zero, zeroGapHorizontal_numerator_lower, zeroGapHorizontalProfile_pos, zeroGapHorizontalProfile_swap, zeroGapHorizontalProfile_reflection, zeroGapHorizontalProfile_origin, zeroGapHorizontalProfile_cancelling, zeroGapHorizontalProfile_aligned, zeroGapHorizontalProfile_quarter, zeroGapHorizontalProfile_quarter_ne_origin, zeroGapHorizontalProfile_corners, rationalProfile_zero_gap_scaled_bound, rationalProfile_zero_gap_microscopic_bound, rationalProfile_zero_gap_tendstoUniformlyOn]
+      inventory: research/lean-triple-kernel-localization-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: ba11bfac8fab6cc2cdf5026e2beb2a9b2ce6df2a327082fe539f5579da052aad
+    limit_order: "The algebraic formula and positive denominator bounds hold on the whole closed horizontal cube. For the uniform limit fix R>=0, apply the existing finite-scale estimate with explicit target H, and let T tend to infinity at the checked threshold. Gap and horizontal parameters may vary within the fixed box. No zero sum or smoothed integral is interchanged with this limit."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 181 public statements in 31 localization modules match definition-only expected statements. Twenty-nine unfinished-proof controls include the denominator bounds, exact zero-gap formula and explicit horizontal uniform limit. Combined project build, complete axiom audit, coverage, harness and pair/triple regressions pass."
+      imported_inputs: "The rational profile definition, checked microscopic gap estimate and spacing threshold, and the existing uniform-convergence-from-an-envelope helper. Only propext, Quot.sound and Classical.choice are permitted. Real and complex polynomial algebra supplies the formula and exact parameter examples."
+      constants_scope: "Explicit, deliberately conservative factor bounds [3,4], denominator-product bounds [27,64], numerator lower bound 21, and microscopic coefficient 16pi R(R+1)/9. All cube boundaries and coincidences are included. No numerical optimization, quadrature or effectiveness claim for summed counting constants is used."
+      baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. Historical TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 gains partial coverage for its explicit horizontal zero-gap formula; only the local critical-line normalization identity and coefficient limit remain unformalized. Historical statuses, dependency graph and RH-review scope are unchanged. No off-line zero existence assertion, unrestricted constant-kernel replacement or ordinate-only signed error bound is inferred."

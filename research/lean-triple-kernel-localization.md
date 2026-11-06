@@ -476,3 +476,59 @@ The historical `TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001` remains partially
 formalized: its explicit zero-gap horizontal formula and local critical-line
 normalization comparison are still separate obligations. The historical ledger
 entries and audit scope remain unchanged; the signed ordinate-only error is open.
+
+## Explicit zero-gap horizontal profile
+
+Completed verification: [PASS manifest](../artifacts/certificates/lean/ba11bfac8fab6cc2cdf5026e2beb2a9b2ce6df2a327082fe539f5579da052aad/manifest.json).
+The four-worker run passed in 18.65 minutes. All Lean/challenge and verification-script
+hashes match this certificate. The ledger entry, audit-binding metadata and this
+verification citation were updated afterward without changing the proof sources.
+
+Task type: proof formalization. Assumptions: `UNCONDITIONAL`.
+Formal milestone: `MASTER-ZERO-GAP-HORIZONTAL-FORMAL-001`.
+
+Put h12=e-f, h13=e+g, h23=f+g, retaining the conjugated-anchor signs.
+The definition-only real expression is
+
+H(e,f,g)=pi (24-h12^2-h13^2-h23^2)/D(e,f,g),
+D(e,f,g)=(4-h12^2)(4-h13^2)(4-h23^2).
+
+For |e|,|f|,|g|<=1/2, every |hij|<=1, each denominator factor lies
+in [3,4], and D lies in [27,64]. The positivity and nonvanishing results
+include every closed-cube boundary point; no collision is excluded.
+The numerator before multiplication by pi is at least 21. Thus H>0
+throughout the cube, and the exact complex profile satisfies
+`rationalProfile 0 0 e f g = (zeroGapHorizontalProfile e f g : Complex)`.
+These deliberately conservative bounds need no numerical computation.
+
+The existing scaled-gap and height estimates now have the explicit target H:
+
+||J(u/ell,v/ell;e,f,g)-H(e,f,g)|| <= (16 pi R(R+1)/9)/ell
+
+for R>=0, ell>=1, |u|,|v|<=R and horizontal parameters in the closed cube.
+Taking ell=L_T at T>=2 pi exp(2 pi) gives the height bound. The resulting
+TendstoUniformlyOn statement covers the closed five-parameter box, with
+limit H(e,f,g). R is fixed first; horizontal parameters and scaled gaps may
+vary inside the box without converging individually. The limit is not
+interchanged with any infinite zero sum or smoothed integral.
+
+Reflection of all three horizontal parameters and interchange of e,f leave
+H unchanged. H(0,0,0)=3pi/8 and H(d,d,-d)=3pi/8. On |d|<=1/2,
+H(d,d,d)=pi(3-d^2)/(8(1-d^2)^2). In particular H(1/4,1/4,1/4)=94pi/225,
+and this is proved unequal to H(0,0,0). All eight cube corners are checked:
+the two with e=f=-g have value 3pi/8; the other six have value 11pi/18.
+These are exact kernel-parameter calculations, not assertions that off-line
+zeros exist or statistical conclusions about the actual zero population.
+
+The expanded localization suite covers 181 public statements in 31 modules
+and 29 unfinished-proof controls. The new controls cover the denominator
+product bounds, exact formula and explicit horizontal uniform limit. Independent
+contracts import definition-only project modules; the trust boundary remains
+propext, Quot.sound and Classical.choice. Use the existing focused localization
+command with the default four rejection workers.
+
+Historical TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001 remains partially covered:
+only its local critical-line normalization identity and coefficient limit
+remain unformalized. Historical ledger entries and review scope stay unchanged.
+The signed ordinate-only error and unrestricted constant-kernel replacement
+remain separate research issues.

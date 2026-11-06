@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "e026b2adc94dc387f1ce072514e66f311e02ffe4339d24e7755123ffffd97838",
+  "ledger_sha256": "f432ec44f01096004831a62a5a3bbd81ae5c916405b9421298a938ce469c0d74",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2863,5 +2863,14 @@
     ],
     "report": "research/lean-triple-kernel-localization.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the explicit critical-line quadratic expansion and fourth-order remainder and the quadratic-corrected and leading-only tuplewise kernel estimates. All critical-line restrictions are explicit per-tuple hypotheses; repeated occurrences and endpoints are included. The explicit zero-gap horizontal formula and local critical-line normalization comparison remain unformalized. Historical statements, statuses and RH-audit scope are unchanged. No unrestricted constant-kernel replacement or signed ordinate-only error estimate is asserted."
+  },
+  "ledger_zero_gap_horizontal_review": {
+    "reviewed_on": "2026-11-06",
+    "previous_ledger_sha256": "e026b2adc94dc387f1ce072514e66f311e02ffe4339d24e7755123ffffd97838",
+    "added_claim_ids": [
+      "MASTER-ZERO-GAP-HORIZONTAL-FORMAL-001"
+    ],
+    "report": "research/lean-triple-kernel-localization.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the explicit real zero-gap horizontal profile, positive denominator factors in [3,4] and product in [27,64] on the entire closed cube, symmetry and exact parameter examples, and the explicit horizontal target for the microscopic rate and uniform limit. Only the historical corollary's local critical-line normalization identity and coefficient limit remain unformalized. Historical statements, statuses, dependency graph and RH-review scope are unchanged. No off-line zero existence assertion, infinite-zero-sum interchange or unrestricted constant-kernel replacement is asserted; the ordinate-only signed error remains open."
   }
 }

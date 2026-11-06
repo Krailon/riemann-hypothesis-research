@@ -1088,11 +1088,32 @@
         "HigherCorrelations.tripleTestKernel_critical_quadratic_bound",
         "HigherCorrelations.tripleTestKernel_critical_leading_bound",
         "HigherCorrelations.tripleAnchoredProfile_critical_repeated",
-        "HigherCorrelations.tripleMasterKernel_critical_zero_weight"
+        "HigherCorrelations.tripleMasterKernel_critical_zero_weight",
+        "HigherCorrelations.zeroGapHorizontal_differences",
+        "HigherCorrelations.zeroGapHorizontal_factor_bounds",
+        "HigherCorrelations.zeroGapHorizontal_factor_pos",
+        "HigherCorrelations.zeroGapHorizontal_factor_ne_zero",
+        "HigherCorrelations.zeroGapHorizontalDenominator_bounds",
+        "HigherCorrelations.zeroGapHorizontalDenominator_pos",
+        "HigherCorrelations.zeroGapHorizontalDenominator_ne_zero",
+        "HigherCorrelations.zeroGapHorizontal_numerator_lower",
+        "HigherCorrelations.zeroGapHorizontalProfile_pos",
+        "HigherCorrelations.rationalProfile_zero_gap_horizontal",
+        "HigherCorrelations.zeroGapHorizontalProfile_swap",
+        "HigherCorrelations.zeroGapHorizontalProfile_reflection",
+        "HigherCorrelations.zeroGapHorizontalProfile_origin",
+        "HigherCorrelations.zeroGapHorizontalProfile_cancelling",
+        "HigherCorrelations.zeroGapHorizontalProfile_aligned",
+        "HigherCorrelations.zeroGapHorizontalProfile_quarter",
+        "HigherCorrelations.zeroGapHorizontalProfile_quarter_ne_origin",
+        "HigherCorrelations.zeroGapHorizontalProfile_corners",
+        "HigherCorrelations.rationalProfile_zero_gap_scaled_bound",
+        "HigherCorrelations.rationalProfile_zero_gap_microscopic_bound",
+        "HigherCorrelations.rationalProfile_zero_gap_tendstoUniformlyOn"
       ],
       "remaining_obligations": [
         "The explicit gap bound, scaled-gap rate and microscopic limit are checked uniformly on the closed horizontal cube, with effective constant 16*pi*R*(R+1)/9 and threshold T>=2*pi*exp(2*pi). Zero radius, zero/coincident gaps and horizontal endpoints are included.",
-        "The explicit critical-line quadratic expansion and fourth-order remainder, and both quadratic-corrected and leading-only tuplewise estimates are checked with effective constants and explicit per-tuple critical-line hypotheses. The explicit zero-gap horizontal formula and the local critical-line normalization comparison remain unformalized. No limit is interchanged with an infinite zero sum."
+        "The explicit critical-line quadratic expansion and fourth-order remainder, and both quadratic-corrected and leading-only tuplewise estimates are checked with effective constants and explicit per-tuple critical-line hypotheses. The real zero-gap horizontal formula, denominator factor bounds [3,4], product bound [27,64], positivity and explicit horizontal microscopic target are checked on the closed cube. Only the local critical-line normalization comparison and its coefficient limit remain unformalized. No limit is interchanged with an infinite zero sum."
       ]
     },
     {
@@ -11773,6 +11794,111 @@
       "comparator_checked": true
     },
     {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_differences",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_factor_bounds",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_factor_pos",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_factor_ne_zero",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalDenominator_bounds",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalDenominator_pos",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalDenominator_ne_zero",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontal_numerator_lower",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_pos",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_zero_gap_horizontal",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_swap",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_reflection",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_origin",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_cancelling",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_aligned",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_quarter",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_quarter_ne_origin",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.zeroGapHorizontalProfile_corners",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_zero_gap_scaled_bound",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_zero_gap_microscopic_bound",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rationalProfile_zero_gap_tendstoUniformlyOn",
+      "source": "lean/HigherCorrelations/ProfileZeroGap.lean",
+      "comparator_checked": true
+    },
+    {
       "declaration": "HigherCorrelations.tripleKernelLocalizationError_zero",
       "source": "lean/HigherCorrelations/TripleKernelLocalizationAssembly.lean",
       "comparator_checked": true
@@ -11798,5 +11924,5 @@
       "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. Next formalize the explicit zero-gap horizontal formula, local critical-line normalization comparison and remaining main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. Next formalize the local critical-line normalization comparison and remaining main-term comparison dependencies. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
 }
