@@ -1,0 +1,1142 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.SineOverlap
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8961/8967] Replayed HigherCorrelations.SignedSectorDefinitions
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:20:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:21:93: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8964/8967] Replayed HigherCorrelations.SineBenchmarkDefinitions
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:30:76: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:31:77: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:30:76: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:31:77: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:33:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8967/8967] Replayed VerificationChallenges.SineOverlap
+warning: lean/VerificationChallenges/SineOverlap.lean:11:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:15:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:19:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:22:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:25:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:28:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:32:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:35:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:40:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:43:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:49:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:55:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:63:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:65:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:73:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:75:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:77:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:79:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:81:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:88:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:92:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:96:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:98:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:101:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:104:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:108:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:110:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:118:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:121:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:125:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:129:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:132:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:135:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:140:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:143:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:146:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:149:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:152:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:155:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:160:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:163:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:165:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:168:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:171:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:174:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:177:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:180:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:183:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:185:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:187:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:191:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:196:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:199:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:202:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:207:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:211:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:215:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:219:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:223:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:231:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:233:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:235:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:237:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:239:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:241:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:244:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:248:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:252:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:256:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:260:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:266:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:269:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:272:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:277:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:280:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:282:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:284:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:286:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:289:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:292:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:294:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:296:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:299:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:301:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:304:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:308:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:312:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:318:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:324:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:328:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:332:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:336:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:341:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:344:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:347:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:350:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:353:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:357:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:360:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:363:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:366:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:370:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:374:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:378:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:382:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:384:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:386:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:388:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:391:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:394:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:400:8: declaration uses `sorry`
+Build completed successfully (8967 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.sineOverlap_translated, HigherCorrelations.sineOverlap_interval, HigherCorrelations.sineOverlap_span, HigherCorrelations.sineOverlap_volume, HigherCorrelations.sineOverlap_length, HigherCorrelations.sineOverlap_measurable, HigherCorrelations.sineOverlap_finite, HigherCorrelations.sineOverlapIntegrand_indicator, HigherCorrelations.sineOverlapIntegrand_integrable, HigherCorrelations.sineOverlap_integral, HigherCorrelations.sineOverlap_nonempty, HigherCorrelations.sineOverlap_touching, HigherCorrelations.sineOverlap_empty, HigherCorrelations.sineOverlap_length_pos, HigherCorrelations.sineOverlap_length_zero, HigherCorrelations.sineOverlap_length_sector, HigherCorrelations.sineOverlap_length_axes, HigherCorrelations.sineOverlap_length_origin, HigherCorrelations.sineOverlap_length_repeated, HigherCorrelations.sineOverlap_length_examples, HigherCorrelations.sineCycle_continuous, HigherCorrelations.sineCycle_bound, HigherCorrelations.sineCycle_reflection, HigherCorrelations.sineCycle_origin, HigherCorrelations.sineCycle_axes, HigherCorrelations.sineCycleDensity_bounds, HigherCorrelations.sineCycleDensity_reflection, HigherCorrelations.sineCycleDensity_continuous, HigherCorrelations.sineCycleDensity_compactSupport, HigherCorrelations.sineCycleDensity_integrable, HigherCorrelations.sineDensityPlane_integrable, HigherCorrelations.sineCyclePlane_weighted_integrable, HigherCorrelations.sineDensityPlane_weighted_integrable, HigherCorrelations.sineParameterIntegrand_majorant, HigherCorrelations.sineParameterIntegrand_integrable, HigherCorrelations.sineParameterIntegrand_fubini, HigherCorrelations.sineParameterIntegrand_inner, HigherCorrelations.sineInterval_character, HigherCorrelations.sineParameterIntegrand_plane_integral, HigherCorrelations.sineCycleDensity_inverse_integral, HigherCorrelations.sineDensityPlane_inverse, HigherCorrelations.sineDensityPlane_fourier, HigherCorrelations.sineDensityPlane_mass, HigherCorrelations.sineCycle_pairing, HigherCorrelations.sineCycle_inverse_pairing, HigherCorrelations.sineSquared_weighted_integrable, HigherCorrelations.sineTriangle_weighted_integrable, HigherCorrelations.sineSquared_pairing, HigherCorrelations.sineSquared_inverse_pairing, HigherCorrelations.sineLineCoords_antilipschitz, HigherCorrelations.sineLineRestriction_apply, HigherCorrelations.sineLine_integrable, HigherCorrelations.sineSlice_measurePreserving, HigherCorrelations.sineSlice_integral, HigherCorrelations.sineSlice_dot, HigherCorrelations.sineLine_dot, HigherCorrelations.sineComplementRestriction_apply, HigherCorrelations.sineComplement_integrable, HigherCorrelations.sineMarginal_majorant, HigherCorrelations.sineMarginal_continuous, HigherCorrelations.sineMarginal_integrable, HigherCorrelations.sineMarginal_fourier, HigherCorrelations.sineSlice_fourier_marginal, HigherCorrelations.sineLine_fourier_integral, HigherCorrelations.sineDirection_dot, HigherCorrelations.sineDirection_fourier_duality, HigherCorrelations.sineDirection_square_pairing, HigherCorrelations.sineDirection_triangle_pairing, HigherCorrelations.sinePlane_weighted_integrable, HigherCorrelations.sineLine_weighted_integrable, HigherCorrelations.sinePlane_tempered, HigherCorrelations.sineLine_tempered, HigherCorrelations.sineSquare_bound, HigherCorrelations.sineR2_continuous, HigherCorrelations.sineR2_bound, HigherCorrelations.sineR3_continuous, HigherCorrelations.sineR3_bound, HigherCorrelations.sineFourier_twice, HigherCorrelations.sineDirection_triangle_reflection, HigherCorrelations.sineDirection_plane_square_pairing, HigherCorrelations.sineLine_square_fourier, HigherCorrelations.sinePlane_square_fourier, HigherCorrelations.sineLine_constant_fourier, HigherCorrelations.sinePlane_constant_fourier, HigherCorrelations.sineAtom_fourier, HigherCorrelations.sineCycle_distribution_fourier, HigherCorrelations.sineR3_determinant, HigherCorrelations.sineCumulantDensity_closed, HigherCorrelations.sineCumulantDensity_exterior, HigherCorrelations.sineFactorialDensity_origin, HigherCorrelations.sineCumulants_distinct, HigherCorrelations.sineR3_factorial_identity, HigherCorrelations.sineFactorialDensity_positive, HigherCorrelations.sineDifferenceForm_continuous, HigherCorrelations.sineLineForm_continuous, HigherCorrelations.sineSquarePlane_integrable, HigherCorrelations.sineTriangle_bound, HigherCorrelations.sineTrianglePlane_integrable, HigherCorrelations.sineLine_R2_expansion, HigherCorrelations.sineComplement_m_expansion, HigherCorrelations.sineR3_pairing_expansion, HigherCorrelations.sineCumulantDensity_pairing_expansion, HigherCorrelations.sineBenchmark_five, HigherCorrelations.sineBenchmarkSpectrum_integrable, HigherCorrelations.sineBenchmark_partial_fourier, HigherCorrelations.sineBenchmark_distinct_fourier, HigherCorrelations.sineBenchmarkRow_fourier, HigherCorrelations.sineBenchmark_fourier, HigherCorrelations.sineOrdinaryCumulant_fourier, HigherCorrelations.sineFactorialCumulant_fourier, HigherCorrelations.sineBenchmark_moment_cumulant, HigherCorrelations.sineBenchmark_tempered, HigherCorrelations.sineOrdinaryCumulant_tempered, HigherCorrelations.sineFactorialCumulant_tempered, HigherCorrelations.sineBenchmark_distribution_fourier, HigherCorrelations.sineOrdinaryCumulant_distribution_fourier, HigherCorrelations.sineFactorialCumulant_distribution_fourier, HigherCorrelations.sineBenchmark_integrable, HigherCorrelations.sineBenchmark_continuous, HigherCorrelations.sineOrdinaryCumulant_continuous, HigherCorrelations.sineFactorialCumulant_continuous, HigherCorrelations.sineBenchmarkRow_tempered, HigherCorrelations.sineCovarianceLift_tempered, HigherCorrelations.sineBenchmark_distribution_moment_cumulant, HigherCorrelations.sineBenchmark_manuscript, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.SineOverlap
+Building HigherCorrelations.SineMeasureAssembly
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8999/9062] Replayed HigherCorrelations.PairRHSArchIntegrals
+warning: lean/HigherCorrelations/PairRHSArchIntegrals.lean:35:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairRHSArchIntegrals.lean:35:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairRHSArchIntegrals.lean:52:42: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairRHSArchIntegrals.lean:71:48: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9004/9062] Replayed HigherCorrelations.PairContourResidues
+info: lean/HigherCorrelations/PairContourResidues.lean:114:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairContourResidues.lean:120:56: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: lean/HigherCorrelations/PairContourResidues.lean:147:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: lean/HigherCorrelations/PairContourResidues.lean:162:32: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9006/9062] Replayed HigherCorrelations.PairGoodHeightSelection
+info: lean/HigherCorrelations/PairGoodHeightSelection.lean:44:48: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: lean/HigherCorrelations/PairGoodHeightSelection.lean:81:27: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairGoodHeightSelection.lean:81:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: lean/HigherCorrelations/PairGoodHeightSelection.lean:133:35: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: lean/HigherCorrelations/PairGoodHeightSelection.lean:134:68: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairGoodHeightSelection.lean:133:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairGoodHeightSelection.lean:134:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9044/9207] Replayed HigherCorrelations.PairContourPoleSets
+warning: lean/HigherCorrelations/PairContourPoleSets.lean:46:35: This simp argument is unused:
+  or_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairContourPoleCandidates]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9045/9207] Replayed HigherCorrelations.PairContourMeromorphic
+warning: lean/HigherCorrelations/PairContourMeromorphic.lean:80:42: This simp argument is unused:
+  Pi.div_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairContourIntegrand, Pi.neg_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/PairContourMeromorphic.lean:80:56: This simp argument is unused:
+  Pi.neg_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairContourIntegrand, Pi.div_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9047/9207] Replayed HigherCorrelations.PairHadamardBounds
+info: lean/HigherCorrelations/PairHadamardBounds.lean:131:68: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairHadamardBounds.lean:131:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9052/9207] Replayed HigherCorrelations.PairHorizontalDecay
+info: lean/HigherCorrelations/PairHorizontalDecay.lean:153:31: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairHorizontalDecay.lean:153:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9053/9207] Replayed HigherCorrelations.PairLeftKernel
+warning: lean/HigherCorrelations/PairLeftKernel.lean:37:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9062/9207] Replayed HigherCorrelations.PairBoundaryLimits
+info: lean/HigherCorrelations/PairBoundaryLimits.lean:66:8: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairBoundaryLimits.lean:65:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairBoundaryLimits.lean:66:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9064/9207] Replayed HigherCorrelations.PairResidueRegrouping
+warning: lean/HigherCorrelations/PairResidueRegrouping.lean:11:55: Variable name `ρ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ρ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9068/9207] Replayed HigherCorrelations.PairChiIdentity
+info: lean/HigherCorrelations/PairChiIdentity.lean:133:14: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairChiIdentity.lean:133:2: Unused tactic linter: `congr 1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairChiIdentity.lean:133:10: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9069/9207] Replayed HigherCorrelations.PairDigammaRemainder
+warning: lean/HigherCorrelations/PairDigammaRemainder.lean:121:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: lean/HigherCorrelations/PairDigammaRemainder.lean:170:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairDigammaRemainder.lean:169:6: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9071/9207] Replayed HigherCorrelations.PairElementaryErrorBounds
+warning: lean/HigherCorrelations/PairElementaryErrorBounds.lean:52:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9074/9207] Replayed HigherCorrelations.PairMeanSeries
+warning: lean/HigherCorrelations/PairMeanSeries.lean:34:27: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanSeries.lean:34:52: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanSeries.lean:72:10: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairMeanCharacter_norm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9077/9207] Replayed HigherCorrelations.PairMeanTriangle
+warning: lean/HigherCorrelations/PairMeanTriangle.lean:47:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairMeanTriangle.lean:52:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9078/9207] Replayed HigherCorrelations.PairMeanFourierRules
+warning: lean/HigherCorrelations/PairMeanFourierRules.lean:40:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairMeanFourierRules.lean:40:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [9080/9207] Replayed HigherCorrelations.PairMeanKernelMass
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:69:110: This simp argument is unused:
+  Pi.neg_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [id_eq, Pi.pow_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:69:124: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairMeanKernelMass.lean:75:130: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9082/9207] Replayed HigherCorrelations.PairMeanKernelTail
+warning: lean/HigherCorrelations/PairMeanKernelTail.lean:30:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9084/9207] Replayed HigherCorrelations.PairMeanSandwich
+warning: lean/HigherCorrelations/PairMeanSandwich.lean:62:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/PairMeanSandwich.lean:62:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [9086/9207] Replayed HigherCorrelations.PairMeanOffDiagonal
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:65:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:69:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:12:13: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:44:19: This simp argument is unused:
+  Prod.fst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [B, Prod.snd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/PairMeanOffDiagonal.lean:44:28: This simp argument is unused:
+  Prod.snd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [B, Prod.fst]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9089/9207] Replayed HigherCorrelations.PairDiagonalAlgebra
+warning: lean/HigherCorrelations/PairDiagonalAlgebra.lean:34:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairDiagonalAlgebra.lean:34:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/PairDiagonalAlgebra.lean:50:18: Variable name `n` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _n
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairDiagonalAlgebra.lean:116:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9090/9207] Replayed HigherCorrelations.PairDiagonalIntegrals
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:13:81: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:13:96: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:20:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:20:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:44:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:56:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:56:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalIntegrals.lean:59:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9091/9207] Replayed HigherCorrelations.PairDiagonalAbel
+warning: lean/HigherCorrelations/PairDiagonalAbel.lean:21:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: lean/HigherCorrelations/PairDiagonalAbel.lean:27:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalAbel.lean:27:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [9096/9207] Replayed PrimeNumberTheoremAnd.MediumPNT
+info: PrimeNumberTheoremAnd/MediumPNT.lean:4142:0: 'MediumPNT' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9097/9207] Replayed PrimeNumberTheoremAnd.StrongPNT
+info: PrimeNumberTheoremAnd/StrongPNT.lean:2898:0: 'StrongPNT' depends on axioms: [propext, choice, Quot.sound]
+⚠ [9106/9207] Replayed HigherCorrelations.TripleDyadicBalls
+warning: lean/HigherCorrelations/TripleDyadicBalls.lean:16:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/TripleDyadicBalls.lean:28:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [9108/9207] Replayed HigherCorrelations.PairSieveGeometry
+warning: lean/HigherCorrelations/PairSieveGeometry.lean:43:5: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9112/9207] Replayed HigherCorrelations.TripleLogGapFinite
+warning: lean/HigherCorrelations/TripleLogGapFinite.lean:35:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/TripleLogGapFinite.lean:37:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/TripleLogGapFinite.lean:46:41: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [9113/9207] Replayed HigherCorrelations.TripleLogGap
+warning: lean/HigherCorrelations/TripleLogGap.lean:36:50: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: lean/HigherCorrelations/TripleLogGap.lean:37:50: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: lean/HigherCorrelations/TripleLogGap.lean:35:28: This simp argument is unused:
+  Function.Embedding.coeFn_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_map] at hh
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9116/9207] Replayed HigherCorrelations.TripleOffFourier
+warning: lean/HigherCorrelations/TripleOffFourier.lean:45:39: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [9117/9207] Replayed HigherCorrelations.TripleLogFourierIdentity
+warning: lean/HigherCorrelations/TripleLogFourierIdentity.lean:48:59: This simp argument is unused:
+  A
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/TripleLogFourierIdentity.lean:52:19: This simp argument is unused:
+  Prod.fst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [B, Prod.snd, tsum_ite_eq']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/TripleLogFourierIdentity.lean:52:28: This simp argument is unused:
+  Prod.snd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [B, Prod.fst, tsum_ite_eq']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9121/9281] Replayed HigherCorrelations.PairMeanEndpoints
+warning: lean/HigherCorrelations/PairMeanEndpoints.lean:10:25: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairFrequencySum, pairMeanCharacter_norm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9145/9281] Replayed HigherCorrelations.SignedSectorDefinitions
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:20:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:21:93: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9148/9281] Replayed HigherCorrelations.SineBenchmarkDefinitions
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:30:76: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:31:77: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:30:76: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:31:77: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:33:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9154/9281] Replayed HigherCorrelations.KernelTailShells
+warning: lean/HigherCorrelations/KernelTailShells.lean:17:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9155/9281] Replayed HigherCorrelations.KernelTailBounds
+info: lean/HigherCorrelations/KernelTailBounds.lean:11:45: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/KernelTailBounds.lean:11:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9171/9281] Replayed HigherCorrelations.PairUniformFormula
+warning: lean/HigherCorrelations/PairUniformFormula.lean:63:66: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9172/9281] Replayed HigherCorrelations.PairRHSContinuity
+warning: lean/HigherCorrelations/PairRHSContinuity.lean:74:4: This simp argument is unused:
+  Complex.ofReal_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairRHS, pairRHS_remainder_sum, pairRHSRemainder, pairRHSArch, div_eq_mul_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9173/9281] Replayed HigherCorrelations.TripleExpansion
+warning: lean/HigherCorrelations/TripleExpansion.lean:93:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/TripleExpansion.lean:95:49: `if_false` has been deprecated: Use `ite_false` instead
+warning: lean/HigherCorrelations/TripleExpansion.lean:97:49: `if_false` has been deprecated: Use `ite_false` instead
+warning: lean/HigherCorrelations/TripleExpansion.lean:104:34: `if_false` has been deprecated: Use `ite_false` instead
+warning: lean/HigherCorrelations/TripleExpansion.lean:104:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [9174/9281] Replayed HigherCorrelations.TriplePrimeFourier
+warning: lean/HigherCorrelations/TriplePrimeFourier.lean:102:5: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/TriplePrimeFourier.lean:102:16: Variable name `hY` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hY
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9176/9281] Replayed HigherCorrelations.PairSieveLinear
+warning: lean/HigherCorrelations/PairSieveLinear.lean:60:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairSieveLinear.lean:60:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [9177/9281] Replayed HigherCorrelations.PairSievePrimePowers
+warning: lean/HigherCorrelations/PairSievePrimePowers.lean:82:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9178/9281] Replayed HigherCorrelations.PairDiagonalCumulative
+warning: lean/HigherCorrelations/PairDiagonalCumulative.lean:41:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [9179/9281] Replayed HigherCorrelations.PairDiagonalFinite
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:42:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:116:26: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:116:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:120:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:134:41: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairDiagonalFinite.lean:134:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ℹ [9180/9281] Replayed HigherCorrelations.PairDiagonalAsymptotic
+info: lean/HigherCorrelations/PairDiagonalAsymptotic.lean:19:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9182/9281] Replayed HigherCorrelations.TripleMixedDiagonalAlgebra
+warning: lean/HigherCorrelations/TripleMixedDiagonalAlgebra.lean:13:33: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalAlgebra.lean:13:33: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [9183/9281] Replayed HigherCorrelations.TripleMixedDiagonalAbel
+warning: lean/HigherCorrelations/TripleMixedDiagonalAbel.lean:58:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalAbel.lean:69:69: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalAbel.lean:69:79: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalAbel.lean:72:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9184/9281] Replayed HigherCorrelations.TripleMixedDiagonalFinite
+warning: lean/HigherCorrelations/TripleMixedDiagonalFinite.lean:47:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalFinite.lean:71:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalFinite.lean:94:45: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalFinite.lean:113:33: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalFinite.lean:94:45: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/TripleMixedDiagonalFinite.lean:113:33: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ℹ [9185/9281] Replayed HigherCorrelations.TripleMixedDiagonalAsymptotic
+info: lean/HigherCorrelations/TripleMixedDiagonalAsymptotic.lean:19:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9186/9281] Replayed HigherCorrelations.TripleMixedDiagonalEndpoints
+warning: lean/HigherCorrelations/TripleMixedDiagonalEndpoints.lean:21:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9188/9281] Replayed HigherCorrelations.TriplePrimeResonance
+warning: lean/HigherCorrelations/TriplePrimeResonance.lean:39:16: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/TriplePrimeResonance.lean:199:19: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9191/9281] Replayed HigherCorrelations.TripleBudgetAccounting
+warning: lean/HigherCorrelations/TripleBudgetAccounting.lean:45:4: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleBudgetAccounting.lean:71:2: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9193/9281] Replayed HigherCorrelations.TripleSmoothingMoment
+warning: lean/HigherCorrelations/TripleSmoothingMoment.lean:64:59: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleSmoothingMoment.lean:64:59: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [9195/9281] Replayed HigherCorrelations.TripleArithmeticEnergy
+warning: lean/HigherCorrelations/TripleArithmeticEnergy.lean:41:55: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9196/9281] Replayed HigherCorrelations.TripleConvolutionBounds
+warning: lean/HigherCorrelations/TripleConvolutionBounds.lean:28:41: This simp argument is unused:
+  Nat.cast_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tripleArithmeticCoefficient, Real.sqrt_mul (Nat.cast_nonneg m)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9197/9281] Replayed HigherCorrelations.TripleConvolutionMass
+warning: lean/HigherCorrelations/TripleConvolutionMass.lean:64:4: This simp argument is unused:
+  tripleArithmeticConvolution_mass X Y hX hY
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tripleLogMass, tripleLogConvolution, Complex.norm_real, Real.norm_eq_abs,
+    abs_of_nonneg (tripleArithmeticConvolution_nonneg X Y hX hY _)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/TripleConvolutionMass.lean:66:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9200/9281] Replayed HigherCorrelations.TripleResonanceMajorant
+warning: lean/HigherCorrelations/TripleResonanceMajorant.lean:49:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/TripleResonanceMajorant.lean:55:65: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [9202/9281] Replayed HigherCorrelations.PairDiagonalPowerBall
+warning: lean/HigherCorrelations/PairDiagonalPowerBall.lean:92:65: This simp argument is unused:
+  ite_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairDiagonalPowerBall, Nat.le_floor hR, hn, true_and, pairDiagonalWeight, h, ite_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9204/9281] Replayed HigherCorrelations.TripleResonanceBalls
+warning: lean/HigherCorrelations/TripleResonanceBalls.lean:39:33: This simp argument is unused:
+  show ∀ n ∈ Icc 0 ⌊R⌋₊, n ≤ ⌊R⌋₊ from fun _ hn => (mem_Icc.mp hn).2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tripleResonanceBall]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/TripleResonanceBalls.lean:91:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/TripleResonanceBalls.lean:112:63: This simp argument is unused:
+  ite_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tripleResonanceBall, Nat.le_floor hR, hn, true_and, pairDiagonalWeight, h, ite_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9205/9281] Replayed HigherCorrelations.TripleResonanceDecay
+warning: lean/HigherCorrelations/TripleResonanceDecay.lean:41:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/TripleResonanceDecay.lean:98:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9206/9281] Replayed HigherCorrelations.TripleResonanceEndpoints
+warning: lean/HigherCorrelations/TripleResonanceEndpoints.lean:31:41: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [9207/9281] Replayed HigherCorrelations.TripleRetainedAlgebra
+warning: lean/HigherCorrelations/TripleRetainedAlgebra.lean:66:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleRetainedAlgebra.lean:66:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [9208/9281] Replayed HigherCorrelations.TripleRetainedBounds
+warning: lean/HigherCorrelations/TripleRetainedBounds.lean:27:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleRetainedBounds.lean:27:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/TripleRetainedBounds.lean:29:56: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9210/9281] Replayed HigherCorrelations.TripleRetainedEndpoints
+warning: lean/HigherCorrelations/TripleRetainedEndpoints.lean:18:13: This simp argument is unused:
+  Prod.fst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.snd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/TripleRetainedEndpoints.lean:18:22: This simp argument is unused:
+  Prod.snd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.fst]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/TripleRetainedEndpoints.lean:79:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9214/9281] Replayed HigherCorrelations.TripleBudgetRefinement
+warning: lean/HigherCorrelations/TripleBudgetRefinement.lean:17:77: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: lean/HigherCorrelations/TripleBudgetRefinement.lean:19:70: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: lean/HigherCorrelations/TripleBudgetRefinement.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: lean/HigherCorrelations/TripleBudgetRefinement.lean:29:81: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: lean/HigherCorrelations/TripleBudgetRefinement.lean:75:55: This simp argument is unused:
+  ← star_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [F, G, hr, tripleComponent, pairRHSRemainderSum]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9216/9281] Replayed HigherCorrelations.TripleBudgetWordBounds
+warning: lean/HigherCorrelations/TripleBudgetWordBounds.lean:63:70: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [9230/9281] Replayed HigherCorrelations.PairSieveDenominator
+warning: lean/HigherCorrelations/PairSieveDenominator.lean:59:19: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairSieveDenominator.lean:59:19: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/PairSieveDenominator.lean:64:15: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9231/9281] Replayed HigherCorrelations.PairSieveAverage
+warning: lean/HigherCorrelations/PairSieveAverage.lean:32:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairSieveAverage.lean:32:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/PairSieveAverage.lean:28:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairSieveAverage.lean:48:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9232/9281] Replayed HigherCorrelations.PairSieveCutoff
+warning: lean/HigherCorrelations/PairSieveCutoff.lean:104:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9236/9281] Replayed HigherCorrelations.PairSieveCover
+warning: lean/HigherCorrelations/PairSieveCover.lean:44:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairSieveCover.lean:44:35: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/PairSieveCover.lean:44:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9239/9281] Replayed HigherCorrelations.PairPrimeMeanEstimate
+warning: lean/HigherCorrelations/PairPrimeMeanEstimate.lean:20:53: Variable name `t` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _t
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairPrimeMeanEstimate.lean:32:54: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/PairPrimeMeanEstimate.lean:32:67: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9241/9281] Replayed HigherCorrelations.TripleBudgetPrimeNorm
+warning: lean/HigherCorrelations/TripleBudgetPrimeNorm.lean:24:17: Variable name `hW` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [9242/9281] Replayed HigherCorrelations.TripleBudgetInteriorPrimitives
+info: lean/HigherCorrelations/TripleBudgetInteriorPrimitives.lean:46:25: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9244/9281] Replayed HigherCorrelations.TripleBudgetLogWeight
+warning: lean/HigherCorrelations/TripleBudgetLogWeight.lean:12:2: Try this: intro u hu hz
+⚠ [9246/9281] Replayed HigherCorrelations.TripleLinearFourier
+warning: lean/HigherCorrelations/TripleLinearFourier.lean:93:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleLinearFourier.lean:99:89: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9247/9281] Replayed HigherCorrelations.TripleSameSignFourier
+warning: lean/HigherCorrelations/TripleSameSignFourier.lean:47:127: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9249/9281] Replayed HigherCorrelations.TripleBudgetLowWords
+warning: lean/HigherCorrelations/TripleBudgetLowWords.lean:73:40: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleBudgetLowWords.lean:81:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleBudgetLowWords.lean:89:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleBudgetLowWords.lean:98:40: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9252/9281] Replayed HigherCorrelations.TripleArithmeticGapBounds
+warning: lean/HigherCorrelations/TripleArithmeticGapBounds.lean:15:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9253/9281] Replayed HigherCorrelations.TripleBudgetOffDiagonal
+warning: lean/HigherCorrelations/TripleBudgetOffDiagonal.lean:46:71: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleBudgetOffDiagonal.lean:47:34: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleBudgetOffDiagonal.lean:61:71: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/TripleBudgetOffDiagonal.lean:62:34: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9254/9281] Replayed HigherCorrelations.TripleGapRates
+warning: lean/HigherCorrelations/TripleGapRates.lean:91:36: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9255/9281] Replayed HigherCorrelations.TripleBudgetOffDiagonalRates
+warning: lean/HigherCorrelations/TripleBudgetOffDiagonalRates.lean:66:78: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9256/9281] Replayed HigherCorrelations.TripleBudgetInteriorErrors
+warning: lean/HigherCorrelations/TripleBudgetInteriorErrors.lean:20:55: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/TripleBudgetInteriorErrors.lean:80:42: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleBudgetInteriorErrors.lean:83:42: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleBudgetInteriorErrors.lean:86:42: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/TripleBudgetInteriorErrors.lean:80:42: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/TripleBudgetInteriorErrors.lean:83:42: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/TripleBudgetInteriorErrors.lean:86:42: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [9257/9281] Replayed HigherCorrelations.TripleBudgetNamedInterior
+warning: lean/HigherCorrelations/TripleBudgetNamedInterior.lean:59:76: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9259/9281] Replayed HigherCorrelations.TripleBudgetAsymptotic
+warning: lean/HigherCorrelations/TripleBudgetAsymptotic.lean:43:57: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9263/9281] Replayed HigherCorrelations.TripleTestGeometry
+warning: lean/HigherCorrelations/TripleTestGeometry.lean:32:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [9264/9281] Replayed HigherCorrelations.TripleQuadrantGeometry
+warning: lean/HigherCorrelations/TripleQuadrantGeometry.lean:40:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9265/9281] Replayed HigherCorrelations.SignedSectorGeometry
+info: lean/HigherCorrelations/SignedSectorGeometry.lean:76:55: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: lean/HigherCorrelations/SignedSectorGeometry.lean:76:55: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/SignedSectorGeometry.lean:76:4: This simp argument is unused:
+  abs_of_nonpos (show -p.2 - p.1 ≤ 0 by linarith)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [signedSector, abs_of_nonneg hx, abs_of_nonneg hy, abs_of_nonneg hz,
+    abs_of_nonpos (show -p.1 - p.2 ≤ 0 by linarith)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9270/9281] Replayed HigherCorrelations.SineFourierPairing
+warning: lean/HigherCorrelations/SineFourierPairing.lean:50:8: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9271/9281] Replayed HigherCorrelations.SineSchwartzLines
+warning: lean/HigherCorrelations/SineSchwartzLines.lean:31:33: This simp argument is unused:
+  Function.comp_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sineSliceMap, add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/SineSchwartzLines.lean:39:97: This simp argument is unused:
+  Real.inner_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sineLine, sineSliceMap, sineLineCoords, planeCoords, WithLp.prod_inner_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/SineSchwartzLines.lean:43:97: This simp argument is unused:
+  Real.inner_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sineLine, sineLineCoords, sineLineForm, planeCoords, WithLp.prod_inner_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9272/9281] Replayed HigherCorrelations.SineMarginal
+warning: lean/HigherCorrelations/SineMarginal.lean:42:56: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairMeanCharacter_norm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9274/9281] Replayed HigherCorrelations.SineLineDuality
+warning: lean/HigherCorrelations/SineLineDuality.lean:12:28: This simp argument is unused:
+  Real.inner_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sineDirection, sineDirectionCLM, sineDirectionForm, planeCoords, WithLp.prod_inner_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9279/9281] Replayed HigherCorrelations.SineBenchmarkExpansion
+warning: lean/HigherCorrelations/SineBenchmarkExpansion.lean:27:11: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/SineBenchmarkExpansion.lean:37:11: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: lean/HigherCorrelations/SineBenchmarkExpansion.lean:70:26: This simp argument is unused:
+  Pi.add_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.sub_apply] at ha hs2 hs1 hs0
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/SineBenchmarkExpansion.lean:94:26: This simp argument is unused:
+  Pi.add_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.sub_apply] at ha hs2 hs1 hs0
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9280/9281] Replayed HigherCorrelations.SineBenchmarkAssembly
+warning: lean/HigherCorrelations/SineBenchmarkAssembly.lean:150:13: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+warning: lean/HigherCorrelations/SineBenchmarkAssembly.lean:150:43: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+Build completed successfully (9281 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.sineOverlap_translated, HigherCorrelations.sineOverlap_interval, HigherCorrelations.sineOverlap_span, HigherCorrelations.sineOverlap_volume, HigherCorrelations.sineOverlap_length, HigherCorrelations.sineOverlap_measurable, HigherCorrelations.sineOverlap_finite, HigherCorrelations.sineOverlapIntegrand_indicator, HigherCorrelations.sineOverlapIntegrand_integrable, HigherCorrelations.sineOverlap_integral, HigherCorrelations.sineOverlap_nonempty, HigherCorrelations.sineOverlap_touching, HigherCorrelations.sineOverlap_empty, HigherCorrelations.sineOverlap_length_pos, HigherCorrelations.sineOverlap_length_zero, HigherCorrelations.sineOverlap_length_sector, HigherCorrelations.sineOverlap_length_axes, HigherCorrelations.sineOverlap_length_origin, HigherCorrelations.sineOverlap_length_repeated, HigherCorrelations.sineOverlap_length_examples, HigherCorrelations.sineCycle_continuous, HigherCorrelations.sineCycle_bound, HigherCorrelations.sineCycle_reflection, HigherCorrelations.sineCycle_origin, HigherCorrelations.sineCycle_axes, HigherCorrelations.sineCycleDensity_bounds, HigherCorrelations.sineCycleDensity_reflection, HigherCorrelations.sineCycleDensity_continuous, HigherCorrelations.sineCycleDensity_compactSupport, HigherCorrelations.sineCycleDensity_integrable, HigherCorrelations.sineDensityPlane_integrable, HigherCorrelations.sineCyclePlane_weighted_integrable, HigherCorrelations.sineDensityPlane_weighted_integrable, HigherCorrelations.sineParameterIntegrand_majorant, HigherCorrelations.sineParameterIntegrand_integrable, HigherCorrelations.sineParameterIntegrand_fubini, HigherCorrelations.sineParameterIntegrand_inner, HigherCorrelations.sineInterval_character, HigherCorrelations.sineParameterIntegrand_plane_integral, HigherCorrelations.sineCycleDensity_inverse_integral, HigherCorrelations.sineDensityPlane_inverse, HigherCorrelations.sineDensityPlane_fourier, HigherCorrelations.sineDensityPlane_mass, HigherCorrelations.sineCycle_pairing, HigherCorrelations.sineCycle_inverse_pairing, HigherCorrelations.sineSquared_weighted_integrable, HigherCorrelations.sineTriangle_weighted_integrable, HigherCorrelations.sineSquared_pairing, HigherCorrelations.sineSquared_inverse_pairing, HigherCorrelations.sineLineCoords_antilipschitz, HigherCorrelations.sineLineRestriction_apply, HigherCorrelations.sineLine_integrable, HigherCorrelations.sineSlice_measurePreserving, HigherCorrelations.sineSlice_integral, HigherCorrelations.sineSlice_dot, HigherCorrelations.sineLine_dot, HigherCorrelations.sineComplementRestriction_apply, HigherCorrelations.sineComplement_integrable, HigherCorrelations.sineMarginal_majorant, HigherCorrelations.sineMarginal_continuous, HigherCorrelations.sineMarginal_integrable, HigherCorrelations.sineMarginal_fourier, HigherCorrelations.sineSlice_fourier_marginal, HigherCorrelations.sineLine_fourier_integral, HigherCorrelations.sineDirection_dot, HigherCorrelations.sineDirection_fourier_duality, HigherCorrelations.sineDirection_square_pairing, HigherCorrelations.sineDirection_triangle_pairing, HigherCorrelations.sinePlane_weighted_integrable, HigherCorrelations.sineLine_weighted_integrable, HigherCorrelations.sinePlane_tempered, HigherCorrelations.sineLine_tempered, HigherCorrelations.sineSquare_bound, HigherCorrelations.sineR2_continuous, HigherCorrelations.sineR2_bound, HigherCorrelations.sineR3_continuous, HigherCorrelations.sineR3_bound, HigherCorrelations.sineFourier_twice, HigherCorrelations.sineDirection_triangle_reflection, HigherCorrelations.sineDirection_plane_square_pairing, HigherCorrelations.sineLine_square_fourier, HigherCorrelations.sinePlane_square_fourier, HigherCorrelations.sineLine_constant_fourier, HigherCorrelations.sinePlane_constant_fourier, HigherCorrelations.sineAtom_fourier, HigherCorrelations.sineCycle_distribution_fourier, HigherCorrelations.sineR3_determinant, HigherCorrelations.sineCumulantDensity_closed, HigherCorrelations.sineCumulantDensity_exterior, HigherCorrelations.sineFactorialDensity_origin, HigherCorrelations.sineCumulants_distinct, HigherCorrelations.sineR3_factorial_identity, HigherCorrelations.sineFactorialDensity_positive, HigherCorrelations.sineDifferenceForm_continuous, HigherCorrelations.sineLineForm_continuous, HigherCorrelations.sineSquarePlane_integrable, HigherCorrelations.sineTriangle_bound, HigherCorrelations.sineTrianglePlane_integrable, HigherCorrelations.sineLine_R2_expansion, HigherCorrelations.sineComplement_m_expansion, HigherCorrelations.sineR3_pairing_expansion, HigherCorrelations.sineCumulantDensity_pairing_expansion, HigherCorrelations.sineBenchmark_five, HigherCorrelations.sineBenchmarkSpectrum_integrable, HigherCorrelations.sineBenchmark_partial_fourier, HigherCorrelations.sineBenchmark_distinct_fourier, HigherCorrelations.sineBenchmarkRow_fourier, HigherCorrelations.sineBenchmark_fourier, HigherCorrelations.sineOrdinaryCumulant_fourier, HigherCorrelations.sineFactorialCumulant_fourier, HigherCorrelations.sineBenchmark_moment_cumulant, HigherCorrelations.sineBenchmark_tempered, HigherCorrelations.sineOrdinaryCumulant_tempered, HigherCorrelations.sineFactorialCumulant_tempered, HigherCorrelations.sineBenchmark_distribution_fourier, HigherCorrelations.sineOrdinaryCumulant_distribution_fourier, HigherCorrelations.sineFactorialCumulant_distribution_fourier, HigherCorrelations.sineBenchmark_integrable, HigherCorrelations.sineBenchmark_continuous, HigherCorrelations.sineOrdinaryCumulant_continuous, HigherCorrelations.sineFactorialCumulant_continuous, HigherCorrelations.sineBenchmarkRow_tempered, HigherCorrelations.sineCovarianceLift_tempered, HigherCorrelations.sineBenchmark_distribution_moment_cumulant, HigherCorrelations.sineBenchmark_manuscript, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from HigherCorrelations.SineMeasureAssembly
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

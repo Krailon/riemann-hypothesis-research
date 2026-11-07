@@ -1,4 +1,4 @@
-import HigherCorrelations.SineOverlap
+import HigherCorrelations.SineMeasureAssembly
 import HigherCorrelations.TripleKernelLocalizationAssembly
 import HigherCorrelations.TripleSignedAssembly
 import HigherCorrelations.TripleBoundaryAssembly

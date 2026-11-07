@@ -2,7 +2,25 @@
   "schema_version": 1,
   "modules": [
     "SineOverlapDefinitions",
-    "SineOverlap"
+    "SineOverlap",
+    "SineFourierDefinitions",
+    "SineFourierBounds",
+    "SineParameterIntegral",
+    "SineFourierTransform",
+    "SineFourierPairing",
+    "SineBenchmarkDefinitions",
+    "SineSchwartzDefinitions",
+    "SineSchwartzLines",
+    "SineMarginal",
+    "SineFourierSlice",
+    "SineLineDuality",
+    "SineBenchmarkFunctionalDefinitions",
+    "SineBenchmarkIntegrability",
+    "SinePrimitivePairings",
+    "SineBenchmarkAlgebra",
+    "SineBenchmarkExpansion",
+    "SineBenchmarkAssembly",
+    "SineMeasureAssembly"
   ],
   "components": [
     {
@@ -103,6 +121,531 @@
     {
       "declaration": "HigherCorrelations.sineOverlap_length_examples",
       "source": "lean/HigherCorrelations/SineOverlap.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycle_continuous",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycle_bound",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycle_reflection",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycle_origin",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycle_axes",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycleDensity_bounds",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycleDensity_reflection",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycleDensity_continuous",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycleDensity_compactSupport",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycleDensity_integrable",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDensityPlane_integrable",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCyclePlane_weighted_integrable",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDensityPlane_weighted_integrable",
+      "source": "lean/HigherCorrelations/SineFourierBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineParameterIntegrand_majorant",
+      "source": "lean/HigherCorrelations/SineParameterIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineParameterIntegrand_integrable",
+      "source": "lean/HigherCorrelations/SineParameterIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineParameterIntegrand_fubini",
+      "source": "lean/HigherCorrelations/SineParameterIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineParameterIntegrand_inner",
+      "source": "lean/HigherCorrelations/SineParameterIntegral.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineInterval_character",
+      "source": "lean/HigherCorrelations/SineFourierTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineParameterIntegrand_plane_integral",
+      "source": "lean/HigherCorrelations/SineFourierTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycleDensity_inverse_integral",
+      "source": "lean/HigherCorrelations/SineFourierTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDensityPlane_inverse",
+      "source": "lean/HigherCorrelations/SineFourierTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDensityPlane_fourier",
+      "source": "lean/HigherCorrelations/SineFourierTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDensityPlane_mass",
+      "source": "lean/HigherCorrelations/SineFourierTransform.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycle_pairing",
+      "source": "lean/HigherCorrelations/SineFourierPairing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycle_inverse_pairing",
+      "source": "lean/HigherCorrelations/SineFourierPairing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSquared_weighted_integrable",
+      "source": "lean/HigherCorrelations/SineFourierPairing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineTriangle_weighted_integrable",
+      "source": "lean/HigherCorrelations/SineFourierPairing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSquared_pairing",
+      "source": "lean/HigherCorrelations/SineFourierPairing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSquared_inverse_pairing",
+      "source": "lean/HigherCorrelations/SineFourierPairing.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLineCoords_antilipschitz",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLineRestriction_apply",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLine_integrable",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSlice_measurePreserving",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSlice_integral",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSlice_dot",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLine_dot",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineComplementRestriction_apply",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineComplement_integrable",
+      "source": "lean/HigherCorrelations/SineSchwartzLines.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineMarginal_majorant",
+      "source": "lean/HigherCorrelations/SineMarginal.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineMarginal_continuous",
+      "source": "lean/HigherCorrelations/SineMarginal.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineMarginal_integrable",
+      "source": "lean/HigherCorrelations/SineMarginal.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineMarginal_fourier",
+      "source": "lean/HigherCorrelations/SineMarginal.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSlice_fourier_marginal",
+      "source": "lean/HigherCorrelations/SineFourierSlice.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLine_fourier_integral",
+      "source": "lean/HigherCorrelations/SineFourierSlice.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDirection_dot",
+      "source": "lean/HigherCorrelations/SineLineDuality.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDirection_fourier_duality",
+      "source": "lean/HigherCorrelations/SineLineDuality.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDirection_square_pairing",
+      "source": "lean/HigherCorrelations/SineLineDuality.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDirection_triangle_pairing",
+      "source": "lean/HigherCorrelations/SineLineDuality.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sinePlane_weighted_integrable",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLine_weighted_integrable",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sinePlane_tempered",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLine_tempered",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSquare_bound",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR2_continuous",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR2_bound",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR3_continuous",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR3_bound",
+      "source": "lean/HigherCorrelations/SineBenchmarkIntegrability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineFourier_twice",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDirection_triangle_reflection",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDirection_plane_square_pairing",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLine_square_fourier",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sinePlane_square_fourier",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLine_constant_fourier",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sinePlane_constant_fourier",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineAtom_fourier",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCycle_distribution_fourier",
+      "source": "lean/HigherCorrelations/SinePrimitivePairings.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR3_determinant",
+      "source": "lean/HigherCorrelations/SineBenchmarkAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCumulantDensity_closed",
+      "source": "lean/HigherCorrelations/SineBenchmarkAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCumulantDensity_exterior",
+      "source": "lean/HigherCorrelations/SineBenchmarkAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineFactorialDensity_origin",
+      "source": "lean/HigherCorrelations/SineBenchmarkAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCumulants_distinct",
+      "source": "lean/HigherCorrelations/SineBenchmarkAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR3_factorial_identity",
+      "source": "lean/HigherCorrelations/SineBenchmarkAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineFactorialDensity_positive",
+      "source": "lean/HigherCorrelations/SineBenchmarkAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineDifferenceForm_continuous",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLineForm_continuous",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineSquarePlane_integrable",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineTriangle_bound",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineTrianglePlane_integrable",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineLine_R2_expansion",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineComplement_m_expansion",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR3_pairing_expansion",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCumulantDensity_pairing_expansion",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_five",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmarkSpectrum_integrable",
+      "source": "lean/HigherCorrelations/SineBenchmarkExpansion.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_partial_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_distinct_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmarkRow_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOrdinaryCumulant_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineFactorialCumulant_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_moment_cumulant",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_tempered",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOrdinaryCumulant_tempered",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineFactorialCumulant_tempered",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_distribution_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOrdinaryCumulant_distribution_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineFactorialCumulant_distribution_fourier",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_integrable",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_continuous",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineOrdinaryCumulant_continuous",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineFactorialCumulant_continuous",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmarkRow_tempered",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineCovarianceLift_tempered",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_distribution_moment_cumulant",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_manuscript",
+      "source": "lean/HigherCorrelations/SineBenchmarkAssembly.lean",
       "comparator_checked": true
     }
   ],

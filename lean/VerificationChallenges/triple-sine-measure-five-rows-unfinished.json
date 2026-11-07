@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.SineOverlap",
+  "solution_module": "VerificationChallenges.SineOverlapUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.sineBenchmarkRow_fourier"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

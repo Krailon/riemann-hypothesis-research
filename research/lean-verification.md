@@ -599,3 +599,29 @@ The default four-worker control pool, combined build and full axiom report
 remain enabled. This supplies partial coverage of TRIPLE-SINE-MEASURE-001;
 the sinc Fourier pairing and full five-partition benchmark remain separate.
 See the [sine-measure note](lean-triple-sine-measure.md).
+
+## Sinc Fourier pairing
+
+The sine-measure suite now covers 49 public statements in eight modules,
+with twelve rejection controls. It includes the compact parameter majorant,
+justified Fubini, pointwise inverse transform of the hexagonal density,
+unrestricted bilinear Schwartz pairings for the cycle and squared sinc,
+weighted absolute convergence and unit density mass. Existing FourierPlane,
+pairMeanSinc and pairMeanTriangle conventions are reused.
+
+Use the same `--reuse-dependencies --triple-sine-measure-only` command.
+TRIPLE-SINE-MEASURE-001 remains partial: the five-partition benchmark and
+cumulant assembly are subsequent work. See the
+[sine-measure note](lean-triple-sine-measure.md) for the exact scope.
+
+## Five-partition sine benchmark and cumulants
+
+The sine-measure suite now checks 125 statements in 20 modules, with 22
+unfinished-proof controls. The exact five partition Fourier table, tempered
+realizations, moment-cumulant identity, distinct ordinary/factorial formulas,
+and closed-hexagon cancellation complete formal coverage of
+TRIPLE-SINE-MEASURE-001. Its historical ledger status remains unchanged.
+
+Use `--reuse-dependencies --triple-sine-measure-only`. The main-term comparison
+and zeta support-boundary extension remain separate. Details are in the
+[sine-measure note](lean-triple-sine-measure.md).

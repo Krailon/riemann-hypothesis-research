@@ -5825,3 +5825,115 @@ claims:
       imported_inputs: "Existing signedGauge half-sum and six-sector identities; Mathlib closed-interval measure, indicator integrability and indicator integral; ordered real arithmetic. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "Exact overlap length max(0,1-h); no numerical approximation, asymptotic error, or existential constant is used."
       baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. TRIPLE-SINE-MEASURE-001 gains partial coverage only. Its Fourier pairing, five-partition benchmark and cumulant assertions remain separate. Historical ledger statuses, dependency graph and RH-review scope are unchanged; no zeta support-boundary extension is inferred."
+
+  - id: MASTER-SINE-PAIRING-FORMAL-001
+    title: Exact sinc cycle transform and unrestricted bilinear Schwartz pairings
+    kind: lemma
+    statement: |
+      Put s(x)=Real.sinc(pi*x), C(u,v)=s(u)s(v)s(u-v),
+      h(xi,eta)=max(|xi|,|eta|,|xi+eta|), and c(xi,eta)=max(0,1-h).
+      Use the existing FourierPlane and its measure-preserving planeCoords,
+      and the negative-forward, positive-inverse 2pi Fourier convention.
+      C is continuous, |C|<=1, C(-u,-v)=C(u,v), C(0,0)=1,
+      and C(r,0)=C(0,r)=C(r,r)=s(r)^2. The real density c is continuous,
+      compactly supported, integrable, even under simultaneous reflection,
+      and satisfies 0<=c<=1. Its complex-valued FourierPlane lift is integrable.
+      With I=[-1/2,1/2] and B=1_I, the parameter integrand
+      B(d)B(xi-d)B(eta+d)exp(2pi i (u xi+v eta)) has norm bounded
+      by 1_{I times [-1,1]^2}(d,xi,eta), uniformly in u,v. It is integrable;
+      Fubini exchanges d with (xi,eta). Integrating d recovers
+      c(xi,eta)exp(2pi i (u xi+v eta)). The translations
+      xi=a+d, eta=b-d and the checked one-dimensional interval transforms
+      evaluate the other order as s(u)s(v)s(u-v).
+      Pointwise on FourierPlane, inverseFourier(c)=C and Fourier(c)=C.
+      The density has exact mass integral c=1.
+      For every complex Schwartz F on the entire real plane,
+      integral F C = integral (Fourier F) c.
+      Equivalently for every complex Schwartz phi,
+      integral (inverseFourier phi) C = integral phi c.
+      Both weighted integrands are absolutely integrable. The corresponding
+      one-dimensional pairings with s^2 and tau(r)=max(0,1-|r|) hold,
+      including the inverse-test version and weighted absolute integrability.
+      All pairings are bilinear without conjugation. No symmetry or Fourier
+      support restriction is imposed on the Schwartz tests. No asymptotic
+      limit, zero sum, five-partition benchmark, cumulant assertion, or
+      zeta support-boundary extension is part of this formal milestone.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-SINE-OVERLAP-FORMAL-001, PAIR-MEANVALUE-FORMAL-001, MASTER-FOURIER-DECAY-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/SineFourierPairing.lean
+      label: HigherCorrelations.sineCycle_pairing
+      companion_declarations: [sineCycle_continuous, sineCycle_bound, sineCycle_reflection, sineCycle_origin, sineCycle_axes, sineCycleDensity_bounds, sineCycleDensity_reflection, sineCycleDensity_continuous, sineCycleDensity_compactSupport, sineCycleDensity_integrable, sineDensityPlane_integrable, sineCyclePlane_weighted_integrable, sineDensityPlane_weighted_integrable, sineParameterIntegrand_majorant, sineParameterIntegrand_integrable, sineParameterIntegrand_fubini, sineParameterIntegrand_inner, sineInterval_character, sineParameterIntegrand_plane_integral, sineCycleDensity_inverse_integral, sineDensityPlane_inverse, sineDensityPlane_fourier, sineDensityPlane_mass, sineCycle_inverse_pairing, sineSquared_weighted_integrable, sineTriangle_weighted_integrable, sineSquared_pairing, sineSquared_inverse_pairing]
+      inventory: research/lean-triple-sine-measure-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: f9c2eed659dd87a6b706a7453d7f5b7f4258e6c626b2daa8e029c11cf5a811ed
+    limit_order: "No limiting parameter. The explicit compact parameter majorant proves absolute integrability before Fubini; translations preserve Lebesgue measure. Fourier duality uses integrable density and Schwartz tests. Weighted absolute integrability is checked independently on both sides."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The expanded sine suite checks all 49 public statements across eight modules against definition-only contracts. Twelve unfinished-proof rejection controls include the parameter majorant's integrability, pointwise inverse transform, weighted absolute convergence, both pairings and unit mass. Combined project build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Checked overlap geometry, existing box and triangle Fourier transforms and sinc bounds, measure-preserving FourierPlane coordinate bridge, Mathlib Fubini, translation invariance, product integrals, integrable Fourier duality and Schwartz inversion. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Exact norm bounds |C|<=1 and 0<=c<=1, compact parameter majorant 1_{I times [-1,1]^2}, and exact mass one. No approximation, numerical quadrature or existential error constant is used."
+      baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. TRIPLE-SINE-MEASURE-001 gains partial coverage for its cycle and squared-sinc Fourier pairings. Five-partition benchmark assembly, cumulant identities and ordinary/factorial distinction remain separate. Historical ledger statuses, dependency graph and RH-review scope are unchanged. No zeta support-boundary extension or ordinate-only conclusion is inferred."
+
+  - id: MASTER-SINE-BENCHMARK-FORMAL-001
+    title: Five-partition sine benchmark and ordinary versus factorial cumulants
+    kind: lemma
+    statement: |
+      Put s(r)=Real.sinc(pi*r), R2(r)=1-s(r)^2,
+      C(u,v)=s(u)s(v)s(u-v), and
+      R3(u,v)=1-s(u)^2-s(v)^2-s(u-v)^2+2C(u,v).
+      R3 is the exact three-by-three sine-kernel determinant. For every
+      complex Schwartz F on FourierPlane, the five occurrence-index patterns
+      define the absolutely convergent functional
+      M3[F]=integral F R3+F(0,0)+
+      integral R2(r)(F(0,r)+F(r,0)+F(r,r)) dr.
+      The five rows, covariance lifts, M3 and both cumulants have tempered
+      distribution realizations. All pairings are bilinear, without conjugation.
+      Set h=max(|xi|,|eta|,|xi+eta|), tau(r)=max(0,1-|r|),
+      m=1-tau, c=max(0,1-h), and
+      g=1-tau(xi)-tau(eta)-tau(xi+eta)+2c.
+      In the negative-forward 2pi convention each of the five Fourier rows
+      is checked separately, and their sum gives
+      Fourier(M3)=delta_00+m(xi)delta(eta)+m(eta)delta(xi)+
+      m(xi)delta(xi+eta)+g. Line measures use coordinate dr, with no
+      arclength multiplier. The ordinary covariance lifts are delta minus
+      squared sinc in each of u, v and u-v. As tempered distributions,
+      M3=1+sum of the three covariance lifts+C3ord, where
+      C3ord=delta_00-delta(u)s(v)^2-delta(v)s(u)^2-
+      delta(u-v)s(u)^2+2C. Its Fourier transform is g.
+      The factorial connected subtraction
+      R3-R2(u)-R2(v)-R2(u-v)+2=2C has Fourier transform 2c.
+      For every h<=1, g=0, including seams and vertices;
+      g(3/4,3/4)=1/2. The factorial density is positive for h<1
+      and equals two at the origin, so it differs from g.
+      Constant-line Fourier identities use continuous integrable Schwartz
+      marginals with an explicit integrable seminorm majorant. Weighted
+      line identities use integrable Fourier duality. Both sides of each
+      benchmark pairing are absolutely integrable. No symmetry or support
+      restriction is imposed on the Schwartz test. These are deterministic
+      benchmark identities, with no assertion about a zeta zero sum,
+      simplicity, ordinate-only correlation, or asymptotic support boundary.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-SINE-PAIRING-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/SineBenchmarkAssembly.lean
+      label: HigherCorrelations.sineBenchmark_fourier
+      companion_declarations: [sineBenchmarkRow_fourier, sineBenchmark_distinct_fourier, sineBenchmark_partial_fourier, sineBenchmark_tempered, sineBenchmarkRow_tempered, sineCovarianceLift_tempered, sineBenchmark_integrable, sineBenchmark_continuous, sineBenchmark_manuscript, sineBenchmark_moment_cumulant, sineBenchmark_distribution_moment_cumulant, sineBenchmark_distribution_fourier, sineOrdinaryCumulant_fourier, sineFactorialCumulant_fourier, sineOrdinaryCumulant_tempered, sineFactorialCumulant_tempered, sineOrdinaryCumulant_distribution_fourier, sineFactorialCumulant_distribution_fourier, sineR3_determinant, sineR3_factorial_identity, sineCumulantDensity_closed, sineCumulantDensity_exterior]
+      inventory: research/lean-triple-sine-measure-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: b39adb2cbb8722f9b302961bbc985e5485bfe0ef7193bedc0e9c3d7d9f9ce674
+    limit_order: "No asymptotic parameter. An explicit Schwartz-seminorm majorant C(1+|z|)^(-2) proves continuity of marginals by dominated convergence. Fubini, Fourier duality and inversion are applied after integrability is established. Finite sums and distributional identities use continuous Schwartz restrictions and bounded densities."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The cumulative sine suite checks 125 public statements across 20 modules, adding 76 statements in this milestone. Twenty-two unfinished-proof rejection controls cover geometry, sinc pairings, marginal continuity, Fourier slices and weighted duality, five rows, benchmark assembly, tempered realization, both cumulants, closed cancellation and covariance subtraction. Combined project build, complete axiom audit and regression checks pass."
+      imported_inputs: "Checked sinc and triangle pairings, FourierPlane coordinate bridge, signed gauge identities and TriplePattern vocabulary; Mathlib Schwartz restrictions, Fubini, dominated convergence, integrable Fourier duality and inversion, and tempered distributions. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Exact formulas and closed endpoints; explicit majorant for marginal continuity and conservative bounds |R2|<=2, |R3|<=6. No numerical approximation or asymptotic error constant."
+      baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. The analytic coverage table now records complete component coverage of TRIPLE-SINE-MEASURE-001; historical ledger statuses, dependency graph and RH-review scope remain unchanged. TRIPLE-MAIN-TERM-COMPARISON-001 remains a subsequent task. No zeta support-boundary extension or ordinate-only conclusion is inferred."

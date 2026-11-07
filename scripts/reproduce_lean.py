@@ -231,7 +231,7 @@ def main(argv=None):
     parser.add_argument('--triple-kernel-localization-only', action='store_true',
                         help='Check kernel localization, summed near/far bounds and complex-test weighted frozen-profile summability, normalized transfer, height limits, uniform microscopic profile and tuplewise critical-line quadratic expansion, and explicit zero-gap horizontal profile and local normalization; combined build, axioms and regressions using prepared dependencies.')
     parser.add_argument('--triple-sine-measure-only', action='store_true',
-                        help='Check sine interval-overlap geometry and indicator integral; combined build, axioms and regressions using prepared dependencies.')
+                        help='Check the full sine benchmark, five partition Fourier rows and cumulants; combined build, axioms and regressions using prepared dependencies.')
     parser.add_argument('--control-jobs', type=int, default=4, metavar='N',
                         help='Parallel rejection controls (default 4, capped by CPU affinity); 1 preserves serial ordering.')
     args = parser.parse_args(argv)
@@ -322,8 +322,8 @@ def main(argv=None):
             'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun. No ordinate-only replacement or varying-parameter limit is asserted. Summed constants remain absolute existential constants.')
 
     if args.triple_sine_measure_only:
-        report['verification_scope'] = ('Closed interval-overlap geometry, Lebesgue volume, finite integrability, indicator-product integral, all six sectors and endpoints; '
-            'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun. No Fourier pairing or zeta support-boundary extension is asserted.')
+        report['verification_scope'] = ('Full sine benchmark: overlap geometry, cycle transform, Schwartz pairings, continuous marginals and line restrictions, all five Fourier rows, tempered realization, ordinary and factorial cumulants, and closed-hexagon cancellation; '
+            'combined project build, complete axiom report and Python regressions. Earlier Comparator suites are not rerun. No main-term comparison or zeta support-boundary extension is asserted.')
 
     controls = []
     deferred_build = []
@@ -372,10 +372,10 @@ def main(argv=None):
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
         if not (args.pair_zero_only or args.zeta23_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only or args.triple_budget_only or args.triple_mixed_diagonal_only or args.triple_smoothing_only or args.triple_resonance_decay_only or args.triple_retained_only or args.triple_interior_vanishing_only or args.triple_test_function_only or args.triple_boundary_only or args.triple_signed_sectors_only or args.triple_kernel_localization_only):
-            command('triple-sine-measure-build', ['lake', 'build', 'HigherCorrelations.SineOverlap'])
+            command('triple-sine-measure-build', ['lake', 'build', 'HigherCorrelations.SineMeasureAssembly'])
             command('triple-sine-measure-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/triple-sine-measure.json'])
-            for control in ['span', 'volume', 'integrability', 'integral', 'endpoint', 'sectors']:
+            for control in ['span', 'volume', 'integrability', 'integral', 'endpoint', 'sectors', 'parameter', 'transform', 'weighted', 'pairing', 'squared', 'mass', 'marginal', 'slice', 'line-duality', 'five-rows', 'benchmark', 'tempered', 'ordinary', 'factorial', 'closed', 'covariance']:
                 command('triple-sine-measure-' + control + '-unfinished-rejected', ['lake', 'env', comparator,
                         'lean/VerificationChallenges/triple-sine-measure-' + control + '-unfinished.json'], expected_failure=True)
             command('triple-sine-measure-regressions', [sys.executable, '-B', 'scripts/check_lean_triple_sine_measure.py'])

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the sine interval-overlap geometry's verification boundary; no analytic proof by Python."""
+"""Validate the sine overlap and Schwartz pairings' verification boundary; no analytic proof by Python."""
 import copy
 import json
 from pathlib import Path
@@ -7,7 +7,7 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-CONTROLS = {'span': 'sineOverlap_span', 'volume': 'sineOverlap_volume', 'integrability': 'sineOverlapIntegrand_integrable', 'integral': 'sineOverlap_integral', 'endpoint': 'sineOverlap_touching', 'sectors': 'sineOverlap_length_sector'}
+CONTROLS = {'span': 'sineOverlap_span', 'volume': 'sineOverlap_volume', 'integrability': 'sineOverlapIntegrand_integrable', 'integral': 'sineOverlap_integral', 'endpoint': 'sineOverlap_touching', 'sectors': 'sineOverlap_length_sector', 'parameter': 'sineParameterIntegrand_integrable', 'transform': 'sineDensityPlane_inverse', 'weighted': 'sineCyclePlane_weighted_integrable', 'pairing': 'sineCycle_pairing', 'squared': 'sineSquared_pairing', 'mass': 'sineDensityPlane_mass', 'marginal': 'sineMarginal_continuous', 'slice': 'sineLine_fourier_integral', 'line-duality': 'sineDirection_fourier_duality', 'five-rows': 'sineBenchmarkRow_fourier', 'benchmark': 'sineBenchmark_fourier', 'tempered': 'sineBenchmark_tempered', 'ordinary': 'sineOrdinaryCumulant_fourier', 'factorial': 'sineR3_factorial_identity', 'closed': 'sineCumulantDensity_closed', 'covariance': 'sineBenchmark_moment_cumulant'}
 
 
 def read_json(path):
@@ -30,7 +30,7 @@ def validate(inventory, config):
         raise ValueError('Comparator coverage differs')
     if config['permitted_axioms'] != ['propext', 'Quot.sound', 'Classical.choice'] or config['enable_nanoda']:
         raise ValueError('changed trust boundary')
-    if config['solution_module'] != 'HigherCorrelations.SineOverlap':
+    if config['solution_module'] != 'HigherCorrelations.SineMeasureAssembly':
         raise ValueError('wrong solution')
     challenge = (ROOT / 'lean/VerificationChallenges/SineOverlap.lean').read_text()
     imports = re.findall(r'^import HigherCorrelations\.(\w+)', challenge, re.M)

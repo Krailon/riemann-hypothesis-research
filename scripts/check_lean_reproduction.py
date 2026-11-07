@@ -114,7 +114,7 @@ class LeanReproductionTests(unittest.TestCase):
                 self.assertEqual(checked, 1)
                 self.assertIn(suite, calls)
                 if flag == '--triple-sine-measure-only':
-                    for control in ['span', 'volume', 'integrability', 'integral', 'endpoint', 'sectors']:
+                    for control in ['span', 'volume', 'integrability', 'integral', 'endpoint', 'sectors', 'parameter', 'transform', 'weighted', 'pairing', 'squared', 'mass', 'marginal', 'slice', 'line-duality', 'five-rows', 'benchmark', 'tempered', 'ordinary', 'factorial', 'closed', 'covariance']:
                         self.assertIn('triple-sine-measure-' + control + '-unfinished-rejected', calls)
                     self.assertIn('triple-sine-measure-regressions', calls)
                 else:

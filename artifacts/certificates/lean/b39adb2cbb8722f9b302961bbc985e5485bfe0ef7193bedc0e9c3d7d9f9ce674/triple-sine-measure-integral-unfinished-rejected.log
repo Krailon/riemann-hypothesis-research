@@ -1,0 +1,374 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.SineOverlap
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8961/8967] Replayed HigherCorrelations.SignedSectorDefinitions
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:20:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:21:93: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8964/8967] Replayed HigherCorrelations.SineBenchmarkDefinitions
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:30:76: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:31:77: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:30:76: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:31:77: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:33:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8967/8967] Replayed VerificationChallenges.SineOverlap
+warning: lean/VerificationChallenges/SineOverlap.lean:11:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:15:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:19:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:22:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:25:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:28:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:32:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:35:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:40:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:43:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:49:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:55:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:63:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:65:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:73:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:75:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:77:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:79:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:81:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:88:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:92:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:96:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:98:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:101:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:104:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:108:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:110:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:118:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:121:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:125:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:129:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:132:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:135:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:140:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:143:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:146:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:149:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:152:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:155:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:160:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:163:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:165:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:168:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:171:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:174:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:177:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:180:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:183:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:185:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:187:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:191:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:196:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:199:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:202:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:207:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:211:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:215:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:219:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:223:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:231:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:233:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:235:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:237:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:239:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:241:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:244:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:248:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:252:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:256:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:260:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:266:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:269:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:272:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:277:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:280:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:282:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:284:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:286:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:289:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:292:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:294:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:296:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:299:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:301:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:304:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:308:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:312:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:318:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:324:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:328:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:332:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:336:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:341:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:344:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:347:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:350:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:353:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:357:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:360:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:363:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:366:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:370:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:374:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:378:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:382:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:384:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:386:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:388:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:391:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:394:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlap.lean:400:8: declaration uses `sorry`
+Build completed successfully (8967 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.sineOverlap_integral, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.SineOverlap
+Building VerificationChallenges.SineOverlapUnfinished
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-eo6pd228/worker-4/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8961/8967] Replayed HigherCorrelations.SignedSectorDefinitions
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:20:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:21:93: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8964/8967] Replayed HigherCorrelations.SineBenchmarkDefinitions
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:30:76: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:31:77: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:30:76: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:31:77: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: lean/HigherCorrelations/SineBenchmarkDefinitions.lean:33:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8967/8967] Replayed VerificationChallenges.SineOverlapUnfinished
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:11:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:15:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:19:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:22:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:25:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:28:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:32:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:35:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:40:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:43:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:49:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:55:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:63:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:65:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:73:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:75:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:77:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:79:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:81:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:88:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:92:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:96:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:98:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:101:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:104:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:108:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:110:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:118:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:121:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:125:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:129:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:132:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:135:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:140:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:143:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:146:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:149:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:152:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:155:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:160:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:163:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:165:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:168:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:171:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:174:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:177:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:180:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:183:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:185:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:187:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:191:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:196:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:199:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:202:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:207:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:211:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:215:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:219:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:223:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:231:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:233:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:235:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:237:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:239:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:241:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:244:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:248:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:252:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:256:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:260:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:266:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:269:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:272:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:277:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:280:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:282:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:284:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:286:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:289:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:292:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:294:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:296:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:299:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:301:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:304:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:308:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:312:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:318:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:324:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:328:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:332:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:336:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:341:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:344:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:347:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:350:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:353:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:357:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:360:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:363:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:366:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:370:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:374:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:378:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:382:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:384:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:386:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:388:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:391:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:394:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/SineOverlapUnfinished.lean:400:8: declaration uses `sorry`
+Build completed successfully (8967 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.sineOverlap_integral, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.SineOverlapUnfinished
+uncaught exception: Illegal axiom detected: 'sorryAx'
