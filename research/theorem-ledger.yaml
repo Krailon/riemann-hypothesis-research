@@ -6000,3 +6000,72 @@ claims:
       imported_inputs: "Checked sine-benchmark Fourier identity and tempered pairings, project complexFourier bridge, signed asymptotic and frozen-profile transfer bounds and limits; Mathlib Schwartz inversion, measure-preserving reflection, Bochner integral linearity and derivative-to-Lipschitz control. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "The exact 3/2 identification introduces no error and preserves the inherited witnesses. The derivative supremum bound remains separate from the derivative L1 norm. Numerical effectiveness of inherited uniform constants is not certified. The earlier finite-height local coefficient remains 3b/(2 log T)."
       baseline_audit_coverage: "The previous ledger is preserved as an unchanged byte prefix. TRIPLE-MAIN-TERM-COMPARISON-001 gains partial component coverage, retaining its historical effectiveness qualification. Historical claim statuses, dependency graph and RH-review scope are unchanged. No ordinate-only conclusion, zeta support-boundary extension or weighted zeta cumulant cancellation is inferred."
+
+  - id: MASTER-SMOOTHED-CORRELATION-FORMAL-001
+    title: Unit-normalized smoothed triple theorem with uniform errors and varying-family convergence
+    kind: theorem
+    statement: |
+      Let omega satisfy TripleBudgetWeight: it is smooth, nonnegative, has
+      integral one and closed support contained in (1,2). Let phi be any
+      complex smooth compactly supported frequency test, with support in
+      h=max(|xi|,|eta|,|xi+eta|)<=1-kappa, 0<kappa<1.
+      F is its positive-inverse Schwartz transform, identified with the
+      project complexFourier on real arguments. The observable R(T) is
+      exactly (2/3) frozenStatistic(omega,phi,T), and for every T its
+      algebraic profile-sum identity is
+      R(T)=16/(3T log T) sum_v omega(gamma(v0)/T) J(v) F(z21,z31).
+      The raw summand is smoothedTripleTerm; its rational profile uses gaps
+      gamma(v1)-gamma(v0), gamma(v2)-gamma(v0) and horizontal parameters
+      delta(v1),delta(v2),delta(v0), with positive imaginary anchor center.
+      Scaled complex test shifts retain sums of horizontal displacements.
+      Every ordered actual zero-occurrence triple is included, with
+      multiplicity and both ordinate signs; only the anchor is localized.
+      For T>2pi the raw norm series is summable. Independent finite occurrence
+      cutoffs and independent inclusive ordinate cutoffs converge to the raw
+      sum and to R after multiplication by its normalization coefficient.
+      Write B=T/(2pi), b=log B, L=log(2T+2), and take nonnegative M0,M1
+      bounding |omega| and |omega'|. Define
+      E_signed=signedC1(phi)(1+M0+fourierDerivativeL1(omega,1))
+        (1/b+B^(-kappa)L^3),
+      E_kernel=tripleTestL1(phi)(M0+M1)B^(-kappa)L^3.
+      For T>=2pi exp(1), positive absolute existential constants A,C give
+      |R(T)-S3[F]|<=A E_signed+C E_kernel. The exact norm factor is 2/3
+      relative to the frozen comparison error. Both envelopes are nonnegative;
+      their separate bound implies a bound Cmax(E_signed+E_kernel).
+      The supremum of |omega| and the supremum of |omega'| are finite and
+      satisfy the required bounds. The standalone theorem with these exact
+      supremum norms asserts both absolute convergence and the additive
+      estimate with a single absolute existential constant.
+      For fixed test, smoothing and positive margin, R(T) tends to S3[F].
+      Compact support in h<1 supplies a fixed margin for the same conclusion.
+      For families over any index type and filter, allow test,smoothing,
+      bounds,height and margin to vary, with admissibility at every index,
+      height eventually at least 2pi exp(1), and both named envelopes tending
+      to zero. Then the norm of R minus its varying sine benchmark tends
+      to zero. No common limiting benchmark or separate height-divergence
+      assumption is needed. The zero test gives the zero observable.
+      These are additive statements, including zero benchmark. Pairings
+      remain bilinear and no symmetry or reality of phi is assumed.
+      Numerical effectiveness of inherited uniform constants is not certified.
+      No ordinate-only replacement, outer support-boundary extension, or
+      weighted zeta cumulant conclusion is part of this formal claim.
+    status: formalized
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1-kappa, 0<kappa<1)"]
+    dependencies: [MASTER-MAIN-TERM-COMPARISON-FORMAL-001, MASTER-PROFILE-TRANSFER-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/SmoothedTripleTheorem.lean
+      label: HigherCorrelations.smoothedTriple_theorem
+      companion_declarations: [smoothedTripleStatistic_profile_sum, smoothedTripleTerm_frozen, smoothedTripleTerm_summable, smoothedTripleTerm_cutoff, smoothedTripleTerm_height_cutoff, smoothedTripleTerm_profile, smoothedTriple_norm_scale, smoothedTriple_separate_bound, smoothedTriple_errors_nonneg, smoothedTriple_uniform_bound, smoothedWeightSup_bounds, smoothedWeight_derivative_sup, smoothedTriple_sup_bound, smoothedTripleStatistic_limit, smoothedTripleStatistic_compact_limit, smoothedTripleStatistic_varying_error, smoothedTripleStatistic_cutoff, smoothedTripleStatistic_height_cutoff, smoothedTripleStatistic_zero_test]
+      inventory: research/lean-triple-smoothed-correlation-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 19ddf6c17cb734075cd516a68a3f6a4d48c903804cfa9de1c6d7048830355a9c
+    limit_order: "Absolute convergence is proved at fixed test,smoothing,margin and T>2pi before removing independent zero cutoffs. Fixed-test height limits then hold with positive margin. The general-filter family conclusion follows from the uniform estimate and vanishing of both named error bounds; it does not exchange zero cutoffs with changing parameters."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 20 public statements across four modules match definition-only expected contracts. Nine rejection controls cover normalization, summability, both cutoffs, profile conventions, the assembled theorem, supremum specialization and both fixed/varying-family limits. Focused reproduction, combined build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Checked main-term comparison, frozen-profile weighted summability and cutoff infrastructure, smoothing bounds and signed seminorm bounds; Mathlib supremum properties, norm scaling, finite-dimensional calculus and filter squeeze. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Separate witnesses are scaled exactly by 2/3; their maximum yields the combined additive constant. The derivative L1 norm and derivative supremum are distinct. Numerical effectiveness remains an outstanding qualification of the historical statement."
+      baseline_audit_coverage: "The previous ledger is an unchanged byte prefix. TRIPLE-SMOOTHED-CORRELATION-001 gains component coverage for the assembled mathematical theorem, while its effectiveness qualification remains outstanding. Historical statuses, dependency graph and RH-review scope are unchanged."

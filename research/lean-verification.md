@@ -638,3 +638,13 @@ are checked. The earlier local factor 3b/(2 log T) is unchanged. The coverage
 of `TRIPLE-MAIN-TERM-COMPARISON-001` remains partial because numerical
 effectiveness of inherited existential uniform constants is not certified.
 See [the comparison record](lean-triple-main-term-comparison.md).
+
+## Unit-normalized smoothed triple theorem
+
+The `--triple-smoothed-correlation-only` suite checks 20 public statements
+in four modules and nine rejection controls. It assembles the exact normalized
+profile sum, raw absolute convergence, independent cutoffs, supremum-norm
+uniform additive bound, fixed-test limits and general-filter varying-family
+error limit. The two named envelopes remain explicit. Uniform constants retain
+their inherited existential status, so historical claim coverage remains
+partial for effectiveness. See [the formalization record](lean-triple-smoothed-correlation.md).

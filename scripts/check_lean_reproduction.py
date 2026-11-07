@@ -108,12 +108,19 @@ class LeanReproductionTests(unittest.TestCase):
                             ('--triple-signed-sectors-only', 'triple-signed-sectors-comparator'),
                             ('--triple-kernel-localization-only', 'triple-kernel-localization-comparator'),
                             ('--triple-sine-measure-only', 'triple-sine-measure-comparator'),
-                            ('--triple-main-term-comparison-only', 'triple-main-term-comparison-comparator')]:
+                            ('--triple-main-term-comparison-only', 'triple-main-term-comparison-comparator'),
+                            ('--triple-smoothed-correlation-only', 'triple-smoothed-correlation-comparator')]:
             with self.subTest(flag=flag):
                 code, calls, report, checked = self.run_workflow(['--reuse-dependencies', flag])
                 self.assertEqual(code, 0)
                 self.assertEqual(checked, 1)
                 self.assertIn(suite, calls)
+                if flag == '--triple-smoothed-correlation-only':
+                    for control in ['normalization', 'summability', 'cutoff', 'height-cutoff', 'profile', 'uniform', 'supremum', 'fixed-limit', 'varying-limit']:
+                        self.assertIn('triple-smoothed-correlation-' + control + '-unfinished-rejected', calls)
+                    self.assertIn('triple-smoothed-correlation-regressions', calls)
+                else:
+                    self.assertNotIn('triple-smoothed-correlation-comparator', calls)
                 if flag == '--triple-main-term-comparison-only':
                     for control in ['adapter', 'reflection', 'support', 'comparison', 'signed-bound', 'frozen-bound', 'signed-limit', 'frozen-limit']:
                         self.assertIn('triple-main-term-comparison-' + control + '-unfinished-rejected', calls)
@@ -199,15 +206,15 @@ class LeanReproductionTests(unittest.TestCase):
                     self.assertNotIn('pair-fourier-comparator', calls)
                 else:
                     self.assertNotIn('triple-master-comparator', calls)
-                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only', '--triple-main-term-comparison-only']:
+                if flag in ['--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only', '--triple-main-term-comparison-only', '--triple-smoothed-correlation-only']:
                     self.assertNotIn('pair-asymptotic-comparator', calls)
                 else:
                     self.assertNotIn('pair-fourier-comparator', calls)
-                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only', '--triple-main-term-comparison-only']:
+                if flag in ['--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only', '--triple-main-term-comparison-only', '--triple-smoothed-correlation-only']:
                     self.assertNotIn('pair-zero-comparison-comparator', calls)
                 self.assertNotIn('resolve', calls)
                 self.assertNotIn('upstream-comparator', calls)
-                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only', '--triple-main-term-comparison-only']:
+                if flag in ['--pair-zero-comparison-only', '--pair-asymptotic-only', '--pair-fourier-only', '--triple-master-only', '--triple-budget-only', '--triple-mixed-diagonal-only', '--triple-smoothing-only', '--triple-resonance-decay-only', '--triple-retained-only', '--triple-interior-vanishing-only', '--triple-test-function-only', '--triple-boundary-only', '--triple-signed-sectors-only', '--triple-kernel-localization-only', '--triple-sine-measure-only', '--triple-main-term-comparison-only', '--triple-smoothed-correlation-only']:
                     self.assertNotIn('pair-zero-bounds-comparator', calls)
                     self.assertNotIn('pair-zero-comparator', calls)
                     self.assertNotIn('zeta23-counting-comparator', calls)
@@ -217,7 +224,8 @@ class LeanReproductionTests(unittest.TestCase):
         for flags in [['--reuse-dependencies'],
                       ['--reuse-dependencies', '--triple-kernel-localization-only'],
                       ['--reuse-dependencies', '--triple-sine-measure-only'],
-                      ['--reuse-dependencies', '--triple-main-term-comparison-only']]:
+                      ['--reuse-dependencies', '--triple-main-term-comparison-only'],
+                      ['--reuse-dependencies', '--triple-smoothed-correlation-only']]:
             serial = self.run_workflow(flags)
             parallel = self.run_workflow(flags, jobs=4)
             self.assertEqual(parallel[0], 0)

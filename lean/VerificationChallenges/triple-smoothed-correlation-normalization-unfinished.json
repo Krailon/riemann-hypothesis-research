@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.SmoothedTriple",
+  "solution_module": "VerificationChallenges.SmoothedTripleUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.smoothedTripleStatistic_profile_sum"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

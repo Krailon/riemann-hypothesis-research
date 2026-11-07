@@ -165,12 +165,7 @@ PARTIAL = {
          'pairZero_cutoff_error', 'pairSeries_convergence', 'pairPrimeTerm_at_knot', 'pairZeroTerm_at_one'],
         ['Convergence, continuity, endpoint conventions and the quantitative tail are checked with an existential absolute constant.',
          'The historical effective-constant assertion is not supplied by the unevaluated low-height count.']),
-    'TRIPLE-SMOOTHED-CORRELATION-001': (
-        ['triple_cutoff_limit', 'dominated_occurrence_limit', 'project_actual_summable_norm',
-         'actualRationalKernel_bound', 'rationalTransferTerm_summable', 'rationalTransferSum_cutoff_limit',
-         'actualRationalKernel_integral', 'actualProfile_integrable', 'actual_kernel_uniform_bounds'],
-        [
-         'Formalize the stated main term and named errors; the new real-test global majorants do not evaluate the complex-test errors.']),
+    'TRIPLE-SMOOTHED-CORRELATION-001': (['smoothedTripleTerm_frozen', 'smoothedTripleTerm_summable', 'smoothedTripleTerm_cutoff', 'smoothedTripleTerm_height_cutoff', 'smoothedTripleTerm_profile', 'smoothedTriple_norm_scale', 'smoothedTriple_separate_bound', 'smoothedTriple_errors_nonneg', 'smoothedTriple_uniform_bound', 'smoothedWeightSup_bounds', 'smoothedWeight_derivative_sup', 'smoothedTriple_sup_bound', 'smoothedTripleStatistic_profile_sum', 'smoothedTripleStatistic_limit', 'smoothedTripleStatistic_compact_limit', 'smoothedTripleStatistic_varying_error', 'smoothedTripleStatistic_cutoff', 'smoothedTripleStatistic_height_cutoff', 'smoothedTripleStatistic_zero_test', 'smoothedTriple_theorem'], ['The observable, absolute convergence, cutoffs, exact benchmark, uniform named errors and fixed/varying-family limits are checked. Numerical effectiveness of inherited constants remains uncertified.']),
     'TRIPLE-MASTER-001': (
         ['integral_occurrence_sum', 'integral_occurrence_cutoff_limit', 'actualProfile_integrable',
          'tripleMasterTerm_integrable', 'tripleMasterTerm_bound', 'tripleMaster_finite_kernel',
@@ -950,6 +945,11 @@ def derive():
     validate_comparison(triple_comparison, json.loads(read('lean/VerificationChallenges/triple-main-term-comparison.json')))
     components.extend(triple_comparison['components'])
     names.extend(c['declaration'] for c in triple_comparison['components'])
+    from check_lean_triple_smoothed_correlation import validate as validate_smoothed
+    triple_smoothed = json.loads(read('research/lean-triple-smoothed-correlation-inventory.json'))
+    validate_smoothed(triple_smoothed, json.loads(read('lean/VerificationChallenges/triple-smoothed-correlation.json')))
+    components.extend(triple_smoothed['components'])
+    names.extend(c['declaration'] for c in triple_smoothed['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
     require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms'] + triple_interior_vanishing['imported_axioms'] + triple_test_function['imported_axioms'] + triple_boundary['imported_axioms'] + triple_signed['imported_axioms'] + triple_localization['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
@@ -987,7 +987,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. Next assemble the unit-normalized smoothed triple theorem from these interfaces. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate.')
+        next_step='The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate.')
 
 
 def validate(record):
@@ -997,6 +997,17 @@ def validate(record):
 class CoverageTests(unittest.TestCase):
     def setUp(self):
         self.record = json.loads(RECORD.read_text())
+
+    def test_smoothed_theorem_preserves_effectivity_boundary(self):
+        node = next(n for n in derive()['nodes'] if n['id'] == 'TRIPLE-SMOOTHED-CORRELATION-001')
+        self.assertEqual(node['coverage'], 'partial')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertEqual(node['ledger_status'], 'proved-draft')
+        for name in ['smoothedTriple_theorem', 'smoothedTripleStatistic_profile_sum',
+                     'smoothedTripleTerm_summable', 'smoothedTripleStatistic_height_cutoff',
+                     'smoothedTriple_sup_bound', 'smoothedTripleStatistic_varying_error']:
+            self.assertIn('HigherCorrelations.' + name, node['components'])
+        self.assertTrue(any('effectiveness' in gap for gap in node['remaining_obligations']))
 
     def test_main_term_comparison_preserves_effectivity_boundary(self):
         nodes = {n['id']: n for n in derive()['nodes']}

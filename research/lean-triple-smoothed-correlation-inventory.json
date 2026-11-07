@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "SmoothedTripleDefinitions",
+    "SmoothedTripleConvergence",
+    "SmoothedTripleBounds",
+    "SmoothedTripleTheorem"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.smoothedTripleTerm_frozen",
+      "source": "lean/HigherCorrelations/SmoothedTripleConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleTerm_summable",
+      "source": "lean/HigherCorrelations/SmoothedTripleConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleTerm_cutoff",
+      "source": "lean/HigherCorrelations/SmoothedTripleConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleTerm_height_cutoff",
+      "source": "lean/HigherCorrelations/SmoothedTripleConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleTerm_profile",
+      "source": "lean/HigherCorrelations/SmoothedTripleConvergence.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTriple_norm_scale",
+      "source": "lean/HigherCorrelations/SmoothedTripleBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTriple_separate_bound",
+      "source": "lean/HigherCorrelations/SmoothedTripleBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTriple_errors_nonneg",
+      "source": "lean/HigherCorrelations/SmoothedTripleBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTriple_uniform_bound",
+      "source": "lean/HigherCorrelations/SmoothedTripleBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedWeightSup_bounds",
+      "source": "lean/HigherCorrelations/SmoothedTripleBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedWeight_derivative_sup",
+      "source": "lean/HigherCorrelations/SmoothedTripleBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTriple_sup_bound",
+      "source": "lean/HigherCorrelations/SmoothedTripleBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleStatistic_profile_sum",
+      "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleStatistic_limit",
+      "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleStatistic_compact_limit",
+      "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleStatistic_varying_error",
+      "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleStatistic_cutoff",
+      "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleStatistic_height_cutoff",
+      "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTripleStatistic_zero_test",
+      "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.smoothedTriple_theorem",
+      "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

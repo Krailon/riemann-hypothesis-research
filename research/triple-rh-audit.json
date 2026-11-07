@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "0255c0e493beccac4d23a44297d67202c10a1747d43bdc4f66c7a605449f56ae",
+    "research/theorem-ledger.yaml": "029105d6ee1577e9302877c9148aeba4251e2b06185c0a3e8f0ad0b3066794ce",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "4fac605748385f6fdb66704c0cfda8905669400e8a0c19aa0a7b2505ddf0107d"
+    "research/pair-rh-audit.json": "08a57ee8b3e4c295bae3cc52558b8304677d3cd8617feb8009dcb483fa51630d"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4781,5 +4781,14 @@
     ],
     "report": "research/lean-triple-main-term-comparison.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the exact positive-inverse benchmark comparison, separate inherited signed and frozen-profile estimates, and fixed-test normalized limits. TRIPLE-MAIN-TERM-COMPARISON-001 gains partial component coverage only: numerical effectiveness of inherited constants remains uncertified. Historical ledger statuses, dependency graph and RH-review scope are unchanged. No ordinate-only conclusion or zeta support-boundary extension is inferred."
+  },
+  "ledger_smoothed_theorem_review": {
+    "reviewed_on": "2026-11-07",
+    "previous_ledger_sha256": "0255c0e493beccac4d23a44297d67202c10a1747d43bdc4f66c7a605449f56ae",
+    "added_claim_ids": [
+      "MASTER-SMOOTHED-CORRELATION-FORMAL-001"
+    ],
+    "report": "research/lean-triple-smoothed-correlation.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal entry records the unit-normalized full-zero profile sum, absolute convergence, independent cutoffs, separate and combined uniform bounds, exact supremum specialization, and fixed/general-filter varying-family limits. Historical theorem coverage remains partial for numerical effectiveness of inherited constants. Historical statuses, dependency graph and RH-review scope are unchanged; no ordinate-only or outer support-boundary conclusion is inferred."
   }
 }

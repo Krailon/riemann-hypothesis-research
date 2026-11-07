@@ -1,3 +1,4 @@
+import HigherCorrelations.SmoothedTripleTheorem
 import HigherCorrelations.MainTermComparisonAssembly
 import HigherCorrelations.SineMeasureAssembly
 import HigherCorrelations.TripleKernelLocalizationAssembly
@@ -2340,3 +2341,23 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.mainTermBenchmark_zero
 #print axioms HigherCorrelations.mainTerm_signed_normalized_compact_limit
 #print axioms HigherCorrelations.mainTerm_frozen_normalized_compact_limit
+#print axioms HigherCorrelations.smoothedTripleTerm_frozen
+#print axioms HigherCorrelations.smoothedTripleTerm_summable
+#print axioms HigherCorrelations.smoothedTripleTerm_cutoff
+#print axioms HigherCorrelations.smoothedTripleTerm_height_cutoff
+#print axioms HigherCorrelations.smoothedTripleTerm_profile
+#print axioms HigherCorrelations.smoothedTriple_norm_scale
+#print axioms HigherCorrelations.smoothedTriple_separate_bound
+#print axioms HigherCorrelations.smoothedTriple_errors_nonneg
+#print axioms HigherCorrelations.smoothedTriple_uniform_bound
+#print axioms HigherCorrelations.smoothedWeightSup_bounds
+#print axioms HigherCorrelations.smoothedWeight_derivative_sup
+#print axioms HigherCorrelations.smoothedTriple_sup_bound
+#print axioms HigherCorrelations.smoothedTripleStatistic_profile_sum
+#print axioms HigherCorrelations.smoothedTripleStatistic_limit
+#print axioms HigherCorrelations.smoothedTripleStatistic_compact_limit
+#print axioms HigherCorrelations.smoothedTripleStatistic_varying_error
+#print axioms HigherCorrelations.smoothedTripleStatistic_cutoff
+#print axioms HigherCorrelations.smoothedTripleStatistic_height_cutoff
+#print axioms HigherCorrelations.smoothedTripleStatistic_zero_test
+#print axioms HigherCorrelations.smoothedTriple_theorem

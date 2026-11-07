@@ -1,0 +1,33 @@
+{
+  "challenge_module": "VerificationChallenges.SmoothedTriple",
+  "solution_module": "HigherCorrelations.SmoothedTripleTheorem",
+  "theorem_names": [
+    "HigherCorrelations.smoothedTripleTerm_frozen",
+    "HigherCorrelations.smoothedTripleTerm_summable",
+    "HigherCorrelations.smoothedTripleTerm_cutoff",
+    "HigherCorrelations.smoothedTripleTerm_height_cutoff",
+    "HigherCorrelations.smoothedTripleTerm_profile",
+    "HigherCorrelations.smoothedTriple_norm_scale",
+    "HigherCorrelations.smoothedTriple_separate_bound",
+    "HigherCorrelations.smoothedTriple_errors_nonneg",
+    "HigherCorrelations.smoothedTriple_uniform_bound",
+    "HigherCorrelations.smoothedWeightSup_bounds",
+    "HigherCorrelations.smoothedWeight_derivative_sup",
+    "HigherCorrelations.smoothedTriple_sup_bound",
+    "HigherCorrelations.smoothedTripleStatistic_profile_sum",
+    "HigherCorrelations.smoothedTripleStatistic_limit",
+    "HigherCorrelations.smoothedTripleStatistic_compact_limit",
+    "HigherCorrelations.smoothedTripleStatistic_varying_error",
+    "HigherCorrelations.smoothedTripleStatistic_cutoff",
+    "HigherCorrelations.smoothedTripleStatistic_height_cutoff",
+    "HigherCorrelations.smoothedTripleStatistic_zero_test",
+    "HigherCorrelations.smoothedTriple_theorem"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

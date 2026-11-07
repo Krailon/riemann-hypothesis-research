@@ -35,3 +35,4 @@ import HigherCorrelations.PairDiagonalEndpoints
 import HigherCorrelations.PairPrimeMean
 import HigherCorrelations.PairRHSMean
 import HigherCorrelations.MainTermComparisonAssembly
+import HigherCorrelations.SmoothedTripleTheorem
