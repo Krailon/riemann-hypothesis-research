@@ -331,13 +331,7 @@ PARTIAL = {
          'actual_eight_reflections', 'actual_signed_eight_reflections', 'actual_reflection_preserves_patterns',
          'integral_occurrence_sum'],
         ['Prove the actual absolute Fourier-integral majorant and kernel coefficient bounds.']),
-    'ORDINATE-CONSTANT-KERNEL-001': (
-        ['evaluated_integrals_summable', 'evaluated_integrals_cutoff_limit',
-         'complexFourier_eq_inverse', 'actual_anchored_tail', 'actual_signed_eight_reflections',
-         'actualProfile_symmetric_second', 'actualProfile_symmetric_fourth',
-         'actual_horizontal_uniform_bounds', 'anchored_decay_twentieth_tail'],
-        ['Formalize the kernel replacement bounds and their support-dependent asymptotics.',
-         'No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied.']),
+    'ORDINATE-CONSTANT-KERNEL-001': (['evaluated_integrals_summable', 'evaluated_integrals_cutoff_limit', 'complexFourier_eq_inverse', 'actual_anchored_tail', 'actual_signed_eight_reflections', 'actualProfile_symmetric_second', 'actualProfile_symmetric_fourth', 'actual_horizontal_uniform_bounds', 'anchored_decay_twentieth_tail', 'constantKernelEmpty_profile', 'constantKernelEmpty_symmetric', 'constantKernelEmpty_horizontal_bound', 'constantKernelEmpty_global_bound', 'constantKernel_real_gap_bound', 'constantKernelEmpty_pointwise', 'constantKernelEmpty_origin', 'constantKernelEmpty_coincident', 'constantKernelEmpty_cube_endpoints'], ['Only the pointwise saturated bound is checked, with explicit constant 4096pi. Project-scaled and summed replacement estimates, absolute convergence and splitting identities, and the density-based o(1) conclusion remain unformalized. The kernel-free signed complex-argument error remains open.', 'No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied.']),
     'PAIR-COUNT-001': (
         ['zeroMultiplicity_pos', 'occurrenceCutoff_card', 'occurrence_count_local', 'occurrence_count_interval', 'occurrence_count_logarithmic',
          'zeta23_dyadic_occurrences', 'zeta23_dyadic_closed_occurrences'],
@@ -950,6 +944,11 @@ def derive():
     validate_smoothed(triple_smoothed, json.loads(read('lean/VerificationChallenges/triple-smoothed-correlation.json')))
     components.extend(triple_smoothed['components'])
     names.extend(c['declaration'] for c in triple_smoothed['components'])
+    from check_lean_constant_kernel import validate as validate_constant
+    constant = json.loads(read('research/lean-constant-kernel-inventory.json'))
+    validate_constant(constant, json.loads(read('lean/VerificationChallenges/constant-kernel.json')))
+    components.extend(constant['components'])
+    names.extend(c['declaration'] for c in constant['components'])
     require(len(names) == len(set(names)), 'duplicate cross-milestone declaration')
     axioms = re.findall(r'^#print axioms (\S+)$', read('lean/HigherCorrelations/AxiomReport.lean'), re.M)
     require(set(names + actual['imported_axioms'] + profile['imported_axioms'] + uniform['imported_axioms'] + pair['imported_axioms'] + mellin['imported_axioms'] + exact['imported_axioms'] + pair_uniform['imported_axioms'] + meanvalue['imported_axioms'] + sieve['imported_axioms'] + diagonal['imported_axioms'] + prime_mean['imported_axioms'] + rhs_mean['imported_axioms'] + zeta23['imported_axioms'] + pair_zero['imported_axioms'] + pair_zero_bounds['imported_axioms'] + pair_zero_comparison['imported_axioms'] + pair_asymptotic['imported_axioms'] + pair_fourier['imported_axioms'] + triple_master['imported_axioms'] + triple_budget['imported_axioms'] + triple_mixed_diagonal['imported_axioms'] + triple_smoothing['imported_axioms'] + triple_resonance_decay['imported_axioms'] + triple_retained['imported_axioms'] + triple_interior_vanishing['imported_axioms'] + triple_test_function['imported_axioms'] + triple_boundary['imported_axioms'] + triple_signed['imported_axioms'] + triple_localization['imported_axioms']) <= set(axioms) and len(axioms) == len(set(axioms)), 'axiom report coverage')
@@ -987,7 +986,7 @@ def derive():
         assumptions=['UNCONDITIONAL'], roots=ROOTS, analytic_proof_certificate=False,
         whole_graph_formalized=False, nodes=nodes, edges=edges,
         root_to_inputs_order=order, components=components,
-        next_step='The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate.')
+        next_step='The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Pointwise constant-kernel replacement is checked with explicit constant 4096pi, including closed-cube endpoints. The project-scaled and summed replacement bounds are the next steps. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate.')
 
 
 def validate(record):
@@ -997,6 +996,12 @@ def validate(record):
 class CoverageTests(unittest.TestCase):
     def setUp(self):
         self.record = json.loads(RECORD.read_text())
+
+    def test_constant_kernel_partial_boundary(self):
+        node = next(n for n in derive()['nodes'] if n['id'] == 'ORDINATE-CONSTANT-KERNEL-001')
+        self.assertFalse(node['whole_claim_formalized'])
+        self.assertIn('HigherCorrelations.constantKernelEmpty_pointwise', node['components'])
+        self.assertIn('summed replacement', node['remaining_obligations'][0])
 
     def test_smoothed_theorem_preserves_effectivity_boundary(self):
         node = next(n for n in derive()['nodes'] if n['id'] == 'TRIPLE-SMOOTHED-CORRELATION-001')

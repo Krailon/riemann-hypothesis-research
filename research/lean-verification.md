@@ -648,3 +648,14 @@ uniform additive bound, fixed-test limits and general-filter varying-family
 error limit. The two named envelopes remain explicit. Uniform constants retain
 their inherited existential status, so historical claim coverage remains
 partial for effectiveness. See [the formalization record](lean-triple-smoothed-correlation.md).
+
+## Pointwise constant-kernel replacement
+
+The `--constant-kernel-only` suite checks nine public statements in three
+modules and seven rejection controls. The exact eight-reflection average,
+anchor-first coordinate translation, horizontal quadratic bound and real-gap
+expansion give the saturated pointwise estimate with explicit constant
+4096π. The origin, coincident gaps and closed-cube endpoints are included.
+`ORDINATE-CONSTANT-KERNEL-001` gains pointwise coverage only; the project-scaled
+and summed replacement estimates remain separate, as does the open kernel-free
+signed error. See [the formalization record](lean-constant-kernel.md).

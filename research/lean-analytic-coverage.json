@@ -159,10 +159,19 @@
         "HigherCorrelations.actualProfile_symmetric_second",
         "HigherCorrelations.actualProfile_symmetric_fourth",
         "HigherCorrelations.actual_horizontal_uniform_bounds",
-        "HigherCorrelations.anchored_decay_twentieth_tail"
+        "HigherCorrelations.anchored_decay_twentieth_tail",
+        "HigherCorrelations.constantKernelEmpty_profile",
+        "HigherCorrelations.constantKernelEmpty_symmetric",
+        "HigherCorrelations.constantKernelEmpty_horizontal_bound",
+        "HigherCorrelations.constantKernelEmpty_global_bound",
+        "HigherCorrelations.constantKernel_real_gap_bound",
+        "HigherCorrelations.constantKernelEmpty_pointwise",
+        "HigherCorrelations.constantKernelEmpty_origin",
+        "HigherCorrelations.constantKernelEmpty_coincident",
+        "HigherCorrelations.constantKernelEmpty_cube_endpoints"
       ],
       "remaining_obligations": [
-        "Formalize the kernel replacement bounds and their support-dependent asymptotics.",
+        "Only the pointwise saturated bound is checked, with explicit constant 4096pi. Project-scaled and summed replacement estimates, absolute convergence and splitting identities, and the density-based o(1) conclusion remain unformalized. The kernel-free signed complex-argument error remains open.",
         "No interchange of the kernel-free infinite zero sum with the unevaluated Fourier integral is supplied."
       ]
     },
@@ -13032,7 +13041,52 @@
       "declaration": "HigherCorrelations.smoothedTriple_theorem",
       "source": "lean/HigherCorrelations/SmoothedTripleTheorem.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_profile",
+      "source": "lean/HigherCorrelations/ConstantKernelReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_symmetric",
+      "source": "lean/HigherCorrelations/ConstantKernelReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_horizontal_bound",
+      "source": "lean/HigherCorrelations/ConstantKernelReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_global_bound",
+      "source": "lean/HigherCorrelations/ConstantKernelReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernel_real_gap_bound",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_pointwise",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_origin",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_coincident",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_cube_endpoints",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Pointwise constant-kernel replacement is checked with explicit constant 4096pi, including closed-cube endpoints. The project-scaled and summed replacement bounds are the next steps. Numerical effectiveness of summed constants and the ordinate-only signed error remain separate."
 }

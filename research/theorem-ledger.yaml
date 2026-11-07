@@ -6069,3 +6069,53 @@ claims:
       imported_inputs: "Checked main-term comparison, frozen-profile weighted summability and cutoff infrastructure, smoothing bounds and signed seminorm bounds; Mathlib supremum properties, norm scaling, finite-dimensional calculus and filter squeeze. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "Separate witnesses are scaled exactly by 2/3; their maximum yields the combined additive constant. The derivative L1 norm and derivative supremum are distinct. Numerical effectiveness remains an outstanding qualification of the historical statement."
       baseline_audit_coverage: "The previous ledger is an unchanged byte prefix. TRIPLE-SMOOTHED-CORRELATION-001 gains component coverage for the assembled mathematical theorem, while its effectiveness qualification remains outstanding. Historical statuses, dependency graph and RH-review scope are unchanged."
+
+  - id: MASTER-CONSTANT-KERNEL-POINTWISE-FORMAL-001
+    title: Effective pointwise eight-reflection constant-kernel replacement
+    kind: theorem
+    statement: |
+      For arbitrary real gaps a,d and an anchor-first horizontal vector
+      delta : Fin(3) -> R with |delta_j|<=1/2, define
+      J_empty=(1/8) sum_{e:Fin(3)->Bool}
+        J(a,d; sign(e_1)delta_1, sign(e_2)delta_2, sign(e_0)delta_0),
+      where sign(false)=1 and sign(true)=-1. This is exactly the empty
+      signCoefficient of the rational profile, with positive imaginary
+      anchor center and negative imaginary non-anchor centers. Set J*=3pi/8
+      and Q=a^2+d^2+sum_j delta_j^2. Then
+        |J_empty-J*| <= 4096pi min(Q,1).
+      Pairing each sign vector with its opposite gives the symmetric
+      horizontal-profile average. Its distance from J(a,d;0,0,0) is at most
+      3072pi sum_j delta_j^2, uniformly in all real gaps. If a^2+d^2<=1,
+      the real-profile distance from J* is at most 4pi(a^2+d^2).
+      Globally |J_empty|<=7pi/9; combining these bounds proves saturation.
+      The origin has J_empty=J*. Coincident gaps and all eight horizontal
+      corners are checked explicitly. All faces, edges and Q=1 are included
+      in the main estimate. The constant 4096pi is explicit and nonoptimal.
+      No zero sum, independent-reflection regrouping of diagonal subseries,
+      Fourier test, support restriction, zero density or height limit is used.
+      This formalizes only the pointwise component of
+      ORDINATE-CONSTANT-KERNEL-001. The project-scaled and summed replacement
+      estimates, absolute convergence and splitting identities, and the
+      density-based vanishing conclusion remain separate. The kernel-free
+      signed complex-argument error tending to zero remains open.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [RATIONAL-KERNEL-BOUNDS-001, PROFILE-SYMMETRIC-REMAINDERS-001, MASTER-CRITICAL-PROFILE-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ConstantKernelBounds.lean
+      label: HigherCorrelations.constantKernelEmpty_pointwise
+      companion_declarations: [constantKernelEmpty_profile, constantKernelEmpty_symmetric, constantKernelEmpty_horizontal_bound, constantKernelEmpty_global_bound, constantKernel_real_gap_bound, constantKernelEmpty_origin, constantKernelEmpty_coincident, constantKernelEmpty_cube_endpoints]
+      bookkeeping: research/lean-constant-kernel.md
+      inventory: research/lean-constant-kernel-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 70289ff8252a86c643518566433651a427aa333520502a4429f53760246ca34e
+    limit_order: "Finite eight-sign averaging and pointwise inequalities only. The symmetric Taylor and critical-profile remainders are already checked inputs. No zero-sum, integration or height-limit interchange is introduced."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All nine public statements in three modules match definition-only expected contracts. Seven unfinished-proof rejection controls, combined project build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Checked symmetric second horizontal Taylor bound, rational global bound and critical-parameter quadratic expansion; Mathlib finite-sum reindexing, norm inequalities and real square-root algebra. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Horizontal 3072pi, local real-gap 4pi, global profile 7pi/9 and final 4096pi are explicit. No numerical optimization or inherited existential constant is used."
+      baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. ORDINATE-CONSTANT-KERNEL-001 gains pointwise component coverage only. Historical statuses, dependency graph and RH-review scope remain unchanged. No summed replacement or ordinate-only asymptotic follows."

@@ -36,3 +36,4 @@ import HigherCorrelations.PairPrimeMean
 import HigherCorrelations.PairRHSMean
 import HigherCorrelations.MainTermComparisonAssembly
 import HigherCorrelations.SmoothedTripleTheorem
+import HigherCorrelations.ConstantKernelBounds

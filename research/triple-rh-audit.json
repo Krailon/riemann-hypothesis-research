@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "029105d6ee1577e9302877c9148aeba4251e2b06185c0a3e8f0ad0b3066794ce",
+    "research/theorem-ledger.yaml": "3172c8c9fe35bd49172f4bad6b8e1caac370f5b66924f38c6d3a1e56278913f2",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "08a57ee8b3e4c295bae3cc52558b8304677d3cd8617feb8009dcb483fa51630d"
+    "research/pair-rh-audit.json": "997d18d10166aa1f247c596605f29d4f561d6fc27b22194fd5add8e2fdf04258"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4790,5 +4790,14 @@
     ],
     "report": "research/lean-triple-smoothed-correlation.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal entry records the unit-normalized full-zero profile sum, absolute convergence, independent cutoffs, separate and combined uniform bounds, exact supremum specialization, and fixed/general-filter varying-family limits. Historical theorem coverage remains partial for numerical effectiveness of inherited constants. Historical statuses, dependency graph and RH-review scope are unchanged; no ordinate-only or outer support-boundary conclusion is inferred."
+  },
+  "ledger_constant_kernel_pointwise_review": {
+    "reviewed_on": "2026-11-07",
+    "previous_ledger_sha256": "029105d6ee1577e9302877c9148aeba4251e2b06185c0a3e8f0ad0b3066794ce",
+    "added_claim_ids": [
+      "MASTER-CONSTANT-KERNEL-POINTWISE-FORMAL-001"
+    ],
+    "report": "research/lean-constant-kernel.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the pointwise eight-reflection replacement with explicit constant 4096pi, exact anchor-first profile translation, and origin, coincident-gap and closed-cube endpoint specializations. ORDINATE-CONSTANT-KERNEL-001 gains pointwise component coverage only. Historical statuses, dependency graph and RH-review scope are unchanged. Scaled and summed replacement estimates and the open signed complex-argument error remain separate."
   }
 }

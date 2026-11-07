@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "ConstantKernelDefinitions",
+    "ConstantKernelReflection",
+    "ConstantKernelBounds"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_profile",
+      "source": "lean/HigherCorrelations/ConstantKernelReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_symmetric",
+      "source": "lean/HigherCorrelations/ConstantKernelReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_horizontal_bound",
+      "source": "lean/HigherCorrelations/ConstantKernelReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_global_bound",
+      "source": "lean/HigherCorrelations/ConstantKernelReflection.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernel_real_gap_bound",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_pointwise",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_origin",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_coincident",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_cube_endpoints",
+      "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

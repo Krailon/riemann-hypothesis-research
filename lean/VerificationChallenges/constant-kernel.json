@@ -1,0 +1,22 @@
+{
+  "challenge_module": "VerificationChallenges.ConstantKernel",
+  "solution_module": "HigherCorrelations.ConstantKernelBounds",
+  "theorem_names": [
+    "HigherCorrelations.constantKernelEmpty_profile",
+    "HigherCorrelations.constantKernelEmpty_symmetric",
+    "HigherCorrelations.constantKernelEmpty_horizontal_bound",
+    "HigherCorrelations.constantKernelEmpty_global_bound",
+    "HigherCorrelations.constantKernel_real_gap_bound",
+    "HigherCorrelations.constantKernelEmpty_pointwise",
+    "HigherCorrelations.constantKernelEmpty_origin",
+    "HigherCorrelations.constantKernelEmpty_coincident",
+    "HigherCorrelations.constantKernelEmpty_cube_endpoints"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

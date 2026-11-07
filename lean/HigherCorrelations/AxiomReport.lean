@@ -1,3 +1,4 @@
+import HigherCorrelations.ConstantKernelBounds
 import HigherCorrelations.SmoothedTripleTheorem
 import HigherCorrelations.MainTermComparisonAssembly
 import HigherCorrelations.SineMeasureAssembly
@@ -2361,3 +2362,13 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.smoothedTripleStatistic_height_cutoff
 #print axioms HigherCorrelations.smoothedTripleStatistic_zero_test
 #print axioms HigherCorrelations.smoothedTriple_theorem
+
+#print axioms HigherCorrelations.constantKernelEmpty_profile
+#print axioms HigherCorrelations.constantKernelEmpty_symmetric
+#print axioms HigherCorrelations.constantKernelEmpty_horizontal_bound
+#print axioms HigherCorrelations.constantKernelEmpty_global_bound
+#print axioms HigherCorrelations.constantKernel_real_gap_bound
+#print axioms HigherCorrelations.constantKernelEmpty_pointwise
+#print axioms HigherCorrelations.constantKernelEmpty_origin
+#print axioms HigherCorrelations.constantKernelEmpty_coincident
+#print axioms HigherCorrelations.constantKernelEmpty_cube_endpoints

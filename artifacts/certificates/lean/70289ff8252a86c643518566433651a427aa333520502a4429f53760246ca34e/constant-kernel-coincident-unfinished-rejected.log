@@ -1,0 +1,96 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.ConstantKernel
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8935/8935] Replayed VerificationChallenges.ConstantKernel
+warning: lean/VerificationChallenges/ConstantKernel.lean:5:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:10:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:15:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:23:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:26:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:31:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:33:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:38:8: declaration uses `sorry`
+Build completed successfully (8935 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.constantKernelEmpty_coincident, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.ConstantKernel
+Building VerificationChallenges.ConstantKernelUnfinished
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-a0y1ayiv/worker-4/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8935/8935] Replayed VerificationChallenges.ConstantKernelUnfinished
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:5:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:10:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:15:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:23:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:26:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:31:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:33:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:38:8: declaration uses `sorry`
+Build completed successfully (8935 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.constantKernelEmpty_coincident, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.ConstantKernelUnfinished
+uncaught exception: Illegal axiom detected: 'sorryAx'

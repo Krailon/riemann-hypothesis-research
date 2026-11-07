@@ -73,6 +73,20 @@ class LeanReproductionTests(unittest.TestCase):
             report = json.loads(reports[0].read_text())
             return code, calls, report, preflight.call_count
 
+    def test_constant_kernel_focus(self):
+        code, calls, report, preflight = self.run_workflow(
+            ['--reuse-dependencies', '--constant-kernel-only'], jobs=4)
+        self.assertEqual(code, 0)
+        self.assertEqual(preflight, 1)
+        self.assertIn('constant-kernel-comparator', calls)
+        self.assertEqual(len([c for c in calls if c.startswith('constant-kernel-')
+                              and c.endswith('-unfinished-rejected')]), 7)
+        self.assertNotIn('triple-smoothed-correlation-comparator', calls)
+        self.assertNotIn('resolve', calls)
+        self.assertIn('project-build', calls)
+        self.assertIn('axioms', calls)
+        self.assertIn('4096pi', report['verification_scope'])
+
     def test_reuse_preserves_entire_verification_scope(self):
         normal = self.run_workflow([])
         reuse = self.run_workflow(['--reuse-dependencies'])
