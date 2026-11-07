@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "MainTermComparisonDefinitions",
+    "MainTermBenchmarkComparison",
+    "MainTermSupportComparison",
+    "MainTermWeightedComparison",
+    "MainTermComparisonAssembly"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.mainTermFrequencyTest_apply",
+      "source": "lean/HigherCorrelations/MainTermBenchmarkComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTermPhysicalTest_apply",
+      "source": "lean/HigherCorrelations/MainTermBenchmarkComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTermPhysicalTest_fourier",
+      "source": "lean/HigherCorrelations/MainTermBenchmarkComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR2_reflection",
+      "source": "lean/HigherCorrelations/MainTermBenchmarkComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineR3_reflection",
+      "source": "lean/HigherCorrelations/MainTermBenchmarkComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_reflection",
+      "source": "lean/HigherCorrelations/MainTermBenchmarkComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_inverse_pairing",
+      "source": "lean/HigherCorrelations/MainTermBenchmarkComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineComplement_gauge",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_planar_zero",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_line_weight",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmark_trace_integrable",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.sineBenchmarkSpectrum_closed",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTermBenchmark_closed",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTermBenchmark_margin",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTermComparison_exact",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTermComparison_margin",
+      "source": "lean/HigherCorrelations/MainTermSupportComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_signed_bound",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_frozen_bound",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_frozen_bound_deriv",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_signed_limit",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_frozen_limit",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_signed_compact_limit",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_frozen_compact_limit",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_signed_normalized_limit",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_frozen_normalized_limit",
+      "source": "lean/HigherCorrelations/MainTermWeightedComparison.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTermPhysicalTest_zero",
+      "source": "lean/HigherCorrelations/MainTermComparisonAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTermBenchmark_zero",
+      "source": "lean/HigherCorrelations/MainTermComparisonAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_signed_normalized_compact_limit",
+      "source": "lean/HigherCorrelations/MainTermComparisonAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mainTerm_frozen_normalized_compact_limit",
+      "source": "lean/HigherCorrelations/MainTermComparisonAssembly.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": []
+}

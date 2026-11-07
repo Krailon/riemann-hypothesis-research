@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "b6d835743199906d331e8a62395f24021e0e704d2704f9e228ccf8892fc3d405",
+    "research/theorem-ledger.yaml": "0255c0e493beccac4d23a44297d67202c10a1747d43bdc4f66c7a605449f56ae",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "71c5cadcddfa7b5a639c8f5bdaecbe5bd39233f69cf7b7688f481860d443fa64"
+    "research/pair-rh-audit.json": "4fac605748385f6fdb66704c0cfda8905669400e8a0c19aa0a7b2505ddf0107d"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4772,5 +4772,14 @@
     ],
     "report": "research/lean-triple-sine-measure.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records all five Fourier rows, the tempered benchmark, covariance subtraction, ordinary and factorial cumulants, and closed-hexagon cancellation. The analytic coverage table records complete component coverage of TRIPLE-SINE-MEASURE-001. Historical ledger statuses, dependency graph and RH-review scope are unchanged. Main-term comparison remains separate; no zeta support-boundary extension or ordinate-only conclusion is inferred."
+  },
+  "ledger_main_term_comparison_review": {
+    "reviewed_on": "2026-11-07",
+    "previous_ledger_sha256": "b6d835743199906d331e8a62395f24021e0e704d2704f9e228ccf8892fc3d405",
+    "added_claim_ids": [
+      "MASTER-MAIN-TERM-COMPARISON-FORMAL-001"
+    ],
+    "report": "research/lean-triple-main-term-comparison.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the exact positive-inverse benchmark comparison, separate inherited signed and frozen-profile estimates, and fixed-test normalized limits. TRIPLE-MAIN-TERM-COMPARISON-001 gains partial component coverage only: numerical effectiveness of inherited constants remains uncertified. Historical ledger statuses, dependency graph and RH-review scope are unchanged. No ordinate-only conclusion or zeta support-boundary extension is inferred."
   }
 }

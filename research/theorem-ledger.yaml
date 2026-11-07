@@ -5937,3 +5937,66 @@ claims:
       imported_inputs: "Checked sinc and triangle pairings, FourierPlane coordinate bridge, signed gauge identities and TriplePattern vocabulary; Mathlib Schwartz restrictions, Fubini, dominated convergence, integrable Fourier duality and inversion, and tempered distributions. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "Exact formulas and closed endpoints; explicit majorant for marginal continuity and conservative bounds |R2|<=2, |R3|<=6. No numerical approximation or asymptotic error constant."
       baseline_audit_coverage: "The preceding ledger remains an unchanged byte prefix. The analytic coverage table now records complete component coverage of TRIPLE-SINE-MEASURE-001; historical ledger statuses, dependency graph and RH-review scope remain unchanged. TRIPLE-MAIN-TERM-COMPARISON-001 remains a subsequent task. No zeta support-boundary extension or ordinate-only conclusion is inferred."
+
+  - id: MASTER-MAIN-TERM-COMPARISON-FORMAL-001
+    title: Exact sine-benchmark identification and inherited weighted asymptotic bounds
+    kind: theorem
+    statement: |
+      Let phi be any complex smooth compactly supported function on R^2.
+      Its FourierPlane lift is a Schwartz function, and its positive-inverse
+      Fourier transform F agrees pointwise on real arguments with the existing
+      complexFourier(phi). The forward transform of F is exactly the lift.
+      The all-ordered five-partition sine benchmark is invariant under
+      simultaneous reflection, so its inverse-transform pairing equals its
+      checked spectral pairing without any symmetry or reality assumption on phi.
+      For support in h=max(|xi|,|eta|,|xi+eta|)<=1,
+      S3[F]=phi(0,0)+integral |r|(phi(r,0)+phi(0,r)+phi(r,-r)) dr,
+      and signedLimit(phi)=(3/2) S3[F]. The planar cumulant term vanishes
+      pointwise on the support, and each line weight 1-tau(r) is |r| there.
+      All three weighted traces are integrable before combining their integrals.
+      These deterministic identities include the axes, origin and h=1.
+      For TripleBudgetWeight smoothing omega, T>=2pi exp(1), kappa>0 and
+      support phi in h<=1-kappa, let B=T/(2pi), b=log B, L=log(2T+2).
+      Each estimate below has absolute positive constants (denoted A,C),
+      chosen before omega,phi,smoothing bounds,margin and height:
+      |signedStatistic(omega,phi,T)-(3/2)S3[F]|
+        <= A signedC1(phi)(1+M0+fourierDerivativeL1(omega,1))
+             (1/b+B^(-kappa)L^3),
+      |frozenStatistic(omega,phi,T)-(3/2)S3[F]|
+        <= A signedC1(phi)(1+M0+fourierDerivativeL1(omega,1))
+             (1/b+B^(-kappa)L^3)
+           +C tripleTestL1(phi)(M0+M1)B^(-kappa)L^3.
+      M0>=0 bounds |omega|; M1 is a nonnegative Lipschitz bound. A separate
+      wrapper derives the Lipschitz condition from |omega'|<=M1. The signed
+      bound alone also accepts the weaker upper bound omega<=M0.
+      Both estimates inherit their existing witnesses without enlargement.
+      For fixed smoothing,test and positive margin, both statistics converge
+      to (3/2)S3[F], and their multiples by 2/3 converge to S3[F]. Compact
+      support in h<1 supplies a fixed margin, yielding both compact-interior
+      limits and their normalized versions. Zero tests give zero F and benchmark.
+      All full complex zero arguments and horizontal weights in the existing
+      native and frozen statistics remain unchanged. No new zero-sum interchange
+      is used. Uniform constants retain their inherited existential status;
+      numerical effectiveness, varying-margin limits, outer-boundary zeta
+      asymptotics, ordinate-only statistics and weighted zeta cumulants are
+      not asserted by this formal claim.
+    status: formalized
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=1 for deterministic comparison; h<=1-kappa with kappa>0 for weighted asymptotics)"]
+    dependencies: [MASTER-SINE-BENCHMARK-FORMAL-001, MASTER-FOURIER-DECAY-FORMAL-001, MASTER-SIGNED-SECTORS-FORMAL-001, MASTER-PROFILE-TRANSFER-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/MainTermWeightedComparison.lean
+      label: HigherCorrelations.mainTerm_frozen_bound
+      companion_declarations: [mainTermFrequencyTest_apply, mainTermPhysicalTest_apply, mainTermPhysicalTest_fourier, sineR2_reflection, sineR3_reflection, sineBenchmark_reflection, sineBenchmark_inverse_pairing, sineComplement_gauge, sineBenchmark_planar_zero, sineBenchmark_line_weight, sineBenchmark_trace_integrable, sineBenchmarkSpectrum_closed, mainTermBenchmark_closed, mainTermBenchmark_margin, mainTermComparison_exact, mainTermComparison_margin, mainTerm_signed_bound, mainTerm_frozen_bound_deriv, mainTerm_signed_limit, mainTerm_frozen_limit, mainTerm_signed_compact_limit, mainTerm_frozen_compact_limit, mainTerm_signed_normalized_limit, mainTerm_frozen_normalized_limit, mainTermPhysicalTest_zero, mainTermBenchmark_zero, mainTerm_signed_normalized_compact_limit, mainTerm_frozen_normalized_compact_limit]
+      inventory: research/lean-triple-main-term-comparison-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: bdd800654a4fb97b74995d03d6022ea9fdd58512e15dfa3cb134a6af7a9e7b93
+    limit_order: "The deterministic Schwartz pairing has no asymptotic parameter. Absolute convergence precedes combining line integrals; reflection is a measure-preserving change of variables. Weighted bounds reuse established estimates at fixed height and introduce no sum interchange. Fix smoothing,test and a positive support margin before T tends to infinity; compact-interior tests supply that margin first."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "All 29 public statements in five modules match definition-only contracts. Eight unfinished-proof controls cover the Fourier adapter, reflection, support cancellation, exact comparison, both weighted estimates and both normalized limits. Focused reproduction, combined project build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Checked sine-benchmark Fourier identity and tempered pairings, project complexFourier bridge, signed asymptotic and frozen-profile transfer bounds and limits; Mathlib Schwartz inversion, measure-preserving reflection, Bochner integral linearity and derivative-to-Lipschitz control. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "The exact 3/2 identification introduces no error and preserves the inherited witnesses. The derivative supremum bound remains separate from the derivative L1 norm. Numerical effectiveness of inherited uniform constants is not certified. The earlier finite-height local coefficient remains 3b/(2 log T)."
+      baseline_audit_coverage: "The previous ledger is preserved as an unchanged byte prefix. TRIPLE-MAIN-TERM-COMPARISON-001 gains partial component coverage, retaining its historical effectiveness qualification. Historical claim statuses, dependency graph and RH-review scope are unchanged. No ordinate-only conclusion, zeta support-boundary extension or weighted zeta cumulant cancellation is inferred."

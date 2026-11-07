@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.MainTermComparison",
+  "solution_module": "VerificationChallenges.MainTermComparisonUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.mainTerm_frozen_bound_deriv"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

@@ -1,3 +1,4 @@
+import HigherCorrelations.MainTermComparisonAssembly
 import HigherCorrelations.SineMeasureAssembly
 import HigherCorrelations.TripleKernelLocalizationAssembly
 import HigherCorrelations.TripleSignedAssembly
@@ -2310,3 +2311,32 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.sineCovarianceLift_tempered
 #print axioms HigherCorrelations.sineBenchmark_distribution_moment_cumulant
 #print axioms HigherCorrelations.sineBenchmark_manuscript
+#print axioms HigherCorrelations.mainTermFrequencyTest_apply
+#print axioms HigherCorrelations.mainTermPhysicalTest_apply
+#print axioms HigherCorrelations.mainTermPhysicalTest_fourier
+#print axioms HigherCorrelations.sineR2_reflection
+#print axioms HigherCorrelations.sineR3_reflection
+#print axioms HigherCorrelations.sineBenchmark_reflection
+#print axioms HigherCorrelations.sineBenchmark_inverse_pairing
+#print axioms HigherCorrelations.sineComplement_gauge
+#print axioms HigherCorrelations.sineBenchmark_planar_zero
+#print axioms HigherCorrelations.sineBenchmark_line_weight
+#print axioms HigherCorrelations.sineBenchmark_trace_integrable
+#print axioms HigherCorrelations.sineBenchmarkSpectrum_closed
+#print axioms HigherCorrelations.mainTermBenchmark_closed
+#print axioms HigherCorrelations.mainTermBenchmark_margin
+#print axioms HigherCorrelations.mainTermComparison_exact
+#print axioms HigherCorrelations.mainTermComparison_margin
+#print axioms HigherCorrelations.mainTerm_signed_bound
+#print axioms HigherCorrelations.mainTerm_frozen_bound
+#print axioms HigherCorrelations.mainTerm_frozen_bound_deriv
+#print axioms HigherCorrelations.mainTerm_signed_limit
+#print axioms HigherCorrelations.mainTerm_frozen_limit
+#print axioms HigherCorrelations.mainTerm_signed_compact_limit
+#print axioms HigherCorrelations.mainTerm_frozen_compact_limit
+#print axioms HigherCorrelations.mainTerm_signed_normalized_limit
+#print axioms HigherCorrelations.mainTerm_frozen_normalized_limit
+#print axioms HigherCorrelations.mainTermPhysicalTest_zero
+#print axioms HigherCorrelations.mainTermBenchmark_zero
+#print axioms HigherCorrelations.mainTerm_signed_normalized_compact_limit
+#print axioms HigherCorrelations.mainTerm_frozen_normalized_compact_limit

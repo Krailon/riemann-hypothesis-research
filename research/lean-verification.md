@@ -625,3 +625,16 @@ TRIPLE-SINE-MEASURE-001. Its historical ledger status remains unchanged.
 Use `--reuse-dependencies --triple-sine-measure-only`. The main-term comparison
 and zeta support-boundary extension remain separate. Details are in the
 [sine-measure note](lean-triple-sine-measure.md).
+
+## Exact and weighted main-term comparison
+
+The dedicated `--triple-main-term-comparison-only` suite checks 29 statements
+in five modules and eight unfinished-proof rejection controls. It connects the
+positive-inverse compact Fourier test to the five-partition sine benchmark,
+proves reflection and closed-hexagon cancellation without test symmetry, and
+rewrites the signed and frozen weighted bounds with main term (3/2) S3[F].
+Both fixed-margin and compact-interior limits, including normalization by 2/3,
+are checked. The earlier local factor 3b/(2 log T) is unchanged. The coverage
+of `TRIPLE-MAIN-TERM-COMPARISON-001` remains partial because numerical
+effectiveness of inherited existential uniform constants is not certified.
+See [the comparison record](lean-triple-main-term-comparison.md).

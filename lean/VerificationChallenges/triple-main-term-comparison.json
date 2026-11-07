@@ -1,0 +1,42 @@
+{
+  "challenge_module": "VerificationChallenges.MainTermComparison",
+  "solution_module": "HigherCorrelations.MainTermComparisonAssembly",
+  "theorem_names": [
+    "HigherCorrelations.mainTermFrequencyTest_apply",
+    "HigherCorrelations.mainTermPhysicalTest_apply",
+    "HigherCorrelations.mainTermPhysicalTest_fourier",
+    "HigherCorrelations.sineR2_reflection",
+    "HigherCorrelations.sineR3_reflection",
+    "HigherCorrelations.sineBenchmark_reflection",
+    "HigherCorrelations.sineBenchmark_inverse_pairing",
+    "HigherCorrelations.sineComplement_gauge",
+    "HigherCorrelations.sineBenchmark_planar_zero",
+    "HigherCorrelations.sineBenchmark_line_weight",
+    "HigherCorrelations.sineBenchmark_trace_integrable",
+    "HigherCorrelations.sineBenchmarkSpectrum_closed",
+    "HigherCorrelations.mainTermBenchmark_closed",
+    "HigherCorrelations.mainTermBenchmark_margin",
+    "HigherCorrelations.mainTermComparison_exact",
+    "HigherCorrelations.mainTermComparison_margin",
+    "HigherCorrelations.mainTerm_signed_bound",
+    "HigherCorrelations.mainTerm_frozen_bound",
+    "HigherCorrelations.mainTerm_frozen_bound_deriv",
+    "HigherCorrelations.mainTerm_signed_limit",
+    "HigherCorrelations.mainTerm_frozen_limit",
+    "HigherCorrelations.mainTerm_signed_compact_limit",
+    "HigherCorrelations.mainTerm_frozen_compact_limit",
+    "HigherCorrelations.mainTerm_signed_normalized_limit",
+    "HigherCorrelations.mainTerm_frozen_normalized_limit",
+    "HigherCorrelations.mainTermPhysicalTest_zero",
+    "HigherCorrelations.mainTermBenchmark_zero",
+    "HigherCorrelations.mainTerm_signed_normalized_compact_limit",
+    "HigherCorrelations.mainTerm_frozen_normalized_compact_limit"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
