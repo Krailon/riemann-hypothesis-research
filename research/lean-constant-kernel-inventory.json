@@ -3,7 +3,18 @@
   "modules": [
     "ConstantKernelDefinitions",
     "ConstantKernelReflection",
-    "ConstantKernelBounds"
+    "ConstantKernelBounds",
+    "ConstantReplacementDefinitions",
+    "ConstantReplacementScaling",
+    "ReplacementPartialCalculus",
+    "ReplacementExponential",
+    "ReplacementFourierDecay",
+    "ReplacementSignAmplitude",
+    "ReplacementAmplitudeDecay",
+    "ReplacementTupleDecay",
+    "ReplacementSummability",
+    "ReplacementSummedBounds",
+    "ReplacementAssembly"
   ],
   "components": [
     {
@@ -49,6 +60,301 @@
     {
       "declaration": "HigherCorrelations.constantKernelEmpty_cube_endpoints",
       "source": "lean/HigherCorrelations/ConstantKernelBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementRadius_nonneg",
+      "source": "lean/HigherCorrelations/ConstantReplacementScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementHorizontal_bounds",
+      "source": "lean/HigherCorrelations/ConstantReplacementScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.constantKernelEmpty_scaled",
+      "source": "lean/HigherCorrelations/ConstantReplacementScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementKernel_scaled",
+      "source": "lean/HigherCorrelations/ConstantReplacementScaling.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementPartial_smooth",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementDeriv_succ",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementDeriv_succ_right",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementDeriv_smooth",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementDeriv_support",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementDeriv_compact",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementDeriv_integrable",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementDeriv_add",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementDeriv_product_bound",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementP24_nonneg",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementP24_pure",
+      "source": "lean/HigherCorrelations/ReplacementPartialCalculus.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementExpRemainder_smooth",
+      "source": "lean/HigherCorrelations/ReplacementExponential.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementPartial_exp",
+      "source": "lean/HigherCorrelations/ReplacementExponential.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementExpRemainder_first",
+      "source": "lean/HigherCorrelations/ReplacementExponential.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementExpRemainder_higher",
+      "source": "lean/HigherCorrelations/ReplacementExponential.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementExpRemainder_jet_bound",
+      "source": "lean/HigherCorrelations/ReplacementExponential.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementFourier_partial",
+      "source": "lean/HigherCorrelations/ReplacementFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementFourier_power",
+      "source": "lean/HigherCorrelations/ReplacementFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementFourier_L1",
+      "source": "lean/HigherCorrelations/ReplacementFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementFourier_decay",
+      "source": "lean/HigherCorrelations/ReplacementFourierDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementLinear_apply",
+      "source": "lean/HigherCorrelations/ReplacementSignAmplitude.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementLinear_bounds",
+      "source": "lean/HigherCorrelations/ReplacementSignAmplitude.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementLinear_sum_zero",
+      "source": "lean/HigherCorrelations/ReplacementSignAmplitude.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementCosh_remainders",
+      "source": "lean/HigherCorrelations/ReplacementSignAmplitude.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementAmplitude_L1",
+      "source": "lean/HigherCorrelations/ReplacementAmplitudeDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementRemainder_fourier_bound",
+      "source": "lean/HigherCorrelations/ReplacementAmplitudeDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementCosh_smooth",
+      "source": "lean/HigherCorrelations/ReplacementAmplitudeDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementCosh_fourier_sum",
+      "source": "lean/HigherCorrelations/ReplacementAmplitudeDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementCosh_fourier_bound",
+      "source": "lean/HigherCorrelations/ReplacementAmplitudeDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementHeight_bounds",
+      "source": "lean/HigherCorrelations/ReplacementTupleDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementTuple_bound",
+      "source": "lean/HigherCorrelations/ReplacementTupleDecay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacement_anchor_decay_summable",
+      "source": "lean/HigherCorrelations/ReplacementSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementWeight_bounds",
+      "source": "lean/HigherCorrelations/ReplacementSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementWeight_zero",
+      "source": "lean/HigherCorrelations/ReplacementSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementMomentTerm_nonneg",
+      "source": "lean/HigherCorrelations/ReplacementSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementMoment_summable",
+      "source": "lean/HigherCorrelations/ReplacementSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementTuple_weighted_summable",
+      "source": "lean/HigherCorrelations/ReplacementSummability.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementKernel_global",
+      "source": "lean/HigherCorrelations/ReplacementSummedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacement_errors_summable",
+      "source": "lean/HigherCorrelations/ReplacementSummedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacement_error_split",
+      "source": "lean/HigherCorrelations/ReplacementSummedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacement_absorb_decay",
+      "source": "lean/HigherCorrelations/ReplacementSummedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacement_large_height",
+      "source": "lean/HigherCorrelations/ReplacementSummedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementTerm_bound",
+      "source": "lean/HigherCorrelations/ReplacementSummedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementError_bound",
+      "source": "lean/HigherCorrelations/ReplacementSummedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementError_cutoff",
+      "source": "lean/HigherCorrelations/ReplacementSummedBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementTuple_zero_test",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementTuple_zero_displacement",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementError_zero_test",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementMoment_nonneg",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementKernel_equal_ordinates",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementKernel_height_endpoint",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementTuple_height_endpoint",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementError_normalization",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementConstantError_cutoff",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.replacementEvenError_cutoff",
+      "source": "lean/HigherCorrelations/ReplacementAssembly.lean",
       "comparator_checked": true
     }
   ],

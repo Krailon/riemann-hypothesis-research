@@ -1,4 +1,4 @@
-import HigherCorrelations.ConstantKernelBounds
+import HigherCorrelations.ReplacementAssembly
 import HigherCorrelations.SmoothedTripleTheorem
 import HigherCorrelations.MainTermComparisonAssembly
 import HigherCorrelations.SineMeasureAssembly
@@ -2372,3 +2372,62 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.constantKernelEmpty_origin
 #print axioms HigherCorrelations.constantKernelEmpty_coincident
 #print axioms HigherCorrelations.constantKernelEmpty_cube_endpoints
+#print axioms HigherCorrelations.replacementRadius_nonneg
+#print axioms HigherCorrelations.replacementHorizontal_bounds
+#print axioms HigherCorrelations.constantKernelEmpty_scaled
+#print axioms HigherCorrelations.replacementKernel_scaled
+#print axioms HigherCorrelations.replacementPartial_smooth
+#print axioms HigherCorrelations.replacementDeriv_succ
+#print axioms HigherCorrelations.replacementDeriv_succ_right
+#print axioms HigherCorrelations.replacementDeriv_smooth
+#print axioms HigherCorrelations.replacementDeriv_support
+#print axioms HigherCorrelations.replacementDeriv_compact
+#print axioms HigherCorrelations.replacementDeriv_integrable
+#print axioms HigherCorrelations.replacementDeriv_add
+#print axioms HigherCorrelations.replacementDeriv_product_bound
+#print axioms HigherCorrelations.replacementP24_nonneg
+#print axioms HigherCorrelations.replacementP24_pure
+#print axioms HigherCorrelations.replacementExpRemainder_smooth
+#print axioms HigherCorrelations.replacementPartial_exp
+#print axioms HigherCorrelations.replacementExpRemainder_first
+#print axioms HigherCorrelations.replacementExpRemainder_higher
+#print axioms HigherCorrelations.replacementExpRemainder_jet_bound
+#print axioms HigherCorrelations.replacementFourier_partial
+#print axioms HigherCorrelations.replacementFourier_power
+#print axioms HigherCorrelations.replacementFourier_L1
+#print axioms HigherCorrelations.replacementFourier_decay
+#print axioms HigherCorrelations.replacementLinear_apply
+#print axioms HigherCorrelations.replacementLinear_bounds
+#print axioms HigherCorrelations.replacementLinear_sum_zero
+#print axioms HigherCorrelations.replacementCosh_remainders
+#print axioms HigherCorrelations.replacementAmplitude_L1
+#print axioms HigherCorrelations.replacementRemainder_fourier_bound
+#print axioms HigherCorrelations.replacementCosh_smooth
+#print axioms HigherCorrelations.replacementCosh_fourier_sum
+#print axioms HigherCorrelations.replacementCosh_fourier_bound
+#print axioms HigherCorrelations.replacementHeight_bounds
+#print axioms HigherCorrelations.replacementTuple_bound
+#print axioms HigherCorrelations.replacement_anchor_decay_summable
+#print axioms HigherCorrelations.replacementWeight_bounds
+#print axioms HigherCorrelations.replacementWeight_zero
+#print axioms HigherCorrelations.replacementMomentTerm_nonneg
+#print axioms HigherCorrelations.replacementMoment_summable
+#print axioms HigherCorrelations.replacementTuple_weighted_summable
+#print axioms HigherCorrelations.replacementKernel_global
+#print axioms HigherCorrelations.replacement_errors_summable
+#print axioms HigherCorrelations.replacement_error_split
+#print axioms HigherCorrelations.replacement_absorb_decay
+#print axioms HigherCorrelations.replacement_large_height
+#print axioms HigherCorrelations.replacementTerm_bound
+#print axioms HigherCorrelations.replacementError_bound
+#print axioms HigherCorrelations.replacementError_cutoff
+#print axioms HigherCorrelations.replacementTuple_zero_test
+#print axioms HigherCorrelations.replacementTuple_zero_displacement
+#print axioms HigherCorrelations.replacementError_zero_test
+#print axioms HigherCorrelations.replacementMoment_nonneg
+#print axioms HigherCorrelations.replacementKernel_equal_ordinates
+#print axioms HigherCorrelations.replacementKernel_height_endpoint
+#print axioms HigherCorrelations.replacementTuple_height_endpoint
+#print axioms HigherCorrelations.replacementError_normalization
+#print axioms HigherCorrelations.replacementConstantError_cutoff
+#print axioms HigherCorrelations.replacementEvenError_cutoff

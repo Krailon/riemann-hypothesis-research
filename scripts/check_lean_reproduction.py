@@ -80,7 +80,7 @@ class LeanReproductionTests(unittest.TestCase):
         self.assertEqual(preflight, 1)
         self.assertIn('constant-kernel-comparator', calls)
         self.assertEqual(len([c for c in calls if c.startswith('constant-kernel-')
-                              and c.endswith('-unfinished-rejected')]), 7)
+                              and c.endswith('-unfinished-rejected')]), 17)
         self.assertNotIn('triple-smoothed-correlation-comparator', calls)
         self.assertNotIn('resolve', calls)
         self.assertIn('project-build', calls)

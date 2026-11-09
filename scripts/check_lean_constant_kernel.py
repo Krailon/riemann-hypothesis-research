@@ -7,7 +7,7 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-CONTROLS = {'profile': 'constantKernelEmpty_profile', 'horizontal': 'constantKernelEmpty_horizontal_bound', 'gap': 'constantKernel_real_gap_bound', 'pointwise': 'constantKernelEmpty_pointwise', 'origin': 'constantKernelEmpty_origin', 'coincident': 'constantKernelEmpty_coincident', 'endpoints': 'constantKernelEmpty_cube_endpoints'}
+CONTROLS = {'profile': 'constantKernelEmpty_profile', 'horizontal': 'constantKernelEmpty_horizontal_bound', 'gap': 'constantKernel_real_gap_bound', 'pointwise': 'constantKernelEmpty_pointwise', 'origin': 'constantKernelEmpty_origin', 'coincident': 'constantKernelEmpty_coincident', 'endpoints': 'constantKernelEmpty_cube_endpoints', 'scaled': 'replacementKernel_scaled', 'fourier-convention': 'replacementFourier_partial', 'quadratic-decay': 'replacementCosh_fourier_bound', 'tuple-decay': 'replacementTuple_bound', 'moment-summability': 'replacementMoment_summable', 'summability': 'replacement_errors_summable', 'split': 'replacement_error_split', 'summed': 'replacementError_bound', 'cutoff': 'replacementError_cutoff', 'normalization': 'replacementError_normalization'}
 
 
 def read_json(path):
@@ -30,7 +30,7 @@ def validate(inventory, config):
         raise ValueError('Comparator coverage differs')
     if config['permitted_axioms'] != ['propext', 'Quot.sound', 'Classical.choice'] or config['enable_nanoda']:
         raise ValueError('changed trust boundary')
-    if config['solution_module'] != 'HigherCorrelations.ConstantKernelBounds':
+    if config['solution_module'] != 'HigherCorrelations.ReplacementAssembly':
         raise ValueError('wrong solution')
     challenge = (ROOT / 'lean/VerificationChallenges/ConstantKernel.lean').read_text()
     imports = re.findall(r'^import HigherCorrelations\.(\w+)', challenge, re.M)

@@ -649,13 +649,14 @@ error limit. The two named envelopes remain explicit. Uniform constants retain
 their inherited existential status, so historical claim coverage remains
 partial for effectiveness. See [the formalization record](lean-triple-smoothed-correlation.md).
 
-## Pointwise constant-kernel replacement
+## Constant-kernel replacement
 
-The `--constant-kernel-only` suite checks nine public statements in three
-modules and seven rejection controls. The exact eight-reflection average,
-anchor-first coordinate translation, horizontal quadratic bound and real-gap
-expansion give the saturated pointwise estimate with explicit constant
-4096π. The origin, coincident gaps and closed-cube endpoints are included.
-`ORDINATE-CONSTANT-KERNEL-001` gains pointwise coverage only; the project-scaled
-and summed replacement estimates remain separate, as does the open kernel-free
-signed error. See [the formalization record](lean-constant-kernel.md).
+The `--constant-kernel-only` suite now checks 68 public statements in 14
+modules and 17 rejection controls. It extends the pointwise eight-reflection
+bound with project scaling, uniform quadratic P24 Fourier decay, fixed-height
+absolute convergence, all three independent cutoff limits, the exact even-
+error split and the normalized summed moment estimate. Constants are explicit
+and conservative; Fourier integrals are evaluated before summing over zeros.
+Density-based replacement vanishing and the unaveraged constant-term
+identification remain separate, as does the open kernel-free signed error.
+See [the formalization record](lean-constant-kernel.md).

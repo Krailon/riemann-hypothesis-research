@@ -1,0 +1,228 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.ConstantKernel
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8964/8966] Replayed HigherCorrelations.SignedSectorDefinitions
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:20:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:21:93: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8966/8966] Replayed VerificationChallenges.ConstantKernel
+warning: lean/VerificationChallenges/ConstantKernel.lean:8:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:13:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:23:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:26:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:29:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:34:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:36:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:41:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:45:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:48:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:60:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:65:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:71:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:74:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:77:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:83:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:97:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:99:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:102:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:105:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:109:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:113:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:117:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:124:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:129:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:134:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:144:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:148:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:154:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:161:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:168:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:177:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:180:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:186:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:194:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:198:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:206:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:212:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:215:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:219:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:223:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:233:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:235:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:243:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:249:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:252:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:255:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:271:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:278:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:281:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:284:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:287:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:290:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:296:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:301:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:309:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:312:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernel.lean:320:8: declaration uses `sorry`
+Build completed successfully (8966 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.replacement_errors_summable, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.ConstantKernel
+Building VerificationChallenges.ConstantKernelUnfinished
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-epiodvtz/worker-1/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8964/8966] Replayed HigherCorrelations.SignedSectorDefinitions
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:20:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: lean/HigherCorrelations/SignedSectorDefinitions.lean:21:93: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8966/8966] Replayed VerificationChallenges.ConstantKernelUnfinished
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:8:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:13:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:23:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:26:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:29:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:34:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:36:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:41:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:45:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:48:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:60:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:65:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:71:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:74:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:77:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:83:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:97:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:99:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:102:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:105:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:109:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:113:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:117:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:124:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:129:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:134:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:144:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:148:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:154:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:161:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:168:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:177:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:180:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:186:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:194:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:198:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:206:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:212:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:215:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:219:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:223:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:233:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:235:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:243:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:249:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:252:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:255:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:271:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:278:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:281:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:284:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:287:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:290:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:296:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:301:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:309:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:312:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ConstantKernelUnfinished.lean:320:8: declaration uses `sorry`
+Build completed successfully (8966 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.replacement_errors_summable, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.ConstantKernelUnfinished
+uncaught exception: Illegal axiom detected: 'sorryAx'

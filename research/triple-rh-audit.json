@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "3172c8c9fe35bd49172f4bad6b8e1caac370f5b66924f38c6d3a1e56278913f2",
+    "research/theorem-ledger.yaml": "97cf933d49587f6f11ce2761de410748c844afa5d334a4e218242175d91718c3",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "997d18d10166aa1f247c596605f29d4f561d6fc27b22194fd5add8e2fdf04258"
+    "research/pair-rh-audit.json": "5be3b7380453c9fba5fb163df233ccbff7692cc28b1123785089ed83222ccbf6"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4799,5 +4799,14 @@
     ],
     "report": "research/lean-constant-kernel.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records the pointwise eight-reflection replacement with explicit constant 4096pi, exact anchor-first profile translation, and origin, coincident-gap and closed-cube endpoint specializations. ORDINATE-CONSTANT-KERNEL-001 gains pointwise component coverage only. Historical statuses, dependency graph and RH-review scope are unchanged. Scaled and summed replacement estimates and the open signed complex-argument error remain separate."
+  },
+  "ledger_constant_kernel_sum_review": {
+    "reviewed_on": "2026-11-09",
+    "previous_ledger_sha256": "3172c8c9fe35bd49172f4bad6b8e1caac370f5b66924f38c6d3a1e56278913f2",
+    "added_claim_ids": [
+      "MASTER-CONSTANT-KERNEL-SUM-FORMAL-001"
+    ],
+    "report": "research/lean-constant-kernel.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records project-scaled replacement, uniform quadratic P24 Fourier decay, fixed-height absolute convergence, independent cutoffs, the exact algebraic even-error split and the normalized summed moment bound, with explicit conservative constants. ORDINATE-CONSTANT-KERNEL-001 gains component coverage only. Historical statuses, dependency graph and RH-review scope are unchanged. Density-based replacement vanishing, unaveraged constant-term identification and the open kernel-free signed-error limit remain separate; no ordinate-only asymptotic is inferred."
   }
 }

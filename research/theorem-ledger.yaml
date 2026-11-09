@@ -6119,3 +6119,72 @@ claims:
       imported_inputs: "Checked symmetric second horizontal Taylor bound, rational global bound and critical-parameter quadratic expansion; Mathlib finite-sum reindexing, norm inequalities and real square-root algebra. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "Horizontal 3072pi, local real-gap 4pi, global profile 7pi/9 and final 4096pi are explicit. No numerical optimization or inherited existential constant is used."
       baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. ORDINATE-CONSTANT-KERNEL-001 gains pointwise component coverage only. Historical statuses, dependency graph and RH-review scope remain unchanged. No summed replacement or ordinate-only asymptotic follows."
+
+  - id: MASTER-CONSTANT-KERNEL-SUM-FORMAL-001
+    title: Project-scaled constant-kernel replacement and uniform summed moment budget
+    kind: theorem
+    statement: |
+      Retain the anchor-first horizontal vector delta_j=beta(v_j)-1/2,
+      q=log T, b=log(T/(2pi)), ell=b/(2pi), a=gamma(v1)-gamma(v0),
+      d=gamma(v2)-gamma(v0), r=max(|ell a|,|ell d|), x=q max_j |delta_j|.
+      J_empty is the checked eight-reflection average and J*=3pi/8.
+      For T>=2pi exp(2pi),
+        |J_empty-J*| <= C_scale (r^2+x^2)/q^2,
+      with C_scale=4096pi(32pi^2+3). The abstract scaled version retains
+      all |delta_j|<=1/2; the actual occurrence specialization uses strict
+      strip displacements. Coincident ordinates and height endpoints are
+      included. No RH or simplicity is assumed.
+      Define P24(phi)=sum_{i+j<=24} integral |D_x^i D_y^j phi|, each mixed
+      multi-index once, in the project's ordinary Lebesgue coordinates.
+      For smooth compact complex phi supported in
+      h=max(|xi|,|eta|,|xi+eta|)<=s, 0<s<1, set
+        H(v)=integral phi(xi,eta) exp(2pi i(ell a xi+ell d eta))
+          (cosh(b delta0(xi+eta)) cosh(b delta1 xi) cosh(b delta2 eta)-1).
+      For T>=2pi exp(1),
+        |H(v)| <= C_decay P24(phi) x^2(1+x)^22 exp(2sx)/(1+r)^22,
+      where C_decay=2^22*2^22*23*2^24. The exponential remainder exp(L)-1-L
+      retains quadratic horizontal vanishing under frequency derivatives
+      through order 22. The finite sign average cancels the linear terms.
+      Coordinate integration by parts has multiplier -2pi i u_j in the
+      positive-inverse convention. Constants are uniform in T,s,phi and v.
+      Let omega satisfy TripleBudgetWeight and set w(v)=omega(gamma(v0)/T).
+      Define M24,T(s)=(1/(Tq)) sum_v w(v)x^2(1+x)^24 exp(2sx)/(1+r)^20
+      and E_replacement=(16/(3Tq)) sum_v w(v)(J_empty(v)-J*)H(v).
+      All sums are over all ordered actual zero occurrences, retaining
+      multiplicities, both ordinate signs and every diagonal. At fixed
+      T>=2pi exp(1), the moment, weighted H, and even/constant/replacement
+      error series converge absolutely; each Fourier integral is evaluated
+      before the zero sum. Independent finite slot cutoffs converge to all
+      three normalized errors. Exactly E_even=E_constant+E_replacement,
+      where the first two series use kernel factors J_empty and J*.
+      For T>=2pi exp(2pi),
+        |E_replacement| <= C_sum P24(phi) M24,T(s)/q^2,
+      with C_sum=(16/3) C_scale C_decay. Also (16/(3Tq))J*=2pi/(Tq).
+      Zero tests, zero horizontal displacement, equal ordinates and both
+      explicit height thresholds have checked specializations.
+      This proves the scaled, Fourier-majorant, convergence and summed
+      moment parts of ORDINATE-CONSTANT-KERNEL-001. Density-based vanishing,
+      identification of the constant term with the unaveraged signed
+      full-zero statistic, and the open kernel-free signed-error limit are
+      not asserted. No ordinate-only correlation asymptotic follows.
+    status: formalized
+    assumptions: [UNCONDITIONAL, "SUPPORT(h<=s, 0<s<1)"]
+    dependencies: [MASTER-CONSTANT-KERNEL-POINTWISE-FORMAL-001, ZERO-ANCHORED-SHELLS-001, SUMMABILITY-SHELL-001, SUMMABILITY-LIMITS-001, KERNEL-HEIGHT-TRANSFER-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ReplacementSummedBounds.lean
+      label: HigherCorrelations.replacementError_bound
+      companion_declarations: [constantKernelEmpty_scaled, replacementKernel_scaled, replacementCosh_remainders, replacementFourier_partial, replacementCosh_fourier_bound, replacementTuple_bound, replacementMoment_summable, replacement_errors_summable, replacement_error_split, replacementError_cutoff, replacementConstantError_cutoff, replacementEvenError_cutoff, replacementError_normalization]
+      bookkeeping: research/lean-constant-kernel.md
+      inventory: research/lean-constant-kernel-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: ec8ae6a1140d37f78d25621a9bc7f7d08f9852ddaee9c7a4482313095bd27262
+    limit_order: "Fix T, support parameter, smoothing and test. Evaluate the compact Fourier integral at each tuple; establish absolute convergence using fixed-height horizontal boundedness and occurrence shells; then remove independent finite zero cutoffs. No infinite zero-sum/Fourier-integral interchange or T-to-infinity conclusion is used."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The combined constant-kernel suite checks 68 public statements in 14 modules against definition-only contracts, including 59 new declarations in 11 modules. All 17 rejection controls, combined project build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Checked pointwise kernel bound, project logarithmic scale comparison, polynomial occurrence shells and absolute-sum cutoff infrastructure; Mathlib coordinate Frechet differentiation, complex exponential remainder bounds, integration by parts, compact-support integrability and finite/infinite sum inequalities. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "C_scale, C_decay and C_sum are explicit conservative witnesses. Existential shell-count constants are used only for fixed-height summability and do not enter the displayed moment bound."
+      baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. ORDINATE-CONSTANT-KERNEL-001 gains scaled, uniform Fourier, summability, cutoff, algebraic-splitting and summed-moment component coverage only. Historical statuses, dependency graph and RH-review scope remain unchanged; the density-based vanishing and unaveraged constant-term identity remain separate."

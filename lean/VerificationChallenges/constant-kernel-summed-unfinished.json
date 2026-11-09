@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.ConstantKernel",
+  "solution_module": "VerificationChallenges.ConstantKernelUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.replacementError_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

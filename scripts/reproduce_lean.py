@@ -231,7 +231,7 @@ def main(argv=None):
     parser.add_argument('--triple-kernel-localization-only', action='store_true',
                         help='Check kernel localization, summed near/far bounds and complex-test weighted frozen-profile summability, normalized transfer, height limits, uniform microscopic profile and tuplewise critical-line quadratic expansion, and explicit zero-gap horizontal profile and local normalization; combined build, axioms and regressions using prepared dependencies.')
     parser.add_argument('--constant-kernel-only', action='store_true',
-                        help='Verify pointwise constant-kernel replacement on the closed horizontal cube.')
+                        help='Verify pointwise, project-scaled and summed constant-kernel replacement, quadratic Fourier decay and cutoffs.')
     parser.add_argument('--triple-smoothed-correlation-only', action='store_true',
                         help='Verify the unit-normalized smoothed triple theorem and varying families.')
     parser.add_argument('--triple-main-term-comparison-only', action='store_true',
@@ -341,8 +341,8 @@ def main(argv=None):
             'combined project build, complete axiom report and regressions. Earlier Comparator suites are not rerun. Uniform constants remain existential; no ordinate-only or closed support-boundary conclusion.')
 
     if args.constant_kernel_only:
-        report['verification_scope'] = ('Pointwise eight-reflection constant-kernel replacement with explicit constant 4096pi on the closed horizontal cube; '
-            'combined build, complete axiom audit and regressions. No summed replacement or signed-error vanishing theorem.')
+        report['verification_scope'] = ('Pointwise eight-reflection bound with explicit constant 4096pi, project-scaled kernel bound, uniform quadratic P24 Fourier decay, fixed-height summability, normalized moment bound, splitting and cutoffs; '
+            'combined build, complete axiom audit and regressions. No density-based vanishing or kernel-free signed-error limit.')
 
     controls = []
     deferred_build = []
@@ -391,10 +391,10 @@ def main(argv=None):
         comparator = TOOLS / 'comparator/.lake/build/bin/comparator'
         upstream = ROOT / '.lake/packages/OAI/lean'
         if not (args.triple_smoothed_correlation_only or args.triple_main_term_comparison_only or args.pair_zero_only or args.zeta23_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_asymptotic_only or args.pair_fourier_only or args.triple_master_only or args.triple_budget_only or args.triple_mixed_diagonal_only or args.triple_smoothing_only or args.triple_resonance_decay_only or args.triple_retained_only or args.triple_interior_vanishing_only or args.triple_test_function_only or args.triple_boundary_only or args.triple_signed_sectors_only or args.triple_kernel_localization_only or args.triple_sine_measure_only):
-            command('constant-kernel-build', ['lake', 'build', 'HigherCorrelations.ConstantKernelBounds'])
+            command('constant-kernel-build', ['lake', 'build', 'HigherCorrelations.ReplacementAssembly'])
             command('constant-kernel-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/constant-kernel.json'])
-            for control in ['profile', 'horizontal', 'gap', 'pointwise', 'origin', 'coincident', 'endpoints']:
+            for control in ['profile', 'horizontal', 'gap', 'pointwise', 'origin', 'coincident', 'endpoints', 'scaled', 'fourier-convention', 'quadratic-decay', 'tuple-decay', 'moment-summability', 'summability', 'split', 'summed', 'cutoff', 'normalization']:
                 command('constant-kernel-' + control + '-unfinished-rejected', ['lake', 'env', comparator,
                         'lean/VerificationChallenges/constant-kernel-' + control + '-unfinished.json'], expected_failure=True)
             command('constant-kernel-regressions', [sys.executable, '-B', 'scripts/check_lean_constant_kernel.py'])
