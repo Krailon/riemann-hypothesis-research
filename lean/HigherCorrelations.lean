@@ -1,3 +1,4 @@
+import HigherCorrelations.DensityWindowAdapters
 import HigherCorrelations.SineMeasureAssembly
 import HigherCorrelations.TripleKernelLocalizationAssembly
 import HigherCorrelations.TripleSignedAssembly

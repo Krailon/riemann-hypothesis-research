@@ -73,6 +73,27 @@ class LeanReproductionTests(unittest.TestCase):
             report = json.loads(reports[0].read_text())
             return code, calls, report, preflight.call_count
 
+    def test_density_adapters_focus(self):
+        code, calls, report, preflight = self.run_workflow(
+            ['--reuse-dependencies', '--density-adapters-only'], jobs=4)
+        self.assertEqual(code, 0)
+        self.assertEqual(preflight, 1)
+        self.assertEqual([c for c in calls if c.endswith('-comparator')], ['density-adapters-comparator'])
+        self.assertEqual(len([c for c in calls if c.startswith('density-adapters-')
+                              and c.endswith('-unfinished-rejected')]), 11)
+        self.assertNotIn('resolve', calls)
+        self.assertIn('project-build', calls)
+        self.assertIn('axioms', calls)
+        self.assertIn('explicit hypothesis', report['verification_scope'])
+        self.assertTrue(any(a.startswith('ZERO_DENSITY(') for a in report['assumptions']))
+
+    def test_density_adapters_in_default(self):
+        code, calls, report, _ = self.run_workflow(['--reuse-dependencies'])
+        self.assertEqual(code, 0)
+        self.assertIn('density-adapters-comparator', calls)
+        self.assertIn('constant-kernel-comparator', calls)
+        self.assertEqual(report['conditional_hypotheses'], ['UniformDyadicDensity C T₀; no proved instance'])
+
     def test_constant_kernel_focus(self):
         code, calls, report, preflight = self.run_workflow(
             ['--reuse-dependencies', '--constant-kernel-only'], jobs=4)

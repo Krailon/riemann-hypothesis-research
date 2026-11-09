@@ -660,3 +660,16 @@ and conservative; Fourier integrals are evaluated before summing over zeros.
 Density-based replacement vanishing and the unaveraged constant-term
 identification remain separate, as does the open kernel-free signed error.
 See [the formalization record](lean-constant-kernel.md).
+
+## Density-count and conditional window milestone
+
+The density adapter suite defines actual multiplicity-counted right, left and
+two-sided tails in half-open and closed height windows. It checks endpoint and
+reflection identities and the uniform comparable-window/scaled-tail consequences
+**under the explicit `UniformDyadicDensity C T₀` hypothesis**. The density theorem
+itself is not proved or imported as an axiom. The 35 statement contracts, 11
+rejection controls and complete axiom audit are available through
+`python3 scripts/reproduce_lean.py --reuse-dependencies --density-adapters-only`;
+they are also part of the default harness. See [the scope and conventions](lean-density-adapters.md).
+The analytic density input, close-pair estimate, density-based moment/vanishing
+argument and open signed complex-argument error remain separate obligations.

@@ -1,0 +1,148 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.DensityAdapters
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3836/3836] Replayed VerificationChallenges.DensityAdapters
+warning: lean/VerificationChallenges/DensityAdapters.lean:8:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:12:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:16:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:24:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:28:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:32:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:34:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:40:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:44:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:48:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:53:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:62:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:66:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:69:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:75:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:78:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:81:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:84:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:87:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:92:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:96:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:100:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:105:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:112:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:118:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:121:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:127:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:130:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdapters.lean:135:8: declaration uses `sorry`
+Build completed successfully (3836 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.densityWindow_reflection, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.DensityAdapters
+Building VerificationChallenges.DensityAdaptersUnfinished
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-7hsa_fgf/worker-2/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3836/3836] Replayed VerificationChallenges.DensityAdaptersUnfinished
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:8:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:12:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:16:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:24:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:28:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:32:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:34:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:40:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:44:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:48:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:53:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:62:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:66:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:69:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:75:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:78:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:81:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:84:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:87:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:90:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:92:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:96:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:100:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:105:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:112:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:118:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:121:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:127:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:130:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/DensityAdaptersUnfinished.lean:135:8: declaration uses `sorry`
+Build completed successfully (3836 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.densityWindow_reflection, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.DensityAdaptersUnfinished
+uncaught exception: Illegal axiom detected: 'sorryAx'

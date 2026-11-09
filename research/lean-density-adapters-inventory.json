@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "DensityCountDefinitions",
+    "DensityCountIdentities",
+    "DensityWindowAdapters"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.mem_rightDensityWindow",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_leftDensityWindow",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_horizontalDensityWindow",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_rightDensityInterval",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_leftDensityInterval",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_horizontalDensityInterval",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightDensityWindow_empty",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityWindow_empty",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityInterval_empty",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightDensityWindow_mono",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityInterval_mono",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightDensityWindow_card",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityInterval_card",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightDensityInterval_endpoint",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityInterval_endpoint",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightDensityCount_split",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightDensityCount_difference",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.densityWindow_reflection",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.densityInterval_reflection",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityWindow_twice_right",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityInterval_twice_right",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityInterval_excludes_boundary",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.horizontalDensityInterval_excludes_line",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.leftDensityWindow_empty",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightDensityInterval_empty",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.leftDensityInterval_empty",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.mem_horizontalDensityInterval_singleton",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.rightDensityCount_card",
+      "source": "lean/HigherCorrelations/DensityCountIdentities.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.densityInterval_dyadic_cover",
+      "source": "lean/HigherCorrelations/DensityWindowAdapters.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.density_comparable_interval",
+      "source": "lean/HigherCorrelations/DensityWindowAdapters.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.density_power_exp",
+      "source": "lean/HigherCorrelations/DensityWindowAdapters.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.density_scaled_tail_bound",
+      "source": "lean/HigherCorrelations/DensityWindowAdapters.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.density_scaled_tail_antitone",
+      "source": "lean/HigherCorrelations/DensityWindowAdapters.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.density_scaled_tail_endpoint",
+      "source": "lean/HigherCorrelations/DensityWindowAdapters.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.density_scaled_tail_frozen",
+      "source": "lean/HigherCorrelations/DensityWindowAdapters.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [],
+  "density_hypothesis_proved": false,
+  "conditional_declarations": [
+    "HigherCorrelations.density_comparable_interval",
+    "HigherCorrelations.density_scaled_tail_bound",
+    "HigherCorrelations.density_scaled_tail_endpoint",
+    "HigherCorrelations.density_scaled_tail_frozen"
+  ]
+}

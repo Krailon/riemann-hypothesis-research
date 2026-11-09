@@ -6188,3 +6188,59 @@ claims:
       imported_inputs: "Checked pointwise kernel bound, project logarithmic scale comparison, polynomial occurrence shells and absolute-sum cutoff infrastructure; Mathlib coordinate Frechet differentiation, complex exponential remainder bounds, integration by parts, compact-support integrability and finite/infinite sum inequalities. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "C_scale, C_decay and C_sum are explicit conservative witnesses. Existential shell-count constants are used only for fixed-height summability and do not enter the displayed moment bound."
       baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. ORDINATE-CONSTANT-KERNEL-001 gains scaled, uniform Fourier, summability, cutoff, algebraic-splitting and summed-moment component coverage only. Historical statuses, dependency graph and RH-review scope remain unchanged; the density-based vanishing and unaveraged constant-term identity remain separate."
+
+  - id: MASTER-DENSITY-ADAPTERS-FORMAL-001
+    title: Multiplicity-preserving density counts and conditional uniform window transfers
+    kind: theorem
+    statement: |
+      On actual ZeroOccurrence values, put delta=beta-1/2. Define right,
+      left and two-sided counts by delta>D, delta<-D and |delta|>D,
+      respectively, on both half-open (a,b] and closed [a,b] height windows.
+      The cumulative N(sigma,V) counts beta>sigma and 0<gamma<=V. All
+      counts retain analytic multiplicity; finite-cardinality identities
+      identify them with sums of zeroMultiplicity over distinct strip zeros.
+      Closed-window counts split as half-open counts plus lower-endpoint
+      atoms, including singleton windows. N(sigma,b)-N(sigma,a) is exactly
+      the right count on (a,b] for 0<=a<=b. Horizontal reflection preserves
+      the occurrence index and ordinate and negates delta, so left and right
+      counts agree. For D>=0, the two-sided count is twice the right count;
+      threshold equality is excluded, and D=0 excludes critical-line zeros.
+      These finite identities, monotonicity and dyadic covers are unconditional.
+      For the following bounds assume UniformDyadicDensity C T0: C>0,
+      T0>=3, and for every V>=T0 and 0<=D<=331/1000, the right count on
+      (V,2V] is at most C*(V^(1-D/4)*log V+(log V)^2).
+      Then for T>=4*T0 and 0<=D<=331/1000 the two-sided closed-window
+      count on [T/2,5*T/2] is at most
+        32*C*(T^(1-D/4)*log T+(log T)^2).
+      Set B_T(v) to that count with D=v/log T. For the same height range,
+        B_T(v) <= 32*C*(T*log T*exp(-v/4)+(log T)^2)
+      uniformly on 0<=v<=(331/1000)*log T. B_T is antitone for T>1;
+      at and beyond v=(331/1000)*log T it is at most
+        32*C*(T^(1-331/4000)*log T+(log T)^2).
+      Real exponents are used throughout. Four dyadic windows starting at
+      T/4,T/2,T,2T cover the closed interval, including its lower endpoint.
+      UniformDyadicDensity is an explicit argument, not a proved theorem,
+      typeclass instance or new axiom. No numerical instance, close-pair
+      estimate, density moment, replacement vanishing, or signed-error limit
+      is supplied. ORDINATE-DENSITY-INPUT-001 remains only partially formalized.
+    status: formalized
+    assumptions: ["ZERO_DENSITY(C>0, T0>=3, for all V>=T0 and 0<=D<=331/1000: # {occurrences: V<gamma<=2V, beta-1/2>D} <= C*(V^(1-D/4)*log V+(log V)^2))"]
+    dependencies: [ZERO-OCCURRENCE-001, LOCAL-ZERO-COUNT-001, ZETA23-DYADIC-COUNT-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/DensityWindowAdapters.lean
+      label: HigherCorrelations.density_scaled_tail_bound
+      companion_declarations: [rightDensityCount_card, rightDensityCount_difference, horizontalDensityInterval_endpoint, mem_horizontalDensityInterval_singleton, densityWindow_reflection, densityInterval_reflection, horizontalDensityInterval_twice_right, densityInterval_dyadic_cover, density_comparable_interval, density_power_exp, density_scaled_tail_antitone, density_scaled_tail_endpoint, density_scaled_tail_frozen]
+      bookkeeping: research/lean-density-adapters.md
+      inventory: research/lean-density-adapters-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 618739870d944cc4345cc88e244fb40f43e7f0bd14021f5071313904ba1710f9
+    limit_order: "All windows and counts are finite at fixed real parameters. No limiting operation or infinite sum/integral interchange is introduced."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The focused density-adapter suite checks 35 public statements in three modules against definition-only Comparator contracts. All 11 unfinished controls, combined project build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Actual occurrence finiteness, analytic multiplicity and horizontal reflection; existing closed and half-open height windows; finite-set bijections/unions and real logarithm, exponential and power bounds. Zeta23Counting supplies window identities, not a horizontal density theorem. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "The factor 32 and exponent 1-331/4000 are explicit; effectiveness is relative to the hypothesized C,T0. No numerical witness for UniformDyadicDensity is certified."
+      baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. Historical density, pair and triple statements, statuses and RH-review scopes remain unchanged. The new formal claim is an implication from the displayed density hypothesis, with unconditional finite adapters. The analytic density proof and numerical provenance, close-pair input, density-based vanishing and open signed complex-argument error remain separate."

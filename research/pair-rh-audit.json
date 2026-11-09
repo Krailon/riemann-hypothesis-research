@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "97cf933d49587f6f11ce2761de410748c844afa5d334a4e218242175d91718c3",
+  "ledger_sha256": "f6eafff1ee336ba65a3b542a108535a5e804fdfa1083882876d60b4288cc8c94",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2944,5 +2944,14 @@
     ],
     "report": "research/lean-constant-kernel.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records project-scaled replacement, uniform quadratic P24 Fourier decay, fixed-height absolute convergence, independent cutoffs, the exact algebraic even-error split and the normalized summed moment bound, with explicit conservative constants. ORDINATE-CONSTANT-KERNEL-001 gains component coverage only. Historical statuses, dependency graph and RH-review scope are unchanged. Density-based replacement vanishing, unaveraged constant-term identification and the open kernel-free signed-error limit remain separate; no ordinate-only asymptotic is inferred."
+  },
+  "ledger_density_adapters_review": {
+    "reviewed_on": "2026-11-09",
+    "previous_ledger_sha256": "97cf933d49587f6f11ce2761de410748c844afa5d334a4e218242175d91718c3",
+    "added_claim_ids": [
+      "MASTER-DENSITY-ADAPTERS-FORMAL-001"
+    ],
+    "report": "research/lean-density-adapters.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records finite multiplicity-preserving density counts, strict thresholds, reflection and endpoint identities, and comparable-window/scaled-tail implications under an explicit UniformDyadicDensity hypothesis. No instance of the density hypothesis is proved or added as an axiom. ORDINATE-DENSITY-INPUT-001 gains partial component coverage only. Historical statements, statuses and RH-review scopes remain unchanged. The analytic density proof and source constants, close-pair estimate, density-based moment/vanishing argument and open signed complex-argument error remain separate."
   }
 }

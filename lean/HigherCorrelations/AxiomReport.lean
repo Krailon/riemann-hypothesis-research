@@ -1,3 +1,4 @@
+import HigherCorrelations.DensityWindowAdapters
 import HigherCorrelations.ReplacementAssembly
 import HigherCorrelations.SmoothedTripleTheorem
 import HigherCorrelations.MainTermComparisonAssembly
@@ -2431,3 +2432,40 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.replacementError_normalization
 #print axioms HigherCorrelations.replacementConstantError_cutoff
 #print axioms HigherCorrelations.replacementEvenError_cutoff
+
+-- Finite density identities and explicitly conditional window transfers.
+#print axioms HigherCorrelations.mem_rightDensityWindow
+#print axioms HigherCorrelations.mem_leftDensityWindow
+#print axioms HigherCorrelations.mem_horizontalDensityWindow
+#print axioms HigherCorrelations.mem_rightDensityInterval
+#print axioms HigherCorrelations.mem_leftDensityInterval
+#print axioms HigherCorrelations.mem_horizontalDensityInterval
+#print axioms HigherCorrelations.rightDensityWindow_empty
+#print axioms HigherCorrelations.horizontalDensityWindow_empty
+#print axioms HigherCorrelations.horizontalDensityInterval_empty
+#print axioms HigherCorrelations.rightDensityWindow_mono
+#print axioms HigherCorrelations.horizontalDensityInterval_mono
+#print axioms HigherCorrelations.rightDensityWindow_card
+#print axioms HigherCorrelations.horizontalDensityInterval_card
+#print axioms HigherCorrelations.rightDensityInterval_endpoint
+#print axioms HigherCorrelations.horizontalDensityInterval_endpoint
+#print axioms HigherCorrelations.rightDensityCount_split
+#print axioms HigherCorrelations.rightDensityCount_difference
+#print axioms HigherCorrelations.densityWindow_reflection
+#print axioms HigherCorrelations.densityInterval_reflection
+#print axioms HigherCorrelations.horizontalDensityWindow_twice_right
+#print axioms HigherCorrelations.horizontalDensityInterval_twice_right
+#print axioms HigherCorrelations.horizontalDensityInterval_excludes_boundary
+#print axioms HigherCorrelations.horizontalDensityInterval_excludes_line
+#print axioms HigherCorrelations.leftDensityWindow_empty
+#print axioms HigherCorrelations.rightDensityInterval_empty
+#print axioms HigherCorrelations.leftDensityInterval_empty
+#print axioms HigherCorrelations.mem_horizontalDensityInterval_singleton
+#print axioms HigherCorrelations.rightDensityCount_card
+#print axioms HigherCorrelations.densityInterval_dyadic_cover
+#print axioms HigherCorrelations.density_comparable_interval
+#print axioms HigherCorrelations.density_power_exp
+#print axioms HigherCorrelations.density_scaled_tail_bound
+#print axioms HigherCorrelations.density_scaled_tail_antitone
+#print axioms HigherCorrelations.density_scaled_tail_endpoint
+#print axioms HigherCorrelations.density_scaled_tail_frozen
