@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "modules": [
+    "LittlewoodDefinitions",
+    "LittlewoodSegment",
+    "LittlewoodEdges",
+    "LittlewoodBoundary",
+    "LittlewoodCounting",
+    "LittlewoodZeta",
+    "LittlewoodExamples"
+  ],
+  "components": [
+    {
+      "declaration": "HigherCorrelations.littlewoodSegmentLog_start",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodSegmentLog_deriv",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodSegmentLog_exp",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodSegmentLog_re",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_affine_integral",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_integral_re",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_integral_im",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.horizontal",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.vertical",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodBottomLog_deriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodRightLog_deriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodTopLog_deriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodBottomLog_exp",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodRightLog_exp",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodTopLog_exp",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.horizontal_logDeriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.vertical_logDeriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodLog_re_of_exp",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_vertical_log_integrable",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_arguments_integrable",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_boundary_integral",
+      "source": "lean/HigherCorrelations/LittlewoodBoundary.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zero_set_exists",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_weighted_argument",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_identity",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_mass_count",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_count_bound",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_count_of_budget",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_boundary_branch_invariant",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_count_threshold",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_count",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_bound",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_of_budget",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_rectangle",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_budget_positive_height",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_constant_boundary",
+      "source": "lean/HigherCorrelations/LittlewoodExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_repeated_zero",
+      "source": "lean/HigherCorrelations/LittlewoodExamples.lean",
+      "comparator_checked": true
+    }
+  ],
+  "imported_axioms": [
+    "Zeta23.Analytic.rectangleIntegral'_mul_logDeriv"
+  ],
+  "density_hypothesis_proved": false,
+  "boundary_zeros_allowed": false
+}

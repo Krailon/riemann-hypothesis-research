@@ -1,3 +1,4 @@
+import HigherCorrelations.LittlewoodExamples
 import HigherCorrelations.DensityWindowAdapters
 import HigherCorrelations.SineMeasureAssembly
 import HigherCorrelations.TripleKernelLocalizationAssembly

@@ -6244,3 +6244,69 @@ claims:
       imported_inputs: "Actual occurrence finiteness, analytic multiplicity and horizontal reflection; existing closed and half-open height windows; finite-set bijections/unions and real logarithm, exponential and power bounds. Zeta23Counting supplies window identities, not a horizontal density theorem. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "The factor 32 and exponent 1-331/4000 are explicit; effectiveness is relative to the hypothesized C,T0. No numerical witness for UniformDyadicDensity is certified."
       baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. Historical density, pair and triple statements, statuses and RH-review scopes remain unchanged. The new formal claim is an implication from the displayed density hypothesis, with unconditional finite adapters. The analytic density proof and numerical provenance, close-pair input, density-based vanishing and open signed complex-argument error remain separate."
+
+  - id: MASTER-LITTLEWOOD-COUNTING-FORMAL-001
+    title: Littlewood rectangle identity and multiplicity-preserving horizontal count bound
+    kind: theorem
+    statement: |
+      Let a<b and c<d. Suppose f is complex analytic on a neighborhood of
+      every point of the closed rectangle [a,b]+i[c,d] and nonzero on its
+      entire boundary, including corners. The set Z of its zeros in the
+      rectangle is finite; write m(rho)=analyticOrderNatAt f rho.
+      Choose any k with exp(k)=f(b+ic) and put q=f'/f. Define transported
+      boundary logarithms
+        B(x)=k+integral_b^x q(u+ic) du,
+        R(t)=k+i*integral_c^t q(b+iy) dy,
+        U(x)=R(d)+integral_b^x q(u+id) du.
+      Their exponentials are the corresponding values of f; their real
+      parts are log|f|. All displayed boundary integrands are interval
+      integrable, and the compatible horizontal arguments are Im B and Im U.
+      Exactly
+        2*pi*sum_{rho in Z} m(rho)*(Re rho-a)
+        = integral_c^d log|f(a+it)| dt - integral_c^d log|f(b+it)| dt
+          + integral_a^b (Im U(x)-Im B(x)) dx = A.
+      The contour orientation is counterclockwise and its normalized
+      integral is (2*pi*i)^(-1) times the contour integral. The identity
+      follows from Zeta23's weighted argument principle with weight s-(a+ic)
+      and four edge integrations by parts. A is independent of the valid
+      initial logarithm k; no logarithm on the entire closed loop is assumed.
+      For every sigma>a, let N_f(sigma)=sum_{rho in Z, Re rho>sigma} m(rho).
+      Then (sigma-a)*N_f(sigma)<=sum m(rho)*(Re rho-a), hence
+        N_f(sigma)<=A/(2*pi*(sigma-a)).
+      In particular A<=E implies N_f(sigma)<=E/(2*pi*(sigma-a)).
+      Equality at the horizontal threshold is excluded. The checked
+      examples give A=0 for a nonzero constant and A=2*pi*m*(Re rho-a)
+      for f(s)=(s-rho)^m with m>0 and rho strictly inside the rectangle.
+      For f=zeta, right edge b=2, 0<a<sigma<1 and 0<c<d, assume that
+      zeta has no zero on the rectangle border. Its analyticity on the
+      rectangle is proved, and k=log(zeta(2+ic)) is a valid base value.
+      The same bound holds for the cardinality of actual ZeroOccurrence
+      values with c<gamma<=d and beta>sigma. A bijection and analytic-order
+      identity preserve every multiplicity index; the half-open convention
+      is justified because the assumed border has no zeros, including at
+      gamma=c and gamma=d. No RH or simplicity is assumed.
+      The boundary-zero limiting extension, mollified-zeta order comparisons,
+      mollifier and second-moment estimates, and UniformDyadicDensity are
+      not proved here. No density moment, replacement vanishing, or signed
+      complex-argument error limit follows from this milestone alone.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [ZERO-OCCURRENCE-001, LOCAL-ZERO-COUNT-001, ZETA23-DYADIC-COUNT-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/LittlewoodCounting.lean
+      label: HigherCorrelations.littlewood_identity
+      companion_declarations: [littlewoodSegmentLog_exp, littlewoodSegmentLog_re, littlewood_vertical_log_integrable, littlewood_arguments_integrable, littlewood_boundary_integral, littlewood_zero_set_exists, littlewood_weighted_argument, littlewood_mass_count, littlewood_count_bound, littlewood_count_of_budget, littlewood_boundary_branch_invariant, littlewood_zeta_count, littlewood_zeta_budget_positive_height, littlewood_constant_boundary, littlewood_repeated_zero, littlewood_count_threshold]
+      bookkeeping: research/lean-littlewood.md
+      inventory: research/lean-littlewood-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: 2e7a691a7d8434131efafd6f3755e34b6408efc44ae1763ec4e2bb9bed12dd40
+    limit_order: "Fix a nondegenerate rectangle and a function analytic near it and nonzero on the border. All zero sums are finite and every edge integral has verified integrability. No asymptotic limit, boundary-zero limit, or infinite sum/integral interchange is introduced."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The focused Littlewood suite checks 36 public statements in seven modules against definition-only Comparator contracts. All 11 unfinished controls, combined project build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Pinned and ported Zeta23.Analytic.rectangleIntegral'_mul_logDeriv and finite_zeros_rectangle; Mathlib analytic orders, elementary zeta analyticity/nonvanishing, complex exponential, real-path calculus and integration by parts; actual occurrence finiteness and finite density multiplicity identities. The UniformDyadicDensity hypothesis is not used. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Exact normalization 2*pi and explicit positive denominator 2*pi*(sigma-a). E is a supplied boundary-integral upper bound, not a certified density constant. Computation is Lean proof checking, not numerical evaluation."
+      baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. ORDINATE-DENSITY-INPUT-001 gains the Littlewood bridge on zero-free boundaries as partial coverage only. Historical density, pair and triple statements, statuses and RH-review scopes remain unchanged. The analytic density theorem and its numerical provenance, boundary-zero extension, close-pair input and signed-error limit remain separate."

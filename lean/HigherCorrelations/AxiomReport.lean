@@ -1,3 +1,4 @@
+import HigherCorrelations.LittlewoodExamples
 import HigherCorrelations.DensityWindowAdapters
 import HigherCorrelations.ReplacementAssembly
 import HigherCorrelations.SmoothedTripleTheorem
@@ -2469,3 +2470,42 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.density_scaled_tail_antitone
 #print axioms HigherCorrelations.density_scaled_tail_endpoint
 #print axioms HigherCorrelations.density_scaled_tail_frozen
+
+-- Littlewood counting, branch transport and actual zeta adapter.
+#print axioms HigherCorrelations.littlewoodSegmentLog_start
+#print axioms HigherCorrelations.littlewoodSegmentLog_deriv
+#print axioms HigherCorrelations.littlewoodSegmentLog_exp
+#print axioms HigherCorrelations.littlewoodSegmentLog_re
+#print axioms HigherCorrelations.littlewood_affine_integral
+#print axioms HigherCorrelations.littlewood_integral_re
+#print axioms HigherCorrelations.littlewood_integral_im
+#print axioms HigherCorrelations.LittlewoodRectangle.horizontal
+#print axioms HigherCorrelations.LittlewoodRectangle.vertical
+#print axioms HigherCorrelations.littlewoodBottomLog_deriv
+#print axioms HigherCorrelations.littlewoodRightLog_deriv
+#print axioms HigherCorrelations.littlewoodTopLog_deriv
+#print axioms HigherCorrelations.littlewoodBottomLog_exp
+#print axioms HigherCorrelations.littlewoodRightLog_exp
+#print axioms HigherCorrelations.littlewoodTopLog_exp
+#print axioms HigherCorrelations.LittlewoodRectangle.horizontal_logDeriv
+#print axioms HigherCorrelations.LittlewoodRectangle.vertical_logDeriv
+#print axioms HigherCorrelations.littlewoodLog_re_of_exp
+#print axioms HigherCorrelations.littlewood_vertical_log_integrable
+#print axioms HigherCorrelations.littlewood_arguments_integrable
+#print axioms HigherCorrelations.littlewood_boundary_integral
+#print axioms HigherCorrelations.littlewood_zero_set_exists
+#print axioms HigherCorrelations.littlewood_weighted_argument
+#print axioms HigherCorrelations.littlewood_identity
+#print axioms HigherCorrelations.littlewood_mass_count
+#print axioms HigherCorrelations.littlewood_count_bound
+#print axioms HigherCorrelations.littlewood_count_of_budget
+#print axioms HigherCorrelations.littlewood_boundary_branch_invariant
+#print axioms HigherCorrelations.littlewood_count_threshold
+#print axioms HigherCorrelations.littlewood_zeta_count
+#print axioms HigherCorrelations.littlewood_zeta_bound
+#print axioms HigherCorrelations.littlewood_zeta_of_budget
+#print axioms HigherCorrelations.littlewood_zeta_rectangle
+#print axioms HigherCorrelations.littlewood_zeta_budget_positive_height
+#print axioms HigherCorrelations.littlewood_constant_boundary
+#print axioms HigherCorrelations.littlewood_repeated_zero
+#print axioms Zeta23.Analytic.rectangleIntegral'_mul_logDeriv

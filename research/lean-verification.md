@@ -673,3 +673,14 @@ rejection controls and complete axiom audit are available through
 they are also part of the default harness. See [the scope and conventions](lean-density-adapters.md).
 The analytic density input, close-pair estimate, density-based moment/vanishing
 argument and open signed complex-argument error remain separate obligations.
+
+## Littlewood rectangle-counting milestone
+
+The exact Littlewood identity and horizontal count bound are formalized using
+Zeta23's weighted argument principle. The proof constructs compatible boundary
+logarithms, verifies derivatives and integrability, preserves analytic
+multiplicity, and identifies the count with actual zeta occurrences. It requires
+nonvanishing on the entire rectangle boundary. The 36 contracts and 11 rejection
+controls run through `--littlewood-only` and the default reproduction harness;
+see [conventions and scope](lean-littlewood.md). Boundary-zero limits, mollifier
+estimates and the uniform analytic density theorem remain separate obligations.

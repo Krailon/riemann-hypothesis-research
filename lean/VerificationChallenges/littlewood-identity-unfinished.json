@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.Littlewood",
+  "solution_module": "VerificationChallenges.LittlewoodUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.littlewood_identity"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

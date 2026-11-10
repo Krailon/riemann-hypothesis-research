@@ -306,10 +306,46 @@
         "HigherCorrelations.density_scaled_tail_bound",
         "HigherCorrelations.density_scaled_tail_antitone",
         "HigherCorrelations.density_scaled_tail_endpoint",
-        "HigherCorrelations.density_scaled_tail_frozen"
+        "HigherCorrelations.density_scaled_tail_frozen",
+        "HigherCorrelations.littlewoodSegmentLog_start",
+        "HigherCorrelations.littlewoodSegmentLog_deriv",
+        "HigherCorrelations.littlewoodSegmentLog_exp",
+        "HigherCorrelations.littlewoodSegmentLog_re",
+        "HigherCorrelations.littlewood_affine_integral",
+        "HigherCorrelations.littlewood_integral_re",
+        "HigherCorrelations.littlewood_integral_im",
+        "HigherCorrelations.LittlewoodRectangle.horizontal",
+        "HigherCorrelations.LittlewoodRectangle.vertical",
+        "HigherCorrelations.littlewoodBottomLog_deriv",
+        "HigherCorrelations.littlewoodRightLog_deriv",
+        "HigherCorrelations.littlewoodTopLog_deriv",
+        "HigherCorrelations.littlewoodBottomLog_exp",
+        "HigherCorrelations.littlewoodRightLog_exp",
+        "HigherCorrelations.littlewoodTopLog_exp",
+        "HigherCorrelations.LittlewoodRectangle.horizontal_logDeriv",
+        "HigherCorrelations.LittlewoodRectangle.vertical_logDeriv",
+        "HigherCorrelations.littlewoodLog_re_of_exp",
+        "HigherCorrelations.littlewood_vertical_log_integrable",
+        "HigherCorrelations.littlewood_arguments_integrable",
+        "HigherCorrelations.littlewood_boundary_integral",
+        "HigherCorrelations.littlewood_zero_set_exists",
+        "HigherCorrelations.littlewood_weighted_argument",
+        "HigherCorrelations.littlewood_identity",
+        "HigherCorrelations.littlewood_mass_count",
+        "HigherCorrelations.littlewood_count_bound",
+        "HigherCorrelations.littlewood_count_of_budget",
+        "HigherCorrelations.littlewood_boundary_branch_invariant",
+        "HigherCorrelations.littlewood_count_threshold",
+        "HigherCorrelations.littlewood_zeta_count",
+        "HigherCorrelations.littlewood_zeta_bound",
+        "HigherCorrelations.littlewood_zeta_of_budget",
+        "HigherCorrelations.littlewood_zeta_rectangle",
+        "HigherCorrelations.littlewood_zeta_budget_positive_height",
+        "HigherCorrelations.littlewood_constant_boundary",
+        "HigherCorrelations.littlewood_repeated_zero"
       ],
       "remaining_obligations": [
-        "Finite occurrence counts, multiplicities, reflection and endpoints are checked. Window and scaled-tail bounds require the explicit UniformDyadicDensity hypothesis; its analytic proof and effective source constants remain unformalized. No close-pair bound, density-based moment estimate, or signed-error limit follows."
+        "Finite counts and reflection/window adapters are checked. Littlewood transported logarithms, integrability, exact rectangle identity, multiplicity-weighted count inequality and actual zeta specialization are now checked on zero-free boundaries. Window and scaled-tail bounds still require the explicit UniformDyadicDensity hypothesis; its analytic proof, mollifier/second-moment estimates, boundary-zero limiting arguments and effective source constants remain unformalized. No close-pair bound, density moment or signed-error limit follows."
       ]
     },
     {
@@ -13651,7 +13687,187 @@
       "declaration": "HigherCorrelations.density_scaled_tail_frozen",
       "source": "lean/HigherCorrelations/DensityWindowAdapters.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodSegmentLog_start",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodSegmentLog_deriv",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodSegmentLog_exp",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodSegmentLog_re",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_affine_integral",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_integral_re",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_integral_im",
+      "source": "lean/HigherCorrelations/LittlewoodSegment.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.horizontal",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.vertical",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodBottomLog_deriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodRightLog_deriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodTopLog_deriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodBottomLog_exp",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodRightLog_exp",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodTopLog_exp",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.horizontal_logDeriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.vertical_logDeriv",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewoodLog_re_of_exp",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_vertical_log_integrable",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_arguments_integrable",
+      "source": "lean/HigherCorrelations/LittlewoodEdges.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_boundary_integral",
+      "source": "lean/HigherCorrelations/LittlewoodBoundary.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zero_set_exists",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_weighted_argument",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_identity",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_mass_count",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_count_bound",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_count_of_budget",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_boundary_branch_invariant",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_count_threshold",
+      "source": "lean/HigherCorrelations/LittlewoodCounting.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_count",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_bound",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_of_budget",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_rectangle",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_zeta_budget_positive_height",
+      "source": "lean/HigherCorrelations/LittlewoodZeta.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_constant_boundary",
+      "source": "lean/HigherCorrelations/LittlewoodExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_repeated_zero",
+      "source": "lean/HigherCorrelations/LittlewoodExamples.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Pointwise constant-kernel replacement, its project-scaled bound, quadratic P24 Fourier decay, absolute convergence, cutoffs, exact algebraic split and summed moment bound are checked with explicit conservative constants. Finite density-count and reflection/window adapters are checked. Discharge the explicit UniformDyadicDensity hypothesis and separately prove the needed close-pair bound before density-based moment or vanishing claims. The unaveraged constant-term identification remains separate. Numerical effectiveness of inherited smoothed-theorem constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Pointwise constant-kernel replacement, its project-scaled bound, quadratic P24 Fourier decay, absolute convergence, cutoffs, exact algebraic split and summed moment bound are checked with explicit conservative constants. Finite density-count and reflection/window adapters and Littlewood rectangle counting on zero-free boundaries are checked. Discharge the explicit UniformDyadicDensity hypothesis and separately prove the needed close-pair bound before density-based moment or vanishing claims. The unaveraged constant-term identification remains separate. Numerical effectiveness of inherited smoothed-theorem constants and the ordinate-only signed error remain separate."
 }

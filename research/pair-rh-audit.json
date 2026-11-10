@@ -291,7 +291,7 @@
     "MV-SIEVE-PROOF",
     "PT-LOW-ZEROS"
   ],
-  "ledger_sha256": "f6eafff1ee336ba65a3b542a108535a5e804fdfa1083882876d60b4288cc8c94",
+  "ledger_sha256": "8b03f9e5b2bf256ccf4100ee1451e928b223bea347487a4a4bb392f3fa4c911e",
   "ledger_metadata_review": {
     "reviewed_on": "2026-10-01",
     "scope": "source_comparison_metadata_only",
@@ -2953,5 +2953,14 @@
     ],
     "report": "research/lean-density-adapters.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new formal claim records finite multiplicity-preserving density counts, strict thresholds, reflection and endpoint identities, and comparable-window/scaled-tail implications under an explicit UniformDyadicDensity hypothesis. No instance of the density hypothesis is proved or added as an axiom. ORDINATE-DENSITY-INPUT-001 gains partial component coverage only. Historical statements, statuses and RH-review scopes remain unchanged. The analytic density proof and source constants, close-pair estimate, density-based moment/vanishing argument and open signed complex-argument error remain separate."
+  },
+  "ledger_littlewood_review": {
+    "reviewed_on": "2026-11-10",
+    "previous_ledger_sha256": "f6eafff1ee336ba65a3b542a108535a5e804fdfa1083882876d60b4288cc8c94",
+    "added_claim_ids": [
+      "MASTER-LITTLEWOOD-COUNTING-FORMAL-001"
+    ],
+    "report": "research/lean-littlewood.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new unconditional formal claim records transported boundary logarithms, verified integrability, the exact Littlewood identity from the existing weighted argument principle, multiplicity-weighted horizontal count bounds and actual zeta adapters, all with the stated analyticity and zero-free boundary hypotheses. ORDINATE-DENSITY-INPUT-001 gains partial component coverage only. Historical statements, statuses and RH-review scopes remain unchanged. The boundary-zero extension, mollified-zeta and second-moment estimates, UniformDyadicDensity, close-pair input and signed complex-argument error remain separate."
   }
 }

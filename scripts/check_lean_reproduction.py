@@ -73,6 +73,26 @@ class LeanReproductionTests(unittest.TestCase):
             report = json.loads(reports[0].read_text())
             return code, calls, report, preflight.call_count
 
+    def test_littlewood_focus(self):
+        code, calls, report, preflight = self.run_workflow(
+            ['--reuse-dependencies', '--littlewood-only'], jobs=4)
+        self.assertEqual(code, 0)
+        self.assertEqual(preflight, 1)
+        self.assertEqual([c for c in calls if c.endswith('-comparator')], ['littlewood-comparator'])
+        self.assertEqual(len([c for c in calls if c.startswith('littlewood-')
+                              and c.endswith('-unfinished-rejected')]), 11)
+        self.assertNotIn('resolve', calls)
+        self.assertIn('project-build', calls)
+        self.assertIn('axioms', calls)
+        self.assertEqual(report['assumptions'], ['UNCONDITIONAL'])
+        self.assertIn('zero-free rectangle boundaries', report['verification_scope'])
+
+    def test_littlewood_in_default(self):
+        code, calls, _, _ = self.run_workflow(['--reuse-dependencies'])
+        self.assertEqual(code, 0)
+        self.assertIn('littlewood-comparator', calls)
+        self.assertIn('density-adapters-comparator', calls)
+
     def test_density_adapters_focus(self):
         code, calls, report, preflight = self.run_workflow(
             ['--reuse-dependencies', '--density-adapters-only'], jobs=4)
