@@ -353,7 +353,7 @@ def main(argv=None):
             'combined build, complete axiom audit and regressions. UniformDyadicDensity remains an explicit hypothesis; no density theorem or signed-error limit is proved.')
 
     if args.littlewood_only:
-        report['verification_scope'] = ('Littlewood transported boundary logarithms, integrability, exact weighted identity, strict horizontal counts and actual zeta adapters on zero-free rectangle boundaries; '
+        report['verification_scope'] = ('Littlewood transported boundary logarithms, integrability, exact weighted identity, finite product orders, additive multiplicity counts and actual mollified-zeta adapters on zero-free rectangle boundaries; '
             'combined build, complete axiom audit and regressions. No analytic density theorem or boundary-zero limiting extension.')
 
     controls = []
@@ -405,7 +405,7 @@ def main(argv=None):
         if not (args.constant_kernel_only or args.density_adapters_only or args.pair_asymptotic_only or args.pair_fourier_only or args.pair_zero_bounds_only or args.pair_zero_comparison_only or args.pair_zero_only or args.triple_boundary_only or args.triple_budget_only or args.triple_interior_vanishing_only or args.triple_kernel_localization_only or args.triple_main_term_comparison_only or args.triple_master_only or args.triple_mixed_diagonal_only or args.triple_resonance_decay_only or args.triple_retained_only or args.triple_signed_sectors_only or args.triple_sine_measure_only or args.triple_smoothed_correlation_only or args.triple_smoothing_only or args.triple_test_function_only or args.zeta23_only):
             if not args.littlewood_only:
                 report['verification_scope'] += '; Littlewood identity and zero-free-boundary horizontal count adapters'
-            command('littlewood-build', ['lake', 'build', 'HigherCorrelations.LittlewoodExamples'])
+            command('littlewood-build', ['lake', 'build', 'HigherCorrelations.LittlewoodProductExamples'])
             command('littlewood-comparator', ['lake', 'env', comparator,
                     'lean/VerificationChallenges/littlewood.json'])
             from check_lean_littlewood import CONTROLS as littlewood_controls

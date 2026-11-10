@@ -684,3 +684,15 @@ nonvanishing on the entire rectangle boundary. The 36 contracts and 11 rejection
 controls run through `--littlewood-only` and the default reproduction harness;
 see [conventions and scope](lean-littlewood.md). Boundary-zero limits, mollifier
 estimates and the uniform analytic density theorem remain separate obligations.
+
+
+## Mollified Littlewood extension
+
+The Littlewood suite now includes 20 further statements proving finite analytic
+orders on the rectangle, exact product-order and strict-count additivity, and the
+actual zeta count bound from a boundary budget for zeta*M. Shared and additional
+mollifier zeros retain all multiplicities. M needs analyticity near the rectangle
+and the product must be nonzero on its border; interior nonvanishing is not
+assumed. The extended `--littlewood-only` suite has 56 contracts, 16 rejection
+controls and ten modules. Boundary-zero limits and analytic mean-square/density
+estimates remain unformalized; see [the precise scope](lean-littlewood.md).

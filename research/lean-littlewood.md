@@ -69,6 +69,53 @@ zeta on the border, and A≤E with k=log ζ(2+ic). It proves the displayed bound
 actual occurrences. Zeta analyticity follows on the positive-imaginary half-plane;
 the rectangle avoids its pole. Nonvanishing on Re s=2 supplies the base logarithm.
 
+## Products and mollified zeta
+
+For analytic f and g, boundary nonvanishing of fg implies boundary nonvanishing
+of each factor. `littlewood_product_factors` extracts both rectangle hypotheses;
+`LittlewoodRectangle.mul` constructs the product hypothesis from the factors.
+Interior zeros of either factor remain allowed.
+
+`LittlewoodRectangle.order_finite` uses the connected closed rectangle and a
+nonzero corner value to prove that the analytic order is finite at every point
+of the rectangle. Consequently `littlewood_product_order` proves
+
+    order(fg,s) = order(f,s) + order(g,s),
+
+with natural analytic orders and no remaining finite-order hypothesis. This
+step is essential because converting an infinite extended order to a natural
+number would otherwise discard it. For exact finite zero sets Zf,Zg,Zfg,
+`littlewood_product_count_add` proves, for every real sigma,
+
+    N_fg(sigma) = N_f(sigma) + N_g(sigma).
+
+The product zero set is their union, but its weights add at common zeros. The
+proof extends both weighted sums to the product zero set using zero order at
+nonzeros, so shared roots and additional roots of g are treated exactly.
+
+For F=zeta*M, `littlewood_mollified_occurrence_order` gives the original zeta
+multiplicity plus the order of M at each actual occurrence. The count inequality
+then combines with Littlewood to give
+
+    # {i : c<gamma_i<=d, beta_i>sigma}
+       <= A_F/(2pi(sigma-a)),
+    A_F<=E implies the same count <= E/(2pi(sigma-a)).
+
+The convenience theorem `littlewood_mollified_budget_positive_height` assumes
+0<a<sigma<1, 0<c<d, M analytic near [a,2]+i[c,d], and F nonzero on the entire
+border. Zeta analyticity and both factor boundary conditions are proved from
+these hypotheses; neither factor is required to be nonzero in the interior.
+Its base logarithm is `Complex.log (F (2+ic))`. The general bound accepts any k
+with exp(k)=F(2+ic); no identity between independently chosen principal logs is
+used. The generic M is an analytic multiplier: choosing Dirichlet-polynomial
+coefficients or proving mollifier mean-square estimates is outside this step.
+
+Checks cover M=1, arbitrary nonzero constant multipliers, shared repeated roots,
+additional distinct roots, strict threshold equality, and the impossibility of
+a zero multiplier satisfying the rectangle boundary condition. Shared roots
+contribute m+n, including when their ordinates coincide; distinct added roots
+are counted separately with their own multiplicities.
+
 ## Verification and provenance
 
 The existing pinned and ported Zeta23 weighted argument principle is reused
@@ -77,11 +124,13 @@ addition to all project declarations. Mathlib supplies analytic orders, real-pat
 calculus for complex functions, the fundamental theorem of calculus, finite-sum
 inequalities, and elementary zeta analyticity/nonvanishing.
 
-The suite contains 36 public statements in seven modules. Definition-only
-Comparator contracts cover every statement. Eleven unfinished controls cover log
+The suite contains 56 public statements in ten modules (20 statements in three
+modules were added for products and mollified zeta). Definition-only
+Comparator contracts cover every statement. Sixteen unfinished controls cover log
 transport, integrability, contour orientation, the weighted argument principle,
 the identity, count bounds, actual zeta specialization, constant functions,
-repeated zeros, threshold exclusion and branch invariance. Checked examples give
+repeated zeros, threshold exclusion, branch invariance, product factors, finite
+orders, order additivity, count additivity and the mollified-zeta budget. Checked examples give
 A=0 for a nonzero constant and A=2πm(Re ρ-a) for (s-ρ)^m with ρ strictly interior.
 Only `propext`, `Quot.sound` and `Classical.choice` are permitted; Nanoda is not run.
 Python regression tests verify inventory, scope and harness behavior, not analysis.
@@ -98,8 +147,8 @@ from the appended formal ledger entry.
 The exact bridge from a boundary integral budget to horizontal counts is now
 checked on zero-free boundaries. Removing that boundary restriction needs a
 separate limiting argument with the correct strict/half-open conventions.
-Mollified-zeta order comparisons, mollifier and twisted second-moment estimates,
-and the uniform density theorem remain further work. In particular, this lemma
+Mollified-zeta order and count comparisons are now checked. Mollifier and twisted
+second-moment estimates and the uniform density theorem remain further work. In particular, this lemma
 does not instantiate `UniformDyadicDensity`, prove a close-pair bound, establish
 a density-based moment estimate, or settle the signed complex-argument error.
 Historical density and pair/triple theorem statuses remain unchanged.

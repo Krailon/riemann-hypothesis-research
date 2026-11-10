@@ -176,5 +176,116 @@ theorem littlewood_repeated_zero (a b c d : ℝ) (ρ : ℂ) (m : ℕ) (hm : 0 < 
     (k : ℂ) (hk : exp k = (b+c*I-ρ)^m) :
     littlewoodBoundary (fun s => (s-ρ)^m) a b c d k = 2*Real.pi*(m:ℝ)*(ρ.re-a) := by sorry
 
+
+theorem LittlewoodRectangle.mul {f g : ℂ → ℂ} {a b c d : ℝ}
+    (hf : LittlewoodRectangle f a b c d) (hg : LittlewoodRectangle g a b c d) :
+    LittlewoodRectangle (f*g) a b c d := by sorry
+
+theorem littlewood_product_factors {f g : ℂ → ℂ} {a b c d : ℝ}
+    (hf : AnalyticOnNhd ℂ f (Rectangle (a+c*I) (b+d*I)))
+    (hg : AnalyticOnNhd ℂ g (Rectangle (a+c*I) (b+d*I)))
+    (h : LittlewoodRectangle (f*g) a b c d) :
+    LittlewoodRectangle f a b c d ∧ LittlewoodRectangle g a b c d := by sorry
+
+theorem LittlewoodRectangle.order_finite {f : ℂ → ℂ} {a b c d : ℝ}
+    (h : LittlewoodRectangle f a b c d) (s : ℂ)
+    (hs : s ∈ Rectangle (a+c*I) (b+d*I)) : analyticOrderAt f s ≠ ⊤ := by sorry
+
+theorem littlewood_product_order {f g : ℂ → ℂ} {a b c d : ℝ}
+    (hf : LittlewoodRectangle f a b c d) (hg : LittlewoodRectangle g a b c d)
+    (s : ℂ) (hs : s ∈ Rectangle (a+c*I) (b+d*I)) :
+    analyticOrderNatAt (f*g) s = analyticOrderNatAt f s + analyticOrderNatAt g s := by sorry
+
+theorem littlewood_product_order_le {f g : ℂ → ℂ} {a b c d : ℝ}
+    (hf : LittlewoodRectangle f a b c d) (hg : LittlewoodRectangle g a b c d)
+    (s : ℂ) (hs : s ∈ Rectangle (a+c*I) (b+d*I)) :
+    analyticOrderNatAt f s ≤ analyticOrderNatAt (f*g) s := by sorry
+
+theorem littlewood_product_zero_set {f g : ℂ → ℂ} {a b c d : ℝ}
+    (Zf Zg : Finset ℂ)
+    (hZf : ∀ s, s ∈ Zf ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ f s = 0)
+    (hZg : ∀ s, s ∈ Zg ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ g s = 0) :
+    ∀ s, s ∈ Zf ∪ Zg ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ (f*g) s = 0 := by sorry
+
+theorem littlewood_product_count_add {f g : ℂ → ℂ} {a b c d : ℝ}
+    (hf : LittlewoodRectangle f a b c d) (hg : LittlewoodRectangle g a b c d)
+    (Zf Zg Z : Finset ℂ)
+    (hZf : ∀ s, s ∈ Zf ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ f s = 0)
+    (hZg : ∀ s, s ∈ Zg ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ g s = 0)
+    (hZ : ∀ s, s ∈ Z ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ (f*g) s = 0)
+    (σ : ℝ) :
+    littlewoodRightCount (f*g) Z σ = littlewoodRightCount f Zf σ + littlewoodRightCount g Zg σ := by sorry
+
+theorem littlewood_product_count_le {f g : ℂ → ℂ} {a b c d : ℝ}
+    (hf : LittlewoodRectangle f a b c d) (hg : LittlewoodRectangle g a b c d)
+    (Zf Zg Z : Finset ℂ)
+    (hZf : ∀ s, s ∈ Zf ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ f s = 0)
+    (hZg : ∀ s, s ∈ Zg ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ g s = 0)
+    (hZ : ∀ s, s ∈ Z ↔ s ∈ Rectangle (a+c*I) (b+d*I) ∧ (f*g) s = 0)
+    (σ : ℝ) : littlewoodRightCount f Zf σ ≤ littlewoodRightCount (f*g) Z σ := by sorry
+
+theorem littlewood_mollified_rectangles (M : ℂ → ℂ) (a c d : ℝ)
+    (ha : a < 2) (hc : 0 < c) (hcd : c < d)
+    (hM : AnalyticOnNhd ℂ M (Rectangle (a+c*I) (2+d*I)))
+    (hn : ∀ s ∈ RectangleBorder (a+c*I) (2+d*I), (riemannZeta*M) s ≠ 0) :
+    LittlewoodRectangle riemannZeta a 2 c d ∧ LittlewoodRectangle M a 2 c d ∧
+      LittlewoodRectangle (riemannZeta*M) a 2 c d := by sorry
+
+theorem littlewood_mollified_occurrence_order {M : ℂ → ℂ} {a c d : ℝ}
+    (hz : LittlewoodRectangle riemannZeta a 2 c d) (hM : LittlewoodRectangle M a 2 c d)
+    (i : ZeroOccurrence) (hi : occurrenceValue i ∈ Rectangle (a+c*I) (2+d*I)) :
+    analyticOrderNatAt (riemannZeta*M) (occurrenceValue i) =
+      zeroMultiplicity i.1 + analyticOrderNatAt M (occurrenceValue i) := by sorry
+
+theorem littlewood_mollified_bound {M : ℂ → ℂ} {a σ c d : ℝ}
+    (hz : LittlewoodRectangle riemannZeta a 2 c d) (hM : LittlewoodRectangle M a 2 c d)
+    (ha : 0 < a) (hσ : a < σ)
+    (k : ℂ) (hk : exp k = (riemannZeta*M) (2+c*I)) :
+    ((rightDensityWindow c d (σ-1/2)).card : ℝ) ≤
+      littlewoodBoundary (riemannZeta*M) a 2 c d k / (2*Real.pi*(σ-a)) := by sorry
+
+theorem littlewood_mollified_of_budget {M : ℂ → ℂ} {a σ c d E : ℝ}
+    (hz : LittlewoodRectangle riemannZeta a 2 c d) (hM : LittlewoodRectangle M a 2 c d)
+    (ha : 0 < a) (hσ : a < σ)
+    (k : ℂ) (hk : exp k = (riemannZeta*M) (2+c*I))
+    (hE : littlewoodBoundary (riemannZeta*M) a 2 c d k ≤ E) :
+    ((rightDensityWindow c d (σ-1/2)).card : ℝ) ≤ E / (2*Real.pi*(σ-a)) := by sorry
+
+theorem littlewood_mollified_budget_positive_height (M : ℂ → ℂ) (a σ c d E : ℝ)
+    (ha : 0 < a) (hσ : a < σ) (hσ' : σ < 1) (hc : 0 < c) (hcd : c < d)
+    (hM : AnalyticOnNhd ℂ M (Rectangle (a+c*I) (2+d*I)))
+    (hn : ∀ s ∈ RectangleBorder (a+c*I) (2+d*I), (riemannZeta*M) s ≠ 0)
+    (hE : littlewoodBoundary (riemannZeta*M) a 2 c d
+      (Complex.log ((riemannZeta*M) (2+c*I))) ≤ E) :
+    ((rightDensityWindow c d (σ-1/2)).card : ℝ) ≤ E / (2*Real.pi*(σ-a)) := by sorry
+
+theorem littlewood_product_zero_impossible (f : ℂ → ℂ) (a b c d : ℝ) :
+    ¬ LittlewoodRectangle (f*0) a b c d := by sorry
+
+theorem littlewood_product_one_boundary (f : ℂ → ℂ) (a b c d : ℝ) (k : ℂ) :
+    littlewoodBoundary (f*1) a b c d k = littlewoodBoundary f a b c d k := by sorry
+
+theorem littlewood_mollified_one {a σ c d : ℝ}
+    (hz : LittlewoodRectangle riemannZeta a 2 c d) (ha : 0 < a) (hσ : a < σ)
+    (k : ℂ) (hk : exp k = riemannZeta (2+c*I)) :
+    ((rightDensityWindow c d (σ-1/2)).card : ℝ) ≤
+      littlewoodBoundary (riemannZeta*1) a 2 c d k / (2*Real.pi*(σ-a)) := by sorry
+
+theorem littlewood_product_constant_count {f : ℂ → ℂ} {a b c d : ℝ}
+    (hf : LittlewoodRectangle f a b c d) (w : ℂ) (hw : w ≠ 0)
+    (Z : Finset ℂ) (hZ : ∀ s ∈ Z, s ∈ Rectangle (a+c*I) (b+d*I)) (σ : ℝ) :
+    littlewoodRightCount (f*(fun _ => w)) Z σ = littlewoodRightCount f Z σ := by sorry
+
+theorem littlewood_product_shared_root (p : ℂ) (m n : ℕ) (σ : ℝ) :
+    littlewoodRightCount (fun z : ℂ => (z-p)^m*(z-p)^n) {p} σ =
+      if σ<p.re then m+n else 0 := by sorry
+
+theorem littlewood_product_added_root (p q : ℂ) (hpq : p ≠ q) (m n : ℕ) (σ : ℝ) :
+    littlewoodRightCount (fun z : ℂ => (z-p)^m*(z-q)^n) {p,q} σ =
+      (if σ<p.re then m else 0)+(if σ<q.re then n else 0) := by sorry
+
+theorem littlewood_product_shared_threshold (p : ℂ) (m n : ℕ) :
+    littlewoodRightCount (fun z : ℂ => (z-p)^m*(z-p)^n) {p} p.re = 0 := by sorry
+
 end
 end HigherCorrelations

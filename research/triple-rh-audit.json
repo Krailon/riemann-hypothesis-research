@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "8b03f9e5b2bf256ccf4100ee1451e928b223bea347487a4a4bb392f3fa4c911e",
+    "research/theorem-ledger.yaml": "b22079f8c8f1ad6827b6b8187fc4928ff595901006cc8f5645546ddec1255c75",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "78c54a9c923f1535b77e2a8fd5d9162f9c49e8ba6355d881141d803cfe7acad4"
+    "research/pair-rh-audit.json": "b5c98a480e3e80a2250c80ef3477442728c16df66cf7bbad68e013375eda4eb3"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4826,5 +4826,14 @@
     ],
     "report": "research/lean-littlewood.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new unconditional formal claim records transported boundary logarithms, verified integrability, the exact Littlewood identity from the existing weighted argument principle, multiplicity-weighted horizontal count bounds and actual zeta adapters, all with the stated analyticity and zero-free boundary hypotheses. ORDINATE-DENSITY-INPUT-001 gains partial component coverage only. Historical statements, statuses and RH-review scopes remain unchanged. The boundary-zero extension, mollified-zeta and second-moment estimates, UniformDyadicDensity, close-pair input and signed complex-argument error remain separate."
+  },
+  "ledger_mollified_littlewood_review": {
+    "reviewed_on": "2026-11-10",
+    "previous_ledger_sha256": "8b03f9e5b2bf256ccf4100ee1451e928b223bea347487a4a4bb392f3fa4c911e",
+    "added_claim_ids": [
+      "MASTER-MOLLIFIED-LITTLEWOOD-FORMAL-001"
+    ],
+    "report": "research/lean-littlewood.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new unconditional formal claim proves finite product orders, exact analytic-order and strict multiplicity-count additivity, and the actual zeta count bound from the Littlewood boundary budget for zeta*M. Interior mollifier zeros and shared roots are allowed; analyticity and product boundary nonvanishing remain explicit. ORDINATE-DENSITY-INPUT-001 gains partial component coverage only. Historical statements, statuses and RH-review scopes are unchanged. Mollifier/second-moment estimates, boundary-zero limits, UniformDyadicDensity and the signed complex-argument error remain separate."
   }
 }

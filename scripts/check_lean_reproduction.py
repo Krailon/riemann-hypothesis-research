@@ -80,7 +80,7 @@ class LeanReproductionTests(unittest.TestCase):
         self.assertEqual(preflight, 1)
         self.assertEqual([c for c in calls if c.endswith('-comparator')], ['littlewood-comparator'])
         self.assertEqual(len([c for c in calls if c.startswith('littlewood-')
-                              and c.endswith('-unfinished-rejected')]), 11)
+                              and c.endswith('-unfinished-rejected')]), 16)
         self.assertNotIn('resolve', calls)
         self.assertIn('project-build', calls)
         self.assertIn('axioms', calls)

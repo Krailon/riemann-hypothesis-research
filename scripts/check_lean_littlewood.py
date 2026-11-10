@@ -7,7 +7,7 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-CONTROLS = {'transport': 'littlewoodSegmentLog_exp', 'integrability': 'littlewood_vertical_log_integrable', 'boundary': 'littlewood_boundary_integral', 'argument-principle': 'littlewood_weighted_argument', 'identity': 'littlewood_identity', 'count': 'littlewood_count_of_budget', 'zeta': 'littlewood_zeta_budget_positive_height', 'constant': 'littlewood_constant_boundary', 'multiplicity': 'littlewood_repeated_zero', 'threshold': 'littlewood_count_threshold', 'branch': 'littlewood_boundary_branch_invariant'}
+CONTROLS = {'transport': 'littlewoodSegmentLog_exp', 'integrability': 'littlewood_vertical_log_integrable', 'boundary': 'littlewood_boundary_integral', 'argument-principle': 'littlewood_weighted_argument', 'identity': 'littlewood_identity', 'count': 'littlewood_count_of_budget', 'zeta': 'littlewood_zeta_budget_positive_height', 'constant': 'littlewood_constant_boundary', 'multiplicity': 'littlewood_repeated_zero', 'threshold': 'littlewood_count_threshold', 'branch': 'littlewood_boundary_branch_invariant', 'product-factors': 'littlewood_product_factors', 'finite-orders': 'LittlewoodRectangle.order_finite', 'product-orders': 'littlewood_product_order', 'product-count': 'littlewood_product_count_add', 'mollified': 'littlewood_mollified_budget_positive_height'}
 
 
 def read_json(path):
@@ -32,7 +32,7 @@ def validate(inventory, config):
         raise ValueError('Comparator coverage differs')
     if config['permitted_axioms'] != ['propext', 'Quot.sound', 'Classical.choice'] or config['enable_nanoda']:
         raise ValueError('changed trust boundary')
-    if config['solution_module'] != 'HigherCorrelations.LittlewoodExamples':
+    if config['solution_module'] != 'HigherCorrelations.LittlewoodProductExamples':
         raise ValueError('wrong solution')
     challenge = (ROOT / 'lean/VerificationChallenges/Littlewood.lean').read_text()
     imports = re.findall(r'^import HigherCorrelations\.(\w+)', challenge, re.M)

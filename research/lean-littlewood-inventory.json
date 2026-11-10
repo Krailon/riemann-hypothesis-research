@@ -7,7 +7,10 @@
     "LittlewoodBoundary",
     "LittlewoodCounting",
     "LittlewoodZeta",
-    "LittlewoodExamples"
+    "LittlewoodExamples",
+    "LittlewoodProduct",
+    "LittlewoodMollified",
+    "LittlewoodProductExamples"
   ],
   "components": [
     {
@@ -188,6 +191,106 @@
     {
       "declaration": "HigherCorrelations.littlewood_repeated_zero",
       "source": "lean/HigherCorrelations/LittlewoodExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.mul",
+      "source": "lean/HigherCorrelations/LittlewoodProduct.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_factors",
+      "source": "lean/HigherCorrelations/LittlewoodProduct.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.LittlewoodRectangle.order_finite",
+      "source": "lean/HigherCorrelations/LittlewoodProduct.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_order",
+      "source": "lean/HigherCorrelations/LittlewoodProduct.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_order_le",
+      "source": "lean/HigherCorrelations/LittlewoodProduct.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_zero_set",
+      "source": "lean/HigherCorrelations/LittlewoodProduct.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_count_add",
+      "source": "lean/HigherCorrelations/LittlewoodProduct.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_count_le",
+      "source": "lean/HigherCorrelations/LittlewoodProduct.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_mollified_rectangles",
+      "source": "lean/HigherCorrelations/LittlewoodMollified.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_mollified_occurrence_order",
+      "source": "lean/HigherCorrelations/LittlewoodMollified.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_mollified_bound",
+      "source": "lean/HigherCorrelations/LittlewoodMollified.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_mollified_of_budget",
+      "source": "lean/HigherCorrelations/LittlewoodMollified.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_mollified_budget_positive_height",
+      "source": "lean/HigherCorrelations/LittlewoodMollified.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_zero_impossible",
+      "source": "lean/HigherCorrelations/LittlewoodProductExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_one_boundary",
+      "source": "lean/HigherCorrelations/LittlewoodProductExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_mollified_one",
+      "source": "lean/HigherCorrelations/LittlewoodProductExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_constant_count",
+      "source": "lean/HigherCorrelations/LittlewoodProductExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_shared_root",
+      "source": "lean/HigherCorrelations/LittlewoodProductExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_added_root",
+      "source": "lean/HigherCorrelations/LittlewoodProductExamples.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.littlewood_product_shared_threshold",
+      "source": "lean/HigherCorrelations/LittlewoodProductExamples.lean",
       "comparator_checked": true
     }
   ],

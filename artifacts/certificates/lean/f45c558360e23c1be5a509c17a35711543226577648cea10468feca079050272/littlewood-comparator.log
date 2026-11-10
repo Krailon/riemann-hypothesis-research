@@ -1,0 +1,201 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.Littlewood
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3851/3851] Built VerificationChallenges.Littlewood (5.6s)
+warning: lean/VerificationChallenges/Littlewood.lean:9:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:12:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:24:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:36:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:39:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:42:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:47:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:52:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:56:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:60:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:64:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:76:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:84:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:91:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:96:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:101:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:105:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:111:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:117:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:121:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:127:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:134:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:139:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:142:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:148:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:154:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:160:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:164:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:170:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:174:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:180:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:184:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:190:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:194:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:199:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:204:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:210:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:219:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:234:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:240:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:247:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:254:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:262:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:265:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:268:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:274:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:279:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:283:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/Littlewood.lean:287:8: declaration uses `sorry`
+Build completed successfully (3851 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.littlewoodSegmentLog_start, HigherCorrelations.littlewoodSegmentLog_deriv, HigherCorrelations.littlewoodSegmentLog_exp, HigherCorrelations.littlewoodSegmentLog_re, HigherCorrelations.littlewood_affine_integral, HigherCorrelations.littlewood_integral_re, HigherCorrelations.littlewood_integral_im, HigherCorrelations.LittlewoodRectangle.horizontal, HigherCorrelations.LittlewoodRectangle.vertical, HigherCorrelations.littlewoodBottomLog_deriv, HigherCorrelations.littlewoodRightLog_deriv, HigherCorrelations.littlewoodTopLog_deriv, HigherCorrelations.littlewoodBottomLog_exp, HigherCorrelations.littlewoodRightLog_exp, HigherCorrelations.littlewoodTopLog_exp, HigherCorrelations.LittlewoodRectangle.horizontal_logDeriv, HigherCorrelations.LittlewoodRectangle.vertical_logDeriv, HigherCorrelations.littlewoodLog_re_of_exp, HigherCorrelations.littlewood_vertical_log_integrable, HigherCorrelations.littlewood_arguments_integrable, HigherCorrelations.littlewood_boundary_integral, HigherCorrelations.littlewood_zero_set_exists, HigherCorrelations.littlewood_weighted_argument, HigherCorrelations.littlewood_identity, HigherCorrelations.littlewood_mass_count, HigherCorrelations.littlewood_count_bound, HigherCorrelations.littlewood_count_of_budget, HigherCorrelations.littlewood_boundary_branch_invariant, HigherCorrelations.littlewood_count_threshold, HigherCorrelations.littlewood_zeta_count, HigherCorrelations.littlewood_zeta_bound, HigherCorrelations.littlewood_zeta_of_budget, HigherCorrelations.littlewood_zeta_rectangle, HigherCorrelations.littlewood_zeta_budget_positive_height, HigherCorrelations.littlewood_constant_boundary, HigherCorrelations.littlewood_repeated_zero, HigherCorrelations.LittlewoodRectangle.mul, HigherCorrelations.littlewood_product_factors, HigherCorrelations.LittlewoodRectangle.order_finite, HigherCorrelations.littlewood_product_order, HigherCorrelations.littlewood_product_order_le, HigherCorrelations.littlewood_product_zero_set, HigherCorrelations.littlewood_product_count_add, HigherCorrelations.littlewood_product_count_le, HigherCorrelations.littlewood_mollified_rectangles, HigherCorrelations.littlewood_mollified_occurrence_order, HigherCorrelations.littlewood_mollified_bound, HigherCorrelations.littlewood_mollified_of_budget, HigherCorrelations.littlewood_mollified_budget_positive_height, HigherCorrelations.littlewood_product_zero_impossible, HigherCorrelations.littlewood_product_one_boundary, HigherCorrelations.littlewood_mollified_one, HigherCorrelations.littlewood_product_constant_count, HigherCorrelations.littlewood_product_shared_root, HigherCorrelations.littlewood_product_added_root, HigherCorrelations.littlewood_product_shared_threshold, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.Littlewood
+Building HigherCorrelations.LittlewoodProductExamples
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3850/3935] Replayed HigherCorrelations.LittlewoodSegment
+warning: lean/HigherCorrelations/LittlewoodSegment.lean:57:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3852/3935] Replayed HigherCorrelations.LittlewoodBoundary
+warning: lean/HigherCorrelations/LittlewoodBoundary.lean:54:75: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [add_re, ofReal_re, mul_re, ofReal_im, I_re, I_im, mul_zero, sub_zero, add_zero, add_im, mul_im,
+    mul_one, zero_add, smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/LittlewoodBoundary.lean:90:43: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [add_im, sub_im, sub_re, mul_im, mul_re, I_re, I_im, ofReal_re, ofReal_im, zero_mul, one_mul,
+    zero_add, mul_zero, hcornerRe, sub_self, hleft, hright]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3855/3935] Replayed HigherCorrelations.LittlewoodCounting
+warning: lean/HigherCorrelations/LittlewoodCounting.lean:44:5: Variable name `hσ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hσ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3981/4040] Replayed Zeta23.Statement
+warning: lean/Zeta23/Statement.lean:151:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3982/4040] Replayed Zeta23.Statement.Seam
+warning: lean/Zeta23/Statement/Seam.lean:62:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [3983/4040] Replayed Zeta23.ZetaReflect
+warning: lean/Zeta23/ZetaReflect.lean:94:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [4008/4040] Replayed PrimeNumberTheoremAnd.MediumPNT
+info: PrimeNumberTheoremAnd/MediumPNT.lean:4142:0: 'MediumPNT' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4009/4040] Replayed PrimeNumberTheoremAnd.StrongPNT
+info: PrimeNumberTheoremAnd/StrongPNT.lean:2898:0: 'StrongPNT' depends on axioms: [propext, choice, Quot.sound]
+⚠ [4013/4040] Replayed Zeta23.RvM.Halving
+warning: lean/Zeta23/RvM/Halving.lean:55:55: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: lean/Zeta23/RvM/Halving.lean:65:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: lean/Zeta23/RvM/Halving.lean:73:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [4018/4040] Replayed Zeta23.RvM.ReZeroCount
+warning: lean/Zeta23/RvM/ReZeroCount.lean:275:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [4019/4040] Replayed Zeta23.RvM.Backlund
+warning: lean/Zeta23/RvM/Backlund.lean:126:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4023/4040] Replayed Zeta23.RvM.NcountWindow
+warning: lean/Zeta23/RvM/NcountWindow.lean:26:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [4031/4040] Replayed Zeta23.GammaFacts.Mu
+info: lean/Zeta23/GammaFacts/Mu.lean:140:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [4033/4040] Replayed Zeta23.GammaFacts.StirlingVert
+info: lean/Zeta23/GammaFacts/StirlingVert.lean:455:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [4040/4040] Replayed HigherCorrelations.LittlewoodProductExamples
+warning: lean/HigherCorrelations/LittlewoodProductExamples.lean:15:2: Try `simp at hn` instead of `simpa using hn`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Build completed successfully (4040 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.littlewoodSegmentLog_start, HigherCorrelations.littlewoodSegmentLog_deriv, HigherCorrelations.littlewoodSegmentLog_exp, HigherCorrelations.littlewoodSegmentLog_re, HigherCorrelations.littlewood_affine_integral, HigherCorrelations.littlewood_integral_re, HigherCorrelations.littlewood_integral_im, HigherCorrelations.LittlewoodRectangle.horizontal, HigherCorrelations.LittlewoodRectangle.vertical, HigherCorrelations.littlewoodBottomLog_deriv, HigherCorrelations.littlewoodRightLog_deriv, HigherCorrelations.littlewoodTopLog_deriv, HigherCorrelations.littlewoodBottomLog_exp, HigherCorrelations.littlewoodRightLog_exp, HigherCorrelations.littlewoodTopLog_exp, HigherCorrelations.LittlewoodRectangle.horizontal_logDeriv, HigherCorrelations.LittlewoodRectangle.vertical_logDeriv, HigherCorrelations.littlewoodLog_re_of_exp, HigherCorrelations.littlewood_vertical_log_integrable, HigherCorrelations.littlewood_arguments_integrable, HigherCorrelations.littlewood_boundary_integral, HigherCorrelations.littlewood_zero_set_exists, HigherCorrelations.littlewood_weighted_argument, HigherCorrelations.littlewood_identity, HigherCorrelations.littlewood_mass_count, HigherCorrelations.littlewood_count_bound, HigherCorrelations.littlewood_count_of_budget, HigherCorrelations.littlewood_boundary_branch_invariant, HigherCorrelations.littlewood_count_threshold, HigherCorrelations.littlewood_zeta_count, HigherCorrelations.littlewood_zeta_bound, HigherCorrelations.littlewood_zeta_of_budget, HigherCorrelations.littlewood_zeta_rectangle, HigherCorrelations.littlewood_zeta_budget_positive_height, HigherCorrelations.littlewood_constant_boundary, HigherCorrelations.littlewood_repeated_zero, HigherCorrelations.LittlewoodRectangle.mul, HigherCorrelations.littlewood_product_factors, HigherCorrelations.LittlewoodRectangle.order_finite, HigherCorrelations.littlewood_product_order, HigherCorrelations.littlewood_product_order_le, HigherCorrelations.littlewood_product_zero_set, HigherCorrelations.littlewood_product_count_add, HigherCorrelations.littlewood_product_count_le, HigherCorrelations.littlewood_mollified_rectangles, HigherCorrelations.littlewood_mollified_occurrence_order, HigherCorrelations.littlewood_mollified_bound, HigherCorrelations.littlewood_mollified_of_budget, HigherCorrelations.littlewood_mollified_budget_positive_height, HigherCorrelations.littlewood_product_zero_impossible, HigherCorrelations.littlewood_product_one_boundary, HigherCorrelations.littlewood_mollified_one, HigherCorrelations.littlewood_product_constant_count, HigherCorrelations.littlewood_product_shared_root, HigherCorrelations.littlewood_product_added_root, HigherCorrelations.littlewood_product_shared_threshold, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from HigherCorrelations.LittlewoodProductExamples
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

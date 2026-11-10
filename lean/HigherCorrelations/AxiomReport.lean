@@ -1,4 +1,4 @@
-import HigherCorrelations.LittlewoodExamples
+import HigherCorrelations.LittlewoodProductExamples
 import HigherCorrelations.DensityWindowAdapters
 import HigherCorrelations.ReplacementAssembly
 import HigherCorrelations.SmoothedTripleTheorem
@@ -2509,3 +2509,25 @@ import HigherCorrelations.HorizontalSquareFoundation
 #print axioms HigherCorrelations.littlewood_constant_boundary
 #print axioms HigherCorrelations.littlewood_repeated_zero
 #print axioms Zeta23.Analytic.rectangleIntegral'_mul_logDeriv
+
+-- Mollified Littlewood: finite orders and multiplicity-preserving products.
+#print axioms HigherCorrelations.LittlewoodRectangle.mul
+#print axioms HigherCorrelations.littlewood_product_factors
+#print axioms HigherCorrelations.LittlewoodRectangle.order_finite
+#print axioms HigherCorrelations.littlewood_product_order
+#print axioms HigherCorrelations.littlewood_product_order_le
+#print axioms HigherCorrelations.littlewood_product_zero_set
+#print axioms HigherCorrelations.littlewood_product_count_add
+#print axioms HigherCorrelations.littlewood_product_count_le
+#print axioms HigherCorrelations.littlewood_mollified_rectangles
+#print axioms HigherCorrelations.littlewood_mollified_occurrence_order
+#print axioms HigherCorrelations.littlewood_mollified_bound
+#print axioms HigherCorrelations.littlewood_mollified_of_budget
+#print axioms HigherCorrelations.littlewood_mollified_budget_positive_height
+#print axioms HigherCorrelations.littlewood_product_zero_impossible
+#print axioms HigherCorrelations.littlewood_product_one_boundary
+#print axioms HigherCorrelations.littlewood_mollified_one
+#print axioms HigherCorrelations.littlewood_product_constant_count
+#print axioms HigherCorrelations.littlewood_product_shared_root
+#print axioms HigherCorrelations.littlewood_product_added_root
+#print axioms HigherCorrelations.littlewood_product_shared_threshold

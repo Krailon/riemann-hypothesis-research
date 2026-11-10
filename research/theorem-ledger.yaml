@@ -6310,3 +6310,69 @@ claims:
       imported_inputs: "Pinned and ported Zeta23.Analytic.rectangleIntegral'_mul_logDeriv and finite_zeros_rectangle; Mathlib analytic orders, elementary zeta analyticity/nonvanishing, complex exponential, real-path calculus and integration by parts; actual occurrence finiteness and finite density multiplicity identities. The UniformDyadicDensity hypothesis is not used. Only propext, Quot.sound and Classical.choice are permitted."
       constants_scope: "Exact normalization 2*pi and explicit positive denominator 2*pi*(sigma-a). E is a supplied boundary-integral upper bound, not a certified density constant. Computation is Lean proof checking, not numerical evaluation."
       baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. ORDINATE-DENSITY-INPUT-001 gains the Littlewood bridge on zero-free boundaries as partial coverage only. Historical density, pair and triple statements, statuses and RH-review scopes remain unchanged. The analytic density theorem and its numerical provenance, boundary-zero extension, close-pair input and signed-error limit remain separate."
+
+  - id: MASTER-MOLLIFIED-LITTLEWOOD-FORMAL-001
+    title: Finite product orders and mollified-zeta Littlewood count bound
+    kind: theorem
+    statement: |
+      On a nondegenerate closed rectangle [a,b]+i[c,d], analytic factors f,g
+      whose product is nonzero on the entire border are individually
+      nonzero on that border. Both factors and their product therefore
+      satisfy the checked LittlewoodRectangle hypotheses. Interior zeros
+      of either factor are allowed, including shared zeros.
+      Connectedness and a nonzero corner value prove that the analytic
+      order of each factor is finite at every point of the rectangle.
+      With no remaining finite-order hypothesis, exactly
+        analyticOrderNatAt(f*g,s)=analyticOrderNatAt(f,s)+analyticOrderNatAt(g,s).
+      For exact finite zero sets Zf,Zg,Zfg in the rectangle, Zfg=Zf union Zg
+      and their strict multiplicity-weighted right counts satisfy, for all
+      real sigma,
+        N_fg(sigma)=N_f(sigma)+N_g(sigma), hence N_f(sigma)<=N_fg(sigma).
+      Shared zeros are weighted by the sum of the orders; the proof does
+      not replace weighted counts by cardinalities of distinct zero sets.
+      Now let F=zeta*M, 0<a<sigma<1 and 0<c<d, with right edge b=2. Assume
+      M is analytic near every point of the closed rectangle and F is
+      nonzero on its entire boundary, including corners. Zeta analyticity
+      and both factor boundary conditions are derived from these hypotheses.
+      At an actual ZeroOccurrence i in the rectangle, the order of F is
+      zeroMultiplicity(i.1)+analyticOrderNatAt(M,occurrenceValue i).
+      Thus all original occurrence indices retain their multiplicity.
+      Let A_F=littlewoodBoundary F a 2 c d k with exp(k)=F(2+ic), using
+      the checked compatible transported arguments. Then
+        # {i : c<gamma_i<=d, beta_i>sigma} <= A_F/(2*pi*(sigma-a)).
+      In particular A_F<=E gives the same count <= E/(2*pi*(sigma-a)).
+      The convenience theorem chooses k=Complex.log(F(2+ic)); product
+      boundary nonvanishing proves this is a valid base logarithm. No
+      identity between independently chosen principal logarithms is used.
+      The half-open height convention and strict horizontal threshold
+      retain those of the previous actual-zeta adapter. Border zeros are
+      excluded by hypothesis, not silently removed from the count.
+      Checked cases include M=1, arbitrary nonzero constant multipliers,
+      shared roots with orders m,n contributing m+n, additional distinct
+      roots with their separate multiplicities, and threshold equality.
+      The zero multiplier is proved incompatible with the boundary hypothesis.
+      No interior nonvanishing of M, RH, simplicity, numerical density
+      constants, selected mollifier coefficients or mean-square estimates
+      are assumed or established. Boundary-zero limits, UniformDyadicDensity
+      and the signed complex-argument error remain separate obligations.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-LITTLEWOOD-COUNTING-FORMAL-001, ZERO-OCCURRENCE-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/LittlewoodMollified.lean
+      label: HigherCorrelations.littlewood_mollified_budget_positive_height
+      companion_declarations: [littlewood_product_factors, LittlewoodRectangle.order_finite, littlewood_product_order, littlewood_product_order_le, littlewood_product_zero_set, littlewood_product_count_add, littlewood_product_count_le, littlewood_mollified_rectangles, littlewood_mollified_occurrence_order, littlewood_mollified_bound, littlewood_mollified_of_budget, littlewood_product_zero_impossible, littlewood_product_constant_count, littlewood_product_shared_root, littlewood_product_added_root, littlewood_product_shared_threshold]
+      bookkeeping: research/lean-littlewood.md
+      inventory: research/lean-littlewood-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: f45c558360e23c1be5a509c17a35711543226577648cea10468feca079050272
+    limit_order: "Fix the rectangle, analytic multiplier and threshold. All zero counts and order comparisons are finite. Reuse the checked Littlewood boundary integrals; no boundary-zero limit, height asymptotic or infinite sum/integral interchange is added."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The extended Littlewood suite checks 56 public statements in ten modules, including 20 new statements in three modules, against definition-only Comparator contracts. All 16 unfinished controls, combined build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Checked Littlewood identity, finite zero-set existence and actual occurrence adapter; Mathlib analytic identity principle on a connected rectangle, finite analytic-order additivity, finite-set weighted sums and elementary product nonvanishing. Only propext, Quot.sound and Classical.choice are permitted. The UniformDyadicDensity hypothesis is not used."
+      constants_scope: "Exact denominator 2*pi*(sigma-a); E is a supplied boundary-integral budget, not a proved density or mean-square constant. Computation is Lean proof checking, not numerical evaluation."
+      baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. ORDINATE-DENSITY-INPUT-001 gains the mollified Littlewood bridge as partial coverage only. Historical statements, statuses and RH-review scopes remain unchanged. Mollifier/second-moment estimates, boundary-zero extensions, the analytic density theorem and open signed-error limit remain separate."

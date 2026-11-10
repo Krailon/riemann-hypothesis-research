@@ -1,6 +1,6 @@
 {
   "challenge_module": "VerificationChallenges.Littlewood",
-  "solution_module": "HigherCorrelations.LittlewoodExamples",
+  "solution_module": "HigherCorrelations.LittlewoodProductExamples",
   "theorem_names": [
     "HigherCorrelations.littlewoodSegmentLog_start",
     "HigherCorrelations.littlewoodSegmentLog_deriv",
@@ -37,7 +37,27 @@
     "HigherCorrelations.littlewood_zeta_rectangle",
     "HigherCorrelations.littlewood_zeta_budget_positive_height",
     "HigherCorrelations.littlewood_constant_boundary",
-    "HigherCorrelations.littlewood_repeated_zero"
+    "HigherCorrelations.littlewood_repeated_zero",
+    "HigherCorrelations.LittlewoodRectangle.mul",
+    "HigherCorrelations.littlewood_product_factors",
+    "HigherCorrelations.LittlewoodRectangle.order_finite",
+    "HigherCorrelations.littlewood_product_order",
+    "HigherCorrelations.littlewood_product_order_le",
+    "HigherCorrelations.littlewood_product_zero_set",
+    "HigherCorrelations.littlewood_product_count_add",
+    "HigherCorrelations.littlewood_product_count_le",
+    "HigherCorrelations.littlewood_mollified_rectangles",
+    "HigherCorrelations.littlewood_mollified_occurrence_order",
+    "HigherCorrelations.littlewood_mollified_bound",
+    "HigherCorrelations.littlewood_mollified_of_budget",
+    "HigherCorrelations.littlewood_mollified_budget_positive_height",
+    "HigherCorrelations.littlewood_product_zero_impossible",
+    "HigherCorrelations.littlewood_product_one_boundary",
+    "HigherCorrelations.littlewood_mollified_one",
+    "HigherCorrelations.littlewood_product_constant_count",
+    "HigherCorrelations.littlewood_product_shared_root",
+    "HigherCorrelations.littlewood_product_added_root",
+    "HigherCorrelations.littlewood_product_shared_threshold"
   ],
   "definition_names": [],
   "permitted_axioms": [
