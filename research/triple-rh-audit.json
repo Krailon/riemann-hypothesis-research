@@ -1094,10 +1094,10 @@
     ]
   },
   "input_hashes": {
-    "research/theorem-ledger.yaml": "b22079f8c8f1ad6827b6b8187fc4928ff595901006cc8f5645546ddec1255c75",
+    "research/theorem-ledger.yaml": "434a343cb959a1cefa890116642b0cb59d98a153f4e9f94755ba1ce744700696",
     "research/triple-dependency-graph.json": "a2e1c4c3d105bf9a1ce9bd2d9f1997212ee2c5f1b1686c97922aa78f41cb9578",
     "research/triple-dependency-graph.md": "dd3275a8564bbd9bac6f294c6dcc573eb66bd7c38073d07f77a5496ac23daa0e",
-    "research/pair-rh-audit.json": "b5c98a480e3e80a2250c80ef3477442728c16df66cf7bbad68e013375eda4eb3"
+    "research/pair-rh-audit.json": "2ce49cdde650990fa8a78bd85234cdf768a25d865f9b1949e202219c2f9c183b"
   },
   "supplemental_evidence": {
     "sine-context": {
@@ -4835,5 +4835,23 @@
     ],
     "report": "research/lean-littlewood.md",
     "changes": "The previous ledger remains an unchanged byte prefix. The new unconditional formal claim proves finite product orders, exact analytic-order and strict multiplicity-count additivity, and the actual zeta count bound from the Littlewood boundary budget for zeta*M. Interior mollifier zeros and shared roots are allowed; analyticity and product boundary nonvanishing remain explicit. ORDINATE-DENSITY-INPUT-001 gains partial component coverage only. Historical statements, statuses and RH-review scopes are unchanged. Mollifier/second-moment estimates, boundary-zero limits, UniformDyadicDensity and the signed complex-argument error remain separate."
+  },
+  "ledger_afe_prerequisites_review": {
+    "reviewed_on": "2026-11-11",
+    "previous_ledger_sha256": "b22079f8c8f1ad6827b6b8187fc4928ff595901006cc8f5645546ddec1255c75",
+    "added_claim_ids": [
+      "MASTER-AFE-PREREQUISITES-FORMAL-001"
+    ],
+    "report": "research/lean-approximate-functional.md",
+    "changes": "The previous ledger is an unchanged byte prefix. The new formal claim records AFE prerequisites, a proved complex Stirling identity, the full uniform chi-phase estimate and phase replacement in both cutoff orders. The actual sharp contour identity and global AFE remainder remain unproved; bounded-height C_H is not promoted to an absolute constant. Historical statements, statuses and RH-review scopes are unchanged. No analytic density theorem, close-pair bound or signed-error limit is claimed."
+  },
+  "ledger_afe_hankel_review": {
+    "reviewed_on": "2026-11-12",
+    "previous_ledger_sha256": "787f6747fe6ec1761acf677bcabc2f8ea9ef613c674bafff3c731dee18da4da1",
+    "added_claim_ids": [
+      "MASTER-AFE-HANKEL-FORMAL-001"
+    ],
+    "report": "research/lean-approximate-functional.md",
+    "changes": "The previous ledger remains an unchanged byte prefix. The new unconditional formal claim proves the fixed-radius Hankel identity for every nonreal s, including absolute Mellin interchange, the shrinking-circle limit on Re(s)>1, analytic continuation on both half-planes, and inclusive paired residue normalization. The saddle deformation and uniform large-height AFE remainder remain unfinished. Historical theorem statuses and RH-review scopes are unchanged; no analytic density theorem, close-pair bound or signed-error limit is claimed."
   }
 }

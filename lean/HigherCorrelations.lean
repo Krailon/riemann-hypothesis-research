@@ -1,3 +1,4 @@
+import HigherCorrelations.ApproximateFunctionalFoundation
 import HigherCorrelations.LittlewoodProductExamples
 import HigherCorrelations.DensityWindowAdapters
 import HigherCorrelations.SineMeasureAssembly

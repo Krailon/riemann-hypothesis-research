@@ -696,3 +696,18 @@ and the product must be nonzero on its border; interior nonvanishing is not
 assumed. The extended `--littlewood-only` suite has 56 contracts, 16 rejection
 controls and ten modules. Boundary-zero limits and analytic mean-square/density
 estimates remain unformalized; see [the precise scope](lean-littlewood.md).
+
+## Approximate functional equation work in progress
+
+The 141-statement AFE prerequisite suite includes inclusive-cutoff algebra,
+reflection valid at zeta zeros, moving-cutoff integrability, compact-height
+bounds, explicit contour-denominator separation, a proved complex Stirling
+identity, the uniform chi-phase estimate, phase-error transfer in both
+cutoff orders, absolute Mellin interchange, and the fixed-radius Hankel identity
+for every nonreal parameter. The latter includes paired residue normalization,
+shrinking-circle control and analytic continuation on both half-planes. See `lean-approximate-functional.md` for exact domains and the
+proof dependency order. The global sharp two-sum contour identity and its
+large-height remainder estimate are still unproved. No analytic density
+theorem is claimed. The focused reproduction is
+`--reuse-dependencies --approximate-functional-only --control-jobs 8`; it uses
+23 rejection controls and also runs the combined build and full axiom audit.

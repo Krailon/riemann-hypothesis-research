@@ -1,0 +1,14 @@
+{
+  "challenge_module": "VerificationChallenges.ApproximateFunctional",
+  "solution_module": "VerificationChallenges.ApproximateFunctionalUnfinished",
+  "theorem_names": [
+    "HigherCorrelations.afeHankel_circle_tendsto_zero"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

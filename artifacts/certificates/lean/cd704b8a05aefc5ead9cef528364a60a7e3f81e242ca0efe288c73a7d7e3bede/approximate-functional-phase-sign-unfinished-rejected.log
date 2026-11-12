@@ -1,0 +1,360 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.ApproximateFunctional
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3829/3829] Replayed VerificationChallenges.ApproximateFunctional
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:14:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:16:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:22:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:25:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:27:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:33:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:42:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:50:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:53:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:55:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:60:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:63:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:66:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:70:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:74:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:76:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:78:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:82:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:88:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:91:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:97:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:100:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:103:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:110:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:112:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:116:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:120:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:126:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:130:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:139:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:143:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:148:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:154:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:161:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:165:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:169:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:172:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:181:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:184:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:187:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:190:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:193:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:196:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:199:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:202:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:205:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:209:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:212:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:216:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:221:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:224:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:232:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:236:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:240:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:244:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:248:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:251:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:255:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:259:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:267:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:270:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:274:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:278:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:282:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:290:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:294:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:297:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:301:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:305:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:308:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:311:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:314:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:317:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:320:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:324:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:328:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:331:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:335:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:338:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:341:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:344:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:347:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:351:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:355:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:358:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:361:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:365:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:368:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:372:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:377:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:381:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:384:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:390:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:393:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:396:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:401:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:404:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:408:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:412:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:415:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:419:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:423:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:427:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:431:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:435:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:439:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:444:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:451:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:457:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:465:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:469:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:475:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:479:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:482:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:485:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:488:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:492:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:496:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:500:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:503:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:506:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:509:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:519:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:527:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:535:8: declaration uses `sorry`
+Build completed successfully (3829 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.afePhase_conj, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.ApproximateFunctional
+Building VerificationChallenges.ApproximateFunctionalUnfinished
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/rejection-controls-0cqpxvy4/worker-3/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3829/3829] Replayed VerificationChallenges.ApproximateFunctionalUnfinished
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:14:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:16:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:22:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:25:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:27:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:33:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:42:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:50:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:53:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:55:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:60:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:63:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:66:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:70:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:74:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:76:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:78:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:82:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:88:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:91:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:97:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:100:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:103:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:110:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:112:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:116:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:120:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:126:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:130:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:139:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:143:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:148:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:154:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:161:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:165:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:169:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:172:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:181:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:184:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:187:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:190:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:193:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:196:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:199:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:202:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:205:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:209:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:212:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:216:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:221:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:224:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:232:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:236:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:240:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:244:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:248:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:251:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:255:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:259:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:267:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:270:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:274:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:278:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:282:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:290:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:294:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:297:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:301:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:305:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:308:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:311:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:314:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:317:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:320:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:324:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:328:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:331:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:335:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:338:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:341:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:344:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:347:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:351:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:355:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:358:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:361:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:365:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:368:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:372:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:377:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:381:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:384:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:390:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:393:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:396:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:401:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:404:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:408:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:412:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:415:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:419:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:423:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:427:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:431:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:435:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:439:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:444:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:451:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:457:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:465:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:469:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:475:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:479:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:482:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:485:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:488:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:492:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:496:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:500:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:503:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:506:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:509:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:519:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:527:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctionalUnfinished.lean:535:8: declaration uses `sorry`
+Build completed successfully (3829 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.afePhase_conj, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.ApproximateFunctionalUnfinished
+uncaught exception: Illegal axiom detected: 'sorryAx'

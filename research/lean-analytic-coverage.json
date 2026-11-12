@@ -13987,7 +13987,712 @@
       "declaration": "HigherCorrelations.littlewood_product_shared_threshold",
       "source": "lean/HigherCorrelations/LittlewoodProductExamples.lean",
       "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePoint_re",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePoint_im",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePoint_reflect",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePoint_conj",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_nat",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_one",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_lt_one",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_conj",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_identity",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_phase_identity",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_phase_remainder_split",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_phase_remainder_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_functional_eq",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_conj",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeRemainder_conj",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_reflection",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeRemainder_reflection",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeRemainder_reflection_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_critical_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalAlgebra.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHeight_nonneg",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHeight_pos",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHeight_neg",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHeight_ge_one",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePhase_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePhase_ne_zero",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePhase_conj",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePhase_positive",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePhase_critical_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePhase_mul_conj",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_norm_le_sum",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_norm_le_floor",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_norm_le",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_step",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeTwist_admissible",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeTwist_short_continuous",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeTwist_long_continuous",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_continuous",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_measurable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_integrableOn",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_continuousCutoff_integrable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeTwist_four_polynomials_integrable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_continuousAt",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCompact.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeZetaChi_compact_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCompact.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeRemainder_bounded_height",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCompact.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeRemainder_compact_short",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalCompact.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_exp_near_lattice",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalContourBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_exp_sub_one_lower",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalContourBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_contour_denominator",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalContourBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_contour_inverse_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalContourBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_floor_ratio",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalContourBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_contour_parameters",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalContourBounds.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirlingStep_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingStep.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirlingMain_increment_closed",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingStep.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirlingMain_increment",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingStep.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_shift_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingSeries.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirlingStep_shift_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingSeries.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_inverse_differences_hasSum",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingSeries.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirlingStep_summable_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingSeries.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirlingCorrection_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingSeries.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirlingCorrection_tail",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingSeries.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirlingCorrection_succ",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingSeries.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirling_finite_logs",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_logGammaSeq_decomposition",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_scaled_log_limit",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_small_log_limit",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeStirling_offset_limit",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_logGammaSeq_limit",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeGamma_stirling_identity",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeGamma_stirling_closed",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalGamma.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeGamma_stirling_relative",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalGamma.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeGammaVerticalError_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalGammaPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_log_lower_vertical",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalGammaPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_sin_factor",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalGammaPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePhase_exp_positive",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalGammaPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_phase_factor",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalGammaPhase.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_phase_high",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalChiEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_phase_uniform_positive",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalChiEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_phase_uniform",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalChiEstimate.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_phase_replacement_identity",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhaseTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_phase_replacement_uniform",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalPhaseTransfer.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_laplace_term",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_laplace_integrable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_laplace_integral_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_laplace_summable_integral_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_exponential_series",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_zeta_mellin",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_nat_succ",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_range",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_dirichlet_tail",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_exponential_tail",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_mellin_tail",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_zeta_mellin_integrable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_mellin_tail_integrable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalMellin.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLog_exp",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLog_derivative",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLog_upper_pole",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLog_lower_pole",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPower_upper_pole",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPower_lower_pole",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_exp_sine_jump",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPrefactor_jump",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPower_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPower_derivative",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelKernel_residue",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPrefactor_mellin",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPower_pole_pair",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeChi_power",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelKernel_residue_pair",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankel.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_exp_small_denominator",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalSmallCircle.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPower_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalSmallCircle.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelKernel_small_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalSmallCircle.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelKernel_measurable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalSmallCircle.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_circle_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalSmallCircle.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_circle_integrable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalSmallCircle.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_circle_tendsto_zero",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalSmallCircle.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLog_circle",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_circle_lift",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLift_differentiable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLift_period",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLift_rectangle",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_mellin_kernel_continuous",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelLift_real_integral",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_circle_difference",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_circle_mellin",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_initial_identity",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_mellin_kernel_norm",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelRay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_mellin_ray_majorant",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelRay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_mellin_ray_integrable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelRay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelRayWeight_integrable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelRay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelRayWeight_decay",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelRay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelRayWeight_zero_bound",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelRay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelRayWeight_mellin",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelRay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_ray_differentiable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelRay.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afe_compact_exp_integral_entire",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_circle_differentiable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afePolynomial_differentiable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankelPrefactor_differentiable",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_initial_identity_on",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_identity_nonreal",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_identity_cutoff",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean",
+      "comparator_checked": true
+    },
+    {
+      "declaration": "HigherCorrelations.afeHankel_residue_sum",
+      "source": "lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean",
+      "comparator_checked": true
     }
   ],
-  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Pointwise constant-kernel replacement, its project-scaled bound, quadratic P24 Fourier decay, absolute convergence, cutoffs, exact algebraic split and summed moment bound are checked with explicit conservative constants. Finite density-count and reflection/window adapters and Littlewood rectangle counting on zero-free boundaries are checked. Finite product orders, exact multiplicity-count additivity and mollified-zeta count bounds are also checked. Discharge the explicit UniformDyadicDensity hypothesis and separately prove the needed close-pair bound before density-based moment or vanishing claims. The unaveraged constant-term identification remains separate. Numerical effectiveness of inherited smoothed-theorem constants and the ordinate-only signed error remain separate."
+  "next_step": "The exact, tuplewise and summed near/far localization estimates and complex-test weighted frozen-profile summability are checked. Normalized correlation transfer and its fixed-test height limit are checked. The effective uniform microscopic profile limit is also checked. The critical-line quadratic expansion and tuplewise specialization are checked. The explicit zero-gap horizontal formula and closed-cube positivity are checked. The local normalization identity and coefficient limit 3/2 are checked, completing formal coverage of TRIPLE-KERNEL-CRITICAL-SPECIALIZATION-001. The complete five-partition sine benchmark, tempered Fourier identity and ordinary/factorial cumulants are checked, including closed-hexagon cancellation. The exact main-term comparison, weighted estimates and fixed-test limits are checked with inherited existential constants. The unit-normalized smoothed triple theorem is assembled, including absolute convergence, cutoffs, uniform errors and varying-family limits. Its inherited effectivity qualification remains outstanding. Pointwise constant-kernel replacement, its project-scaled bound, quadratic P24 Fourier decay, absolute convergence, cutoffs, exact algebraic split and summed moment bound are checked with explicit conservative constants. Finite density-count and reflection/window adapters and Littlewood rectangle counting on zero-free boundaries are checked. Finite product orders, exact multiplicity-count additivity and mollified-zeta count bounds are also checked. The AFE algebra, inclusive and moving cutoffs, compact-height bounds, contour denominator, complex Stirling identity and uniform chi-phase transfer are checked. The exact fixed-radius Hankel identity, absolute Mellin interchange, paired residues, shrinking-circle limit and analytic continuation at every nonreal parameter are checked. The saddle deformation, sharp two-sum contour identity and global remainder bound remain unfinished. Discharge the explicit UniformDyadicDensity hypothesis and separately prove the needed close-pair bound before density-based moment or vanishing claims. The unaveraged constant-term identification remains separate. Numerical effectiveness of inherited smoothed-theorem constants and the ordinate-only signed error remain separate."
 }

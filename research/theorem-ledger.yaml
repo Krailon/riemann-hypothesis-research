@@ -6376,3 +6376,123 @@ claims:
       imported_inputs: "Checked Littlewood identity, finite zero-set existence and actual occurrence adapter; Mathlib analytic identity principle on a connected rectangle, finite analytic-order additivity, finite-set weighted sums and elementary product nonvanishing. Only propext, Quot.sound and Classical.choice are permitted. The UniformDyadicDensity hypothesis is not used."
       constants_scope: "Exact denominator 2*pi*(sigma-a); E is a supplied boundary-integral budget, not a proved density or mean-square constant. Computation is Lean proof checking, not numerical evaluation."
       baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. ORDINATE-DENSITY-INPUT-001 gains the mollified Littlewood bridge as partial coverage only. Historical statements, statuses and RH-review scopes remain unchanged. Mollifier/second-moment estimates, boundary-zero extensions, the analytic density theorem and open signed-error limit remain separate."
+
+  - id: MASTER-AFE-PREREQUISITES-FORMAL-001
+    title: Complex Stirling, uniform chi-phase transfer, and sharp AFE prerequisites
+    kind: theorem
+    statement: |
+      With P(s,x)=sum_{1<=n<=floor(x)} n^(-s) and
+      R(s;x,y)=zeta(s)-P(s,x)-chi(s)*P(1-s,y), all positive-integer
+      cutoff terms are included with full weight. For every nonreal s,
+      chi(s)*chi(1-s)=1 and R(s;y,x)=chi(s)*R(1-s;x,y), including
+      points where zeta(s)=0. Conjugation and critical-line chi norm
+      identities are checked without cancellation of zeta(s).
+      Put F(z)=(z-1/2)log(z)-z and
+      d(z)=(z+1/2)log(1+1/z)-1. For Re(z)>=0 and |z|>=2,
+      c(z)=sum_{n>=0}d(z+n) converges absolutely, |c(z)|<=8/|z|,
+      and the tail after N terms has norm at most 8/|z+N|. Exactly
+        Gamma(z)=exp(F(z)+log(2*pi)/2+c(z)).
+      For |z|>=8 its relative error against exp(F(z)+log(2*pi)/2)
+      is at most 16/|z|. Normalization follows from the checked real
+      Stirling limit and actual Gamma sequence; Re(z)=0 follows by
+      Gamma recurrence and the convergent correction identity.
+      Write q=|t|/(2*pi) and
+        chiTilde(sigma,t)=q^(1/2-sigma)*exp(i*(-t*log(q/e)+sign(t)*pi/4)).
+      There exists one absolute C>0 such that for 1/2<=sigma<=1 and
+      |t|>=2*pi,
+        |chi(sigma+it)-chiTilde(sigma,t)|<=C*q^(1/2-sigma)/|t|.
+      The positive-height bound has C=20 for t>=18. Compactness and
+      conjugation supply the full range with an existential C.
+      Consequently, replacing chi by chiTilde changes the actual
+      remainder by at most C*x^(-sigma) in the (x,y) order and by at
+      most C*q^(1/2-sigma)*x^(sigma-1) in the (y,x) order, whenever
+      1<=x<=y and xy=q. These are bounds for the phase replacement,
+      not for R itself. All strip, cutoff and height endpoints are retained.
+      Moving asymmetric cutoffs sqrt(t*mu1/(2*pi*mu2)) and its reversed
+      counterpart are admissible for t>=T and 1<=mu1<=mu2<=T/(2*pi).
+      All four sharp polynomials are measurable and integrable on bounded
+      height intervals. Integer floor jumps are not treated as continuous.
+      For each fixed H>=2*pi, a separate C_H bounds R by C_H*x^(-sigma)
+      on 0<=sigma<=1, 2*pi<=|t|<=H, x,y>=1, xy=q. C_H depends on H.
+      Outside the radius-1/4 disks around 2*pi*i*Z, |exp(z)-1|>=1/6.
+      Fixed contour parameters r0=lambda0=c=1/4,d=4 are admissible.
+      The actual sharp two-sum contour representation, its global
+      large-height remainder estimate and the full AFE assembly remain
+      unproved. No analytic density theorem or signed-error limit follows.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: []
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ApproximateFunctionalPhaseTransfer.lean
+      label: HigherCorrelations.afe_phase_replacement_uniform
+      companion_declarations: [afeChi_phase_uniform, afeGamma_stirling_closed, afeGamma_stirling_relative, afeStirlingCorrection_bound, afeStirlingCorrection_tail, afeRemainder_reflection, afeRemainder_compact_short, afeTwist_four_polynomials_integrable, afe_contour_denominator, afe_contour_parameters]
+      bookkeeping: research/lean-approximate-functional.md
+      inventory: research/lean-approximate-functional-inventory.json
+    constants_effective: false
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: ea9888f71d315182f43cf7cc4a5c81a943ec3a0454cb103acbb8b56bfb08784c
+    limit_order: "First fix z and prove absolute convergence of its correction series with a uniform horizontal tail. Pass finite Gamma identities to the limit, then use recurrence at Re z=0. The chi estimate is pointwise uniform in sigma and t; compact upper-height constants are kept separate. No unproved contour or density limit is taken."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "80 public statements in 14 modules, definition-only Comparator contracts, 16 unfinished rejection controls, combined build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions passed."
+      imported_inputs: "Pinned Mathlib real Stirling limit, Gamma sequence and recurrence/reflection, complex logarithm Taylor estimates and elementary measure theory; pinned PNT exp_logGammaSeq. The complex Stirling and chi-phase bounds are proved locally. Only propext, Quot.sound and Classical.choice are permitted. No density or AFE remainder assumption is used."
+      constants_scope: "Explicit local constants 8,16,9,20 and contour inverse bound 6; the global chi constant includes a compact-height existence argument and is not numerically extracted. C_H in the bounded-height R estimate depends on H."
+      baseline_audit_coverage: "The previous ledger is an unchanged byte prefix. Historical theorem statuses and RH-review scopes are unchanged. The requested global sharp AFE remainder is not formalized by this certificate."
+
+  - id: MASTER-AFE-HANKEL-FORMAL-001
+    title: Exact inclusive-cutoff Hankel identity and analytic continuation
+    kind: theorem
+    statement: |
+      Let P(s,x)=sum_{1<=n<=floor(x)} n^(-s),
+      Lplus(z)=log(-z)+pi*i,
+      K(s,m,z)=exp((s-1)*Lplus(z))*exp(-m*z)/(exp(z)-1), and
+      A(s)=exp(-pi*i*s)*Gamma(1-s)/(2*pi*i).
+      For every nonreal s, natural m>=0 and 0<r<=1/2, exactly
+        zeta(s)-P(s,m)=A(s)*(J(s,m,r)+(exp(2*pi*i*s)-1)*Q(s,m,r)),
+      where J is the counterclockwise circle integral of K on |z|=r and
+      Q is the integral from r to infinity of
+      u^(s-1)*exp(-m*u)/(exp(u)-1). Q is absolutely integrable and entire
+      in s for each fixed m and r>0. J is integrable on the circle and
+      entire in s for each fixed m and 0<r<=1/2. A checked wrapper takes
+      m=floor(x) for any real cutoff x, preserving full integer weights.
+      On Re(s)>1, the positive-ray Mellin integral from zero equals
+      Gamma(s)*(zeta(s)-P(s,m)); absolute Laplace-term integrals form a
+      summable series, justifying the infinite sum/integral interchange.
+      For fixed s and m and 0<r<=1/2,
+        |J(s,m,r)|<=4*pi*r^(Re(s)-1)*exp(2*pi*|Im(s)|+m/2).
+      The shrinking-circle limit is taken only on Re(s)>1. Rectangle
+      Cauchy integration after z=exp(w) proves the initial identity.
+      Analytic continuation separately on the upper and lower half-planes
+      then establishes it for all nonreal s, including Re(s)=0 and 1.
+      For every natural N, the actual simple-pole residues satisfy
+        A(s)*(2*pi*i)*sum_{k=1}^N (Res_{2*pi*i*k}K+Res_{-2*pi*i*k}K)
+          =-chi(s)*P(1-s,N).
+      This last algebraic normalization holds for all complex s; the
+      nonreal restriction remains on the zeta identity. Each residue is
+      identified through a proved punctured limit. Both lattice halves,
+      the orientation sign, the factor 2*pi*i and N=0 are retained.
+      No saddle-contour deformation or uniform large-height AFE remainder
+      is proved by this claim. There is no new density or signed-error limit.
+    status: formalized
+    assumptions: [UNCONDITIONAL]
+    dependencies: [MASTER-AFE-PREREQUISITES-FORMAL-001]
+    dependency_graph_complete: false
+    source:
+      file: lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean
+      label: HigherCorrelations.afeHankel_identity_cutoff
+      companion_declarations: [afeHankel_identity_nonreal, afeHankel_residue_sum, afe_mellin_tail, afe_laplace_summable_integral_norm, afeHankelKernel_residue_pair, afeHankel_circle_bound, afeHankel_circle_tendsto_zero, afeHankel_circle_difference, afeHankel_circle_differentiable, afeHankel_ray_differentiable]
+      bookkeeping: research/lean-approximate-functional.md
+      inventory: research/lean-approximate-functional-inventory.json
+    constants_effective: true
+    all_limit_interchanges_justified: true
+    computation_used_in_proof: true
+    certificate_artifact_hash: cd704b8a05aefc5ead9cef528364a60a7e3f81e242ca0efe288c73a7d7e3bede
+    limit_order: "Fix m and s with Re(s)>1 for the absolutely convergent Mellin interchange and shrinking-radius limit. Then fix m and 0<r<=1/2 and use analyticity of the circle and ray expressions to continue on each nonreal half-plane. No shrinking-circle limit is asserted at Re(s)<=1, and no radius/height or cutoff/height interchange is made."
+    project_audit:
+      verification_script: scripts/reproduce_lean.py
+      verification_scope: "The extended suite checks 141 public statements in 20 modules, including 61 new statements in six modules, against definition-only Comparator contracts. All 23 unfinished controls, combined build, complete axiom audit, coverage, harness, control-pool and pair/triple regressions pass."
+      imported_inputs: "Pinned Mathlib Laplace-Gamma integrals, absolute dominated series integration, rectangle Cauchy theorem, circle integrals, Mellin differentiation and analytic identity principle; the pinned PNT simple-pole residue is used only after proving its defining punctured limit. Only propext, Quot.sound and Classical.choice are permitted."
+      constants_scope: "Explicit constants in the small-circle bound. Compact bounds used to justify differentiation remain internal convergence witnesses. Neither an absolute AFE remainder constant nor a numerical density constant is asserted."
+      baseline_audit_coverage: "The previous ledger remains an unchanged byte prefix. Historical theorem statuses and RH-review scopes are unchanged. The saddle deformation and global sharp AFE remainder remain unfinished."

@@ -1,0 +1,344 @@
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+Building VerificationChallenges.ApproximateFunctional
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3829/3829] Replayed VerificationChallenges.ApproximateFunctional
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:14:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:16:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:18:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:20:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:22:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:25:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:27:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:30:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:33:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:37:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:42:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:46:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:50:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:53:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:55:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:58:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:60:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:63:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:66:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:68:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:70:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:72:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:74:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:76:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:78:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:80:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:82:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:86:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:88:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:91:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:94:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:97:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:100:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:103:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:110:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:112:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:114:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:116:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:120:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:126:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:130:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:137:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:139:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:143:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:148:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:154:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:157:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:161:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:165:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:169:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:172:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:181:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:184:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:187:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:190:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:193:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:196:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:199:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:202:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:205:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:209:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:212:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:216:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:221:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:224:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:227:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:232:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:236:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:240:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:244:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:248:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:251:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:255:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:259:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:263:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:267:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:270:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:274:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:278:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:282:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:290:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:294:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:297:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:301:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:305:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:308:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:311:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:314:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:317:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:320:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:324:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:328:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:331:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:335:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:338:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:341:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:344:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:347:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:351:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:355:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:358:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:361:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:365:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:368:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:372:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:377:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:381:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:384:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:390:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:393:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:396:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:401:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:404:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:408:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:412:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:415:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:419:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:423:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:427:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:431:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:435:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:439:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:444:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:451:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:457:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:465:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:469:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:475:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:479:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:482:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:485:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:488:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:492:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:496:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:500:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:503:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:506:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:509:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:519:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:527:8: declaration uses `sorry`
+warning: lean/VerificationChallenges/ApproximateFunctional.lean:535:8: declaration uses `sorry`
+Build completed successfully (3829 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.afePoint_re, HigherCorrelations.afePoint_im, HigherCorrelations.afePoint_reflect, HigherCorrelations.afePoint_conj, HigherCorrelations.afePolynomial_nat, HigherCorrelations.afePolynomial_one, HigherCorrelations.afePolynomial_lt_one, HigherCorrelations.afePolynomial_conj, HigherCorrelations.afe_identity, HigherCorrelations.afe_phase_identity, HigherCorrelations.afe_phase_remainder_split, HigherCorrelations.afe_phase_remainder_bound, HigherCorrelations.afeChi_functional_eq, HigherCorrelations.afeChi_conj, HigherCorrelations.afeRemainder_conj, HigherCorrelations.afeChi_reflection, HigherCorrelations.afeRemainder_reflection, HigherCorrelations.afeRemainder_reflection_norm, HigherCorrelations.afeChi_critical_norm, HigherCorrelations.afeHeight_nonneg, HigherCorrelations.afeHeight_pos, HigherCorrelations.afeHeight_neg, HigherCorrelations.afeHeight_ge_one, HigherCorrelations.afePhase_norm, HigherCorrelations.afePhase_ne_zero, HigherCorrelations.afePhase_conj, HigherCorrelations.afePhase_positive, HigherCorrelations.afePhase_critical_norm, HigherCorrelations.afePhase_mul_conj, HigherCorrelations.afePolynomial_norm_le_sum, HigherCorrelations.afePolynomial_norm_le_floor, HigherCorrelations.afePolynomial_norm_le, HigherCorrelations.afePolynomial_step, HigherCorrelations.afeTwist_admissible, HigherCorrelations.afeTwist_short_continuous, HigherCorrelations.afeTwist_long_continuous, HigherCorrelations.afePolynomial_continuous, HigherCorrelations.afePolynomial_measurable, HigherCorrelations.afePolynomial_integrableOn, HigherCorrelations.afePolynomial_continuousCutoff_integrable, HigherCorrelations.afeTwist_four_polynomials_integrable, HigherCorrelations.afeChi_continuousAt, HigherCorrelations.afeZetaChi_compact_bound, HigherCorrelations.afeRemainder_bounded_height, HigherCorrelations.afeRemainder_compact_short, HigherCorrelations.afe_exp_near_lattice, HigherCorrelations.afe_exp_sub_one_lower, HigherCorrelations.afe_contour_denominator, HigherCorrelations.afe_contour_inverse_bound, HigherCorrelations.afe_floor_ratio, HigherCorrelations.afe_contour_parameters, HigherCorrelations.afeStirlingStep_bound, HigherCorrelations.afeStirlingMain_increment_closed, HigherCorrelations.afeStirlingMain_increment, HigherCorrelations.afe_shift_norm, HigherCorrelations.afeStirlingStep_shift_bound, HigherCorrelations.afe_inverse_differences_hasSum, HigherCorrelations.afeStirlingStep_summable_norm, HigherCorrelations.afeStirlingCorrection_bound, HigherCorrelations.afeStirlingCorrection_tail, HigherCorrelations.afeStirlingCorrection_succ, HigherCorrelations.afeStirling_finite_logs, HigherCorrelations.afe_logGammaSeq_decomposition, HigherCorrelations.afe_scaled_log_limit, HigherCorrelations.afe_small_log_limit, HigherCorrelations.afeStirling_offset_limit, HigherCorrelations.afe_logGammaSeq_limit, HigherCorrelations.afeGamma_stirling_identity, HigherCorrelations.afeGamma_stirling_closed, HigherCorrelations.afeGamma_stirling_relative, HigherCorrelations.afeGammaVerticalError_bound, HigherCorrelations.afe_log_lower_vertical, HigherCorrelations.afe_sin_factor, HigherCorrelations.afePhase_exp_positive, HigherCorrelations.afeChi_phase_factor, HigherCorrelations.afeChi_phase_high, HigherCorrelations.afeChi_phase_uniform_positive, HigherCorrelations.afeChi_phase_uniform, HigherCorrelations.afe_phase_replacement_identity, HigherCorrelations.afe_phase_replacement_uniform, HigherCorrelations.afe_laplace_term, HigherCorrelations.afe_laplace_integrable, HigherCorrelations.afe_laplace_integral_norm, HigherCorrelations.afe_laplace_summable_integral_norm, HigherCorrelations.afe_exponential_series, HigherCorrelations.afe_zeta_mellin, HigherCorrelations.afePolynomial_nat_succ, HigherCorrelations.afePolynomial_range, HigherCorrelations.afe_dirichlet_tail, HigherCorrelations.afe_exponential_tail, HigherCorrelations.afe_mellin_tail, HigherCorrelations.afe_zeta_mellin_integrable, HigherCorrelations.afe_mellin_tail_integrable, HigherCorrelations.afeHankelLog_exp, HigherCorrelations.afeHankelLog_derivative, HigherCorrelations.afeHankelLog_upper_pole, HigherCorrelations.afeHankelLog_lower_pole, HigherCorrelations.afeHankelPower_upper_pole, HigherCorrelations.afeHankelPower_lower_pole, HigherCorrelations.afe_exp_sine_jump, HigherCorrelations.afeHankelPrefactor_jump, HigherCorrelations.afeHankelPower_norm, HigherCorrelations.afeHankelPower_derivative, HigherCorrelations.afeHankelKernel_residue, HigherCorrelations.afeHankelPrefactor_mellin, HigherCorrelations.afeHankelPower_pole_pair, HigherCorrelations.afeChi_power, HigherCorrelations.afeHankelKernel_residue_pair, HigherCorrelations.afe_exp_small_denominator, HigherCorrelations.afeHankelPower_bound, HigherCorrelations.afeHankelKernel_small_bound, HigherCorrelations.afeHankelKernel_measurable, HigherCorrelations.afeHankel_circle_bound, HigherCorrelations.afeHankel_circle_integrable, HigherCorrelations.afeHankel_circle_tendsto_zero, HigherCorrelations.afeHankelLog_circle, HigherCorrelations.afeHankel_circle_lift, HigherCorrelations.afeHankelLift_differentiable, HigherCorrelations.afeHankelLift_period, HigherCorrelations.afeHankelLift_rectangle, HigherCorrelations.afe_mellin_kernel_continuous, HigherCorrelations.afeHankelLift_real_integral, HigherCorrelations.afeHankel_circle_difference, HigherCorrelations.afeHankel_circle_mellin, HigherCorrelations.afeHankel_initial_identity, HigherCorrelations.afe_mellin_kernel_norm, HigherCorrelations.afe_mellin_ray_majorant, HigherCorrelations.afe_mellin_ray_integrable, HigherCorrelations.afeHankelRayWeight_integrable, HigherCorrelations.afeHankelRayWeight_decay, HigherCorrelations.afeHankelRayWeight_zero_bound, HigherCorrelations.afeHankelRayWeight_mellin, HigherCorrelations.afeHankel_ray_differentiable, HigherCorrelations.afe_compact_exp_integral_entire, HigherCorrelations.afeHankel_circle_differentiable, HigherCorrelations.afePolynomial_differentiable, HigherCorrelations.afeHankelPrefactor_differentiable, HigherCorrelations.afeHankel_initial_identity_on, HigherCorrelations.afeHankel_identity_nonreal, HigherCorrelations.afeHankel_identity_cutoff, HigherCorrelations.afeHankel_residue_sum, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from VerificationChallenges.ApproximateFunctional
+Building HigherCorrelations.ApproximateFunctionalFoundation
+warning: PrimeNumberTheoremAnd: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/god/riemann-hypothesis-research/.lake/packages/OAI/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [3819/3895] Replayed HigherCorrelations.ApproximateFunctionalStirlingLimit
+info: lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean:31:13: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean:53:33: This simp argument is unused:
+  Function.comp_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/ApproximateFunctionalStirlingLimit.lean:53:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3821/3895] Replayed HigherCorrelations.ApproximateFunctionalPhase
+warning: lean/HigherCorrelations/ApproximateFunctionalPhase.lean:35:55: This simp argument is unused:
+  map_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [map_mul, conj_ofReal, ← exp_conj, conj_I, map_neg]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/ApproximateFunctionalPhase.lean:35:64: This simp argument is unused:
+  map_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [map_mul, conj_ofReal, ← exp_conj, conj_I, map_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3940/3955] Replayed HigherCorrelations.PairContourResidues
+info: lean/HigherCorrelations/PairContourResidues.lean:114:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairContourResidues.lean:120:56: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: lean/HigherCorrelations/PairContourResidues.lean:147:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: lean/HigherCorrelations/PairContourResidues.lean:162:32: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [3941/3955] Replayed HigherCorrelations.PairChiIdentity
+info: lean/HigherCorrelations/PairChiIdentity.lean:133:14: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/PairChiIdentity.lean:133:2: Unused tactic linter: `congr 1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: lean/HigherCorrelations/PairChiIdentity.lean:133:10: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3944/3955] Replayed HigherCorrelations.ApproximateFunctionalCutoffs
+warning: lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean:83:8: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+warning: lean/HigherCorrelations/ApproximateFunctionalCutoffs.lean:87:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3950/3955] Replayed HigherCorrelations.ApproximateFunctionalHankel
+warning: lean/HigherCorrelations/ApproximateFunctionalHankel.lean:120:15: This simp argument is unused:
+  ← neg_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hep, inv_one, mul_one]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3951/3955] Replayed HigherCorrelations.ApproximateFunctionalSmallCircle
+warning: lean/HigherCorrelations/ApproximateFunctionalSmallCircle.lean:69:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3952/3955] Replayed HigherCorrelations.ApproximateFunctionalHankelContour
+warning: lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean:37:30: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [deriv_circleMap, smul_eq_mul, afeHankelKernel, afeHankelPower,
+    afeHankelLog_circle r θ hr hθ.1 hθ.2.le, afeHankelLift]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean:111:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean:110:67: This simp argument is unused:
+  ofReal_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Function.comp_def, ofReal_exp, real_smul, ofReal_mul, ofReal_natCast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: lean/HigherCorrelations/ApproximateFunctionalHankelContour.lean:123:2: Unused tactic linter: `push_cast at h` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3954/3955] Replayed HigherCorrelations.ApproximateFunctionalHankelAnalytic
+warning: lean/HigherCorrelations/ApproximateFunctionalHankelAnalytic.lean:20:18: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [F, D, mul_comm, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Build completed successfully (3955 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, HigherCorrelations.afePoint_re, HigherCorrelations.afePoint_im, HigherCorrelations.afePoint_reflect, HigherCorrelations.afePoint_conj, HigherCorrelations.afePolynomial_nat, HigherCorrelations.afePolynomial_one, HigherCorrelations.afePolynomial_lt_one, HigherCorrelations.afePolynomial_conj, HigherCorrelations.afe_identity, HigherCorrelations.afe_phase_identity, HigherCorrelations.afe_phase_remainder_split, HigherCorrelations.afe_phase_remainder_bound, HigherCorrelations.afeChi_functional_eq, HigherCorrelations.afeChi_conj, HigherCorrelations.afeRemainder_conj, HigherCorrelations.afeChi_reflection, HigherCorrelations.afeRemainder_reflection, HigherCorrelations.afeRemainder_reflection_norm, HigherCorrelations.afeChi_critical_norm, HigherCorrelations.afeHeight_nonneg, HigherCorrelations.afeHeight_pos, HigherCorrelations.afeHeight_neg, HigherCorrelations.afeHeight_ge_one, HigherCorrelations.afePhase_norm, HigherCorrelations.afePhase_ne_zero, HigherCorrelations.afePhase_conj, HigherCorrelations.afePhase_positive, HigherCorrelations.afePhase_critical_norm, HigherCorrelations.afePhase_mul_conj, HigherCorrelations.afePolynomial_norm_le_sum, HigherCorrelations.afePolynomial_norm_le_floor, HigherCorrelations.afePolynomial_norm_le, HigherCorrelations.afePolynomial_step, HigherCorrelations.afeTwist_admissible, HigherCorrelations.afeTwist_short_continuous, HigherCorrelations.afeTwist_long_continuous, HigherCorrelations.afePolynomial_continuous, HigherCorrelations.afePolynomial_measurable, HigherCorrelations.afePolynomial_integrableOn, HigherCorrelations.afePolynomial_continuousCutoff_integrable, HigherCorrelations.afeTwist_four_polynomials_integrable, HigherCorrelations.afeChi_continuousAt, HigherCorrelations.afeZetaChi_compact_bound, HigherCorrelations.afeRemainder_bounded_height, HigherCorrelations.afeRemainder_compact_short, HigherCorrelations.afe_exp_near_lattice, HigherCorrelations.afe_exp_sub_one_lower, HigherCorrelations.afe_contour_denominator, HigherCorrelations.afe_contour_inverse_bound, HigherCorrelations.afe_floor_ratio, HigherCorrelations.afe_contour_parameters, HigherCorrelations.afeStirlingStep_bound, HigherCorrelations.afeStirlingMain_increment_closed, HigherCorrelations.afeStirlingMain_increment, HigherCorrelations.afe_shift_norm, HigherCorrelations.afeStirlingStep_shift_bound, HigherCorrelations.afe_inverse_differences_hasSum, HigherCorrelations.afeStirlingStep_summable_norm, HigherCorrelations.afeStirlingCorrection_bound, HigherCorrelations.afeStirlingCorrection_tail, HigherCorrelations.afeStirlingCorrection_succ, HigherCorrelations.afeStirling_finite_logs, HigherCorrelations.afe_logGammaSeq_decomposition, HigherCorrelations.afe_scaled_log_limit, HigherCorrelations.afe_small_log_limit, HigherCorrelations.afeStirling_offset_limit, HigherCorrelations.afe_logGammaSeq_limit, HigherCorrelations.afeGamma_stirling_identity, HigherCorrelations.afeGamma_stirling_closed, HigherCorrelations.afeGamma_stirling_relative, HigherCorrelations.afeGammaVerticalError_bound, HigherCorrelations.afe_log_lower_vertical, HigherCorrelations.afe_sin_factor, HigherCorrelations.afePhase_exp_positive, HigherCorrelations.afeChi_phase_factor, HigherCorrelations.afeChi_phase_high, HigherCorrelations.afeChi_phase_uniform_positive, HigherCorrelations.afeChi_phase_uniform, HigherCorrelations.afe_phase_replacement_identity, HigherCorrelations.afe_phase_replacement_uniform, HigherCorrelations.afe_laplace_term, HigherCorrelations.afe_laplace_integrable, HigherCorrelations.afe_laplace_integral_norm, HigherCorrelations.afe_laplace_summable_integral_norm, HigherCorrelations.afe_exponential_series, HigherCorrelations.afe_zeta_mellin, HigherCorrelations.afePolynomial_nat_succ, HigherCorrelations.afePolynomial_range, HigherCorrelations.afe_dirichlet_tail, HigherCorrelations.afe_exponential_tail, HigherCorrelations.afe_mellin_tail, HigherCorrelations.afe_zeta_mellin_integrable, HigherCorrelations.afe_mellin_tail_integrable, HigherCorrelations.afeHankelLog_exp, HigherCorrelations.afeHankelLog_derivative, HigherCorrelations.afeHankelLog_upper_pole, HigherCorrelations.afeHankelLog_lower_pole, HigherCorrelations.afeHankelPower_upper_pole, HigherCorrelations.afeHankelPower_lower_pole, HigherCorrelations.afe_exp_sine_jump, HigherCorrelations.afeHankelPrefactor_jump, HigherCorrelations.afeHankelPower_norm, HigherCorrelations.afeHankelPower_derivative, HigherCorrelations.afeHankelKernel_residue, HigherCorrelations.afeHankelPrefactor_mellin, HigherCorrelations.afeHankelPower_pole_pair, HigherCorrelations.afeChi_power, HigherCorrelations.afeHankelKernel_residue_pair, HigherCorrelations.afe_exp_small_denominator, HigherCorrelations.afeHankelPower_bound, HigherCorrelations.afeHankelKernel_small_bound, HigherCorrelations.afeHankelKernel_measurable, HigherCorrelations.afeHankel_circle_bound, HigherCorrelations.afeHankel_circle_integrable, HigherCorrelations.afeHankel_circle_tendsto_zero, HigherCorrelations.afeHankelLog_circle, HigherCorrelations.afeHankel_circle_lift, HigherCorrelations.afeHankelLift_differentiable, HigherCorrelations.afeHankelLift_period, HigherCorrelations.afeHankelLift_rectangle, HigherCorrelations.afe_mellin_kernel_continuous, HigherCorrelations.afeHankelLift_real_integral, HigherCorrelations.afeHankel_circle_difference, HigherCorrelations.afeHankel_circle_mellin, HigherCorrelations.afeHankel_initial_identity, HigherCorrelations.afe_mellin_kernel_norm, HigherCorrelations.afe_mellin_ray_majorant, HigherCorrelations.afe_mellin_ray_integrable, HigherCorrelations.afeHankelRayWeight_integrable, HigherCorrelations.afeHankelRayWeight_decay, HigherCorrelations.afeHankelRayWeight_zero_bound, HigherCorrelations.afeHankelRayWeight_mellin, HigherCorrelations.afeHankel_ray_differentiable, HigherCorrelations.afe_compact_exp_integral_entire, HigherCorrelations.afeHankel_circle_differentiable, HigherCorrelations.afePolynomial_differentiable, HigherCorrelations.afeHankelPrefactor_differentiable, HigherCorrelations.afeHankel_initial_identity_on, HigherCorrelations.afeHankel_identity_nonreal, HigherCorrelations.afeHankel_identity_cutoff, HigherCorrelations.afeHankel_residue_sum, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from HigherCorrelations.ApproximateFunctionalFoundation
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
